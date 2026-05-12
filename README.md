@@ -1,6 +1,6 @@
 # Super Agent Public Skillset
 
-A public collection of agent templates for the Super Agent app.
+A public collection of agent templates and skills for the Super Agent app.
 
 ## Agent Templates
 
@@ -14,6 +14,17 @@ Email management agent that helps users organize their Gmail inbox, screen and c
 
 ## Structure
 
-Each agent template lives under `skills/` and includes:
-- `SKILL.md` -- the agent's core instructions (CLAUDE.md)
-- `skills/` -- sub-skills the agent uses at runtime
+```
+.
+├── agents/
+│   ├── agent-pill/
+│   │   ├── CLAUDE.md
+│   │   └── .claude/skills/...
+│   └── inbox-manager/
+│       ├── CLAUDE.md
+│       └── .claude/skills/...
+├── skills/          (future standalone skills)
+├── index.json
+├── generate_index.py
+└── README.md
+```

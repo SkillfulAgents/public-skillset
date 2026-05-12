@@ -2,7 +2,7 @@
 # requires-python = ">=3.10"
 # dependencies = []
 # ///
-"""Scan the skills directory and generate index.json."""
+"""Scan the skills and agents directories and generate index.json."""
 
 import argparse
 import json
@@ -22,7 +22,6 @@ def parse_frontmatter(text: str) -> dict:
     for line in match.group(1).splitlines():
         if not line.strip() or line.strip().startswith("#"):
             continue
-        # Indented line — belongs to current section (if any)
         if line[0] in (" ", "\t"):
             if current_section is not None:
                 stripped = line.strip()
@@ -39,7 +38,6 @@ def parse_frontmatter(text: str) -> dict:
             result[key.strip()] = value.strip()
             current_section = None
         else:
-            # Section header (e.g. "metadata:")
             current_section = key.strip()
     return result
 
@@ -53,28 +51,42 @@ def main() -> None:
     args = parser.parse_args()
 
     root = args.root.resolve()
-    skills_dir = root / "skills"
-    skills = []
 
-    for skill_file in sorted(skills_dir.glob("*/SKILL.md")):
-        fm = parse_frontmatter(skill_file.read_text(encoding="utf-8"))
-        skills.append({
-            "name": fm.get("name", skill_file.parent.name),
-            "path": str(skill_file.relative_to(root)),
-            "description": fm.get("description", ""),
-            "version": fm.get("metadata", {}).get("version", "0.0.0"),
-        })
+    skills = []
+    skills_dir = root / "skills"
+    if skills_dir.exists():
+        for skill_file in sorted(skills_dir.glob("*/SKILL.md")):
+            fm = parse_frontmatter(skill_file.read_text(encoding="utf-8"))
+            skills.append({
+                "name": fm.get("name", skill_file.parent.name),
+                "path": str(skill_file.relative_to(root)),
+                "description": fm.get("description", ""),
+                "version": fm.get("metadata", {}).get("version", "0.0.0"),
+            })
+
+    agents = []
+    agents_dir = root / "agents"
+    if agents_dir.exists():
+        for agent_file in sorted(agents_dir.glob("*/CLAUDE.md")):
+            fm = parse_frontmatter(agent_file.read_text(encoding="utf-8"))
+            agents.append({
+                "name": fm.get("name", agent_file.parent.name),
+                "path": str(agent_file.parent.relative_to(root)) + "/",
+                "description": fm.get("description", ""),
+                "version": "1.0.0",
+            })
 
     index = {
         "skillset_name": args.name,
         "description": args.description,
         "version": args.version,
         "skills": skills,
+        "agents": agents,
     }
 
     out = root / "index.json"
     out.write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {out} with {len(skills)} skill(s).")
+    print(f"Wrote {out} with {len(skills)} skill(s) and {len(agents)} agent(s).")
 
 
 if __name__ == "__main__":

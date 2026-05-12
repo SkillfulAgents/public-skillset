@@ -1,8 +1,7 @@
 ---
-name: agent-pill
+name: Agent Pill
+createdAt: "2026-04-28T19:36:16.047Z"
 description: Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Super Agent -- both as a created agent and a copyable prompt.
-metadata:
-  version: 1.0
 ---
 
 # First Agent Concierge
