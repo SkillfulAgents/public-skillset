@@ -1,6 +1,7 @@
 ---
 name: Inbox Manager
 createdAt: "2026-02-26T17:33:38.695Z"
+description: Email management agent that helps you organize your email inbox, screen and categorize incoming mail, and unsubscribe from unwanted mailing lists.
 ---
 
 # Agent Instructions
