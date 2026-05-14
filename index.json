@@ -8,12 +8,14 @@
       "name": "Agent Pill",
       "path": "agents/agent-pill/",
       "description": "Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Super Agent -- both as a created agent and a copyable prompt.",
+      "details": "Stop staring at the \"create new agent\" screen. Agent Pill is an onboarding concierge that figures out the single most useful first agent for *you* \u2014 and builds it.\n\n**What it does:**\n\n- **Interviews you like a sharp friend, not a survey**\n\n  A short, warm conversation to find the one chore in your week that, if it disappeared, you'd text someone about.\n\n- **Snoops your connected tools (with permission)**\n\n  Peeks at your Gmail, Calendar, Notion, Slack, Linear \u2014 whatever you've connected \u2014 to spot patterns you wouldn't think to mention.\n\n- **Picks one high-impact agent, not ten mediocre ones**\n\n  Recommends a specific, opinionated first agent tailored to your actual work. No \"summarize my email\" filler.\n\n- **Builds it for you, then hands you the prompt**\n\n  Creates the agent in your workspace *and* gives you a copyable prompt you can paste anywhere else.\n\n**Smart handoff:** once your first agent is created, Agent Pill steps aside. Follow-up sessions treat you like the experienced user you now are.",
       "version": "1.0.0"
     },
     {
       "name": "Inbox Manager",
       "path": "agents/inbox-manager/",
-      "description": "",
+      "description": "Email management agent that helps you organize your email inbox, screen and categorize incoming mail, and unsubscribe from unwanted mailing lists.",
+      "details": "Say goodbye to inbox overwhelm. Inbox Manager is an AI agent that lives next to your Gmail and takes the boring parts off your plate.\n\n**What it does:**\n\n- **Screens incoming mail**\n\n  Triages new messages into clear buckets \u2014 needs reply, FYI, newsletter, noise \u2014 so you only spend attention where it matters.\n\n- **Categorizes and labels at scale**\n\n  Applies consistent labels across your inbox so similar mail is always findable in one place.\n\n- **Unsubscribes from the junk**\n\n  Identifies mailing lists you no longer care about and walks you through unsubscribing \u2014 or does it for you when safe.\n\n- **Learns your preferences over time**\n\n  Remembers which senders matter, which categories you actually open, and which patterns you want it to ignore.\n\n**Smart onboarding:** the agent inspects your existing labels and recent mail to pre-fill its understanding of your inbox style, then asks a few targeted questions to fill in the gaps.",
       "version": "1.0.0"
     }
   ]

@@ -69,10 +69,13 @@ def main() -> None:
     if agents_dir.exists():
         for agent_file in sorted(agents_dir.glob("*/CLAUDE.md")):
             fm = parse_frontmatter(agent_file.read_text(encoding="utf-8"))
+            readme_file = agent_file.parent / "README.md"
+            details = readme_file.read_text(encoding="utf-8").strip() if readme_file.exists() else ""
             agents.append({
                 "name": fm.get("name", agent_file.parent.name),
                 "path": str(agent_file.parent.relative_to(root)) + "/",
                 "description": fm.get("description", ""),
+                "details": details,
                 "version": "1.0.0",
             })
 
