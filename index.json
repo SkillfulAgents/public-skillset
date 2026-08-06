@@ -23,6 +23,12 @@
       "version": "1.0.0"
     },
     {
+      "name": "Office Manager",
+      "path": "agents/office-manager/",
+      "description": "Keeps the team fed \u2014 runs weekly kitchen stock orders, handles one-off Slack requests, and organizes daily lunch/dinner orders",
+      "version": "1.0.0"
+    },
+    {
       "name": "SEO Agent",
       "path": "agents/seo-agent/",
       "description": "Autonomous SEO specialist \u2014 owns content engine, link building + outreach, technical SEO, and weekly strategy/reporting for one website, end to end.",

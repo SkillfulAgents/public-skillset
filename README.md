@@ -16,6 +16,10 @@ Email management agent that helps users organize their Gmail inbox, screen and c
 
 Personal nutrition tracker you can message naturally: describe a meal (or send a photo) and it estimates macros and logs it, tracks calories/protein/fat/carbs against your goal, logs body weight, and renders a trends dashboard. No accounts or API keys required.
 
+### Office Manager
+
+Keeps the team fed: runs the recurring weekly grocery/kitchen stock order, handles one-off Slack requests, and organizes daily lunch/dinner orders. Places real orders through the built-in browser on your logged-in shopping accounts, with careful records of everything bought.
+
 ### SEO Agent
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
@@ -36,6 +40,11 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 │   │   ├── README.md
 │   │   ├── nutrition/     (state: SQLite db, goal, scripts)
 │   │   ├── artifacts/     (nutrition dashboard app)
+│   │   └── .claude/skills/...
+│   ├── office-manager/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   ├── grocery-baseline.md
 │   │   └── .claude/skills/...
 │   └── seo-agent/
 │       ├── CLAUDE.md
