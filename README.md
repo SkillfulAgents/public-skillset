@@ -1,12 +1,12 @@
-# Super Agent Public Skillset
+# Gamut Public Skillset
 
-A public collection of agent templates and skills for the Super Agent app.
+A public collection of agent templates and skills for the Gamut app.
 
 ## Agent Templates
 
 ### Agent Pill
 
-Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Super Agent -- both as a created agent and a copyable prompt.
+Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
 
 ### Inbox Manager
 

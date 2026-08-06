@@ -52,8 +52,8 @@ def parse_frontmatter(text: str) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate index.json for a skillset repo.")
     parser.add_argument("--root", type=Path, default=Path("."), help="Root of the skillset repo (default: cwd)")
-    parser.add_argument("--name", default="Super Agent Public Skillset", help="Skillset name")
-    parser.add_argument("--description", default="A public collection of agent templates for the Super Agent app.", help="Skillset description")
+    parser.add_argument("--name", default="Gamut Public Skillset", help="Skillset name")
+    parser.add_argument("--description", default="A public collection of agent templates for the Gamut app.", help="Skillset description")
     parser.add_argument("--version", default="1.0.0", help="Skillset version")
     args = parser.parse_args()
 

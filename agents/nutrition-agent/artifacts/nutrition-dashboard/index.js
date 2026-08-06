@@ -281,7 +281,7 @@ async function load() {
   try {
     const days = document.getElementById("range").value;
     // Use path-relative URL (no leading slash) so it works when the dashboard
-    // is reverse-proxied under a path prefix by the Superagent UI.
+    // is reverse-proxied under a path prefix by the Gamut UI.
     const apiUrl = new URL("api/data?days=" + days, document.baseURI);
     const res = await fetch(apiUrl.toString(), { cache: "no-store" });
     if (!res.ok) throw new Error("HTTP " + res.status + " " + (await res.text()));

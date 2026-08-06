@@ -13,7 +13,7 @@ A personal nutrition tracker you can message naturally. Describe what you ate (o
 
 ## Getting started
 
-1. Import this template into Superagent.
+1. Import this template into Gamut.
 2. On import, a setup session starts automatically. The **agent-onboarding** skill will:
    - Ask your name
    - Collect body metrics (sex, age, height, weight, activity level)
