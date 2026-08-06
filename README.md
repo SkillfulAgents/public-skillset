@@ -12,6 +12,10 @@ Onboarding agent that interviews a new user, inspects their connected tools (wit
 
 Email management agent that helps users organize their Gmail inbox, screen and categorize emails, and unsubscribe from unwanted mailing lists.
 
+### SEO Agent
+
+Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
+
 ## Structure
 
 ```
@@ -20,8 +24,14 @@ Email management agent that helps users organize their Gmail inbox, screen and c
 │   ├── agent-pill/
 │   │   ├── CLAUDE.md
 │   │   └── .claude/skills/...
-│   └── inbox-manager/
+│   ├── inbox-manager/
+│   │   ├── CLAUDE.md
+│   │   └── .claude/skills/...
+│   └── seo-agent/
 │       ├── CLAUDE.md
+│       ├── README.md
+│       ├── seo/           (state: config, backlogs, CRM, log)
+│       ├── artifacts/     (SEO master dashboard app)
 │       └── .claude/skills/...
 ├── skills/          (future standalone skills)
 ├── index.json

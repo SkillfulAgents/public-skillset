@@ -12,6 +12,13 @@ from pathlib import Path
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---", re.DOTALL)
 
 
+def unquote(value: str) -> str:
+    """Strip matching single or double quotes around a YAML scalar."""
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+        return value[1:-1]
+    return value
+
+
 def parse_frontmatter(text: str) -> dict:
     """Parse YAML frontmatter with one level of nesting support."""
     match = FRONTMATTER_RE.match(text)
@@ -29,13 +36,13 @@ def parse_frontmatter(text: str) -> dict:
                     continue
                 key, _, value = stripped.partition(":")
                 if value:
-                    result.setdefault(current_section, {})[key.strip()] = value.strip()
+                    result.setdefault(current_section, {})[key.strip()] = unquote(value.strip())
             continue
         if line[0] == "-":
             continue
         key, _, value = line.partition(":")
         if value.strip():
-            result[key.strip()] = value.strip()
+            result[key.strip()] = unquote(value.strip())
             current_section = None
         else:
             current_section = key.strip()

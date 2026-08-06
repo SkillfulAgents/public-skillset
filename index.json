@@ -15,6 +15,12 @@
       "path": "agents/inbox-manager/",
       "description": "",
       "version": "1.0.0"
+    },
+    {
+      "name": "SEO Agent",
+      "path": "agents/seo-agent/",
+      "description": "Autonomous SEO specialist \u2014 owns content engine, link building + outreach, technical SEO, and weekly strategy/reporting for one website, end to end.",
+      "version": "1.0.0"
     }
   ]
 }

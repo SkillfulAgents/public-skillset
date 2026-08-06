@@ -1,0 +1,16 @@
+{
+  "config": {
+    "inbox": "",
+    "inbox_connected": false,
+    "gmail_account_id": "",
+    "inbox_notes": "Best practice: a DEDICATED inbox on a warmed separate domain, carrying a real team member's name for read rates. The agent manages the whole inbox.",
+    "sender_identity": "",
+    "daily_limit": 10,
+    "ramp": {"week1": 3, "week2": 5, "week3": 8, "week4_plus": 10},
+    "first_send_date": null,
+    "followup_days": [4, 8],
+    "max_touches": 3,
+    "gmail_label_id": null
+  },
+  "prospects": []
+}

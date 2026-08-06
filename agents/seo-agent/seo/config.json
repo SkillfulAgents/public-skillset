@@ -1,0 +1,32 @@
+{
+  "_comment": "Written by the agent-onboarding skill. Every SEO skill and the dashboard collector read this file — keep it accurate.",
+  "site": "",
+  "site_url": "",
+  "blog_url_prefix": "",
+  "company": "",
+  "gsc_property": "",
+  "brand_regex": "",
+  "brand_filter_term": "",
+  "owner_name": "",
+  "competitors": [],
+  "targets": {
+    "refdomains": null,
+    "nonbrand_clicks_month": null,
+    "top3_rankings": null
+  },
+  "cms": {
+    "type": "",
+    "notes": ""
+  },
+  "report": {
+    "channel": "email",
+    "to": "",
+    "from_email": "",
+    "gmail_account_id": "",
+    "brand": "SEO Agent"
+  },
+  "link_prospecting": {
+    "self_domains": [],
+    "topic_terms": []
+  }
+}
