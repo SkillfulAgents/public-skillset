@@ -12,6 +12,10 @@ Onboarding agent that interviews a new user, inspects their connected tools (wit
 
 Email management agent that helps users organize their Gmail inbox, screen and categorize emails, and unsubscribe from unwanted mailing lists.
 
+### Nutrition Agent
+
+Personal nutrition tracker you can message naturally: describe a meal (or send a photo) and it estimates macros and logs it, tracks calories/protein/fat/carbs against your goal, logs body weight, and renders a trends dashboard. No accounts or API keys required.
+
 ### SEO Agent
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
@@ -26,6 +30,12 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 │   │   └── .claude/skills/...
 │   ├── inbox-manager/
 │   │   ├── CLAUDE.md
+│   │   └── .claude/skills/...
+│   ├── nutrition-agent/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   ├── nutrition/     (state: SQLite db, goal, scripts)
+│   │   ├── artifacts/     (nutrition dashboard app)
 │   │   └── .claude/skills/...
 │   └── seo-agent/
 │       ├── CLAUDE.md

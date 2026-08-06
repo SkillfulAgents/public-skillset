@@ -17,6 +17,12 @@
       "version": "1.0.0"
     },
     {
+      "name": "Nutrition Agent",
+      "path": "agents/nutrition-agent/",
+      "description": "Track calories, macros, and body weight with fast meal logging, a visual dashboard, and smart goal setting",
+      "version": "1.0.0"
+    },
+    {
       "name": "SEO Agent",
       "path": "agents/seo-agent/",
       "description": "Autonomous SEO specialist \u2014 owns content engine, link building + outreach, technical SEO, and weekly strategy/reporting for one website, end to end.",
