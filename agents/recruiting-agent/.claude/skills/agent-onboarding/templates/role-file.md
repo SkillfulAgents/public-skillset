@@ -12,6 +12,9 @@ metadata:
 ## Role essence (posting)
 {{2-4 line distillation of the JD: what this hire owns, why now, what shape of person}}
 
+## Hiring lead's own words (verbatim, from onboarding — outranks assumptions on conflict)
+> {{their free-form answer to "what are you actually looking for / what separates a yes from a no", quoted verbatim}}
+
 **Screening prompt (the evaluation instrument — keep in sync with calibration log):** `/workspace/pipeline/screening/{{slug}}.md`
 
 ## Scoring rubric (0–100 = 4 criteria × 25)

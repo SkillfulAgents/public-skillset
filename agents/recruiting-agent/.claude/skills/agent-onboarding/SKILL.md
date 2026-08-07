@@ -1,8 +1,8 @@
 ---
 name: Agent Onboarding
-description: First-run onboarding interview for a NEW company adopting this recruiting-agent template. Walks the customer through everything that must be configured — ATS (or not) + system of record, where sourced candidates are saved (workspace / Google Sheet registry / Excel), role import (all vs manual clickbox select), which roles get a daily search cron, per-role screening criteria (agent proposes, user edits), outreach voice/templates/authorization, calendar booking link, LinkedIn access, recurring triggers, dashboard, chat integration, escalation. Run when a new customer says "set up", "onboard", "get started", or when the workspace has no configured roles/CLAUDE.md pipeline config.
+description: First-run onboarding interview for a NEW company adopting this recruiting-agent template. Shows a live setup checklist, walks the customer through everything that must be configured — ATS (or not) + system of record, where sourced candidates are saved, role import, which roles get a daily search cron, per-role hiring criteria (agent proposes in plain language, then interviews the user on what THEY actually look for + seed companies), sourcing pre-filter tools (Juicebox/Metaview), outreach voice/templates/authorization, booking link, recurring triggers, dashboard, chat integration — and ends with a go-live check: LinkedIn login verified in-browser and a real first sourcing run. Run when a new customer says "set up", "onboard", "get started", or when the workspace has no configured roles/CLAUDE.md pipeline config.
 metadata:
-  version: "1.1.0"
+  version: "2.1.0"
 ---
 
 # Agent Onboarding — turn the template into THEIR recruiting agent
@@ -11,9 +11,18 @@ This skill runs the guided setup for a company adopting this recruiting agent. I
 
 **HOW TO RUN THE INTERVIEW (read this first — it's where fresh agents fail):**
 - **Your first reply IS the interview.** Two sentences of welcome max, then the Phase 1 questions in that same turn. Do NOT summarize the onboarding process, list the phases, offer a menu, or ask permission to start. The user's first message — whatever it says — is the start signal.
-- **Every choice goes through the `AskUserQuestion` tool** so the user gets clickable options, not a wall of text ending in "let me know". Plain chat questions ONLY for free-text facts (product pitch, JD contents, pasted messages). If a turn of yours ends without either an `AskUserQuestion` call or a specific free-text question, you've broken the interview.
+- **The user must always know where they are.** In Phase 0, create the setup checklist with the task tools (`TaskCreate`, one task per phase 1–9, subjects like "1. Company & hiring lead" … "9. Go-live check") so the UI shows live progress; mark each `in_progress`/`completed` as you go. ALSO open every turn with a one-line progress strip in chat, e.g. `**Setup 4/9 — Roles** (done: company, ATS · next: criteria, outreach, go-live)`. Both, always — the checklist is not optional.
+- **The checklist NEVER vanishes.** Never delete or abandon it mid-onboarding; tasks only ever move forward (`pending → in_progress → completed`), and the final wrap-up completes the last one. ANY session that starts while `onboarding-state.json` exists must FIRST run `TaskList` and recreate the checklist if it's missing or stale — before asking anything. The progress strip opens EVERY turn without exception: build-only turns, error turns, turns answering a side question.
+- **Never leave question mode.** Until the Phase 9 wrap-up, EVERY turn ends with exactly one ask: an `AskUserQuestion` call, ONE specific free-text question, or a request tool (`request_secret`, `request_browser_input`, …). No dead ends, ever:
+  - Finished building a phase's artifacts? End that same turn with the next phase's question.
+  - Hit an error or blocker? End with a question about how to proceed (retry / skip / defer) or the request tool that unblocks it.
+  - User asked a side question or went off-script? Answer it in ≤3 sentences, then re-ask the pending question in the same turn.
+  - User answers vaguely? Ask the concrete follow-up — don't guess and move on.
+  The ONLY turn allowed to end without a question is the Phase 9 wrap-up summary.
+- **Every choice goes through the `AskUserQuestion` tool** so the user gets clickable options, not a wall of text ending in "let me know". Plain chat questions ONLY for free-text facts (product pitch, JD contents, pasted messages, the Phase 5 "what are you actually looking for" answer).
 - **One phase (or coherent question batch) per turn.** After the user answers: build that phase's artifacts immediately and silently, give a one-line "done" note, and ask the next batch in the same turn. Momentum over ceremony.
-- Do not stop until Phase 8's summary — the only valid endings mid-way are the user explicitly deferring, or a blocked external dependency (missing API key etc.), and then you say exactly what's pending.
+- **Write for a human, not a parser.** Every proposal you show (criteria, templates, schedules) is plain natural language: short bold-led bullets, full sentences, no arrow-notation (`→ DQ`), no internal jargon (say "we'd pass on…", not "DQ"; say "must-have", not "hard check"). One role per message — never cram multiple roles' criteria into one block.
+- Do not stop until Phase 9's go-live summary — the only valid endings mid-way are the user explicitly deferring, or a blocked external dependency (missing API key etc.), and then you say exactly what's pending and keep the checklist accurate.
 
 **Principles**
 - **Propose, don't quiz.** Wherever the agent can draft a strong default (screening rubric from a JD, outreach template from the product pitch, trigger times), PROPOSE it and ask the user to confirm/edit. Only ask open questions for facts that cannot be inferred (comp band, panel, API keys).
@@ -27,8 +36,9 @@ This skill runs the guided setup for a company adopting this recruiting agent. I
 ## Phase 0 — Preflight
 
 1. Read `/workspace/pipeline/onboarding-state.json` (resume if mid-onboarding).
-2. Detect leftover template-owner data: `grep -l "Gamut\|Datawizz\|Tim" /workspace/CLAUDE.md /workspace/pipeline/roles.json` and check for populated `longlist-*.jsonl` / memory role files. If present AND this is a new customer instance, tell the user you'll archive the example data to `/workspace/pipeline/_template-example/` (move, never delete) and start clean. Ask before archiving.
-3. Scaffold empty dirs if missing: `/workspace/pipeline/{screening,outreach,shortlists,reports}`.
+2. **Create the setup checklist** with `TaskCreate` — one task per phase, in order: `1. Company & hiring lead` · `2. ATS & where candidates live` · `3. Roles` · `4. Daily searches & sourcing tools` · `5. What you're looking for (per role)` · `6. Outreach setup` · `7. Dashboard & recurring sessions` · `8. Finalize config` · `9. Go-live check (LinkedIn + first sourcing run)`. On resume: run `TaskList` first — if the checklist is missing (new session) or stale, recreate/reconcile it from the state file so it matches reality, then continue from the first incomplete phase. The checklist must exist and be accurate before the first question of the session.
+3. Detect leftover template-owner data: `grep -l "Gamut\|Datawizz\|Tim" /workspace/CLAUDE.md /workspace/pipeline/roles.json` and check for populated `longlist-*.jsonl` / memory role files. If present AND this is a new customer instance, tell the user you'll archive the example data to `/workspace/pipeline/_template-example/` (move, never delete) and start clean. Ask before archiving.
+4. Scaffold empty dirs if missing: `/workspace/pipeline/{screening,outreach,shortlists,reports}`.
 
 ## Phase 1 — Company & hiring lead
 
@@ -95,7 +105,7 @@ Using the templates in this skill's `templates/` dir, create for EVERY imported/
 - `/workspace/pipeline/screening/<slug>.md` — from `templates/screening-prompt.md`, DRAFTED by the agent from the JD (Phase 5 refines it with the user).
 - `/workspace/pipeline/longlist-<slug>.jsonl` — empty.
 
-## Phase 4 — Which roles get a daily search? (crons)
+## Phase 4 — Which roles get a daily search? (crons) + sourcing tools
 
 Not every visible role needs active sourcing — some are inbound-only, paused, or exploratory (in the template's origin config only 1 of 9 jobs had an active search).
 
@@ -103,26 +113,31 @@ Not every visible role needs active sourcing — some are inbound-only, paused, 
 2. For selected roles: set `"sourcing": "active"` in roles.json; unselected → `"inbound-only"` (ATS) or `"passive"` (no ATS).
 3. Schedule triggers (`schedule_task`, cron, weekdays, user's timezone): **one search session per active role**, ~45 min each, staggered (9:00, 9:45, 10:30, …) so each owns the browser/LinkedIn exclusively. Prompt per trigger: run the full search workflow for `<slug>` per CLAUDE.md.
 4. Tell the user each search costs roughly a 45-minute agent session per weekday per role — pick accordingly; roles can be flipped on/off any time by asking.
+5. **Sourcing pre-filter tools** — clickbox (multiSelect), header "Tools": **"Do you already use any AI sourcing tools the agent should plug in?"** Options: "Juicebox (PeopleGPT)", "Metaview", "None". ("Other" auto-provided — ask what it is and whether it's browser- or API-based.)
+   - For each selected tool: open it in the browser now and have the user log in (`request_browser_input`: "Complete the {tool} login so the agent can use it as a sourcing pre-filter."). Verify the session sticks (reload → still logged in).
+   - Record in CLAUDE.md's platform table + each active role file's Pools section: tool output is a PRE-FILTER, never a final answer — everything it surfaces is re-screened against the role's criteria before it touches a shortlist.
+   - If the user picks None, note it and move on — never push tools they don't have.
 
-## Phase 5 — Screening criteria (detailed, propose-first)
+## Phase 5 — What you're looking for (per role — the most important phase)
 
-For each role with an active search (do inbound-only roles too if the user has patience; otherwise offer to defer them):
+This phase is where the agent learns to judge candidates the way the hiring lead does. It is NEVER skipped, compressed into one message, or reduced to the agent's own assumptions — for EVERY role with an active search (offer to defer inbound-only roles). Run steps 1–5 for one role at a time, one role per message.
 
-1. **Propose first.** Show the user the drafted screening prompt as a short readable summary: hard checks, the 4 criteria (academic excellence / company quality / career trajectory / role fit), disqualifiers, and the seed-company list. The proposal should already encode the template's philosophy — filter on **clock speed and a history of crushing whatever they do**, not on years-of-X; hunt stamps of excellence (olympiads, selective shops, OSS, competitive fellowships, founders); recall over precision.
-2. Then ask, per role (clickboxes where possible, free text for the rest):
-   - Must-haves that are truly hard (geo/onsite from Phase 1 default — confirm; visa sponsorship yes/no; language; start-date).
-   - Seniority band (years range or "band by evidence, not years").
-   - Seed companies: propose 5–10 from the JD + company's space; ask the user to add/strike ("which companies' people would you hire on sight?").
-   - Anti-patterns / disqualifiers beyond the base set (tenure <1yr, job-hopping): e.g. big-co-lifer, agency-only, active founder.
-   - Comp band + equity philosophy (stored in role memory ONLY for answering candidate questions — never goes in outreach).
-   - Interview process + panel (who takes the first call?).
-3. Rewrite `/workspace/pipeline/screening/<slug>.md` and `role-<slug>.md` (rubric section) from the answers. The screening prompt IS the filter; keep the "calibration log" section at the bottom, empty but present.
-4. Explain the calibration loop in one paragraph: every Advance/Reject verdict the user gives (dashboard click or chat) updates the rubric — the filter is self-improving, and lessons update both scoring AND sourcing queries.
+1. **Propose — in plain language, clearly labeled as assumptions.** From the JD + company research, show what the agent would look for. Format: a short intro line ("Here's what I'd look for, based on the posting — tell me where I'm wrong"), then 3 bold-led groups in full sentences:
+   - **Must-haves** — the few things that would rule someone out (location/onsite, minimum tenure pattern, anything from the JD that reads non-negotiable). Written as sentences ("They need to be in SF or willing to relocate — the team is in-office 5 days"), never as shorthand like "non-Bay → DQ".
+   - **Strong signals** — what would make the agent excited (evidence of shipping fast, stamps of excellence like competitions/selective shops/OSS, trajectory). Encode the template's philosophy: clock speed and a history of crushing whatever they do, not years-of-X.
+   - **Yellow flags** — patterns to be skeptical of (job-hopping, title inflation, big-co-lifer with no startup evidence).
+   Keep it under ~150 words per role. No grades, no rubric math, no internal jargon — that lives in the screening-prompt file, not the conversation.
+2. **Then interview — the free-float question. MANDATORY, verbatim-ish:** ask in plain chat (not a clickbox): **"Does that match? In your own words — what are you actually looking for here? How do you personally decide someone's worth talking to, and what separates a yes from a no? Ignore my list and just talk."** Wait for the answer. This is the highest-value input of the whole onboarding: the user's own words about how they evaluate candidates. If they answer thinly ("sounds right"), probe once with a concrete follow-up ("Think of the best person you've hired or worked with in this kind of role — what did you see early?"). Save their answer VERBATIM in `role-<slug>.md` under **"Hiring lead's own words"** and reflect it in the screening prompt — it outranks the agent's assumptions wherever they conflict.
+3. **Seed companies — always, for every active role (do not drop this step).** Propose 5–10 companies from the JD + the company's space and ask: **"Which companies' people would you hire on sight? Add or strike freely."** (clickbox multiSelect over the proposals + free-text adds). These drive company-similarity sourcing — the single best-performing search mode. Write the final list into the role file's Pools section.
+4. **Remaining facts** (clickboxes where possible, batched): visa sponsorship yes/no; seniority band (years range or "band by evidence, not years"); comp band + equity philosophy (stored ONLY for answering candidate questions — never in outreach); interview process + who takes the first call.
+5. **Merge and play back.** Rewrite `/workspace/pipeline/screening/<slug>.md` and `role-<slug>.md` from ALL of the above (proposal ± the user's corrections + their verbatim answer + seed list + facts), then play back the merged picture in ≤5 bullets, same natural-language style, and ask "did I get it?". Keep the empty calibration-log section at the bottom of both files.
+
+After the last role: explain the calibration loop in one short paragraph — every Advance/Reject verdict the user gives (dashboard click or chat) updates these criteria, so the filter is self-improving, and lessons update both scoring AND sourcing queries.
 
 ## Phase 6 — Outreach: channels, voice, templates, authorization
 
 1. **Channels** — clickbox (multiSelect), header "Channels": LinkedIn (Recommended — primary), Email, "None yet — build shortlists only".
-   - LinkedIn: whose seat/identity? What tier (Sales Navigator / Recruiter / basic — affects search recipes and InMail budget)? First trigger session verifies the tier in-browser. Login happens in-browser via `request_browser_input` when first needed.
+   - LinkedIn: whose seat/identity? What tier (Sales Navigator / Recruiter / basic — affects search recipes and InMail budget)? Login and actual tier are verified in-browser during Phase 9's go-live check — record the answers now, verify then.
    - Email: `request_connected_account` (gmail/outlook). Note: template experience is that email response rates are poor — fallback only.
 2. **Voice file** — create `/workspace/pipeline/outreach/_company-voice.md` from `templates/voice-file.md`, filled with Phase 1's claims bank. Ask the user to paste 1–2 outreach messages they (or their founder) have actually SENT that got replies — those calibrate tone and length better than any description. House defaults unless overridden: ~50–90 words, hook-first, name-swap-only personalization, no comp numbers in outreach, fixed A/B templates with variant logged for reply-rate comparison.
 3. **Per-role templates** — draft `/workspace/pipeline/outreach/<slug>.md` (Variant A cred-stack, Variant B stealth/asymmetry — adapt skeleton names to the company's story) and show them for approval. Sent verbatim after approval; `{{first_name}}` is the only substitution.
@@ -155,8 +170,16 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
 1. **Rewrite `/workspace/CLAUDE.md`** for this customer: keep the template's operating rules (pipeline stages, write discipline, recall-over-precision calibration loop, honesty, scope-ends-at-booked-interview) but substitute their company, hiring lead, ATS/system of record, sourced-pool storage choice, autonomy model, channels, booking link, timezone, trigger table, and role list. Strip every Gamut/Datawizz-specific fact.
 2. **Fill placeholders:** sweep `/workspace/CLAUDE.md` and `/workspace/.claude/skills/` for `{{...}}` tokens shipped by the template bundle (`{{COMPANY}}`, `{{BOOKING_LINK}}`, `{{AGENT_SOURCED_TAG_ID}}`, `{{FOUNDER}}`, trigger times, etc.) and replace them with onboarding answers. `{{AGENT_SOURCED_TAG_ID}}`: on the Ashby branch, create (or find) an `agent-sourced` candidate tag and substitute its id.
 3. Seed memory: `user-<name>.md` (hiring lead profile), `project-<company>-context.md`, `reference-<ats>-conventions.md`, per-role files already exist. Index everything in MEMORY.md.
-4. Delete `/workspace/pipeline/onboarding-state.json`.
-5. **Summary message** to the user: table of roles (visible / searching daily / outreach status), the trigger schedule, what happens tomorrow morning, and the 3 things they should do first (e.g. connect LinkedIn in the first search session, click Advance on the first shortlist, give feedback on anything that looks wrong — the agent calibrates from it).
+4. **Bookmarks — few and high-value only.** Write `/workspace/bookmarks.json` with AT MOST: the booking link, the ATS web app (e.g. `https://app.ashbyhq.com`), the dashboard, and the registry Sheet URL (only if the Sheet option was chosen). NOTHING else — never bookmark working folders (shortlists, reports, pipeline dirs) or internal files; the dashboard is the window into those. This rule holds after onboarding too.
+5. → Phase 9 immediately, same session. The wrap-up summary comes AFTER the go-live check, not here.
+
+## Phase 9 — Go-live check (LinkedIn + first sourcing run)
+
+Setup isn't done until it's been seen working. Two steps, in order:
+
+1. **Verify LinkedIn login in the browser, now** (if LinkedIn was chosen in Phase 6). `browser_open("https://www.linkedin.com/feed/")` → check the state: logged into the RIGHT account (the seat from Phase 6)? If not, `request_browser_input`: "Complete the LinkedIn login so the agent can source and message candidates." Confirm the session survives a reload, note the actual seat tier you can see (Sales Navigator / Recruiter / basic) in the role files and CLAUDE.md if it differs from what the user said. If the user doesn't respond, record it as the one pending item — do not silently skip.
+2. **Run the first sourcing pass, live, end-to-end** — a compact version of the daily search (~15 minutes, one role: the active role the user cares most about — ask if unclear). Follow CLAUDE.md's search workflow with small caps (≈1–2 search recipes, ~10–20 longlisted, score against the Phase 5 criteria, shortlist the top few). Then VERIFY the plumbing on real data: longlist file written (and registry synced, if Sheet mode) → shortlist artifact saved + delivered → dashboard renders the candidates (open it and look) → Advance buttons present. Fix anything broken before wrapping up.
+3. **Wrap-up summary** (this is the onboarding's last message): the first shortlist ("here are your first N candidates — click Advance on anyone you'd talk to"), a table of roles (visible / searching daily / outreach status), the trigger schedule and what happens tomorrow morning, plus anything pending (deferred phases, LinkedIn not logged in). Then delete `/workspace/pipeline/onboarding-state.json` and mark the last checklist task completed.
 
 ---
 
@@ -165,7 +188,7 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
 - All `AskUserQuestion` headers ≤12 chars; make the recommended option first and suffix "(Recommended)".
 - Ask AT MOST 4 questions per call; group related ones.
 - Never ask something inferable from the JD, the website, or an earlier answer. Every question should change what gets built.
-- If the user skips/defers a question, record `"deferred"` in onboarding-state.json and move on — flag deferred items in the Phase 8 summary.
+- If the user skips/defers a question, record `"deferred"` in onboarding-state.json and move on — flag deferred items in the Phase 9 wrap-up summary.
 
 ## Files this skill creates
 
@@ -180,3 +203,5 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
 | No-ATS pipeline store | `/workspace/pipeline/atsless/candidates.jsonl` |
 | Non-Ashby ATS adapter | `/workspace/.claude/skills/<ats>-ats/` |
 | Rewritten agent manual | `/workspace/CLAUDE.md` |
+| Bookmarks (booking link, ATS, dashboard, Sheet only) | `/workspace/bookmarks.json` |
+| First shortlist (go-live check) | `/workspace/pipeline/shortlists/<slug>-<date>.md` |
