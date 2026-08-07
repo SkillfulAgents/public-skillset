@@ -20,6 +20,10 @@ Personal nutrition tracker you can message naturally: describe a meal (or send a
 
 Keeps the team fed: runs the recurring weekly grocery/kitchen stock order, handles one-off Slack requests, and organizes daily lunch/dinner orders. Places real orders through the built-in browser on your logged-in shopping accounts, with careful records of everything bought.
 
+### OpenSlide Studio
+
+Slide-deck agent built on the open-slide framework — slides are React components on a fixed 1920×1080 canvas, and the dashboard *is* the OpenSlide app: a searchable deck library, editing and presentation views, live HMR previews, reusable themes, and inspector-comment-driven edits. Ships with a stock Getting Started deck; no accounts or API keys needed.
+
 ### Outbound Campaign Agent
 
 Vendor-neutral outbound sales motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Swappable adapters for CRM, sender, enrichment, and calendar; nothing sends until onboarding writes your config.
@@ -53,6 +57,11 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
 │   │   ├── grocery-baseline.md
+│   │   └── .claude/skills/...
+│   ├── open-slide-studio/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   ├── artifacts/     (the OpenSlide app = the dashboard)
 │   │   └── .claude/skills/...
 │   ├── outbound-campaign-agent/
 │   │   ├── CLAUDE.md

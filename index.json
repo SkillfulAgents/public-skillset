@@ -29,6 +29,12 @@
       "version": "1.0.0"
     },
     {
+      "name": "OpenSlide Studio",
+      "path": "agents/open-slide-studio/",
+      "description": "Slide studio built on OpenSlide \u2014 creates, edits, and presents React-based slide decks in a native dashboard with a searchable deck library, live-updating previews, reusable themes, and inspector-comment editing.",
+      "version": "1.0.0"
+    },
+    {
       "name": "Outbound Campaign Agent",
       "path": "agents/outbound-campaign-agent/",
       "description": "Runs an end-to-end personalized outbound motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Vendor-neutral through swappable adapters.",

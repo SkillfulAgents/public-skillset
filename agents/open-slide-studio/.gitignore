@@ -1,0 +1,13 @@
+.env
+.browser-profile/
+.claude/projects/
+.claude/sessions/
+.claude/session-env/
+.claude/tasks/
+.claude/shell-snapshots/
+downloads/
+uploads/
+artifacts/*/dashboard.log
+artifacts/*/screenshot.png
+artifacts/*/node_modules/
+artifacts/*/dist/
