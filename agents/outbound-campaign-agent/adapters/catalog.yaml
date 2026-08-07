@@ -1,0 +1,140 @@
+# Vendor catalog: the interview menu for each capability slot.
+#
+# This file exists so onboarding asks "which of these do you use?" instead of
+# reciting whichever adapters happen to ship with the template. The shipped
+# modules are reference implementations, not the universe of choices.
+#
+# Fields per option:
+#   name     adapter module slug (adapters/<slot>/<name>.py once it exists)
+#   label    what the operator sees in the multiple-choice question
+#   builtin  true = a working implementation ships with the template
+#   env      env var NAMES the vendor will likely need (hint for the scaffolder;
+#            values always live in .env, never in config)
+#   note     one line of context worth saying out loud
+#
+# Options are ordered by how often real teams answer with them. Onboarding
+# presents the top options plus an automatic "Other" free-text path; a vendor
+# chosen that has no builtin gets a scaffolded stub via scaffold_adapter.py.
+
+sourcing:
+  - name: csv
+    label: CSV / spreadsheet export
+    builtin: true
+    note: Sales Navigator, Apollo, Clay, and most list tools export here. The lowest-friction start.
+  - name: apollo
+    label: Apollo (saved search / list API)
+    env: [APOLLO_API_KEY]
+    note: Pull directly from an Apollo saved search instead of exporting by hand.
+  - name: clay
+    label: Clay table
+    env: [CLAY_API_KEY]
+    note: Read rows from a Clay table or webhook them in.
+  - name: crm_list
+    label: A list in our CRM
+    note: HubSpot / Salesforce / Attio list or view. Scaffolded against that CRM's API.
+
+enrichment:
+  - name: apollo
+    label: Apollo
+    builtin: true
+    env: [APOLLO_API_KEY]
+    note: People match, identity-gated. LinkedIn first, then name plus domain.
+  - name: clay
+    label: Clay
+    env: [CLAY_API_KEY]
+    note: Waterfall enrichment via a Clay table or routine.
+  - name: zoominfo
+    label: ZoomInfo
+    env: [ZOOMINFO_API_KEY]
+  - name: clearbit
+    label: Clearbit / HubSpot Breeze
+    env: [CLEARBIT_API_KEY]
+  - name: hunter
+    label: Hunter.io
+    env: [HUNTER_API_KEY]
+    note: Email finding and verification only, no firmographics.
+
+sender:
+  - name: gmail
+    label: Gmail / Google Workspace
+    builtin: true
+    note: Sends through the connected-account proxy.
+  - name: outlook
+    label: Outlook / Microsoft 365
+    note: Microsoft Graph sendMail. Scaffolded on choice.
+  - name: instantly
+    label: Instantly
+    env: [INSTANTLY_API_KEY]
+    note: Sequencer with its own mailbox rotation and warmup.
+  - name: smartlead
+    label: Smartlead
+    env: [SMARTLEAD_API_KEY]
+  - name: lemlist
+    label: Lemlist
+    env: [LEMLIST_API_KEY]
+  # dryrun is deliberately not listed: it is a mode, not a vendor. Every
+  # workspace starts on it regardless of which sender the team chose, and
+  # switches only after the operator has reviewed real dry-run output.
+
+crm:
+  - name: sqlite
+    label: None / local tracking is fine
+    builtin: true
+    note: The built-in local database. Zero setup, single-workspace scope.
+  - name: hubspot
+    label: HubSpot
+    note: Connected-account proxy or private app token.
+  - name: salesforce
+    label: Salesforce
+    env: [SALESFORCE_INSTANCE_URL]
+  - name: attio
+    label: Attio
+    env: [ATTIO_API_KEY]
+  - name: pipedrive
+    label: Pipedrive
+    env: [PIPEDRIVE_API_KEY]
+
+calendar:
+  - name: google
+    label: Google Calendar
+    builtin: true
+    note: Reads each sender's calendar via the connected-account proxy.
+  - name: outlook
+    label: Outlook / Microsoft 365 Calendar
+    note: Microsoft Graph calendarView. Scaffolded on choice.
+  - name: calendly
+    label: Calendly
+    env: [CALENDLY_API_KEY]
+    note: Reads scheduled events from the Calendly API instead of the mailbox calendar.
+  - name: calcom
+    label: Cal.com
+    env: [CALCOM_API_KEY]
+
+suppression:
+  - name: crm
+    label: Check the CRM for anyone already engaged
+    builtin: true
+    note: Uses whatever the crm slot is set to. The usual first layer.
+  - name: local
+    label: Local seen-set and domain blocklist
+    builtin: true
+    note: Files in data/. The usual second layer, and the floor if there is no CRM.
+  - name: dnc_list
+    label: An external do-not-contact list
+    note: A list that lives outside the CRM (compliance export, partner list). Scaffolded on choice.
+
+notify:
+  - name: slack
+    label: Slack
+    builtin: true
+    env: [SLACK_BOT_TOKEN]
+    note: Channel for routine output, DM or channel for escalations.
+  - name: email
+    label: Email
+    note: Digest and escalations to an inbox. Scaffolded on choice.
+  - name: teams
+    label: Microsoft Teams
+    note: Incoming webhook or Graph. Scaffolded on choice.
+  - name: discord
+    label: Discord
+    env: [DISCORD_WEBHOOK_URL]

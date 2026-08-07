@@ -1,0 +1,312 @@
+version: 1
+company:
+  name: Northwind Logistics
+  product_name: Northwind
+  website: https://northwind.example
+  forbidden_names:
+  - ProjectFalcon
+  brand_public_from: '2026-01-01'
+operator:
+  name: Alex Rivera
+  title: Head of Growth
+  email: alex@northwind.example
+  phone: ''
+  timezone: America/New_York
+senders:
+- id: alex
+  email: alex@northwind.example
+  display_name: Alex Rivera
+  calendar_link: https://cal.com/alexrivera/15min
+  calendar_id: alex@northwind.example
+  daily_email_cap: 25
+  daily_linkedin_invite_cap: 20
+  status: live
+- id: mira
+  email: mira@northwind.example
+  display_name: Mira Osei
+  calendar_link: https://cal.com/miraosei/15min
+  calendar_id: mira@northwind.example
+  daily_email_cap: 25
+  daily_linkedin_invite_cap: 20
+  status: warming
+  ramp:
+    start_cap: 10
+    target_cap: 25
+    increment_per_week: 5
+limits:
+  enforce_global_governor: true
+  new_prospects_per_day: 20
+  send_days:
+  - tue
+  - wed
+  - thu
+  send_window_local: 09:00-11:00
+  skip_holidays: US
+  cap_increase_requires_approval: true
+adapters:
+  sourcing: csv
+  enrichment:
+  - none
+  sender: dryrun
+  crm: sqlite
+  calendar: none
+  suppression:
+  - crm
+  - local
+  notify: slack
+adapter_config:
+  csv:
+    input_path: data/prospects.csv
+  apollo:
+    api_key_env: APOLLO_API_KEY
+    reject_personal_domains: true
+  gmail:
+    connected_account_id_env: GMAIL_ACCOUNT_ID
+  google_calendar:
+    connected_account_id_env: GOOGLE_CALENDAR_ACCOUNT_ID
+    calendar_id: primary
+  slack:
+    channel: '#gtm'
+    token_env: SLACK_BOT_TOKEN
+  sqlite:
+    path: data/campaigns.db
+icp:
+  version: '1.0'
+  effective_date: 2026-01-01
+  employee_range:
+  - 20
+  - 199
+  geos:
+  - US
+  tiers:
+  - id: T1
+    name: AI-native scale-ups and early B2B SaaS
+    mix_pct: 30
+    criteria:
+      employee_range:
+      - 1
+      - 199
+      industries:
+      - software
+      - saas
+      - technology
+      - artificial intelligence
+      funding_stage:
+      - pre-seed
+      - seed
+      - series-a
+      - series-b
+  - id: T2
+    name: Non-tech professional services
+    mix_pct: 55
+    criteria:
+      employee_range:
+      - 1
+      - 199
+      exclude_industries:
+      - healthcare
+      - hospital
+      - clinic
+  - id: T3
+    name: Healthcare back-office
+    mix_pct: 10
+    criteria:
+      employee_range:
+      - 1
+      - 199
+      industries:
+      - healthcare
+      - medical
+      - dental
+      - veterinary
+      signals:
+      - back_office_only
+  - id: T4
+    name: Enterprise, warm intro only
+    mix_pct: 5
+    outbound_allowed: false
+    criteria:
+      employee_range:
+      - 200
+      - 100000
+  disqualifiers:
+  - id: too_small
+    rule: employees < 20
+  - id: no_ops_function
+    rule: no dedicated ops or admin function at any size
+  - id: failed_ai_deployment
+    rule: failed AI deployment in the last 12 months
+  - id: regulated_frontline
+    rule: clinical or regulated front-office workflows
+  - id: competitor_installed
+    rule: bought a competing platform in the last 12 months
+  buyer_tiers:
+  - id: A
+    label: decision maker
+    titles:
+    - CEO
+    - Founder
+    - Co-Founder
+    - COO
+    - President
+    - Owner
+  - id: B
+    label: champion
+    titles:
+    - Chief of Staff
+    - Head of Operations
+    - Head of Sales
+    - Head of Marketing
+    - VP Operations
+    - VP RevOps
+    - General Manager
+  - id: C
+    label: operational owner
+    titles:
+    - Director of Operations
+    - Director of RevOps
+    - Operations Manager
+    - Marketing Manager
+  lead_with_tier: B
+  max_contacts_per_company: 3
+  min_days_between_same_company_touches: 2
+positioning:
+  wedge: Freight brokers stop rekeying load data between TMS and email.
+  pain: Manual load entry across three systems.
+  primary_frame: The dominant value framing used in openers.
+  proof_metric: 8+ hrs/week per dispatcher
+  not_a:
+  - TMS
+  - load board
+  differentiators:
+  - audience: regulated
+    claim: 'Security and control: sandboxed execution, scoped permissions, full audit log.'
+  use_cases_file: positioning/use-cases.json
+  positioning_file: positioning/positioning.md
+cadence:
+  name: standard-6-step
+  stop_on_reply: true
+  stop_on_meeting: true
+  steps:
+  - day: 0
+    channel: linkedin_invite
+    intent: connect
+  - day: 0
+    channel: email
+    intent: opener
+  - day: 3
+    channel: linkedin_message
+    intent: on_accept
+    condition: invite_accepted
+  - day: 4
+    channel: email
+    intent: bump
+  - day: 9
+    channel: email
+    intent: value_add
+  - day: 14
+    channel: linkedin_message
+    intent: final_nudge
+message_standards:
+  max_words: 90
+  max_subject_chars: 40
+  forbid_em_dashes: true
+  forbid_emojis_in_subject: true
+  forbid_all_caps_subject: true
+  require_blank_line_paragraphs: true
+  max_sentences_per_paragraph: 3
+  single_cta: true
+  forbid_tracking_pixels: true
+  forbid_link_trackers: true
+  cta:
+    type: self_serve
+    url: https://northwind.example/try
+    meeting_ask: 15 min Tue or Wed?
+  signature:
+    lines:
+    - '{operator.name}'
+    - '{operator.title}, {company.name}'
+    - '{operator.email}'
+  min_confidence_to_autosend: 0.7
+suppression:
+  fail_closed: true
+  match_on:
+  - email
+  - linkedin_url
+  - company_domain
+  suppress_company_states:
+  - signup
+  - open_deal
+  - meeting_held
+  - customer
+  local_seen_set: data/seen.json
+  blocklist_domains_file: data/blocklist_domains.json
+reporting:
+  n_floor: 10
+  track_opens: false
+  primary_metrics:
+  - bounce_rate
+  - reply_rate
+  - positive_reply_rate
+  - meetings_booked
+  - meetings_held
+  group_by:
+  - icp_tier
+  - industry
+  - title_cluster
+  - cadence_step
+  - send_day
+  - variant
+  windows:
+  - week
+  - month
+  - quarter
+  deliverability:
+    bounce_rate_warn: 0.02
+    bounce_rate_halt: 0.05
+    check_spf_dkim_dmarc: true
+  schedule:
+    weekly_report_cron: 0 15 * * 5
+    cadence_tick_cron: 0 9 * * 2-4
+approval_gates:
+  first_batch_of_campaign: true
+  new_template_copy: true
+  new_campaign_activation: true
+  cap_increase: true
+  out_of_icp_send: true
+  auto_proceed_after_approved: 3
+escalation:
+  digest_to: '#growth-northwind'
+  escalate_to: alex@northwind.example
+  escalate_on:
+  - positive_reply
+  - meeting_request
+  - bounce_rate_breach
+  - suppression_unavailable
+  - cap_breach
+  quiet_hours_local: 18:00-08:00
+voice:
+  samples_file: positioning/voice-samples.md
+  notes: Plain and short. Names the system by name. Never opens with a compliment.
+  banned_phrases:
+  - circling back
+  - just following up
+  - hope this finds you well
+  - synergy
+  - revolutionary
+  - game changer
+do_not_touch:
+  companies:
+  - Redline Freight
+  domains:
+  - bigcustomer.example
+  people: []
+  geos: []
+  reason_required: true
+  notes:
+    Redline Freight: largest customer, direct competitor of theirs
+    bigcustomer.example: customer since 2024, account team owns the relationship
+first_run:
+  goal: Source 10 freight brokers, qualify, enrich, draft Day-0 openers, send nothing.
+  batch_size: 10
+  require_operator_review: true

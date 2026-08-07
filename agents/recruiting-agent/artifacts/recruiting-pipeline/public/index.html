@@ -1,0 +1,4724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Recruiting Pipeline</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --fg: #14171f;
+    --muted: #6b7280;
+    --muted-2: #9ca3af;
+    --border: #e4e7eb;
+    --border-strong: #d3d8de;
+    --accent: #2563eb;
+    --accent-soft: #eff4ff;
+    --score-hi: #15803d;
+    --score-mid: #b45309;
+    --score-lo: #9ca3af;
+    --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 3px rgba(16, 24, 40, 0.04);
+    --radius: 8px;
+    --gap: 16px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+      Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px 56px; }
+
+  /* ---------- Header ---------- */
+  header.app {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .brand h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .brand .totals {
+    color: var(--muted);
+    font-size: 12.5px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .brand .totals b { color: var(--fg); font-weight: 600; }
+  .brand .totals .dot { color: var(--border-strong); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .refreshed { text-align: right; line-height: 1.3; }
+  .refreshed .label {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 10px;
+    color: var(--muted-2);
+    display: block;
+  }
+  .refreshed .val { color: var(--fg); font-weight: 600; font-size: 12.5px; }
+  button.btn {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--surface);
+    color: var(--fg);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    padding: 7px 13px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.12s, border-color 0.12s;
+  }
+  button.btn:hover { background: var(--surface-2); border-color: var(--muted-2); }
+  button.btn:active { background: #eef0f3; }
+  button.btn[disabled] { opacity: 0.55; cursor: default; }
+
+  /* ---------- Tabs ---------- */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .tab {
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: var(--muted);
+    padding: 12px 14px 11px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .tab:hover { color: var(--fg); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab .count {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+  .tab.active .count { background: var(--accent-soft); border-color: #d5e2ff; color: var(--accent); }
+  .tabs-sep { border-bottom: 1px solid var(--border); }
+
+  /* ---------- Panels ---------- */
+  .panel { display: none; padding-top: 20px; }
+  .panel.active { display: block; }
+
+  /* ---------- Role pills ---------- */
+  .role-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .role-bar .rb-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-2);
+    font-weight: 600;
+    margin-right: 2px;
+  }
+  .pill {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    background: var(--surface);
+    color: var(--fg);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pill:hover { border-color: var(--muted-2); }
+  .pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .pill .pill-count {
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0 7px;
+    border-radius: 999px;
+  }
+  .pill.active .pill-count { background: rgba(255, 255, 255, 0.24); }
+
+  /* ---------- Tiles ---------- */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .tile .t-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .tile .t-value {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .tile .t-sub { font-size: 11.5px; color: var(--muted-2); margin-top: 2px; }
+  .tile.accent .t-value { color: var(--accent); }
+  .tile.good .t-value { color: var(--score-hi); }
+  .tile.clickable { cursor: pointer; transition: border-color 0.12s, box-shadow 0.12s; }
+  .tile.clickable:hover { border-color: var(--border-strong); box-shadow: 0 2px 8px rgba(16,24,40,0.08); }
+  .tile.clickable.active-filter { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
+
+  /* ---------- Controls ---------- */
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    box-shadow: var(--shadow);
+  }
+  .ctl { display: flex; align-items: center; gap: 7px; }
+  .ctl label {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .search-box { position: relative; flex: 1 1 240px; min-width: 200px; }
+  .search-box input {
+    width: 100%;
+    font: inherit;
+    font-size: 13px;
+    padding: 8px 10px 8px 30px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .search-box .sicon {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-2);
+    font-size: 13px;
+    pointer-events: none;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+  select {
+    font: inherit;
+    font-size: 13px;
+    padding: 7px 9px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--fg);
+    cursor: pointer;
+  }
+  input[type="range"] { accent-color: var(--accent); cursor: pointer; width: 120px; }
+  .minscore-val {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    min-width: 22px;
+    text-align: right;
+  }
+  .result-count { margin-left: auto; color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+
+  /* ---------- Table ---------- */
+  .table-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+  }
+  thead th.sortable { cursor: pointer; user-select: none; }
+  thead th.sortable:hover { color: var(--fg); }
+  thead th .arrow { color: var(--accent); margin-left: 3px; font-size: 10px; }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody tr.candidate-row { cursor: pointer; }
+  tbody tr.candidate-row:hover { background: var(--surface-2); }
+  tbody tr.candidate-row.open { background: var(--accent-soft); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .c-name { font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .c-name .exp {
+    color: var(--muted-2);
+    font-size: 10px;
+    transition: transform 0.12s;
+    display: inline-block;
+    width: 10px;
+  }
+  tr.open .c-name .exp { transform: rotate(90deg); color: var(--accent); }
+  .c-current { }
+  .c-current .co { color: var(--muted); font-size: 12px; }
+  .c-loc { color: var(--muted); white-space: nowrap; }
+  .num { font-variant-numeric: tabular-nums; }
+  .score { font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .score-hi { color: var(--score-hi); }
+  .score-mid { color: var(--score-mid); }
+  .score-lo { color: var(--score-lo); }
+  .score-null { color: var(--muted-2); font-weight: 500; }
+
+  .chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  .flag-icon {
+    color: #d97706;
+    cursor: help;
+    font-size: 14px;
+  }
+  .flag-none { color: var(--border-strong); }
+  .c-source { color: var(--muted); font-size: 12px; }
+  .c-source .kind { color: var(--fg); font-weight: 500; }
+
+  /* ---------- LinkedIn link/badge ---------- */
+  .li-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0a66c2;
+    background: #eaf3fb;
+    border: 1px solid #cfe4f7;
+    border-radius: 5px;
+    padding: 3px 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.3;
+  }
+  .li-link:hover { background: #d8ebfa; border-color: #0a66c2; text-decoration: none; }
+  .li-link:focus-visible { outline: 2px solid #0a66c2; outline-offset: 1px; }
+  .li-link .li-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px; height: 15px;
+    background: #0a66c2;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .li-link .arr { font-size: 11px; color: #0a66c2; }
+  .li-detail-link { font-family: var(--mono); font-size: 11.5px; word-break: break-all; }
+
+  /* expansion */
+  tr.detail-row > td { background: var(--surface-2); padding: 0; border-bottom: 1px solid var(--border); }
+  .detail {
+    padding: 16px 18px 18px 34px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .detail .d-block .d-h {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .detail .headline-txt { font-style: italic; color: var(--fg); }
+  .detail .reasoning-txt { color: var(--fg); max-width: 900px; }
+  .detail .flags-txt { color: #92400e; background: #fffbeb; border: 1px solid #fde68a; padding: 6px 10px; border-radius: 6px; max-width: 900px; }
+  .kv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px 22px;
+    max-width: 1000px;
+  }
+  .kv { font-size: 12.5px; display: flex; gap: 6px; }
+  .kv .k { color: var(--muted); font-weight: 600; min-width: 78px; }
+  .kv .v { color: var(--fg); word-break: break-word; }
+  .kv .v.mono { font-family: var(--mono); font-size: 11.5px; }
+  .kv .v.empty { color: var(--muted-2); }
+
+  /* ---------- Tab 2: Ashby ---------- */
+  .note-banner {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #713f12;
+    border-radius: var(--radius);
+    padding: 12px 15px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .note-banner .ni { font-size: 16px; line-height: 1.3; }
+  .note-banner b { font-weight: 700; }
+
+  .status-rollup {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .status-rollup .sr {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 13px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .status-rollup .sr .n { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .status-rollup .sr .l { font-size: 12px; color: var(--muted); }
+
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: var(--gap);
+    margin-bottom: 22px;
+  }
+  .job-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px 18px;
+  }
+  .job-card .jc-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+  .job-card .jc-title { font-size: 15px; font-weight: 700; }
+  .job-card .jc-total { font-size: 12.5px; color: var(--muted); }
+  .job-card .jc-total b { color: var(--fg); font-size: 14px; }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 128px 1fr 52px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+  }
+  .bar-row .bl { font-size: 12px; color: var(--fg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { background: #eef0f3; border-radius: 4px; height: 16px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; min-width: 2px; transition: width 0.3s; }
+  .bar-count { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 12.5px; }
+
+  .section-h {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 4px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-h .sub { font-weight: 500; color: var(--muted); font-size: 12.5px; }
+
+  /* ---------- States ---------- */
+  .state {
+    text-align: center;
+    color: var(--muted);
+    padding: 48px 20px;
+    font-size: 14px;
+  }
+  .state.err { color: #b91c1c; }
+  .empty-cell { text-align: center; color: var(--muted); padding: 32px; }
+  .muted-dash { color: var(--muted-2); }
+  .spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border-strong);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    vertical-align: -3px;
+    margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- Ashby sync badge ---------- */
+  .sync-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fg);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 11px;
+    white-space: nowrap;
+  }
+  .sync-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex: none;
+  }
+
+  /* ---------- sync warning banners ---------- */
+  #syncBanner { display: none; }
+  .warn-banner, .err-banner {
+    border-radius: var(--radius);
+    padding: 11px 15px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .warn-banner { background: #fffbeb; border: 1px solid #fde68a; color: #713f12; }
+  .err-banner { background: #fef2f2; border: 1px solid #fecaca; color: #7f1d1d; }
+  .warn-banner .ni, .err-banner .ni { font-size: 15px; line-height: 1.3; }
+  .err-detail { opacity: 0.85; font-family: var(--mono); font-size: 11.5px; }
+
+  /* ---------- empty-state role panel ---------- */
+  .empty-panel { display: none; }
+  .ep-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 26px 30px;
+    max-width: 760px;
+  }
+  .ep-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .ep-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .ep-status {
+    font-size: 14px;
+    color: var(--fg);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .ep-status.new-role { border-left-color: #7c3aed; background: #f5f3ff; color: #4c1d95; }
+  .ep-status.passive { border-left-color: #d97706; }
+  .ep-status.inbound-only { border-left-color: #0d9488; }
+  .ep-note { font-size: 13px; color: var(--muted); }
+  .ep-note b { color: var(--fg); font-weight: 600; }
+  .ep-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; align-items: center; }
+  .src-chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+    text-transform: capitalize;
+  }
+  .src-active { background: #dbeafe; color: #1e40af; }
+  .src-passive { background: #fef3c7; color: #92400e; }
+  .src-inbound-only { background: #ccfbf1; color: #115e59; }
+  .src-none { background: #ede9fe; color: #5b21b6; }
+  .ep-jobid { font-size: 11px; color: var(--muted-2); font-family: var(--mono); }
+
+  /* ---------- inbound evidence cell ---------- */
+  .ev-cell { max-width: 480px; }
+  .ev-first {
+    color: var(--fg);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .ev-more {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .ev-list { margin: 0; padding-left: 18px; max-width: 900px; }
+  .ev-list li { margin-bottom: 5px; color: var(--fg); }
+
+  /* ---------- Tab 3: Active pipeline columns ---------- */
+  .pipe-cols {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .pipe-col {
+    flex: 1 1 0;
+    min-width: 244px;
+    max-width: 360px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 250px);
+    box-shadow: var(--shadow);
+  }
+  .pipe-col-head {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: var(--surface-2);
+    flex: none;
+  }
+  .pipe-col-head .pc-count {
+    font-size: 11px;
+    font-weight: 700;
+    background: #eef0f3;
+    color: var(--muted);
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pipe-col.offer .pipe-col-head { color: var(--score-hi); }
+  .pipe-col.offer .pc-count { background: #dcfce7; color: #166534; }
+  .pipe-col.other .pipe-col-head { color: var(--muted); }
+  .pipe-col-body {
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pipe-col-empty { color: var(--muted-2); font-size: 12.5px; text-align: center; padding: 14px 0; }
+  .pipe-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    box-shadow: var(--shadow);
+  }
+  .pipe-card .pc-name {
+    font-weight: 600;
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .pipe-card .pc-role { color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .pipe-card .pc-role .co { color: var(--muted-2); }
+  .pipe-card .pc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 6px;
+    font-size: 11.5px;
+    color: var(--muted-2);
+  }
+  .pipe-card .pc-meta .src { color: var(--muted); }
+  .pc-stale-amber { color: var(--score-mid); font-weight: 600; }
+  .pc-stale-red { color: #b91c1c; font-weight: 600; }
+
+  /* agent-rating badge on a pipe card */
+  .pc-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 7px;
+    color: var(--muted);
+  }
+  .pc-rating .pc-rating-score {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    padding: 1px 7px;
+    border-radius: 5px;
+  }
+  .pc-rating .pc-rating-score.score-hi { background: #dcfce7; color: #166534; }
+  .pc-rating .pc-rating-score.score-mid { background: #fef3c7; color: #92400e; }
+  .pc-rating .pc-rating-score.score-lo { background: #f1f5f9; color: #475569; }
+
+  /* interviews logged onto a pipe card */
+  .pc-ivs {
+    margin-top: 9px;
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pc-ivs-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-2);
+    font-weight: 700;
+  }
+  .pc-iv {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface-2);
+    overflow: hidden;
+  }
+  .pc-iv-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 8px;
+    font-size: 11.5px;
+    flex-wrap: wrap;
+  }
+  .pc-iv-when { color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pc-iv-who { color: var(--muted); }
+  .pc-iv-who .who-lbl { color: var(--muted-2); }
+  .pc-iv-spacer { margin-left: auto; }
+
+  /* clickable card header (toggles the Ashby-style timeline) */
+  .pipe-card.expandable .pc-name { cursor: pointer; }
+  .pipe-card .pc-exp {
+    color: var(--muted-2);
+    font-size: 9px;
+    width: 9px;
+    flex: none;
+    transition: transform 0.12s;
+    display: inline-block;
+  }
+  .pipe-card.tl-open .pc-exp { transform: rotate(90deg); color: var(--accent); }
+  .pipe-card.tl-open { border-color: var(--border-strong); box-shadow: 0 2px 6px rgba(16,24,40,0.10); }
+
+  /* ---------- Ashby-style vertical timeline (expanded card state) ---------- */
+  .pc-timeline {
+    margin-top: 10px;
+    border-top: 1px dashed var(--border);
+    padding-top: 11px;
+  }
+  .pc-timeline .tl-title-lbl {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-2);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .tl { position: relative; padding-left: 20px; }
+  .tl::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item { position: relative; padding-bottom: 13px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -17px;
+    top: 2px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--muted-2);
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .tl-dot.applied { background: #6366f1; }
+  .tl-dot.stage { background: #2563eb; }
+  .tl-dot.stage.current { background: #16a34a; box-shadow: 0 0 0 1px #bbf7d0; }
+  .tl-dot.interview { background: #0a66c2; }
+  .tl-dot.rating { background: #b45309; }
+  .tl-date {
+    font-size: 11px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 1px;
+  }
+  .tl-title { font-size: 12.5px; color: var(--fg); font-weight: 600; }
+  .tl-sub { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+  .tl-current-pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    padding: 0 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .tl-src { color: var(--muted); font-weight: 500; }
+  .tl-empty { font-size: 11.5px; color: var(--muted-2); padding: 2px 0; }
+  /* interview node inside the timeline reuses the .pc-iv machinery */
+  .tl-item .pc-iv { margin-top: 2px; }
+
+  /* upcoming-interviews strip */
+  .up-strip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 11px 14px;
+    margin-bottom: 16px;
+  }
+  .up-strip-head {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .up-strip-head .up-count {
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid #d5e2ff;
+    padding: 0 7px;
+    border-radius: 999px;
+  }
+  .up-list { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
+  .up-item {
+    flex: 0 0 auto;
+    min-width: 190px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 8px 11px;
+  }
+  .up-item .up-cand { font-weight: 700; font-size: 13px; }
+  .up-item .up-role { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+  .up-item .up-when {
+    font-size: 12px;
+    color: var(--fg);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    margin-top: 5px;
+  }
+  .up-item .up-who { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .up-empty { font-size: 12.5px; color: var(--muted-2); }
+
+  /* ---------- Leads tab (per-role Ashby "Leads" kanban) ----------
+     Reuses the Active-pipeline column machinery (.pipe-cols/.pipe-col/...) and the
+     shared role-bar pill switcher, so it looks and behaves identically. */
+  .pipe-col.replied .pipe-col-head { color: var(--score-hi); }
+  .pipe-col.replied .pc-count { background: #dcfce7; color: #166534; }
+
+  .lead-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .lead-src {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .lead-days { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .lead-days.approx { color: var(--muted-2); }
+  .lead-agent {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .lead-agent .pc-rating-score {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    padding: 1px 7px;
+    border-radius: 5px;
+  }
+  /* outreach send-state chip (from the real ledger) */
+  .lead-chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.5;
+    border: 1px solid transparent;
+  }
+  .lead-chip.oc-queued { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+  .lead-chip.oc-sent { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+  .lead-chip.oc-invite { background: #e0e7ff; color: #3730a3; border-color: #c7d2fe; }
+  .lead-chip.oc-pending { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+  .lead-chip.oc-accepted { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+  .lead-chip.oc-msg { background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+  .lead-chip.oc-replied { background: #dcfce7; color: #166534; border-color: #86efac; }
+  .lead-chip.oc-shared { background: #ede9fe; color: #5b21b6; border-color: #ddd6fe; }
+  .lead-chip.oc-booked { background: #dcfce7; color: #15803d; border-color: #86efac; }
+  .lead-chip.oc-skipped { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+  .lead-chip.oc-held { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
+  .lead-chip.oc-closed { background: #f1f5f9; color: #475569; border-color: var(--border); }
+  .lead-chip.oc-other { background: #f1f5f9; color: #475569; border-color: var(--border); }
+
+  /* Outreach timeline dots (Leads expanded card) — reuse .tl machinery */
+  .tl-dot.oc-queued { background: #d97706; }
+  .tl-dot.oc-invite { background: #4f46e5; }
+  .tl-dot.oc-pending { background: #d97706; }
+  .tl-dot.oc-accepted { background: #059669; }
+  .tl-dot.oc-msg { background: #2563eb; }
+  .tl-dot.oc-followup { background: #0284c7; }
+  .tl-dot.oc-replied { background: #16a34a; }
+  .tl-dot.oc-shared { background: #7c3aed; }
+  .tl-dot.oc-booked { background: #15803d; }
+  .tl-dot.oc-skipped { background: #dc2626; }
+  .tl-dot.oc-held { background: #ea580c; }
+  .tl-dot.oc-closed { background: #64748b; }
+  .tl-dot.oc-other { background: var(--muted-2); }
+  .tl-msg {
+    margin-top: 5px;
+    padding: 7px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--fg);
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 420px;
+    line-height: 1.45;
+  }
+  .tl-msg .tl-msg-sub {
+    display: block;
+    font-size: 10.5px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+  }
+  .tl-pending-pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    padding: 0 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .tl-yes-pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #065f46;
+    background: #d1fae5;
+    border: 1px solid #a7f3d0;
+    padding: 0 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .tl-no-pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    padding: 0 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  /* provenance badge (only shown when tags include "agent-sourced") */
+  .lead-prov {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: #1e40af;
+    border: 1px solid #d5e2ff;
+    white-space: nowrap;
+  }
+  .leads-foot {
+    margin-top: 22px;
+    font-size: 12px;
+    color: var(--muted-2);
+    font-style: italic;
+  }
+
+  /* ---------- Interviews tab ---------- */
+  .iv-when { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .iv-when .iv-date { color: var(--fg); }
+  .iv-when .iv-time { color: var(--muted); font-size: 12px; }
+  .iv-role { color: var(--fg); }
+  .iv-role .iv-stage { color: var(--muted-2); font-size: 12px; display: block; }
+
+  .st-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  .st-pill .st-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex: none; }
+  .st-pill.upcoming { background: #eff4ff; color: #1e40af; border-color: #d5e2ff; }
+  .st-pill.upcoming .st-dot { background: #2563eb; }
+  .st-pill.completed { background: #f1f5f9; color: #475569; border-color: var(--border); }
+  .st-pill.completed .st-dot { background: #94a3b8; }
+
+  @media (max-width: 640px) {
+    .bar-row { grid-template-columns: 100px 1fr 44px; }
+    .tile .t-value { font-size: 22px; }
+    .header-right { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+  }
+
+  /* ---------- Feedback: Act column (buttons + recorded-verdict chip) ---------- */
+  td.act-col { white-space: nowrap; }
+  .act-cell { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .act-btn {
+    font: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 4px 9px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.35;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.12s, border-color 0.12s;
+  }
+  .act-adv { background: #ecfdf3; color: #15803d; border-color: #bbf7d0; }
+  .act-adv:hover { background: #d5f5e0; border-color: #15803d; }
+  .act-rej { background: #fef2f2; color: #b42318; border-color: #fecaca; }
+  .act-rej:hover { background: #fcdede; border-color: #b42318; }
+  .act-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  /* recorded verdict chip: verdict word tints the chip, suffix tints by state */
+  .fb-chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.5;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .fb-chip.va { color: #166534; }
+  .fb-chip.vr { color: #b42318; }
+  .fb-chip .fb-suffix { font-size: 10px; font-weight: 700; margin-left: 5px; }
+  .fb-suffix.fb-pending { color: #b45309; }
+  .fb-suffix.fb-done { color: #15803d; }
+  .fb-suffix.fb-error { color: #b91c1c; }
+  .fb-suffix.fb-queued { color: #b45309; }
+  .fb-suffix.fb-sent { color: #15803d; }
+  .fb-suffix.fb-shared { color: #6d28d9; }
+  .fb-suffix.fb-booked { color: #166534; }
+  .fb-suffix.fb-skipped { color: #b91c1c; }
+  .fb-change {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .fb-change:hover { text-decoration: underline; }
+
+  /* state + verdict chips reused on the Calibration tab */
+  .st-chip {
+    display: inline-flex;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  .st-chip.pending { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+  .st-chip.done { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+  .st-chip.error { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+  .v-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .v-chip.adv { background: #dcfce7; color: #166534; }
+  .v-chip.rej { background: #fbeaea; color: #b42318; }
+  .v-chip.sm { font-size: 10.5px; padding: 1px 7px; }
+  .ov-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    padding: 0 6px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-left: 5px;
+  }
+
+  /* Alignment chips: aligned / false positive / false negative / unscored */
+  .al-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  .al-chip.aligned { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+  .al-chip.fp { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
+  .al-chip.fn { background: #ede9fe; color: #5b21b6; border-color: #ddd6fe; }
+  .al-chip.unscored { background: #f1f5f9; color: #64748b; border-color: #e2e8f0; }
+  .al-chip.btnish { cursor: pointer; font: inherit; }
+  .al-chip.btnish:hover { filter: brightness(0.97); }
+
+  /* Verdicts table toolbar (alignment filter) */
+  .calib-v-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .calib-v-tools .seg-btn { font-size: 12px; padding: 5px 11px; }
+  .calib-v-count {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .ai-stance {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .ai-score {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ---------- Feedback modal ---------- */
+  .fb-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 24, 40, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+  }
+  .fb-overlay[hidden] { display: none; }
+  .fb-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 44px rgba(16, 24, 40, 0.28);
+    width: 100%;
+    max-width: 470px;
+    padding: 20px 22px 18px;
+  }
+  .fb-cand-name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .fb-cand-role { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .fb-ai-line { margin-top: 13px; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .fb-ai-line b { color: var(--fg); }
+  .fb-override {
+    margin-top: 11px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #713f12;
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .fb-override[hidden] { display: none; }
+  .fb-note {
+    margin-top: 13px;
+    width: 100%;
+    min-height: 88px;
+    resize: vertical;
+    font: inherit;
+    font-size: 13px;
+    padding: 9px 11px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .fb-error {
+    margin-top: 11px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #7f1d1d;
+    border-radius: 6px;
+    padding: 9px 11px;
+    font-size: 12.5px;
+  }
+  .fb-error[hidden] { display: none; }
+  .fb-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .fb-confirm {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .fb-confirm.adv { background: #15803d; }
+  .fb-confirm.adv:hover { background: #166534; }
+  .fb-confirm.rej { background: #dc2626; }
+  .fb-confirm.rej:hover { background: #b91c1c; }
+  .fb-confirm:disabled { opacity: 0.6; cursor: default; }
+
+  /* ---------- Toast ---------- */
+  .fb-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 20px);
+    background: #14171f;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.3);
+    max-width: 480px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 200;
+    text-align: center;
+  }
+  .fb-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* ---------- Calibration tab: alignment by week ---------- */
+  .cw-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  /* segmented source filter (same visual language as .tab / .pill) */
+  .seg {
+    display: inline-flex;
+    flex-wrap: wrap; /* wrap rather than overflow on very narrow screens */
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .seg-btn {
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    background: var(--surface);
+    color: var(--muted);
+    border: none;
+    border-right: 1px solid var(--border);
+    padding: 6px 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .seg-btn:last-child { border-right: none; }
+  .seg-btn:hover { background: var(--surface-2); color: var(--fg); }
+  .seg-btn.active { background: var(--accent); color: #fff; }
+  .seg-btn[disabled] { opacity: 0.5; cursor: default; }
+  .seg-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  .cw-legend {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+  .cw-legend .lg { display: inline-flex; align-items: center; gap: 5px; }
+  .cw-legend .sw {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .cw-legend .sw.ok { background: var(--accent); }
+  .cw-legend .sw.low { background: var(--score-lo); }
+
+  .cw-chart { padding: 14px 14px 2px; }
+  .cw-chart svg { width: 100%; height: auto; display: block; }
+  .cw-grid { stroke: var(--border); stroke-width: 1; }
+  .cw-axis-txt { fill: var(--muted-2); font-size: 10px; font-family: var(--font); }
+  .cw-bar { fill: var(--accent); }
+  .cw-bar.low { fill: var(--score-lo); }
+  .cw-bar-val { fill: var(--fg); font-size: 11px; font-weight: 700; font-family: var(--font); }
+  .cw-bar-val.low { fill: var(--muted); }
+  .cw-wk { fill: var(--muted); font-size: 10.5px; font-weight: 600; font-family: var(--font); }
+  .cw-n { fill: var(--muted-2); font-size: 9.5px; font-family: var(--font); }
+  .cw-none { stroke: var(--border-strong); stroke-width: 2; }
+  .cw-none-txt { fill: var(--muted-2); font-size: 9px; font-style: italic; font-family: var(--font); }
+  .cw-caption {
+    padding: 4px 14px 13px;
+    font-size: 11.5px;
+    color: var(--muted-2);
+    line-height: 1.45;
+  }
+  .cw-empty { padding: 34px 14px; text-align: center; color: var(--muted); font-size: 13.5px; }
+  .cw-week-cell { white-space: nowrap; }
+  /* delta colours: reuse --score-hi for gains, the .v-chip.rej red for drops */
+  .cw-up { color: var(--score-hi); font-weight: 600; }
+  .cw-dn { color: #b42318; font-weight: 600; }
+  .cw-flat { color: var(--muted); }
+  .cw-sub-muted { color: var(--muted-2); font-weight: 400; }
+
+  /* ---------- Calibration tab: lessons list ---------- */
+  .lesson-list { display: flex; flex-direction: column; gap: 10px; }
+  .lesson-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 11px 14px;
+    box-shadow: var(--shadow);
+  }
+  .lesson-item.disagree { border-left-color: #d97706; }
+  .lesson-meta {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .lesson-meta .agree-yes { color: var(--score-hi); }
+  .lesson-meta .agree-no { color: #d97706; }
+  .lesson-text { color: var(--fg); font-size: 13px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<header class="app">
+  <div class="header-inner">
+    <div class="brand">
+      <h1>Recruiting Pipeline</h1>
+      <div class="totals" id="headerTotals"></div>
+    </div>
+    <div class="header-right">
+      <span class="sync-badge" id="syncBadge" title="Open roles are synced live from Ashby">
+        <span class="sync-dot" style="background:#9ca3af"></span> <span id="syncBadgeLabel">Ashby sync: —</span>
+      </span>
+      <div class="refreshed">
+        <span class="label">Data refreshed</span>
+        <span class="val" id="refreshedAt">—</span>
+      </div>
+      <button class="btn" id="refreshBtn" title="Re-read data from disk">
+        <span id="refreshIcon">&#8635;</span> Refresh
+      </button>
+    </div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab active" id="tab-sourced" role="tab" data-tab="sourced">
+      Sourced candidates <span class="count" id="tabc-sourced"></span>
+    </button>
+    <button class="tab" id="tab-leads" role="tab" data-tab="leads">
+      Leads <span class="count" id="tabc-leads"></span>
+    </button>
+    <button class="tab" id="tab-inbound" role="tab" data-tab="inbound">
+      Inbound (Application Review) <span class="count" id="tabc-inbound"></span>
+    </button>
+    <button class="tab" id="tab-active" role="tab" data-tab="active">
+      Active pipeline <span class="count" id="tabc-active"></span>
+    </button>
+    <button class="tab" id="tab-calibration" role="tab" data-tab="calibration">
+      Calibration <span class="count" id="tabc-calibration"></span>
+    </button>
+  </div>
+</header>
+<div class="tabs-sep"></div>
+
+<div class="wrap">
+  <!-- Loading / error -->
+  <div id="globalState" class="state"><span class="spinner"></span> Loading pipeline data…</div>
+
+  <!-- Ashby sync warning/error banner -->
+  <div id="syncBanner"></div>
+
+  <!-- TAB 1 -->
+  <section class="panel active" id="panel-sourced" role="tabpanel" hidden>
+    <div class="role-bar" id="roleBar"></div>
+
+    <!-- Empty-state panel for roles without a longlist -->
+    <div class="empty-panel" id="sourcedEmpty"></div>
+
+    <!-- Full sourced content for roles with a longlist -->
+    <div id="sourcedContent">
+    <div class="tiles" id="tiles"></div>
+    <div class="controls" id="controls">
+      <div class="search-box">
+        <span class="sicon">&#128269;</span>
+        <input type="text" id="search" placeholder="Search name, company, or headline…" autocomplete="off" />
+      </div>
+      <div class="ctl">
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter"><option value="all">All</option></select>
+      </div>
+      <div class="ctl">
+        <label for="minScore">Min score</label>
+        <input type="range" id="minScore" min="0" max="100" step="5" value="0" />
+        <span class="minscore-val" id="minScoreVal">0</span>
+      </div>
+      <div class="ctl ctl-check">
+        <label for="showActioned"><input type="checkbox" id="showActioned" /> Show actioned</label>
+      </div>
+      <span class="result-count" id="resultCount"></span>
+    </div>
+    <div class="table-card">
+      <div class="table-scroll">
+        <table id="candTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="name">Name</th>
+              <th>LinkedIn</th>
+              <th class="sortable" data-sort="company">Current</th>
+              <th class="sortable" data-sort="location">Location</th>
+              <th class="sortable num" data-sort="score">Score</th>
+              <th class="sortable" data-sort="status">Status</th>
+              <th>Flags</th>
+              <th>Source</th>
+              <th>Act</th>
+            </tr>
+          </thead>
+          <tbody id="candBody"></tbody>
+        </table>
+      </div>
+    </div>
+    </div><!-- /#sourcedContent -->
+  </section>
+
+  <!-- TAB: Leads — Ashby "Leads" view per role (New Lead -> Reached Out ->
+       Replied). Read-only mirror of the pre-interview funnel; no Advance/Reject. -->
+  <section class="panel" id="panel-leads" role="tabpanel" hidden>
+    <div id="leadsBanner"></div>
+    <div class="role-bar" id="leadsRoleBar"></div>
+    <div class="tiles" id="leadsTiles"></div>
+    <div id="leadsContent"></div>
+    <div class="leads-foot" id="leadsFoot">All data read live from Ashby (stages + outreach notes). Historical bulk campaign leads are hidden; pre-existing records the agent works appear as “adopted”.</div>
+  </section>
+
+  <!-- TAB 2: Inbound (Application Review) -->
+  <section class="panel" id="panel-inbound" role="tabpanel" hidden>
+    <div class="role-bar" id="inboundRoleBar"></div>
+
+    <!-- Empty-state panel for roles with zero inbound -->
+    <div class="empty-panel" id="inboundEmpty"></div>
+
+    <!-- Ratings content for roles with inbound -->
+    <div id="inboundContent">
+      <div class="tiles" id="inboundTiles"></div>
+      <div class="table-card">
+        <div class="table-scroll">
+          <table id="inboundTable">
+            <thead>
+              <tr>
+                <th>Candidate</th>
+                <th>LinkedIn</th>
+                <th>Applied</th>
+                <th>Source</th>
+                <th>Recommendation</th>
+                <th class="num">Score</th>
+                <th>Evidence</th>
+                <th>Act</th>
+              </tr>
+            </thead>
+            <tbody id="inboundBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: Active pipeline — the single view of active candidates, by stage.
+       Interviews are attributes of each candidate's card; a thin upcoming-week
+       strip sits at the top across all roles. -->
+  <section class="panel" id="panel-active" role="tabpanel" hidden>
+    <div id="upcomingStrip"></div>
+    <div class="role-bar" id="activeRoleBar"></div>
+    <div id="activeContent"></div>
+  </section>
+
+  <!-- TAB 4: Calibration (the hiring lead's Advance/Reject verdicts + what the filter learned) -->
+  <section class="panel" id="panel-calibration" role="tabpanel" hidden>
+    <div class="note-banner">
+      <span class="ni">&#9878;</span>
+      <span>Every <b>Advance</b> / <b>Don't advance</b> you click on the Sourced and Inbound
+      tabs lands here, gets picked up by the recruiter within ~2 min, and tunes the
+      role's filter. Overrides (where you disagreed with the AI) teach it the most.
+      <b>Your clicks</b> = dashboard / chat verdicts. <b>Shadow-rated</b> = agent scored
+      Paraform candidates blind vs. your <span id="calibSorName">Ashby</span> disposition. Role pills + the source
+      filter below scope the whole tab.</span>
+    </div>
+
+    <div class="role-bar" id="calibRoleBar"></div>
+
+    <div class="cw-head" style="margin-bottom:14px">
+      <div class="seg" id="calibFamilySeg" role="group" aria-label="Filter calibration by verdict source">
+        <button class="seg-btn" type="button" data-fam="all">All verdicts</button>
+        <button class="seg-btn" type="button" data-fam="live">Your clicks</button>
+        <button class="seg-btn" type="button" data-fam="shadow">Shadow-rated</button>
+      </div>
+      <div class="cw-legend">
+        <span class="lg"><span class="sw ok"></span>5+ verdicts</span>
+        <span class="lg"><span class="sw low"></span>low n (&lt;5)</span>
+      </div>
+    </div>
+
+    <div class="tiles" id="calibTiles"></div>
+
+    <div class="section-h">Alignment by week
+      <span class="sub">agreement %, ISO weeks (Mon&ndash;Sun); verdicts with no quality call are excluded</span>
+    </div>
+    <div class="table-card" style="margin-bottom:22px">
+      <div class="cw-chart" id="calibWeeklyChart"></div>
+      <div class="cw-caption" id="calibWeeklyCaption"></div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th class="num">Verdicts</th>
+              <th class="num">Aligned</th>
+              <th class="num" title="AI advance, you reject — agent too loose">FP</th>
+              <th class="num" title="AI reject, you advance — agent too tight">FN</th>
+              <th class="num">Agreement</th>
+              <th class="num">&Delta; vs prior week</th>
+            </tr>
+          </thead>
+          <tbody id="calibWeeklyBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-h">Agreement by role <span class="sub" id="calibByRoleSub">agent vs. the hiring lead, from ingested verdicts</span></div>
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th class="num">This week</th>
+              <th class="num">Verdicts</th>
+              <th class="num">Agreement</th>
+              <th class="num" title="AI advance, you reject">FP</th>
+              <th class="num" title="AI reject, you advance">FN</th>
+            </tr>
+          </thead>
+          <tbody id="calibByRoleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-h" style="margin-top:22px"><span id="calibVerdictsTitle">Recent verdicts</span> <span class="sub" id="calibVerdictsSub">newest first</span></div>
+    <div class="table-card">
+      <div class="calib-v-tools">
+        <div class="seg" id="calibAlignSeg" role="group" aria-label="Filter verdicts by alignment">
+          <button class="seg-btn active" type="button" data-align="all">All</button>
+          <button class="seg-btn" type="button" data-align="aligned">Aligned</button>
+          <button class="seg-btn" type="button" data-align="fp" title="AI advanced, you rejected">False positives</button>
+          <button class="seg-btn" type="button" data-align="fn" title="AI rejected, you advanced">False negatives</button>
+          <button class="seg-btn" type="button" data-align="overrides" title="FP + FN">Overrides</button>
+        </div>
+        <div class="calib-v-count" id="calibVerdictsCount"></div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr id="calibVerdictsHead">
+              <th>Date</th>
+              <th>Role</th>
+              <th>Candidate</th>
+              <th>AI stance</th>
+              <th>Your call</th>
+              <th>Alignment</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody id="calibVerdictsBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-h" style="margin-top:22px">Lessons the filter learned <span class="sub" id="calibLessonsSub"></span></div>
+    <div id="calibLessons"></div>
+  </section>
+</div>
+
+<!-- Feedback modal (shared overlay for Advance / Don't advance) -->
+<div id="fbModal" class="fb-overlay" hidden>
+  <div class="fb-modal" role="dialog" aria-modal="true" aria-labelledby="fbCandName">
+    <div class="fb-cand-name" id="fbCandName"></div>
+    <div class="fb-cand-role" id="fbCandRole"></div>
+    <div class="fb-ai-line" id="fbAiLine"></div>
+    <div class="fb-override" id="fbOverride" hidden></div>
+    <textarea id="fbNote" class="fb-note" maxlength="2000"
+      placeholder="Why? (optional — this trains the filter)"></textarea>
+    <div class="fb-error" id="fbError" hidden></div>
+    <div class="fb-modal-actions">
+      <button type="button" class="btn" id="fbCancel">Cancel</button>
+      <button type="button" class="fb-confirm" id="fbConfirm"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="fbToast" class="fb-toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+// ---------- constants ----------
+const STATUS_CHIP = {
+  "shortlisted": { bg: "#dcfce7", fg: "#166534" },
+  "scored": { bg: "#dbeafe", fg: "#1e40af" },
+  "harvested": { bg: "#f1f5f9", fg: "#475569" },
+  "rejected-disqualifier": { bg: "#fee2e2", fg: "#991b1b" },
+  "rejected-score": { bg: "#fef2f2", fg: "#b91c1c" },
+  "contacted": { bg: "#ede9fe", fg: "#5b21b6" },
+  "replied": { bg: "#ccfbf1", fg: "#115e59" },
+  "in-conversation": { bg: "#ccfbf1", fg: "#0f766e" },
+  "interview-scheduled": { bg: "#dcfce7", fg: "#15803d" },
+  "rejected-by-tim": { bg: "#fee2e2", fg: "#991b1b" },
+  "rejected-by-candidate": { bg: "#fef2f2", fg: "#b91c1c" },
+  "unresponsive": { bg: "#f1f5f9", fg: "#64748b" },
+};
+const REC_CHIP = {
+  "Advance": { bg: "#dcfce7", fg: "#166534" },
+  "Reject": { bg: "#fbeaea", fg: "#b42318" },
+  "Basic review": { bg: "#f1f5f9", fg: "#475569" },
+};
+const DEFAULT_CHIP = { bg: "#f1f5f9", fg: "#475569" };
+
+// ---------- state ----------
+const STATE = {
+  data: null,
+  activeTab: "sourced",
+  activeRole: null,
+  search: "",
+  statusFilter: "all",
+  minScore: 0,
+  showActioned: false,
+  sortKey: "score",
+  sortDir: "desc",
+  expanded: new Set(),
+  // Tab 2 (Inbound / Application Review) — independent role selection + expansion
+  activeInboundRole: null,
+  inboundExpanded: new Set(),
+  // Tab 3 (Active pipeline) — independent role selection
+  activePipeRole: null,
+  // Leads tab — independent role selection (pill switcher)
+  activeLeadsRole: null,
+  // Leads tab — cards whose outreach timeline is expanded
+  leadsExpanded: new Set(),
+  // Tab 3 — cards whose Ashby-style stage/interview timeline is expanded
+  pipeExpanded: new Set(),
+  // Feedback loop (Advance/Reject verdicts + calibration)
+  feedback: { events: [], calibration: [], weekly: [], stats: { pending: 0, byRole: {} } },
+  // Calibration tab — weekly alignment source filter: all | live | shadow.
+  // Lives in STATE so the 60s poll re-render never resets the hiring lead's selection.
+  calibFamily: "all",
+  // Verdicts table filter: all | aligned | fp | fn | overrides.
+  calibAlign: "all",
+  // Role pill on Calibration: null = All roles; otherwise a role slug
+  // (founding-engineer-fs, growth, …). Independent of the other tabs' pills.
+  calibRole: null,
+};
+
+// System-of-record display name from /api/data (`sorName`). Defaults to "Ashby"
+// before the first payload so the current install never flashes a blank/wrong label.
+// Only user-visible copy uses this — identifiers (ashbySync, etc.) stay as-is.
+function sorName() {
+  const n = STATE.data && STATE.data.sorName;
+  return (typeof n === "string" && n.trim()) ? n.trim() : "Ashby";
+}
+
+// Rewrite the few static HTML strings that mention the SoR once data arrives.
+function applySorNameToStaticDom() {
+  const name = sorName();
+  const foot = el("leadsFoot");
+  if (foot) {
+    foot.textContent =
+      "All data read live from " + name +
+      " (stages + outreach notes). Historical bulk campaign leads are hidden; pre-existing records the agent works appear as “adopted”.";
+  }
+  const calib = el("calibSorName");
+  if (calib) calib.textContent = name;
+}
+
+const PIPE_STAGES = ["Initial Screen", "First Round", "Second Round", "Offer"];
+const LEAD_STAGE_COLS = ["New Lead", "Reached Out", "Replied"];
+
+// Per-render lookups so Act buttons can recover their row object after the
+// table body is rebuilt (keyed by the same id used on the row).
+let SOURCED_ROW_MAP = {};
+let INBOUND_ROW_MAP = {};
+// Context for the currently-open feedback modal.
+let MODAL_CTX = null;
+
+// ---------- helpers ----------
+function esc(s) {
+  if (s == null) return "";
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+  );
+}
+function fmt(n) {
+  if (n == null || isNaN(n)) return "0";
+  return Number(n).toLocaleString("en-US");
+}
+function safeUrl(u) {
+  if (!u || typeof u !== "string") return null;
+  return /^https?:\/\//i.test(u.trim()) ? u.trim() : null;
+}
+function scoreClass(s) {
+  if (s == null || typeof s !== "number") return "score-null";
+  if (s >= 85) return "score-hi";
+  if (s >= 70) return "score-mid";
+  return "score-lo";
+}
+function chip(text, map) {
+  const key = text || "";
+  const c = map[key] || DEFAULT_CHIP;
+  return '<span class="chip" style="background:' + c.bg + ";color:" + c.fg + '">' + esc(key || "—") + "</span>";
+}
+function el(id) { return document.getElementById(id); }
+
+// Dedicated, clearly-clickable LinkedIn cell. Real <a target="_blank"> so it is
+// never blocked; full URL on hover; muted dash when missing.
+function linkedinCell(url) {
+  const safe = safeUrl(url);
+  if (!safe) return '<span class="muted-dash" title="No LinkedIn on file">—</span>';
+  return (
+    '<a class="li-link" href="' + esc(safe) + '" target="_blank" rel="noopener noreferrer"' +
+    ' title="' + esc(safe) + '" aria-label="Open LinkedIn profile in a new tab">' +
+    '<span class="li-mark">in</span><span class="arr">&#8599;</span></a>'
+  );
+}
+
+// Clickable LinkedIn link for the expanded detail row (full URL visible).
+function linkedinDetailLink(url) {
+  const safe = safeUrl(url);
+  if (!safe) return url ? esc(url) : '<span class="muted-dash">—</span>';
+  return (
+    '<a class="li-detail-link" href="' + esc(safe) + '" target="_blank" rel="noopener noreferrer"' +
+    ' title="' + esc(safe) + '">' + esc(safe) + "</a>"
+  );
+}
+
+// ---------- feedback helpers ----------
+function feedbackEvents() {
+  return (STATE.feedback && STATE.feedback.events) || [];
+}
+// Sourced join: candidate id OR linkedin_url matches.
+function matchSourced(e, c) {
+  const cand = e.candidate || {};
+  if (c.id && cand.id && cand.id === c.id) return true;
+  if (c.linkedin_url && cand.linkedin_url && cand.linkedin_url === c.linkedin_url) return true;
+  return false;
+}
+// Inbound join: application_id matches.
+function matchInbound(e, r) {
+  const cand = e.candidate || {};
+  return !!(r.application_id && cand.application_id && cand.application_id === r.application_id);
+}
+// Latest event (by ts) satisfying pred, or null. A new event supersedes older.
+function latestFeedbackFor(pred) {
+  let best = null;
+  for (const e of feedbackEvents()) {
+    if (!pred(e)) continue;
+    if (!best || String(e.ts || "") > String(best.ts || "")) best = e;
+  }
+  return best;
+}
+function shortTs(iso) {
+  if (!iso) return "—";
+  const t = Date.parse(iso);
+  if (isNaN(t)) return String(iso);
+  return new Date(t).toLocaleString("en-US", {
+    month: "short", day: "numeric", hour: "numeric", minute: "2-digit",
+  });
+}
+function truncate(s, n) {
+  s = String(s == null ? "" : s);
+  return s.length > n ? s.slice(0, n - 1) + "…" : s;
+}
+// State chip (ingestion status) — used on the Calibration verdicts table.
+function stateChipHtml(ev) {
+  let cls, txt, title = "";
+  if (ev.state === "pending") { cls = "pending"; txt = "pending"; }
+  else if (ev.state === "error") { cls = "error"; txt = "error"; title = ev.result || "error"; }
+  else { cls = "done"; txt = "done"; }
+  return '<span class="st-chip ' + cls + '"' + (title ? ' title="' + esc(title) + '"' : "") +
+    ">" + esc(txt) + "</span>";
+}
+function verdictChipHtml(action) {
+  const adv = action === "advance";
+  return '<span class="v-chip ' + (adv ? "adv" : "rej") + '">' +
+    (adv ? "✓ Advanced" : "✕ Rejected") + "</span>";
+}
+
+// The last cell of both tables: Advance/Reject buttons, or — if a verdict is
+// already recorded for this candidate — a status chip + "change" link.
+function actCellHtml(kind, obj, id) {
+  const ev =
+    kind === "sourced"
+      ? latestFeedbackFor((e) => e.source === "sourced" && matchSourced(e, obj))
+      : latestFeedbackFor((e) => e.source === "inbound" && matchInbound(e, obj));
+  if (ev) {
+    const advanced = ev.tim_action === "advance";
+    const vCls = advanced ? "va" : "vr";
+    const label = advanced ? "✓ Advanced" : "✕ Rejected";
+    let sCls, sTxt, stateTitle = "";
+    // Ingestion still running/failed always wins — the click hasn't finished processing.
+    if (ev.state === "pending") { sCls = "fb-pending"; sTxt = "· pending"; }
+    else if (ev.state === "error") { sCls = "fb-error"; sTxt = "· error"; stateTitle = ev.result || "error"; }
+    else if (kind === "sourced" && advanced) {
+      // For an advanced sourced candidate, reflect the REAL outreach ledger
+      // state — "done" (ingested) must never masquerade as "sent".
+      const o = ev.outreach || null;
+      const act = o && o.action;
+      if (act === "sent") { sCls = "fb-sent"; sTxt = "· sent"; }
+      else if (act === "link-shared") { sCls = "fb-shared"; sTxt = "· link shared"; }
+      else if (act === "booked") { sCls = "fb-booked"; sTxt = "· booked"; }
+      else if (act === "queued") { sCls = "fb-queued"; sTxt = "· queued to send"; }
+      else if (act === "skipped") { sCls = "fb-skipped"; sTxt = "· not sent"; stateTitle = (o && o.reason) || "outreach skipped"; }
+      else if (act) { sCls = "fb-queued"; sTxt = "· " + act; }
+      else { sCls = "fb-queued"; sTxt = "· ingested (not sent)"; stateTitle = "Advance ingested; no outreach queued/sent yet"; }
+    }
+    else { sCls = "fb-done"; sTxt = "· done"; }
+    const titleBits = [];
+    if (ev.feedback) titleBits.push(ev.feedback);
+    if (stateTitle) titleBits.push(stateTitle);
+    const titleAttr = titleBits.length ? ' title="' + esc(titleBits.join(" — ")) + '"' : "";
+    const flip = advanced ? "reject" : "advance";
+    return (
+      '<div class="act-cell">' +
+      '<span class="fb-chip ' + vCls + '"' + titleAttr + ">" + esc(label) +
+      '<span class="fb-suffix ' + sCls + '">' + esc(sTxt) + "</span></span>" +
+      '<a class="fb-change" data-fbkind="' + esc(kind) + '" data-fbid="' + esc(id) +
+      '" data-action="' + flip + '">change</a>' +
+      "</div>"
+    );
+  }
+  return (
+    '<div class="act-cell">' +
+    '<button type="button" class="act-btn act-adv" data-fbkind="' + esc(kind) +
+    '" data-fbid="' + esc(id) + '" data-action="advance" title="' +
+    (kind === "sourced" ? "Advance &amp; queue LinkedIn outreach (sent in the daily 13:35 PT batch)" : "Advance to Initial Screen") +
+    '">▲ Advance</button>' +
+    '<button type="button" class="act-btn act-rej" data-fbkind="' + esc(kind) +
+    '" data-fbid="' + esc(id) + '" data-action="reject" title="Don\'t advance">✕ Reject</button>' +
+    "</div>"
+  );
+}
+
+// Wire Act buttons / change links inside a freshly-rendered table body.
+function wireActCells(container) {
+  container.querySelectorAll(".act-btn, .fb-change").forEach((node) => {
+    node.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      ev.preventDefault();
+      const kind = node.getAttribute("data-fbkind");
+      const id = node.getAttribute("data-fbid");
+      const action = node.getAttribute("data-action");
+      const obj = kind === "sourced" ? SOURCED_ROW_MAP[id] : INBOUND_ROW_MAP[id];
+      if (obj) openFeedbackModal(kind, obj, action);
+    });
+  });
+}
+
+// ---------- data load ----------
+async function loadData() {
+  const btn = el("refreshBtn");
+  const icon = el("refreshIcon");
+  btn.disabled = true;
+  icon.innerHTML = '<span class="spinner" style="width:13px;height:13px;margin:0"></span>';
+  // Feedback state is independent of the (slow) Ashby data — fetch it in parallel.
+  const fbPromise = loadFeedbackState();
+  try {
+    const res = await fetch("api/data", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    STATE.data = data;
+    // Static DOM strings that mention the SoR (badge default is already "Ashby").
+    applySorNameToStaticDom();
+    // preserve selected role if still present (roles keyed by Ashby job id / slug)
+    const roles = data.roles || [];
+    if (!STATE.activeRole || !roles.find((r) => r.key === STATE.activeRole)) {
+      STATE.activeRole = roles.length ? roles[0].key : null;
+    }
+    if (!STATE.activeInboundRole || !roles.find((r) => r.key === STATE.activeInboundRole)) {
+      STATE.activeInboundRole = roles.length ? roles[0].key : null;
+    }
+    if (!STATE.activePipeRole || !roles.find((r) => r.key === STATE.activePipeRole)) {
+      STATE.activePipeRole = roles.length ? roles[0].key : null;
+    }
+    if (!STATE.activeLeadsRole || !roles.find((r) => r.key === STATE.activeLeadsRole)) {
+      STATE.activeLeadsRole = roles.length ? roles[0].key : null;
+    }
+    await fbPromise; // ensure feedback is present for the first render
+    el("globalState").style.display = "none";
+    render();
+    // Interviews load from a detached 5-min cache; if it wasn't ready yet, fetch
+    // once more shortly so the tab fills in without a manual refresh.
+    scheduleInterviewCatchup();
+    // Leads ride a cold-boot cache too — refetch briefly if it wasn't ready yet.
+    scheduleLeadsCatchup();
+  } catch (e) {
+    const gs = el("globalState");
+    gs.style.display = "";
+    gs.className = "state err";
+    gs.textContent = "Failed to load data: " + (e.message || e);
+  } finally {
+    btn.disabled = false;
+    icon.innerHTML = "&#8635;";
+  }
+}
+
+// One-shot catch-up for the detached interviews cache: if the payload came back
+// stale (background refresh still running), re-fetch api/data a couple times
+// with a short delay until it's fresh. Guarded so it never loops forever.
+let _ivCatchupTries = 0;
+function scheduleInterviewCatchup() {
+  const iv = STATE.data && STATE.data.interviews;
+  if (!iv || !iv.stale) { _ivCatchupTries = 0; return; }
+  if (_ivCatchupTries >= 4) return;
+  _ivCatchupTries += 1;
+  setTimeout(() => { loadData(); }, 2500);
+}
+
+// Catch-up for the detached leads cache (mirrors scheduleInterviewCatchup): on a
+// cold boot the first api/data lands before the leads build finishes (or after a
+// 429 from the boot burst), so the tab shows 0. Refetch a few times until
+// leadsSync reports ok+fresh; each refetch re-kicks the detached build, so leads
+// self-heal within a few seconds once the boot burst subsides.
+let _leadsCatchupTries = 0;
+function scheduleLeadsCatchup() {
+  const s = STATE.data && STATE.data.leadsSync;
+  const needs = !s || !s.ok || s.stale;
+  if (!needs) { _leadsCatchupTries = 0; return; }
+  if (_leadsCatchupTries >= 6) return;
+  _leadsCatchupTries += 1;
+  setTimeout(() => { loadData(); }, 2500);
+}
+
+// Best-effort: never blocks the main data load; keeps last-known state on error.
+async function loadFeedbackState() {
+  try {
+    const res = await fetch("api/feedback-state", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const fb = await res.json();
+    if (fb && !fb.error) {
+      STATE.feedback = {
+        events: Array.isArray(fb.events) ? fb.events : [],
+        calibration: Array.isArray(fb.calibration) ? fb.calibration : [],
+        weekly: Array.isArray(fb.weekly) ? fb.weekly : [],
+        stats: fb.stats || { pending: 0, byRole: {} },
+      };
+    }
+  } catch (e) {
+    // keep whatever we last had
+  }
+}
+
+function showToast(msg) {
+  const t = el("fbToast");
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove("show"), 5200);
+}
+
+// Re-render just the active tab (used after feedback changes + on the 60s poll).
+function reRenderActiveTab() {
+  renderTabCounts();
+  const t = STATE.activeTab;
+  if (t === "sourced") renderSourcedTab();
+  else if (t === "leads") renderLeadsTab();
+  else if (t === "inbound") renderInboundTab();
+  else if (t === "active") renderActiveTab();
+  else if (t === "calibration") renderCalibrationTab();
+}
+
+function currentRole() {
+  if (!STATE.data) return null;
+  return (STATE.data.roles || []).find((r) => r.key === STATE.activeRole) || null;
+}
+
+// ---------- top-level render ----------
+function render() {
+  renderHeader();
+  renderSyncStatus();
+  renderTabCounts();
+  renderRolePills();
+  renderSourcedTab();
+  renderLeadsTab();
+  renderInboundTab();
+  renderActiveTab();
+  renderCalibrationTab();
+}
+
+function agoText(seconds) {
+  if (seconds == null) return "never";
+  if (seconds < 60) return "just now";
+  const m = Math.floor(seconds / 60);
+  if (m < 60) return m + " min ago";
+  return Math.floor(m / 60) + " hr ago";
+}
+
+function renderSyncStatus() {
+  const s = (STATE.data && STATE.data.ashbySync) || null;
+  const badge = el("syncBadge");
+  const banner = el("syncBanner");
+  const sor = sorName();
+  if (!s) {
+    badge.innerHTML = '<span class="sync-dot" style="background:#9ca3af"></span> ' + esc(sor) + " sync: —";
+    badge.title = "Open roles are synced live from " + sor;
+    banner.style.display = "none";
+    return;
+  }
+  let dot, text;
+  if (!s.ok) { dot = "#dc2626"; text = sor + " sync: failed"; }
+  else if (s.stale) { dot = "#d97706"; text = sor + " sync: " + agoText(s.ageSeconds) + " (stale)"; }
+  else { dot = "#16a34a"; text = sor + " sync: " + agoText(s.ageSeconds); }
+  badge.innerHTML = '<span class="sync-dot" style="background:' + dot + '"></span> ' + esc(text);
+  badge.title = s.ok
+    ? (s.jobCount + " open jobs synced from " + sor + (s.stale ? " (serving cached copy — refetch failed)" : ""))
+    : (s.error ? "Last error: " + s.error : sor + " sync failed");
+
+  if (!s.ok) {
+    banner.style.display = "flex";
+    banner.className = "err-banner";
+    banner.innerHTML =
+      '<span class="ni">&#9888;</span><span><b>' + esc(sor) + " sync failed.</b> " +
+      "Showing roles from longlist files only — the live open-role list from " + esc(sor) + " is unavailable. Auto-sync resumes automatically." +
+      (s.error ? ' <span class="err-detail">(' + esc(s.error) + ")</span>" : "") +
+      "</span>";
+  } else if (s.stale) {
+    banner.style.display = "flex";
+    banner.className = "warn-banner";
+    banner.innerHTML =
+      '<span class="ni">&#9888;</span><span><b>' + esc(sor) + " sync failed.</b> " +
+      "Showing cached open roles from " + esc(agoText(s.ageSeconds)) + "." +
+      (s.error ? ' <span class="err-detail">(' + esc(s.error) + ")</span>" : "") +
+      "</span>";
+  } else {
+    banner.style.display = "none";
+    banner.innerHTML = "";
+  }
+}
+
+function renderHeader() {
+  const d = STATE.data;
+  if (!d) return;
+  const t = d.totals;
+  const roleWord = t.totalRoles === 1 ? "role" : "roles";
+  el("headerTotals").innerHTML =
+    '<span><b>' + fmt(t.totalCandidates) + "</b> sourced across <b>" + fmt(t.totalRoles) + "</b> " + roleWord + "</span>" +
+    '<span class="dot">·</span>' +
+    "<span><b>" + fmt(t.totalShortlisted) + "</b> shortlisted</span>" +
+    '<span class="dot">·</span>' +
+    "<span><b>" + fmt(t.totalInbound) + "</b> in Application Review</span>" +
+    '<span class="dot">·</span>' +
+    "<span><b>" + fmt(t.totalInInterviews) + "</b> in interviews</span>";
+
+  let when = "—";
+  if (d.generatedAt) {
+    const dt = new Date(d.generatedAt);
+    when = dt.toLocaleString("en-US", {
+      month: "short", day: "numeric",
+      hour: "numeric", minute: "2-digit", second: "2-digit",
+    });
+  }
+  el("refreshedAt").textContent = when;
+}
+
+function renderTabCounts() {
+  const d = STATE.data;
+  if (d && d.totals) {
+    el("tabc-sourced").textContent = fmt(d.totals.totalCandidates);
+    el("tabc-leads").textContent = fmt(d.totals.totalLeads);
+    el("tabc-inbound").textContent = fmt(d.totals.totalInbound);
+    el("tabc-active").textContent = fmt(d.totals.totalInInterviews);
+  }
+  const pending = (STATE.feedback && STATE.feedback.stats && STATE.feedback.stats.pending) || 0;
+  el("tabc-calibration").textContent = fmt(pending);
+}
+
+function renderRolePills() {
+  const d = STATE.data;
+  const bar = el("roleBar");
+  const roles = d.roles || [];
+  if (!roles.length) {
+    bar.innerHTML = '<span class="rb-label">Role</span><span class="muted-dash">No open roles found in ' + esc(sorName()) + ".</span>";
+    return;
+  }
+  let html = '<span class="rb-label">Role</span>';
+  for (const r of roles) {
+    const active = r.key === STATE.activeRole ? " active" : "";
+    const titleAttr = r.note ? ' title="' + esc(r.note) + '"' : "";
+    html +=
+      '<button class="pill' + active + '" data-role="' + esc(r.key) + '"' + titleAttr + ">" +
+      esc(r.label) +
+      '<span class="pill-count">' + fmt(r.summary.total) + "</span></button>";
+  }
+  bar.innerHTML = html;
+  bar.querySelectorAll(".pill").forEach((p) => {
+    p.addEventListener("click", () => {
+      STATE.activeRole = p.getAttribute("data-role");
+      STATE.expanded.clear();
+      // reset filters when switching roles
+      STATE.search = ""; el("search").value = "";
+      STATE.statusFilter = "all";
+      STATE.minScore = 0; el("minScore").value = 0; el("minScoreVal").textContent = "0";
+      STATE.showActioned = false; el("showActioned").checked = false;
+      renderRolePills();
+      renderSourcedTab();
+    });
+  });
+}
+
+// ---------- Tab 1 ----------
+function renderSourcedTab() {
+  const role = currentRole();
+  const content = el("sourcedContent");
+  const empty = el("sourcedEmpty");
+
+  // Role exists in Ashby but has no longlist file yet -> empty-state panel.
+  if (role && !role.hasLonglist) {
+    content.style.display = "none";
+    empty.style.display = "block";
+    renderEmptyPanel(role);
+    return;
+  }
+
+  content.style.display = "block";
+  empty.style.display = "none";
+  renderTiles();
+  renderStatusOptions();
+  renderTableHead();
+  renderTableBody();
+}
+
+function sourcingStatusLine(sourcing) {
+  switch (sourcing) {
+    case "active":
+      return { cls: "active", text: "In the sourcing split — no sourcing run yet." };
+    case "passive":
+      return { cls: "passive", text: "Passive — candidates get flagged here, not actively sourced." };
+    case "inbound-only":
+      return { cls: "inbound-only", text: "Inbound applications only — not in the excellence-sourcing split." };
+    default:
+      return {
+        cls: "new-role",
+        text: "New role detected in " + sorName() + " — no pipeline yet. The agent will pick it up in the next sourcing session.",
+      };
+  }
+}
+
+function renderEmptyPanel(role) {
+  const box = el("sourcedEmpty");
+  const st = sourcingStatusLine(role.sourcing);
+  const srcClass = role.sourcing ? "src-" + role.sourcing : "src-none";
+  const srcLabel = role.sourcing || "no manifest entry";
+
+  let html =
+    '<div class="ep-card">' +
+    '<div class="ep-top"><span class="ep-title">' + esc(role.label) + "</span>" +
+    '<span class="pill-count" style="background:#eef0f3;color:#475569;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:600">0 candidates</span>' +
+    "</div>" +
+    '<div class="ep-status ' + st.cls + '">' + esc(st.text) + "</div>";
+
+  if (role.note) {
+    html += '<div class="ep-note"><b>Note:</b> ' + esc(role.note) + "</div>";
+  }
+
+  html +=
+    '<div class="ep-meta">' +
+    '<span class="src-chip ' + srcClass + '">' + esc(srcLabel) + "</span>" +
+    (role.jobId ? '<span class="ep-jobid">' + esc(sorName()) + " job " + esc(role.jobId) + "</span>" : "") +
+    "</div></div>";
+
+  box.innerHTML = html;
+}
+
+function renderTiles() {
+  const role = currentRole();
+  const box = el("tiles");
+  if (!role) { box.innerHTML = ""; return; }
+  const s = role.summary;
+  const avg = s.avgScore == null ? "—" : s.avgScore;
+  box.innerHTML =
+    tile("Total sourced", fmt(s.total), "candidates in longlist") +
+    tile("Scored", fmt(s.scored), "status = scored") +
+    tile("Shortlisted", fmt(s.shortlisted), "status = shortlisted", "good") +
+    tile("Avg score", avg, "across scored candidates", "accent");
+}
+function tile(label, value, sub, cls) {
+  return (
+    '<div class="tile ' + (cls || "") + '">' +
+    '<div class="t-label">' + esc(label) + "</div>" +
+    '<div class="t-value">' + esc(value) + "</div>" +
+    '<div class="t-sub">' + esc(sub) + "</div></div>"
+  );
+}
+
+function renderStatusOptions() {
+  const role = currentRole();
+  const sel = el("statusFilter");
+  const prev = STATE.statusFilter;
+  let statuses = [];
+  if (role) statuses = Object.keys(role.summary.statusCounts || {}).sort();
+  let html = '<option value="all">All statuses</option>';
+  for (const st of statuses) {
+    const n = role.summary.statusCounts[st];
+    html += '<option value="' + esc(st) + '">' + esc(st) + " (" + n + ")</option>";
+  }
+  sel.innerHTML = html;
+  // restore if still valid, else all
+  if (prev !== "all" && statuses.includes(prev)) sel.value = prev;
+  else { sel.value = "all"; STATE.statusFilter = "all"; }
+}
+
+function renderTableHead() {
+  document.querySelectorAll("#candTable thead th.sortable").forEach((th) => {
+    const key = th.getAttribute("data-sort");
+    const base = th.getAttribute("data-base") || th.textContent.replace(/[▲▼]/g, "").trim();
+    th.setAttribute("data-base", base);
+    let arrow = "";
+    if (STATE.sortKey === key) arrow = ' <span class="arrow">' + (STATE.sortDir === "asc" ? "▲" : "▼") + "</span>";
+    th.innerHTML = base + arrow;
+  });
+}
+
+// A sourced candidate is "actioned" once the hiring lead has clicked Advance or Don't-advance
+// on it. Advance moves the person into Leads (created in Ashby); Reject suppresses
+// them. Either way they leave the Sourced tab — the underlying longlist row is
+// kept (nothing lost, never re-sourced), just hidden here unless "Show actioned".
+function isActioned(c) {
+  return !!latestFeedbackFor((e) => e.source === "sourced" && matchSourced(e, c));
+}
+
+function filteredCandidates() {
+  const role = currentRole();
+  if (!role) return [];
+  let list = role.candidates.slice();
+  if (!STATE.showActioned) {
+    list = list.filter((c) => !isActioned(c));
+  }
+  const q = STATE.search.trim().toLowerCase();
+  if (q) {
+    list = list.filter((c) => {
+      const cur = c.current || {};
+      const hay = [c.name, c.headline, cur.company, cur.title]
+        .filter(Boolean).join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  if (STATE.statusFilter !== "all") {
+    list = list.filter((c) => (c.status || "") === STATE.statusFilter);
+  }
+  if (STATE.minScore > 0) {
+    list = list.filter((c) => typeof c.score === "number" && c.score >= STATE.minScore);
+  }
+  list.sort(comparator);
+  return list;
+}
+
+// Count of actioned candidates in the current role (for the hidden-count hint).
+function actionedCount() {
+  const role = currentRole();
+  if (!role) return 0;
+  return role.candidates.reduce((n, c) => n + (isActioned(c) ? 1 : 0), 0);
+}
+
+function comparator(a, b) {
+  const { sortKey, sortDir } = STATE;
+  const dir = sortDir === "asc" ? 1 : -1;
+  if (sortKey === "score") {
+    const an = typeof a.score !== "number", bn = typeof b.score !== "number";
+    if (an && bn) return 0;
+    if (an) return 1; // nulls always last
+    if (bn) return -1;
+    return (a.score - b.score) * dir;
+  }
+  let av, bv;
+  if (sortKey === "name") { av = a.name; bv = b.name; }
+  else if (sortKey === "company") { av = (a.current || {}).company; bv = (b.current || {}).company; }
+  else if (sortKey === "location") { av = a.location; bv = b.location; }
+  else if (sortKey === "status") { av = a.status; bv = b.status; }
+  const ae = !av, be = !bv;
+  if (ae && be) return 0;
+  if (ae) return 1; // empties last regardless of dir
+  if (be) return -1;
+  return String(av).localeCompare(String(bv)) * dir;
+}
+
+function candId(c, i) {
+  return c.id || (c.linkedin_url || ("row-" + i));
+}
+
+function renderTableBody() {
+  const body = el("candBody");
+  const role = currentRole();
+  if (!role) {
+    body.innerHTML = '<tr><td colspan="9" class="empty-cell">No role selected.</td></tr>';
+    el("resultCount").textContent = "";
+    return;
+  }
+  const list = filteredCandidates();
+  const hidden = STATE.showActioned ? 0 : actionedCount();
+  el("resultCount").textContent =
+    "Showing " + fmt(list.length) + " of " + fmt(role.candidates.length) +
+    (hidden ? " · " + fmt(hidden) + " actioned (hidden)" : "");
+
+  if (!list.length) {
+    const msg = hidden
+      ? "No open candidates left — " + fmt(hidden) + " actioned. Tick “Show actioned” to see them."
+      : "No candidates match your filters.";
+    body.innerHTML = '<tr><td colspan="9" class="empty-cell">' + msg + "</td></tr>";
+    return;
+  }
+
+  SOURCED_ROW_MAP = {};
+  let html = "";
+  list.forEach((c, i) => {
+    const id = candId(c, i);
+    SOURCED_ROW_MAP[id] = c;
+    const isOpen = STATE.expanded.has(id);
+    const cur = c.current || {};
+    const url = safeUrl(c.linkedin_url);
+    const nameHtml = url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(c.name || "Unknown") + "</a>"
+      : esc(c.name || "Unknown");
+
+    // current
+    let curHtml;
+    if (cur.title && cur.company) curHtml = esc(cur.title) + ' <span class="co">@ ' + esc(cur.company) + "</span>";
+    else if (cur.company) curHtml = '<span class="co">' + esc(cur.company) + "</span>";
+    else if (cur.title) curHtml = esc(cur.title);
+    else curHtml = '<span class="muted-dash">—</span>';
+
+    const loc = c.location ? esc(c.location) : '<span class="muted-dash">—</span>';
+
+    const sc = typeof c.score === "number" ? c.score : null;
+    const scHtml = sc == null
+      ? '<span class="score score-null">—</span>'
+      : '<span class="score ' + scoreClass(sc) + '">' + sc + "</span>";
+
+    const flagsHtml = c.flags
+      ? '<span class="flag-icon" title="' + esc(c.flags) + '">&#9888;</span>'
+      : '<span class="flag-none" title="No flags">·</span>';
+
+    const src = c.source || {};
+    let srcHtml = "";
+    if (src.kind || src.query) {
+      srcHtml = '<span class="kind">' + esc(src.kind || "") + "</span>";
+      if (src.query) srcHtml += (src.kind ? " · " : "") + esc(src.query);
+    } else {
+      srcHtml = '<span class="muted-dash">—</span>';
+    }
+
+    const owner = c.owner ? String(c.owner).trim() : "";
+    const ownerChip = owner
+      ? ' <span class="chip" style="background:#e0e7ff;color:#3730a3">advanced by ' + esc(owner) + "</span>"
+      : "";
+
+    html +=
+      '<tr class="candidate-row' + (isOpen ? " open" : "") + '" data-cid="' + esc(id) + '">' +
+      '<td><div class="c-name"><span class="exp">&#9656;</span>' + nameHtml + ownerChip + "</div></td>" +
+      "<td>" + linkedinCell(c.linkedin_url) + "</td>" +
+      '<td class="c-current">' + curHtml + "</td>" +
+      '<td class="c-loc">' + loc + "</td>" +
+      '<td class="num">' + scHtml + "</td>" +
+      "<td>" + chip(c.status, STATUS_CHIP) + "</td>" +
+      '<td style="text-align:center">' + flagsHtml + "</td>" +
+      '<td class="c-source">' + srcHtml + "</td>" +
+      '<td class="act-col">' + actCellHtml("sourced", c, id) + "</td>" +
+      "</tr>";
+
+    if (isOpen) html += detailRow(c);
+  });
+  body.innerHTML = html;
+
+  body.querySelectorAll("tr.candidate-row").forEach((tr) => {
+    tr.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) return; // let links work
+      if (ev.target.closest(".act-btn, .fb-change")) return; // Act cell handles itself
+      const cid = tr.getAttribute("data-cid");
+      if (STATE.expanded.has(cid)) STATE.expanded.delete(cid);
+      else STATE.expanded.add(cid);
+      renderTableBody();
+    });
+  });
+  wireActCells(body);
+}
+
+function detailRow(c) {
+  const cur = c.current || {};
+  const src = c.source || {};
+  const kv = (k, v, mono) => {
+    const empty = v == null || v === "";
+    return (
+      '<div class="kv"><span class="k">' + esc(k) + '</span>' +
+      '<span class="v' + (mono ? " mono" : "") + (empty ? " empty" : "") + '">' +
+      (empty ? "—" : esc(v)) + "</span></div>"
+    );
+  };
+  const url = safeUrl(c.linkedin_url);
+  const linkV = url
+    ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(c.linkedin_url) + "</a>"
+    : (c.linkedin_url ? esc(c.linkedin_url) : "—");
+
+  let inner = "";
+  if (c.headline) {
+    inner += '<div class="d-block"><div class="d-h">Headline</div><div class="headline-txt">' + esc(c.headline) + "</div></div>";
+  }
+  inner += '<div class="d-block"><div class="d-h">Reasoning</div><div class="reasoning-txt">' +
+    (c.reasoning ? esc(c.reasoning) : '<span class="muted-dash">No reasoning recorded.</span>') + "</div></div>";
+  if (c.flags) {
+    inner += '<div class="d-block"><div class="d-h">Flags</div><div class="flags-txt">&#9888; ' + esc(c.flags) + "</div></div>";
+  }
+  inner +=
+    '<div class="d-block"><div class="d-h">All fields</div><div class="kv-grid">' +
+    kv("ID", c.id, true) +
+    kv("Name", c.name) +
+    '<div class="kv"><span class="k">LinkedIn</span><span class="v mono">' + linkV + "</span></div>" +
+    kv("Title", cur.title) +
+    kv("Company", cur.company) +
+    kv("Tenure", cur.tenure) +
+    kv("Location", c.location) +
+    kv("Score", typeof c.score === "number" ? c.score : null) +
+    kv("Status", c.status) +
+    kv("Touch", c.touch) +
+    kv("Source kind", src.kind) +
+    kv("Recipe", src.recipe) +
+    kv("Query", src.query) +
+    kv("Source date", src.date) +
+    "</div></div>";
+
+  return '<tr class="detail-row"><td colspan="9"><div class="detail">' + inner + "</div></td></tr>";
+}
+
+// ---------- Tab 2: Inbound (Application Review) ----------
+function currentInboundRole() {
+  if (!STATE.data) return null;
+  return (STATE.data.roles || []).find((r) => r.key === STATE.activeInboundRole) || null;
+}
+
+function renderInboundTab() {
+  renderInboundRolePills();
+  const role = currentInboundRole();
+  const content = el("inboundContent");
+  const empty = el("inboundEmpty");
+  const list = role ? role.inbound || [] : [];
+
+  if (!role || list.length === 0) {
+    content.style.display = "none";
+    empty.style.display = "block";
+    renderInboundEmpty(role);
+    return;
+  }
+  content.style.display = "block";
+  empty.style.display = "none";
+  renderInboundTiles(role);
+  renderInboundBody(role);
+}
+
+function renderInboundRolePills() {
+  const d = STATE.data;
+  const bar = el("inboundRoleBar");
+  const roles = (d && d.roles) || [];
+  if (!roles.length) {
+    bar.innerHTML = '<span class="rb-label">Role</span><span class="muted-dash">No open roles found in ' + esc(sorName()) + ".</span>";
+    return;
+  }
+  let html = '<span class="rb-label">Role</span>';
+  for (const r of roles) {
+    const active = r.key === STATE.activeInboundRole ? " active" : "";
+    const n = (r.inboundSummary && r.inboundSummary.total) || 0;
+    const titleAttr = r.note ? ' title="' + esc(r.note) + '"' : "";
+    html +=
+      '<button class="pill' + active + '" data-role="' + esc(r.key) + '"' + titleAttr + ">" +
+      esc(r.label) +
+      '<span class="pill-count">' + fmt(n) + "</span></button>";
+  }
+  bar.innerHTML = html;
+  bar.querySelectorAll(".pill").forEach((p) => {
+    p.addEventListener("click", () => {
+      STATE.activeInboundRole = p.getAttribute("data-role");
+      STATE.inboundExpanded.clear();
+      renderInboundTab();
+    });
+  });
+}
+
+function renderInboundEmpty(role) {
+  const box = el("inboundEmpty");
+  const title = role ? role.label : "—";
+  box.innerHTML =
+    '<div class="ep-card">' +
+    '<div class="ep-top"><span class="ep-title">' + esc(title) + "</span>" +
+    '<span class="pill-count" style="background:#eef0f3;color:#475569;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:600">0 rated</span>' +
+    "</div>" +
+    '<div class="ep-status">No candidates in Application Review.</div>' +
+    "</div>";
+}
+
+function renderInboundTiles(role) {
+  const s = role.inboundSummary || { total: 0, advance: 0, reject: 0, awaiting: 0 };
+  el("inboundTiles").innerHTML =
+    tile("Total rated", fmt(s.total), "in Application Review") +
+    tile("Advance", fmt(s.advance), "recommended to advance", "good") +
+    tile("Reject", fmt(s.reject), "recommended reject") +
+    tile("Awaiting rating", fmt(s.awaiting), "not yet rated", "accent");
+}
+
+function inbId(r, i) {
+  return r.candidate_id || r.application_id || "inb-" + i;
+}
+
+function renderInboundBody(role) {
+  const body = el("inboundBody");
+  const list = (role && role.inbound) || []; // already sorted server-side
+  INBOUND_ROW_MAP = {};
+  let html = "";
+  list.forEach((r, i) => {
+    const id = inbId(r, i);
+    INBOUND_ROW_MAP[id] = r;
+    const isOpen = STATE.inboundExpanded.has(id);
+    const url = safeUrl(r.linkedin_url);
+    const nameHtml = url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.name || "Unknown") + "</a>"
+      : esc(r.name || "Unknown");
+
+    const sc = typeof r.score === "number" ? r.score : null;
+    const scHtml = sc == null
+      ? '<span class="muted-dash">—</span>'
+      : '<span class="score ' + scoreClass(sc) + '">' + sc + "</span>";
+
+    const ev = Array.isArray(r.evidence) ? r.evidence : [];
+    let evCell = ev.length
+      ? '<div class="ev-first">' + esc(ev[0]) + "</div>"
+      : '<span class="muted-dash">—</span>';
+    if (ev.length > 1) evCell += '<span class="ev-more">+' + (ev.length - 1) + " more</span>";
+
+    html +=
+      '<tr class="candidate-row' + (isOpen ? " open" : "") + '" data-iid="' + esc(id) + '">' +
+      '<td><div class="c-name"><span class="exp">&#9656;</span>' + nameHtml + "</div></td>" +
+      "<td>" + linkedinCell(r.linkedin_url) + "</td>" +
+      '<td class="c-loc num">' + (r.created ? esc(r.created) : '<span class="muted-dash">—</span>') + "</td>" +
+      '<td class="c-source">' + (r.source ? esc(r.source) : '<span class="muted-dash">—</span>') + "</td>" +
+      "<td>" + chip(r.recommendation, REC_CHIP) + "</td>" +
+      '<td class="num">' + scHtml + "</td>" +
+      '<td class="ev-cell">' + evCell + "</td>" +
+      '<td class="act-col">' + actCellHtml("inbound", r, id) + "</td>" +
+      "</tr>";
+
+    if (isOpen) html += inboundDetailRow(r);
+  });
+  body.innerHTML = html;
+
+  body.querySelectorAll("tr.candidate-row").forEach((tr) => {
+    tr.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) return; // let links work
+      if (ev.target.closest(".act-btn, .fb-change")) return; // Act cell handles itself
+      const iid = tr.getAttribute("data-iid");
+      if (STATE.inboundExpanded.has(iid)) STATE.inboundExpanded.delete(iid);
+      else STATE.inboundExpanded.add(iid);
+      renderInboundBody(currentInboundRole());
+    });
+  });
+  wireActCells(body);
+}
+
+function inboundDetailRow(r) {
+  const ev = Array.isArray(r.evidence) ? r.evidence : [];
+  let inner = '<div class="d-block"><div class="d-h">Evidence</div>';
+  if (ev.length) {
+    inner += '<ul class="ev-list">';
+    for (const e of ev) inner += "<li>" + esc(e) + "</li>";
+    inner += "</ul>";
+  } else {
+    inner += '<div class="muted-dash">No evidence recorded.</div>';
+  }
+  inner += "</div>";
+
+  inner +=
+    '<div class="d-block"><div class="d-h">Missing</div><div class="reasoning-txt">' +
+    (r.missing ? esc(r.missing) : '<span class="muted-dash">—</span>') +
+    "</div></div>";
+
+  const kv = (k, v, mono) => {
+    const empty = v == null || v === "";
+    return (
+      '<div class="kv"><span class="k">' + esc(k) + "</span>" +
+      '<span class="v' + (mono ? " mono" : "") + (empty ? " empty" : "") + '">' +
+      (empty ? "—" : esc(v)) + "</span></div>"
+    );
+  };
+  const liSafe = safeUrl(r.linkedin_url);
+  const liKv =
+    '<div class="kv"><span class="k">LinkedIn</span><span class="v mono' + (liSafe ? "" : " empty") + '">' +
+    (liSafe
+      ? '<a href="' + esc(liSafe) + '" target="_blank" rel="noopener noreferrer">' + esc(liSafe) + "</a>"
+      : "—") +
+    "</span></div>";
+  inner +=
+    '<div class="d-block"><div class="d-h">Details</div><div class="kv-grid">' +
+    liKv +
+    kv("Email", r.email) +
+    kv("Rated", r.rated_at) +
+    kv("Rating mode", r.rating_mode) +
+    kv("Stage", r.stage) +
+    kv("Candidate ID", r.candidate_id, true) +
+    kv("Application ID", r.application_id, true) +
+    "</div></div>";
+
+  return '<tr class="detail-row"><td colspan="8"><div class="detail">' + inner + "</div></td></tr>";
+}
+
+// ---------- Tab 3: Active pipeline ----------
+function currentActiveRole() {
+  if (!STATE.data) return null;
+  return (STATE.data.roles || []).find((r) => r.key === STATE.activePipeRole) || null;
+}
+
+function daysAgo(iso) {
+  if (!iso) return null;
+  const t = Date.parse(iso);
+  if (isNaN(t)) return null;
+  return Math.floor((Date.now() - t) / 86400000);
+}
+function ymd(iso) {
+  if (!iso) return null;
+  const t = Date.parse(iso);
+  if (isNaN(t)) return null;
+  return new Date(t).toISOString().slice(0, 10);
+}
+
+function renderActiveRolePills() {
+  const d = STATE.data;
+  const bar = el("activeRoleBar");
+  const roles = (d && d.roles) || [];
+  if (!roles.length) {
+    bar.innerHTML = '<span class="rb-label">Role</span><span class="muted-dash">No open roles found in ' + esc(sorName()) + ".</span>";
+    return;
+  }
+  let html = '<span class="rb-label">Role</span>';
+  for (const r of roles) {
+    const active = r.key === STATE.activePipeRole ? " active" : "";
+    const n = (r.activePipeline && r.activePipeline.total) || 0;
+    const titleAttr = r.note ? ' title="' + esc(r.note) + '"' : "";
+    html +=
+      '<button class="pill' + active + '" data-role="' + esc(r.key) + '"' + titleAttr + ">" +
+      esc(r.label) +
+      '<span class="pill-count">' + fmt(n) + "</span></button>";
+  }
+  bar.innerHTML = html;
+  bar.querySelectorAll(".pill").forEach((p) => {
+    p.addEventListener("click", () => {
+      STATE.activePipeRole = p.getAttribute("data-role");
+      renderActiveTab();
+    });
+  });
+}
+
+function pipeCard(app, roleLabel) {
+  const appKey = app.applicationId || app.candidateId || app.name || "";
+  const isOpen = STATE.pipeExpanded.has(appKey);
+  const badge = safeUrl(app.linkedin_url) ? " " + linkedinCell(app.linkedin_url) : "";
+  const nameHtml =
+    '<span class="pc-exp">&#9656;</span><span>' + esc(app.name || "Unknown") + "</span>" + badge;
+
+  let roleLine = "";
+  if (app.position && app.company) {
+    roleLine = esc(app.position) + ' <span class="co">@ ' + esc(app.company) + "</span>";
+  } else if (app.company) {
+    roleLine = esc(app.company);
+  } else if (app.position) {
+    roleLine = esc(app.position);
+  }
+
+  const applied = ymd(app.createdAt);
+  const d = daysAgo(app.updatedAt); // approximates days in the current stage
+  let staleCls = "";
+  if (d != null) {
+    if (d > 60) staleCls = "pc-stale-red";
+    else if (d > 30) staleCls = "pc-stale-amber";
+  }
+
+  let meta = "";
+  if (roleLabel) meta += "<span>" + esc(roleLabel) + "</span>";
+  if (app.source) meta += '<span class="src">' + esc(app.source) + "</span>";
+  if (applied) meta += "<span>applied " + esc(applied) + "</span>";
+  if (d != null) meta += '<span class="' + staleCls + '">' + d + "d in stage</span>";
+
+  // Agent rating (from inbound-ratings), if this candidate was scored.
+  let ratingHtml = "";
+  const rt = app.rating;
+  if (rt && typeof rt.score === "number") {
+    ratingHtml =
+      '<div class="pc-rating">agent rating ' +
+      '<span class="pc-rating-score ' + scoreClass(rt.score) + '">' + rt.score + "</span>" +
+      (rt.recommendation ? "<span>· " + esc(rt.recommendation) + "</span>" : "") +
+      "</div>";
+  }
+
+  // Interviews logged to this candidate (one entry per scheduled round).
+  const ivs = Array.isArray(app.interviews) ? app.interviews : [];
+  let ivsHtml = "";
+  if (ivs.length) {
+    ivsHtml =
+      '<div class="pc-ivs"><div class="pc-ivs-label">Interviews (' + ivs.length + ")</div>" +
+      ivs.map(pipeIvEntry).join("") +
+      "</div>";
+  }
+
+  const timelineHtml = isOpen ? pipeTimeline(app) : "";
+
+  return (
+    '<div class="pipe-card expandable' + (isOpen ? " tl-open" : "") +
+    '" data-appkey="' + esc(appKey) + '">' +
+    '<div class="pc-name">' + nameHtml + "</div>" +
+    (roleLine ? '<div class="pc-role">' + roleLine + "</div>" : "") +
+    (meta ? '<div class="pc-meta">' + meta + "</div>" : "") +
+    ratingHtml +
+    ivsHtml +
+    timelineHtml +
+    "</div>"
+  );
+}
+
+// Ashby-style vertical timeline of a candidate's journey, oldest first:
+// Applied/Sourced -> each stage entry (current stage flagged + days in it) ->
+// interviews interleaved chronologically -> the agent's inbound rating event.
+// All times in America/Los_Angeles.
+function pipeTimeline(app) {
+  const events = [];
+
+  const appliedIso = app.appliedAt || app.createdAt || null;
+  if (appliedIso) {
+    events.push({ t: tlTs(appliedIso), iso: appliedIso, kind: "applied", src: app.source || null });
+  }
+
+  const hist = Array.isArray(app.stageHistory) ? app.stageHistory : [];
+  for (const h of hist) {
+    if (!h || !h.enteredStageAt) continue;
+    events.push({ t: tlTs(h.enteredStageAt), iso: h.enteredStageAt, kind: "stage", h });
+  }
+
+  const ivs = Array.isArray(app.interviews) ? app.interviews : [];
+  for (const iv of ivs) {
+    events.push({ t: tlTs(iv.datetime), iso: iv.datetime, kind: "interview", iv });
+  }
+
+  const rt = app.rating;
+  if (rt && typeof rt.score === "number" && rt.rated_at) {
+    events.push({ t: tlTs(rt.rated_at), iso: rt.rated_at, kind: "rating", rt });
+  }
+
+  // Oldest first; undated events sink to the bottom.
+  events.sort((a, b) => a.t - b.t);
+
+  const stillLoading = app.stageHistory == null; // detached fetch not done yet
+  let inner = "";
+  if (!events.length) {
+    inner = '<div class="tl-empty">' +
+      (stillLoading ? "Loading timeline…" : "No timeline events recorded.") + "</div>";
+  } else {
+    inner = '<div class="tl">' + events.map(tlEventHtml).join("") + "</div>";
+    if (stillLoading) {
+      inner += '<div class="tl-empty" style="margin-top:8px">Stage history still loading — refresh in a moment.</div>';
+    }
+  }
+
+  return '<div class="pc-timeline"><div class="tl-title-lbl">Timeline</div>' + inner + "</div>";
+}
+
+// Parse an ISO timestamp to millis for sorting; undated -> +Infinity (sinks last).
+function tlTs(iso) {
+  if (!iso) return Infinity;
+  const t = Date.parse(iso);
+  return isNaN(t) ? Infinity : t;
+}
+
+// Date-only, America/Los_Angeles (used for applied/stage/rating events).
+function tlDate(iso) {
+  if (!iso) return "—";
+  const t = Date.parse(iso);
+  if (isNaN(t)) return esc(iso);
+  return esc(new Date(t).toLocaleDateString("en-US", {
+    timeZone: "America/Los_Angeles", year: "numeric", month: "short", day: "numeric",
+  }));
+}
+
+// Days between an ISO date and now (floored, never negative).
+function tlDaysSince(iso) {
+  if (!iso) return null;
+  const t = Date.parse(iso);
+  if (isNaN(t)) return null;
+  return Math.max(0, Math.floor((Date.now() - t) / 86400000));
+}
+
+function tlEventHtml(ev) {
+  if (ev.kind === "applied") {
+    const src = ev.src;
+    return tlNode("applied",
+      '<div class="tl-date">' + tlDate(ev.iso) + "</div>" +
+      '<div class="tl-title">Applied / Sourced' + (src ? ' <span class="tl-src">via ' + esc(src) + "</span>" : "") + "</div>");
+  }
+  if (ev.kind === "stage") {
+    const h = ev.h || {};
+    const current = !h.leftStageAt; // no leftStageAt => current stage
+    let pill = "";
+    if (current) {
+      const days = tlDaysSince(h.enteredStageAt);
+      pill = '<span class="tl-current-pill">current' + (days != null ? " · " + days + "d" : "") + "</span>";
+    }
+    const dotCls = "stage" + (current ? " current" : "");
+    return tlNode(dotCls,
+      '<div class="tl-date">' + tlDate(ev.iso) + "</div>" +
+      '<div class="tl-title">Entered ' + esc(h.title || "stage") + pill + "</div>");
+  }
+  if (ev.kind === "interview") {
+    return tlNode("interview", pipeIvEntry(ev.iv));
+  }
+  if (ev.kind === "rating") {
+    const rt = ev.rt || {};
+    const badge = '<span class="pc-rating-score ' + scoreClass(rt.score) + '">' + rt.score + "</span>";
+    const rec = rt.recommendation ? ' <span class="tl-src">· ' + esc(rt.recommendation) + "</span>" : "";
+    return tlNode("rating",
+      '<div class="tl-date">' + tlDate(ev.iso) + "</div>" +
+      '<div class="tl-title">Agent rating ' + badge + rec + "</div>");
+  }
+  return "";
+}
+
+function tlNode(dotCls, bodyHtml) {
+  return '<div class="tl-item"><span class="tl-dot ' + dotCls + '"></span>' + bodyHtml + "</div>";
+}
+
+// An interview event inside the timeline.
+function tlInterviewHtml(iv) {
+  return '<div class="pc-iv">' + ivHeadHtml(iv) + "</div>";
+}
+
+// One interview event on a card: when it happened, with whom, upcoming/completed.
+function pipeIvEntry(iv) {
+  return '<div class="pc-iv">' + ivHeadHtml(iv) + "</div>";
+}
+
+function ivHeadHtml(iv) {
+  const who = (Array.isArray(iv.interviewers) && iv.interviewers.length)
+    ? '<span class="pc-iv-who"><span class="who-lbl">with </span>' + esc(iv.interviewers.join(", ")) + "</span>"
+    : "";
+  return '<div class="pc-iv-head">' +
+    '<span class="pc-iv-when">' + ivShortWhen(iv.datetime) + "</span>" +
+    who +
+    '<span class="pc-iv-spacer">' + ivStatusPill(iv.status) + "</span>" +
+    "</div>";
+}
+
+function renderActiveTab() {
+  renderUpcomingStrip();
+  renderActiveRolePills();
+  const role = currentActiveRole();
+  const content = el("activeContent");
+  if (!role) {
+    content.innerHTML = '<div class="state">No open roles found in ' + esc(sorName()) + ".</div>";
+    return;
+  }
+  const ap = role.activePipeline || { stages: {}, total: 0 };
+  if (!ap.total) {
+    content.innerHTML = '<div class="state">No candidates currently in interviews.</div>';
+    return;
+  }
+
+  const cols = PIPE_STAGES.slice();
+  const other = (ap.stages && ap.stages["Other"]) || [];
+  if (other.length) cols.push("Other");
+
+  let html = '<div class="pipe-cols">';
+  for (const stage of cols) {
+    const list = (ap.stages && ap.stages[stage]) || [];
+    const colCls =
+      stage === "Offer" ? " offer" : stage === "Other" ? " other" : "";
+    html +=
+      '<div class="pipe-col' + colCls + '">' +
+      '<div class="pipe-col-head">' + esc(stage) +
+      '<span class="pc-count">' + fmt(list.length) + "</span></div>" +
+      '<div class="pipe-col-body">';
+    if (!list.length) {
+      html += '<div class="pipe-col-empty">—</div>';
+    } else {
+      for (const app of list) html += pipeCard(app, role.label);
+    }
+    html += "</div></div>";
+  }
+  html += "</div>";
+  content.innerHTML = html;
+
+  // Clicking a candidate card toggles its Ashby-style timeline. Interactive
+  // children (links, interview heads, Act buttons) handle their own clicks.
+  content.querySelectorAll(".pipe-card.expandable").forEach((card) => {
+    card.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) return;
+      if (ev.target.closest(".act-btn, .fb-change")) return;
+      const k = card.getAttribute("data-appkey");
+      if (!k) return;
+      if (STATE.pipeExpanded.has(k)) STATE.pipeExpanded.delete(k);
+      else STATE.pipeExpanded.add(k);
+      renderActiveTab();
+    });
+  });
+}
+
+// Thin strip of the next ~7 days of scheduled interviews, across all roles.
+function renderUpcomingStrip() {
+  const box = el("upcomingStrip");
+  if (!box) return;
+  const iv = (STATE.data && STATE.data.interviews) || null;
+  const list = (iv && Array.isArray(iv.upcoming)) ? iv.upcoming : [];
+  if (!list.length) {
+    box.innerHTML =
+      '<div class="up-strip"><div class="up-strip-head">Upcoming interviews (next 7 days)</div>' +
+      '<div class="up-empty">No interviews scheduled in the next 7 days.</div></div>';
+    return;
+  }
+  let items = "";
+  for (const u of list) {
+    const who = (Array.isArray(u.interviewers) && u.interviewers.length)
+      ? '<div class="up-who">with ' + esc(u.interviewers.join(", ")) + "</div>"
+      : "";
+    items +=
+      '<div class="up-item">' +
+      '<div class="up-cand">' + esc(u.candidate || "Unknown") + "</div>" +
+      (u.role_label ? '<div class="up-role">' + esc(u.role_label) + "</div>" : "") +
+      '<div class="up-when">' + ivShortWhen(u.datetime) + "</div>" +
+      who +
+      "</div>";
+  }
+  box.innerHTML =
+    '<div class="up-strip"><div class="up-strip-head">Upcoming interviews (next 7 days) ' +
+    '<span class="up-count">' + fmt(list.length) + "</span></div>" +
+    '<div class="up-list">' + items + "</div></div>";
+}
+
+// ---------- Leads tab ----------
+// Read-only mirror of Ashby's per-role "Leads" view. Uses the same role-bar pill
+// switcher as the Inbound/Active tabs: one pill per role (with its lead count),
+// and the New Lead -> Reached Out -> Replied kanban for the SELECTED role only.
+// No Advance/Reject wiring here.
+function currentLeadsRole() {
+  if (!STATE.data) return null;
+  return (STATE.data.roles || []).find((r) => r.key === STATE.activeLeadsRole) || null;
+}
+
+function renderLeadsTab() {
+  renderLeadsStale();
+  renderLeadsRolePills();
+  const role = currentLeadsRole();
+  renderLeadsTiles(role);
+  renderLeadsContent(role);
+}
+
+function renderLeadsRolePills() {
+  const d = STATE.data;
+  const bar = el("leadsRoleBar");
+  const roles = (d && d.roles) || [];
+  if (!roles.length) {
+    bar.innerHTML = '<span class="rb-label">Role</span><span class="muted-dash">No open roles found in ' + esc(sorName()) + ".</span>";
+    return;
+  }
+  let html = '<span class="rb-label">Role</span>';
+  for (const r of roles) {
+    const active = r.key === STATE.activeLeadsRole ? " active" : "";
+    const n = (r.leads && r.leads.total) || 0;
+    const titleAttr = r.note ? ' title="' + esc(r.note) + '"' : "";
+    html +=
+      '<button class="pill' + active + '" data-role="' + esc(r.key) + '"' + titleAttr + ">" +
+      esc(r.label) +
+      '<span class="pill-count">' + fmt(n) + "</span></button>";
+  }
+  bar.innerHTML = html;
+  bar.querySelectorAll(".pill").forEach((p) => {
+    p.addEventListener("click", () => {
+      STATE.activeLeadsRole = p.getAttribute("data-role");
+      renderLeadsTab();
+    });
+  });
+}
+
+// Per-role summary tiles (matches the Inbound tab's per-role tiles).
+function renderLeadsTiles(role) {
+  const box = el("leadsTiles");
+  if (!role) { box.innerHTML = ""; return; }
+  const st = (role.leads && role.leads.stages) || {};
+  const nl = (st["New Lead"] || []).length;
+  const ro = (st["Reached Out"] || []).length;
+  const rp = (st["Replied"] || []).length;
+  const total = (role.leads && role.leads.total) || 0;
+  box.innerHTML =
+    tile("Total leads", fmt(total), "in this role", "accent") +
+    tile("New Lead", fmt(nl), "queued or invite pending") +
+    tile("Reached Out", fmt(ro), "message delivered") +
+    tile("Replied", fmt(rp), "responded", "good");
+}
+
+// The three-column kanban for the selected role (New Lead -> Reached Out ->
+// Replied), reusing the Active-pipeline column classes so it looks identical.
+function renderLeadsContent(role) {
+  const content = el("leadsContent");
+  if (!role) {
+    content.innerHTML = '<div class="state">No open roles found in ' + esc(sorName()) + ".</div>";
+    return;
+  }
+  if (!((role.leads && role.leads.total) || 0)) {
+    // Distinguish "still loading" (cold-boot leads build not done / caught up yet)
+    // from a genuinely empty role, so a cold paint doesn't misreport "No leads".
+    const s = (STATE.data && STATE.data.leadsSync) || null;
+    const loading = !s || !s.ok || (s.stale && !s.ageSeconds);
+    if (loading) {
+      content.innerHTML = '<div class="state"><span class="spinner"></span> Loading leads…</div>';
+    } else {
+      content.innerHTML = '<div class="state">No leads yet for ' + esc(role.label) + ".</div>";
+    }
+    return;
+  }
+  const stages = (role.leads && role.leads.stages) || {};
+  let html = '<div class="pipe-cols">';
+  for (const stage of LEAD_STAGE_COLS) {
+    const list = stages[stage] || [];
+    const colCls = stage === "Replied" ? " replied" : "";
+    html +=
+      '<div class="pipe-col' + colCls + '">' +
+      '<div class="pipe-col-head">' + esc(stage) +
+      '<span class="pc-count">' + fmt(list.length) + "</span></div>" +
+      '<div class="pipe-col-body">';
+    if (!list.length) html += '<div class="pipe-col-empty">—</div>';
+    else for (const app of list) html += leadCard(app);
+    html += "</div></div>";
+  }
+  html += "</div>";
+  content.innerHTML = html;
+
+  // Clicking a lead card toggles its outreach timeline. Links handle themselves.
+  content.querySelectorAll(".pipe-card.expandable").forEach((card) => {
+    card.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) return;
+      const k = card.getAttribute("data-appkey");
+      if (!k) return;
+      if (STATE.leadsExpanded.has(k)) STATE.leadsExpanded.delete(k);
+      else STATE.leadsExpanded.add(k);
+      renderLeadsContent(role);
+    });
+  });
+}
+
+// Subtle stale/error indicator (mirrors how other tabs use their sync block).
+function renderLeadsStale() {
+  const s = (STATE.data && STATE.data.leadsSync) || null;
+  const box = el("leadsBanner");
+  if (!box) return;
+  if (!s || (s.ok && !s.stale)) {
+    box.style.display = "none";
+    box.innerHTML = "";
+    return;
+  }
+  box.style.display = "flex";
+  box.className = "warn-banner";
+  if (!s.ok) {
+    box.innerHTML =
+      '<span class="ni">&#9888;</span><span><b>Leads sync catching up.</b> ' +
+      "Showing the last cached copy — live " + esc(sorName()) + " lead data is momentarily unavailable." +
+      (s.error ? ' <span class="err-detail">(' + esc(s.error) + ")</span>" : "") +
+      "</span>";
+  } else {
+    box.innerHTML =
+      '<span class="ni">&#9888;</span><span><b>Leads sync stale.</b> ' +
+      "Showing cached leads from " + esc(agoText(s.ageSeconds)) + "." +
+      (s.error ? ' <span class="err-detail">(' + esc(s.error) + ")</span>" : "") +
+      "</span>";
+  }
+}
+
+// Days in the current stage: the stageHistory entry with no leftStageAt is the
+// current one -> days since enteredStageAt. Fall back to days since updatedAt,
+// flagged approximate ("~").
+function leadDaysInStage(app) {
+  const hist = Array.isArray(app.stageHistory) ? app.stageHistory : [];
+  let current = null;
+  for (const h of hist) {
+    if (h && h.enteredStageAt && !h.leftStageAt) {
+      if (!current || String(h.enteredStageAt) > String(current.enteredStageAt)) current = h;
+    }
+  }
+  if (current) {
+    const d = tlDaysSince(current.enteredStageAt);
+    if (d != null) return { days: d, approx: false };
+  }
+  const d2 = tlDaysSince(app.updatedAt);
+  if (d2 != null) return { days: d2, approx: true };
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Leads outreach state — read EXCLUSIVELY from Ashby (candidate notes parsed
+// server-side into app.outreachEvents + stage). The local outreach ledger is
+// batch mechanics and never feeds this view (the hiring lead, 2026-07-29).
+// ---------------------------------------------------------------------------
+
+function leadEvents(app) {
+  return Array.isArray(app.outreachEvents) ? app.outreachEvents : null;
+}
+
+// Touches = actual outreach (advance bookkeeping excluded).
+function leadTouches(app) {
+  const evs = leadEvents(app) || [];
+  return evs.filter((e) => e && e.action !== "advanced");
+}
+
+function isInviteEvent(e) {
+  return (
+    e.action === "sent" &&
+    (e.channel === "connect" || e.type === "invite") &&
+    e.channel !== "inmail" &&
+    e.channel !== "dm"
+  );
+}
+function isMessageEvent(e) {
+  return (
+    e.action === "sent" &&
+    (e.channel === "dm" ||
+      e.channel === "inmail" ||
+      e.channel === "connect-note" ||
+      e.channel === "email" ||
+      e.type === "initial" ||
+      e.type === "followup1" ||
+      e.type === "followup2") &&
+    !isInviteEvent(e)
+  );
+}
+
+// Human status chip for a lead card, derived from Ashby state only:
+// stage + the parsed outreach notes. Returns {cls, label, title} or null.
+function outreachStatus(app) {
+  const evs = leadTouches(app);
+  const loaded = leadEvents(app) != null;
+  if (!loaded) {
+    return { cls: "oc-other", label: "syncing…", title: "Reading outreach notes from " + sorName() };
+  }
+  if (!evs.length) {
+    if (app.stage === "New Lead") {
+      return {
+        cls: "oc-queued",
+        label: "queued",
+        title: "Advanced — no outreach note in " + sorName() + " yet; goes out with the next batch",
+      };
+    }
+    return {
+      cls: "oc-other",
+      label: "no outreach note",
+      title: "Stage says contacted but " + sorName() + " has no outreach note (likely a pre-agent bulk touch)",
+    };
+  }
+
+  const hasAccepted = evs.some((e) => e.action === "accepted");
+  const hasMessage = evs.some(isMessageEvent);
+  const hasReply = evs.some((e) => e.action === "replied");
+  const latest = evs[evs.length - 1];
+
+  if (evs.some((e) => e.action === "booked"))
+    return { cls: "oc-booked", label: "booked", title: "Interview booked" };
+  if (evs.some((e) => e.action === "link-shared"))
+    return { cls: "oc-shared", label: "link shared", title: "Booking link shared" };
+  if (hasReply)
+    return { cls: "oc-replied", label: "replied", title: "Candidate replied" };
+  if (latest.action === "closed")
+    return { cls: "oc-closed", label: "closed", title: "Closed unresponsive" };
+
+  // Invite path: bare connect out, nothing since.
+  if (!hasAccepted && !hasMessage) {
+    const inviteEv = [...evs].reverse().find(isInviteEvent);
+    if (inviteEv) {
+      const days = inviteEv.ts ? tlDaysSince(inviteEv.ts) : null;
+      const dTxt = days != null ? " · " + days + "d" : "";
+      return {
+        cls: "oc-pending",
+        label: "invite pending" + dTxt,
+        title: "Connection request sent — not yet accepted",
+      };
+    }
+  }
+  if (hasAccepted && !hasMessage)
+    return { cls: "oc-accepted", label: "invite accepted", title: "Connection accepted — message not yet sent" };
+
+  if (hasMessage) {
+    const lastMsg = [...evs].reverse().find(isMessageEvent);
+    const ch = lastMsg.channel || "";
+    const typ = lastMsg.type || "";
+    if (typ === "followup1") return { cls: "oc-msg", label: "follow-up 1", title: channelLabel(ch) + " follow-up 1 sent" };
+    if (typ === "followup2") return { cls: "oc-msg", label: "follow-up 2", title: channelLabel(ch) + " follow-up 2 sent" };
+    if (ch === "inmail") return { cls: "oc-msg", label: "InMail sent", title: "InMail sent" };
+    if (ch === "connect-note") return { cls: "oc-msg", label: "connect + note", title: "Connection request with note (legacy)" };
+    return { cls: "oc-msg", label: "message sent", title: channelLabel(ch) + " sent" };
+  }
+  return { cls: "oc-other", label: latest.action || "logged", title: latest.action || "" };
+}
+
+function channelLabel(ch) {
+  if (!ch) return "";
+  if (ch === "connect") return "connection request";
+  if (ch === "connect-note") return "connect + note";
+  if (ch === "dm") return "DM";
+  if (ch === "inmail") return "InMail";
+  if (ch === "email") return "email";
+  if (ch === "linkedin") return "LinkedIn";
+  return ch;
+}
+
+function outreachChip(app) {
+  const st = outreachStatus(app);
+  if (!st) return "";
+  const title = st.title ? ' title="' + esc(st.title) + '"' : "";
+  return '<span class="lead-chip ' + st.cls + '"' + title + ">" + esc(st.label) + "</span>";
+}
+
+// A single expandable lead card. Collapsed: name + status chip. Expanded:
+// full outreach timeline from Ashby (stage history + outreach notes).
+function leadCard(app) {
+  const appKey = app.applicationId || app.candidateId || app.name || "";
+  const isOpen = STATE.leadsExpanded.has(appKey);
+  const badge = safeUrl(app.linkedin_url) ? " " + linkedinCell(app.linkedin_url) : "";
+  const nameHtml =
+    '<span class="pc-exp">&#9656;</span><span>' + esc(app.name || "Unknown") + "</span>" + badge;
+
+  let roleLine = "";
+  if (app.position && app.company) {
+    roleLine = esc(app.position) + ' <span class="co">@ ' + esc(app.company) + "</span>";
+  } else if (app.company) {
+    roleLine = esc(app.company);
+  } else if (app.position) {
+    roleLine = esc(app.position);
+  }
+
+  const bits = [];
+  if (app.source) bits.push('<span class="lead-src">' + esc(app.source) + "</span>");
+  const dis = leadDaysInStage(app);
+  if (dis) {
+    bits.push(
+      '<span class="lead-days' + (dis.approx ? " approx" : "") + '">' +
+      (dis.approx ? "~" : "") + dis.days + "d in stage</span>"
+    );
+  }
+  const as = app.agentScore;
+  if (as && typeof as.score === "number") {
+    const t = as.status ? ' title="' + esc("status: " + as.status) + '"' : "";
+    bits.push(
+      '<span class="lead-agent"' + t + ">agent " +
+      '<span class="pc-rating-score ' + scoreClass(as.score) + '">' + as.score + "</span></span>"
+    );
+  }
+  const oc = outreachChip(app);
+  if (oc) bits.push(oc);
+  const tags = Array.isArray(app.tags) ? app.tags : [];
+  if (tags.includes("agent-sourced")) {
+    bits.push('<span class="lead-prov" title="Agent-sourced record">agent-sourced</span>');
+  }
+  if (app.adopted) {
+    bits.push('<span class="lead-prov" title="Pre-existing ' + esc(sorName()) + ' record adopted on the hiring lead\u2019s Advance">adopted</span>');
+  }
+
+  const metaRow = bits.length ? '<div class="lead-meta-row">' + bits.join("") + "</div>" : "";
+  const timelineHtml = isOpen ? leadTimeline(app) : "";
+
+  return (
+    '<div class="pipe-card expandable' + (isOpen ? " tl-open" : "") +
+    '" data-appkey="' + esc(appKey) + '">' +
+    '<div class="pc-name">' + nameHtml + "</div>" +
+    (roleLine ? '<div class="pc-role">' + roleLine + "</div>" : "") +
+    metaRow +
+    timelineHtml +
+    "</div>"
+  );
+}
+
+// Outreach timeline for a lead, built ONLY from Ashby: application stage
+// history + parsed outreach notes. A synthetic "still pending" marker follows
+// a bare invite until an accept/message note lands.
+function leadTimeline(app) {
+  const events = [];
+  const noteEvs = leadEvents(app); // null while notes are still syncing
+  const touches = noteEvs || [];
+
+  // Entered Ashby: fresh creates = the hiring lead\u2019s Advance; adopted = old bulk record.
+  const appliedIso = app.appliedAt || app.createdAt || null;
+  if (appliedIso) {
+    events.push({
+      t: tlTs(appliedIso),
+      iso: appliedIso,
+      kind: "applied",
+      src: app.source || null,
+      adopted: !!app.adopted,
+    });
+  }
+
+  const stageHist = Array.isArray(app.stageHistory) ? app.stageHistory : [];
+  for (const h of stageHist) {
+    if (!h || !h.enteredStageAt) continue;
+    events.push({ t: tlTs(h.enteredStageAt), iso: h.enteredStageAt, kind: "stage", h });
+  }
+
+  let lastInvite = null;
+  let sawAccepted = false;
+  let sawMessage = false;
+  for (const e of touches) {
+    if (!e) continue;
+    if (isInviteEvent(e)) lastInvite = e;
+    if (e.action === "accepted") sawAccepted = true;
+    if (isMessageEvent(e)) sawMessage = true;
+    events.push({ t: tlTs(e.ts), iso: e.ts, kind: "outreach", e });
+  }
+
+  if (lastInvite && !sawAccepted && !sawMessage) {
+    events.push({
+      t: Infinity - 1, // always last
+      iso: lastInvite.ts,
+      kind: "pending-invite",
+      inviteTs: lastInvite.ts,
+    });
+  }
+
+  events.sort((a, b) => a.t - b.t);
+
+  const stillLoading = app.stageHistory == null || noteEvs == null;
+  const sor = sorName();
+  let inner = "";
+  if (!events.length) {
+    inner =
+      '<div class="tl-empty">' +
+      (stillLoading ? "Loading from " + esc(sor) + "…" : "No outreach logged in " + esc(sor) + " yet.") +
+      "</div>";
+  } else {
+    inner = '<div class="tl">' + events.map(leadTlEventHtml).join("") + "</div>";
+    if (stillLoading) {
+      inner +=
+        '<div class="tl-empty" style="margin-top:8px">Still syncing from ' + esc(sor) + " — refresh in a moment.</div>";
+    }
+  }
+
+  return (
+    '<div class="pc-timeline"><div class="tl-title-lbl">Outreach timeline (' + esc(sor) + ")</div>" +
+    inner +
+    "</div>"
+  );
+}
+
+function leadTlEventHtml(ev) {
+  if (ev.kind === "applied") {
+    const src = ev.src;
+    const sor = sorName();
+    const label = ev.adopted
+      ? "Entered " + esc(sor) + " (existing record, adopted)"
+      : "Added to " + esc(sor);
+    return tlNode(
+      "applied",
+      '<div class="tl-date">' + tlDate(ev.iso) + "</div>" +
+      '<div class="tl-title">' + label +
+      (src ? ' <span class="tl-src">via ' + esc(src) + "</span>" : "") +
+      "</div>"
+    );
+  }
+  if (ev.kind === "stage") {
+    const h = ev.h || {};
+    const current = !h.leftStageAt;
+    let pill = "";
+    if (current) {
+      const days = tlDaysSince(h.enteredStageAt);
+      pill = '<span class="tl-current-pill">current' + (days != null ? " · " + days + "d" : "") + "</span>";
+    }
+    const dotCls = "stage" + (current ? " current" : "");
+    return tlNode(
+      dotCls,
+      '<div class="tl-date">' + tlDate(ev.iso) + "</div>" +
+      '<div class="tl-title">Entered ' + esc(h.title || "stage") + pill + "</div>"
+    );
+  }
+  if (ev.kind === "pending-invite") {
+    const days = tlDaysSince(ev.inviteTs);
+    return tlNode(
+      "oc-pending",
+      '<div class="tl-date">' + tlDate(ev.inviteTs) + "</div>" +
+      '<div class="tl-title">Connection request' +
+      '<span class="tl-no-pill">not accepted' + (days != null ? " · " + days + "d" : "") + "</span></div>" +
+      '<div class="tl-sub">Waiting on accept — InMail escalates at ~+4 days</div>'
+    );
+  }
+  if (ev.kind === "outreach") {
+    return leadOutreachNode(ev.e || {});
+  }
+  return "";
+}
+
+function leadOutreachNode(e) {
+  const act = e.action || "";
+  const ch = e.channel || "";
+  const typ = e.type || "";
+  const date = tlDate(e.ts);
+  let dot = "oc-other";
+  let title = act;
+  let sub = "";
+  let pill = "";
+  let body = "";
+  const msgBody = (label) =>
+    e.message
+      ? '<div class="tl-msg"><span class="tl-msg-sub">' + label + "</span>" +
+        esc(truncateMsg(e.message, 400)) + "</div>"
+      : "";
+
+  if (act === "advanced") {
+    dot = "applied";
+    title = "Advanced by the hiring lead (dashboard)";
+  } else if (act === "accepted") {
+    dot = "oc-accepted";
+    title = "Connection request accepted";
+    pill = '<span class="tl-yes-pill">yes</span>';
+  } else if (act === "replied") {
+    dot = "oc-replied";
+    title = "Candidate replied";
+    pill = '<span class="tl-yes-pill">replied</span>';
+    body = msgBody("Reply");
+  } else if (act === "link-shared") {
+    dot = "oc-shared";
+    title = "Booking link shared";
+  } else if (act === "booked") {
+    dot = "oc-booked";
+    title = "Interview booked";
+    pill = '<span class="tl-yes-pill">booked</span>';
+  } else if (act === "closed") {
+    dot = "oc-closed";
+    title = "Closed — unresponsive";
+  } else if (act === "sent") {
+    if (isInviteEvent(e)) {
+      dot = "oc-invite";
+      title = "Connection request sent";
+      sub = "bare invite · no note";
+    } else if (ch === "connect-note") {
+      dot = "oc-msg";
+      title = "Connection request + note sent";
+      if (e.variant) sub = "template " + e.variant;
+      body = msgBody("Note");
+    } else if (ch === "dm") {
+      dot = typ === "followup1" || typ === "followup2" ? "oc-followup" : "oc-msg";
+      title =
+        typ === "followup1" ? "Follow-up 1 sent (DM)" :
+        typ === "followup2" ? "Follow-up 2 sent (DM)" : "Message sent (DM)";
+      if (e.variant) sub = "template " + e.variant;
+      body = msgBody("Message");
+    } else if (ch === "inmail") {
+      dot = typ === "followup1" || typ === "followup2" ? "oc-followup" : "oc-msg";
+      title =
+        typ === "followup1" ? "Follow-up 1 sent (InMail)" :
+        typ === "followup2" ? "Follow-up 2 sent (InMail)" : "InMail sent";
+      if (e.variant) sub = "template " + e.variant;
+      if (e.subject) sub = (sub ? sub + " · " : "") + "subj: " + e.subject;
+      body = msgBody("InMail");
+    } else {
+      dot = "oc-sent";
+      title = "Outreach sent" + (ch ? " (" + channelLabel(ch) + ")" : "");
+      if (e.variant) sub = "template " + e.variant;
+      body = msgBody("Message");
+    }
+  } else {
+    title = act || "event";
+  }
+
+  return tlNode(
+    dot,
+    '<div class="tl-date">' + date + "</div>" +
+    '<div class="tl-title">' + esc(title) + pill + "</div>" +
+    (sub ? '<div class="tl-sub">' + esc(truncateMsg(sub, 180)) + "</div>" : "") +
+    body
+  );
+}
+
+function truncateMsg(s, n) {
+  if (s == null) return "";
+  const str = String(s);
+  if (str.length <= n) return str;
+  return str.slice(0, n - 1) + "\u2026";
+}
+
+// ---------- interview display helpers ----------
+// Compact date + time on ONE line, in America/Los_Angeles (the hiring lead's timezone).
+// Used on both the upcoming strip and the per-card interview entries.
+function ivShortWhen(iso) {
+  if (!iso) return '<span class="muted-dash">—</span>';
+  const t = Date.parse(iso);
+  if (isNaN(t)) return esc(iso);
+  const d = new Date(t);
+  const opts = { timeZone: "America/Los_Angeles" };
+  const date = d.toLocaleDateString("en-US", { ...opts, month: "short", day: "numeric" });
+  const time = d.toLocaleTimeString("en-US", { ...opts, hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+  return esc(date + ", " + time);
+}
+function ivStatusPill(status) {
+  const up = status === "upcoming";
+  const cls = up ? "upcoming" : "completed";
+  const label = up ? "Upcoming" : "Completed";
+  return '<span class="st-pill ' + cls + '"><span class="st-dot"></span>' + label + "</span>";
+}
+
+// ---------- feedback modal ----------
+function openFeedbackModal(kind, obj, action) {
+  let role, roleSlug, name, roleAtCompany, agentRec, agentScore;
+  if (kind === "sourced") {
+    role = currentRole();
+    if (!role) return;
+    roleSlug = role.slug || "";
+    name = obj.name || "Unknown";
+    const cur = obj.current || {};
+    roleAtCompany =
+      cur.title && cur.company ? cur.title + " @ " + cur.company
+      : cur.company ? cur.company
+      : cur.title ? cur.title
+      : "";
+    agentRec = obj.status || null;
+    agentScore = typeof obj.score === "number" ? obj.score : null;
+  } else {
+    role = currentInboundRole();
+    if (!role) return;
+    roleSlug = obj.role || role.slug || "";
+    name = obj.name || "Unknown";
+    roleAtCompany = obj.source ? "Applied · " + obj.source : "";
+    agentRec = obj.recommendation || null;
+    agentScore = typeof obj.score === "number" ? obj.score : null;
+  }
+  const agentAdvance = kind === "sourced" ? agentRec === "shortlisted" : agentRec === "Advance";
+  const override = (action === "advance") !== agentAdvance;
+
+  MODAL_CTX = { kind, obj, action, role, roleSlug };
+
+  el("fbCandName").textContent = name;
+  const roleEl = el("fbCandRole");
+  roleEl.textContent = roleAtCompany;
+  roleEl.style.display = roleAtCompany ? "" : "none";
+
+  const scoreTxt = agentScore == null ? "—" : agentScore;
+  el("fbAiLine").innerHTML =
+    "AI: <b>" + esc(agentRec || "—") + "</b> · score <b>" + esc(scoreTxt) + "</b>";
+
+  const ov = el("fbOverride");
+  if (override) {
+    ov.hidden = false;
+    ov.innerHTML =
+      "<span>⚠</span><span>You're overriding the AI's call — one line on why teaches the filter the most.</span>";
+  } else {
+    ov.hidden = true;
+    ov.innerHTML = "";
+  }
+
+  const confirm = el("fbConfirm");
+  confirm.className = "fb-confirm " + (action === "advance" ? "adv" : "rej");
+  confirm.textContent =
+    action !== "advance" ? "Don't advance"
+    : kind === "sourced" ? "Advance & reach out"
+    : "Advance to Initial Screen";
+  confirm.disabled = false;
+
+  el("fbNote").value = "";
+  const errBox = el("fbError");
+  errBox.hidden = true;
+  errBox.textContent = "";
+
+  el("fbModal").hidden = false;
+  setTimeout(() => { const n = el("fbNote"); if (n) n.focus(); }, 0);
+}
+
+function closeFeedbackModal() {
+  el("fbModal").hidden = true;
+  MODAL_CTX = null;
+  el("fbNote").value = "";
+  const errBox = el("fbError");
+  errBox.hidden = true;
+  errBox.textContent = "";
+}
+
+function buildFeedbackPayload(ctx) {
+  const { kind, obj, action, role, roleSlug } = ctx;
+  const base = {
+    source: kind,
+    role_key: role ? role.key : null,
+    role_slug: roleSlug,
+    role_title: role ? role.title : null,
+    job_id: role ? role.jobId : null,
+    tim_action: action,
+    feedback: "",
+  };
+  if (kind === "sourced") {
+    const cur = obj.current || {};
+    base.candidate = {
+      name: obj.name || "",
+      id: obj.id || null,
+      linkedin_url: obj.linkedin_url || null,
+      candidate_id: null,
+      application_id: null,
+      email: null,
+      title: cur.title || null,
+      company: cur.company || null,
+    };
+    base.agent_rec = obj.status || null;
+    base.agent_score = typeof obj.score === "number" ? obj.score : null;
+  } else {
+    base.candidate = {
+      name: obj.name || "",
+      id: null,
+      linkedin_url: obj.linkedin_url || null,
+      candidate_id: obj.candidate_id || null,
+      application_id: obj.application_id || null,
+      email: obj.email || null,
+      title: null,
+      company: null,
+    };
+    base.agent_rec = obj.recommendation || null;
+    base.agent_score = typeof obj.score === "number" ? obj.score : null;
+  }
+  return base;
+}
+
+async function submitFeedback() {
+  if (!MODAL_CTX) return;
+  const confirmBtn = el("fbConfirm");
+  const errBox = el("fbError");
+  errBox.hidden = true;
+  const payload = buildFeedbackPayload(MODAL_CTX);
+  payload.feedback = el("fbNote").value || "";
+  const label = confirmBtn.textContent;
+  confirmBtn.disabled = true;
+  confirmBtn.textContent = "Saving…";
+  try {
+    let json;
+    try {
+      const res = await fetch("api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) throw new Error(json.error || "HTTP " + res.status);
+    } catch (postErr) {
+      // The platform's dashboard proxy drops POSTs ("fetch failed") while GETs
+      // pass — retry the same payload base64url-encoded in a query param.
+      const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))))
+        .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      const res2 = await fetch("api/feedback?ts=" + Date.now() + "&p=" + b64);
+      json = await res2.json().catch(() => ({}));
+      if (!res2.ok || !json.ok) throw new Error(json.error || "HTTP " + res2.status);
+    }
+    const sourcedAdvance = MODAL_CTX && MODAL_CTX.kind === "sourced" && MODAL_CTX.action === "advance";
+    closeFeedbackModal();
+    const sor = sorName();
+    showToast(sourcedAdvance
+      ? "Saved — the recruiter updates the filter + " + sor + " and sends your personalized LinkedIn outreach (sends defer to after 1:30 PM on weekday mornings)."
+      : "Saved — the recruiter picks this up within ~2 min and updates " + sor + " + the filter.");
+    await loadFeedbackState();
+    reRenderActiveTab();
+  } catch (e) {
+    errBox.hidden = false;
+    errBox.textContent = "Couldn't save: " + (e.message || e);
+    confirmBtn.disabled = false;
+    confirmBtn.textContent = label;
+  }
+}
+
+// ---------- Tab 4: Calibration ----------
+// ---- weekly alignment helpers ----
+// Agreement % over SCORED verdicts only, or null when there is no denominator.
+function agreePct(agree, scored) {
+  return scored > 0 ? Math.round((agree / scored) * 100) : null;
+}
+function pctText(p) {
+  return p == null ? "—" : p + "%";
+}
+// The Monday (YYYY-MM-DD) of the week containing `d`, from LOCAL date parts —
+// "this week" means the hiring lead's current week, and week keys are plain dates.
+function weekStartKey(d) {
+  const local = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const back = (local.getUTCDay() + 6) % 7; // Mon -> 0 ... Sun -> 6
+  return new Date(local.getTime() - back * 86400000).toISOString().slice(0, 10);
+}
+function weekKeyOffset(key, weeks) {
+  return new Date(Date.parse(key + "T00:00:00Z") + weeks * 7 * 86400000)
+    .toISOString()
+    .slice(0, 10);
+}
+// Collapse a bucket (week / role / allTime) to the counts for the active source filter.
+// Accepts both the week shape ({scored, agree, unscored, by_family}) and the role
+// shape ({scored, agree, overrides, verdicts, by_family}) — missing fields default 0.
+function famCounts(b, fam) {
+  if (!b) return { scored: 0, agree: 0, unscored: 0, overrides: 0, verdicts: 0, fp: 0, fn: 0 };
+  if (fam === "all") {
+    const scored = b.scored || 0;
+    const agree = b.agree || 0;
+    const overrides = b.overrides != null ? b.overrides : (b.override != null ? b.override : Math.max(0, scored - agree));
+    const unscored = b.unscored || 0;
+    const verdicts = b.verdicts != null ? b.verdicts : scored + unscored;
+    // Prefer explicit fp/fn; if only family splits carry them, sum those.
+    let fp = b.fp || 0;
+    let fn = b.fn || 0;
+    if (!fp && !fn && b.by_family) {
+      for (const k of ["live", "shadow"]) {
+        const f = b.by_family[k] || {};
+        fp += f.fp || 0;
+        fn += f.fn || 0;
+      }
+    }
+    return { scored, agree, unscored, overrides, verdicts, fp, fn };
+  }
+  const f = (b.by_family && b.by_family[fam]) || {};
+  const scored = f.scored || 0;
+  const agree = f.agree || 0;
+  const overrides = f.overrides != null ? f.overrides : Math.max(0, scored - agree);
+  const unscored = f.unscored || 0;
+  const verdicts = f.verdicts != null ? f.verdicts : scored + unscored;
+  return {
+    scored, agree, unscored, overrides, verdicts,
+    fp: f.fp || 0,
+    fn: f.fn || 0,
+  };
+}
+const CALIB_FAM_LABEL = { all: "all verdicts", live: "your clicks", shadow: "shadow-rated" };
+const CALIB_ALIGN_LABEL = {
+  all: "all",
+  aligned: "aligned",
+  fp: "false positives",
+  fn: "false negatives",
+  overrides: "overrides",
+};
+const LOW_N = 5; // fewer than this many scored verdicts = not a trend
+
+function weeklyBuckets() {
+  const w = (STATE.feedback && STATE.feedback.weekly) || [];
+  return Array.isArray(w) ? w : [];
+}
+
+// Filter a calibration entry (or dashboard event) to the active family.
+// Dashboard feedback-queue events are always `live` (they are the hiring lead's clicks).
+// Calibration entries carry `family` from the server (shadow = paraform-*).
+function matchesCalibFamily(item, fam) {
+  if (fam === "all") return true;
+  if (!item) return false;
+  if (item.family === "live" || item.family === "shadow") return item.family === fam;
+  // Fallback for older payloads / dashboard events with no family field.
+  const src = typeof item.source === "string" ? item.source.trim() : "";
+  const derived = src.indexOf("paraform") === 0 ? "shadow" : "live";
+  return derived === fam;
+}
+
+function matchesCalibAlign(item, align) {
+  if (align === "all") return true;
+  if (!item) return false;
+  const a = item.alignment || "unscored";
+  if (align === "overrides") return a === "fp" || a === "fn";
+  return a === align;
+}
+
+// Role slug on a calib entry / dashboard event / weekly by_role key.
+function itemRoleSlug(item) {
+  if (!item) return null;
+  if (item.role) return String(item.role);
+  if (item.role_slug) return String(item.role_slug);
+  return null;
+}
+
+function matchesCalibRole(item, roleSlug) {
+  if (!roleSlug) return true; // null = All roles
+  return itemRoleSlug(item) === roleSlug;
+}
+
+// Dashboard role list for the Calibration pills. Prefer open-job roles from
+// STATE.data; fall back to slugs seen in calibration so a role with history
+// but no open job still gets a pill.
+function calibRoleOptions() {
+  const roles = ((STATE.data && STATE.data.roles) || []).filter((r) => r && r.slug);
+  if (roles.length) {
+    return roles.map((r) => ({
+      slug: r.slug,
+      label: r.label || r.title || r.slug,
+      note: r.note || null,
+    }));
+  }
+  const seen = new Set();
+  const out = [];
+  for (const c of (STATE.feedback && STATE.feedback.calibration) || []) {
+    const s = itemRoleSlug(c);
+    if (s && !seen.has(s)) {
+      seen.add(s);
+      out.push({ slug: s, label: s, note: null });
+    }
+  }
+  out.sort((a, b) => a.slug.localeCompare(b.slug));
+  return out;
+}
+
+// Counts for a role pill: scored verdicts in the active family (so the number
+// shrinks when you flip to Shadow-rated, matching what the tab shows).
+function calibRoleCount(slug, fam) {
+  const fb = STATE.feedback || {};
+  const stats = fb.stats || {};
+  const byRole = stats.byRole || {};
+  const r = byRole[slug];
+  if (r) {
+    const c = famCounts(r, fam || "all");
+    return c.scored || c.verdicts || 0;
+  }
+  // Fallback: count calibration entries directly.
+  let n = 0;
+  for (const c of fb.calibration || []) {
+    if (itemRoleSlug(c) === slug && matchesCalibFamily(c, fam || "all")) n += 1;
+  }
+  return n;
+}
+
+function renderCalibRolePills() {
+  const bar = el("calibRoleBar");
+  if (!bar) return;
+  const fam = STATE.calibFamily || "all";
+  const opts = calibRoleOptions();
+  const active = STATE.calibRole; // null = All
+
+  // All-roles count = sum of per-role scored (or allTime scored for the family).
+  const at = famCounts((STATE.feedback && STATE.feedback.stats && STATE.feedback.stats.allTime) || {}, fam);
+  const allN = at.scored || at.verdicts || 0;
+
+  let html = '<span class="rb-label">Role</span>';
+  html +=
+    '<button class="pill' + (active == null ? " active" : "") + '" data-role="">' +
+    "All roles" +
+    '<span class="pill-count">' + fmt(allN) + "</span></button>";
+  for (const r of opts) {
+    const n = calibRoleCount(r.slug, fam);
+    const isOn = active === r.slug ? " active" : "";
+    const titleAttr = r.note ? ' title="' + esc(r.note) + '"' : "";
+    html +=
+      '<button class="pill' + isOn + '" data-role="' + esc(r.slug) + '"' + titleAttr + ">" +
+      esc(r.label) +
+      '<span class="pill-count">' + fmt(n) + "</span></button>";
+  }
+  bar.innerHTML = html;
+  bar.querySelectorAll(".pill").forEach((p) => {
+    p.addEventListener("click", () => {
+      const v = p.getAttribute("data-role");
+      STATE.calibRole = v ? v : null;
+      renderCalibrationTab();
+    });
+  });
+}
+
+// Collapse a week bucket to the active family AND optional role slug.
+// When roleSlug is set, counts come from b.by_role[slug] (which itself has
+// by_family), so family + role compose correctly.
+function weekCounts(b, fam, roleSlug) {
+  if (!b) return famCounts(null, fam);
+  if (!roleSlug) return famCounts(b, fam);
+  const roleBucket = (b.by_role && b.by_role[roleSlug]) || null;
+  return famCounts(roleBucket, fam);
+}
+
+// All-time / by-role stats collapsed to family + optional single role.
+function statsCounts(stats, fam, roleSlug) {
+  stats = stats || {};
+  if (roleSlug) {
+    const r = (stats.byRole && stats.byRole[roleSlug]) || null;
+    return famCounts(r, fam);
+  }
+  return famCounts(stats.allTime || {}, fam);
+}
+
+// Compact advance/reject chip (used in AI stance + Your call columns).
+function callChipHtml(call, opts) {
+  opts = opts || {};
+  if (call !== "advance" && call !== "reject") {
+    return '<span class="muted-dash">—</span>';
+  }
+  const adv = call === "advance";
+  const label = opts.short
+    ? (adv ? "Advance" : "Reject")
+    : (adv ? "✓ Advance" : "✕ Reject");
+  return '<span class="v-chip sm ' + (adv ? "adv" : "rej") + '">' + label + "</span>";
+}
+
+function alignmentChipHtml(alignment) {
+  const a = alignment || "unscored";
+  if (a === "aligned") {
+    return '<span class="al-chip aligned" title="AI and you agree">Aligned</span>';
+  }
+  if (a === "fp") {
+    return '<span class="al-chip fp" title="False positive: AI advanced, you rejected — agent too loose">FP · AI over-advanced</span>';
+  }
+  if (a === "fn") {
+    return '<span class="al-chip fn" title="False negative: AI rejected, you advanced — agent too tight">FN · AI under-advanced</span>';
+  }
+  return '<span class="al-chip unscored" title="No quality verdict to score against">—</span>';
+}
+
+function aiStanceHtml(aiCall, agentRec, agentScore) {
+  const chip = callChipHtml(aiCall, { short: true });
+  const score =
+    typeof agentScore === "number" && !isNaN(agentScore)
+      ? '<span class="ai-score" title="agent score">' + agentScore + "</span>"
+      : "";
+  const raw = agentRec != null && String(agentRec).trim() !== ""
+    ? '<span class="cw-sub-muted" title="raw agent_rec">' + esc(truncate(String(agentRec), 28)) + "</span>"
+    : "";
+  // Prefer chip + score; fall back to raw status if polarity unknown.
+  if (aiCall) {
+    return '<span class="ai-stance">' + chip + score + "</span>";
+  }
+  return '<span class="ai-stance">' + (raw || '<span class="muted-dash">—</span>') + score + "</span>";
+}
+
+// The chart's viewBox is sized to the container's real inner width so the SVG
+// renders ~1:1 and label sizes stay legible at any viewport (a fixed viewBox
+// scaled to 100% would shrink text to nothing on a phone and inflate it on a
+// wide screen). Re-measured on resize via ResizeObserver.
+let _cwLastWidth = -1;
+let _cwObserver = null;
+function chartInnerWidth(box) {
+  const w = box.clientWidth || 0;
+  if (!w) return 0; // panel hidden (display:none) — fall back until it is shown
+  const st = getComputedStyle(box);
+  return Math.max(
+    260,
+    Math.round(w - (parseFloat(st.paddingLeft) || 0) - (parseFloat(st.paddingRight) || 0))
+  );
+}
+function ensureWeeklyResizeObserver(box) {
+  if (_cwObserver || typeof ResizeObserver === "undefined") return;
+  let timer = null;
+  _cwObserver = new ResizeObserver(() => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const w = chartInnerWidth(box);
+      // Re-render only on a real width change, so this can't feed back on itself.
+      if (w > 0 && Math.abs(w - _cwLastWidth) > 8) renderCalibWeekly(weeklyBuckets());
+    }, 120);
+  });
+  _cwObserver.observe(box);
+}
+
+function renderCalibrationTab() {
+  const fb = STATE.feedback || { events: [], calibration: [], weekly: [], stats: {} };
+  const cal = fb.calibration || [];
+  const events = fb.events || [];
+  const stats = fb.stats || { pending: 0, byRole: {} };
+  const fam = STATE.calibFamily || "all";
+  const roleSlug = STATE.calibRole || null; // null = All roles
+  const weeks = weeklyBuckets();
+  const byKey = {};
+  for (const b of weeks) byKey[b.week_start] = b;
+
+  // Role pills first so counts reflect the active family.
+  renderCalibRolePills();
+
+  // Keep the All / Your clicks / Shadow-rated control in sync whenever the tab
+  // re-renders (not only when renderCalibWeekly runs).
+  document.querySelectorAll("#calibFamilySeg .seg-btn").forEach((b) => {
+    b.classList.toggle("active", b.getAttribute("data-fam") === fam);
+  });
+
+  // Every surface on this tab follows `fam` + `roleSlug`.
+  const thisKey = weekStartKey(new Date());
+  const cur = weekCounts(byKey[thisKey] || null, fam, roleSlug);
+  const curP = agreePct(cur.agree, cur.scored);
+
+  const at = statsCounts(stats, fam, roleSlug);
+  const allP = agreePct(at.agree || 0, at.scored || 0);
+  const scopeBits = [];
+  if (fam !== "all") scopeBits.push(CALIB_FAM_LABEL[fam] || fam);
+  if (roleSlug) scopeBits.push(roleSlug);
+  const scopeTag = scopeBits.length ? " · " + scopeBits.join(" · ") : "";
+  const align = STATE.calibAlign || "all";
+
+  // Green only when the week actually cleared the bar. FP/FN tiles are clickable
+  // filters into the verdicts table (same control as the All/Aligned/FP/FN seg).
+  function filterTile(label, value, sub, alignKey, extraCls) {
+    const active = align === alignKey ? " active-filter" : "";
+    return (
+      '<div class="tile clickable' + active + " " + (extraCls || "") +
+      '" data-align-filter="' + alignKey + '" role="button" tabindex="0" ' +
+      'title="Filter verdicts table to ' + esc(label.toLowerCase()) + '">' +
+      '<div class="t-label">' + esc(label) + "</div>" +
+      '<div class="t-value">' + esc(value) + "</div>" +
+      '<div class="t-sub">' + esc(sub) + "</div></div>"
+    );
+  }
+  el("calibTiles").innerHTML =
+    tile("This week", pctText(curP),
+      fmt(cur.agree) + " aligned · " + fmt(cur.fp || 0) + " FP · " + fmt(cur.fn || 0) + " FN" + scopeTag,
+      curP != null && curP >= 70 ? "good" : "") +
+    filterTile("All-time agreement", pctText(allP),
+      fmt(at.agree || 0) + " of " + fmt(at.scored || 0) + " scored" + scopeTag,
+      "all", allP != null && allP >= 70 ? "good" : "") +
+    filterTile("False positives", fmt(at.fp || 0),
+      "AI advance · you reject" + scopeTag, "fp") +
+    filterTile("False negatives", fmt(at.fn || 0),
+      "AI reject · you advance" + scopeTag, "fn");
+
+  // Wire tile clicks (rebuilt each render).
+  el("calibTiles").querySelectorAll("[data-align-filter]").forEach((node) => {
+    const apply = () => {
+      STATE.calibAlign = node.getAttribute("data-align-filter") || "all";
+      renderCalibrationTab();
+      const section = el("calibVerdictsTitle");
+      if (section && section.scrollIntoView) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    node.addEventListener("click", apply);
+    node.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); apply(); }
+    });
+  });
+
+  renderCalibWeekly(weeks);
+  renderCalibByRole(stats.byRole || {}, byKey[thisKey] || null, fam, roleSlug);
+  renderCalibVerdicts(events, cal, fam, roleSlug);
+  renderCalibLessons(cal, fam, roleSlug);
+}
+
+function signedPts(d) {
+  return (d > 0 ? "+" : d < 0 ? "−" : "") + Math.abs(d) + " pts";
+}
+
+// Chart + table for "Alignment by week". Both are derived client-side from the
+// same `weekly` buckets so the source + role filters need no round trip.
+function renderCalibWeekly(weeks) {
+  const fam = STATE.calibFamily || "all";
+  const roleSlug = STATE.calibRole || null;
+  document.querySelectorAll("#calibFamilySeg .seg-btn").forEach((b) => {
+    b.classList.toggle("active", b.getAttribute("data-fam") === fam);
+    b.disabled = !weeks.length;
+  });
+
+  const chart = el("calibWeeklyChart");
+  const caption = el("calibWeeklyCaption");
+  const body = el("calibWeeklyBody");
+  if (!weeks.length) {
+    chart.innerHTML = '<div class="cw-empty">No verdicts yet — Advance / Don\'t-advance clicks and calibration entries will show up here week by week.</div>';
+    caption.textContent = "";
+    body.innerHTML = '<tr><td colspan="7" class="empty-cell">No verdicts yet.</td></tr>';
+    return;
+  }
+
+  // rows: chronological, one per emitted week (gap weeks included, scored = 0)
+  const rows = weeks.map((b) => {
+    const c = weekCounts(b, fam, roleSlug);
+    return {
+      b,
+      scored: c.scored,
+      agree: c.agree,
+      unscored: c.unscored,
+      override: c.overrides != null ? c.overrides : c.scored - c.agree,
+      fp: c.fp || 0,
+      fn: c.fn || 0,
+      pct: agreePct(c.agree, c.scored),
+    };
+  });
+
+  const measured = chartInnerWidth(chart);
+  _cwLastWidth = measured;
+  chart.innerHTML = weeklyChartSvg(rows, fam, measured || 900);
+  ensureWeeklyResizeObserver(chart);
+  const withData = rows.filter((r) => r.scored > 0);
+  const lowN = withData.filter((r) => r.scored < LOW_N).length;
+  const tFp = withData.reduce((a, r) => a + (r.fp || 0), 0);
+  const tFn = withData.reduce((a, r) => a + (r.fn || 0), 0);
+  caption.textContent =
+    "Bars show agreement over scored verdicts only. Weeks with fewer than " + LOW_N +
+    " scored verdicts are muted" + (lowN ? " (" + lowN + " here)" : "") +
+    ". FP = AI advanced / you rejected (" + tFp + "); FN = AI rejected / you advanced (" + tFn + ").";
+
+  // Table is newest-first, matching the "recent verdicts" table below it.
+  let html = "";
+  for (let i = rows.length - 1; i >= 0; i--) {
+    const r = rows[i];
+    const p = rows[i - 1] || null;
+    let delta = '<span class="muted-dash">—</span>';
+    if (r.pct != null && p && p.pct != null) {
+      const d = r.pct - p.pct;
+      // A bold green/red delta off a handful of verdicts oversells noise: keep
+      // the signed value but drop to muted grey when EITHER side is low-n.
+      const lowSides = [];
+      if (r.scored < LOW_N) lowSides.push(r.scored + " scored verdict" + (r.scored === 1 ? "" : "s") + " this week");
+      if (p.scored < LOW_N) lowSides.push(p.scored + " in the prior week");
+      if (lowSides.length) {
+        delta =
+          '<span class="cw-flat" title="low confidence: ' + esc(lowSides.join(", ")) + '">' +
+          esc(signedPts(d)) + "</span>";
+      } else {
+        const cls = d > 0 ? "cw-up" : d < 0 ? "cw-dn" : "cw-flat";
+        delta = '<span class="' + cls + '">' + esc(signedPts(d)) + "</span>";
+      }
+    }
+    const verdicts = r.scored
+      ? fmt(r.scored) + (r.unscored ? ' <span class="cw-sub-muted">(' + fmt(r.unscored) + " unscored)</span>" : "")
+      : r.unscored
+      ? '<span class="muted-dash">0</span> <span class="cw-sub-muted">(' + fmt(r.unscored) + " unscored)</span>"
+      : '<span class="muted-dash">—</span>';
+    html +=
+      "<tr>" +
+      '<td class="cw-week-cell">' + esc(r.b.label) +
+        ' <span class="cw-sub-muted">' + esc(r.b.week_start) + "</span></td>" +
+      '<td class="num">' + verdicts + "</td>" +
+      '<td class="num">' + (r.scored ? fmt(r.agree) : '<span class="muted-dash">—</span>') + "</td>" +
+      '<td class="num">' + (r.scored ? fmt(r.fp) : '<span class="muted-dash">—</span>') + "</td>" +
+      '<td class="num">' + (r.scored ? fmt(r.fn) : '<span class="muted-dash">—</span>') + "</td>" +
+      '<td class="num">' + (r.pct == null
+        ? '<span class="muted-dash">—</span>'
+        : '<b>' + esc(pctText(r.pct)) + "</b>" +
+          (r.scored < LOW_N ? ' <span class="cw-sub-muted">low n</span>' : "")) + "</td>" +
+      '<td class="num">' + delta + "</td>" +
+      "</tr>";
+  }
+  body.innerHTML = html;
+}
+
+// Inline SVG bar chart: one bar per week, oldest left, y-axis 0-100%.
+// `width` is the container's measured inner width; the axis spans it fully and
+// the bar group is centred inside it, so a 1- or 2-week chart still reads as a
+// deliberate chart rather than a full-width plot that failed to load.
+function weeklyChartSvg(rows, fam, width) {
+  const n = rows.length;
+  const PAD_L = 36, PAD_R = 10, PAD_T = 20, PLOT_H = 150, LABEL_H = 36;
+  const W = Math.round(width);
+  const plotW = Math.max(120, W - PAD_L - PAD_R);
+  // Cap the slot so a handful of weeks get sensibly-sized bars instead of being
+  // stretched across the whole axis; the group is then centred in the plot area.
+  const slot = Math.min(plotW / n, 120);
+  const groupW = slot * n;
+  const x0 = PAD_L + (plotW - groupW) / 2;
+  const H = PAD_T + PLOT_H + LABEL_H;
+  const base = PAD_T + PLOT_H;
+  const barW = Math.min(slot * 0.5, 64);
+  const yOf = (p) => PAD_T + PLOT_H * (1 - p / 100);
+  const fullLabels = slot >= 66;   // "Jul 20–26" vs the short "Jul 20"
+  const everyOther = slot < 48;    // thin labels before they can collide
+
+  let s = "";
+  // gridlines + y labels at 0 / 50 / 100 (axis spans the full plot area)
+  for (const g of [0, 50, 100]) {
+    const y = yOf(g);
+    s +=
+      '<line class="cw-grid" x1="' + PAD_L + '" y1="' + y + '" x2="' + (PAD_L + plotW) + '" y2="' + y + '"/>' +
+      '<text class="cw-axis-txt" x="' + (PAD_L - 6) + '" y="' + (y + 3.5) + '" text-anchor="end">' + g + "%</text>";
+  }
+
+  rows.forEach((r, i) => {
+    const cx = x0 + slot * i + slot / 2;
+    const lowN = r.scored > 0 && r.scored < LOW_N;
+    const roleBits = Object.keys(r.b.by_role || {})
+      .filter((k) => (r.b.by_role[k] || {}).scored > 0)
+      .map((k) => k + " " + r.b.by_role[k].agree + "/" + r.b.by_role[k].scored);
+    let tip = r.b.label + " (" + r.b.week_start + " to " + r.b.week_end + ")";
+    if (r.scored > 0) {
+      tip += "\n" + pctText(r.pct) + " agreement — " + r.agree + " agreed of " + r.scored + " scored";
+      if (r.override) tip += ", " + r.override + " override" + (r.override > 1 ? "s" : "");
+      if (r.unscored) tip += "\n" + r.unscored + " verdict" + (r.unscored > 1 ? "s" : "") + " with no quality call (excluded)";
+      if (lowN) tip += "\nlow n: fewer than " + LOW_N + " scored verdicts, not a trend";
+      if (roleBits.length) {
+        tip += "\nRoles: " + roleBits.join(", ") + (fam === "all" ? "" : " (role split across all sources)");
+      }
+    } else {
+      tip += "\nno scored verdicts" + (r.unscored ? " (" + r.unscored + " with no quality call)" : "");
+    }
+    const title = "<title>" + esc(tip) + "</title>";
+
+    if (r.scored > 0) {
+      const h = Math.max(2, (PLOT_H * r.pct) / 100);
+      const y = base - h;
+      s +=
+        '<g role="listitem">' + title +
+        '<rect class="cw-bar' + (lowN ? " low" : "") + '" x="' + (cx - barW / 2) + '" y="' + y +
+        '" width="' + barW + '" height="' + h + '" rx="2"/>' +
+        '<text class="cw-bar-val' + (lowN ? " low" : "") + '" x="' + cx + '" y="' + (y - 5) +
+        '" text-anchor="middle">' + esc(pctText(r.pct)) + "</text></g>";
+    } else {
+      // empty slot: a muted tick on the baseline, never a 0% bar
+      s +=
+        "<g>" + title +
+        '<line class="cw-none" x1="' + (cx - 7) + '" y1="' + base + '" x2="' + (cx + 7) + '" y2="' + base + '"/>' +
+        (slot >= 58
+          ? '<text class="cw-none-txt" x="' + cx + '" y="' + (base - 7) + '" text-anchor="middle">no verdicts</text>'
+          : "") +
+        "</g>";
+    }
+
+    // x-axis: week label + n=<scored>
+    const showLabel = !everyOther || (n - 1 - i) % 2 === 0;
+    if (showLabel) {
+      const lbl = fullLabels ? r.b.label : String(r.b.label).split("–")[0];
+      s += '<text class="cw-wk" x="' + cx + '" y="' + (base + 15) + '" text-anchor="middle">' + esc(lbl) + "</text>";
+    }
+    s +=
+      '<text class="cw-n" x="' + cx + '" y="' + (base + 28) + '" text-anchor="middle">' +
+      (r.scored > 0 ? "n=" + r.scored : "—") + "</text>";
+  });
+
+  // baseline
+  s += '<line class="cw-grid" x1="' + PAD_L + '" y1="' + base + '" x2="' + (PAD_L + plotW) + '" y2="' + base + '"/>';
+
+  return (
+    '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' +
+    esc(weeklyAriaLabel(rows, fam)) + '">' + s + "</svg>"
+  );
+}
+
+function weeklyAriaLabel(rows, fam) {
+  const withData = rows.filter((r) => r.scored > 0);
+  const head =
+    "Bar chart: agreement percentage by week (" + (CALIB_FAM_LABEL[fam] || fam) + "), " +
+    rows.length + " week" + (rows.length === 1 ? "" : "s") + " from " +
+    rows[0].b.label + " to " + rows[rows.length - 1].b.label + ". ";
+  if (!withData.length) return head + "No scored verdicts in this view.";
+  const tAgree = withData.reduce((a, r) => a + r.agree, 0);
+  const tScored = withData.reduce((a, r) => a + r.scored, 0);
+  const latest = withData[withData.length - 1];
+  const first = withData[0];
+  let trend = "";
+  if (withData.length > 1) {
+    const d = latest.pct - first.pct;
+    trend = d > 0 ? "Up " + d + " points across the range. " : d < 0 ? "Down " + Math.abs(d) + " points across the range. " : "Flat across the range. ";
+  }
+  return (
+    head +
+    "Latest week with verdicts, " + latest.b.label + ": " + pctText(latest.pct) +
+    " from " + latest.scored + " scored verdict" + (latest.scored === 1 ? "" : "s") + ". " +
+    trend + "Overall " + pctText(agreePct(tAgree, tScored)) + " across " + tScored + " scored verdicts."
+  );
+}
+
+function renderCalibByRole(byRole, thisWeekBucket, fam, roleSlug) {
+  const body = el("calibByRoleBody");
+  const sub = el("calibByRoleSub");
+  const scopeBits = [];
+  if (fam !== "all") scopeBits.push(CALIB_FAM_LABEL[fam] || fam);
+  if (roleSlug) scopeBits.push(roleSlug + " only");
+  if (sub) {
+    sub.textContent =
+      "agent vs. the hiring lead · FP = AI over-advanced, FN = AI under-advanced" +
+      (scopeBits.length ? " · " + scopeBits.join(" · ") : "");
+  }
+  let slugs = Object.keys(byRole || {}).sort();
+  if (roleSlug) slugs = slugs.filter((s) => s === roleSlug);
+  // Drop roles that have zero entries in the active family so the table doesn't
+  // show a wall of dashes when Shadow-rated is selected on a live-heavy role.
+  const rows = [];
+  const wkRoles = (thisWeekBucket && thisWeekBucket.by_role) || {};
+  for (const slug of slugs) {
+    const r = famCounts(byRole[slug], fam);
+    if (!r.verdicts && !r.scored && !r.unscored) continue;
+    const wkRaw = wkRoles[slug] || null;
+    const wk = famCounts(wkRaw, fam);
+    rows.push({ slug, r, wk });
+  }
+  if (!rows.length) {
+    body.innerHTML =
+      '<tr><td colspan="6" class="empty-cell">No ingested verdicts' +
+      (scopeBits.length ? " (" + scopeBits.join(", ") + ")" : "") +
+      " yet.</td></tr>";
+    return;
+  }
+  let html = "";
+  for (const { slug, r, wk } of rows) {
+    const pct = agreePct(r.agree, r.scored);
+    const wkPct = agreePct(wk.agree, wk.scored);
+    html +=
+      "<tr>" +
+      "<td>" + esc(slug) + "</td>" +
+      '<td class="num">' + (wkPct == null
+        ? '<span class="muted-dash">—</span>'
+        : esc(pctText(wkPct)) + ' <span class="cw-sub-muted">' + wk.agree + "/" + wk.scored + "</span>") + "</td>" +
+      '<td class="num">' + fmt(r.verdicts) +
+        (r.unscored ? ' <span class="cw-sub-muted">(' + fmt(r.unscored) + " unscored)</span>" : "") + "</td>" +
+      '<td class="num">' + esc(pctText(pct)) + "</td>" +
+      '<td class="num">' + fmt(r.fp || 0) + "</td>" +
+      '<td class="num">' + fmt(r.fn || 0) + "</td>" +
+      "</tr>";
+  }
+  body.innerHTML = html;
+}
+
+function renderCalibVerdicts(events, cal, fam, roleSlug) {
+  const body = el("calibVerdictsBody");
+  const title = el("calibVerdictsTitle");
+  const sub = el("calibVerdictsSub");
+  const countEl = el("calibVerdictsCount");
+  const align = STATE.calibAlign || "all";
+  roleSlug = roleSlug !== undefined ? roleSlug : (STATE.calibRole || null);
+
+  // Keep the alignment filter control in sync.
+  document.querySelectorAll("#calibAlignSeg .seg-btn").forEach((b) => {
+    b.classList.toggle("active", b.getAttribute("data-align") === align);
+  });
+
+  // Shadow-rated has no dashboard-queue events — those are the hiring lead's clicks only.
+  // Render calibration.jsonl entries for shadow (and for "all", merge both so
+  // the list isn't half-empty of Paraform). Live keeps the queue view.
+  const showQueue = fam === "all" || fam === "live";
+  const showCalib = fam === "all" || fam === "shadow";
+
+  if (title) {
+    title.textContent =
+      fam === "shadow" ? "Shadow-rated verdicts"
+      : fam === "live" ? "Your recent clicks"
+      : "Recent verdicts";
+  }
+  if (sub) {
+    const bits = [];
+    bits.push(
+      fam === "shadow"
+        ? "agent blind-score vs your " + sorName() + " disposition"
+        : "AI stance vs your call"
+    );
+    if (roleSlug) bits.push(roleSlug);
+    bits.push("newest first");
+    sub.textContent = bits.join(" · ");
+  }
+
+  const rows = [];
+  // Live path = dashboard feedback-queue events (the hiring lead's clicks). Always live.
+  if (showQueue) {
+    for (const e of events || []) {
+      if (!matchesCalibRole(e, roleSlug)) continue;
+      rows.push({
+        kind: "event",
+        ts: e.ts || "",
+        alignment: e.alignment || "unscored",
+        e,
+      });
+    }
+  }
+  // Shadow path = calibration.jsonl entries with family=shadow. On "all" we
+  // only add shadow calib rows (live ones already appear via the queue).
+  if (showCalib) {
+    for (const c of cal || []) {
+      if (!matchesCalibFamily(c, "shadow")) continue;
+      if (!matchesCalibRole(c, roleSlug)) continue;
+      rows.push({
+        kind: "calib",
+        ts: c.date || "",
+        alignment: c.alignment || "unscored",
+        c,
+      });
+    }
+  }
+  rows.sort((a, b) => String(b.ts).localeCompare(String(a.ts)));
+
+  // Counts for the toolbar (pre-filter, within the active family).
+  const nAll = rows.length;
+  const nAligned = rows.filter((r) => r.alignment === "aligned").length;
+  const nFp = rows.filter((r) => r.alignment === "fp").length;
+  const nFn = rows.filter((r) => r.alignment === "fn").length;
+  const nOv = nFp + nFn;
+
+  const filtered = rows.filter((r) => matchesCalibAlign(r, align));
+  if (countEl) {
+    const scope =
+      align === "all" ? nAll + " verdicts"
+      : align === "aligned" ? nAligned + " aligned"
+      : align === "fp" ? nFp + " false positives"
+      : align === "fn" ? nFn + " false negatives"
+      : nOv + " overrides";
+    countEl.textContent =
+      "Showing " + filtered.length +
+      (align === "all" ? "" : " of " + nAll) +
+      " · " + nAligned + " aligned · " + nFp + " FP · " + nFn + " FN";
+    countEl.title = scope;
+  }
+
+  if (!rows.length) {
+    const emptyMsg =
+      fam === "shadow"
+        ? "No shadow-rated Paraform verdicts yet."
+        : fam === "live"
+        ? "No clicks yet — use the Advance / Reject buttons on the Sourced or Inbound tabs."
+        : "No verdicts yet — use the Advance / Reject buttons on the Sourced or Inbound tabs.";
+    body.innerHTML = '<tr><td colspan="7" class="empty-cell">' + emptyMsg + "</td></tr>";
+    return;
+  }
+  if (!filtered.length) {
+    body.innerHTML =
+      '<tr><td colspan="7" class="empty-cell">No ' +
+      esc(CALIB_ALIGN_LABEL[align] || align) +
+      " in this view.</td></tr>";
+    return;
+  }
+
+  let html = "";
+  for (const row of filtered.slice(0, 250)) {
+    if (row.kind === "event") {
+      const e = row.e;
+      const cand = e.candidate || {};
+      const note = e.feedback
+        ? '<span title="' + esc(e.feedback) + '">' + esc(truncate(e.feedback, 100)) + "</span>"
+        : '<span class="muted-dash">—</span>';
+      html +=
+        "<tr>" +
+        '<td class="num">' + esc(shortTs(e.ts)) + "</td>" +
+        "<td>" + esc(e.role_slug || "—") + "</td>" +
+        "<td>" + esc(cand.name || "—") + "</td>" +
+        "<td>" + aiStanceHtml(e.ai_call, e.agent_rec, e.agent_score) + "</td>" +
+        "<td>" + callChipHtml(e.tim_call || e.tim_action) + "</td>" +
+        "<td>" + alignmentChipHtml(e.alignment) + "</td>" +
+        '<td class="ev-cell">' + note + "</td>" +
+        "</tr>";
+    } else {
+      const c = row.c;
+      const note = c.lesson
+        ? '<span title="' + esc(c.lesson) + '">' + esc(truncate(c.lesson, 100)) + "</span>"
+        : (c.tim_verdict && String(c.tim_verdict).length > 20
+            ? '<span class="cw-sub-muted" title="' + esc(String(c.tim_verdict)) + '">' +
+              esc(truncate(String(c.tim_verdict), 80)) + "</span>"
+            : '<span class="muted-dash">—</span>');
+      html +=
+        "<tr>" +
+        '<td class="num">' + esc(c.date || "—") + "</td>" +
+        "<td>" + esc(c.role || "—") + "</td>" +
+        "<td>" + esc(c.candidate || "—") + "</td>" +
+        "<td>" + aiStanceHtml(c.ai_call, c.agent_rec, c.agent_score) + "</td>" +
+        "<td>" + callChipHtml(c.tim_call) + "</td>" +
+        "<td>" + alignmentChipHtml(c.alignment) + "</td>" +
+        '<td class="ev-cell">' + note + "</td>" +
+        "</tr>";
+    }
+  }
+  body.innerHTML = html;
+}
+
+function renderCalibLessons(cal, fam, roleSlug) {
+  const box = el("calibLessons");
+  const sub = el("calibLessonsSub");
+  roleSlug = roleSlug !== undefined ? roleSlug : (STATE.calibRole || null);
+  const scopeBits = [];
+  if (fam !== "all") scopeBits.push(CALIB_FAM_LABEL[fam] || fam);
+  if (roleSlug) scopeBits.push(roleSlug);
+  if (sub) {
+    sub.textContent = scopeBits.length ? scopeBits.join(" · ") + " only" : "";
+  }
+  const withLesson = (cal || []).filter(
+    (c) =>
+      c &&
+      c.lesson &&
+      String(c.lesson).trim() &&
+      matchesCalibFamily(c, fam) &&
+      matchesCalibRole(c, roleSlug)
+  );
+  if (!withLesson.length) {
+    box.innerHTML =
+      '<div class="state">No lessons recorded yet' +
+      (scopeBits.length ? " for " + scopeBits.join(" / ") : "") +
+      ".</div>";
+    return;
+  }
+  let html = '<div class="lesson-list">';
+  for (const c of withLesson) {
+    const agreeMark =
+      c.agree === true ? '<span class="agree-yes">✓ agreed</span>'
+      : c.agree === false ? '<span class="agree-no">✕ override</span>'
+      : '<span class="muted-dash">—</span>';
+    const srcBit =
+      c.family === "shadow"
+        ? '<span class="cw-sub-muted">shadow</span><span>·</span>'
+        : "";
+    html +=
+      '<div class="lesson-item' + (c.agree === false ? " disagree" : "") + '">' +
+      '<div class="lesson-meta">' +
+      "<span>" + esc(c.date || "—") + "</span><span>·</span>" +
+      "<span>" + esc(c.role || "—") + "</span><span>·</span>" +
+      "<span>" + esc(c.candidate || "—") + "</span><span>·</span>" +
+      srcBit +
+      agreeMark +
+      "</div>" +
+      '<div class="lesson-text">' + esc(c.lesson) + "</div>" +
+      "</div>";
+  }
+  html += "</div>";
+  box.innerHTML = html;
+}
+
+// ---------- tab switching ----------
+function switchTab(tab) {
+  STATE.activeTab = tab;
+  document.querySelectorAll(".tab").forEach((t) => {
+    t.classList.toggle("active", t.getAttribute("data-tab") === tab);
+  });
+  document.querySelectorAll(".panel").forEach((p) => {
+    const on = p.id === "panel-" + tab;
+    p.classList.toggle("active", on);
+    p.hidden = !on;
+  });
+}
+
+// ---------- events ----------
+function wireEvents() {
+  document.querySelectorAll(".tab").forEach((t) => {
+    t.addEventListener("click", () => switchTab(t.getAttribute("data-tab")));
+  });
+  el("refreshBtn").addEventListener("click", loadData);
+
+  // Source filter scopes the WHOLE Calibration tab (tiles, weekly, by-role,
+  // verdicts, lessons) — not just the chart. Re-render from cached STATE.
+  document.querySelectorAll("#calibFamilySeg .seg-btn").forEach((b) => {
+    b.addEventListener("click", () => {
+      STATE.calibFamily = b.getAttribute("data-fam") || "all";
+      renderCalibrationTab();
+    });
+  });
+
+  // Verdicts-table alignment filter (aligned / FP / FN / overrides).
+  document.querySelectorAll("#calibAlignSeg .seg-btn").forEach((b) => {
+    b.addEventListener("click", () => {
+      STATE.calibAlign = b.getAttribute("data-align") || "all";
+      // Only the verdicts table needs to change — avoid full-tab flicker.
+      const fb = STATE.feedback || {};
+      renderCalibVerdicts(
+        fb.events || [],
+        fb.calibration || [],
+        STATE.calibFamily || "all",
+        STATE.calibRole || null
+      );
+    });
+  });
+
+  let searchTimer = null;
+  el("search").addEventListener("input", (e) => {
+    clearTimeout(searchTimer);
+    const v = e.target.value;
+    searchTimer = setTimeout(() => {
+      STATE.search = v;
+      renderTableBody();
+    }, 120);
+  });
+  el("statusFilter").addEventListener("change", (e) => {
+    STATE.statusFilter = e.target.value;
+    renderTableBody();
+  });
+  el("minScore").addEventListener("input", (e) => {
+    STATE.minScore = Number(e.target.value);
+    el("minScoreVal").textContent = e.target.value;
+    renderTableBody();
+  });
+  el("showActioned").addEventListener("change", (e) => {
+    STATE.showActioned = e.target.checked;
+    renderTableBody();
+  });
+  document.querySelectorAll("#candTable thead th.sortable").forEach((th) => {
+    th.addEventListener("click", () => {
+      const key = th.getAttribute("data-sort");
+      if (STATE.sortKey === key) {
+        STATE.sortDir = STATE.sortDir === "asc" ? "desc" : "asc";
+      } else {
+        STATE.sortKey = key;
+        STATE.sortDir = key === "score" ? "desc" : "asc";
+      }
+      renderTableHead();
+      renderTableBody();
+    });
+  });
+
+  // Feedback modal
+  el("fbCancel").addEventListener("click", closeFeedbackModal);
+  el("fbConfirm").addEventListener("click", submitFeedback);
+  el("fbModal").addEventListener("click", (e) => {
+    if (e.target === el("fbModal")) closeFeedbackModal(); // backdrop click
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !el("fbModal").hidden) closeFeedbackModal();
+  });
+}
+
+// ---------- init ----------
+wireEvents();
+loadData();
+
+// Poll ONLY the feedback state every 60s and re-render the active tab so
+// recorded verdicts flip pending -> done and calibration stays current.
+setInterval(() => {
+  loadFeedbackState().then(() => {
+    try { reRenderActiveTab(); } catch (e) { /* ignore transient render errors */ }
+  });
+}, 60000);
+</script>
+</body>
+</html>

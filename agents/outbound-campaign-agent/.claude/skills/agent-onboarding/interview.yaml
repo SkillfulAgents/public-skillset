@@ -1,0 +1,758 @@
+# The onboarding interview, as data.
+#
+# Every question here declares its TYPE. That is the contract:
+#
+#   choice   MUST be asked via AskUserQuestion, single-select. Never restate
+#            the options as prose in chat. The UI adds "Other" automatically,
+#            and an Other answer is first-class: capture the free text.
+#   multi    MUST be asked via AskUserQuestion with multiSelect: true.
+#   text     Asked in plain chat. Reserved for paste-your-own-words material.
+#            Ask at most two text questions per message, never a numbered wall.
+#
+# Batch up to 4 related choice/multi questions into ONE AskUserQuestion call
+# when they belong to the same section. Options are capped at 4 by the tool;
+# the lists here respect that. `recommended: true` means put it first and
+# append "(Recommended)" to the label.
+#
+# ASK EXACTLY ONCE. One message per ask: fold the acknowledgment of the
+# previous answer and the next question into a single message, send it once,
+# and end your turn. Never re-send or lightly rephrase a message you already
+# sent; the operator's screen shows every copy, and a doubled question reads
+# as a glitch. If your previous message already asks the question, wait for
+# the answer.
+#
+# `key` is the config path the answer lands in (schema: outbound.example.yaml).
+# `why` is one spoken line to say before asking, tied to the operator's
+# outcome. `default` is what to write when the answer is "I don't know".
+# `when` gates a section or question on an earlier answer; skip it, and say
+# you skipped it and why, when the condition does not hold.
+#
+# ORDER MATTERS AND IS DELIBERATE. The stack comes right after identity,
+# because what the team already runs changes what the rest of the interview
+# should even ask. A team on a sequencer (Instantly, Smartlead, or any tool
+# that owns mailboxes, warmup, schedules, and sequence execution) should not
+# be interrogated about send windows the sequencer already enforces; a team
+# on a bare mailbox needs every one of those questions because this template
+# is then the only thing standing between them and a burned domain.
+
+sections:
+  - id: identity
+    title: Identity
+    why: This is what appears in every prospect-facing message, so a wrong name here is visible to every recipient.
+    prefill: >
+      Before asking ANY identity question, harvest what the platform already
+      knows, read-only: (1) the CONNECTED_ACCOUNTS env var lists connected
+      account emails; (2) a connected Gmail answers profile and
+      settings/sendAs through the proxy, which yields the sending address,
+      display name, and the operator's EXISTING signature block; (3) a
+      connected Google Calendar's settings/timezone answers the timezone
+      question outright. Then derive the company domain from the email,
+      fetch the company website, and web-search the operator (name plus
+      company) for their title. Present the assembled identity as ONE
+      proposal to confirm or correct, and ask only the questions research
+      left blank. Two hand-offs from this step: the harvested signature
+      pre-answers the signature question in message standards, and the
+      website read seeds positioning, so arrive at that section with drafts
+      to react to rather than blank questions. If nothing is connected, the
+      operator's first answers become the research seeds instead: a company
+      name alone is enough to web-search for the website, verify the top
+      candidate actually names the company or product, and PROPOSE it for
+      confirmation rather than asking for it; name plus company is enough
+      to search for a title. Fall back to a cold question only when search
+      returns nothing or several plausible candidates, and say you looked.
+      Never present researched facts as certain, and never
+      skip the confirmation: a wrong pre-filled identity signed onto every
+      email is worse than thirty seconds of questions.
+    questions:
+      - key: company.name
+        ask: What is the legal company name?
+        type: text
+      - key: company.product_name
+        ask: Is the product or brand name in prospect-facing copy different from the company name?
+        type: text
+        default: same as company.name
+      - key: company.website
+        ask: Company website?
+        type: text
+        research: >
+          Never ask this cold. A connected account's email domain answers it
+          outright; failing that, the company name from the first answer is
+          a search query. Find the site, open it, verify it names the
+          company or product, and propose it ("Found gamut.so, which
+          describes Gamut as agents for whole jobs. Right site?"). Ask only
+          when search comes back empty or ambiguous, and say you looked.
+      - key: operator
+        ask: Your name, title, and sending email (phone optional, signature only)?
+        type: text
+      - key: operator.timezone
+        ask: Which timezone should send windows and reports follow?
+        type: choice
+        options:
+          - label: Eastern (US)
+            value: America/New_York
+          - label: Central (US)
+            value: America/Chicago
+          - label: Mountain (US)
+            value: America/Denver
+          - label: Pacific (US)
+            value: America/Los_Angeles
+      - key: company.forbidden_names
+        ask: Is there any name you must NOT use publicly yet? Retired brands, codenames, unannounced products. The linter hard-fails drafts containing them.
+        type: text
+        default: none
+        followup: If a brand is embargoed until a date, also set company.brand_public_from.
+
+  - id: stack
+    title: Current stack
+    why: What you already run decides what the rest of this interview asks. Tools that own a capability keep owning it; this template wraps around them instead of duplicating them.
+    prefill: >
+      The workspace already knows part of the stack: CONNECTED_ACCOUNTS lists
+      connected services, and existing environment variable NAMES are vendor
+      fingerprints (an APOLLO_API_KEY means Apollo). Open with those as
+      knowns to confirm, not questions: "Gmail and Slack are connected here
+      and there is an Apollo key; what else is in the stack?"
+    questions:
+      - key: stack.description
+        ask: Walk me through your current outbound stack in your own words. What do you use today for finding prospects, enriching them, sending email, LinkedIn, CRM, calendars, and team notifications? Include anything mid-migration or half-adopted.
+        type: text
+        note: >
+          This answer pre-fills the slot questions below. Only ask a slot
+          question the description left genuinely open; for slots it answered,
+          CONFIRM your mapping in one line instead of re-asking. Anything with
+          no builtin gets scaffolded (scaffold_adapter.py) so the config names
+          their real stack from day one.
+        research: >
+          For every tool named, LOOK IT UP in adapters/vendor-knowledge.yaml
+          FIRST. It summarizes the common tools per capability: what each is,
+          what it owns, the mode implication, and the typical connection
+          path. TRUST the slow-changing facts there (category, ownership,
+          mode); VERIFY the fast-changing ones live (auth scheme, endpoints,
+          docs URLs) with one search or docs fetch before requesting any
+          credential, and believe the live result over the file if they
+          disagree. A tool not in the file gets a WEB SEARCH before you say
+          anything about it; never tell the operator their tool is unknown
+          just because the file lacks it, and never ask them to describe
+          their own tool except as a last resort when search comes back
+          empty or contradictory. Either way, PROPOSE the slot mapping and
+          mode implication for one-line confirmation ("Monaco is a sequencer
+          that owns mailboxes, warmup, and sending, which would make this
+          sequencer-executed; is that how you run it?"): only the operator
+          knows how THEY use it. Never configure a slot from research alone.
+          Ambiguous names need an anchor: a bare search for a tool named
+          after a common word should include the vendor's domain or category
+          ("Monaco monaco.com sequencer API"). Infer the domain from context
+          when you can; ask for it only when you cannot.
+        connect: >
+          Once the mapping is confirmed, CONNECT to each tool before asking
+          anything more about it. "It is not connected" is a TO-DO, not an
+          answer: when no connection exists yet, researching the ways in is
+          YOUR job, never the operator's. Discovery ladder, in order: (1)
+          search the platform's connection catalogs for the vendor
+          (search_connected_account_services for an OAuth toolkit,
+          search_remote_mcp_services for an MCP endpoint), (2) web-search the
+          vendor's developer/API documentation yourself; never ask the
+          operator for a docs URL you can find, (3) if no API exists, offer a
+          read-only browser session where the operator completes the login.
+          Present the paths you found as a ranked choice with a
+          recommendation, then act on the pick immediately:
+          request_connected_account for OAuth, request_secret for API keys,
+          request_remote_mcp for MCP. EVERY access request is explained
+          BEFORE it fires: one line per service in chat saying what will be
+          read and what that unlocks, and the request's own reason field
+          names that concrete purpose ("Allow access to Slack to list
+          channels and propose where drafts and digests go?"), never a
+          generic "for setup". A batch of requests gets a line per request
+          first; a permission dialog the operator cannot connect to a
+          purpose reads as a grab. If the platform reports a connection
+          already exists or is already registered, use it; never re-issue
+          the request. Then EXPLORE, read-only, through the
+          connection and the docs: what is actually configured (mailboxes,
+          per-mailbox daily volume, sending schedule, warmup state,
+          sequences, lists, field coverage) and what is automatable. NEVER
+          ASK THE OPERATOR FOR A FACT THE CONNECTED TOOL CAN REPORT. Read
+          it, then present a findings summary with your recommendations for
+          confirmation; the operator can override any of it. If they decline
+          every connection path, fall back to asking the facts directly and
+          say what stays manual until it is connected; leaving a field blank
+          still beats filling it with a plausible guess. Exploration during
+          onboarding is STRICTLY READ-ONLY: never create, modify, enroll, or
+          send anything in a connected tool. Read-only binds DISCOVERY, not
+          direct instructions: when the operator explicitly asks you to
+          create something (a Slack channel, a saved view), confirm the
+          exact action once and do it rather than refusing in the name of
+          exploration.
+      - key: adapters.sourcing
+        ask: Where do prospect lists come from?
+        type: choice
+        options_from: catalog.sourcing
+        when: not answered by stack.description
+      - key: adapters.enrichment
+        ask: What fills in missing emails and firmographics?
+        type: choice
+        options_from: catalog.enrichment
+        when: not answered by stack.description
+      - key: adapters.sender
+        ask: What sends your email?
+        type: choice
+        options_from: catalog.sender
+        when: not answered by stack.description
+      - key: adapters.crm
+        ask: What is the system of record for who you have already engaged?
+        type: choice
+        options_from: catalog.crm
+        when: not answered by stack.description
+      - key: adapters.calendar
+        ask: Which calendar does the team live on? Booked meetings are read from it; most prospects book from a link without ever replying, so only the calendar sees them.
+        type: choice
+        options_from: catalog.calendar
+        when: not answered by stack.description
+      - key: adapters.notify
+        ask: Where should the agent reach you with drafts, digests, and alerts?
+        type: choice
+        options_from: catalog.notify
+        when: not answered by stack.description
+      - key: senders[].calendar_id
+        ask: For each sender, which calendar should be read for booked meetings?
+        type: text
+        default: the sender's own email address
+    after: >
+      Before moving on, say out loud what this stack implies, in a few
+      sentences: which capabilities their tools already own, which upcoming
+      sections therefore collapse into confirmations, what the template adds
+      around their stack (qualification, drafting, suppression, the governor,
+      meeting-sourced reporting), and what you recommend given that stack.
+      This happens AFTER the research step above, so unknowns have been
+      searched and proposed, not guessed at and not delegated back to the
+      operator. Then say which mode the rest of the interview runs in:
+      TEMPLATE-EXECUTED (a bare mailbox sends; this template enforces caps,
+      windows, ramps, cadence) or SEQUENCER-EXECUTED (their tool owns
+      delivery and sequencing; this template feeds it qualified, suppressed,
+      drafted prospects and reports on outcomes).
+    state_plainly: The sender slot stays in dry-run regardless of the stack until the operator has reviewed real output and approved. A calendar proves a meeting was scheduled and not cancelled, never that anyone attended.
+
+  - id: senders
+    title: Senders and caps
+    mode_note: >
+      TEMPLATE-EXECUTED mode asks everything below; these numbers are the
+      difference between landing in inboxes for a year and burning the domain
+      in three weeks. SEQUENCER-EXECUTED mode asks none of the choice
+      questions; instead READ what is already configured through the
+      connection made in the stack section (mailboxes, per-mailbox daily
+      volume, sending schedule, warmup state, whether any org-level ceiling
+      exists) and present the findings as a summary for confirmation. Ask the
+      operator directly only for what the API cannot report. The governor
+      still needs the totals either way: per-campaign rates stack, and most
+      sequencers have no org-level cap, in which case the recorded per-sender
+      totals are what the governor audits against.
+    why: Whoever executes the send, somebody has to know the true per-mailbox volume, because stacked campaign rates burn domains regardless of which tool sent the mail.
+    questions:
+      - key: senders
+        ask: Which mailboxes will send? For each, the address and display name.
+        type: text
+        prefill: >
+          The operator's own mailbox is known from identity, and a connected
+          Gmail's settings/sendAs lists their alias addresses too. Propose
+          the known mailboxes and ask "any others?", not a blank question.
+      - key: senders[].ramp
+        ask: For each mailbox, is it new to cold outbound (under about two months of sending history) or established?
+        type: choice
+        per: sender
+        when: template-executed
+        options:
+          - label: New / warming
+            value: ramp 10 to 25 over about four weeks
+            recommended: true
+          - label: Established
+            value: no ramp, full cap
+        default: ramp it; a wrongly-ramped warm mailbox costs days, a wrongly-opened cold one costs the domain
+      - key: senders[].daily_email_cap
+        ask: Daily email cap per mailbox?
+        type: choice
+        when: template-executed
+        options:
+          - label: 25/day
+            value: 25
+            recommended: true
+            note: the primary-domain ceiling; more needs a dedicated sending domain, not a bigger number
+          - label: 15/day
+            value: 15
+          - label: 10/day
+            value: 10
+        pushback: If they ask for more than 25 on a primary domain, say why not and hold unless they have a dedicated sending domain plus warmup.
+      - key: senders[].calendar_link
+        ask: Each sender's own booking link? Personal, not a team link. This turns a positive reply into a meeting with zero scheduling round trips.
+        type: text
+        default: none; say plainly that every positive reply then costs a scheduling exchange
+      - key: limits.send_days
+        ask: Which days should cold email go out?
+        type: choice
+        when: template-executed
+        options:
+          - label: Tuesday to Thursday
+            value: [tue, wed, thu]
+            recommended: true
+            note: midweek replies best; Monday inboxes are hostile and Friday sends die over the weekend
+          - label: Monday to Thursday
+            value: [mon, tue, wed, thu]
+          - label: Monday to Friday
+            value: [mon, tue, wed, thu, fri]
+      - key: limits.send_window_local
+        ask: What window, in the operator's timezone?
+        type: choice
+        when: template-executed
+        options:
+          - label: 9 to 11 am
+            value: "09:00-11:00"
+            recommended: true
+            note: morning inbox, after the overnight pile is triaged
+          - label: 8 am to noon
+            value: "08:00-12:00"
+          - label: Business hours (9 to 4)
+            value: "09:00-16:00"
+      - key: limits.new_prospects_per_day
+        ask: How many net-new prospects may enter the pipeline per day?
+        type: choice
+        options:
+          - label: "25"
+            value: 25
+            recommended: true
+          - label: "10"
+            value: 10
+          - label: "50"
+            value: 50
+
+  - id: icp
+    title: ICP
+    why: This is the section that decides who gets contacted at all; it is worth more of your time than any other.
+    note: >
+      ICP IS THE EXCEPTION TO RESEARCH-PROPOSE-CONFIRM. Do not hypothesize
+      it from the website, do not pre-fill it, do not recommend answers
+      based on what you inferred about their business (operator decision).
+      A plausible inferred ICP that gets waved through becomes confidently
+      wrong targeting, and nothing downstream catches it. Ask every
+      question below as written; research may inform YOUR understanding of
+      their answers, never the answers themselves. Assemble icp.tiers from
+      the structured answers (focus industries + signals become tier
+      criteria; an exclusive focus excludes everything else; exclusions and
+      disqualifiers become hard gates) and read the assembled result back
+      before writing it.
+    questions:
+      - key: icp.employee_range
+        ask: What company size band is in scope for cold outbound?
+        type: choice
+        options:
+          - label: 20 to 199 employees
+            value: [20, 199]
+          - label: 1 to 50 employees
+            value: [1, 50]
+          - label: 50 to 500 employees
+            value: [50, 500]
+      - key: icp.geos
+        ask: Which geographies are in scope?
+        type: multi
+        options:
+          - label: United States
+            value: US
+          - label: Canada
+            value: CA
+          - label: United Kingdom
+            value: UK
+          - label: Europe (EU)
+            value: EU
+      - key: icp.industry_focus
+        ask: Which industries should outbound focus on?
+        type: multi
+        note: Other takes any list; capture their exact words.
+        options:
+          - label: Software / SaaS / tech
+            value: [software, saas, technology]
+          - label: Professional services
+            value: [professional services, agencies, legal, accounting]
+          - label: E-commerce / CPG / retail
+            value: [ecommerce, cpg, retail]
+          - label: Industry-agnostic
+            value: any
+      - key: icp.industry_focus_mode
+        ask: Is that an exclusive focus, or a priority with others allowed if they fit?
+        type: choice
+        when: industry_focus is not industry-agnostic
+        options:
+          - label: Priority, others OK if fit
+            value: priority
+            recommended: true
+          - label: Only these industries
+            value: exclusive
+      - key: icp.exclude_industries
+        ask: Which industries should NEVER be included, regardless of fit?
+        type: multi
+        options:
+          - label: No exclusions
+            value: []
+          - label: Healthcare / clinical
+            value: [healthcare, hospital, clinic]
+          - label: Government / public sector
+            value: [government, public sector]
+          - label: Nonprofit / education
+            value: [nonprofit, education]
+      - key: icp.buyer_function
+        ask: Which function owns the problem you solve?
+        type: multi
+        note: This shapes the champion tier's title list.
+        options:
+          - label: Operations
+            value: operations
+          - label: Sales / RevOps
+            value: sales
+          - label: Marketing
+            value: marketing
+          - label: Finance
+            value: finance
+      - key: icp.buyer_tiers
+        ask: Who do you sell to inside a company?
+        type: choice
+        options:
+          - label: Standard three-tier map
+            value: default A/B/C
+            recommended: true
+            note: "A signs (CEO, founder, COO), B champions (chief of staff, heads-of, VPs in the buyer function), C owns the work (directors, managers)"
+          - label: Let me define the roles
+            value: custom
+            followup: text question for their map
+      - key: icp.lead_with_tier
+        ask: Which tier should outreach lead with?
+        type: choice
+        options:
+          - label: The champion (tier B)
+            value: B
+            recommended: true
+            note: at sub-200-employee companies the champion owns the workflow and has a quieter inbox than the CEO
+          - label: The decision maker (tier A)
+            value: A
+          - label: The operational owner (tier C)
+            value: C
+      - key: icp.signals
+        ask: Beyond firmographics, what signals mark a company as ready?
+        type: multi
+        options:
+          - label: Recently raised funding
+            value: recent_funding
+          - label: Actively hiring relevant roles
+            value: hiring
+          - label: Specific tools in their stack
+            value: technographic
+            followup: text question for which tools
+          - label: None, firmographics are enough
+            value: []
+      - key: icp.disqualifiers
+        ask: Which of these disqualify a company outright, no matter how good it looks?
+        type: multi
+        note: Other takes any custom rule, phrased as a rule.
+        options:
+          - label: Bought a competitor recently
+            value: competitor_installed
+          - label: Regulated / clinical front office
+            value: regulated_frontline
+          - label: No ops or admin function
+            value: no_ops_function
+          - label: None of these
+            value: []
+      - key: icp.disqualifiers_custom
+        ask: Any other hard rules? Anything that makes a company untouchable no matter what.
+        type: text
+        default: none
+      - key: icp.segments
+        ask: Start with one segment, or split outreach across weighted segments?
+        type: choice
+        options:
+          - label: One segment
+            value: single
+            recommended: true
+            note: simplest to start; split later once reply data says where to double down
+          - label: Weighted segments
+            value: weighted
+            followup: text question for the segments and their rough mix
+      - key: icp.max_contacts_per_company
+        ask: How many contacts at one company may be in sequence at once?
+        type: choice
+        options:
+          - label: "3"
+            value: 3
+            recommended: true
+          - label: "2"
+            value: 2
+          - label: "1"
+            value: 1
+
+  - id: positioning
+    title: Positioning
+    why: The drafting step builds every opener from this section; a vague wedge produces openers that read as generic praise.
+    questions:
+      - key: positioning.wedge
+        ask: In one sentence, what do you do that the alternatives do not?
+        type: text
+      - key: positioning.pain
+        ask: What specific recurring pain does your buyer feel, in their words?
+        type: text
+      - key: positioning.proof_metric
+        ask: One concrete quantifier. A single number, never a range.
+        type: text
+      - key: positioning.not_a
+        ask: What do prospects wrongly assume you are? The things you are NOT.
+        type: text
+      - key: use_cases
+        ask: Give at least five real use cases, each tied to a role that would own it. These become the workflow the opener names per prospect.
+        type: text
+        note: Written to positioning/use-cases.json. Fewer than five, say what that costs and continue.
+
+  - id: cadence
+    title: Cadence
+    mode_note: >
+      SEQUENCER-EXECUTED mode does not design a cadence here; the sequence
+      lives in their tool. Instead ask what the programmed sequence is (steps,
+      channels, day offsets) and record it for reporting context, and confirm
+      the tool stops on reply. TEMPLATE-EXECUTED mode asks the question below.
+    why: The sequence decides how much attention each prospect gets and how much manual LinkedIn work the team signs up for.
+    questions:
+      - key: cadence
+        ask: Which sequence shape fits how your team works?
+        type: choice
+        when: template-executed
+        options:
+          - label: 6 steps, email + LinkedIn
+            value: standard-6-step
+            recommended: true
+            note: "LI invite + opener day 0, LI message on accept, bump day 4, value-add day 9, LI nudge day 14. LinkedIn steps are manual: the agent drafts, a human sends."
+          - label: Email only, 4 touches
+            value: email-4-touch
+            note: opener, bump day 3, value-add day 7, breakup day 14. No manual LinkedIn work.
+          - label: Email only, 3 touches
+            value: email-3-touch
+            note: opener, bump day 4, value-add day 9
+    state_plainly: Any reply stops the sequence, including ambiguous ones. That is enforced in code and is not configurable.
+
+  - id: message_standards
+    title: Message standards
+    why: These become linter rules; every draft is mechanically checked against them before it can send, whichever tool sends it.
+    questions:
+      - key: message_standards.cta.type
+        ask: What is the one ask in every opener?
+        type: choice
+        prefill: >
+          The identity research saw their site. If it has a self-serve
+          signup, recommend self_serve with that URL pre-filled; if the only
+          path is a demo form, recommend meeting. Say which you saw.
+        options:
+          - label: Self-serve link
+            value: self_serve
+            note: converts better when the product can be tried without a call; needs the URL
+          - label: Meeting ask
+            value: meeting
+            note: uses each sender's own booking link
+      - key: message_standards.cta.url
+        ask: The self-serve URL, if that was the answer?
+        type: text
+      - key: message_standards.signature
+        ask: Signature block?
+        type: choice
+        options:
+          - label: Name / title, company / email
+            value: default three lines
+            recommended: true
+          - label: Custom
+            value: custom
+            followup: text question for their lines
+
+  - id: suppression
+    title: Suppression
+    why: This is what prevents the mortifying send, a cold pitch to a current customer or an open deal.
+    prefill: >
+      If a CRM was connected in the stack section, read its ACTUAL pipeline
+      stages and statuses (read-only) and propose the mapping in their own
+      vocabulary: "your HubSpot has Trial, Active, Churned, Open Deal; I
+      would suppress Trial, Active, and Open Deal" beats asking abstractly.
+      The generic multi question below is the fallback for no CRM.
+    questions:
+      - key: suppression.suppress_company_states
+        ask: Which states should suppress EVERY contact at that company?
+        type: multi
+        options:
+          - label: Current customer
+            value: customer
+            recommended: true
+          - label: Open deal
+            value: open_deal
+            recommended: true
+          - label: Meeting held recently
+            value: meeting_held
+            recommended: true
+          - label: Signed up / trialing
+            value: signup
+            recommended: true
+    state_plainly: Suppression is fail-closed. If the source is unreachable the run halts. That is enforced in code and is not configurable.
+
+  - id: escalation
+    title: Escalation
+    why: An agent that cannot reach a human is an agent running unsupervised; this section is who hears from it and who it may interrupt.
+    prefill: >
+      If Slack (or another notify transport) is connected, list its channels
+      read-only and propose the likeliest routine destination by name
+      instead of asking for one from memory. Propose the operator
+      themselves as the escalation contact; someone else is the exception.
+    questions:
+      - key: escalation.digest_to
+        ask: Where should routine output go? Drafts for approval, batch summaries, the weekly report. A channel name or an email address.
+        type: text
+      - key: escalation.escalate_to
+        ask: Who should be interrupted for urgent items? A person, not a channel.
+        type: text
+      - key: escalation.escalate_on
+        ask: What justifies interrupting them?
+        type: multi
+        options:
+          - label: Someone wants to talk
+            value: [positive_reply, meeting_request]
+            recommended: true
+            note: a positive reply answered fast is worth more than the next hundred sends
+          - label: Deliverability breach
+            value: [bounce_rate_breach]
+            recommended: true
+          - label: Suppression halt
+            value: [suppression_unavailable]
+            recommended: true
+            note: a fail-closed halt nobody hears about is an outage that looks like a quiet day
+          - label: Cap breach
+            value: [cap_breach]
+            recommended: true
+      - key: escalation.quiet_hours_local
+        ask: Quiet hours for routine notifications? Escalations always ignore them.
+        type: choice
+        options:
+          - label: 6 pm to 8 am
+            value: "18:00-08:00"
+            recommended: true
+          - label: None
+            value: none
+
+  - id: voice
+    title: Voice
+    why: The single highest-leverage section. The linter enforces mechanics; only real samples can make the drafts sound like you instead of like AI.
+    prefill: >
+      With the operator's mailbox connected, OFFER to harvest candidates
+      instead of asking them to dig: "want me to pull a few recent emails
+      you sent to people outside the company and you pick the ones that
+      sound like you?" This is personal content, so the consent boundary is
+      absolute: ask before reading sent mail, read only after an explicit
+      yes, show only candidates, and let them choose. Never harvest
+      silently, and never write a sample they did not select. If they
+      decline, the paste question below stands.
+    questions:
+      - key: voice.samples
+        ask: Paste one to three real emails you have sent and were happy with, verbatim. They are read before every draft and never sent.
+        type: text
+        note: Written to positioning/voice-samples.md. If declined, say what it costs and ask once more later.
+      - key: voice.notes
+        ask: How do you want to sound? A sentence or two.
+        type: text
+      - key: voice.banned_phrases
+        ask: Words or phrases you never want to see in your outbound?
+        type: text
+        note: These become hard linter errors, not suggestions.
+
+  - id: do_not_touch
+    title: Do not touch
+    why: ICP says not a fit, suppression says already engaged; this says never, and fit is irrelevant.
+    prefill: >
+      Make the question concrete with names research already surfaced: the
+      CRM's customer list ("Kestrel is a customer; are their competitors
+      off-limits?"), investors named on the site, partners on the site.
+      Real names get real answers; the abstract version of this question
+      gets "no, nothing" from people who absolutely have exclusions.
+    questions:
+      - key: do_not_touch
+        ask: Are there companies, domains, people, or geographies this agent must never contact, for any reason? A major customer's competitor, an investor's portfolio, a company in litigation, a former employer.
+        type: text
+        note: Capture a reason for every entry. An empty list is a legitimate answer, but ask twice before accepting it.
+
+  - id: first_run
+    title: First run
+    why: The first batch is where a misconfigured ICP gets caught before it becomes a hundred wrong emails.
+    questions:
+      - key: first_run.goal
+        ask: What should the first dry run do?
+        type: choice
+        options:
+          - label: Source, qualify, draft 10
+            value: Source 10 prospects, qualify, enrich, draft Day-0 openers, send nothing.
+            recommended: true
+            note: exercises the whole motion end to end with zero risk
+          - label: Run against my list
+            value: Operator uploads a list; enrich, qualify, draft against it, send nothing.
+          - label: Draft for named prospects
+            value: Operator names specific prospects; draft openers for them, send nothing.
+    state_plainly: >
+      Whatever the answer, it is a dry run, it is small, and a human reads
+      the output. That review cannot be waived or inferred from silence.
+      Onboarding is not complete until this run has actually executed:
+      a hand-off whose printed next command is known to fail is remaining
+      work, not a finish.
+
+  - id: calibration
+    title: Calibrate on live examples
+    why: Fourteen structured answers feel confirmed until they meet a real company; three live verdicts catch what the questions cannot.
+    note: >
+      This section runs AFTER the config is written, validated, and
+      self-tested (steps 2 and 3), because it needs the assembled ICP, the
+      real positioning and voice files, and the linter. Everything in it is
+      read-only: nothing is created, enrolled, tagged, or sent anywhere.
+      Work one artifact at a time, present it in full, and put each verdict
+      through AskUserQuestion. (1) COMPANY: find one real company that
+      passes the assembled ICP, from the connected sourcing or CRM tool
+      when there is one, else a web search. Show name, size, geo, industry,
+      the signal that qualified it, and the tier it matched. (2) CONTACT:
+      at the confirmed company, the person the buyer map says to lead with;
+      show name, title, and tier. (3) OPENER: a linted Day-0 draft for that
+      contact built from the real positioning, use cases, and voice
+      samples, with a confidence level attached. Every miss is config
+      signal, not conversation: name the answer that produced it (tier
+      rule, signal, wedge, voice), say what you are changing, change it,
+      re-validate, and re-run that artifact with a fresh example. Two
+      misses on the same artifact means stop guessing and ask what rule
+      would have excluded the miss. Continue until each artifact has a
+      yes, or the operator says move on.
+    questions:
+      - key: calibration.company_verdict
+        ask: Here is a real company the assembled ICP qualifies. Is this who you mean?
+        type: choice
+        options:
+          - label: Good fit
+            value: fit
+          - label: Borderline
+            value: borderline
+            followup: text question for what makes it borderline
+          - label: Not a fit
+            value: miss
+            followup: text question for the rule that would have excluded it
+      - key: calibration.contact_verdict
+        ask: At that company, this is who the buyer map says to lead with. Right person?
+        type: choice
+        options:
+          - label: Right person
+            value: fit
+          - label: Right function, wrong level
+            value: level
+            followup: text question for who they would pick instead
+          - label: Wrong person
+            value: miss
+            followup: text question for who owns this at a company like that
+      - key: calibration.opener_verdict
+        ask: Here is the Day-0 opener drafted for that contact, already linted. Would you send it?
+        type: choice
+        options:
+          - label: Send as is
+            value: send
+          - label: Close, needs edits
+            value: edits
+            followup: text question for the exact lines to change
+          - label: Wrong direction
+            value: miss
+            followup: text question for what the opener should have led with

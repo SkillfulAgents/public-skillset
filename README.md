@@ -20,6 +20,14 @@ Personal nutrition tracker you can message naturally: describe a meal (or send a
 
 Keeps the team fed: runs the recurring weekly grocery/kitchen stock order, handles one-off Slack requests, and organizes daily lunch/dinner orders. Places real orders through the built-in browser on your logged-in shopping accounts, with careful records of everything bought.
 
+### Outbound Campaign Agent
+
+Vendor-neutral outbound sales motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Swappable adapters for CRM, sender, enrichment, and calendar; nothing sends until onboarding writes your config.
+
+### Recruiting Agent
+
+Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory, excellence pools), filtering with a self-improving screening prompt calibrated by your Advance/Don't-advance feedback, outreach, nurture, and interview scheduling, backed by Ashby or a no-ATS pipeline store.
+
 ### SEO Agent
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
@@ -45,6 +53,17 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
 │   │   ├── grocery-baseline.md
+│   │   └── .claude/skills/...
+│   ├── outbound-campaign-agent/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   ├── adapters/      (crm, sender, enrichment, calendar, ...)
+│   │   ├── lib/           (gates, caps, linter, suppression)
+│   │   └── .claude/skills/...
+│   ├── recruiting-agent/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   ├── pipeline/      (state: roles, shortlists, outreach)
 │   │   └── .claude/skills/...
 │   └── seo-agent/
 │       ├── CLAUDE.md

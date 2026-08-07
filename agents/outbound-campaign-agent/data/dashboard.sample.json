@@ -1,0 +1,4299 @@
+{
+  "schema": "outbound-report/1",
+  "demo": true,
+  "generated_at": "2026-08-06T17:00:00",
+  "config": {
+    "title": "Outbound performance",
+    "subtitle": "Wobble Widgets Inc campaign health (sample data)",
+    "n_floor": 10,
+    "daily_cap": 25,
+    "track_opens": false,
+    "windows": [
+      "week",
+      "month",
+      "quarter"
+    ],
+    "default_window": "month",
+    "thresholds": {
+      "bounce_warn": 0.02,
+      "bounce_halt": 0.05
+    },
+    "auth": {
+      "spf": {
+        "status": "pass",
+        "detail": "v=spf1 include:_spf.example.net -all"
+      },
+      "dkim": {
+        "status": "pass",
+        "detail": "selector s1, 2048-bit"
+      },
+      "dmarc": {
+        "status": "warn",
+        "detail": "p=none, monitoring only. Move to quarantine."
+      }
+    },
+    "benchmarks": {
+      "source": "public cold-email benchmark reports, 2024-2025 (directional)",
+      "rows": [
+        {
+          "label": "Reply rate",
+          "metric": "reply_rate",
+          "range": "3% to 7% good, 10%+ excellent"
+        },
+        {
+          "label": "Positive reply rate",
+          "metric": "positive_reply_rate",
+          "range": "1% to 3% typical"
+        },
+        {
+          "label": "Meeting rate",
+          "metric": "meeting_rate",
+          "range": "0.5% to 2% of sends"
+        },
+        {
+          "label": "Bounce rate",
+          "metric": "bounce_rate",
+          "range": "under 2% target, 5% hazard"
+        }
+      ]
+    },
+    "notes": [
+      "Rates are suppressed below 10 in the denominator and shown as raw counts instead.",
+      "Open tracking is deliberately absent: the pixel costs more deliverability than the metric is worth.",
+      "Every name, company and number here is fictional. Toggle Demo data off to see the live workspace."
+    ]
+  },
+  "daily_send_series": [
+    {
+      "date": "2026-07-08",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-09",
+      "count": 3,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-10",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-11",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-12",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-13",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-14",
+      "count": 6,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-15",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-16",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-17",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-18",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-19",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-20",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-21",
+      "count": 6,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-22",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-23",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-24",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-25",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-26",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-27",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-28",
+      "count": 5,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-29",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-30",
+      "count": 4,
+      "over_cap": false
+    },
+    {
+      "date": "2026-07-31",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-01",
+      "count": 3,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-02",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-03",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-04",
+      "count": 3,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-05",
+      "count": 0,
+      "over_cap": false
+    },
+    {
+      "date": "2026-08-06",
+      "count": 3,
+      "over_cap": false
+    }
+  ],
+  "cohorts": [
+    {
+      "label": "2026-W20",
+      "prospects": 2,
+      "sends": 2,
+      "replies": 0,
+      "rates": {
+        "reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 2,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 2,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W21",
+      "prospects": 5,
+      "sends": 7,
+      "replies": 1,
+      "rates": {
+        "reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 1,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W22",
+      "prospects": 5,
+      "sends": 7,
+      "replies": 1,
+      "rates": {
+        "reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 1,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W23",
+      "prospects": 5,
+      "sends": 7,
+      "replies": 1,
+      "rates": {
+        "reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 1,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 1,
+          "d": 7,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W24",
+      "prospects": 6,
+      "sends": 8,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.25,
+          "n": 2,
+          "d": 8,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 8,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W25",
+      "prospects": 6,
+      "sends": 9,
+      "replies": 1,
+      "rates": {
+        "reply_rate": {
+          "value": 0.1111111111111111,
+          "n": 1,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W26",
+      "prospects": 7,
+      "sends": 9,
+      "replies": 1,
+      "rates": {
+        "reply_rate": {
+          "value": 0.1111111111111111,
+          "n": 1,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.1111111111111111,
+          "n": 1,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W27",
+      "prospects": 7,
+      "sends": 10,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.2,
+          "n": 2,
+          "d": 10,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.1,
+          "n": 1,
+          "d": 10,
+          "reliable": true,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W28",
+      "prospects": 9,
+      "sends": 13,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.15384615384615385,
+          "n": 2,
+          "d": 13,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.07692307692307693,
+          "n": 1,
+          "d": 13,
+          "reliable": true,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W29",
+      "prospects": 10,
+      "sends": 14,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 2,
+          "d": 14,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 14,
+          "reliable": true,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W30",
+      "prospects": 10,
+      "sends": 14,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.14285714285714285,
+          "n": 2,
+          "d": 14,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.07142857142857142,
+          "n": 1,
+          "d": 14,
+          "reliable": true,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W31",
+      "prospects": 9,
+      "sends": 12,
+      "replies": 2,
+      "rates": {
+        "reply_rate": {
+          "value": 0.16666666666666666,
+          "n": 2,
+          "d": 12,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.08333333333333333,
+          "n": 1,
+          "d": 12,
+          "reliable": true,
+          "floor": 10
+        }
+      }
+    },
+    {
+      "label": "2026-W32",
+      "prospects": 6,
+      "sends": 6,
+      "replies": 0,
+      "rates": {
+        "reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 6,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 6,
+          "reliable": false,
+          "floor": 10
+        }
+      }
+    }
+  ],
+  "windows": {
+    "week": {
+      "key": "week",
+      "label": "trailing 7 days",
+      "start": "2026-07-30",
+      "end": "2026-08-06",
+      "totals": {
+        "prospects": 6,
+        "sends": 9,
+        "other_channel_touches": 1,
+        "delivered": 9,
+        "bounces": 0,
+        "replies": 0,
+        "positive_replies": 0,
+        "meetings_booked": 0,
+        "meetings_held": 0,
+        "meetings_cancelled": 0,
+        "meetings_unattributed": 0,
+        "opportunities": 0
+      },
+      "rates": {
+        "reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "meeting_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "meeting_held_rate": {
+          "value": null,
+          "n": 0,
+          "d": 0,
+          "reliable": false,
+          "floor": 10
+        },
+        "meeting_to_opp": {
+          "value": null,
+          "n": 0,
+          "d": 0,
+          "reliable": false,
+          "floor": 10
+        },
+        "bounce_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        }
+      },
+      "kpis": [
+        {
+          "key": "bounce_rate",
+          "label": "Bounce rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 9,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "bounces / sends",
+          "feature": false
+        },
+        {
+          "key": "reply_rate",
+          "label": "Reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 9,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "replies / sends",
+          "feature": false
+        },
+        {
+          "key": "positive_reply_rate",
+          "label": "Positive reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 9,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "positive / sends",
+          "feature": true
+        },
+        {
+          "key": "meetings_booked",
+          "label": "Meetings booked",
+          "kind": "count",
+          "rate": null,
+          "count": 0,
+          "denominator_label": "",
+          "feature": false
+        },
+        {
+          "key": "meetings_held",
+          "label": "Meetings held",
+          "kind": "rate",
+          "rate": {
+            "value": null,
+            "n": 0,
+            "d": 0,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "scheduled and not cancelled / booked",
+          "feature": false
+        },
+        {
+          "key": "meeting_rate",
+          "label": "Meeting rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 9,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "booked / sends",
+          "feature": false
+        }
+      ],
+      "meetings": {
+        "backend": "meetings_table",
+        "booked": 0,
+        "held": 0,
+        "no_show": 0,
+        "cancelled": 0,
+        "unattributed": 0,
+        "attributed_earlier": 0,
+        "held_note": "held means scheduled and not cancelled, not confirmed attendance: a calendar cannot prove someone showed up",
+        "by_source": [
+          {
+            "source": "calendar",
+            "count": 0
+          },
+          {
+            "source": "reply",
+            "count": 0
+          },
+          {
+            "source": "manual",
+            "count": 0
+          }
+        ],
+        "booked_list": [],
+        "upcoming": [
+          {
+            "id": 11,
+            "prospect_id": 50,
+            "prospect_name": "Bjorn Sims",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 10:30:00",
+            "booked_at": "2026-07-29 07:24:00"
+          },
+          {
+            "id": 9,
+            "prospect_id": 43,
+            "prospect_name": "Camille Bello",
+            "company": "Tinderbox Labs",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 12:30:00",
+            "booked_at": "2026-07-27 05:00:00"
+          }
+        ],
+        "upcoming_total": 2,
+        "notes": [],
+        "rates": {
+          "meeting_rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 9,
+            "reliable": false,
+            "floor": 10
+          },
+          "meeting_held_rate": {
+            "value": null,
+            "n": 0,
+            "d": 0,
+            "reliable": false,
+            "floor": 10
+          },
+          "meeting_to_opp": {
+            "value": null,
+            "n": 0,
+            "d": 0,
+            "reliable": false,
+            "floor": 10
+          }
+        }
+      },
+      "deliverability": {
+        "sends": 9,
+        "bounces": 0,
+        "status": "ok",
+        "bounce_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 9,
+          "reliable": false,
+          "floor": 10
+        },
+        "warn": 0.02,
+        "halt": 0.05
+      },
+      "funnel": [
+        {
+          "name": "Sent",
+          "count": 9
+        },
+        {
+          "name": "Delivered",
+          "count": 9
+        },
+        {
+          "name": "Replied",
+          "count": 0
+        },
+        {
+          "name": "Positive",
+          "count": 0
+        },
+        {
+          "name": "Meeting booked",
+          "count": 0
+        },
+        {
+          "name": "Meeting scheduled, not cancelled",
+          "count": 0
+        },
+        {
+          "name": "Opportunity",
+          "count": 0
+        }
+      ],
+      "sentiment": [],
+      "ab_test": {
+        "state": "Directional",
+        "arms": [
+          {
+            "name": "A",
+            "sends": 6,
+            "replies": 0,
+            "positive": 0,
+            "meetings": 0,
+            "meetings_held": 0,
+            "bounces": 0,
+            "rates": {
+              "reply_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 6,
+                "reliable": false,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 6,
+                "reliable": false,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 6,
+                "reliable": false,
+                "floor": 10
+              }
+            }
+          },
+          {
+            "name": "B",
+            "sends": 3,
+            "replies": 0,
+            "positive": 0,
+            "meetings": 0,
+            "meetings_held": 0,
+            "bounces": 0,
+            "rates": {
+              "reply_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 3,
+                "reliable": false,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 3,
+                "reliable": false,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 3,
+                "reliable": false,
+                "floor": 10
+              }
+            }
+          }
+        ],
+        "leader": null,
+        "p_value": null,
+        "z": null,
+        "sends_to_significance": null,
+        "required_n_per_arm": null,
+        "note": "At least one arm is under the n_floor of 10 sends, so the state is held at Directional regardless of p-value."
+      },
+      "segments": [
+        {
+          "key": "icp_tier",
+          "title": "By ICP tier",
+          "column": "Tier",
+          "display": "table",
+          "rows": [
+            {
+              "name": "T2",
+              "sends": 5,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T1",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T3",
+              "sends": 1,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "industry",
+          "title": "By industry",
+          "column": "Industry",
+          "display": "table",
+          "rows": [
+            {
+              "name": "software",
+              "sends": 5,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "healthcare",
+              "sends": 2,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "home services",
+              "sends": 1,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "professional services",
+              "sends": 1,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "title_cluster",
+          "title": "By title cluster",
+          "column": "Title cluster",
+          "display": "table",
+          "rows": [
+            {
+              "name": "exec",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "ops",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "finance",
+              "sends": 2,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "marketing",
+              "sends": 1,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 1,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "sender",
+          "title": "By sender",
+          "column": "Sender",
+          "display": "table",
+          "rows": [
+            {
+              "name": "morgan",
+              "sends": 5,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "dana",
+              "sends": 4,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 4,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 4,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 4,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "cadence_step",
+          "title": "By cadence step",
+          "column": "Step",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Day 0 opener",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 4 bump",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 9 value_add",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "send_day",
+          "title": "By send day",
+          "column": "Day",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Tue",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Thu",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Sat",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "variant",
+          "title": "By variant",
+          "column": "Variant",
+          "display": "table",
+          "rows": [
+            {
+              "name": "A",
+              "sends": 6,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "B",
+              "sends": 3,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 3,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "month": {
+      "key": "month",
+      "label": "trailing 30 days",
+      "start": "2026-07-07",
+      "end": "2026-08-06",
+      "totals": {
+        "prospects": 27,
+        "sends": 53,
+        "other_channel_touches": 7,
+        "delivered": 53,
+        "bounces": 0,
+        "replies": 6,
+        "positive_replies": 2,
+        "meetings_booked": 5,
+        "meetings_held": 3,
+        "meetings_cancelled": 1,
+        "meetings_unattributed": 1,
+        "opportunities": 2
+      },
+      "rates": {
+        "reply_rate": {
+          "value": 0.11320754716981132,
+          "n": 6,
+          "d": 53,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.03773584905660377,
+          "n": 2,
+          "d": 53,
+          "reliable": true,
+          "floor": 10
+        },
+        "meeting_rate": {
+          "value": 0.09433962264150944,
+          "n": 5,
+          "d": 53,
+          "reliable": true,
+          "floor": 10
+        },
+        "meeting_held_rate": {
+          "value": 0.6,
+          "n": 3,
+          "d": 5,
+          "reliable": false,
+          "floor": 10
+        },
+        "meeting_to_opp": {
+          "value": 0.4,
+          "n": 2,
+          "d": 5,
+          "reliable": false,
+          "floor": 10
+        },
+        "bounce_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 53,
+          "reliable": true,
+          "floor": 10
+        }
+      },
+      "kpis": [
+        {
+          "key": "bounce_rate",
+          "label": "Bounce rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.0,
+            "n": 0,
+            "d": 53,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 0,
+          "denominator_label": "bounces / sends",
+          "feature": false
+        },
+        {
+          "key": "reply_rate",
+          "label": "Reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.11320754716981132,
+            "n": 6,
+            "d": 53,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 6,
+          "denominator_label": "replies / sends",
+          "feature": false
+        },
+        {
+          "key": "positive_reply_rate",
+          "label": "Positive reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.03773584905660377,
+            "n": 2,
+            "d": 53,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 2,
+          "denominator_label": "positive / sends",
+          "feature": true
+        },
+        {
+          "key": "meetings_booked",
+          "label": "Meetings booked",
+          "kind": "count",
+          "rate": null,
+          "count": 5,
+          "denominator_label": "",
+          "feature": false
+        },
+        {
+          "key": "meetings_held",
+          "label": "Meetings held",
+          "kind": "rate",
+          "rate": {
+            "value": 0.6,
+            "n": 3,
+            "d": 5,
+            "reliable": false,
+            "floor": 10
+          },
+          "count": 3,
+          "denominator_label": "scheduled and not cancelled / booked",
+          "feature": false
+        },
+        {
+          "key": "meeting_rate",
+          "label": "Meeting rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.09433962264150944,
+            "n": 5,
+            "d": 53,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 5,
+          "denominator_label": "booked / sends",
+          "feature": false
+        }
+      ],
+      "meetings": {
+        "backend": "meetings_table",
+        "booked": 5,
+        "held": 3,
+        "no_show": 0,
+        "cancelled": 1,
+        "unattributed": 1,
+        "attributed_earlier": 1,
+        "held_note": "held means scheduled and not cancelled, not confirmed attendance: a calendar cannot prove someone showed up",
+        "by_source": [
+          {
+            "source": "calendar",
+            "count": 4
+          },
+          {
+            "source": "reply",
+            "count": 0
+          },
+          {
+            "source": "manual",
+            "count": 1
+          }
+        ],
+        "booked_list": [
+          {
+            "id": 6,
+            "prospect_id": 30,
+            "prospect_name": "Sven Ibarra",
+            "company": "Cobalt Roofing",
+            "sender_id": "morgan",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-07-17 14:30:00",
+            "booked_at": "2026-07-13 05:00:00"
+          },
+          {
+            "id": 8,
+            "prospect_id": 11,
+            "prospect_name": "Solveig Lind",
+            "company": "Drumlin Veterinary",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "manual",
+            "starts_at": "2026-07-26 13:30:00",
+            "booked_at": "2026-07-23 17:00:00"
+          },
+          {
+            "id": 10,
+            "prospect_id": null,
+            "prospect_name": "unmatched attendee",
+            "company": "unknown company",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-07-26 13:30:00",
+            "booked_at": "2026-07-23 17:00:00"
+          },
+          {
+            "id": 9,
+            "prospect_id": 43,
+            "prospect_name": "Camille Bello",
+            "company": "Tinderbox Labs",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 12:30:00",
+            "booked_at": "2026-07-27 05:00:00"
+          },
+          {
+            "id": 11,
+            "prospect_id": 50,
+            "prospect_name": "Bjorn Sims",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 10:30:00",
+            "booked_at": "2026-07-29 07:24:00"
+          }
+        ],
+        "upcoming": [
+          {
+            "id": 11,
+            "prospect_id": 50,
+            "prospect_name": "Bjorn Sims",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 10:30:00",
+            "booked_at": "2026-07-29 07:24:00"
+          },
+          {
+            "id": 9,
+            "prospect_id": 43,
+            "prospect_name": "Camille Bello",
+            "company": "Tinderbox Labs",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 12:30:00",
+            "booked_at": "2026-07-27 05:00:00"
+          }
+        ],
+        "upcoming_total": 2,
+        "notes": [
+          "2 of 5 booked meetings are in this total but in none of the segment breakdowns: 1 with no attributable send, 1 earned by a send from before this window."
+        ],
+        "rates": {
+          "meeting_rate": {
+            "value": 0.09433962264150944,
+            "n": 5,
+            "d": 53,
+            "reliable": true,
+            "floor": 10
+          },
+          "meeting_held_rate": {
+            "value": 0.6,
+            "n": 3,
+            "d": 5,
+            "reliable": false,
+            "floor": 10
+          },
+          "meeting_to_opp": {
+            "value": 0.4,
+            "n": 2,
+            "d": 5,
+            "reliable": false,
+            "floor": 10
+          }
+        }
+      },
+      "deliverability": {
+        "sends": 53,
+        "bounces": 0,
+        "status": "ok",
+        "bounce_rate": {
+          "value": 0.0,
+          "n": 0,
+          "d": 53,
+          "reliable": true,
+          "floor": 10
+        },
+        "warn": 0.02,
+        "halt": 0.05
+      },
+      "funnel": [
+        {
+          "name": "Sent",
+          "count": 53
+        },
+        {
+          "name": "Delivered",
+          "count": 53
+        },
+        {
+          "name": "Replied",
+          "count": 6
+        },
+        {
+          "name": "Positive",
+          "count": 2
+        },
+        {
+          "name": "Meeting booked",
+          "count": 5
+        },
+        {
+          "name": "Meeting scheduled, not cancelled",
+          "count": 3
+        },
+        {
+          "name": "Opportunity",
+          "count": 2
+        }
+      ],
+      "sentiment": [
+        {
+          "label": "positive",
+          "count": 2,
+          "tone": "good"
+        },
+        {
+          "label": "wrong_person",
+          "count": 1,
+          "tone": "warn"
+        },
+        {
+          "label": "unsubscribe",
+          "count": 1,
+          "tone": "bad"
+        },
+        {
+          "label": "not_now",
+          "count": 1,
+          "tone": "warn"
+        },
+        {
+          "label": "objection",
+          "count": 1,
+          "tone": "warn"
+        }
+      ],
+      "ab_test": {
+        "state": "Directional",
+        "arms": [
+          {
+            "name": "A",
+            "sends": 41,
+            "replies": 5,
+            "positive": 2,
+            "meetings": 1,
+            "meetings_held": 0,
+            "bounces": 0,
+            "rates": {
+              "reply_rate": {
+                "value": 0.12195121951219512,
+                "n": 5,
+                "d": 41,
+                "reliable": true,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.04878048780487805,
+                "n": 2,
+                "d": 41,
+                "reliable": true,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.024390243902439025,
+                "n": 1,
+                "d": 41,
+                "reliable": true,
+                "floor": 10
+              }
+            }
+          },
+          {
+            "name": "B",
+            "sends": 12,
+            "replies": 1,
+            "positive": 0,
+            "meetings": 2,
+            "meetings_held": 1,
+            "bounces": 0,
+            "rates": {
+              "reply_rate": {
+                "value": 0.08333333333333333,
+                "n": 1,
+                "d": 12,
+                "reliable": true,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.0,
+                "n": 0,
+                "d": 12,
+                "reliable": true,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.16666666666666666,
+                "n": 2,
+                "d": 12,
+                "reliable": true,
+                "floor": 10
+              }
+            }
+          }
+        ],
+        "leader": "A",
+        "p_value": 0.7103762233839876,
+        "z": 0.37135085674039053,
+        "sends_to_significance": 954,
+        "required_n_per_arm": 966,
+        "note": "Both arms must clear the n_floor before this can read Significant, whatever the p-value says. Weight reply sentiment over rate deltas at low volume."
+      },
+      "segments": [
+        {
+          "key": "icp_tier",
+          "title": "By ICP tier",
+          "column": "Tier",
+          "display": "table",
+          "rows": [
+            {
+              "name": "T2",
+              "sends": 32,
+              "replies": 4,
+              "positive": 1,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.125,
+                  "n": 4,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.03125,
+                  "n": 1,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.03125,
+                  "n": 1,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T1",
+              "sends": 12,
+              "replies": 1,
+              "positive": 0,
+              "meetings": 2,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.08333333333333333,
+                  "n": 1,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 2,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T3",
+              "sends": 9,
+              "replies": 1,
+              "positive": 1,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.1111111111111111,
+                  "n": 1,
+                  "d": 9,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.1111111111111111,
+                  "n": 1,
+                  "d": 9,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 9,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "industry",
+          "title": "By industry",
+          "column": "Industry",
+          "display": "table",
+          "rows": [
+            {
+              "name": "software",
+              "sends": 15,
+              "replies": 1,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.06666666666666667,
+                  "n": 1,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06666666666666667,
+                  "n": 1,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "healthcare",
+              "sends": 12,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.08333333333333333,
+                  "n": 1,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "home services",
+              "sends": 6,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 1,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "professional services",
+              "sends": 6,
+              "replies": 1,
+              "positive": 1,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 1,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 1,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "consumer goods",
+              "sends": 5,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "insurance",
+              "sends": 5,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "freight",
+              "sends": 2,
+              "replies": 2,
+              "positive": 1,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 2,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.5,
+                  "n": 1,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "logistics",
+              "sends": 2,
+              "replies": 2,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 2,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "title_cluster",
+          "title": "By title cluster",
+          "column": "Title cluster",
+          "display": "table",
+          "rows": [
+            {
+              "name": "exec",
+              "sends": 18,
+              "replies": 2,
+              "positive": 1,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.1111111111111111,
+                  "n": 2,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.05555555555555555,
+                  "n": 1,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.05555555555555555,
+                  "n": 1,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "ops",
+              "sends": 18,
+              "replies": 2,
+              "positive": 1,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.1111111111111111,
+                  "n": 2,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.05555555555555555,
+                  "n": 1,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.05555555555555555,
+                  "n": 1,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "finance",
+              "sends": 8,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 8,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 8,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 8,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "marketing",
+              "sends": 7,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 7,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 7,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 7,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "sales",
+              "sends": 2,
+              "replies": 2,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 2,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.5,
+                  "n": 1,
+                  "d": 2,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "sender",
+          "title": "By sender",
+          "column": "Sender",
+          "display": "table",
+          "rows": [
+            {
+              "name": "dana",
+              "sends": 29,
+              "replies": 6,
+              "positive": 2,
+              "meetings": 2,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.20689655172413793,
+                  "n": 6,
+                  "d": 29,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.06896551724137931,
+                  "n": 2,
+                  "d": 29,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06896551724137931,
+                  "n": 2,
+                  "d": 29,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "morgan",
+              "sends": 24,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 24,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 24,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.041666666666666664,
+                  "n": 1,
+                  "d": 24,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "cadence_step",
+          "title": "By cadence step",
+          "column": "Step",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Day 0 opener",
+              "sends": 20,
+              "replies": 6,
+              "positive": 2,
+              "meetings": 2,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.3,
+                  "n": 6,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.1,
+                  "n": 2,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.1,
+                  "n": 2,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 4 bump",
+              "sends": 15,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06666666666666667,
+                  "n": 1,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 9 value_add",
+              "sends": 18,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "send_day",
+          "title": "By send day",
+          "column": "Day",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Tue",
+              "sends": 20,
+              "replies": 6,
+              "positive": 2,
+              "meetings": 2,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.3,
+                  "n": 6,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.1,
+                  "n": 2,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.1,
+                  "n": 2,
+                  "d": 20,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Thu",
+              "sends": 18,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Sat",
+              "sends": 15,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06666666666666667,
+                  "n": 1,
+                  "d": 15,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "variant",
+          "title": "By variant",
+          "column": "Variant",
+          "display": "table",
+          "rows": [
+            {
+              "name": "A",
+              "sends": 41,
+              "replies": 5,
+              "positive": 2,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.12195121951219512,
+                  "n": 5,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.04878048780487805,
+                  "n": 2,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.024390243902439025,
+                  "n": 1,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "B",
+              "sends": 12,
+              "replies": 1,
+              "positive": 0,
+              "meetings": 2,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.08333333333333333,
+                  "n": 1,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 2,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "quarter": {
+      "key": "quarter",
+      "label": "trailing 90 days",
+      "start": "2026-05-08",
+      "end": "2026-08-06",
+      "totals": {
+        "prospects": 55,
+        "sends": 121,
+        "other_channel_touches": 18,
+        "delivered": 119,
+        "bounces": 2,
+        "replies": 18,
+        "positive_replies": 7,
+        "meetings_booked": 10,
+        "meetings_held": 7,
+        "meetings_cancelled": 1,
+        "meetings_unattributed": 1,
+        "opportunities": 5
+      },
+      "rates": {
+        "reply_rate": {
+          "value": 0.1487603305785124,
+          "n": 18,
+          "d": 121,
+          "reliable": true,
+          "floor": 10
+        },
+        "positive_reply_rate": {
+          "value": 0.05785123966942149,
+          "n": 7,
+          "d": 121,
+          "reliable": true,
+          "floor": 10
+        },
+        "meeting_rate": {
+          "value": 0.08264462809917356,
+          "n": 10,
+          "d": 121,
+          "reliable": true,
+          "floor": 10
+        },
+        "meeting_held_rate": {
+          "value": 0.7,
+          "n": 7,
+          "d": 10,
+          "reliable": true,
+          "floor": 10
+        },
+        "meeting_to_opp": {
+          "value": 0.5,
+          "n": 5,
+          "d": 10,
+          "reliable": true,
+          "floor": 10
+        },
+        "bounce_rate": {
+          "value": 0.01652892561983471,
+          "n": 2,
+          "d": 121,
+          "reliable": true,
+          "floor": 10
+        }
+      },
+      "kpis": [
+        {
+          "key": "bounce_rate",
+          "label": "Bounce rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.01652892561983471,
+            "n": 2,
+            "d": 121,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 2,
+          "denominator_label": "bounces / sends",
+          "feature": false
+        },
+        {
+          "key": "reply_rate",
+          "label": "Reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.1487603305785124,
+            "n": 18,
+            "d": 121,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 18,
+          "denominator_label": "replies / sends",
+          "feature": false
+        },
+        {
+          "key": "positive_reply_rate",
+          "label": "Positive reply rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.05785123966942149,
+            "n": 7,
+            "d": 121,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 7,
+          "denominator_label": "positive / sends",
+          "feature": true
+        },
+        {
+          "key": "meetings_booked",
+          "label": "Meetings booked",
+          "kind": "count",
+          "rate": null,
+          "count": 10,
+          "denominator_label": "",
+          "feature": false
+        },
+        {
+          "key": "meetings_held",
+          "label": "Meetings held",
+          "kind": "rate",
+          "rate": {
+            "value": 0.7,
+            "n": 7,
+            "d": 10,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 7,
+          "denominator_label": "scheduled and not cancelled / booked",
+          "feature": false
+        },
+        {
+          "key": "meeting_rate",
+          "label": "Meeting rate",
+          "kind": "rate",
+          "rate": {
+            "value": 0.08264462809917356,
+            "n": 10,
+            "d": 121,
+            "reliable": true,
+            "floor": 10
+          },
+          "count": 10,
+          "denominator_label": "booked / sends",
+          "feature": false
+        }
+      ],
+      "meetings": {
+        "backend": "meetings_table",
+        "booked": 10,
+        "held": 7,
+        "no_show": 1,
+        "cancelled": 1,
+        "unattributed": 1,
+        "attributed_earlier": 0,
+        "held_note": "held means scheduled and not cancelled, not confirmed attendance: a calendar cannot prove someone showed up",
+        "by_source": [
+          {
+            "source": "calendar",
+            "count": 7
+          },
+          {
+            "source": "reply",
+            "count": 1
+          },
+          {
+            "source": "manual",
+            "count": 2
+          }
+        ],
+        "booked_list": [
+          {
+            "id": 1,
+            "prospect_id": 4,
+            "prospect_name": "Tobias Halvard",
+            "company": "Puddle Ferry Co",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-05-30 10:30:00",
+            "booked_at": "2026-05-25 05:00:00"
+          },
+          {
+            "id": 2,
+            "prospect_id": 10,
+            "prospect_name": "Hugo Marek",
+            "company": "Verity Bookkeeping",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-06-12 14:30:00",
+            "booked_at": "2026-06-08 05:00:00"
+          },
+          {
+            "id": 3,
+            "prospect_id": 14,
+            "prospect_name": "Felix Zhao",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "no_show",
+            "source": "calendar",
+            "starts_at": "2026-06-21 11:30:00",
+            "booked_at": "2026-06-15 05:00:00"
+          },
+          {
+            "id": 4,
+            "prospect_id": 21,
+            "prospect_name": "Maeve Bray",
+            "company": "Salt Marsh Provisions",
+            "sender_id": "morgan",
+            "title": "Intro call",
+            "status": "held",
+            "source": "reply",
+            "starts_at": "2026-07-02 13:30:00",
+            "booked_at": "2026-06-29 05:00:00"
+          },
+          {
+            "id": 5,
+            "prospect_id": 18,
+            "prospect_name": "Colin Kirby",
+            "company": "Cobalt Roofing",
+            "sender_id": "morgan",
+            "title": "Intro call",
+            "status": "held",
+            "source": "manual",
+            "starts_at": "2026-07-06 14:30:00",
+            "booked_at": "2026-07-02 17:00:00"
+          },
+          {
+            "id": 6,
+            "prospect_id": 30,
+            "prospect_name": "Sven Ibarra",
+            "company": "Cobalt Roofing",
+            "sender_id": "morgan",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-07-17 14:30:00",
+            "booked_at": "2026-07-13 05:00:00"
+          },
+          {
+            "id": 8,
+            "prospect_id": 11,
+            "prospect_name": "Solveig Lind",
+            "company": "Drumlin Veterinary",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "manual",
+            "starts_at": "2026-07-26 13:30:00",
+            "booked_at": "2026-07-23 17:00:00"
+          },
+          {
+            "id": 10,
+            "prospect_id": null,
+            "prospect_name": "unmatched attendee",
+            "company": "unknown company",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "held",
+            "source": "calendar",
+            "starts_at": "2026-07-26 13:30:00",
+            "booked_at": "2026-07-23 17:00:00"
+          },
+          {
+            "id": 9,
+            "prospect_id": 43,
+            "prospect_name": "Camille Bello",
+            "company": "Tinderbox Labs",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 12:30:00",
+            "booked_at": "2026-07-27 05:00:00"
+          },
+          {
+            "id": 11,
+            "prospect_id": 50,
+            "prospect_name": "Bjorn Sims",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 10:30:00",
+            "booked_at": "2026-07-29 07:24:00"
+          }
+        ],
+        "upcoming": [
+          {
+            "id": 11,
+            "prospect_id": 50,
+            "prospect_name": "Bjorn Sims",
+            "company": "Bellhaven Dental Group",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 10:30:00",
+            "booked_at": "2026-07-29 07:24:00"
+          },
+          {
+            "id": 9,
+            "prospect_id": 43,
+            "prospect_name": "Camille Bello",
+            "company": "Tinderbox Labs",
+            "sender_id": "dana",
+            "title": "Intro call",
+            "status": "booked",
+            "source": "calendar",
+            "starts_at": "2026-08-08 12:30:00",
+            "booked_at": "2026-07-27 05:00:00"
+          }
+        ],
+        "upcoming_total": 2,
+        "notes": [
+          "1 of 10 booked meetings are in this total but in none of the segment breakdowns: 1 with no attributable send."
+        ],
+        "rates": {
+          "meeting_rate": {
+            "value": 0.08264462809917356,
+            "n": 10,
+            "d": 121,
+            "reliable": true,
+            "floor": 10
+          },
+          "meeting_held_rate": {
+            "value": 0.7,
+            "n": 7,
+            "d": 10,
+            "reliable": true,
+            "floor": 10
+          },
+          "meeting_to_opp": {
+            "value": 0.5,
+            "n": 5,
+            "d": 10,
+            "reliable": true,
+            "floor": 10
+          }
+        }
+      },
+      "deliverability": {
+        "sends": 121,
+        "bounces": 2,
+        "status": "ok",
+        "bounce_rate": {
+          "value": 0.01652892561983471,
+          "n": 2,
+          "d": 121,
+          "reliable": true,
+          "floor": 10
+        },
+        "warn": 0.02,
+        "halt": 0.05
+      },
+      "funnel": [
+        {
+          "name": "Sent",
+          "count": 121
+        },
+        {
+          "name": "Delivered",
+          "count": 119
+        },
+        {
+          "name": "Replied",
+          "count": 18
+        },
+        {
+          "name": "Positive",
+          "count": 7
+        },
+        {
+          "name": "Meeting booked",
+          "count": 10
+        },
+        {
+          "name": "Meeting scheduled, not cancelled",
+          "count": 7
+        },
+        {
+          "name": "Opportunity",
+          "count": 5
+        }
+      ],
+      "sentiment": [
+        {
+          "label": "positive",
+          "count": 5,
+          "tone": "good"
+        },
+        {
+          "label": "not_now",
+          "count": 4,
+          "tone": "warn"
+        },
+        {
+          "label": "objection",
+          "count": 3,
+          "tone": "warn"
+        },
+        {
+          "label": "referral",
+          "count": 2,
+          "tone": "good"
+        },
+        {
+          "label": "unsubscribe",
+          "count": 2,
+          "tone": "bad"
+        },
+        {
+          "label": "wrong_person",
+          "count": 2,
+          "tone": "warn"
+        }
+      ],
+      "ab_test": {
+        "state": "Directional",
+        "arms": [
+          {
+            "name": "A",
+            "sends": 96,
+            "replies": 15,
+            "positive": 5,
+            "meetings": 6,
+            "meetings_held": 4,
+            "bounces": 2,
+            "rates": {
+              "reply_rate": {
+                "value": 0.15625,
+                "n": 15,
+                "d": 96,
+                "reliable": true,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.052083333333333336,
+                "n": 5,
+                "d": 96,
+                "reliable": true,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.0625,
+                "n": 6,
+                "d": 96,
+                "reliable": true,
+                "floor": 10
+              }
+            }
+          },
+          {
+            "name": "B",
+            "sends": 25,
+            "replies": 3,
+            "positive": 2,
+            "meetings": 3,
+            "meetings_held": 2,
+            "bounces": 0,
+            "rates": {
+              "reply_rate": {
+                "value": 0.12,
+                "n": 3,
+                "d": 25,
+                "reliable": true,
+                "floor": 10
+              },
+              "positive_reply_rate": {
+                "value": 0.08,
+                "n": 2,
+                "d": 25,
+                "reliable": true,
+                "floor": 10
+              },
+              "meeting_rate": {
+                "value": 0.12,
+                "n": 3,
+                "d": 25,
+                "reliable": true,
+                "floor": 10
+              }
+            }
+          }
+        ],
+        "leader": "A",
+        "p_value": 0.6500577970614582,
+        "z": 0.45368189888088806,
+        "sends_to_significance": 1394,
+        "required_n_per_arm": 1419,
+        "note": "Both arms must clear the n_floor before this can read Significant, whatever the p-value says. Weight reply sentiment over rate deltas at low volume."
+      },
+      "segments": [
+        {
+          "key": "icp_tier",
+          "title": "By ICP tier",
+          "column": "Tier",
+          "display": "table",
+          "rows": [
+            {
+              "name": "T2",
+              "sends": 73,
+              "replies": 11,
+              "positive": 3,
+              "meetings": 4,
+              "meetings_held": 3,
+              "bounces": 2,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.1506849315068493,
+                  "n": 11,
+                  "d": 73,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0410958904109589,
+                  "n": 3,
+                  "d": 73,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0547945205479452,
+                  "n": 4,
+                  "d": 73,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T1",
+              "sends": 25,
+              "replies": 3,
+              "positive": 2,
+              "meetings": 3,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.12,
+                  "n": 3,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.08,
+                  "n": 2,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.12,
+                  "n": 3,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "T3",
+              "sends": 23,
+              "replies": 4,
+              "positive": 2,
+              "meetings": 2,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.17391304347826086,
+                  "n": 4,
+                  "d": 23,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.08695652173913043,
+                  "n": 2,
+                  "d": 23,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.08695652173913043,
+                  "n": 2,
+                  "d": 23,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "industry",
+          "title": "By industry",
+          "column": "Industry",
+          "display": "table",
+          "rows": [
+            {
+              "name": "software",
+              "sends": 32,
+              "replies": 4,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 1,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.125,
+                  "n": 4,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.03125,
+                  "n": 1,
+                  "d": 32,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "healthcare",
+              "sends": 25,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 3,
+              "meetings_held": 1,
+              "bounces": 1,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.12,
+                  "n": 3,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "professional services",
+              "sends": 17,
+              "replies": 4,
+              "positive": 4,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.23529411764705882,
+                  "n": 4,
+                  "d": 17,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.23529411764705882,
+                  "n": 4,
+                  "d": 17,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.058823529411764705,
+                  "n": 1,
+                  "d": 17,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "home services",
+              "sends": 13,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 2,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 13,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 13,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.15384615384615385,
+                  "n": 2,
+                  "d": 13,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "consumer goods",
+              "sends": 12,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.08333333333333333,
+                  "n": 1,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "insurance",
+              "sends": 12,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 12,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "freight",
+              "sends": 5,
+              "replies": 5,
+              "positive": 3,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 5,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.6,
+                  "n": 3,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "logistics",
+              "sends": 5,
+              "replies": 5,
+              "positive": 0,
+              "meetings": 1,
+              "meetings_held": 1,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 5,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.2,
+                  "n": 1,
+                  "d": 5,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "title_cluster",
+          "title": "By title cluster",
+          "column": "Title cluster",
+          "display": "table",
+          "rows": [
+            {
+              "name": "ops",
+              "sends": 41,
+              "replies": 6,
+              "positive": 3,
+              "meetings": 4,
+              "meetings_held": 2,
+              "bounces": 1,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.14634146341463414,
+                  "n": 6,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.07317073170731707,
+                  "n": 3,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0975609756097561,
+                  "n": 4,
+                  "d": 41,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "exec",
+              "sends": 40,
+              "replies": 6,
+              "positive": 2,
+              "meetings": 4,
+              "meetings_held": 4,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.15,
+                  "n": 6,
+                  "d": 40,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.05,
+                  "n": 2,
+                  "d": 40,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.1,
+                  "n": 4,
+                  "d": 40,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "finance",
+              "sends": 18,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 18,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "marketing",
+              "sends": 16,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 0,
+              "meetings_held": 0,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 16,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 16,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 16,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "sales",
+              "sends": 6,
+              "replies": 6,
+              "positive": 2,
+              "meetings": 1,
+              "meetings_held": 0,
+              "bounces": 1,
+              "rates": {
+                "reply_rate": {
+                  "value": 1.0,
+                  "n": 6,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.3333333333333333,
+                  "n": 2,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.16666666666666666,
+                  "n": 1,
+                  "d": 6,
+                  "reliable": false,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "sender",
+          "title": "By sender",
+          "column": "Sender",
+          "display": "table",
+          "rows": [
+            {
+              "name": "dana",
+              "sends": 69,
+              "replies": 18,
+              "positive": 7,
+              "meetings": 6,
+              "meetings_held": 3,
+              "bounces": 2,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.2608695652173913,
+                  "n": 18,
+                  "d": 69,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.10144927536231885,
+                  "n": 7,
+                  "d": 69,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.08695652173913043,
+                  "n": 6,
+                  "d": 69,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "morgan",
+              "sends": 52,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 3,
+              "meetings_held": 3,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 52,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 52,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.057692307692307696,
+                  "n": 3,
+                  "d": 52,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "cadence_step",
+          "title": "By cadence step",
+          "column": "Step",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Day 0 opener",
+              "sends": 55,
+              "replies": 18,
+              "positive": 7,
+              "meetings": 4,
+              "meetings_held": 2,
+              "bounces": 2,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.32727272727272727,
+                  "n": 18,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.12727272727272726,
+                  "n": 7,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.07272727272727272,
+                  "n": 4,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 4 bump",
+              "sends": 33,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 3,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.09090909090909091,
+                  "n": 3,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Day 9 value_add",
+              "sends": 33,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 2,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06060606060606061,
+                  "n": 2,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "send_day",
+          "title": "By send day",
+          "column": "Day",
+          "display": "bars",
+          "rows": [
+            {
+              "name": "Tue",
+              "sends": 55,
+              "replies": 18,
+              "positive": 7,
+              "meetings": 4,
+              "meetings_held": 2,
+              "bounces": 2,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.32727272727272727,
+                  "n": 18,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.12727272727272726,
+                  "n": 7,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.07272727272727272,
+                  "n": 4,
+                  "d": 55,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Thu",
+              "sends": 33,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 2,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.06060606060606061,
+                  "n": 2,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "Sat",
+              "sends": 33,
+              "replies": 0,
+              "positive": 0,
+              "meetings": 3,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.0,
+                  "n": 0,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.09090909090909091,
+                  "n": 3,
+                  "d": 33,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "key": "variant",
+          "title": "By variant",
+          "column": "Variant",
+          "display": "table",
+          "rows": [
+            {
+              "name": "A",
+              "sends": 96,
+              "replies": 15,
+              "positive": 5,
+              "meetings": 6,
+              "meetings_held": 4,
+              "bounces": 2,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.15625,
+                  "n": 15,
+                  "d": 96,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.052083333333333336,
+                  "n": 5,
+                  "d": 96,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.0625,
+                  "n": 6,
+                  "d": 96,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            },
+            {
+              "name": "B",
+              "sends": 25,
+              "replies": 3,
+              "positive": 2,
+              "meetings": 3,
+              "meetings_held": 2,
+              "bounces": 0,
+              "rates": {
+                "reply_rate": {
+                  "value": 0.12,
+                  "n": 3,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "positive_reply_rate": {
+                  "value": 0.08,
+                  "n": 2,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                },
+                "meeting_rate": {
+                  "value": 0.12,
+                  "n": 3,
+                  "d": 25,
+                  "reliable": true,
+                  "floor": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

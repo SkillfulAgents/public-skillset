@@ -1,0 +1,281 @@
+# Baked vendor knowledge: the most common tools per capability, summarized so
+# the stack section starts from understanding instead of a cold search.
+#
+# HOW TO TRUST THIS FILE. Entries are a snapshot (see as_of). The split:
+#   TRUST the slow-changing facts: what the tool is, which slot it maps to,
+#     what it owns, and the mode implication. A sequencer stays a sequencer.
+#   VERIFY the fast-changing facts LIVE before acting on them: auth scheme,
+#     endpoints, docs URLs, whether an MCP endpoint exists. One web search or
+#     docs fetch before requesting a credential. If live checking contradicts
+#     this file, believe the live result and say so.
+# A tool NOT in this file gets the full research ladder (search with a domain
+# anchor, propose, confirm). Never tell the operator their tool is unknown
+# just because it is absent here.
+#
+# `owns` lists the capabilities the tool itself enforces or executes. Anything
+# a tool owns, the interview reads from it instead of asking the operator.
+# `mode` (senders only): sequencer = sequencer-executed if this sends;
+# mailbox = template-executed.
+
+as_of: "2026-08"
+
+sourcing:
+  - name: LinkedIn Sales Navigator
+    domain: linkedin.com
+    is: The seed for most B2B lists; search and lead lists over the LinkedIn graph.
+    owns: [search filters, lead lists]
+    connection: {auth: none, note: "No public API. Lists leave via CSV export or a third-party enricher; map the slot to csv."}
+  - name: Apollo
+    domain: apollo.io
+    is: B2B contact database with saved searches and lists; also enriches and sequences.
+    owns: [search, lists, enrichment]
+    connection: {auth: api_key, docs: docs.apollo.io}
+  - name: Clay
+    domain: clay.com
+    is: Spreadsheet that orchestrates dozens of data providers; tables can source, enrich, and score.
+    owns: [list building, enrichment waterfall, scoring]
+    connection: {auth: api_key, note: "Tables push via webhook or pull via API; HTTP API column can call anything."}
+  - name: ZoomInfo
+    domain: zoominfo.com
+    is: Enterprise B2B database, strongest on larger-company org charts and direct dials.
+    owns: [search, lists, intent signals]
+    connection: {auth: api_key, note: "API access is contract-gated; many seats have UI export only, which means csv."}
+  - name: Lusha
+    domain: lusha.com
+    is: Contact database favored for phone numbers; prospecting lists plus enrichment.
+    connection: {auth: api_key}
+  - name: LeadIQ
+    domain: leadiq.com
+    is: Prospecting capture layered on Sales Navigator browsing.
+    connection: {auth: api_key, note: "Most usage is extension plus CSV export."}
+  - name: Seamless.AI
+    domain: seamless.ai
+    is: Contact database with real-time search; heavy SDR usage downmarket.
+    connection: {auth: api_key, note: "Exports are the common path; verify API tier."}
+  - name: Crunchbase
+    domain: crunchbase.com
+    is: Funding and firmographic signals; sourcing by raise recency and stage.
+    connection: {auth: api_key, docs: data.crunchbase.com}
+  - name: Ocean.io
+    domain: ocean.io
+    is: Lookalike company sourcing from seed accounts.
+    connection: {auth: api_key}
+  - name: BuiltWith
+    domain: builtwith.com
+    is: Technographics; source by what a company's site runs.
+    connection: {auth: api_key}
+
+enrichment:
+  - name: Apollo
+    domain: apollo.io
+    is: People match with email and firmographics; the shipped builtin, identity-gated.
+    connection: {auth: api_key, docs: docs.apollo.io}
+  - name: Clay
+    domain: clay.com
+    is: Waterfall enrichment across many providers in one table; best coverage, per-credit cost.
+    owns: [enrichment waterfall]
+    connection: {auth: api_key}
+  - name: ZoomInfo
+    domain: zoominfo.com
+    is: Enterprise enrichment, strongest above 200 employees.
+    connection: {auth: api_key, note: contract-gated}
+  - name: Clearbit
+    domain: clearbit.com
+    is: Firmographic and person enrichment; now HubSpot Breeze Intelligence, increasingly HubSpot-coupled.
+    connection: {auth: api_key, note: "If the team is on HubSpot, this may already be inside their CRM."}
+  - name: Hunter
+    domain: hunter.io
+    is: Email finding and verification only; no firmographics.
+    connection: {auth: api_key, docs: hunter.io/api-documentation}
+  - name: Dropcontact
+    domain: dropcontact.com
+    is: GDPR-clean email finding, strong on European contacts.
+    connection: {auth: api_key}
+  - name: People Data Labs
+    domain: peopledatalabs.com
+    is: Raw person and company data API for teams that build their own enrichment.
+    connection: {auth: api_key, docs: docs.peopledatalabs.com}
+  - name: FullEnrich
+    domain: fullenrich.com
+    is: Waterfall email and phone enrichment aggregating many providers.
+    connection: {auth: api_key}
+  - name: Findymail
+    domain: findymail.com
+    is: Email finding with built-in verification, popular with agencies.
+    connection: {auth: api_key}
+  - name: Prospeo
+    domain: prospeo.io
+    is: Email finder with strong LinkedIn-URL-to-email rates.
+    connection: {auth: api_key}
+  # Verification-only tools (NeverBounce, ZeroBounce, MillionVerifier) are not
+  # enrichers; if named, they slot into the waterfall as a final verify step.
+
+sender:
+  - name: Gmail / Google Workspace
+    domain: google.com
+    is: Bare mailbox; the shipped builtin sender via connected account.
+    mode: mailbox
+    connection: {auth: oauth, note: request_connected_account gmail}
+  - name: Outlook / Microsoft 365
+    domain: microsoft.com
+    is: Bare mailbox; Microsoft Graph sendMail.
+    mode: mailbox
+    connection: {auth: oauth, docs: learn.microsoft.com/graph}
+  - name: Instantly
+    domain: instantly.ai
+    is: Cold-email sequencer; owns mailbox rotation, warmup, schedules, and sending.
+    mode: sequencer
+    owns: [mailboxes, warmup, schedules, sequences, unibox replies]
+    connection: {auth: api_key, docs: developer.instantly.ai}
+  - name: Smartlead
+    domain: smartlead.ai
+    is: Cold-email sequencer; same ownership shape as Instantly, agency-leaning.
+    mode: sequencer
+    owns: [mailboxes, warmup, schedules, sequences, master inbox]
+    connection: {auth: api_key, docs: api.smartlead.ai}
+  - name: Lemlist
+    domain: lemlist.com
+    is: Sequencer with image and page personalization; owns warmup (lemwarm) and schedules.
+    mode: sequencer
+    owns: [warmup, schedules, sequences]
+    connection: {auth: api_key, docs: developer.lemlist.com}
+  - name: Apollo (sequences)
+    domain: apollo.io
+    is: Apollo's built-in sequencer; teams already sourcing there often send there too.
+    mode: sequencer
+    owns: [schedules, sequences]
+    connection: {auth: api_key}
+  - name: Outreach
+    domain: outreach.io
+    is: Enterprise sales-engagement platform; owns sequences, schedules, governance.
+    mode: sequencer
+    owns: [sequences, schedules, governance, dialer]
+    connection: {auth: oauth, docs: developers.outreach.io}
+  - name: Salesloft
+    domain: salesloft.com
+    is: Enterprise sales-engagement platform, Outreach's peer; cadences plus dialer.
+    mode: sequencer
+    owns: [cadences, schedules, dialer]
+    connection: {auth: oauth, docs: developers.salesloft.com}
+  - name: Reply.io
+    domain: reply.io
+    is: Multichannel sequencer, midmarket; email plus LinkedIn tasks.
+    mode: sequencer
+    owns: [sequences, schedules, warmup]
+    connection: {auth: api_key}
+  - name: Monaco
+    domain: monaco.com
+    is: AI-native revenue platform; unifies contacts, signals, sequences, pipeline, and meetings in one system. Anchor searches with the domain; the bare name collides with the code editor and the Grand Prix.
+    mode: sequencer
+    owns: [sequences, schedules, autopilot sending, contacts, meetings, rules of engagement]
+    connection: {auth: api_key, docs: docs.monaco.com, note: "mks_ keys from Settings > API Keys; hosted MCP at mcp.monaco.com. Per-campaign autopilot rates STACK with no org-level ceiling, so the governor matters here."}
+
+crm:
+  - name: Salesforce
+    domain: salesforce.com
+    is: The enterprise system of record.
+    connection: {auth: oauth, docs: developer.salesforce.com}
+  - name: HubSpot
+    domain: hubspot.com
+    is: The midmarket default; CRM plus marketing plus sequences in one.
+    owns: [contacts, deals, sequences, meetings links]
+    connection: {auth: oauth, docs: developers.hubspot.com, note: "Private app tokens also work for a single portal."}
+  - name: Attio
+    domain: attio.com
+    is: Modern, data-model-flexible CRM popular with startups.
+    connection: {auth: api_key, docs: docs.attio.com}
+  - name: Pipedrive
+    domain: pipedrive.com
+    is: Pipeline-first SMB CRM.
+    connection: {auth: api_key, docs: developers.pipedrive.com}
+  - name: Close
+    domain: close.com
+    is: SMB CRM with calling and email built in; often IS the sender for its users.
+    owns: [contacts, sequences, calling]
+    connection: {auth: api_key, docs: developer.close.com}
+  - name: Zoho CRM
+    domain: zoho.com
+    is: Budget suite CRM, common in services businesses.
+    connection: {auth: oauth}
+  - name: Copper
+    domain: copper.com
+    is: CRM living inside Google Workspace.
+    connection: {auth: api_key}
+  - name: Monday CRM
+    domain: monday.com
+    is: Work-management platform used as a CRM by ops-led teams.
+    connection: {auth: api_key, docs: developer.monday.com}
+  - name: Airtable
+    domain: airtable.com
+    is: Not a CRM, but small teams run their pipeline in it anyway; treat the named base as the system of record.
+    connection: {auth: api_key, docs: airtable.com/developers}
+  - name: Notion
+    domain: notion.so
+    is: Same story as Airtable; a database page as pipeline. Works, until volume.
+    connection: {auth: oauth, docs: developers.notion.com}
+
+calendar:
+  - name: Google Calendar
+    domain: google.com
+    is: The shipped builtin; read each sender's calendar via connected account.
+    connection: {auth: oauth, note: request_connected_account googlecalendar}
+  - name: Outlook / Microsoft 365 Calendar
+    domain: microsoft.com
+    is: Graph calendarView per mailbox.
+    connection: {auth: oauth, docs: learn.microsoft.com/graph}
+  - name: Calendly
+    domain: calendly.com
+    is: Booking layer; scheduled-event API is often richer for attribution than the mailbox calendar because bookings carry the invitee's email cleanly.
+    owns: [booking links, scheduled events]
+    connection: {auth: api_key, docs: developer.calendly.com}
+  - name: Cal.com
+    domain: cal.com
+    is: Open-source booking layer; same shape as Calendly.
+    owns: [booking links, scheduled events]
+    connection: {auth: api_key, docs: cal.com/docs/api-reference}
+  - name: Chili Piper
+    domain: chilipiper.com
+    is: Inbound routing and booking for teams with routing rules; overkill for pure outbound but often already installed.
+    connection: {auth: api_key}
+  - name: SavvyCal
+    domain: savvycal.com
+    is: Booking layer, scheduling-polite variant of Calendly.
+    connection: {auth: api_key}
+  - name: HubSpot Meetings
+    domain: hubspot.com
+    is: HubSpot's booking links; meetings land in the CRM, so read them there.
+    connection: {auth: oauth, note: comes with the HubSpot connection}
+
+notify:
+  - name: Slack
+    domain: slack.com
+    is: The shipped builtin; channel for routine output, person for escalations.
+    connection: {auth: oauth, note: bot token also works}
+  - name: Microsoft Teams
+    domain: microsoft.com
+    is: Incoming webhook per channel is the low-friction path; Graph for DMs.
+    connection: {auth: webhook}
+  - name: Discord
+    domain: discord.com
+    is: Webhook per channel; common in small technical teams.
+    connection: {auth: webhook}
+  - name: Email digest
+    domain: ""
+    is: Fallback transport; the digest goes to an inbox via the sender slot's provider.
+    connection: {auth: none, note: reuses the sender connection}
+  - name: Telegram
+    domain: telegram.org
+    is: Bot API; some founders live here.
+    connection: {auth: api_key, note: bot token from @BotFather}
+
+# Tools that automate LinkedIn actions directly. If the operator names one,
+# know what it is, record it in the stack description, but DO NOT wire it as
+# an executor: automating LinkedIn violates its terms and risks the sender's
+# account, which is why this template treats LinkedIn steps as manual. Say
+# that plainly rather than integrating.
+linkedin_execution:
+  - {name: HeyReach, domain: heyreach.io, is: LinkedIn outreach automation for agencies}
+  - {name: Expandi, domain: expandi.io, is: Cloud LinkedIn automation}
+  - {name: Dripify, domain: dripify.io, is: LinkedIn drip campaigns}
+  - {name: La Growth Machine, domain: lagrowthmachine.com, is: Multichannel with LinkedIn automation}
+  - {name: Waalaxy, domain: waalaxy.com, is: LinkedIn plus email sequences}

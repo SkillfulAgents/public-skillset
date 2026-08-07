@@ -1,0 +1,9 @@
+{
+  "name": "outbound-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Zero-dependency Bun.serve dashboard for the outbound reporting payload (schema outbound-report/1).",
+  "scripts": {
+    "start": "bun run index.js"
+  }
+}

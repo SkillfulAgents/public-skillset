@@ -1,0 +1,7 @@
+name,title,company,company_domain,email,employee_count,industry,country,linkedin_url
+Dana Whitfield,Head of Operations,Kestrel Freight,kestrelfreight.example,dana@kestrelfreight.example,80,logistics,US,https://linkedin.com/in/dana-whitfield
+Marcus Feld,COO,Bellweather Brokerage,bellweather.example,marcus@bellweather.example,140,logistics,US,https://linkedin.com/in/marcus-feld
+Priya Raman,Chief Executive Officer,Vantage Health,vantagehealth.example,priya@vantagehealth.example,4200,healthcare,US,https://linkedin.com/in/priya-raman
+Tom Ek,Owner,Ek Plumbing,ekplumbing.example,tom@ekplumbing.example,6,home services,US,https://linkedin.com/in/tom-ek
+Sofia Cruz,Director of Operations,Redline Freight,redlinefreight.example,sofia@redlinefreight.example,90,logistics,US,https://linkedin.com/in/sofia-cruz
+Ben Ortiz,VP Operations,Big Customer Co,bigcustomer.example,ben@bigcustomer.example,120,logistics,US,https://linkedin.com/in/ben-ortiz

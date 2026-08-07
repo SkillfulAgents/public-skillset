@@ -1,0 +1,385 @@
+# =============================================================================
+# Outbound Motion: team configuration
+# =============================================================================
+# This single file replaces every value that would otherwise be hardcoded into
+# skills, prompts, and scripts. The onboarding skill generates it by interview;
+# you can also copy it to `config/outbound.yaml` and edit by hand.
+#
+# Validate after any edit:
+#   uv run --with pyyaml,jsonschema \
+#     skills/agent-onboarding/scripts/validate_config.py config/outbound.yaml
+#
+# Anything marked REQUIRED must be set before the agent will send.
+# =============================================================================
+
+version: 1
+
+# -----------------------------------------------------------------------------
+# 1. IDENTITY: who is sending, and under what brand
+# -----------------------------------------------------------------------------
+company:
+  name: Acme Robotics            # REQUIRED. Legal/parent entity.
+  product_name: Acme             # REQUIRED. Brand used in prospect-facing copy.
+  website: https://acme.example
+  # Names you must NEVER use in prospect-facing copy (retired brands, codenames,
+  # internal project names). The drafting step hard-fails on these.
+  forbidden_names:
+    - Project Bluebird
+  # Public-launch gate. Before this date the product name is embargoed and
+  # drafting falls back to `company.name` only.
+  brand_public_from: 2026-01-01
+
+operator:
+  name: Jane Doe                 # REQUIRED. Appears in signature.
+  title: VP Sales
+  email: jane@acme.example       # REQUIRED. Reply-to / from identity.
+  phone: ""
+  timezone: America/Los_Angeles  # REQUIRED. Drives send windows + scheduling.
+
+# Every mailbox allowed to send. Caps are enforced PER SENDER, per day.
+# `ramp` lets a new mailbox warm up instead of opening at full volume.
+senders:
+  - id: jane
+    email: jane@acme.example
+    display_name: Jane Doe
+    # This sender's own booking URL, and the one offered in their copy. Per
+    # sender, never one for the team: a link that books time on someone else's
+    # calendar is worse than no link, because the prospect finds out after
+    # committing.
+    calendar_link: https://cal.com/janedoe/15min
+    # Calendar the `calendar` adapter reads to attribute booked meetings.
+    # Defaults to this sender's own address.
+    calendar_id: jane@acme.example
+    daily_email_cap: 25          # REQUIRED. Hard ceiling.
+    daily_linkedin_invite_cap: 20
+    status: live                 # live | warming | paused
+    ramp:                        # optional; overrides cap until ramp completes
+      start_cap: 10
+      target_cap: 25
+      increment_per_week: 5
+  - id: sam
+    email: sam@acme.example
+    display_name: Sam Lee
+    calendar_link: https://cal.com/samlee/15min
+    calendar_id: sam@acme.example
+    # A warming mailbox still declares its eventual ceiling here. The ramp is
+    # what is actually enforced until it completes, so this stays at the target,
+    # not at today's volume.
+    daily_email_cap: 25
+    daily_linkedin_invite_cap: 20
+    status: warming
+    ramp:
+      start_cap: 10
+      target_cap: 25
+      increment_per_week: 5
+
+# Global governor. Per-campaign rates STACK, so this is the backstop that
+# prevents N campaigns from collectively blowing a sender's daily cap.
+limits:
+  enforce_global_governor: true
+  # If a sending platform has no org-level cap, leave this true. The governor
+  # job sums planned sends across all campaigns and refuses the overage.
+  new_prospects_per_day: 25      # REQUIRED. Intake ceiling.
+  send_days: [tue, wed, thu]     # REQUIRED. Weekday abbreviations.
+  send_window_local: "09:00-11:00"
+  skip_holidays: US              # US | UK | none
+  # Refuse to raise any cap without an explicit human approval event.
+  cap_increase_requires_approval: true
+
+# -----------------------------------------------------------------------------
+# 2. ADAPTERS: map each capability slot to a vendor implementation
+# -----------------------------------------------------------------------------
+# Every slot must resolve to an adapter in `adapters/<slot>/<name>.py`, and the
+# vendor is YOUR choice, not the template's. `adapters/catalog.yaml` lists the
+# common answers per slot; a vendor with no builtin gets a stub via
+# scaffold_adapter.py so this file can name your real stack immediately.
+# Use `none` to disable a slot, or `dryrun` to exercise the motion without
+# touching a real system. Run `list_adapters.py` to see what's installed.
+adapters:
+  sourcing: csv                  # your list source; csv is the builtin
+  enrichment: [apollo]           # ordered waterfall; first hit wins
+  sender: dryrun                 # ALWAYS dryrun until the operator reviews output
+  crm: sqlite                    # your system of record; sqlite is the local builtin
+  # Where booked meetings come from. Most prospects book from a link without
+  # ever replying, so with this at `none` the meetings number counts only what
+  # a human flagged by hand.
+  calendar: none                 # google is the builtin; scaffold anything else
+  suppression: [crm, local]      # ordered; see suppression section
+  notify: none                   # slack is the builtin; scaffold anything else
+
+# Per-adapter settings. Only the blocks for adapters you selected are read.
+adapter_config:
+  csv:
+    input_path: data/prospects.csv
+  apollo:
+    api_key_env: APOLLO_API_KEY  # secret NAME, never the secret itself
+    reject_personal_domains: true
+  gmail:
+    connected_account_id_env: GMAIL_ACCOUNT_ID
+  google_calendar:
+    connected_account_id_env: GOOGLE_CALENDAR_ACCOUNT_ID
+    # Calendar read when a sender names none of its own. `primary` is the
+    # connected account's default calendar.
+    calendar_id: primary
+  slack:
+    channel: "#gtm"
+    token_env: SLACK_BOT_TOKEN
+  sqlite:
+    path: data/campaigns.db
+
+# -----------------------------------------------------------------------------
+# 3. ICP: who is in scope, who is not
+# -----------------------------------------------------------------------------
+# Tiers are evaluated top-down; first match wins. `mix_pct` is the target share
+# of intake, used by reporting to flag drift, not to hard-gate sourcing.
+icp:
+  version: "1.0"
+  effective_date: 2026-01-01
+  employee_range: [20, 199]      # REQUIRED. Inclusive outbound size band.
+  geos: [US]
+  # Tiers are tried in order and the FIRST match wins, so order them from most
+  # specific to least. Every criterion listed on a tier must pass; `signals`
+  # and `industries` pass on ANY match within themselves.
+  #   employee_range      inclusive band
+  #   industries          substring match both ways, so "freight brokerage"
+  #                       matches a "freight" rule without an exact taxonomy
+  #   exclude_industries  checked first; an excluded industry fails the tier
+  #   signals             matched against the prospect's `signals` or `tags`
+  #   funding_stage       only applied when the record carries one
+  # Prefer `industries` over `signals` for anything sourcing gives you for
+  # free. A tier gated on a signal your source never populates matches nobody,
+  # and the drop reason will say so rather than failing silently.
+  tiers:
+    - id: T1
+      name: AI-native scale-ups and early B2B SaaS
+      mix_pct: 30
+      criteria:
+        employee_range: [1, 199]
+        industries: [software, saas, technology, artificial intelligence]
+        funding_stage: [pre-seed, seed, series-a, series-b]
+    - id: T2
+      name: Non-tech professional services
+      mix_pct: 55
+      criteria:
+        employee_range: [1, 199]
+        exclude_industries: [healthcare, hospital, clinic]
+    - id: T3
+      name: Healthcare back-office
+      mix_pct: 10
+      criteria:
+        employee_range: [1, 199]
+        industries: [healthcare, medical, dental, veterinary]
+        signals: [back_office_only]
+    - id: T4
+      name: Enterprise, warm intro only
+      mix_pct: 5
+      outbound_allowed: false    # sourcing refuses; inbound/warm only
+      criteria:
+        employee_range: [200, 100000]
+
+  # Hard disqualifiers. Any match => prospect is rejected with a reason code.
+  disqualifiers:
+    - id: too_small
+      rule: employees < 20
+    - id: no_ops_function
+      rule: no dedicated ops or admin function at any size
+    - id: failed_ai_deployment
+      rule: failed AI deployment in the last 12 months
+    - id: regulated_frontline
+      rule: clinical or regulated front-office workflows
+    - id: competitor_installed
+      rule: bought a competing platform in the last 12 months
+
+  # Buyer map. Lead with the champion tier; include the decision maker for
+  # awareness. Never touch two tiers at the same company on the same day.
+  buyer_tiers:
+    - id: A
+      label: decision maker
+      titles: [CEO, Founder, Co-Founder, COO, President, Owner]
+    - id: B
+      label: champion
+      titles: [Chief of Staff, Head of Operations, Head of Sales, Head of Marketing, VP Operations, VP RevOps, General Manager]
+    - id: C
+      label: operational owner
+      titles: [Director of Operations, Director of RevOps, Operations Manager, Marketing Manager]
+  lead_with_tier: B
+  max_contacts_per_company: 3
+  min_days_between_same_company_touches: 2
+
+# -----------------------------------------------------------------------------
+# 4. POSITIONING: pointers to your own copy, not copy itself
+# -----------------------------------------------------------------------------
+positioning:
+  wedge: "One sentence naming what you do that alternatives do not."
+  pain: "The specific recurring pain your buyer feels, in their words."
+  primary_frame: "The dominant value framing used in openers."
+  # A single concrete quantifier. One number, never a range.
+  proof_metric: "10+ hrs/week per person"
+  not_a: [workflow builder, no-code tool, RPA]
+  differentiators:
+    - audience: regulated
+      claim: "Security and control: sandboxed execution, scoped permissions, full audit log."
+  # Files the drafting step reads for use cases. Paths are template-relative.
+  use_cases_file: positioning/use-cases.json
+  positioning_file: positioning/positioning.md
+
+# -----------------------------------------------------------------------------
+# 5. CADENCE: the sequence every prospect walks
+# -----------------------------------------------------------------------------
+cadence:
+  name: standard-6-step
+  stop_on_reply: true            # REQUIRED true. Any reply halts the sequence.
+  stop_on_meeting: true
+  steps:
+    - day: 0
+      channel: linkedin_invite
+      intent: connect
+    - day: 0
+      channel: email
+      intent: opener
+    - day: 3
+      channel: linkedin_message
+      intent: on_accept
+      condition: invite_accepted
+    - day: 4
+      channel: email
+      intent: bump
+    - day: 9
+      channel: email
+      intent: value_add
+    - day: 14
+      channel: linkedin_message
+      intent: final_nudge
+
+# -----------------------------------------------------------------------------
+# 6. MESSAGE STANDARDS: enforced by the drafting linter, not just prompted
+# -----------------------------------------------------------------------------
+message_standards:
+  max_words: 90
+  max_subject_chars: 40
+  forbid_em_dashes: true         # also flags en dashes used as breaks
+  forbid_emojis_in_subject: true
+  forbid_all_caps_subject: true
+  require_blank_line_paragraphs: true
+  max_sentences_per_paragraph: 3
+  single_cta: true
+  forbid_tracking_pixels: true   # REQUIRED true for primary-domain senders
+  forbid_link_trackers: true
+  cta:
+    type: self_serve             # self_serve | meeting
+    url: https://acme.example
+    meeting_ask: "15 min Tue or Wed?"
+  signature:
+    lines:
+      - "{operator.name}"
+      - "{operator.title}, {company.name}"
+      - "{operator.email}"
+  # Drafts scoring below this are surfaced to the operator individually.
+  min_confidence_to_autosend: 0.70
+
+# -----------------------------------------------------------------------------
+# 7. SUPPRESSION: fail-closed. If a source is unreachable, the run HALTS.
+# -----------------------------------------------------------------------------
+suppression:
+  fail_closed: true              # REQUIRED true. Never send on a failed check.
+  match_on: [email, linkedin_url, company_domain]
+  # Company-level states that suppress every contact at that company.
+  suppress_company_states: [signup, open_deal, meeting_held, customer]
+  local_seen_set: data/seen.json
+  blocklist_domains_file: data/blocklist_domains.json
+
+# -----------------------------------------------------------------------------
+# 8. REPORTING
+# -----------------------------------------------------------------------------
+reporting:
+  # Never display a rate whose denominator is below this. Show the count only.
+  n_floor: 10
+  track_opens: false             # REQUIRED false. Pixels hurt deliverability.
+  primary_metrics: [bounce_rate, reply_rate, positive_reply_rate, meetings_booked, meetings_held]
+  group_by: [icp_tier, industry, title_cluster, cadence_step, send_day, variant]
+  windows: [week, month, quarter]
+  deliverability:
+    bounce_rate_warn: 0.02
+    bounce_rate_halt: 0.05
+    check_spf_dkim_dmarc: true
+  schedule:
+    weekly_report_cron: "0 15 * * 5"   # Friday 15:00 local
+    cadence_tick_cron: "0 9 * * 2-4"   # Tue-Thu 09:00 local
+
+# -----------------------------------------------------------------------------
+# 9. APPROVAL GATES: things the agent may never do unattended
+# -----------------------------------------------------------------------------
+approval_gates:
+  first_batch_of_campaign: true  # REQUIRED true.
+  new_template_copy: true
+  new_campaign_activation: true
+  cap_increase: true
+  out_of_icp_send: true
+  # After N approved drafts matching the pattern, the agent may continue the
+  # remainder of that batch unattended.
+  auto_proceed_after_approved: 3
+
+# -----------------------------------------------------------------------------
+# 10. ESCALATION: where the agent reports, and who it interrupts
+# -----------------------------------------------------------------------------
+# The `notify` adapter is the transport. This block is the addressing and the
+# rules: an agent that cannot reach a human is an agent running unsupervised.
+escalation:
+  # Routine output: drafts for approval, daily batch summaries, weekly reports.
+  # Null until `adapters.notify` is set to something that can reach it. Naming a
+  # destination with no transport configured is how a digest nobody receives
+  # looks like a digest nobody needed.
+  digest_to: null                # e.g. "#gtm", or an email address
+  # Interrupt a human now. Keep this list short or it becomes noise.
+  escalate_to: "operator@acme.example"
+  escalate_on:
+    - positive_reply             # someone wants to talk; a human should answer
+    - meeting_request
+    - bounce_rate_breach         # deliverability kill switch tripped
+    - suppression_unavailable    # fail-closed halt
+    - cap_breach                 # governor found stacked rates over the gate
+  # Routine notifications only inside these hours; escalations ignore this.
+  quiet_hours_local: "18:00-08:00"
+
+# -----------------------------------------------------------------------------
+# 11. VOICE: how the operator actually writes
+# -----------------------------------------------------------------------------
+# The linter enforces mechanics (length, dashes, pixels). It cannot teach voice.
+# Real past messages do. Paste 1-3 emails the operator has actually sent and
+# was happy with. These are read before drafting, never sent.
+voice:
+  samples_file: positioning/voice-samples.md
+  # Free-text notes the operator gave about how they want to sound.
+  notes: "Direct, no throat-clearing. Lowercase subject lines. Never says 'circling back'."
+  # Words and phrases to reject on sight. Enforced by the linter.
+  banned_phrases:
+    - "circling back"
+    - "just following up"
+    - "hope this finds you well"
+    - "quick question"
+    - "synergy"
+    - "revolutionary"
+
+# -----------------------------------------------------------------------------
+# 12. DO NOT TOUCH: hard exclusions, independent of ICP and suppression
+# -----------------------------------------------------------------------------
+# ICP says "not a fit". Suppression says "already engaged". This says "never,
+# for a reason that has nothing to do with fit": current customers' competitors,
+# an investor's portfolio, a company in an active legal matter, a former
+# employer. Checked before every send. Fail-closed like suppression.
+do_not_touch:
+  companies: []                  # exact names or domains
+  domains: []                    # e.g. bigcustomer.example
+  people: []                     # emails or LinkedIn URLs
+  geos: []                       # ISO country codes to exclude outright
+  reason_required: true          # every entry should carry a why in the notes
+  notes: {}                      # {"acme.example": "customer since 2024"}
+
+# -----------------------------------------------------------------------------
+# 13. FIRST RUN: what the agent does the first time it is turned on
+# -----------------------------------------------------------------------------
+first_run:
+  # Always a dry run. The operator reads real output before anything ships.
+  goal: "Source 10 prospects, qualify, enrich, draft Day-0 openers, send nothing."
+  batch_size: 10
+  require_operator_review: true  # REQUIRED true.

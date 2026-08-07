@@ -29,6 +29,18 @@
       "version": "1.0.0"
     },
     {
+      "name": "Outbound Campaign Agent",
+      "path": "agents/outbound-campaign-agent/",
+      "description": "Runs an end-to-end personalized outbound motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Vendor-neutral through swappable adapters.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Recruiting Agent",
+      "path": "agents/recruiting-agent/",
+      "description": "Owns the hiring pipeline end-to-end \u2014 sourcing, filtering, outbound, nurture, and interview scheduling, with a self-improving screening filter calibrated by your feedback.",
+      "version": "1.0.0"
+    },
+    {
       "name": "SEO Agent",
       "path": "agents/seo-agent/",
       "description": "Autonomous SEO specialist \u2014 owns content engine, link building + outreach, technical SEO, and weekly strategy/reporting for one website, end to end.",

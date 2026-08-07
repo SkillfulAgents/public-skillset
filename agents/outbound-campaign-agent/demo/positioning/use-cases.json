@@ -1,0 +1,36 @@
+[
+  {
+    "id": "load-entry",
+    "name": "Load entry from email into the TMS",
+    "personas": [
+      "Head of Operations",
+      "Operations Manager",
+      "COO",
+      "Director of Operations"
+    ],
+    "industries": [
+      "logistics",
+      "freight",
+      "trucking"
+    ],
+    "overview": "Dispatchers retype load and rate confirmation details from email into the TMS every morning.",
+    "spotlight": "Runs off the inbox, writes straight into the TMS, flags anything ambiguous instead of guessing.",
+    "hours_saved_per_week": 8
+  },
+  {
+    "id": "carrier-onboarding",
+    "name": "Carrier packet onboarding",
+    "personas": [
+      "Head of Operations",
+      "Operations Manager",
+      "General Manager"
+    ],
+    "industries": [
+      "logistics",
+      "freight"
+    ],
+    "overview": "New carrier packets arrive as PDFs and get keyed into three systems by hand.",
+    "spotlight": "Reads the packet, checks authority and insurance, files it, and opens an exception only when something does not check out.",
+    "hours_saved_per_week": 5
+  }
+]
