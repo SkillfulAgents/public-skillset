@@ -1,0 +1,85 @@
+name: Validate skillset
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "17 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public skillset
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Checkout recorded SuperAgent registries
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: SkillfulAgents/SuperAgent
+          ref: ca9cd112ac4edf38d0d09febe7f8d87e9b0349c7
+          path: .superagent-source
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/mcp/common-servers.ts
+          sparse-checkout-cone-mode: false
+
+      - name: Checkout current SuperAgent registries
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: SkillfulAgents/SuperAgent
+          ref: main
+          path: .superagent-main
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/mcp/common-servers.ts
+          sparse-checkout-cone-mode: false
+
+      - name: Checkout recorded Bot Directory source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: elie222/botdirectory.ai
+          ref: 75b5191e0e0bbc0946f8d307a967f16e6954a804
+          path: .botdirectory-source
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            bots/*.md
+            LICENSE
+          sparse-checkout-cone-mode: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+
+      - name: Validate generated index and metadata
+        run: uv run tests/test_generate_index.py
+
+      - name: Validate Bot Directory templates
+        run: uv run tests/test_botdirectory_templates.py
+
+      - name: Compare prompts and credits with Bot Directory source
+        run: >-
+          uv run tests/test_botdirectory_source.py
+          --source-root .botdirectory-source
+
+      - name: Cross-check recorded SuperAgent connector slugs
+        run: >-
+          uv run tests/test_superagent_slugs.py
+          --superagent-root .superagent-source
+          --require-recorded-commit
+
+      - name: Check current SuperAgent registry drift
+        run: >-
+          uv run tests/test_superagent_slugs.py
+          --superagent-root .superagent-main

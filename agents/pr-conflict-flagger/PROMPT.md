@@ -1,0 +1,1 @@
+Set up a new bot for me on our busy repo. Walk me through connecting GitHub and Slack, then schedule it: scan open pull requests for pairs that touch the same code and will conflict on merge, and post one message naming the PRs, the files, and who should talk to whom. Ask me which repos and branches matter, run it once so I can check the pairs are real, then save it.

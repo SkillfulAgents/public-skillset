@@ -36,12 +36,34 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+### Bot Directory light templates
+
+The repository also includes 160 lightweight templates imported from
+[Bot Directory](https://botdirectory.ai/). Each lives directly under `agents/`
+and contains a concise operating prompt in `CLAUDE.md`, the original source
+prompt preserved verbatim in `PROMPT.md`, and marketplace metadata plus creator
+credit in `README.md`.
+
+The reviewed import input is preserved in
+[`sources/botdirectory/inventory.json`](sources/botdirectory/inventory.json),
+with a normalized manifest in
+[`sources/botdirectory/catalog.json`](sources/botdirectory/catalog.json).
+Every “Connect First” label is classified in
+[`sources/botdirectory/connect-first.json`](sources/botdirectory/connect-first.json):
+real SuperAgent API-account and MCP slugs appear in `works_with`; browser,
+built-in, local, raw-API, and unsupported services remain explicit in the setup
+instructions without fabricated registry identifiers. Bot Directory's MIT
+license and attribution are preserved in
+[`sources/botdirectory/NOTICE.md`](sources/botdirectory/NOTICE.md).
+
 ## Agent metadata
 
-Each agent has two Markdown documents with distinct jobs:
+Each agent has two core Markdown documents with distinct jobs, and lightweight
+prompt imports add a third:
 
 - `CLAUDE.md` contains the agent's operating instructions and core identity.
 - `README.md` contains marketplace-facing details and, by convention, the marketing metadata.
+- `PROMPT.md`, when present, contains the original getting-started prompt without frontmatter or editorial changes.
 
 Both files may have YAML frontmatter. The index generator shallow-merges the two mappings; when the same top-level key exists in both files, `CLAUDE.md` wins. Nested objects are replaced as a whole rather than deep-merged. The Markdown body of `README.md` becomes the agent's long-form `details` value in `index.json`; frontmatter is removed from that body. A README is optional to the generator for backward compatibility, although every public agent in this repository should include one.
 
@@ -107,11 +129,24 @@ Each `works_with` item must contain exactly `type` and `slug`:
 
 Only list a connector transport the agent actually requests or consumes. Browser sessions, built-in chat integrations, public APIs, and services accessed only with a raw API key do not belong in `works_with`. The type is required because some slugs exist in both registries. Slugs are lowercase, exact, and case-sensitive. The generator validates the metadata shape and slug syntax but deliberately does not copy the app registries into this repository, so those registries remain the source of truth.
 
+GitHub Actions checks every `works_with` entry type-by-type against both the
+recorded and current canonical registries in `SkillfulAgents/SuperAgent`. It
+also checks for newly available exact matches among labels that currently lack
+a registry connector. The Bot Directory tests verify three-file completeness,
+effective merged metadata, category normalization (`Success` → `Customer
+Success`), and first-run account instructions, then compare every prompt and
+creator credit with the recorded upstream source checkout.
+
 ### Regenerating the index
 
 `index.json` is generated; do not edit it by hand.
 
 ```bash
+python3 scripts/import_botdirectory.py \
+  --inventory sources/botdirectory/inventory.json \
+  --crosswalk sources/botdirectory/connect-first.json \
+  --source-commit 75b5191e0e0bbc0946f8d307a967f16e6954a804 \
+  --overwrite
 uv run generate_index.py
 uv run tests/test_generate_index.py
 ```
@@ -129,6 +164,10 @@ uv run tests/test_generate_index.py
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...
+│   ├── <bot-directory-template>/
+│   │   ├── CLAUDE.md
+│   │   ├── PROMPT.md
+│   │   └── README.md
 │   ├── nutrition-agent/
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
@@ -166,6 +205,11 @@ uv run tests/test_generate_index.py
 ├── index.json
 ├── generate_index.py
 ├── tests/
-│   └── test_generate_index.py
+│   ├── test_generate_index.py
+│   ├── test_botdirectory_templates.py
+│   ├── test_botdirectory_source.py
+│   └── test_superagent_slugs.py
+├── sources/
+│   └── botdirectory/       (reviewed inventory, manifest, connector crosswalk, license)
 └── README.md
 ```

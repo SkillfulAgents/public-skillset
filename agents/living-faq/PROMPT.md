@@ -1,0 +1,1 @@
+Set up a new bot for me that runs every morning. Walk me through connecting Gong and the Notion FAQ page, then configure it: add the new questions people asked on calls, merge duplicates, and flag answers that contradict what we shipped. Ask me to seed it with the questions we already answer daily, let me watch the merge behaviour for a week, then save it.
