@@ -139,7 +139,11 @@ def connection_method_lines(
     direct_api_labels = [
         label for label in labels if mappings[label]["kind"] in DIRECT_API_KINDS
     ]
-    search_labels = [label for label in labels if label in BUILTIN_SEARCH_LABELS]
+    search_labels = [
+        label
+        for label in labels
+        if label in BUILTIN_SEARCH_LABELS and mappings[label]["kind"] == "builtin"
+    ]
     lines: list[str] = []
 
     if browser_labels:
@@ -151,7 +155,10 @@ def connection_method_lines(
             "`Agent(subagent_type=\"web-browser\", prompt=\"<task>\")`."
         )
 
-    if "Apple Messages" in labels:
+    if (
+        "Apple Messages" in labels
+        and mappings["Apple Messages"]["kind"] == "builtin"
+    ):
         lines.append(
             "- For Apple Messages, use the iMessage chat integration: call "
             "`mcp__chat__list_available_chat_providers`, collect the required setup "

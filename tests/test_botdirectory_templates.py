@@ -185,7 +185,7 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                         self.assertIn("`mcp__browser__browser_open`", browser_lines[0])
                         self.assertIn('subagent_type="web-browser"', browser_lines[0])
 
-                    if label == "Apple Messages":
+                    if label == "Apple Messages" and mapping["kind"] == "builtin":
                         apple_lines = [
                             line
                             for line in method_lines
@@ -202,7 +202,10 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                         )
                         self.assertIn("provider `imessage`", apple_lines[0])
 
-                    if label in BUILTIN_SEARCH_LABELS:
+                    if (
+                        label in BUILTIN_SEARCH_LABELS
+                        and mapping["kind"] == "builtin"
+                    ):
                         search_lines = [
                             line
                             for line in method_lines
