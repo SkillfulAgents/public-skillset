@@ -1,3 +1,18 @@
+---
+category: Operations
+icon: shopping-cart
+tags:
+  - office-management
+  - workplace-operations
+  - procurement
+  - grocery-ordering
+  - team-meals
+works_with: []
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # Office Manager
 
 > Keeps the team fed — weekly grocery orders, one-off Slack requests, and daily lunch/dinner group orders.

@@ -1,3 +1,25 @@
+---
+version: 1.13.0
+category: Sales
+icon: target
+tags:
+  - sales-outreach
+  - lead-generation
+  - prospecting
+  - email-campaigns
+  - sales-automation
+works_with:
+  - type: api_account
+    slug: gmail
+  - type: api_account
+    slug: googlecalendar
+  - type: api_account
+    slug: slack
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # Outbound Agent Template
 
 A complete, vendor-neutral outbound motion you import as an agent and configure for your own team: ICP, positioning, tools, senders, caps, cadence, and voice.

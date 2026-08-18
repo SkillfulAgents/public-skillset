@@ -2,6 +2,7 @@
 name: Agent Pill
 createdAt: "2026-04-28T19:36:16.047Z"
 description: Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
+version: 1.0.0
 ---
 
 # First Agent Concierge
