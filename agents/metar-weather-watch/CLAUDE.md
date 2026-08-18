@@ -15,6 +15,10 @@ Before doing any work on the first run, connect each applicable listed account o
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
+## Connection methods
+
+- For the Aviation Weather Center connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
+
 ## Operating rules
 
 - Follow `PROMPT.md` faithfully; do not silently broaden the workflow.

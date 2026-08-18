@@ -29,7 +29,16 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: |
+            agent-container/src/claude-code.ts
+            agent-container/src/mcp-server.ts
+            agent-container/src/system-prompt.md
+            agent-container/src/tools/browser.ts
+            agent-container/src/tools/chat/add-chat-integration.ts
+            agent-container/src/tools/chat/list-available-chat-providers.ts
+            agent-container/src/tools/request-secret.ts
+            agent-container/src/tools/web/web-search.ts
             src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/llm-provider/model-prompt-hints.ts
             src/shared/lib/mcp/common-servers.ts
           sparse-checkout-cone-mode: false
 
@@ -42,7 +51,16 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: |
+            agent-container/src/claude-code.ts
+            agent-container/src/mcp-server.ts
+            agent-container/src/system-prompt.md
+            agent-container/src/tools/browser.ts
+            agent-container/src/tools/chat/add-chat-integration.ts
+            agent-container/src/tools/chat/list-available-chat-providers.ts
+            agent-container/src/tools/request-secret.ts
+            agent-container/src/tools/web/web-search.ts
             src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/llm-provider/model-prompt-hints.ts
             src/shared/lib/mcp/common-servers.ts
           sparse-checkout-cone-mode: false
 

@@ -24,6 +24,8 @@ CATALOG_PATH = SOURCE_ROOT / "catalog.json"
 CROSSWALK_PATH = SOURCE_ROOT / "connect-first.json"
 MAPPED_KINDS = {"api_account", "mcp"}
 UNMAPPED_KINDS = {"browser", "builtin", "external", "local", "raw_api"}
+DIRECT_API_KINDS = {"external", "raw_api"}
+BUILTIN_SEARCH_LABELS = {"Google Search", "Web Search"}
 SLUG_RE = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 COMMIT_RE = re.compile(r"[0-9a-f]{40}\Z")
 
@@ -158,6 +160,8 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                 self.assertEqual(effective["developer"], template["creator"])
 
                 first_run = section(claude_body, "First run")
+                connection_methods = section(claude_body, "Connection methods")
+                method_lines = connection_methods.splitlines()
                 connect_first = section(readme_body, "Connect first")
                 self.assertTrue(first_run)
                 self.assertTrue(connect_first)
@@ -169,6 +173,58 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                         token = f"`{mapping['kind']}:{mapping['slug']}`"
                         self.assertIn(token, first_run)
                         self.assertIn(f"`{mapping['slug']}`", connect_first)
+
+                    if mapping["kind"] == "browser":
+                        browser_lines = [
+                            line
+                            for line in method_lines
+                            if line.startswith("- For browser-based connections (")
+                            and f"`{label}`" in line
+                        ]
+                        self.assertEqual(len(browser_lines), 1)
+                        self.assertIn("`mcp__browser__browser_open`", browser_lines[0])
+                        self.assertIn('subagent_type="web-browser"', browser_lines[0])
+
+                    if label == "Apple Messages":
+                        apple_lines = [
+                            line
+                            for line in method_lines
+                            if line.startswith("- For Apple Messages,")
+                        ]
+                        self.assertEqual(len(apple_lines), 1)
+                        self.assertIn("iMessage chat integration", apple_lines[0])
+                        self.assertIn(
+                            "`mcp__chat__list_available_chat_providers`",
+                            apple_lines[0],
+                        )
+                        self.assertIn(
+                            "`mcp__chat__add_chat_integration`", apple_lines[0]
+                        )
+                        self.assertIn("provider `imessage`", apple_lines[0])
+
+                    if label in BUILTIN_SEARCH_LABELS:
+                        search_lines = [
+                            line
+                            for line in method_lines
+                            if line.startswith("- For built-in search (")
+                            and f"`{label}`" in line
+                        ]
+                        self.assertEqual(len(search_lines), 1)
+                        self.assertIn("`mcp__web__web_search`", search_lines[0])
+                        self.assertIn("`WebSearch`", search_lines[0])
+
+                    if mapping["kind"] in DIRECT_API_KINDS:
+                        direct_api_lines = [
+                            line
+                            for line in method_lines
+                            if line.startswith(f"- For the {label} connection,")
+                        ]
+                        self.assertEqual(len(direct_api_lines), 1)
+                        self.assertIn("API key", direct_api_lines[0])
+                        self.assertIn(
+                            "`mcp__user-input__request_secret`", direct_api_lines[0]
+                        )
+                        self.assertIn("direct API calls", direct_api_lines[0])
 
                 self.assertIn(template["detailUrl"], readme_body)
                 self.assertIn(template["creator"]["url"], readme_body)

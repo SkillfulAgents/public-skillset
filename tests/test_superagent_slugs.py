@@ -2,7 +2,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["PyYAML>=6.0.2,<7"]
 # ///
-"""Validate every works_with slug against the canonical SuperAgent registries."""
+"""Validate connector slugs and built-in capability names against SuperAgent."""
 
 from __future__ import annotations
 
@@ -30,6 +30,100 @@ REGISTRIES = {
         "COMMON_MCP_SERVERS",
     ),
 }
+CAPABILITY_PATTERNS = {
+    Path("agent-container/src/tools/browser.ts"): (
+        ("browser_open tool declaration", r"\btool\s*\(\s*['\"]browser_open['\"]"),
+        (
+            "browser_get_state tool declaration",
+            r"\btool\s*\(\s*['\"]browser_get_state['\"]",
+        ),
+    ),
+    Path("agent-container/src/system-prompt.md"): (
+        (
+            "web-browser delegation syntax",
+            r"Agent\(subagent_type=['\"]web-browser['\"]",
+        ),
+    ),
+    Path("agent-container/src/claude-code.ts"): (
+        (
+            "MCP wire-ID construction",
+            r"`mcp__\$\{serverName\}__\$\{t\.name\}`",
+        ),
+        ("web-browser agent registration", r"['\"]web-browser['\"]\s*:\s*\{"),
+        (
+            "browser MCP tools bound to web-browser",
+            r"mcpToolNames\s*\(\s*['\"]browser['\"]\s*,\s*browserMcpTools\s*\)",
+        ),
+        ("host web-search wire ID", r"['\"]mcp__web__web_search['\"]"),
+        ("native WebSearch tool ID", r"['\"]WebSearch['\"]"),
+        (
+            "browser MCP server registration",
+            r"['\"]browser['\"]\s*:\s*createBrowserMcpServer\s*\(",
+        ),
+        (
+            "chat MCP server registration",
+            r"['\"]chat['\"]\s*:\s*createChatMcpServer\s*\(",
+        ),
+        (
+            "user-input MCP server registration",
+            r"['\"]user-input['\"]\s*:\s*createUserInputMcpServer\s*\(",
+        ),
+        (
+            "web MCP server registration",
+            r"['\"]web['\"]\s*:\s*createWebMcpServer\s*\(",
+        ),
+    ),
+    Path("agent-container/src/mcp-server.ts"): (
+        (
+            "browser MCP server name",
+            r"\bfunction\s+createBrowserMcpServer\b[\s\S]*?"
+            r"\bname\s*:\s*['\"]browser['\"]",
+        ),
+        (
+            "chat MCP server name",
+            r"\bfunction\s+createChatMcpServer\b[\s\S]*?"
+            r"\bname\s*:\s*['\"]chat['\"]",
+        ),
+        (
+            "user-input MCP server name",
+            r"\bfunction\s+createUserInputMcpServer\b[\s\S]*?"
+            r"\bname\s*:\s*['\"]user-input['\"]",
+        ),
+        (
+            "web MCP server name",
+            r"\bfunction\s+createWebMcpServer\b[\s\S]*?"
+            r"\bname\s*:\s*['\"]web['\"]",
+        ),
+    ),
+    Path("agent-container/src/tools/chat/add-chat-integration.ts"): (
+        (
+            "add_chat_integration tool declaration",
+            r"\btool\s*\(\s*['\"]add_chat_integration['\"]",
+        ),
+        ("iMessage provider", r"z\.enum\s*\([^)]*['\"]imessage['\"]"),
+    ),
+    Path("agent-container/src/tools/chat/list-available-chat-providers.ts"): (
+        (
+            "list_available_chat_providers tool declaration",
+            r"\btool\s*\(\s*['\"]list_available_chat_providers['\"]",
+        ),
+    ),
+    Path("agent-container/src/tools/request-secret.ts"): (
+        (
+            "request_secret tool declaration",
+            r"\btool\s*\(\s*['\"]request_secret['\"]",
+        ),
+    ),
+    Path("agent-container/src/tools/web/web-search.ts"): (
+        ("web_search tool declaration", r"\btool\s*\(\s*['\"]web_search['\"]"),
+    ),
+    Path("src/shared/lib/llm-provider/model-prompt-hints.ts"): (
+        ("recommended browser-open wire ID", r"mcp__browser__browser_open"),
+        ("recommended web-browser agent", r"web-browser agent"),
+    ),
+}
+
+
 def lexical_mask(text: str, *, blank_strings: bool) -> str:
     """Blank comments and optionally strings without changing source positions."""
     output: list[str] = []
@@ -336,8 +430,25 @@ def checkout_commit(checkout_root: Path) -> str:
     return result.stdout.strip()
 
 
+def validate_capability_contract(superagent_root: Path) -> None:
+    errors: list[str] = []
+    for relative_path, required_patterns in CAPABILITY_PATTERNS.items():
+        path = superagent_root / relative_path
+        if not path.is_file():
+            errors.append(f"missing SuperAgent capability source: {path}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        searchable = strip_typescript_comments(text) if path.suffix == ".ts" else text
+        for description, pattern in required_patterns:
+            if not re.search(pattern, searchable):
+                errors.append(f"{path}: missing canonical {description}")
+    if errors:
+        raise ValueError("\n".join(errors))
+
+
 def validate(superagent_root: Path, require_recorded_commit: bool) -> None:
     validate_parser_fixtures()
+    validate_capability_contract(superagent_root)
     crosswalk = json.loads(
         (ROOT / "sources" / "botdirectory" / "connect-first.json").read_text(
             encoding="utf-8"

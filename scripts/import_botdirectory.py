@@ -46,6 +46,8 @@ ICON_RULES = (
 MAPPED_KINDS = {"api_account", "mcp"}
 UNMAPPED_KINDS = {"browser", "builtin", "external", "local", "raw_api"}
 ALL_KINDS = MAPPED_KINDS | UNMAPPED_KINDS
+DIRECT_API_KINDS = {"external", "raw_api"}
+BUILTIN_SEARCH_LABELS = {"Google Search", "Web Search"}
 SLUG_RE = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 TEMPLATE_SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
@@ -91,6 +93,11 @@ def mapping_sentence(label: str, mapping: dict[str, str]) -> str:
     if kind == "browser":
         return f"{label} through a browser session (no SuperAgent registry slug)"
     if kind == "builtin":
+        if label == "Apple Messages":
+            return (
+                "Apple Messages through SuperAgent's iMessage chat integration "
+                "(no registry slug required)"
+            )
         return f"{label} as a built-in capability (no connection slug required)"
     if kind == "local":
         return f"{label} as a local tool or resource (no connection slug required)"
@@ -114,12 +121,57 @@ def readme_mapping_line(label: str, mapping: dict[str, str]) -> str:
     if kind == "browser":
         return f"- **{label}** — browser session; no registry slug."
     if kind == "builtin":
+        if label == "Apple Messages":
+            return "- **Apple Messages** — built-in iMessage chat integration; no registry slug."
         return f"- **{label}** — built-in capability; no connection slug."
     if kind == "local":
         return f"- **{label}** — local tool or resource; no connection slug."
     if kind == "raw_api":
         return f"- **{label}** — direct API, feed, or required credentials; no canonical registry slug."
     return f"- **{label}** — external connection; no canonical registry slug."
+
+
+def connection_method_lines(
+    template: dict[str, Any], mappings: dict[str, dict[str, str]]
+) -> list[str]:
+    labels = template["connectFirst"]
+    browser_labels = [label for label in labels if mappings[label]["kind"] == "browser"]
+    direct_api_labels = [
+        label for label in labels if mappings[label]["kind"] in DIRECT_API_KINDS
+    ]
+    search_labels = [label for label in labels if label in BUILTIN_SEARCH_LABELS]
+    lines: list[str] = []
+
+    if browser_labels:
+        display_labels = ", ".join(f"`{label}`" for label in browser_labels)
+        lines.append(
+            f"- For browser-based connections ({display_labels}), use SuperAgent's dedicated "
+            "`mcp__browser__browser_*` tools, starting with "
+            "`mcp__browser__browser_open`. For multi-step browsing, delegate with "
+            "`Agent(subagent_type=\"web-browser\", prompt=\"<task>\")`."
+        )
+
+    if "Apple Messages" in labels:
+        lines.append(
+            "- For Apple Messages, use the iMessage chat integration: call "
+            "`mcp__chat__list_available_chat_providers`, collect the required setup "
+            "details, then call `mcp__chat__add_chat_integration` with provider `imessage`."
+        )
+
+    if search_labels:
+        display_labels = ", ".join(f"`{label}`" for label in search_labels)
+        lines.append(
+            f"- For built-in search ({display_labels}), use `mcp__web__web_search` when "
+            "configured, otherwise native `WebSearch`; do not request an API key."
+        )
+
+    for label in direct_api_labels:
+        lines.append(
+            f"- For the {label} connection, ask the user for an API key with "
+            "`mcp__user-input__request_secret` and use direct API calls."
+        )
+
+    return lines
 
 
 def render_claude(template: dict[str, Any], mappings: dict[str, dict[str, str]]) -> str:
@@ -130,6 +182,7 @@ def render_claude(template: dict[str, Any], mappings: dict[str, dict[str, str]])
     )
     if not first_run:
         first_run = "no external account or MCP is required"
+    method_lines = connection_method_lines(template, mappings)
 
     lines = [
         "---",
@@ -154,6 +207,11 @@ def render_claude(template: dict[str, Any], mappings: dict[str, dict[str, str]])
         "preferences and boundaries, complete the supervised first run, and save the "
         "resulting workflow or cadence for later use.",
         "",
+        *(
+            ["## Connection methods", "", *method_lines, ""]
+            if method_lines
+            else []
+        ),
         "## Operating rules",
         "",
         "- Follow `PROMPT.md` faithfully; do not silently broaden the workflow.",

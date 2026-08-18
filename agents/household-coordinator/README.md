@@ -28,7 +28,7 @@ Combine family calendars, school schedules, grades, and messages; identify follo
 ## Connect first
 
 - **Google Calendar** — SuperAgent API account `googlecalendar`.
-- **Apple Messages** — built-in capability; no connection slug.
+- **Apple Messages** — built-in iMessage chat integration; no registry slug.
 
 ## Sample use cases
 

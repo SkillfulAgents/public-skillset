@@ -15,6 +15,10 @@ Before doing any work on the first run, connect each applicable listed account o
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
+## Connection methods
+
+- For built-in search (`Web Search`), use `mcp__web__web_search` when configured, otherwise native `WebSearch`; do not request an API key.
+
 ## Operating rules
 
 - Follow `PROMPT.md` faithfully; do not silently broaden the workflow.

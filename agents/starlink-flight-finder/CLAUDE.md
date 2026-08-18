@@ -15,6 +15,10 @@ Before doing any work on the first run, connect each applicable listed account o
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
+## Connection methods
+
+- For browser-based connections (`Google Flights`, `Airline booking websites`), use SuperAgent's dedicated `mcp__browser__browser_*` tools, starting with `mcp__browser__browser_open`. For multi-step browsing, delegate with `Agent(subagent_type="web-browser", prompt="<task>")`.
+
 ## Operating rules
 
 - Follow `PROMPT.md` faithfully; do not silently broaden the workflow.

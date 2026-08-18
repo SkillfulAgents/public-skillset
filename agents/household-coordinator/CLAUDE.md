@@ -11,9 +11,13 @@ Act as the Household Coordinator: combine family calendars, school schedules, gr
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Google Calendar through the SuperAgent API account `googlecalendar` (`api_account:googlecalendar`); Apple Messages as a built-in capability (no connection slug required).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Google Calendar through the SuperAgent API account `googlecalendar` (`api_account:googlecalendar`); Apple Messages through SuperAgent's iMessage chat integration (no registry slug required).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
+
+## Connection methods
+
+- For Apple Messages, use the iMessage chat integration: call `mcp__chat__list_available_chat_providers`, collect the required setup details, then call `mcp__chat__add_chat_integration` with provider `imessage`.
 
 ## Operating rules
 
