@@ -1,3 +1,18 @@
+---
+category: Health & Fitness
+icon: apple
+tags:
+  - Nutrition
+  - Meal Logging
+  - Calorie Tracking
+  - Macro Tracking
+  - Weight Tracking
+works_with: []
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # Nutrition Agent
 
 > Track calories, macros, and body weight with fast meal logging, a visual dashboard, and smart goal setting.

@@ -8,49 +8,264 @@
       "name": "Agent Pill",
       "path": "agents/agent-pill/",
       "description": "Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Gamut agent -- both as a created agent and a copyable prompt.",
-      "version": "1.0.0"
+      "details": "# Agent Pill\n\n> Stop staring at the \u201ccreate new agent\u201d screen. Agent Pill finds the single most useful first agent for you\u2014and builds it.\n\n## What it does\n\nAgent Pill is a first-run guide for people who know they want an agent but do not yet know which workflow is worth automating. It has a short, natural conversation about your work, identifies recurring friction, and turns the best opportunity into a concrete agent.\n\nWith your permission, it can inspect patterns and metadata from one to three connected work tools. It looks for signals such as recurring senders, meeting load, channel activity, and repeated project work; it does not read private content unless you explicitly approve that deeper look. It can also do public research about your role or company when that would sharpen the recommendation.\n\nRather than returning a generic list of ideas, it ranks a few specific candidates, explains why the strongest one should matter to your week, and helps you refine it. Once you choose, Agent Pill creates the new agent in your workspace and gives you a portable copy of its prompt.\n\n## What you'll need\n\n- **Accounts:** None are required. Connecting one or more work tools makes its recommendations more specific.\n- **API keys:** None.\n- **Time:** A few minutes for the interview and optional tool scan.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. Start a conversation; the onboarding flow begins automatically.\n3. Describe the part of your week you most want to improve.\n4. Optionally connect the tools that best represent that work.\n5. Review the ranked ideas and pick one to build.\n\nAgent Pill steps aside after the handoff. Your newly created agent owns the workflow from then on.\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's durable role, voice, privacy rules, and handoff behavior.\n- `.claude/skills/agent-onboarding/` \u2014 the interview, opt-in tool scan, research, recommendation, and agent-creation workflow.\n\n## Privacy\n\nTool inspection is optional and consent-driven. The default scan uses structural signals and metadata rather than message or document bodies. Agent Pill explains any deeper access it wants, why it would help, and waits for explicit approval.",
+      "createdAt": "2026-04-28T19:36:16.047Z",
+      "version": "1.0.0",
+      "category": "Agent Creation",
+      "icon": "wand-sparkles",
+      "tags": [
+        "Onboarding",
+        "Agent Builder",
+        "Workflow Discovery",
+        "Tool Discovery",
+        "Personalization"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "outlook"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "microsoft_teams"
+        },
+        {
+          "type": "api_account",
+          "slug": "discord"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        },
+        {
+          "type": "api_account",
+          "slug": "linear"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlesheets"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "Inbox Manager",
       "path": "agents/inbox-manager/",
-      "description": "",
-      "version": "1.0.0"
+      "description": "Triage Gmail, surface important messages, clean up low-value mail, and automate a calmer inbox",
+      "details": "# Inbox Manager\n\n> Turn a noisy Gmail inbox into a short, useful queue of messages that deserve your attention.\n\n## What it does\n\nInbox Manager screens recent Gmail messages and separates important conversations from marketing and low-value mail. It can summarize what needs attention, mark processed messages as read, and prepare or send replies through the connected Gmail account.\n\nFor recurring clutter, it extracts unsubscribe options from message headers and bodies so unwanted lists can be removed safely. Its onboarding flow learns which senders and message patterns matter to you, how often it should screen the inbox, and whether useful notifications should also go to Slack.\n\n## What you'll need\n\n- **Gmail:** Required for the shipped screening, action, and unsubscribe tools.\n- **Slack:** Optional, for inbox notifications configured during onboarding.\n- **API keys:** None.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. Run the onboarding conversation and connect the Gmail inbox you want it to manage.\n3. Describe what \u201cimportant\u201d means for you and choose a screening schedule.\n4. Optionally connect Slack for notifications.\n5. Ask it to screen the inbox or unsubscribe you from a mailing list.\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's durable workspace instructions.\n- `.claude/skills/agent-onboarding/` \u2014 account connection, preferences, and schedule setup.\n- `.claude/skills/gmail-inbox-screener/` \u2014 Gmail retrieval, categorization, mark-read, and reply actions.\n- `.claude/skills/gmail-unsubscribe/` \u2014 unsubscribe-link extraction and guided cleanup.\n\n## Notes\n\nThe current implementation is Gmail-specific. Onboarding may discuss other mail providers, but the included screening and unsubscribe scripts require a connected Gmail account.",
+      "createdAt": "2026-02-26T17:33:38.695Z",
+      "version": "1.0.0",
+      "category": "Email & Communication",
+      "icon": "inbox",
+      "tags": [
+        "Email Management",
+        "Inbox Zero",
+        "Email Triage",
+        "Unsubscribe",
+        "Automation"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "Nutrition Agent",
       "path": "agents/nutrition-agent/",
       "description": "Track calories, macros, and body weight with fast meal logging, a visual dashboard, and smart goal setting",
-      "version": "1.0.0"
+      "details": "# Nutrition Agent\n\n> Track calories, macros, and body weight with fast meal logging, a visual dashboard, and smart goal setting.\n\n## What it does\n\nA personal nutrition tracker you can message naturally. Describe what you ate (or send a photo), and the agent estimates macros and logs it. It tracks daily calories, protein, fat, and carbs against your goal, logs body weight over time, and gives you a beautiful dashboard to see trends. It can also research restaurant dishes before you order.\n\n## What you'll need\n\n- **Accounts:** None required. Optionally connect Telegram for on-the-go logging.\n- **API keys:** None.\n\n## Getting started\n\n1. Import this template into Gamut.\n2. On import, a setup session starts automatically. The **agent-onboarding** skill will:\n   - Ask your name\n   - Collect body metrics (sex, age, height, weight, activity level)\n   - Calculate your TDEE and propose daily calorie + macro targets\n   - Log your baseline weight\n   - Ask about coffee/logging preferences\n   - Optionally connect Telegram so you can log meals from your phone\n3. Once setup finishes, just tell the agent what you ate!\n\nYou can re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's instructions (logging style, response format).\n- `.claude/skills/agent-onboarding/` \u2014 first-run setup: TDEE interview, goal setting, Telegram connection.\n- `.claude/skills/log-meal/` \u2014 log food from description or photo.\n- `.claude/skills/log-weight/` \u2014 record daily body weight.\n- `.claude/skills/edit-meal/` \u2014 fix or delete a logged meal.\n- `.claude/skills/nutrition-status/` \u2014 generate Apple-Fitness-style progress ring PNG.\n- `.claude/skills/nutrition-dashboard/` \u2014 open the interactive web dashboard.\n- `.claude/skills/research-food/` \u2014 look up restaurant dish nutrition before ordering.\n- `.claude/skills/set-nutrition-goal/` \u2014 recalculate TDEE and update goals anytime.\n- `nutrition/` \u2014 Python scripts, SQLite database, and meal cheatsheet.\n- `artifacts/nutrition-dashboard/` \u2014 Bun-based dashboard (calories, macros, weight charts, meal history).\n- `nutrition/data/nutrition.db` + `nutrition/data/nutrition.db.bootstrap.sql` \u2014 empty database and schema.\n\n## Notes\n\n- All day boundaries use **America/Los_Angeles** (PST/PDT).\n- The agent estimates macros from food descriptions and photos \u2014 it's not a precision scale, but it's consistent and fast.\n- The cheatsheet (`nutrition/cheatsheet.md`) builds up over time with dishes you eat often, so estimates get faster and more accurate.\n- To reset everything, delete `nutrition/data/nutrition.db` and re-run `uv run nutrition/scripts/init_db.py`.",
+      "createdAt": "2026-07-01T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Health & Fitness",
+      "icon": "apple",
+      "tags": [
+        "Nutrition",
+        "Meal Logging",
+        "Calorie Tracking",
+        "Macro Tracking",
+        "Weight Tracking"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "Office Manager",
       "path": "agents/office-manager/",
       "description": "Keeps the team fed \u2014 runs weekly kitchen stock orders, handles one-off Slack requests, and organizes daily lunch/dinner orders",
-      "version": "1.0.0"
+      "details": "# Office Manager\n\n> Keeps the team fed \u2014 weekly grocery orders, one-off Slack requests, and daily lunch/dinner group orders.\n\n## What it does\n\nA friendly (slightly humorous, lower-caps) office manager agent. It runs a recurring weekly kitchen-stock order (post list to Slack \u2192 collect special requests \u2192 place the order \u2192 post a summary), handles one-off requests people DM it on Slack (snacks, drinks, office equipment \u2014 ordered from Amazon or your store of choice), and can organize daily lunch/dinner group orders on Uber Eats or DoorDash. Every office runs differently, so the onboarding interview does the heavy lifting of tailoring it to yours.\n\n## What you'll need\n\n- **Slack** \u2014 connected as a chat integration during onboarding (strongly recommended; it's how the team talks to the agent).\n- **A shopping account** \u2014 Amazon / Whole Foods, Amazon Fresh, or Instacart, logged in via the agent's browser during onboarding.\n- **(Optional) Uber Eats or DoorDash** \u2014 if you want meal orders.\n- **API keys:** none.\n\n## Getting started\n\n1. Import this template (drag the zip into the agent import dialog).\n2. A setup session starts automatically. The **agent-onboarding** skill will:\n   - ask what to take care of (weekly kitchen stock / one-off requests / meal orders / other)\n   - collect office basics (address, company, team size, contact person, order email/phone)\n   - connect Slack and your shopping accounts (it verifies logins in the browser)\n   - build your grocery baseline list and agree on budgets, schedules, and how autonomous it should be\n   - create all the recurring scheduled tasks\n3. Then just let the team DM it: \"can we get more sparkling water?\"\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's instructions (role, style, request routing, record keeping, privacy rules).\n- `.claude/skills/agent-onboarding/` \u2014 the first-run setup interview.\n- `.claude/skills/amazon-order/` \u2014 a battle-tested browser SOP for placing Amazon orders.\n- `grocery-baseline.md` \u2014 the standing weekly list (filled in during onboarding).\n- `grocery-requests.json` \u2014 the mid-week request queue (starts empty).\n- `grocery-orders-log/` \u2014 one log file per placed order.\n- `.env.example` \u2014 no keys required; kept for future extensions.\n\n## Notes\n\n- **Privacy:** the agent has a strict standing rule to never read, disclose, or relay personal order history or account details from connected shopping accounts \u2014 it only places new orders to the office address.\n- **Autonomy is configurable:** during onboarding you choose whether it places orders itself or preps the basket and pings a human to check out.\n- The agent keeps full logs of every order in `grocery-orders-log/`, so spend is always auditable.",
+      "createdAt": "2026-08-06T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Operations",
+      "icon": "shopping-cart",
+      "tags": [
+        "Office Management",
+        "Workplace Operations",
+        "Procurement",
+        "Grocery Ordering",
+        "Team Meals"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "OpenSlide Studio",
       "path": "agents/open-slide-studio/",
       "description": "Slide studio built on OpenSlide \u2014 creates, edits, and presents React-based slide decks in a native dashboard with a searchable deck library, live-updating previews, reusable themes, and inspector-comment editing.",
-      "version": "1.0.0"
+      "details": "# OpenSlide Studio Agent\n\n> Create, edit, preview, and present polished slide decks in a native Gamut-managed OpenSlide dashboard.\n\n## What it does\n\nThis template provides a slide-focused agent and a fully wired OpenSlide dashboard. The dashboard artifact is the OpenSlide project itself, so Gamut installs the real dependencies with Bun before starting it. The library supports deck search, native editing and presentation views, deep routes, and live updates through Vite HMR.\n\nThe stock **Getting Started** deck is included so the studio is useful immediately after import.\n\n## What you'll need\n\n- **Accounts:** None.\n- **API keys:** None.\n- **Other:** A Gamut environment with dashboard artifacts enabled and package-registry access for the first automatic Bun install.\n\n## Getting started\n\n1. Import this template zip into Gamut.\n2. Open the **OpenSlide Studio** dashboard.\n3. Gamut discovers `artifacts/open-slide-studio/package.json`, installs the locked dependencies with Bun, and launches OpenSlide.\n4. Browse the stock Getting Started deck or ask the agent: `Create a slide deck about \u2026`\n5. Saved deck edits update in the open dashboard through native HMR; no restart is needed.\n\nNo onboarding session is required because this template has no user-specific settings, accounts, databases, or secrets.\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the slide agent's durable role, native dashboard contract, commands, and skill map.\n- `artifacts/open-slide-studio/` \u2014 the complete OpenSlide application and dashboard artifact.\n- `artifacts/open-slide-studio/package.json` \u2014 real dependencies, scripts, and `gamut.upstreamPath: mounted`.\n- `artifacts/open-slide-studio/bun.lock` \u2014 dependency lockfile used by Gamut's automatic installer.\n- `artifacts/open-slide-studio/open-slide.config.ts` \u2014 reads `DASHBOARD_BASE_PATH` and `DASHBOARD_PORT`.\n- `artifacts/open-slide-studio/slides/getting-started/` \u2014 OpenSlide's stock sample deck and assets.\n- `.claude/skills/create-slide-deck/` \u2014 creates and validates decks in the shared library.\n- `.claude/skills/edit-slide-deck/` \u2014 revises decks while preserving metadata and live preview behavior.\n- `.claude/skills/create-slide/`, `slide-authoring/`, `create-theme/`, `apply-comments/`, and `current-slide/` \u2014 OpenSlide's supplied authoring skills.\n\n## Dependency model\n\nThe template intentionally contains no `node_modules` and no manual install script. Gamut runs `bun install` in the dashboard artifact directory, then runs:\n\n```text\nopen-slide dev --host 0.0.0.0 --no-skills-check\n```\n\nThis avoids npm's `chmod` failure on Windows-backed 9p/drvfs workspaces and keeps dependency lifecycle under Gamut's dashboard manager.\n\n## Validation\n\n```bash\nbun install --cwd /workspace/artifacts/open-slide-studio --frozen-lockfile\nbun run --cwd /workspace/artifacts/open-slide-studio build\n```\n\nThe dashboard uses Gamut's mounted-path mode, so OpenSlide's HTTP routes and HMR WebSocket remain under the agent artifact path without custom routing shims.",
+      "createdAt": "2026-08-07T00:00:00.000Z",
+      "version": "2.0.0",
+      "category": "Design & Creative",
+      "icon": "presentation",
+      "tags": [
+        "Presentations",
+        "Slide Decks",
+        "Visual Design",
+        "React",
+        "OpenSlide"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "Outbound Campaign Agent",
       "path": "agents/outbound-campaign-agent/",
       "description": "Runs an end-to-end personalized outbound motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Vendor-neutral through swappable adapters.",
-      "version": "1.0.0"
+      "details": "# Outbound Agent Template\n\nA complete, vendor-neutral outbound motion you import as an agent and configure for your own team: ICP, positioning, tools, senders, caps, cadence, and voice.\n\nIt is not a copywriting prompt. Most of what is here is the machinery that decides who gets contacted, who never does, how often, from which mailbox, and what has to be true before a message is allowed out. That machinery is the part that is expensive to rebuild and easy to get quietly wrong.\n\n## Start here\n\n```bash\nuv run --with pyyaml .claude/skills/agent-onboarding/scripts/list_adapters.py\n```\n\nThen ask the agent to run onboarding. It interviews you and writes `config/outbound.yaml`.\n\nNothing else runs until that file exists. That is deliberate.\n\n## What you get\n\n| | |\n|---|---|\n| **Onboarding skill** | A structured interview that writes your config, generates your `CLAUDE.md`, seeds positioning files, initializes the database, and self-tests the wiring. |\n| **Campaign skill** | Intake, drafting briefs, the send gate, the cadence tick, a capped manual LinkedIn queue, calendar-sourced meeting tracking, reporting. |\n| **Adapter layer** | Seven capability slots. Swap a vendor without touching the motion. |\n| **Enforcement** | A copy linter, a send-cap governor, a fail-closed suppression chain, and a do-not-touch gate, all of which run before a message can leave. |\n| **Reporting** | Metrics and a zero-dependency dashboard, with meetings read from the sender's calendar rather than inferred from replies. No open tracking, by design. |\n\n## The design decision worth knowing about\n\n**Configuration is the single source of truth, and `CLAUDE.md` is generated from it.**\n\nThe usual failure of an agent template is drift: the instructions say one thing, the code does another, and nobody notices for a month. Here the standing instructions are rendered from `config/outbound.yaml`, so a cap change or an ICP change updates both at once. If the two ever disagree, the config wins and you regenerate.\n\nThe second decision follows from the first: **rules that matter are enforced mechanically, not asked for politely.** An instruction not to use em dashes is a suggestion a model will occasionally ignore. A linter that refuses the send is not. The same applies to daily caps, suppression, and the approval gate on a campaign's first batch.\n\n## Layout\n\n```\nconfig/\n  outbound.example.yaml   every field, documented inline. Your config is merged over it.\n  outbound.yaml           yours. Written by onboarding. The source of truth.\nlib/\n  config.py     typed access, brand embargo, send windows, per-sender caps with ramp\n  adapters.py   the registry and the slot contract\n  db.py         vendor-neutral SQLite schema\n  identity.py   name and LinkedIn matching. Stops same-first-name coworker swaps.\n  icp.py        tiering, size bands, disqualifiers, buyer tiers\n  linter.py     mechanical copy enforcement\n  caps.py       daily gate, stacked-rate governor, deliverability kill switch\n  gates.py      the do-not-touch gate\nadapters/\n  sourcing/ enrichment/ sender/ crm/ calendar/ suppression/ notify/\n.claude/skills/\n  agent-onboarding/    the interview and its scripts\n  outbound-campaign/      the runtime\npositioning/\n  positioning.md, use-cases.json, voice-samples.md    yours to fill in\n```\n\n## Adapters\n\nSeven slots. Each is a directory of interchangeable modules, and **the vendor in each slot is the importing team's choice, not the template's.** Onboarding asks slot by slot which tools the team uses, as multiple choice from `adapters/catalog.yaml` (the most common real-world answers) plus an open \"Other\".\n\n| Slot | Does | Reference implementation |\n|---|---|---|\n| `sourcing` | produce prospect rows | `csv` |\n| `enrichment` | resolve contact data | `apollo` |\n| `sender` | deliver, and report replies | `gmail` (`dryrun` is the starting mode) |\n| `crm` | look up and record | `sqlite` (local) |\n| `calendar` | report booked meetings | `google` |\n| `suppression` | decide who is off limits | `crm`, `local` |\n| `notify` | reach a human | `slack` |\n\nThe shipped modules are working reference implementations, not the menu. A vendor with no builtin (Outlook, Instantly, Attio, Calendly, anything) gets a stub via `scaffold_adapter.py`: the config names the team's real stack immediately, and the stub fails closed on every call until implemented. `none` disables a slot as a visible gap.\n\n`enrichment` and `suppression` take an ordered list and run as a waterfall.\n\nWriting a new adapter means implementing two or three functions and declaring which environment variables it needs. `lib/adapters.py` documents the contract at the top. The motion does not change when a vendor does.\n\n## The rules that cannot be configured away\n\nThese are enforced in code, and `validate_config.py` fails a config that tries to disable them.\n\n- **A reply stops the cadence.** Every reply, including ambiguous ones. A human decides whether to re-engage.\n- **Suppression is fail-closed.** If a suppression source is unreachable, the run halts. Contacting a current customer as a cold prospect is worse than a delayed batch.\n- **The first batch of a campaign needs human approval.**\n- **The first run is a dry run, reviewed by a human.**\n- **No tracking pixels, no link wrappers, no open tracking.** They damage deliverability for exactly the low-volume senders this template is built for, and the number they produce has been unreliable since Apple Mail Privacy Protection.\n- **No rate is displayed without its denominator.** Below the configured floor, you get the raw count.\n\n## Testing it\n\nThe sender defaults to `dryrun`, so the entire motion is exercisable with zero network calls and zero risk.\n\n```bash\nuv run --with pyyaml .claude/skills/agent-onboarding/scripts/selftest.py\n```\n\nWalks fixture prospects through config load, adapter resolution, identity matching, ICP qualification, cap enforcement, the linter, and the database write path. A missing vendor credential is reported as *not provisioned*, not as a failure, because the wiring is sound either way.\n\nA pass means the machinery is correct. It says nothing about whether your ICP or your copy is any good. Only you can judge those.\n\n## What this does not do\n\n- It does not write your copy unattended. The drafting brief assembles the material; the agent writes the message; the linter gates it; you approve the first batch.\n- It does not warm mailboxes. New senders ramp from 10 to 25 a day over roughly four weeks, but you need a real warmup provider and, past about 25 a day per mailbox, a dedicated sending domain.\n- It does not give you an ICP. An inherited ICP reads plausible and targets the wrong people confidently. Empty and honest beats populated and wrong.",
+      "createdAt": "2026-08-06T00:00:00.000Z",
+      "version": "1.13.0",
+      "category": "Sales",
+      "icon": "target",
+      "tags": [
+        "Sales Outreach",
+        "Lead Generation",
+        "Prospecting",
+        "Email Campaigns",
+        "Sales Automation"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "Recruiting Agent",
       "path": "agents/recruiting-agent/",
       "description": "Owns the hiring pipeline end-to-end \u2014 sourcing, filtering, outbound, nurture, and interview scheduling, with a self-improving screening filter calibrated by your feedback.",
-      "version": "1.0.0"
+      "details": "# Recruiting Agent Template\n\nA ready-to-run recruiting agent: sourcing \u2192 filtering \u2192 outbound \u2192 nurture \u2192 interview scheduling, with a self-improving screening filter calibrated by your feedback.\n\n## First run\n\nSay hello (or \"set up\"). The agent runs its **`agent-onboarding`** skill: a guided interview that configures your ATS (or a no-ATS pipeline store), imports your roles, sets up per-role screening criteria, outreach voice and templates, the daily search schedule, and the dashboard. ~20 minutes.\n\n## What's inside\n\n- `.claude/skills/` \u2014 the agent's toolkit (onboarding, ATS access, LinkedIn sourcing, excellence pools, calibration feedback, YC directory)\n- `CLAUDE.md` \u2014 the operating manual; onboarding fills in the `{{PLACEHOLDER}}` tokens for your company\n- `pipeline/` \u2014 empty workbench scaffold; your data accumulates here\n\nThis bundle contains **no data**: no candidates, no API keys, no memory. Everything is created fresh during onboarding.",
+      "createdAt": "2026-08-06T00:00:00.000Z",
+      "version": "1.3.0",
+      "category": "Human Resources",
+      "icon": "user-search",
+      "tags": [
+        "Recruiting",
+        "Talent Sourcing",
+        "Candidate Screening",
+        "Hiring",
+        "ATS",
+        "Outreach"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "googlesheets"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "outlook"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     },
     {
       "name": "SEO Agent",
       "path": "agents/seo-agent/",
       "description": "Autonomous SEO specialist \u2014 owns content engine, link building + outreach, technical SEO, and weekly strategy/reporting for one website, end to end.",
-      "version": "1.0.0"
+      "details": "# SEO Agent \u2014 template\n\nAn autonomous SEO specialist that owns one website's organic growth end to end:\n\n- **Content engine** \u2014 a prioritized backlog burned down daily: keyword-researched,\n  multi-angle-researched, fact-checked, humanized articles published through your CMS,\n  plus on-site \"surface\" improvements (metas, internal links, structured data).\n- **Link building** \u2014 competitor-backlink prospecting, directory/listing submissions,\n  and (optionally) personalized email outreach with a local CRM, ramp caps, and\n  follow-up discipline.\n- **Technical SEO** \u2014 a monthly comprehensive audit (sitemap, indexing, redirects,\n  performance, structured data) that ends in PRs or tickets, not just findings.\n- **Strategy & reporting** \u2014 a weekly steering session that pulls KPIs, replenishes\n  backlogs, and sends a one-page report by email or Slack; a live **SEO Master\n  dashboard** (Ahrefs + Search Console + program activity).\n\n## What it needs\n\n| Requirement | Used for | Required? |\n|---|---|---|\n| **Ahrefs API key** (plan with API access; Site Explorer endpoints ideally) | Keyword research, backlink/DR tracking, competitor analysis | Yes (SEMrush possible with skill edits) |\n| **Google Search Console** service account added to the property | Clicks/impressions/rankings \u2014 the north-star metrics | Yes |\n| **CMS or repo access** (Sanity/WordPress/Ghost/git/hosted builder) | Publishing content | Yes, for the content engine |\n| **Gmail (connected account)** | Weekly report by email; outreach inbox (ideally a dedicated inbox on a separate warmed domain) | Optional |\n| **Slack (chat integration)** | Weekly report via Slack instead of email | Optional |\n| **GitHub (connected account)** | Site PRs, awesome-list submissions | Optional |\n| **Unsplash API key** | Blog imagery (Openverse works keyless) | Optional |\n\n## What onboarding does\n\nImporting this template auto-launches a setup session (the `agent-onboarding` skill):\n\n1. **Tools** \u2014 connects GSC + Ahrefs (offers to drive signup in the browser if you have\n   neither), confirms the domain, kicks off an Ahrefs site audit.\n2. **Research** \u2014 explores your website, current rankings and backlinks, and your\n   competitors; presents a baseline analysis; agrees a keyword list with you (with a\n   light primer on head vs tail terms and search intent).\n3. **Plan** \u2014 technical audit scheduling, link-building approach, content cadence and\n   backlog, plus 1\u20132 creative ideas for your specific business; agrees goals/targets.\n4. **Cadences** \u2014 schedules the daily content / daily links / weekly strategy / monthly\n   audit tasks, connects the report channel (email/Slack), and verifies the dashboard\n   renders with your data.\n\nNothing is published, sent, or merged without an explicit autonomy grant you make\nduring onboarding (recorded in `seo/STATE.md`).\n\n## Layout\n\n```\nCLAUDE.md                  agent instructions (generic; onboarding personalizes)\n.env.example               required/optional secrets\nseo/                       program state: config.json, STATE.md, backlogs, CRM, log\nartifacts/seo-master/      the SEO dashboard (React + Bun; collector-fed)\n.claude/skills/            11 skills (see CLAUDE.md for the table)\n```\n\n## Import\n\nUpload the zip as a new agent template / import it as an agent workspace. The onboarding\nsession starts automatically. Have your Ahrefs key handy; GSC setup can be done together\nduring onboarding.",
+      "createdAt": "2026-08-06T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Marketing",
+      "icon": "search-check",
+      "tags": [
+        "SEO",
+        "Content Marketing",
+        "Keyword Research",
+        "Link Building",
+        "Technical SEO",
+        "Analytics"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
     }
   ]
 }

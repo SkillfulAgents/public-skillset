@@ -1,3 +1,25 @@
+---
+category: Human Resources
+icon: user-search
+tags:
+  - Recruiting
+  - Talent Sourcing
+  - Candidate Screening
+  - Hiring
+  - ATS
+  - Outreach
+works_with:
+  - type: api_account
+    slug: googlesheets
+  - type: api_account
+    slug: gmail
+  - type: api_account
+    slug: outlook
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # Recruiting Agent Template
 
 A ready-to-run recruiting agent: sourcing → filtering → outbound → nurture → interview scheduling, with a self-improving screening filter calibrated by your feedback.

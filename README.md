@@ -36,6 +36,86 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+## Agent metadata
+
+Each agent has two Markdown documents with distinct jobs:
+
+- `CLAUDE.md` contains the agent's operating instructions and core identity.
+- `README.md` contains marketplace-facing details and, by convention, the marketing metadata.
+
+Both files may have YAML frontmatter. The index generator shallow-merges the two mappings; when the same top-level key exists in both files, `CLAUDE.md` wins. Nested objects are replaced as a whole rather than deep-merged. The Markdown body of `README.md` becomes the agent's long-form `details` value in `index.json`; frontmatter is removed from that body. A README is optional to the generator for backward compatibility, although every public agent in this repository should include one.
+
+### Fields
+
+| Field | Type | Purpose and fallback |
+|---|---|---|
+| `name` | string | Display name; defaults to the agent directory name. |
+| `description` | string | Short marketplace summary; defaults to an empty string. |
+| `createdAt` | ISO-8601 string | Original creation time; defaults to an empty string. |
+| `version` | string | Agent template version; defaults to `1.0.0`. |
+| `category` | string | Primary marketplace category; defaults to an empty string. |
+| `icon` | string | Lowercase kebab-case Lucide icon name; defaults to an empty string. |
+| `tags` | string array | Display-ready search and marketing labels; defaults to `[]`. |
+| `works_with` | object array | Compatible API Accounts and MCPs, identified by canonical registry slug; defaults to `[]`. |
+| `developer` | object | Credit with required `name` and optional `url`; defaults to `{}`. |
+| `path` | string | Generated repository path. Do not set this in frontmatter. |
+| `details` | Markdown string | Generated from the README body. Do not set this in frontmatter. |
+
+A typical split keeps the operational fields in `CLAUDE.md`:
+
+```yaml
+---
+name: Example Agent
+description: 'A concise marketplace summary'
+createdAt: "2026-08-18T00:00:00.000Z"
+version: 1.0.0
+---
+```
+
+And the marketing fields in `README.md`:
+
+```yaml
+---
+category: Productivity
+icon: calendar-check
+tags:
+  - Planning
+  - Automation
+works_with:
+  - type: api_account
+    slug: googlecalendar
+  - type: mcp
+    slug: linear
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
+# Example Agent
+
+Long-form marketplace copy starts here.
+```
+
+`icon` must be the lowercase kebab-case name of an icon from the [Lucide icon catalog](https://lucide.dev/icons/), such as `inbox`, `presentation`, or `calendar-check`. Store the catalog name rather than the React component export name (`CalendarCheck`). The generator validates the name's syntax but does not embed a particular Lucide release's catalog, so consumers should fall back gracefully when a newer icon is unknown to their installed version.
+
+`tags` are display strings, not identifiers. Preserve human-friendly spacing, capitalization, acronyms, and product names (for example `Email Management`, `SEO`, and `OpenSlide`). Consumers may normalize tags internally for search or filtering, but the index should keep the presentation-ready labels.
+
+Each `works_with` item must contain exactly `type` and `slug`:
+
+- `type: api_account` uses SuperAgent's canonical account `Provider.slug`, which is also the runtime `toolkitSlug` (for example `gmail`, `googlecalendar`, or `microsoft_teams`). Do not use a display name, per-user account ID, `composioSlug`, or `nangoSlug`.
+- `type: mcp` uses the canonical `CommonMcpServer.slug` (for example `linear`, `ahrefs`, or `sanity`). Do not use a per-user MCP UUID or name.
+
+Only list a connector transport the agent actually requests or consumes. Browser sessions, built-in chat integrations, public APIs, and services accessed only with a raw API key do not belong in `works_with`. The type is required because some slugs exist in both registries. Slugs are lowercase, exact, and case-sensitive. The generator validates the metadata shape and slug syntax but deliberately does not copy the app registries into this repository, so those registries remain the source of truth.
+
+### Regenerating the index
+
+`index.json` is generated; do not edit it by hand.
+
+```bash
+uv run generate_index.py
+uv run tests/test_generate_index.py
+```
+
 ## Structure
 
 ```
@@ -43,9 +123,11 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 ├── agents/
 │   ├── agent-pill/
 │   │   ├── CLAUDE.md
+│   │   ├── README.md
 │   │   └── .claude/skills/...
 │   ├── inbox-manager/
 │   │   ├── CLAUDE.md
+│   │   ├── README.md
 │   │   └── .claude/skills/...
 │   ├── nutrition-agent/
 │   │   ├── CLAUDE.md
@@ -83,5 +165,7 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 ├── skills/          (future standalone skills)
 ├── index.json
 ├── generate_index.py
+├── tests/
+│   └── test_generate_index.py
 └── README.md
 ```

@@ -1,3 +1,23 @@
+---
+category: Marketing
+icon: search-check
+tags:
+  - SEO
+  - Content Marketing
+  - Keyword Research
+  - Link Building
+  - Technical SEO
+  - Analytics
+works_with:
+  - type: api_account
+    slug: gmail
+  - type: api_account
+    slug: github
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # SEO Agent — template
 
 An autonomous SEO specialist that owns one website's organic growth end to end:

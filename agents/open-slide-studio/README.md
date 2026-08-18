@@ -1,3 +1,18 @@
+---
+category: Design & Creative
+icon: presentation
+tags:
+  - Presentations
+  - Slide Decks
+  - Visual Design
+  - React
+  - OpenSlide
+works_with: []
+developer:
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
+---
+
 # OpenSlide Studio Agent
 
 > Create, edit, preview, and present polished slide decks in a native Gamut-managed OpenSlide dashboard.
