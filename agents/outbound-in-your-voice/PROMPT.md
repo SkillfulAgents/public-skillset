@@ -1,0 +1,1 @@
+Set up a new bot for me. Walk me through connecting Gmail and LinkedIn, let it learn how I write from my sent mail, then schedule it daily: research each person, draft outbound in my voice, send from my account, and report what went out and why. Hold the first ten for my approval, then save it as a running bot.

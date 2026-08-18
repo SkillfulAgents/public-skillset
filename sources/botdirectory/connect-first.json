@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
+  "superagentCommit": "ca9cd112ac4edf38d0d09febe7f8d87e9b0349c7",
+  "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
+  "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",
+  "labels": [
+    {
+      "name": "Ahrefs",
+      "kind": "mcp",
+      "slug": "ahrefs",
+      "reason": "Exact Ahrefs MCP display-name and slug match."
+    },
+    {
+      "name": "Airline booking websites",
+      "kind": "browser",
+      "reason": "The label explicitly names generic booking websites, so it requires browser navigation rather than a canonical connector."
+    },
+    {
+      "name": "Airtable",
+      "kind": "api_account",
+      "slug": "airtable",
+      "reason": "Airtable is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "Amazon",
+      "kind": "browser",
+      "reason": "The grocery prompts require a signed-in Amazon shopping session for cart building; no registry connector exists."
+    },
+    {
+      "name": "Anki",
+      "kind": "local",
+      "reason": "Anki is commonly automated through the local Anki app/AnkiConnect; no catalog connector exists and access is unspecified."
+    },
+    {
+      "name": "Apple Messages",
+      "kind": "builtin",
+      "reason": "SuperAgent has a native iMessage chat integration, but built-in chat integrations are not works_with connectors."
+    },
+    {
+      "name": "Apple Search Ads",
+      "kind": "raw_api",
+      "reason": "Apple Ads uses Apple's API or web console; neither catalog contains it."
+    },
+    {
+      "name": "Ashby",
+      "kind": "raw_api",
+      "reason": "Ashby automation requires its vendor API or browser; no canonical registry entry exists."
+    },
+    {
+      "name": "Aviation Weather Center",
+      "kind": "raw_api",
+      "reason": "METAR data is obtained from a public endpoint or website, not a registered connector."
+    },
+    {
+      "name": "Axiom",
+      "kind": "raw_api",
+      "reason": "Axiom observability access would use its vendor API; no catalog entry exists."
+    },
+    {
+      "name": "Bee",
+      "kind": "raw_api",
+      "reason": "The Bee wearable data source is described as an API and is absent from both catalogs."
+    },
+    {
+      "name": "Bento Chat",
+      "kind": "external",
+      "reason": "Bento Chat is listed as an external helpdesk choice and has no registry entry."
+    },
+    {
+      "name": "Bible",
+      "kind": "external",
+      "reason": "This is a generic Bible text or study resource, not a named canonical connector."
+    },
+    {
+      "name": "Bot Directory",
+      "kind": "browser",
+      "reason": "This label denotes the Bot Directory website; the separately named API labels are classified as raw_api."
+    },
+    {
+      "name": "Bot Directory API",
+      "kind": "raw_api",
+      "reason": "The prompt explicitly calls for the Bot Directory API, which is not registered."
+    },
+    {
+      "name": "BotDirectory API",
+      "kind": "raw_api",
+      "reason": "This spelling also explicitly names the unregistered BotDirectory vendor API."
+    },
+    {
+      "name": "CapCut",
+      "kind": "external",
+      "reason": "CapCut has no catalog entry; the prompt does not specify desktop, browser, or API access."
+    },
+    {
+      "name": "Castos",
+      "kind": "raw_api",
+      "reason": "Creating podcast drafts would require the Castos API; it is not registered."
+    },
+    {
+      "name": "Claude Code",
+      "kind": "local",
+      "reason": "Claude Code is a command-line coding agent, not an API-account or MCP connection."
+    },
+    {
+      "name": "ClickFlow",
+      "kind": "external",
+      "reason": "ClickFlow is an unsupported SEO SaaS; browser versus vendor-API access is not specified."
+    },
+    {
+      "name": "CMS",
+      "kind": "external",
+      "reason": "CMS is generic; several real MCPs could fit, but none can be inferred safely."
+    },
+    {
+      "name": "Codex",
+      "kind": "local",
+      "reason": "Codex here is a coding-agent capability, not a canonical SuperAgent connector; exact invocation is unspecified."
+    },
+    {
+      "name": "Codex CLI",
+      "kind": "local",
+      "reason": "Codex CLI is a local command-line tool, not a registry connector."
+    },
+    {
+      "name": "Comp AI",
+      "kind": "external",
+      "reason": "Comp AI is an unsupported compliance SaaS; no catalog transport is defined."
+    },
+    {
+      "name": "Contractor websites",
+      "kind": "browser",
+      "reason": "The label explicitly names contractor websites, which require browser navigation and have no canonical connector."
+    },
+    {
+      "name": "Converly",
+      "kind": "external",
+      "reason": "Converly is an unsupported vendor service; the prompt does not establish a registered or raw-API transport."
+    },
+    {
+      "name": "Costco",
+      "kind": "browser",
+      "reason": "The prompt explicitly signs in to Costco in the browser for shopping; no registry connector exists."
+    },
+    {
+      "name": "CRM",
+      "kind": "external",
+      "reason": "CRM is a category, not a product; a specific connected CRM must be selected."
+    },
+    {
+      "name": "Cursor Background Agents",
+      "kind": "external",
+      "reason": "Cursor background agents are an external coding-agent service and no canonical connector is registered."
+    },
+    {
+      "name": "Cursor Cloud Agents",
+      "kind": "external",
+      "reason": "Cursor cloud agents are an external coding-agent service and no canonical connector is registered."
+    },
+    {
+      "name": "Datadog",
+      "kind": "mcp",
+      "slug": "datadog",
+      "reason": "Exact Datadog MCP display-name and slug match."
+    },
+    {
+      "name": "DataForSEO",
+      "kind": "mcp",
+      "slug": "dataforseo",
+      "reason": "Exact DataForSEO MCP display-name and slug match."
+    },
+    {
+      "name": "Delulu Social",
+      "kind": "local",
+      "reason": "The source prompt installs a local skill for Delulu; no SuperAgent registry connector exists."
+    },
+    {
+      "name": "Discord",
+      "kind": "api_account",
+      "slug": "discord",
+      "reason": "Exact Discord Provider display-name and canonical slug match."
+    },
+    {
+      "name": "DKIM",
+      "kind": "builtin",
+      "reason": "DKIM is public DNS configuration inspected with standard network lookups, not an account connector."
+    },
+    {
+      "name": "DMARC",
+      "kind": "builtin",
+      "reason": "DMARC is public DNS configuration inspected with standard network lookups, not an account connector."
+    },
+    {
+      "name": "Email",
+      "kind": "external",
+      "reason": "Email is provider-neutral; Gmail and Outlook are real but neither can be inferred."
+    },
+    {
+      "name": "ExifTool",
+      "kind": "local",
+      "reason": "ExifTool is a local command-line executable, not a registry connector."
+    },
+    {
+      "name": "FAA NOTAM Search",
+      "kind": "browser",
+      "reason": "This is the FAA public search website, not an API-account or MCP connector."
+    },
+    {
+      "name": "Fable",
+      "kind": "external",
+      "reason": "Fable is an unsupported customer-journey service; access transport is not specified."
+    },
+    {
+      "name": "FeedHive",
+      "kind": "external",
+      "reason": "FeedHive is an unsupported social SaaS; browser versus API access is unspecified."
+    },
+    {
+      "name": "Ferndesk",
+      "kind": "external",
+      "reason": "Ferndesk is an unsupported documentation/helpdesk service with no canonical connector."
+    },
+    {
+      "name": "Figma",
+      "kind": "api_account",
+      "slug": "figma",
+      "reason": "Figma is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "GitHub",
+      "kind": "api_account",
+      "slug": "github",
+      "reason": "Exact GitHub Provider display-name and canonical slug match."
+    },
+    {
+      "name": "GitHub Actions",
+      "kind": "api_account",
+      "slug": "github",
+      "reason": "GitHub Actions is a GitHub repository feature and is safely covered by the GitHub account connector."
+    },
+    {
+      "name": "Glean",
+      "kind": "external",
+      "reason": "Glean is an unsupported enterprise-search service and has no registry entry."
+    },
+    {
+      "name": "Gmail",
+      "kind": "api_account",
+      "slug": "gmail",
+      "reason": "Exact Gmail Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Gong",
+      "kind": "raw_api",
+      "reason": "Gong call data would require Gong's vendor API; no registry entry exists."
+    },
+    {
+      "name": "Google Analytics 4",
+      "kind": "raw_api",
+      "reason": "GA4 requires the Google Analytics API and has no canonical SuperAgent entry."
+    },
+    {
+      "name": "Google Calendar",
+      "kind": "api_account",
+      "slug": "googlecalendar",
+      "reason": "Exact Google Calendar Provider match; canonical toolkit slug is googlecalendar."
+    },
+    {
+      "name": "Google Docs",
+      "kind": "api_account",
+      "slug": "googledocs",
+      "reason": "Exact Google Docs Provider match; canonical toolkit slug is googledocs."
+    },
+    {
+      "name": "Google Drive",
+      "kind": "api_account",
+      "slug": "googledrive",
+      "reason": "Exact Google Drive Provider match; canonical toolkit slug is googledrive."
+    },
+    {
+      "name": "Google Flights",
+      "kind": "browser",
+      "reason": "Google Flights is a browser-based travel website and has no canonical registry connector."
+    },
+    {
+      "name": "Google Maps",
+      "kind": "browser",
+      "reason": "The source points to maps.google.com for travel-time and place checks; no canonical registry connector exists."
+    },
+    {
+      "name": "Google Search",
+      "kind": "builtin",
+      "reason": "General web search is a built-in capability, not a connected account."
+    },
+    {
+      "name": "Google Search Console",
+      "kind": "raw_api",
+      "reason": "Search Console requires its Google API; no canonical registry entry exists."
+    },
+    {
+      "name": "Google Sheets",
+      "kind": "api_account",
+      "slug": "googlesheets",
+      "reason": "Exact Google Sheets Provider match; canonical toolkit slug is googlesheets."
+    },
+    {
+      "name": "Google Slides",
+      "kind": "api_account",
+      "slug": "googleslides",
+      "reason": "Exact Google Slides Provider match; canonical toolkit slug is googleslides."
+    },
+    {
+      "name": "Google Trends",
+      "kind": "browser",
+      "reason": "The source points to the public Google Trends website; no canonical registry connector exists."
+    },
+    {
+      "name": "Granola",
+      "kind": "mcp",
+      "slug": "granola",
+      "reason": "Exact Granola MCP display-name and slug match."
+    },
+    {
+      "name": "Grok",
+      "kind": "external",
+      "reason": "Grok denotes xAI or source-platform bot capability, not a SuperAgent registry connector."
+    },
+    {
+      "name": "Grok Bot",
+      "kind": "external",
+      "reason": "A Grok bot is a source-platform agent resource, not a SuperAgent connector."
+    },
+    {
+      "name": "Grok Bots",
+      "kind": "external",
+      "reason": "Grok bot orchestration is source-platform-specific and has no canonical connector."
+    },
+    {
+      "name": "Hacker News",
+      "kind": "builtin",
+      "reason": "Hacker News can be read through public web/API fetching without a connected account."
+    },
+    {
+      "name": "Help Scout",
+      "kind": "raw_api",
+      "reason": "Help Scout ticket access requires its vendor API; no registry entry exists."
+    },
+    {
+      "name": "HelpSpot",
+      "kind": "raw_api",
+      "reason": "HelpSpot ticket access requires its vendor API; no registry entry exists."
+    },
+    {
+      "name": "HireNimbus",
+      "kind": "external",
+      "reason": "HireNimbus is an unsupported home-services site; browser versus API access is unspecified."
+    },
+    {
+      "name": "iCloud",
+      "kind": "browser",
+      "reason": "The source explicitly requires a persistent signed-in iCloud browser session because no MCP exists."
+    },
+    {
+      "name": "Infisical",
+      "kind": "raw_api",
+      "reason": "Infisical secrets access requires its API/CLI and has no registry entry."
+    },
+    {
+      "name": "Intercom",
+      "kind": "api_account",
+      "slug": "intercom",
+      "reason": "Intercom is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "Kindle",
+      "kind": "external",
+      "reason": "Kindle highlights require Amazon/Kindle browser or export access; no registry connector exists."
+    },
+    {
+      "name": "Linear",
+      "kind": "api_account",
+      "slug": "linear",
+      "reason": "Linear is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "LinkedIn",
+      "kind": "api_account",
+      "slug": "linkedin",
+      "reason": "Exact LinkedIn Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Luma",
+      "kind": "raw_api",
+      "reason": "Luma event access would need its vendor API or browser; no registry entry exists."
+    },
+    {
+      "name": "MailOps",
+      "kind": "external",
+      "reason": "MailOps is not uniquely identified and has no catalog entry; do not invent a slug."
+    },
+    {
+      "name": "Notion",
+      "kind": "api_account",
+      "slug": "notion",
+      "reason": "Notion is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "Outlook",
+      "kind": "api_account",
+      "slug": "outlook",
+      "reason": "Exact Outlook Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Papa John's",
+      "kind": "browser",
+      "reason": "Ordering from Papa John's requires a signed-in restaurant website session; no registry connector exists."
+    },
+    {
+      "name": "Photos",
+      "kind": "builtin",
+      "reason": "User-supplied image uploads are built in; full photo-library access would be local/browser and is not a connector."
+    },
+    {
+      "name": "Pizza Hut",
+      "kind": "browser",
+      "reason": "Ordering from Pizza Hut requires a signed-in restaurant website session; no registry connector exists."
+    },
+    {
+      "name": "Podcast RSS feeds",
+      "kind": "raw_api",
+      "reason": "RSS feeds are direct public HTTP resources, not registered connectors."
+    },
+    {
+      "name": "Podcast transcription MCP",
+      "kind": "external",
+      "reason": "This names a connector class, not a specific MCP; a real transcription MCP must be chosen."
+    },
+    {
+      "name": "PostHog",
+      "kind": "mcp",
+      "slug": "posthog",
+      "reason": "Exact PostHog MCP display-name and slug match."
+    },
+    {
+      "name": "Postiz",
+      "kind": "raw_api",
+      "reason": "Postiz social publishing would use its API; no SuperAgent registry entry exists."
+    },
+    {
+      "name": "QuickBooks",
+      "kind": "api_account",
+      "slug": "quickbooks",
+      "reason": "Exact QuickBooks Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Reddit",
+      "kind": "raw_api",
+      "reason": "Reddit has no catalog entry; reading can use public web/API access, while account actions require unsupported OAuth."
+    },
+    {
+      "name": "Remote VM",
+      "kind": "local",
+      "reason": "A remote VM is an SSH/execution target, not a registry connector."
+    },
+    {
+      "name": "Sales Navigator",
+      "kind": "external",
+      "reason": "Sales Navigator is a distinct LinkedIn product; the generic LinkedIn connector is not proven to expose it."
+    },
+    {
+      "name": "Salesforce",
+      "kind": "api_account",
+      "slug": "salesforce",
+      "reason": "Exact Salesforce Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Scanned-image folder",
+      "kind": "local",
+      "reason": "This is a local filesystem folder, not a connected account or MCP."
+    },
+    {
+      "name": "ScreenshotOne",
+      "kind": "raw_api",
+      "reason": "ScreenshotOne is a screenshot API and has no canonical registry entry."
+    },
+    {
+      "name": "Search Console",
+      "kind": "raw_api",
+      "reason": "This is a clear Google Search Console alias, but that service itself has no registry entry."
+    },
+    {
+      "name": "Self-hosted finance system",
+      "kind": "local",
+      "reason": "A user-specific self-hosted system needs a custom local/API adapter; no generic slug is valid."
+    },
+    {
+      "name": "Slack",
+      "kind": "api_account",
+      "slug": "slack",
+      "reason": "Exact Slack Provider display-name and canonical slug match."
+    },
+    {
+      "name": "SMTP logs",
+      "kind": "local",
+      "reason": "SMTP logs are a user-specific file or observability source, not a named connector."
+    },
+    {
+      "name": "Snowflake",
+      "kind": "raw_api",
+      "reason": "Snowflake database access is absent from both catalogs and requires a direct driver/API."
+    },
+    {
+      "name": "SPF",
+      "kind": "builtin",
+      "reason": "SPF is public DNS configuration inspected with standard network lookups, not an account connector."
+    },
+    {
+      "name": "Squarespace",
+      "kind": "external",
+      "reason": "Squarespace has no catalog connector; browser and vendor-API access are distinct unsupported options."
+    },
+    {
+      "name": "Stripe",
+      "kind": "api_account",
+      "slug": "stripe",
+      "reason": "Stripe is an exact entry in both catalogs; the prompt does not name the transport. The import deterministically prefers the canonical API account for an unspecified product connection."
+    },
+    {
+      "name": "Trends.vc",
+      "kind": "browser",
+      "reason": "The source explicitly instructs the bot to use a signed-in web browser for Trends.vc."
+    },
+    {
+      "name": "Web Search",
+      "kind": "builtin",
+      "reason": "Web search is a built-in capability, not an account or MCP dependency."
+    },
+    {
+      "name": "Webflow",
+      "kind": "mcp",
+      "slug": "webflow",
+      "reason": "Exact Webflow MCP display-name and slug match."
+    },
+    {
+      "name": "Whole Foods",
+      "kind": "browser",
+      "reason": "Whole Foods shopping and cart creation require browser access; no registry connector exists."
+    },
+    {
+      "name": "Whole Foods delivery",
+      "kind": "browser",
+      "reason": "Whole Foods delivery ordering requires a signed-in browser shopping session; no registry connector exists."
+    },
+    {
+      "name": "X",
+      "kind": "external",
+      "reason": "X is absent from both catalogs; browser sessions and the X API are unsupported distinct transports."
+    },
+    {
+      "name": "Xero",
+      "kind": "api_account",
+      "slug": "xero",
+      "reason": "Exact Xero Provider display-name and canonical slug match."
+    },
+    {
+      "name": "YouTube",
+      "kind": "api_account",
+      "slug": "youtube",
+      "reason": "Exact YouTube Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Zendesk",
+      "kind": "api_account",
+      "slug": "zendesk",
+      "reason": "Exact Zendesk Provider display-name and canonical slug match."
+    },
+    {
+      "name": "Zoom",
+      "kind": "api_account",
+      "slug": "zoom",
+      "reason": "Exact Zoom Provider display-name and canonical slug match."
+    }
+  ]
+}

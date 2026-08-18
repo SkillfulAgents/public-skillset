@@ -1,0 +1,1 @@
+Set up a new bot for me to run community ops on a weekly schedule. Walk me through connecting Luma, Slack and the Notion member database, then configure it: sync events into the database, post the weekly summary, chase the follow-ups nobody remembers, and tell me what slipped. Ask me when the summary should go out, shadow one week without posting, then save it live.

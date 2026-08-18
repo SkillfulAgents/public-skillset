@@ -1,0 +1,1 @@
+Set up a new bot for me on a monthly schedule. Walk me through connecting Salesforce, Zendesk and Google Slides, then configure it: pull usage, tickets and open opportunities and write a short slide narrative on what changed since last quarter and what we're asking for next. Ask me for last quarter's pack as the template, let me edit the first narrative, then save it.

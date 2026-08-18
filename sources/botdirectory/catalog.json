@@ -1,0 +1,5435 @@
+{
+  "schemaVersion": 1,
+  "fetchedAt": "2026-08-18T20:16:16Z",
+  "catalogUrl": "https://botdirectory.ai/api/bots.json",
+  "websiteUrl": "https://botdirectory.ai/",
+  "sourceRepository": "https://github.com/elie222/botdirectory.ai",
+  "sourceCommit": "75b5191e0e0bbc0946f8d307a967f16e6954a804",
+  "license": "MIT",
+  "templateCount": 160,
+  "templates": [
+    {
+      "slug": "account-expert",
+      "name": "Account Expert",
+      "description": "Monitor one strategic account across Slack, email, and calls; track feature requests, support tickets, and relevant product updates.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Slack",
+        "Gmail",
+        "Gong",
+        "Granola"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "mcp",
+          "slug": "granola"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Account Expert",
+        "Slack",
+        "Gmail",
+        "Gong",
+        "Granola",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/account-expert/",
+      "sourceFile": "bots/account-expert.md",
+      "promptSha256": "498fa4d7509bcd841a1757bb632442291d77924cbe12f798b6fc069d688d1544"
+    },
+    {
+      "slug": "account-growth-coach",
+      "name": "Account Growth Coach",
+      "description": "Review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T14:45:24.817Z",
+      "creator": {
+        "name": "@elonmusk",
+        "url": "https://x.com/elonmusk"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Account Growth Coach",
+        "X",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/account-growth-coach/",
+      "sourceFile": "bots/account-growth-coach.md",
+      "promptSha256": "4810285d7fad1d8161d1f69e8975f2de0aec4525f4aca6e68e7b4c6217424c71"
+    },
+    {
+      "slug": "account-media-rundown",
+      "name": "Account Media Rundown",
+      "description": "Find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "X",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Account Media Rundown",
+        "X",
+        "Slack",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/account-media-rundown/",
+      "sourceFile": "bots/account-media-rundown.md",
+      "promptSha256": "70b8b09cbeb81d9adb688ffbf72d82160eab0579ddb09ee5a8fc120163f2e850"
+    },
+    {
+      "slug": "account-tiering",
+      "name": "Account Tiering",
+      "description": "Score every account on fit multiplied by warmth; write clear account tiers into Notion.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Account Tiering",
+        "Salesforce",
+        "Notion",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/account-tiering/",
+      "sourceFile": "bots/account-tiering.md",
+      "promptSha256": "eb322a2c45ddf5b7ea40dd15c472f624b0e1c3b0404a7f81bfcd19ac2d4a948e"
+    },
+    {
+      "slug": "accountingbot",
+      "name": "AccountingBot",
+      "description": "Perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T14:15:46.485Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "calculator",
+      "tags": [
+        "Ops",
+        "AccountingBot",
+        "Notion",
+        "Bookkeeping"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/accountingbot/",
+      "sourceFile": "bots/accountingbot.md",
+      "promptSha256": "89a0cc1c0c237517f2587dc9d1f83ba8216ec13786399adddc0a6642017ff5f2"
+    },
+    {
+      "slug": "ad-pacing-digest",
+      "name": "Ad Pacing Digest",
+      "description": "Compare Apple Search Ads spend with plan in Slack; recommend bid changes and apply only approved edits.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Apple Search Ads",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Ad Pacing Digest",
+        "Apple Search Ads",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/ad-pacing-digest/",
+      "sourceFile": "bots/ad-pacing-digest.md",
+      "promptSha256": "96c4396e7748f68a21ea6f97b28de5427ef9cbf3d4d8ea845d23e4b08e613647"
+    },
+    {
+      "slug": "ad-test-backlog",
+      "name": "Ad Test Backlog",
+      "description": "Analyze ad performance and explain why winners work; maintain a prioritized testing backlog in Notion.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Ad Test Backlog",
+        "Notion",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/ad-test-backlog/",
+      "sourceFile": "bots/ad-test-backlog.md",
+      "promptSha256": "fe28e67d487e5af409f8b17373b50498841426f762e34963c594c4b5ed6d3dd7"
+    },
+    {
+      "slug": "aeo-content-autopilot",
+      "name": "AEO Content Autopilot",
+      "description": "Combine video performance with search and traffic signals; turn the strongest opportunities into optimized article drafts.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:37:28.825Z",
+      "creator": {
+        "name": "@ericosiu",
+        "url": "https://x.com/ericosiu"
+      },
+      "connectFirst": [
+        "YouTube",
+        "ClickFlow",
+        "Google Analytics 4",
+        "Ahrefs",
+        "Google Search Console"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        },
+        {
+          "type": "mcp",
+          "slug": "ahrefs"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "AEO Content Autopilot",
+        "YouTube",
+        "ClickFlow",
+        "Google Analytics 4",
+        "Ahrefs",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/aeo-content-autopilot/",
+      "sourceFile": "bots/aeo-content-autopilot.md",
+      "promptSha256": "1b4f8dc3a8e6e61f8b9a5e67d65abf1e35efb27dd7d211ed9c5d3a07bffcc578"
+    },
+    {
+      "slug": "applicant-screener",
+      "name": "Applicant Screener",
+      "description": "Read and score applications against the hiring profile; batch strong fits and prepare appropriate Gmail follow-ups.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Airtable",
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "airtable"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "user-search",
+      "tags": [
+        "Ops",
+        "Applicant Screener",
+        "Airtable",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/applicant-screener/",
+      "sourceFile": "bots/applicant-screener.md",
+      "promptSha256": "fcb144bad270f0ba415d71516291216cd1450b4478ba6e6e4a9c23f1d32a8776"
+    },
+    {
+      "slug": "appointment-slot-watcher",
+      "name": "Appointment Slot Watcher",
+      "description": "Watch selected appointment-booking pages for openings; alert you in Slack when a suitable slot appears.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "calendar-check",
+      "tags": [
+        "Personal",
+        "Appointment Slot Watcher",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/appointment-slot-watcher/",
+      "sourceFile": "bots/appointment-slot-watcher.md",
+      "promptSha256": "1a4fc832f437726d8089896c49d04dc97a9950aca0457c37cc73e3406a0363ec"
+    },
+    {
+      "slug": "article-and-newsletter-writer",
+      "name": "Article and Newsletter Writer",
+      "description": "Gather source material and research only as needed; draft an article or newsletter in your voice for review.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:30:30.143Z",
+      "creator": {
+        "name": "@farzyness",
+        "url": "https://x.com/farzyness"
+      },
+      "connectFirst": [
+        "Google Docs",
+        "Gmail",
+        "Squarespace"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledocs"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Article and Newsletter Writer",
+        "Google Docs",
+        "Gmail",
+        "Squarespace",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/article-and-newsletter-writer/",
+      "sourceFile": "bots/article-and-newsletter-writer.md",
+      "promptSha256": "167330b0dd2a3742d7a6c5dd673d39bcabc3e3aaa2f1a963d012cd10d6f8a041"
+    },
+    {
+      "slug": "article-idea-briefing",
+      "name": "Article Idea Briefing",
+      "description": "Compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kevinace",
+        "url": "https://x.com/kevinace"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Article Idea Briefing",
+        "X",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/article-idea-briefing/",
+      "sourceFile": "bots/article-idea-briefing.md",
+      "promptSha256": "1584d19de49b086793ad73afac08862e810c7e628083d9ae53312bbb811fbb21"
+    },
+    {
+      "slug": "automation-scout",
+      "name": "Automation Scout",
+      "description": "Inspect Slack, Notion, GitHub, and Linear for repetitive work; propose concrete automations with triggers and savings.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack",
+        "Notion",
+        "GitHub",
+        "Linear"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        },
+        {
+          "type": "api_account",
+          "slug": "linear"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Automation Scout",
+        "Slack",
+        "Notion",
+        "GitHub",
+        "Linear",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/automation-scout/",
+      "sourceFile": "bots/automation-scout.md",
+      "promptSha256": "e5c564fb30380c12062bb28936b08a1e72c8636fef91146f49ca0bfff6efa7d9"
+    },
+    {
+      "slug": "biblical-accuracy-study-bot",
+      "name": "Biblical Accuracy Study Bot",
+      "description": "Answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T06:05:15.000Z",
+      "creator": {
+        "name": "@LBallz77283",
+        "url": "https://x.com/LBallz77283"
+      },
+      "connectFirst": [
+        "Bible",
+        "Web Search"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Biblical Accuracy Study Bot",
+        "Bible",
+        "Web Search",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/biblical-accuracy-study-bot/",
+      "sourceFile": "bots/biblical-accuracy-study-bot.md",
+      "promptSha256": "e1e47b2a3f7c88770df0be4e1d37d1505d7c3e33799ab068538332f5828dc2e7"
+    },
+    {
+      "slug": "bookkeeping-auditor",
+      "name": "Bookkeeping Auditor",
+      "description": "Audit QuickBooks records and supporting check images; reconcile card transactions and flag discrepancies.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T14:14:58.777Z",
+      "creator": {
+        "name": "@mrfundman",
+        "url": "https://x.com/mrfundman"
+      },
+      "connectFirst": [
+        "QuickBooks"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        }
+      ],
+      "icon": "calculator",
+      "tags": [
+        "Ops",
+        "Bookkeeping Auditor",
+        "QuickBooks",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bookkeeping-auditor/",
+      "sourceFile": "bots/bookkeeping-auditor.md",
+      "promptSha256": "383e1c65bcbd895a156f499a2c23039df00f3f3f41d369050f2fb8422d6f2c5f"
+    },
+    {
+      "slug": "bot-advisor",
+      "name": "Bot Advisor",
+      "description": "Interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "Grok Bot"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Bot Advisor",
+        "Grok Bot",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-advisor/",
+      "sourceFile": "bots/bot-advisor.md",
+      "promptSha256": "ddeba7dfd6ba99f0e9f80ac9659880b7352360a1c2cf2a6e2c479e1abf8b506b"
+    },
+    {
+      "slug": "bot-conflict-resolver",
+      "name": "Bot Conflict Resolver",
+      "description": "Detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T12:34:20.517Z",
+      "creator": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Bot Conflict Resolver",
+        "Grok",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-conflict-resolver/",
+      "sourceFile": "bots/bot-conflict-resolver.md",
+      "promptSha256": "918fef8faef0f7ac395dc35026ba013e8e9ba54ac7411a8f9f3484068174073d"
+    },
+    {
+      "slug": "bot-directory-api-fetcher",
+      "name": "Bot Directory API Fetcher",
+      "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T20:08:33.929Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "BotDirectory API"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Bot Directory API Fetcher",
+        "BotDirectory API",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-directory-api-fetcher/",
+      "sourceFile": "bots/bot-directory-api-fetcher.md",
+      "promptSha256": "c8e3a51f84d796dbdfb92b93f93710691fed80ab4dc3006174b3eadeefe63195"
+    },
+    {
+      "slug": "bot-directory-scout",
+      "name": "Bot Directory Scout",
+      "description": "Fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T16:16:01.191Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Bot Directory API"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Bot Directory Scout",
+        "Bot Directory API",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-directory-scout/",
+      "sourceFile": "bots/bot-directory-scout.md",
+      "promptSha256": "2c0e04bbd7a992e04fff147f086b0775a0b649e29ba1117627ef09012ef10b8e"
+    },
+    {
+      "slug": "bot-fleet-auditor",
+      "name": "Bot Fleet Auditor",
+      "description": "Review every active bot’s cost and weekly output; make evidence-based keep, change, or kill recommendations.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Bot Fleet Auditor",
+        "Slack",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-fleet-auditor/",
+      "sourceFile": "bots/bot-fleet-auditor.md",
+      "promptSha256": "183d4e3c5844db1b626082920f3f2468e7d5e1b3700970a38547f8801026d6f9"
+    },
+    {
+      "slug": "bot-team-chief-of-staff",
+      "name": "Bot Team Chief of Staff",
+      "description": "Inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T12:36:01.344Z",
+      "creator": {
+        "name": "@debs_obrien",
+        "url": "https://x.com/debs_obrien"
+      },
+      "connectFirst": [
+        "Grok Bots"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Bot Team Chief of Staff",
+        "Grok Bots",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-team-chief-of-staff/",
+      "sourceFile": "bots/bot-team-chief-of-staff.md",
+      "promptSha256": "f18684140bed34e88bbb0ae3a922a42d40d338af5af49c9eb0c4f9ab31ffa59f"
+    },
+    {
+      "slug": "brand-deck-keeper",
+      "name": "Brand Deck Keeper",
+      "description": "Maintain one master brand deck in Figma; create approved customer-specific or localized copies without breaking layout.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Figma"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "figma"
+        }
+      ],
+      "icon": "presentation",
+      "tags": [
+        "Sales",
+        "Brand Deck Keeper",
+        "Figma",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/brand-deck-keeper/",
+      "sourceFile": "bots/brand-deck-keeper.md",
+      "promptSha256": "7e3053f835b927c5207092ce6b1df8a069c8cbff6e6035fe5a65bbb49e9567b4"
+    },
+    {
+      "slug": "call-coach",
+      "name": "Call Coach",
+      "description": "Review Gong calls for missed signals, interruptions, and skipped discovery; return timestamped feedback and focused practice goals.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gong"
+      ],
+      "worksWith": [],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Call Coach",
+        "Gong",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/call-coach/",
+      "sourceFile": "bots/call-coach.md",
+      "promptSha256": "6b65cf8f1b74c743ebe794b12a72e6c3199ff4d30d0bd016141d24c81ae2c11f"
+    },
+    {
+      "slug": "call-follow-up-drafter",
+      "name": "Call Follow-Up Drafter",
+      "description": "Find newly completed external calls and their context; draft accurate follow-up emails with recipients, subject, and body.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Granola",
+        "Gong",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Call Follow-Up Drafter",
+        "Granola",
+        "Gong",
+        "Google Calendar",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/call-follow-up-drafter/",
+      "sourceFile": "bots/call-follow-up-drafter.md",
+      "promptSha256": "90b10832d6ccdbc428050c029aac2e4689d9ec9b495c81cebe5db4f5b0f4b8ca"
+    },
+    {
+      "slug": "call-follow-up-nudge",
+      "name": "Call Follow-Up Nudge",
+      "description": "Check completed calendar calls for promised follow-ups; send a timely Slack nudge with who, what, and why.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Calendar",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Call Follow-Up Nudge",
+        "Google Calendar",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/call-follow-up-nudge/",
+      "sourceFile": "bots/call-follow-up-nudge.md",
+      "promptSha256": "77aab5a90b933d159deab94e12d22c489f137b91527477513284f0f4f9169150"
+    },
+    {
+      "slug": "campsite-watcher",
+      "name": "Campsite Watcher",
+      "description": "Watch selected campsite inventory for preferred sites and dates; alert you in Slack when a matching opening appears.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Campsite Watcher",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/campsite-watcher/",
+      "sourceFile": "bots/campsite-watcher.md",
+      "promptSha256": "eaee3334d82140fd2d19284fa732b9d90c489d02cdbb75d80410d42d7855fa6f"
+    },
+    {
+      "slug": "chain-fact-checker",
+      "name": "Chain Fact Checker",
+      "description": "Check each claim in a chain against cited or reliable evidence; flag unsupported statements and contradictions.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T12:34:20.517Z",
+      "creator": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Chain Fact Checker",
+        "Grok",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/chain-fact-checker/",
+      "sourceFile": "bots/chain-fact-checker.md",
+      "promptSha256": "d9d0a7fb8dbfbd5dd06dec3dfcf7344fcd7aa3742e13c5b90b5da658b20c0c8b"
+    },
+    {
+      "slug": "charge-disputer",
+      "name": "Charge Disputer",
+      "description": "Match a disputed charge to its receipt and statement line; draft a complete dispute letter for your review.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Charge Disputer",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/charge-disputer/",
+      "sourceFile": "bots/charge-disputer.md",
+      "promptSha256": "5c89234d684d957e5e5b701296323f2ab9ab3250195d8d829427c55d6711ea7e"
+    },
+    {
+      "slug": "chief-of-staff",
+      "name": "Chief Of Staff",
+      "description": "Receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack",
+        "Notion",
+        "Linear"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "linear"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Chief Of Staff",
+        "Slack",
+        "Notion",
+        "Linear",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/chief-of-staff/",
+      "sourceFile": "bots/chief-of-staff.md",
+      "promptSha256": "5ad073f913d8752e80706e734d3a8628fe013ff3ddd0e20bb59cad48fc1f31dc"
+    },
+    {
+      "slug": "chief-of-staff-briefing",
+      "name": "Chief of Staff Briefing",
+      "description": "Combine important messages, meetings, commitments, and open work; deliver an early daily briefing that highlights urgent fires.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T23:08:40.000Z",
+      "creator": {
+        "name": "@jessethanley",
+        "url": "https://x.com/jessethanley"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Calendar",
+        "Slack",
+        "Discord"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "discord"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Chief of Staff Briefing",
+        "Gmail",
+        "Google Calendar",
+        "Slack",
+        "Discord",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/chief-of-staff-briefing/",
+      "sourceFile": "bots/chief-of-staff-briefing.md",
+      "promptSha256": "e1b2bf4ee579c029a83e73f32f6a2a067277523d92c9d0bad497635ba0481711"
+    },
+    {
+      "slug": "churn-early-warning",
+      "name": "Churn Early Warning",
+      "description": "Combine CRM, product-usage, and support-tone signals; warn about likely customer churn before the headline metrics move.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "PostHog",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "mcp",
+          "slug": "posthog"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Churn Early Warning",
+        "Salesforce",
+        "PostHog",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/churn-early-warning/",
+      "sourceFile": "bots/churn-early-warning.md",
+      "promptSha256": "d65c22815cc62e14be62fe6875a3a75338553b97b44a3e1efd3bd06c7fd6b659"
+    },
+    {
+      "slug": "class-action-matcher",
+      "name": "Class Action Matcher",
+      "description": "Compare your receipts and purchase history with current settlements; identify likely class-action eligibility and supporting evidence.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T14:14:58.777Z",
+      "creator": {
+        "name": "@mrfundman",
+        "url": "https://x.com/mrfundman"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Class Action Matcher",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/class-action-matcher/",
+      "sourceFile": "bots/class-action-matcher.md",
+      "promptSha256": "56e2687bce32982849e82962c60aa305fa30dd82c5ca9f692689df668689d58d"
+    },
+    {
+      "slug": "codebase-hardening-auditor",
+      "name": "Codebase Hardening Auditor",
+      "description": "Audit a GitHub repository against a fixed 20-point hardening checklist; report every finding and apply or propose approved fixes.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T13:49:57.000Z",
+      "creator": {
+        "name": "@nate-stellar",
+        "url": "https://github.com/nate-stellar"
+      },
+      "connectFirst": [
+        "GitHub"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "code-2",
+      "tags": [
+        "Ops",
+        "Codebase Hardening Auditor",
+        "GitHub",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/codebase-hardening-auditor/",
+      "sourceFile": "bots/codebase-hardening-auditor.md",
+      "promptSha256": "3ceadc5d53427d4de2a76c563f9ee5adc7e72e686dbfdf02d75acb6643b56682"
+    },
+    {
+      "slug": "community-ops-crew",
+      "name": "Community Ops Crew",
+      "description": "Sync community events into Notion and summarize them in Slack; chase follow-ups and surface anything that slipped.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Luma",
+        "Slack",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "messages-square",
+      "tags": [
+        "Ops",
+        "Community Ops Crew",
+        "Luma",
+        "Slack",
+        "Notion",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/community-ops-crew/",
+      "sourceFile": "bots/community-ops-crew.md",
+      "promptSha256": "1cd2a7df14ed24d133e2868ced483210bf1c587e90da6b3efce3eac05669640e"
+    },
+    {
+      "slug": "competitor-pricing-watch",
+      "name": "Competitor Pricing Watch",
+      "description": "Monitor selected competitor pricing pages; send a concise Slack diff and explain why each material change matters.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Competitor Pricing Watch",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/competitor-pricing-watch/",
+      "sourceFile": "bots/competitor-pricing-watch.md",
+      "promptSha256": "83888172d15818cb647542d7a255ecfa09c0d37693255346981c6dfd24df34be"
+    },
+    {
+      "slug": "competitor-website-watch",
+      "name": "Competitor Website Watch",
+      "description": "Capture baselines for selected competitor pages; alert only on meaningful pricing, packaging, feature, or positioning changes.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "ScreenshotOne",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Competitor Website Watch",
+        "ScreenshotOne",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/competitor-website-watch/",
+      "sourceFile": "bots/competitor-website-watch.md",
+      "promptSha256": "e248bc18b9889233dc853531cf79ba91f2b0f7825ccca9199cc2ed0e7fb07b7e"
+    },
+    {
+      "slug": "content-idea-generator",
+      "name": "Content Idea Generator",
+      "description": "Study your existing content, audience, and current trends; rank distinctive new concepts by fit, novelty, and likely interest.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:30:30.143Z",
+      "creator": {
+        "name": "@farzyness",
+        "url": "https://x.com/farzyness"
+      },
+      "connectFirst": [
+        "YouTube",
+        "Google Trends"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Content Idea Generator",
+        "YouTube",
+        "Google Trends",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/content-idea-generator/",
+      "sourceFile": "bots/content-idea-generator.md",
+      "promptSha256": "0bfb79f65c317fa2879ccef990a799a200a91271dd18e86e445600dcc4165897"
+    },
+    {
+      "slug": "content-planner-manager",
+      "name": "Content Planner Manager",
+      "description": "Compare a local business’s current and desired market position; maintain a Webflow content plan with dates, keywords, and titles.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:34:55.862Z",
+      "creator": {
+        "name": "@HouseHackerJon",
+        "url": "https://x.com/HouseHackerJon"
+      },
+      "connectFirst": [
+        "Webflow"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "webflow"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Content Planner Manager",
+        "Webflow",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/content-planner-manager/",
+      "sourceFile": "bots/content-planner-manager.md",
+      "promptSha256": "681fa8e8b208574e888a7274366b3657d4ec98f785545de837f5e6672d7b7036"
+    },
+    {
+      "slug": "contract-diff",
+      "name": "Contract Diff",
+      "description": "Compare old and new versions of a contract or policy; summarize changed money, dates, obligations, additions, and removals with page references.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Contract Diff",
+        "Google Drive",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/contract-diff/",
+      "sourceFile": "bots/contract-diff.md",
+      "promptSha256": "eee966d06001ef97307cb786ceec557e87cff0cdb0e81d5d68c52d68479a2db5"
+    },
+    {
+      "slug": "contractor-quote-negotiator",
+      "name": "Contractor Quote Negotiator",
+      "description": "Collect contractor quotes and scope details; compare price, timing, exclusions, and warranties before drafting negotiation replies.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T21:45:00.000Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Contractor websites",
+        "Google Sheets"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlesheets"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Contractor Quote Negotiator",
+        "Gmail",
+        "Contractor websites",
+        "Google Sheets",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/contractor-quote-negotiator/",
+      "sourceFile": "bots/contractor-quote-negotiator.md",
+      "promptSha256": "6765c607c7615b58cd9cd8894e43cc965ef7aff173d6e0ae78754e2f62a1d8d8"
+    },
+    {
+      "slug": "conversion-tracking-setup",
+      "name": "Conversion Tracking Setup",
+      "description": "Build a Converly conversion flow for a website and ad platforms; provide the snippet, authorize safely, and verify a test conversion.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T05:10:14.000Z",
+      "creator": {
+        "name": "@converlyio",
+        "url": "https://github.com/converlyio"
+      },
+      "connectFirst": [
+        "Converly"
+      ],
+      "worksWith": [],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Conversion Tracking Setup",
+        "Converly",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/conversion-tracking-setup/",
+      "sourceFile": "bots/conversion-tracking-setup.md",
+      "promptSha256": "8bbdebaf849e1b7e3e09a7a4af3918771125701fba32e81041ea60ee8f7b0c3a"
+    },
+    {
+      "slug": "crm-from-your-phone",
+      "name": "CRM From Your Phone",
+      "description": "Answer quarter and pipeline questions from Salesforce in Slack; surface the deals that move the number and suspicious data.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "CRM From Your Phone",
+        "Salesforce",
+        "Slack",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/crm-from-your-phone/",
+      "sourceFile": "bots/crm-from-your-phone.md",
+      "promptSha256": "7e31a13778f6a2fcd07652a9f5a994e8c060fa69c4f4cbab163926aa547d031e"
+    },
+    {
+      "slug": "daily-briefing",
+      "name": "Daily Briefing",
+      "description": "Combine today’s calendar with overnight Slack changes; send one weekday morning brief with meetings and the key preparation item.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Google Calendar",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Daily Briefing",
+        "Google Calendar",
+        "Slack",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/daily-briefing/",
+      "sourceFile": "bots/daily-briefing.md",
+      "promptSha256": "aa9685e10fd48e8358a9bd7b152765855b148db16479bcba4b170ec85cc2871b"
+    },
+    {
+      "slug": "daily-focus-adviser",
+      "name": "Daily Focus Adviser",
+      "description": "Review today’s commitments, deadlines, and unfinished priorities; recommend the most important work to focus on now.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:14:58.777Z",
+      "creator": {
+        "name": "@mrfundman",
+        "url": "https://x.com/mrfundman"
+      },
+      "connectFirst": [
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Daily Focus Adviser",
+        "Google Calendar",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/daily-focus-adviser/",
+      "sourceFile": "bots/daily-focus-adviser.md",
+      "promptSha256": "5abdffe3bb08f2fee083121a8b97abc733e093957812b239ff69af67f76fafd6"
+    },
+    {
+      "slug": "deal-desk-autopilot",
+      "name": "Deal Desk Autopilot",
+      "description": "Review every open deal for stalled steps, missing information, and risk; prepare prioritized next actions and follow-up drafts.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-18T12:37:28.825Z",
+      "creator": {
+        "name": "@ericosiu",
+        "url": "https://x.com/ericosiu"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Deal Desk Autopilot",
+        "Gmail",
+        "Google Calendar",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/deal-desk-autopilot/",
+      "sourceFile": "bots/deal-desk-autopilot.md",
+      "promptSha256": "ce08b8b0aa58871625cfa13f90257b8b23c926a84acd6b360581f1787598ab0a"
+    },
+    {
+      "slug": "deck-localizer",
+      "name": "Deck Localizer",
+      "description": "Translate Google Slides copy naturally while preserving layout; leave product names and protected terms unchanged.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Slides"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googleslides"
+        }
+      ],
+      "icon": "presentation",
+      "tags": [
+        "Sales",
+        "Deck Localizer",
+        "Google Slides",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/deck-localizer/",
+      "sourceFile": "bots/deck-localizer.md",
+      "promptSha256": "9b347c989c932c111f8cd0a852a496ef23719ab336e9f2d4417c7d39ecfc5e98"
+    },
+    {
+      "slug": "deck-updater",
+      "name": "Deck Updater",
+      "description": "Combine meeting notes with a master sales deck; produce a customer-specific deck before the next call.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Granola",
+        "Google Slides"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googleslides"
+        }
+      ],
+      "icon": "presentation",
+      "tags": [
+        "Sales",
+        "Deck Updater",
+        "Granola",
+        "Google Slides",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/deck-updater/",
+      "sourceFile": "bots/deck-updater.md",
+      "promptSha256": "85bbb1026e16f432d26fabd4d9418eca26125b020828fa7e6a5a777ecce6d26e"
+    },
+    {
+      "slug": "demo-clip-library",
+      "name": "Demo Clip Library",
+      "description": "Cut Zoom recordings into tagged product-demo clips; maintain a searchable Drive library and index.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Zoom",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "zoom"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "video",
+      "tags": [
+        "Sales",
+        "Demo Clip Library",
+        "Zoom",
+        "Google Drive",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/demo-clip-library/",
+      "sourceFile": "bots/demo-clip-library.md",
+      "promptSha256": "d41282b00351764ab69d3b8bb605de9640c9affa1aec3975fe6f85a39a5a2acd"
+    },
+    {
+      "slug": "docs-self-serve-assistant",
+      "name": "Docs Self-Serve Assistant",
+      "description": "Answer customer questions from the latest Ferndesk articles; cite sources and surface missing, stale, or uncertain documentation.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-18T07:50:09.000Z",
+      "creator": {
+        "name": "@euboid",
+        "url": "https://x.com/euboid"
+      },
+      "connectFirst": [
+        "Ferndesk"
+      ],
+      "worksWith": [],
+      "icon": "book-open",
+      "tags": [
+        "Customer Success",
+        "Docs Self-Serve Assistant",
+        "Ferndesk",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/docs-self-serve-assistant/",
+      "sourceFile": "bots/docs-self-serve-assistant.md",
+      "promptSha256": "cd3bf7a814770df567fbb718f3e11d4f7fa11fe137c0491bcfc9ed1c3c3363ae"
+    },
+    {
+      "slug": "drive-wiki-rebuilder",
+      "name": "Drive Wiki Rebuilder",
+      "description": "Reorganize a Google Drive folder into a maintained Notion wiki; assign owners and flag stale material while preserving originals.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Drive",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "book-open",
+      "tags": [
+        "Ops",
+        "Drive Wiki Rebuilder",
+        "Google Drive",
+        "Notion",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/drive-wiki-rebuilder/",
+      "sourceFile": "bots/drive-wiki-rebuilder.md",
+      "promptSha256": "c9f8324f96dfaa4e6057e0a21c4ee7f0cb3ba2ae40d754d50b4fd7f99ffb6710"
+    },
+    {
+      "slug": "email-briefing-assistant",
+      "name": "Email Briefing Assistant",
+      "description": "Review Gmail and sort messages by urgency; return a concise briefing of what needs attention.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:14:58.777Z",
+      "creator": {
+        "name": "@mrfundman",
+        "url": "https://x.com/mrfundman"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "mail",
+      "tags": [
+        "Productivity",
+        "Email Briefing Assistant",
+        "Gmail",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/email-briefing-assistant/",
+      "sourceFile": "bots/email-briefing-assistant.md",
+      "promptSha256": "0e250d473f71477aa7cdb183cde18950d2356d64751b38a0e276e41fde8dab3b"
+    },
+    {
+      "slug": "enablement-pack-builder",
+      "name": "Enablement Pack Builder",
+      "description": "Find a customer’s enablement request and relevant calls; build a Drive pack and draft the reply with its link.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Zoom",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "zoom"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Enablement Pack Builder",
+        "Gmail",
+        "Zoom",
+        "Google Drive",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/enablement-pack-builder/",
+      "sourceFile": "bots/enablement-pack-builder.md",
+      "promptSha256": "5bdf75fb4be160cea11a71bc354f72da3ea91eebced6783423473f8fb66716df"
+    },
+    {
+      "slug": "engineering-agent-manager",
+      "name": "Engineering Agent Manager",
+      "description": "Maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T23:09:18.000Z",
+      "creator": {
+        "name": "@iannuttall",
+        "url": "https://x.com/iannuttall"
+      },
+      "connectFirst": [
+        "Linear",
+        "GitHub"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "linear"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Engineering Agent Manager",
+        "Linear",
+        "GitHub",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/engineering-agent-manager/",
+      "sourceFile": "bots/engineering-agent-manager.md",
+      "promptSha256": "92e02401d181b61deb0dc1c10670db88cb84e27804a7a7301441b3e30047c8b0"
+    },
+    {
+      "slug": "episode-launch-crew",
+      "name": "Episode Launch Crew",
+      "description": "Turn approved final audio into a complete Castos episode draft; publish only after approval and verify podcast and YouTube links.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Castos",
+        "Google Drive",
+        "YouTube",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Episode Launch Crew",
+        "Castos",
+        "Google Drive",
+        "YouTube",
+        "Slack",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/episode-launch-crew/",
+      "sourceFile": "bots/episode-launch-crew.md",
+      "promptSha256": "13e0766fea7cafb6c28f6516fec03246264f1177ff0ec22c4edcfc8269f80c9a"
+    },
+    {
+      "slug": "evergreen-content-flywheel",
+      "name": "Evergreen Content Flywheel",
+      "description": "Find proven evergreen posts worth reusing; create fresh channel-specific FeedHive drafts and compare their later performance.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "FeedHive",
+        "Notion",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Evergreen Content Flywheel",
+        "FeedHive",
+        "Notion",
+        "Slack",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/evergreen-content-flywheel/",
+      "sourceFile": "bots/evergreen-content-flywheel.md",
+      "promptSha256": "7f8d38cadf705052d0de4152c6367e1e0a3dae8de26da0b7d8b66048a2ba72a4"
+    },
+    {
+      "slug": "feature-ask-finder",
+      "name": "Feature Ask Finder",
+      "description": "Search Slack for every customer mention of a requested feature; return one linked list with customers and original wording.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Feature Ask Finder",
+        "Slack",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/feature-ask-finder/",
+      "sourceFile": "bots/feature-ask-finder.md",
+      "promptSha256": "81bbb3c5133c2285b9a28878f268cdc3ca9bf9385237ffc1597c7321f2b60976"
+    },
+    {
+      "slug": "film-scan-metadata-fixer",
+      "name": "Film Scan Metadata Fixer",
+      "description": "Inspect scanned photos for correct capture dates and locations; repair EXIF date and GPS metadata without altering image content.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T21:45:00.000Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Scanned-image folder",
+        "ExifTool"
+      ],
+      "worksWith": [],
+      "icon": "video",
+      "tags": [
+        "Personal",
+        "Film Scan Metadata Fixer",
+        "Scanned-image folder",
+        "ExifTool",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/film-scan-metadata-fixer/",
+      "sourceFile": "bots/film-scan-metadata-fixer.md",
+      "promptSha256": "4d6c1917ce304278099f3296780c47cb52df9af3f8e2e6df13ce595bc13f092c"
+    },
+    {
+      "slug": "final-output-grader",
+      "name": "Final Output Grader",
+      "description": "Evaluate candidate outputs against your criteria; check completeness, accuracy, consistency, and required formatting.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T12:34:20.517Z",
+      "creator": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Final Output Grader",
+        "Grok",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/final-output-grader/",
+      "sourceFile": "bots/final-output-grader.md",
+      "promptSha256": "c04ce174195178f39c466961625198fff72783ef3728e05e9949ef49ebee63a8"
+    },
+    {
+      "slug": "find-the-signal",
+      "name": "Find the Signal",
+      "description": "Look across recent Granola meetings and Slack messages; surface cross-conversation patterns and explain what they may mean.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T02:23:31.000Z",
+      "creator": {
+        "name": "@nate-stellar",
+        "url": "https://github.com/nate-stellar"
+      },
+      "connectFirst": [
+        "Granola",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "search",
+      "tags": [
+        "Personal",
+        "Find the Signal",
+        "Granola",
+        "Slack",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/find-the-signal/",
+      "sourceFile": "bots/find-the-signal.md",
+      "promptSha256": "5151f45418ebbbab3ae9afdbd5e632a7c337eec0a9b9a6baede8dcaffbb788b5"
+    },
+    {
+      "slug": "flight-check-in",
+      "name": "Flight Check-In",
+      "description": "Track flight check-in windows from Gmail; check in at opening with your seat preference and pause for 2FA or CAPTCHA.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "plane",
+      "tags": [
+        "Personal",
+        "Flight Check-In",
+        "Gmail",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/flight-check-in/",
+      "sourceFile": "bots/flight-check-in.md",
+      "promptSha256": "5a722d7b6113e53347041dbfa40be963d2ecb8e07dca2a531021f8ee214ab85e"
+    },
+    {
+      "slug": "focus-time-defender",
+      "name": "Focus Time Defender",
+      "description": "Find at least ninety minutes of weekly focus time; propose meetings to decline and draft polite notes without changing the calendar.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Focus Time Defender",
+        "Google Calendar",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/focus-time-defender/",
+      "sourceFile": "bots/focus-time-defender.md",
+      "promptSha256": "b351041eda53746b64fbf56d2da384426960a1d0fd94b44f3bbe82cc3ba11571"
+    },
+    {
+      "slug": "forecast-notes-updater",
+      "name": "Forecast Notes Updater",
+      "description": "Combine call notes, Slack threads, and email after each customer touchpoint; draft updated Salesforce forecast fields for approval.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Granola",
+        "Gong",
+        "Slack",
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Forecast Notes Updater",
+        "Salesforce",
+        "Granola",
+        "Gong",
+        "Slack",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/forecast-notes-updater/",
+      "sourceFile": "bots/forecast-notes-updater.md",
+      "promptSha256": "6e6c815f35c2b221f8185ca9b05f67492ef415124576f8da1482a5c5d220e7cf"
+    },
+    {
+      "slug": "forge",
+      "name": "Forge",
+      "description": "Carry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T14:16:14.501Z",
+      "creator": {
+        "name": "@Voxyz_ai",
+        "url": "https://x.com/Voxyz_ai"
+      },
+      "connectFirst": [
+        "Grok Bot"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Forge",
+        "Grok Bot",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/forge/",
+      "sourceFile": "bots/forge.md",
+      "promptSha256": "2437e92fe60850a17ae157d94449af22f9fd36b9b8a2e303239f4fbc79f5281a"
+    },
+    {
+      "slug": "fridge-to-dinner-plan",
+      "name": "Fridge To Dinner Plan",
+      "description": "Identify ingredients already available at home; plan a week of dinners and an Amazon shopping list around them.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Amazon"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Fridge To Dinner Plan",
+        "Amazon",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/fridge-to-dinner-plan/",
+      "sourceFile": "bots/fridge-to-dinner-plan.md",
+      "promptSha256": "2f5c4c79c902067cad0222fdfa20c29e022aa8d416f7f0d9e0037a12405aa0d9"
+    },
+    {
+      "slug": "github-issue-drafter",
+      "name": "GitHub Issue Drafter",
+      "description": "Clarify a problem or idea one question at a time; produce a well-structured GitHub issue for approval.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T13:49:57.000Z",
+      "creator": {
+        "name": "@nate-stellar",
+        "url": "https://github.com/nate-stellar"
+      },
+      "connectFirst": [
+        "GitHub"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "code-2",
+      "tags": [
+        "Productivity",
+        "GitHub Issue Drafter",
+        "GitHub",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/github-issue-drafter/",
+      "sourceFile": "bots/github-issue-drafter.md",
+      "promptSha256": "c912378267858235e397b66c6026e571489cc18be4dfd305df0436664ac49af6"
+    },
+    {
+      "slug": "grocery-autopilot",
+      "name": "Grocery Autopilot",
+      "description": "Plan weekly meals across Amazon and Costco; prepare grocery orders and a cooking calendar while remembering household preferences.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@RhysSullivan",
+        "url": "https://x.com/RhysSullivan"
+      },
+      "connectFirst": [
+        "Amazon",
+        "Costco",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "house",
+      "tags": [
+        "Personal",
+        "Grocery Autopilot",
+        "Amazon",
+        "Costco",
+        "Google Calendar",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/grocery-autopilot/",
+      "sourceFile": "bots/grocery-autopilot.md",
+      "promptSha256": "f7ef82444d775a9b08972c30700c58c4671db0d1a233d796affac776315ea37b"
+    },
+    {
+      "slug": "gtm-chief-of-staff",
+      "name": "GTM Chief Of Staff",
+      "description": "Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Gmail",
+        "Google Calendar",
+        "Slack",
+        "Granola"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "mcp",
+          "slug": "granola"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "GTM Chief Of Staff",
+        "Salesforce",
+        "Gmail",
+        "Google Calendar",
+        "Slack",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/gtm-chief-of-staff/",
+      "sourceFile": "bots/gtm-chief-of-staff.md",
+      "promptSha256": "ab9009e372c52c7f21fb0d5097cf5ded91c7941776dcc8790d78704d6c734423"
+    },
+    {
+      "slug": "guide",
+      "name": "Guide",
+      "description": "Turn instructions and email context into clear drafts; apply the dedicated Gmail draft label and never send automatically.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:16:14.501Z",
+      "creator": {
+        "name": "@Voxyz_ai",
+        "url": "https://x.com/Voxyz_ai"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Guide",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/guide/",
+      "sourceFile": "bots/guide.md",
+      "promptSha256": "c658b067c01f49d07ba75fbc8b8bdaa9bf2e71eb3941381c66a309938a8f1531"
+    },
+    {
+      "slug": "home-services-autopilot",
+      "name": "Home Services Autopilot",
+      "description": "Assess a home-service problem from photos and a description; source providers, coordinate appointments, and keep consequential actions approved.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T05:59:04.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Photos",
+        "HireNimbus",
+        "Gmail",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "house",
+      "tags": [
+        "Personal",
+        "Home Services Autopilot",
+        "Photos",
+        "HireNimbus",
+        "Gmail",
+        "Google Calendar",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/home-services-autopilot/",
+      "sourceFile": "bots/home-services-autopilot.md",
+      "promptSha256": "73c7220337f1605881107d21f275ac701d1ea62c2b97903471bfe53d12275efc"
+    },
+    {
+      "slug": "household-coordinator",
+      "name": "Household Coordinator",
+      "description": "Combine family calendars, school schedules, grades, and messages; identify follow-ups and prepare a useful household update.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T14:14:58.777Z",
+      "creator": {
+        "name": "@mrfundman",
+        "url": "https://x.com/mrfundman"
+      },
+      "connectFirst": [
+        "Google Calendar",
+        "Apple Messages"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "house",
+      "tags": [
+        "Personal",
+        "Household Coordinator",
+        "Google Calendar",
+        "Apple Messages",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/household-coordinator/",
+      "sourceFile": "bots/household-coordinator.md",
+      "promptSha256": "e493894f189adf592fa56ccac4caaabf43a3d6c27e92b4ce456f52208c7ee890"
+    },
+    {
+      "slug": "icloud-bridge",
+      "name": "iCloud Bridge",
+      "description": "Provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "iCloud"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "iCloud Bridge",
+        "iCloud",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/icloud-bridge/",
+      "sourceFile": "bots/icloud-bridge.md",
+      "promptSha256": "1931224f8797633d3424f17961962dc17c9567f6618158b6ebce0affddbfa700"
+    },
+    {
+      "slug": "important-email-triage",
+      "name": "Important Email Triage",
+      "description": "Check Gmail for messages genuinely awaiting your reply; exclude newsletters, receipts, and cold outreach from the action list.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "mail",
+      "tags": [
+        "Productivity",
+        "Important Email Triage",
+        "Gmail",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/important-email-triage/",
+      "sourceFile": "bots/important-email-triage.md",
+      "promptSha256": "5c384e898b675b5fda01fa8b499cbb6524592d46864b25051fdb3e2dc1d99a3f"
+    },
+    {
+      "slug": "inbox-marie-kondo",
+      "name": "Inbox Marie Kondo",
+      "description": "Archive low-value Gmail clutter and identify unused newsletters; inventory paid subscriptions from receipts before any cancellation.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "mail",
+      "tags": [
+        "Personal",
+        "Inbox Marie Kondo",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/inbox-marie-kondo/",
+      "sourceFile": "bots/inbox-marie-kondo.md",
+      "promptSha256": "9ba181a98d4648d74f480ce63e61d431397742abca209f9cc964216c271d8794"
+    },
+    {
+      "slug": "inbox-reply-digest",
+      "name": "Inbox Reply Digest",
+      "description": "Find work emails since the last run that plausibly need a reply; send a concise digest only when action is needed.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "mail",
+      "tags": [
+        "Sales",
+        "Inbox Reply Digest",
+        "Gmail",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/inbox-reply-digest/",
+      "sourceFile": "bots/inbox-reply-digest.md",
+      "promptSha256": "6c269e10445212345a6df320aa14d2caaafafb9a8b600b1176f72b561e7b4832"
+    },
+    {
+      "slug": "itinerary-sanity-checker",
+      "name": "Itinerary Sanity Checker",
+      "description": "Normalize a multi-city itinerary into one timeline; flag risky connections, time-zone errors, airport changes, and opening-hour conflicts.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T15:40:27.203Z",
+      "creator": {
+        "name": "@APompliano",
+        "url": "https://x.com/APompliano"
+      },
+      "connectFirst": [
+        "Google Flights",
+        "Google Maps"
+      ],
+      "worksWith": [],
+      "icon": "plane",
+      "tags": [
+        "Personal",
+        "Itinerary Sanity Checker",
+        "Google Flights",
+        "Google Maps",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/itinerary-sanity-checker/",
+      "sourceFile": "bots/itinerary-sanity-checker.md",
+      "promptSha256": "e8adb130fa00b9115142a2a11d87b77a2fbf0d941bd13a2bf0da0c042665c29e"
+    },
+    {
+      "slug": "journey-friction-pr-agent",
+      "name": "Journey Friction PR Agent",
+      "description": "Analyze PostHog journeys and Fable recordings for reproducible friction; gather evidence and prepare a bounded GitHub fix.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T07:50:09.000Z",
+      "creator": {
+        "name": "@euboid",
+        "url": "https://x.com/euboid"
+      },
+      "connectFirst": [
+        "PostHog",
+        "Fable",
+        "GitHub"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "posthog"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Journey Friction PR Agent",
+        "PostHog",
+        "Fable",
+        "GitHub",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/journey-friction-pr-agent/",
+      "sourceFile": "bots/journey-friction-pr-agent.md",
+      "promptSha256": "ecd0d6fd2b78f3f5ec2fdcbbd2e08b13e8b227fe0530665cba29fc274a36acf9"
+    },
+    {
+      "slug": "kindle-to-anki",
+      "name": "Kindle To Anki",
+      "description": "Turn recent Kindle highlights into useful Anki cards; preserve the question, source highlight, and citation.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Kindle",
+        "Anki"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Kindle To Anki",
+        "Kindle",
+        "Anki",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/kindle-to-anki/",
+      "sourceFile": "bots/kindle-to-anki.md",
+      "promptSha256": "39e2ef71a914d0e9733a50a37be9e6c8d739851ab18108bf46a209fd620853c1"
+    },
+    {
+      "slug": "ledger",
+      "name": "Ledger",
+      "description": "Review records and pending changes in a self-hosted finance system; maintain a finance task list and stage write-backs for approval.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T14:16:14.501Z",
+      "creator": {
+        "name": "@Voxyz_ai",
+        "url": "https://x.com/Voxyz_ai"
+      },
+      "connectFirst": [
+        "Self-hosted finance system"
+      ],
+      "worksWith": [],
+      "icon": "calculator",
+      "tags": [
+        "Ops",
+        "Ledger",
+        "Self-hosted finance system",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/ledger/",
+      "sourceFile": "bots/ledger.md",
+      "promptSha256": "bee30133733eec35e4c1be43a84c4760200e7f631a9cca33e51ac03d81019567"
+    },
+    {
+      "slug": "linear-development-orchestrator",
+      "name": "Linear Development Orchestrator",
+      "description": "Turn selected Linear tickets into independent agent tasks; coordinate GitHub branches, tests, results, and approval gates.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T23:09:18.000Z",
+      "creator": {
+        "name": "@iannuttall",
+        "url": "https://x.com/iannuttall"
+      },
+      "connectFirst": [
+        "Linear",
+        "GitHub",
+        "Cursor Background Agents"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "linear"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "code-2",
+      "tags": [
+        "Productivity",
+        "Linear Development Orchestrator",
+        "Linear",
+        "GitHub",
+        "Cursor Background Agents",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/linear-development-orchestrator/",
+      "sourceFile": "bots/linear-development-orchestrator.md",
+      "promptSha256": "231f62d39535df2664c9b15865d954fec7f9b17a2d6f34bbca7586579bd5b468"
+    },
+    {
+      "slug": "linkedin-icp-prospect-tracker",
+      "name": "LinkedIn ICP Prospect Tracker",
+      "description": "Find public LinkedIn profiles that match a defined ICP; capture qualified prospects with roles, companies, links, and evidence.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-18T14:14:28.976Z",
+      "creator": {
+        "name": "@kr0der",
+        "url": "https://x.com/kr0der"
+      },
+      "connectFirst": [
+        "Google Search"
+      ],
+      "worksWith": [],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "LinkedIn ICP Prospect Tracker",
+        "Google Search",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/linkedin-icp-prospect-tracker/",
+      "sourceFile": "bots/linkedin-icp-prospect-tracker.md",
+      "promptSha256": "7844473a9f0dfefd83905f63b91eec7036bbea3f8e2522100ba39ac925445ffb"
+    },
+    {
+      "slug": "linkedin-profile-audit",
+      "name": "LinkedIn Profile Audit",
+      "description": "Compare a live LinkedIn profile with your current work and voice; rewrite its headline, about section, and experience bullets.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "LinkedIn",
+        "Notion",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "messages-square",
+      "tags": [
+        "Marketing",
+        "LinkedIn Profile Audit",
+        "LinkedIn",
+        "Notion",
+        "Slack",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/linkedin-profile-audit/",
+      "sourceFile": "bots/linkedin-profile-audit.md",
+      "promptSha256": "0ffadb9e8cd8f06f96ede0101e4b309e451803082e29da221574ab72d8ad6a50"
+    },
+    {
+      "slug": "linkedin-signal-watch",
+      "name": "LinkedIn Signal Watch",
+      "description": "Monitor LinkedIn leaders for relevant compelling events; draft timely outreach notes in your voice without sending them.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "LinkedIn",
+        "Sales Navigator"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        }
+      ],
+      "icon": "search",
+      "tags": [
+        "Sales",
+        "LinkedIn Signal Watch",
+        "LinkedIn",
+        "Sales Navigator",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/linkedin-signal-watch/",
+      "sourceFile": "bots/linkedin-signal-watch.md",
+      "promptSha256": "f27da44153f16c20e95f75187beedcd88aff365fd0a1c784226334206946372d"
+    },
+    {
+      "slug": "live-discovery-slide",
+      "name": "Live Discovery Slide",
+      "description": "Turn discovery-call notes into an accurate What We’ve Heard slide; preserve the deck’s style and show the result for review.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Granola",
+        "Figma"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "figma"
+        }
+      ],
+      "icon": "presentation",
+      "tags": [
+        "Sales",
+        "Live Discovery Slide",
+        "Granola",
+        "Figma",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/live-discovery-slide/",
+      "sourceFile": "bots/live-discovery-slide.md",
+      "promptSha256": "a37254c7287e7f9c2d3f81e28432bd94d2d98aa49cd7fd4188004a93c65632e9"
+    },
+    {
+      "slug": "living-faq",
+      "name": "Living FAQ",
+      "description": "Add new Gong questions to a Notion FAQ each morning; merge duplicates and flag answers that conflict with shipped behavior.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gong",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Living FAQ",
+        "Gong",
+        "Notion",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/living-faq/",
+      "sourceFile": "bots/living-faq.md",
+      "promptSha256": "ddecfa633e9ced6f8f801c95c0df2e1a0cfe89c5e6e8943c61024613896e1d18"
+    },
+    {
+      "slug": "mail-cleanup-assistant",
+      "name": "Mail Cleanup Assistant",
+      "description": "Classify Gmail and Outlook messages by priority; propose safe unsubscribe and filing actions while protecting sacred mail.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T15:40:27.203Z",
+      "creator": {
+        "name": "@APompliano",
+        "url": "https://x.com/APompliano"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Outlook"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "outlook"
+        }
+      ],
+      "icon": "mail",
+      "tags": [
+        "Personal",
+        "Mail Cleanup Assistant",
+        "Gmail",
+        "Outlook",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/mail-cleanup-assistant/",
+      "sourceFile": "bots/mail-cleanup-assistant.md",
+      "promptSha256": "43e9ed365f6298fb9819ff830a30bf076ed9b9f9008328e23bb303e7f66284cb"
+    },
+    {
+      "slug": "mail-delivery-troubleshooter",
+      "name": "Mail Delivery Troubleshooter",
+      "description": "Correlate delivery failures with SPF, DKIM, DMARC, SMTP, and MailOps evidence; identify likely causes and ordered fixes.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T07:50:09.000Z",
+      "creator": {
+        "name": "@euboid",
+        "url": "https://x.com/euboid"
+      },
+      "connectFirst": [
+        "MailOps",
+        "SPF",
+        "DKIM",
+        "DMARC",
+        "SMTP logs"
+      ],
+      "worksWith": [],
+      "icon": "mail",
+      "tags": [
+        "Ops",
+        "Mail Delivery Troubleshooter",
+        "MailOps",
+        "SPF",
+        "DKIM",
+        "DMARC",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/mail-delivery-troubleshooter/",
+      "sourceFile": "bots/mail-delivery-troubleshooter.md",
+      "promptSha256": "6644239b6b589770adc2128b80a6b0c98802f66370cd8adad8a0aa42aff9b359"
+    },
+    {
+      "slug": "marketing-calendar-sync",
+      "name": "Marketing Calendar Sync",
+      "description": "Mirror the global Notion webinar database into a local calendar; add, update, or remove events for chosen regions and types.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Notion",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "calendar-check",
+      "tags": [
+        "Marketing",
+        "Marketing Calendar Sync",
+        "Notion",
+        "Google Calendar",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/marketing-calendar-sync/",
+      "sourceFile": "bots/marketing-calendar-sync.md",
+      "promptSha256": "32560694d0bab5c96c50ccab15e251d343c25da0b5766574f053c9550d542d93"
+    },
+    {
+      "slug": "meeting-prep-brief",
+      "name": "Meeting Prep Brief",
+      "description": "Combine calendar, CRM, email, Slack, call notes, and research for each meeting; deliver a focused preparation brief.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Gmail",
+        "Slack",
+        "Granola",
+        "Gong",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "calendar-check",
+      "tags": [
+        "Sales",
+        "Meeting Prep Brief",
+        "Salesforce",
+        "Gmail",
+        "Slack",
+        "Granola",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/meeting-prep-brief/",
+      "sourceFile": "bots/meeting-prep-brief.md",
+      "promptSha256": "b50a6dc98c7790bf4cb34b511ea845f2434c5043750e84c1a201f440c1948198"
+    },
+    {
+      "slug": "metar-weather-watch",
+      "name": "METAR Weather Watch",
+      "description": "Monitor current and recent METAR observations; predict the next three hours of conditions and alert on meaningful trends.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@mopargtx440",
+        "url": "https://x.com/mopargtx440"
+      },
+      "connectFirst": [
+        "Aviation Weather Center"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "METAR Weather Watch",
+        "Aviation Weather Center",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/metar-weather-watch/",
+      "sourceFile": "bots/metar-weather-watch.md",
+      "promptSha256": "832ef599de1da12f310494d0077ec3f82ceeed3849940061d0a7b6d3f2d3a068"
+    },
+    {
+      "slug": "migration-ramp-watcher",
+      "name": "Migration Ramp Watcher",
+      "description": "Check Datadog logs, metrics, and backfill status at each migration step; post green-to-proceed or stop-and-investigate guidance.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Datadog",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "datadog"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Migration Ramp Watcher",
+        "Datadog",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/migration-ramp-watcher/",
+      "sourceFile": "bots/migration-ramp-watcher.md",
+      "promptSha256": "822522f5bd618c9d1f71404ad6239ba3e3bacc00d872c2350cbebd92ebf8b684"
+    },
+    {
+      "slug": "morning-podcast",
+      "name": "Morning Podcast",
+      "description": "Turn important Slack threads and today’s priorities into a short audio briefing; deliver it before you wake up.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "mic",
+      "tags": [
+        "Productivity",
+        "Morning Podcast",
+        "Slack",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/morning-podcast/",
+      "sourceFile": "bots/morning-podcast.md",
+      "promptSha256": "60c235ba4fee9fd8a871102f2ecc6fda189d4f72dbec4e14bc379170b8dfc82e"
+    },
+    {
+      "slug": "multi-repository-dev-orchestrator",
+      "name": "Multi-Repository Dev Orchestrator",
+      "description": "Break a cross-repository request into coherent cloud-agent tasks; coordinate dependencies, tests, and approval before merge.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T23:08:40.000Z",
+      "creator": {
+        "name": "@jessethanley",
+        "url": "https://x.com/jessethanley"
+      },
+      "connectFirst": [
+        "GitHub",
+        "Cursor Cloud Agents"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "code-2",
+      "tags": [
+        "Productivity",
+        "Multi-Repository Dev Orchestrator",
+        "GitHub",
+        "Cursor Cloud Agents",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/multi-repository-dev-orchestrator/",
+      "sourceFile": "bots/multi-repository-dev-orchestrator.md",
+      "promptSha256": "7fa5f58e6ee2e3bba421f622a92c850308d94f50ceedbbd56612e3c61117643e"
+    },
+    {
+      "slug": "new-hire-ramp-plan",
+      "name": "New Hire Ramp Plan",
+      "description": "Study how recent hires in a role spent their first weeks; draft a first-week plan of meetings, reading, and initial work.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Calendar",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "user-search",
+      "tags": [
+        "Ops",
+        "New Hire Ramp Plan",
+        "Google Calendar",
+        "Slack",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/new-hire-ramp-plan/",
+      "sourceFile": "bots/new-hire-ramp-plan.md",
+      "promptSha256": "19c0adacab96076f807d21a72215f44be9c4decc0f5ec016bfb9ada8eb80efd1"
+    },
+    {
+      "slug": "nexus-coordinator",
+      "name": "Nexus Coordinator",
+      "description": "Maintain TEAM_ALIGNMENT as the shared source of truth; collect commitments and changes from email, calendar, and Slack.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:16:14.501Z",
+      "creator": {
+        "name": "@Voxyz_ai",
+        "url": "https://x.com/Voxyz_ai"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Calendar",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Nexus Coordinator",
+        "Gmail",
+        "Google Calendar",
+        "Slack",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/nexus-coordinator/",
+      "sourceFile": "bots/nexus-coordinator.md",
+      "promptSha256": "25314b9579f71c9234d9c98b51cddada80f0a878a1d671e5d3ad85023e86d801"
+    },
+    {
+      "slug": "notam-briefer",
+      "name": "NOTAM Briefer",
+      "description": "Track new or changed NOTAMs for selected airports and routes; deliver full twice-daily briefs plus concise interim updates.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@mopargtx440",
+        "url": "https://x.com/mopargtx440"
+      },
+      "connectFirst": [
+        "FAA NOTAM Search"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "NOTAM Briefer",
+        "FAA NOTAM Search",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/notam-briefer/",
+      "sourceFile": "bots/notam-briefer.md",
+      "promptSha256": "2d1da4507704dc1a2ca6654afb46d3952963dadc1e5bf7a23949e6370bf87b12"
+    },
+    {
+      "slug": "notion-memory-keeper",
+      "name": "Notion Memory Keeper",
+      "description": "Capture notes, decisions, context, and updates you provide; organize them into an agreed Notion memory structure.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:15:46.485Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "book-open",
+      "tags": [
+        "Productivity",
+        "Notion Memory Keeper",
+        "Notion",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/notion-memory-keeper/",
+      "sourceFile": "bots/notion-memory-keeper.md",
+      "promptSha256": "f41f50affc76436288bcaa52fec1bdd8859a1e8a1150b52119a8f3f3963ee81a"
+    },
+    {
+      "slug": "one-on-one-prep",
+      "name": "One-On-One Prep",
+      "description": "Review prior one-on-one notes and commitments before each meeting; surface status, reminders, and a focused agenda.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Granola",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "One-On-One Prep",
+        "Granola",
+        "Google Calendar",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/one-on-one-prep/",
+      "sourceFile": "bots/one-on-one-prep.md",
+      "promptSha256": "39ccdd16248c83b38bf2f8a64e68e6387a7cc5a34a73418b10fddc117ee4b9c2"
+    },
+    {
+      "slug": "opportunity-field-researcher",
+      "name": "Opportunity Field Researcher",
+      "description": "Evaluate a Trends.vc opportunity against live competitors, pricing, launches, complaints, and demand; propose a seven-day validation test.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Trends.vc"
+      ],
+      "worksWith": [],
+      "icon": "search",
+      "tags": [
+        "Marketing",
+        "Opportunity Field Researcher",
+        "Trends.vc",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/opportunity-field-researcher/",
+      "sourceFile": "bots/opportunity-field-researcher.md",
+      "promptSha256": "ef2d81d67b3772e79075a4cd2078719b61b329e33f348bfe80f53ea43c19dc9c"
+    },
+    {
+      "slug": "org-chart-keeper",
+      "name": "Org Chart Keeper",
+      "description": "Resolve people from names or email addresses and place them in an account chart; mark deal influence and keep Salesforce current.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "LinkedIn"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Org Chart Keeper",
+        "Salesforce",
+        "LinkedIn",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/org-chart-keeper/",
+      "sourceFile": "bots/org-chart-keeper.md",
+      "promptSha256": "2f616cd4199fb39116da9b672a1a3b04f96e5b9c68331654d0e1105a7068ca97"
+    },
+    {
+      "slug": "outbound-in-your-voice",
+      "name": "Outbound In Your Voice",
+      "description": "Research prospects and draft daily email and LinkedIn outreach in your learned voice; hold initial messages for approval.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail",
+        "LinkedIn"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        }
+      ],
+      "icon": "mic",
+      "tags": [
+        "Sales",
+        "Outbound In Your Voice",
+        "Gmail",
+        "LinkedIn",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/outbound-in-your-voice/",
+      "sourceFile": "bots/outbound-in-your-voice.md",
+      "promptSha256": "880fea596a37c2fcdcf59b8312101ed6cfd2108c2da9033cd1bc29fb9542cac5"
+    },
+    {
+      "slug": "pizza-ordering-assistant",
+      "name": "Pizza Ordering Assistant",
+      "description": "Collect pizza, dietary, budget, timing, and fulfillment preferences; recommend an order and place it only after explicit approval.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-18T16:45:11.595Z",
+      "creator": {
+        "name": "@LBallz77283",
+        "url": "https://x.com/LBallz77283"
+      },
+      "connectFirst": [
+        "Pizza Hut",
+        "Papa John's"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Pizza Ordering Assistant",
+        "Pizza Hut",
+        "Papa John's",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/pizza-ordering-assistant/",
+      "sourceFile": "bots/pizza-ordering-assistant.md",
+      "promptSha256": "9ff4ab1e74f9880878ff575777547989a704d22d32a07e8d92a22b68e7a255e5"
+    },
+    {
+      "slug": "podcast-clip-publisher",
+      "name": "Podcast Clip Publisher",
+      "description": "Transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:26:11.000Z",
+      "creator": {
+        "name": "@GavinSBaker",
+        "url": "https://x.com/GavinSBaker"
+      },
+      "connectFirst": [
+        "Podcast RSS feeds",
+        "Podcast transcription MCP",
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "video",
+      "tags": [
+        "Marketing",
+        "Podcast Clip Publisher",
+        "Podcast RSS feeds",
+        "Podcast transcription MCP",
+        "X",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/podcast-clip-publisher/",
+      "sourceFile": "bots/podcast-clip-publisher.md",
+      "promptSha256": "549f0b07b7b6a805e2eac5e5a55c3bfd763bcf83c1e23823c1e3d2546cc58380"
+    },
+    {
+      "slug": "podcast-guest-briefer",
+      "name": "Podcast Guest Briefer",
+      "description": "Research a specified podcast guest from approved sources; create a concise brief with background, talking points, questions, and cautions.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:31:42.040Z",
+      "creator": {
+        "name": "@lennysan",
+        "url": "https://x.com/lennysan"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Docs"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledocs"
+        }
+      ],
+      "icon": "mic",
+      "tags": [
+        "Marketing",
+        "Podcast Guest Briefer",
+        "Gmail",
+        "Google Docs",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/podcast-guest-briefer/",
+      "sourceFile": "bots/podcast-guest-briefer.md",
+      "promptSha256": "af9bcf7690dd772c9dca7c0097dab560323083df498bba62e9a1bdafd6cdd162"
+    },
+    {
+      "slug": "podcast-summarizer",
+      "name": "Podcast Summarizer",
+      "description": "Retrieve or create podcast transcripts; summarize claims, decisions, and actionable ideas in the context of your work.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T21:26:11.000Z",
+      "creator": {
+        "name": "@GavinSBaker",
+        "url": "https://x.com/GavinSBaker"
+      },
+      "connectFirst": [
+        "Podcast RSS feeds",
+        "YouTube"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        }
+      ],
+      "icon": "mic",
+      "tags": [
+        "Productivity",
+        "Podcast Summarizer",
+        "Podcast RSS feeds",
+        "YouTube",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/podcast-summarizer/",
+      "sourceFile": "bots/podcast-summarizer.md",
+      "promptSha256": "2ab1adf210e42f4bd863b48f4acda2a8e59f8bc884cbb2bc0ddaaad5810682ab"
+    },
+    {
+      "slug": "pool-slot-grabber",
+      "name": "Pool Slot Grabber",
+      "description": "Watch a pool booking page for preferred swim times; grab an opening and report the confirmation in Slack.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Pool Slot Grabber",
+        "Slack",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/pool-slot-grabber/",
+      "sourceFile": "bots/pool-slot-grabber.md",
+      "promptSha256": "4709e746fc7bb963c719e550f78c97128afaa4ec88037812cafd4c39d78c2b06"
+    },
+    {
+      "slug": "pr-conflict-flagger",
+      "name": "PR Conflict Flagger",
+      "description": "Scan open GitHub pull requests for overlapping code changes; notify the right people in Slack before merge conflicts land.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "GitHub",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "PR Conflict Flagger",
+        "GitHub",
+        "Slack",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/pr-conflict-flagger/",
+      "sourceFile": "bots/pr-conflict-flagger.md",
+      "promptSha256": "0abef4937f8e147b798290690792e48315fb3b4cfeb660781cbc5f4c9ebd8f81"
+    },
+    {
+      "slug": "product-expert",
+      "name": "Product Expert",
+      "description": "Answer deep customer product questions from GitHub and Glean sources; cite the source of truth and hand back a usable response.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "GitHub",
+        "Glean"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Product Expert",
+        "GitHub",
+        "Glean",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/product-expert/",
+      "sourceFile": "bots/product-expert.md",
+      "promptSha256": "89e55279053522d94285309201edb1ad56c96d08db26c89b06eb16428f157009"
+    },
+    {
+      "slug": "prospect-meeting-booker",
+      "name": "Prospect Meeting Booker",
+      "description": "Identify the right prospect and meeting context; propose available times and book only the approved slot.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T21:45:00.000Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Calendar",
+        "CRM"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "calendar-check",
+      "tags": [
+        "Sales",
+        "Prospect Meeting Booker",
+        "Gmail",
+        "Google Calendar",
+        "CRM",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/prospect-meeting-booker/",
+      "sourceFile": "bots/prospect-meeting-booker.md",
+      "promptSha256": "fd720fc41600bab1a95a269339ebae10153e29d1ac1d5134b6a69db5f4c9f5e5"
+    },
+    {
+      "slug": "prospecting-sheet-builder",
+      "name": "Prospecting Sheet Builder",
+      "description": "Build a live, deduplicated prospecting sheet from CRM, research, and usage signals; draft cited email and LinkedIn outreach pairs.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kristaletz",
+        "url": "https://x.com/kristaletz"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Gmail",
+        "Google Sheets",
+        "LinkedIn"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlesheets"
+        },
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Prospecting Sheet Builder",
+        "Salesforce",
+        "Gmail",
+        "Google Sheets",
+        "LinkedIn",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/prospecting-sheet-builder/",
+      "sourceFile": "bots/prospecting-sheet-builder.md",
+      "promptSha256": "e21e346215f8d19bf2837581681a2d0f4aee33568d49545fecc705815932e137"
+    },
+    {
+      "slug": "qbr-pack-builder",
+      "name": "QBR Pack Builder",
+      "description": "Combine Salesforce usage, Zendesk tickets, and open opportunities; produce an editable Google Slides QBR pack.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce",
+        "Zendesk",
+        "Google Slides"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "zendesk"
+        },
+        {
+          "type": "api_account",
+          "slug": "googleslides"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "QBR Pack Builder",
+        "Salesforce",
+        "Zendesk",
+        "Google Slides",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/qbr-pack-builder/",
+      "sourceFile": "bots/qbr-pack-builder.md",
+      "promptSha256": "82988b858692299b1e4c7ddeef7f96edddfe9255426da708a8b4655dde93cb48"
+    },
+    {
+      "slug": "recipe-grocery-autopilot",
+      "name": "Recipe Grocery Autopilot",
+      "description": "Extract ingredients and quantities from a recipe photo; prepare a practical Whole Foods order with package sizes and substitutions.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T21:45:00.000Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Photos",
+        "Whole Foods",
+        "Whole Foods delivery"
+      ],
+      "worksWith": [],
+      "icon": "house",
+      "tags": [
+        "Personal",
+        "Recipe Grocery Autopilot",
+        "Photos",
+        "Whole Foods",
+        "Whole Foods delivery",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/recipe-grocery-autopilot/",
+      "sourceFile": "bots/recipe-grocery-autopilot.md",
+      "promptSha256": "52b31788ee905eae3cfb9978fd57bee874be59aa69ae935fbb44a86a87d5651c"
+    },
+    {
+      "slug": "recruiting-reviewer",
+      "name": "Recruiting Reviewer",
+      "description": "Sort applications into strong, mid, and reject against the existing scorecard; explain each rating and flag unusual cases.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Ashby",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "user-search",
+      "tags": [
+        "Ops",
+        "Recruiting Reviewer",
+        "Ashby",
+        "Google Drive",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/recruiting-reviewer/",
+      "sourceFile": "bots/recruiting-reviewer.md",
+      "promptSha256": "d5a46d276458f7c6982cfed8ee5170824773754df76a7db0e3179b00bb25d472"
+    },
+    {
+      "slug": "reddit-comment-finder",
+      "name": "Reddit Comment Finder",
+      "description": "Find recent Reddit discussions where you can add real value; return qualified links and explain the useful contribution angle.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T14:14:28.976Z",
+      "creator": {
+        "name": "@kr0der",
+        "url": "https://x.com/kr0der"
+      },
+      "connectFirst": [
+        "Reddit"
+      ],
+      "worksWith": [],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Reddit Comment Finder",
+        "Reddit",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/reddit-comment-finder/",
+      "sourceFile": "bots/reddit-comment-finder.md",
+      "promptSha256": "f6fafb9225e0a25e6c8d0538be3fde9eb51f5c281032393066e9d0985cf7014e"
+    },
+    {
+      "slug": "relationship-coach",
+      "name": "Relationship Coach",
+      "description": "Review daily Bee recordings at a private evening check-in; offer candid advice on being a better partner, colleague, or friend.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@awilkinson",
+        "url": "https://x.com/awilkinson"
+      },
+      "connectFirst": [
+        "Bee"
+      ],
+      "worksWith": [],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Relationship Coach",
+        "Bee",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/relationship-coach/",
+      "sourceFile": "bots/relationship-coach.md",
+      "promptSha256": "3a93d27d0021951a509b35b147a733d3790d043ecb396f5fc426b2288d1353d3"
+    },
+    {
+      "slug": "release-to-social-campaign",
+      "name": "Release To Social Campaign",
+      "description": "Turn verified GitHub release changes into platform-specific Postiz drafts; route approval in Slack and summarize later performance.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "GitHub",
+        "Postiz",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "messages-square",
+      "tags": [
+        "Marketing",
+        "Release To Social Campaign",
+        "GitHub",
+        "Postiz",
+        "Slack",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/release-to-social-campaign/",
+      "sourceFile": "bots/release-to-social-campaign.md",
+      "promptSha256": "79b5492511052fe392acf5624b554aa68b115ad9411cbd2f02392f080b648c0a"
+    },
+    {
+      "slug": "remote-cli-development-planner",
+      "name": "Remote CLI Development Planner",
+      "description": "Plan repository work and delegate isolated implementation tasks to Codex CLI or Claude Code; reconcile tested results and diffs.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T23:09:18.000Z",
+      "creator": {
+        "name": "@iannuttall",
+        "url": "https://x.com/iannuttall"
+      },
+      "connectFirst": [
+        "Remote VM",
+        "Codex CLI",
+        "Claude Code"
+      ],
+      "worksWith": [],
+      "icon": "code-2",
+      "tags": [
+        "Productivity",
+        "Remote CLI Development Planner",
+        "Remote VM",
+        "Codex CLI",
+        "Claude Code",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/remote-cli-development-planner/",
+      "sourceFile": "bots/remote-cli-development-planner.md",
+      "promptSha256": "8207cc89a7bc0b431a0dacb34ff7ff45a6f2d07aa4c72c7571975a88e0ada9ef"
+    },
+    {
+      "slug": "reply-drafter",
+      "name": "Reply Drafter",
+      "description": "Find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kevinace",
+        "url": "https://x.com/kevinace"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Reply Drafter",
+        "X",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/reply-drafter/",
+      "sourceFile": "bots/reply-drafter.md",
+      "promptSha256": "fad4c2320bbd2dd5e615947770a870f59c803967cbb90bbecde5171006fffa5e"
+    },
+    {
+      "slug": "saas-cfo-monitor",
+      "name": "SaaS CFO Monitor",
+      "description": "Scan SaaS spending for missed or unusual charges and audit COGS; produce weekly findings and a monthly CFO report.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T23:08:40.000Z",
+      "creator": {
+        "name": "@jessethanley",
+        "url": "https://x.com/jessethanley"
+      },
+      "connectFirst": [
+        "Stripe",
+        "Xero",
+        "QuickBooks",
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "stripe"
+        },
+        {
+          "type": "api_account",
+          "slug": "xero"
+        },
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "calculator",
+      "tags": [
+        "Ops",
+        "SaaS CFO Monitor",
+        "Stripe",
+        "Xero",
+        "QuickBooks",
+        "Gmail",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/saas-cfo-monitor/",
+      "sourceFile": "bots/saas-cfo-monitor.md",
+      "promptSha256": "e8c91aee0c91eacc48504b9422ac2d78ea6879fb1910ab30ae2f2f35fb1c0e07"
+    },
+    {
+      "slug": "saas-marketing-reviewer",
+      "name": "SaaS Marketing Reviewer",
+      "description": "Review customer-facing features shipped each week; prepare evidence-based marketing actions and copy without publishing.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T23:08:40.000Z",
+      "creator": {
+        "name": "@jessethanley",
+        "url": "https://x.com/jessethanley"
+      },
+      "connectFirst": [
+        "Slack",
+        "GitHub",
+        "CMS"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "SaaS Marketing Reviewer",
+        "Slack",
+        "GitHub",
+        "CMS",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/saas-marketing-reviewer/",
+      "sourceFile": "bots/saas-marketing-reviewer.md",
+      "promptSha256": "5deefc9ae2638165a9f96c931a6caf60e58471d382e573f6bc18b12452f2b774"
+    },
+    {
+      "slug": "sales-play-autopilot",
+      "name": "Sales Play Autopilot",
+      "description": "Build an on-demand sales play from Snowflake audience through Salesforce and Gmail drafts; leave judgment calls and sends to the user.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Snowflake",
+        "Salesforce",
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Sales Play Autopilot",
+        "Snowflake",
+        "Salesforce",
+        "Gmail",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/sales-play-autopilot/",
+      "sourceFile": "bots/sales-play-autopilot.md",
+      "promptSha256": "d1a8422414cae73196394f734b76a38d9a6f0080d0e7592f9c3a99a12948ccc9"
+    },
+    {
+      "slug": "salesforce-administrator",
+      "name": "Salesforce Administrator",
+      "description": "Inspect Salesforce in read-only mode and verify snapshots; preview every proposed mutation and require explicit production confirmation.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T00:21:24.000Z",
+      "creator": {
+        "name": "@alnandr",
+        "url": "https://github.com/alnandr"
+      },
+      "connectFirst": [
+        "Salesforce"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Ops",
+        "Salesforce Administrator",
+        "Salesforce",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/salesforce-administrator/",
+      "sourceFile": "bots/salesforce-administrator.md",
+      "promptSha256": "b6f9e49d414dfd674976e08e6885c7c19f2efe75e85e10d1492b36a13f427ce0"
+    },
+    {
+      "slug": "salesforce-bot-researcher",
+      "name": "Salesforce Bot Researcher",
+      "description": "Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T06:04:58.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Bot Directory",
+        "Salesforce"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Productivity",
+        "Salesforce Bot Researcher",
+        "Bot Directory",
+        "Salesforce",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/salesforce-bot-researcher/",
+      "sourceFile": "bots/salesforce-bot-researcher.md",
+      "promptSha256": "20a8d1a910e7668645033252177b06e44aacc85144866414198863ead9fedb0b"
+    },
+    {
+      "slug": "salesforce-bot-scout",
+      "name": "Salesforce Bot Scout",
+      "description": "Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T06:04:36.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Bot Directory",
+        "Salesforce"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Productivity",
+        "Salesforce Bot Scout",
+        "Bot Directory",
+        "Salesforce",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/salesforce-bot-scout/",
+      "sourceFile": "bots/salesforce-bot-scout.md",
+      "promptSha256": "71233a9407445963585b6d481af9fa403c141e3c6c21f0c2a2e9df622d427e38"
+    },
+    {
+      "slug": "salesforce-report-builder",
+      "name": "Salesforce Report Builder",
+      "description": "Turn a recurring Salesforce opportunity question into a named report and dashboard; verify fields and results before saving.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Salesforce"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Salesforce Report Builder",
+        "Salesforce",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/salesforce-report-builder/",
+      "sourceFile": "bots/salesforce-report-builder.md",
+      "promptSha256": "af210982bb7f72888f849026aa47e482308616ca2f5075a9e0d19229beccf6a7"
+    },
+    {
+      "slug": "school-form-filler",
+      "name": "School Form Filler",
+      "description": "Reuse last year’s PDFs to prefill current school forms; ask only for changed fields and signatures, never submitting automatically.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Drive",
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "School Form Filler",
+        "Google Drive",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/school-form-filler/",
+      "sourceFile": "bots/school-form-filler.md",
+      "promptSha256": "fed4b55d067467830188166061148f49cf31ff4b66a4d3e7a0cae171880cf1b4"
+    },
+    {
+      "slug": "security-questionnaire",
+      "name": "Security Questionnaire",
+      "description": "Draft security-questionnaire answers from public docs and past responses; cite evidence and flag questions needing a human.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Google Drive",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "shield-check",
+      "tags": [
+        "Ops",
+        "Security Questionnaire",
+        "Google Drive",
+        "Notion",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/security-questionnaire/",
+      "sourceFile": "bots/security-questionnaire.md",
+      "promptSha256": "748ec98d3e7b282a2a110c0b9e55b5e174359c015d2819a0a3d109a77aadafc4"
+    },
+    {
+      "slug": "seo-improver",
+      "name": "SEO Improver",
+      "description": "Find pages losing impressions or ranking on page two; improve metadata and internal links, then open a reviewable GitHub pull request.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "GitHub",
+        "DataForSEO",
+        "Search Console"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        },
+        {
+          "type": "mcp",
+          "slug": "dataforseo"
+        }
+      ],
+      "icon": "search",
+      "tags": [
+        "Marketing",
+        "SEO Improver",
+        "GitHub",
+        "DataForSEO",
+        "Search Console",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/seo-improver/",
+      "sourceFile": "bots/seo-improver.md",
+      "promptSha256": "aeef61987b959d3038dbd95a1e4a2cd506ed9689395cd44fc36d4c16ff0abdb9"
+    },
+    {
+      "slug": "seo-team",
+      "name": "SEO Team",
+      "description": "Coordinate five local-SEO specialist roles on one project brief; draft grounded pages, technical checks, citations, and backlink targets.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:29:39.342Z",
+      "creator": {
+        "name": "@fatjoedavies",
+        "url": "https://x.com/fatjoedavies"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "search",
+      "tags": [
+        "Marketing",
+        "SEO Team",
+        "Grok",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/seo-team/",
+      "sourceFile": "bots/seo-team.md",
+      "promptSha256": "f85c232897cdab3bc7c287bf830c4b83db3f62bcb1ce552d214778c455fc9de1"
+    },
+    {
+      "slug": "short-form-content-creator",
+      "name": "Short-Form Content Creator",
+      "description": "Find the strongest moments in source videos; create vertical shorts with hooks, captions, titles, descriptions, and platform variants.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:30:30.143Z",
+      "creator": {
+        "name": "@farzyness",
+        "url": "https://x.com/farzyness"
+      },
+      "connectFirst": [
+        "YouTube",
+        "CapCut"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Short-Form Content Creator",
+        "YouTube",
+        "CapCut",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/short-form-content-creator/",
+      "sourceFile": "bots/short-form-content-creator.md",
+      "promptSha256": "478b2c4751d5e9db874cb9b2e8ea8a1678d329678a75cee36dfa29efa72bd76a"
+    },
+    {
+      "slug": "slack-noise-filter",
+      "name": "Slack Noise Filter",
+      "description": "Separate actionable, relevant Slack messages from routine noise; send urgent pings with context and batch the rest into a digest.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Slack Noise Filter",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/slack-noise-filter/",
+      "sourceFile": "bots/slack-noise-filter.md",
+      "promptSha256": "c9d5d107dc74bb9635cd7b2aa83bf1c108e949f1cd1e5ec5c6be403d69f5084b"
+    },
+    {
+      "slug": "slack-stand-in",
+      "name": "Slack Stand-In",
+      "description": "Learn your voice and routine answers from one Slack channel; draft replies while escalating new, sensitive, or uncertain questions.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Slack Stand-In",
+        "Slack",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/slack-stand-in/",
+      "sourceFile": "bots/slack-stand-in.md",
+      "promptSha256": "6a55c5b86e128ef3e3b4ff721b6d8d2f4634d240d7bcd14f18575642bd2c4bd1"
+    },
+    {
+      "slug": "social-content-operator",
+      "name": "Social Content Operator",
+      "description": "Create channel-specific weekly social drafts from approved Drive material; route review and publish only explicitly approved items.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T07:37:37.000Z",
+      "creator": {
+        "name": "@delulusocial",
+        "url": "https://x.com/delulusocial"
+      },
+      "connectFirst": [
+        "Delulu Social",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Marketing",
+        "Social Content Operator",
+        "Delulu Social",
+        "Google Drive",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/social-content-operator/",
+      "sourceFile": "bots/social-content-operator.md",
+      "promptSha256": "b0e70c8d3996547a06f2ca0a31a5f3c0ee95b45931c5febc29f44bb62b088b23"
+    },
+    {
+      "slug": "starlink-flight-finder",
+      "name": "Starlink Flight Finder",
+      "description": "Find flight options for a route and dates; prioritize aircraft and airlines with verified Starlink availability.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T21:45:00.000Z",
+      "creator": {
+        "name": "@benln",
+        "url": "https://x.com/benln"
+      },
+      "connectFirst": [
+        "Google Flights",
+        "Airline booking websites",
+        "Google Calendar"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        }
+      ],
+      "icon": "plane",
+      "tags": [
+        "Personal",
+        "Starlink Flight Finder",
+        "Google Flights",
+        "Airline booking websites",
+        "Google Calendar",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/starlink-flight-finder/",
+      "sourceFile": "bots/starlink-flight-finder.md",
+      "promptSha256": "c786886b1eb77cd1111696e23815548b8023e72353c5e66f511ce14daafa44e9"
+    },
+    {
+      "slug": "subscription-pruner",
+      "name": "Subscription Pruner",
+      "description": "Build a priced subscription inventory from Gmail receipts; recommend cancellations and unsubscribes before taking approved action.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Subscription Pruner",
+        "Gmail",
+        "Cost Savings"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/subscription-pruner/",
+      "sourceFile": "bots/subscription-pruner.md",
+      "promptSha256": "c79ecd88371fdfc4b1b34ba731eaac9029b6012dc0ec3ca037fae9a16dd52c06"
+    },
+    {
+      "slug": "supply-chain-threat-sentinel",
+      "name": "Supply Chain Threat Sentinel",
+      "description": "Inspect dependency files, releases, workflows, and packages for supply-chain threats; explain evidence, severity, and remediation.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T15:40:27.203Z",
+      "creator": {
+        "name": "@APompliano",
+        "url": "https://x.com/APompliano"
+      },
+      "connectFirst": [
+        "GitHub",
+        "GitHub Actions"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "shield-check",
+      "tags": [
+        "Ops",
+        "Supply Chain Threat Sentinel",
+        "GitHub",
+        "GitHub Actions",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/supply-chain-threat-sentinel/",
+      "sourceFile": "bots/supply-chain-threat-sentinel.md",
+      "promptSha256": "4d2dab33f8d7061c23b4a77b9cd4b12cc07c9e16f99696c6a231aec2e9e4da2f"
+    },
+    {
+      "slug": "support-autopilot",
+      "name": "Support Autopilot",
+      "description": "Pull support tickets on a schedule and draft answers from approved documentation; organize uncertain cases for human attention.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T23:08:40.000Z",
+      "creator": {
+        "name": "@jessethanley",
+        "url": "https://x.com/jessethanley"
+      },
+      "connectFirst": [
+        "Bento Chat",
+        "HelpSpot",
+        "Help Scout",
+        "Intercom"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "intercom"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Support Autopilot",
+        "Bento Chat",
+        "HelpSpot",
+        "Help Scout",
+        "Intercom",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/support-autopilot/",
+      "sourceFile": "bots/support-autopilot.md",
+      "promptSha256": "6f14f3da8849bc06d200a4a0eec851a7487e095edda43689db044fd4295615df"
+    },
+    {
+      "slug": "support-queue-pass",
+      "name": "Support Queue Pass",
+      "description": "Review the Zendesk queue hourly and draft confident replies; alert in Slack only when a ticket genuinely needs a human.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Zendesk",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "zendesk"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Support Queue Pass",
+        "Zendesk",
+        "Slack",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/support-queue-pass/",
+      "sourceFile": "bots/support-queue-pass.md",
+      "promptSha256": "ff06c7327ef323dc364c1361e8099d817dcaf5e7e6a67347ad245ea1b2d9050b"
+    },
+    {
+      "slug": "support-reply-drafter",
+      "name": "Support Reply Drafter",
+      "description": "Identify issue and urgency from incoming Gmail support threads; draft an on-voice reply and flag decisions or escalations.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-18T12:31:42.040Z",
+      "creator": {
+        "name": "@lennysan",
+        "url": "https://x.com/lennysan"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Support Reply Drafter",
+        "Gmail",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/support-reply-drafter/",
+      "sourceFile": "bots/support-reply-drafter.md",
+      "promptSha256": "9b47466424051f8dfa3a555b0171dc92ee45743eba4c9d12d573b5020ad809af"
+    },
+    {
+      "slug": "support-ticket-fixer",
+      "name": "Support Ticket Fixer",
+      "description": "Keep each support-ticket run bounded to its conversation; inspect docs, code, and logs before preparing a reviewed fix.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-18T07:50:09.000Z",
+      "creator": {
+        "name": "@euboid",
+        "url": "https://x.com/euboid"
+      },
+      "connectFirst": [
+        "Ferndesk",
+        "Axiom",
+        "GitHub",
+        "Infisical",
+        "Codex"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Support Ticket Fixer",
+        "Ferndesk",
+        "Axiom",
+        "GitHub",
+        "Infisical",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/support-ticket-fixer/",
+      "sourceFile": "bots/support-ticket-fixer.md",
+      "promptSha256": "8a7cf46206c30f20ff51a704d97a09ad5fb7c065b6a58e7742b0e652a27cade3"
+    },
+    {
+      "slug": "swarm-daily-summarizer",
+      "name": "Swarm Daily Summarizer",
+      "description": "Group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T12:34:20.517Z",
+      "creator": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Swarm Daily Summarizer",
+        "Grok",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/swarm-daily-summarizer/",
+      "sourceFile": "bots/swarm-daily-summarizer.md",
+      "promptSha256": "a714c52d66fcbcd47adf9a71a6e464bef386565ccb2359b20477cf7f79b2943e"
+    },
+    {
+      "slug": "task-follow-up-monitor",
+      "name": "Task Follow-Up Monitor",
+      "description": "Track a task through its current step across calendar, Slack, and email; alert only when progress stalls or follow-up is due.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T06:05:13.000Z",
+      "creator": {
+        "name": "@techdevnotes",
+        "url": "https://x.com/techdevnotes"
+      },
+      "connectFirst": [
+        "Google Calendar",
+        "Slack",
+        "Email"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Task Follow-Up Monitor",
+        "Google Calendar",
+        "Slack",
+        "Email",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/task-follow-up-monitor/",
+      "sourceFile": "bots/task-follow-up-monitor.md",
+      "promptSha256": "1c337b3148a6190eb9459f0a1b21328ccdbb50bbddeec71f18790b21c3d73d01"
+    },
+    {
+      "slug": "technology-study-guide",
+      "name": "Technology Study Guide",
+      "description": "Turn a technology topic or source into a structured learning plan; explain concepts from beginner to advanced with saved materials.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T06:05:15.000Z",
+      "creator": {
+        "name": "@LBallz77283",
+        "url": "https://x.com/LBallz77283"
+      },
+      "connectFirst": [
+        "Web Search",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Technology Study Guide",
+        "Web Search",
+        "Google Drive",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/technology-study-guide/",
+      "sourceFile": "bots/technology-study-guide.md",
+      "promptSha256": "ba4302e9c6f97275a987b7e673857d01ed20156bf8c09ae72aeee890cb2d8062"
+    },
+    {
+      "slug": "ticket-drop-watcher",
+      "name": "Ticket Drop Watcher",
+      "description": "Watch an AMC listing for matching seats; grab or hold them according to your preferences and spending ceiling.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Personal",
+        "Ticket Drop Watcher",
+        "Slack",
+        "Monitoring"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/ticket-drop-watcher/",
+      "sourceFile": "bots/ticket-drop-watcher.md",
+      "promptSha256": "c5ec94d99914dd5120fa5b24f10157dfdf6220683e9b0d8c0cc3eeb741c30737"
+    },
+    {
+      "slug": "tickets-to-changelog",
+      "name": "Tickets To Changelog",
+      "description": "Turn the week’s Zendesk tickets into changelog notes; draft help-center articles for recurring questions in Notion.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Zendesk",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "zendesk"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "Tickets To Changelog",
+        "Zendesk",
+        "Notion",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/tickets-to-changelog/",
+      "sourceFile": "bots/tickets-to-changelog.md",
+      "promptSha256": "16ac1f7593cff223ef355d2672b9aba02a44a902c9aa4d388a45b5db5762e044"
+    },
+    {
+      "slug": "trip-concierge",
+      "name": "Trip Concierge",
+      "description": "Research flights and stays that fit a trip; surface cheaper alternatives and prepare options from relevant Gmail context.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "Gmail"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "icon": "plane",
+      "tags": [
+        "Personal",
+        "Trip Concierge",
+        "Gmail",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/trip-concierge/",
+      "sourceFile": "bots/trip-concierge.md",
+      "promptSha256": "ac73fe5dc429299d84e136fc902164dbf88c96d3d25d6ab6a84072544090c9c4"
+    },
+    {
+      "slug": "trip-deck-builder",
+      "name": "Trip Deck Builder",
+      "description": "Find Airbnbs that match budget and taste; build a comparison deck and draft the email for a partner’s vote.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Google Slides"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googleslides"
+        }
+      ],
+      "icon": "plane",
+      "tags": [
+        "Personal",
+        "Trip Deck Builder",
+        "Gmail",
+        "Google Slides",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/trip-deck-builder/",
+      "sourceFile": "bots/trip-deck-builder.md",
+      "promptSha256": "ddc9ca68171d3306d6c7e4f3ae11401d85f0cbaee21a9439b313f0269f80b9f3"
+    },
+    {
+      "slug": "trust-center-deal-desk",
+      "name": "Trust Center Deal Desk",
+      "description": "Verify customer Trust Center requests and recommend approval in Slack; create time-limited Comp AI access only after approval.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T21:00:19.000Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Comp AI",
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Trust Center Deal Desk",
+        "Comp AI",
+        "Slack",
+        "Revenue Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/trust-center-deal-desk/",
+      "sourceFile": "bots/trust-center-deal-desk.md",
+      "promptSha256": "b744ff964ed247f63bcacc13694903ab3ab919fea945b97085a8db2e35711f32"
+    },
+    {
+      "slug": "tweet-topic-scraper",
+      "name": "Tweet Topic Scraper",
+      "description": "Collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "messages-square",
+      "tags": [
+        "Marketing",
+        "Tweet Topic Scraper",
+        "X",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/tweet-topic-scraper/",
+      "sourceFile": "bots/tweet-topic-scraper.md",
+      "promptSha256": "213732a39293a4efc4b88087931fbf0545aff072d1dd4675feed9403360774c1"
+    },
+    {
+      "slug": "vfd-troubleshooter",
+      "name": "VFD Troubleshooter",
+      "description": "Interpret VFD photos, fault codes, and status indicators against manufacturer documentation; provide a safe ordered diagnostic checklist.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T15:40:27.203Z",
+      "creator": {
+        "name": "@APompliano",
+        "url": "https://x.com/APompliano"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "VFD Troubleshooter",
+        "Grok",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/vfd-troubleshooter/",
+      "sourceFile": "bots/vfd-troubleshooter.md",
+      "promptSha256": "df183dc653a46134743cc8e9dcdea4ef8b93601721217fabf0e8563573fa3f73"
+    },
+    {
+      "slug": "viral-tweet-scout",
+      "name": "Viral Tweet Scout",
+      "description": "Find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "messages-square",
+      "tags": [
+        "Marketing",
+        "Viral Tweet Scout",
+        "X",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/viral-tweet-scout/",
+      "sourceFile": "bots/viral-tweet-scout.md",
+      "promptSha256": "e899eb10e78b3b8d85accf6b6a8cc662064465b2938140544cd5413e63fdd607"
+    },
+    {
+      "slug": "voice-matched-drafts",
+      "name": "Voice-Matched Drafts",
+      "description": "Learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "X",
+        "LinkedIn",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "linkedin"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "mic",
+      "tags": [
+        "Marketing",
+        "Voice-Matched Drafts",
+        "X",
+        "LinkedIn",
+        "Notion",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/voice-matched-drafts/",
+      "sourceFile": "bots/voice-matched-drafts.md",
+      "promptSha256": "06ae8a72b44b4f9609db5333c113fa04559611006719c257ac9b55cc7da93119"
+    },
+    {
+      "slug": "web-design-assistant",
+      "name": "Web Design Assistant",
+      "description": "Turn a brief into page structures, wireframes, visual directions, and responsive layouts; prepare implementation-ready Figma or Squarespace guidance.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:30:30.143Z",
+      "creator": {
+        "name": "@farzyness",
+        "url": "https://x.com/farzyness"
+      },
+      "connectFirst": [
+        "Figma",
+        "Squarespace"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "figma"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "Web Design Assistant",
+        "Figma",
+        "Squarespace",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/web-design-assistant/",
+      "sourceFile": "bots/web-design-assistant.md",
+      "promptSha256": "cfb2f745a08683716e46b4a5a0e86d7346560c655992e6d50b6ca61086054fae"
+    },
+    {
+      "slug": "wedding-planner",
+      "name": "Wedding Planner",
+      "description": "Track wedding vendor threads, timeline, and budget in Notion; chase unanswered items and send a weekly decisions digest.",
+      "category": "Personal",
+      "sourceCategory": "Personal",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gmail",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "sparkles",
+      "tags": [
+        "Personal",
+        "Wedding Planner",
+        "Gmail",
+        "Notion",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/wedding-planner/",
+      "sourceFile": "bots/wedding-planner.md",
+      "promptSha256": "4b71ac2d91c82c1af9583aa03df5985fc97191a0eb67679c69d794da7452be19"
+    },
+    {
+      "slug": "what-did-we-promise",
+      "name": "What Did We Promise",
+      "description": "Compare a customer contract, Slack channel, and Salesforce record; summarize commitments, implications, and contradictions.",
+      "category": "Customer Success",
+      "sourceCategory": "Success",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack",
+        "Salesforce",
+        "Google Drive"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "salesforce"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "icon": "life-buoy",
+      "tags": [
+        "Customer Success",
+        "What Did We Promise",
+        "Slack",
+        "Salesforce",
+        "Google Drive",
+        "Customer Operations"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/what-did-we-promise/",
+      "sourceFile": "bots/what-did-we-promise.md",
+      "promptSha256": "19f11988115d17bedefa4ac4f3aa1c154749193fdfeaf34b481baeba18cf9e5d"
+    },
+    {
+      "slug": "win-loss-memo",
+      "name": "Win/Loss Memo",
+      "description": "Turn the week’s Gong calls into a one-page win/loss memo; quote decisive phrases and link every claim to a timestamp.",
+      "category": "Sales",
+      "sourceCategory": "Sales",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Gong",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Sales",
+        "Win/Loss Memo",
+        "Gong",
+        "Notion",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/win-loss-memo/",
+      "sourceFile": "bots/win-loss-memo.md",
+      "promptSha256": "0e1066edae29960f336f0be20587261f87e6f9de84ba2aee1e32609d58d4fdae"
+    },
+    {
+      "slug": "writing-buddy",
+      "name": "Writing Buddy",
+      "description": "Clarify the audience and goal for a draft or idea; improve structure and wording while preserving voice and explaining changes.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T14:28:29.190Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Google Docs",
+        "Notion"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "googledocs"
+        },
+        {
+          "type": "api_account",
+          "slug": "notion"
+        }
+      ],
+      "icon": "pen-line",
+      "tags": [
+        "Productivity",
+        "Writing Buddy",
+        "Google Docs",
+        "Notion",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/writing-buddy/",
+      "sourceFile": "bots/writing-buddy.md",
+      "promptSha256": "8f521543face84fc58d9260f60c2fb571ed2df2e282be7e1f758b3bc85504303"
+    },
+    {
+      "slug": "x-account-crew",
+      "name": "X Account Crew",
+      "description": "Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@Axel_bitblaze69",
+        "url": "https://x.com/Axel_bitblaze69"
+      },
+      "connectFirst": [
+        "X",
+        "Hacker News",
+        "GitHub",
+        "Reddit"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "github"
+        }
+      ],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "X Account Crew",
+        "X",
+        "Hacker News",
+        "GitHub",
+        "Reddit",
+        "Social Media"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/x-account-crew/",
+      "sourceFile": "bots/x-account-crew.md",
+      "promptSha256": "5a5c55795db622d88304fbc9e43e935dc58b5369cbb3c0c64296d4f41affc1d2"
+    },
+    {
+      "slug": "x-strategist",
+      "name": "X Strategist",
+      "description": "Analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@kevinace",
+        "url": "https://x.com/kevinace"
+      },
+      "connectFirst": [
+        "X"
+      ],
+      "worksWith": [],
+      "icon": "megaphone",
+      "tags": [
+        "Marketing",
+        "X Strategist",
+        "X",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/x-strategist/",
+      "sourceFile": "bots/x-strategist.md",
+      "promptSha256": "c01fd54f3f31ce47c4a33ca5305ea06193a6c434a44ea60cbb31862a52f13f95"
+    },
+    {
+      "slug": "youtube-outlier-finder",
+      "name": "YouTube Outlier Finder",
+      "description": "Find videos that outperform their channel baseline in chosen niches; return the strongest outliers for inspiration.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "YouTube"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        }
+      ],
+      "icon": "video",
+      "tags": [
+        "Marketing",
+        "YouTube Outlier Finder",
+        "YouTube",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/youtube-outlier-finder/",
+      "sourceFile": "bots/youtube-outlier-finder.md",
+      "promptSha256": "7a6e98dba0adb4bb3e679636c3dad9d44c25ab0a5006f87d1139dd79779db196"
+    },
+    {
+      "slug": "youtube-scriptwriter",
+      "name": "YouTube Scriptwriter",
+      "description": "Turn an approved video idea into a complete spoken-word script; structure a strong hook, clear sections, and reviewable Google Doc.",
+      "category": "Marketing",
+      "sourceCategory": "Marketing",
+      "addedAt": "2026-08-18T12:30:30.143Z",
+      "creator": {
+        "name": "@farzyness",
+        "url": "https://x.com/farzyness"
+      },
+      "connectFirst": [
+        "YouTube",
+        "Google Docs"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "youtube"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledocs"
+        }
+      ],
+      "icon": "video",
+      "tags": [
+        "Marketing",
+        "YouTube Scriptwriter",
+        "YouTube",
+        "Google Docs",
+        "Content Creation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/youtube-scriptwriter/",
+      "sourceFile": "bots/youtube-scriptwriter.md",
+      "promptSha256": "140ebfcf38c3920a3d782c3945e51d5d25315742a55d53e97bb02ca9f7e81162"
+    }
+  ]
+}
