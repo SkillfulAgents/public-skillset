@@ -2,11 +2,11 @@
 category: Email & Communication
 icon: inbox
 tags:
-  - email-management
-  - inbox-zero
-  - email-triage
-  - unsubscribe
-  - automation
+  - Email Management
+  - Inbox Zero
+  - Email Triage
+  - Unsubscribe
+  - Automation
 works_with:
   - type: api_account
     slug: gmail

@@ -2,12 +2,12 @@
 category: Marketing
 icon: search-check
 tags:
-  - seo
-  - content-marketing
-  - keyword-research
-  - link-building
-  - technical-seo
-  - analytics
+  - SEO
+  - Content Marketing
+  - Keyword Research
+  - Link Building
+  - Technical SEO
+  - Analytics
 works_with:
   - type: api_account
     slug: gmail

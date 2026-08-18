@@ -2,11 +2,11 @@
 category: Design & Creative
 icon: presentation
 tags:
-  - presentations
-  - slide-decks
-  - visual-design
-  - react
-  - openslide
+  - Presentations
+  - Slide Decks
+  - Visual Design
+  - React
+  - OpenSlide
 works_with: []
 developer:
   name: SkillfulAgents

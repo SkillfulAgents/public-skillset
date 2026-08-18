@@ -2,11 +2,11 @@
 category: Operations
 icon: shopping-cart
 tags:
-  - office-management
-  - workplace-operations
-  - procurement
-  - grocery-ordering
-  - team-meals
+  - Office Management
+  - Workplace Operations
+  - Procurement
+  - Grocery Ordering
+  - Team Meals
 works_with: []
 developer:
   name: SkillfulAgents

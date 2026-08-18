@@ -55,7 +55,7 @@ Both files may have YAML frontmatter. The index generator shallow-merges the two
 | `version` | string | Agent template version; defaults to `1.0.0`. |
 | `category` | string | Primary marketplace category; defaults to an empty string. |
 | `icon` | string | Lowercase kebab-case Lucide icon name; defaults to an empty string. |
-| `tags` | string array | Search and marketing tags; defaults to `[]`. |
+| `tags` | string array | Display-ready search and marketing labels; defaults to `[]`. |
 | `works_with` | object array | Compatible API Accounts and MCPs, identified by canonical registry slug; defaults to `[]`. |
 | `developer` | object | Credit with required `name` and optional `url`; defaults to `{}`. |
 | `path` | string | Generated repository path. Do not set this in frontmatter. |
@@ -79,8 +79,8 @@ And the marketing fields in `README.md`:
 category: Productivity
 icon: calendar-check
 tags:
-  - planning
-  - automation
+  - Planning
+  - Automation
 works_with:
   - type: api_account
     slug: googlecalendar
@@ -97,6 +97,8 @@ Long-form marketplace copy starts here.
 ```
 
 `icon` must be the lowercase kebab-case name of an icon from the [Lucide icon catalog](https://lucide.dev/icons/), such as `inbox`, `presentation`, or `calendar-check`. Store the catalog name rather than the React component export name (`CalendarCheck`). The generator validates the name's syntax but does not embed a particular Lucide release's catalog, so consumers should fall back gracefully when a newer icon is unknown to their installed version.
+
+`tags` are display strings, not identifiers. Preserve human-friendly spacing, capitalization, acronyms, and product names (for example `Email Management`, `SEO`, and `OpenSlide`). Consumers may normalize tags internally for search or filtering, but the index should keep the presentation-ready labels.
 
 Each `works_with` item must contain exactly `type` and `slug`:
 

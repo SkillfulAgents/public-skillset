@@ -2,11 +2,11 @@
 category: Health & Fitness
 icon: apple
 tags:
-  - nutrition
-  - meal-logging
-  - calorie-tracking
-  - macro-tracking
-  - weight-tracking
+  - Nutrition
+  - Meal Logging
+  - Calorie Tracking
+  - Macro Tracking
+  - Weight Tracking
 works_with: []
 developer:
   name: SkillfulAgents

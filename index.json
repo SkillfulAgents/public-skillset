@@ -14,11 +14,11 @@
       "category": "Agent Creation",
       "icon": "wand-sparkles",
       "tags": [
-        "onboarding",
-        "agent-builder",
-        "workflow-discovery",
-        "tool-discovery",
-        "personalization"
+        "Onboarding",
+        "Agent Builder",
+        "Workflow Discovery",
+        "Tool Discovery",
+        "Personalization"
       ],
       "works_with": [
         {
@@ -81,11 +81,11 @@
       "category": "Email & Communication",
       "icon": "inbox",
       "tags": [
-        "email-management",
-        "inbox-zero",
-        "email-triage",
-        "unsubscribe",
-        "automation"
+        "Email Management",
+        "Inbox Zero",
+        "Email Triage",
+        "Unsubscribe",
+        "Automation"
       ],
       "works_with": [
         {
@@ -108,11 +108,11 @@
       "category": "Health & Fitness",
       "icon": "apple",
       "tags": [
-        "nutrition",
-        "meal-logging",
-        "calorie-tracking",
-        "macro-tracking",
-        "weight-tracking"
+        "Nutrition",
+        "Meal Logging",
+        "Calorie Tracking",
+        "Macro Tracking",
+        "Weight Tracking"
       ],
       "works_with": [],
       "developer": {
@@ -130,11 +130,11 @@
       "category": "Operations",
       "icon": "shopping-cart",
       "tags": [
-        "office-management",
-        "workplace-operations",
-        "procurement",
-        "grocery-ordering",
-        "team-meals"
+        "Office Management",
+        "Workplace Operations",
+        "Procurement",
+        "Grocery Ordering",
+        "Team Meals"
       ],
       "works_with": [],
       "developer": {
@@ -152,11 +152,11 @@
       "category": "Design & Creative",
       "icon": "presentation",
       "tags": [
-        "presentations",
-        "slide-decks",
-        "visual-design",
-        "react",
-        "openslide"
+        "Presentations",
+        "Slide Decks",
+        "Visual Design",
+        "React",
+        "OpenSlide"
       ],
       "works_with": [],
       "developer": {
@@ -174,11 +174,11 @@
       "category": "Sales",
       "icon": "target",
       "tags": [
-        "sales-outreach",
-        "lead-generation",
-        "prospecting",
-        "email-campaigns",
-        "sales-automation"
+        "Sales Outreach",
+        "Lead Generation",
+        "Prospecting",
+        "Email Campaigns",
+        "Sales Automation"
       ],
       "works_with": [
         {
@@ -209,12 +209,12 @@
       "category": "Human Resources",
       "icon": "user-search",
       "tags": [
-        "recruiting",
-        "talent-sourcing",
-        "candidate-screening",
-        "hiring",
-        "ats",
-        "outreach"
+        "Recruiting",
+        "Talent Sourcing",
+        "Candidate Screening",
+        "Hiring",
+        "ATS",
+        "Outreach"
       ],
       "works_with": [
         {
@@ -245,12 +245,12 @@
       "category": "Marketing",
       "icon": "search-check",
       "tags": [
-        "seo",
-        "content-marketing",
-        "keyword-research",
-        "link-building",
-        "technical-seo",
-        "analytics"
+        "SEO",
+        "Content Marketing",
+        "Keyword Research",
+        "Link Building",
+        "Technical SEO",
+        "Analytics"
       ],
       "works_with": [
         {

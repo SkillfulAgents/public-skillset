@@ -2,11 +2,11 @@
 category: Agent Creation
 icon: wand-sparkles
 tags:
-  - onboarding
-  - agent-builder
-  - workflow-discovery
-  - tool-discovery
-  - personalization
+  - Onboarding
+  - Agent Builder
+  - Workflow Discovery
+  - Tool Discovery
+  - Personalization
 works_with:
   - type: api_account
     slug: gmail

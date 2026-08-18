@@ -3,11 +3,11 @@ version: 1.13.0
 category: Sales
 icon: target
 tags:
-  - sales-outreach
-  - lead-generation
-  - prospecting
-  - email-campaigns
-  - sales-automation
+  - Sales Outreach
+  - Lead Generation
+  - Prospecting
+  - Email Campaigns
+  - Sales Automation
 works_with:
   - type: api_account
     slug: gmail

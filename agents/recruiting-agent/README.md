@@ -2,12 +2,12 @@
 category: Human Resources
 icon: user-search
 tags:
-  - recruiting
-  - talent-sourcing
-  - candidate-screening
-  - hiring
-  - ats
-  - outreach
+  - Recruiting
+  - Talent Sourcing
+  - Candidate Screening
+  - Hiring
+  - ATS
+  - Outreach
 works_with:
   - type: api_account
     slug: googlesheets
