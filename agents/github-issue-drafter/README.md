@@ -39,6 +39,12 @@ Clarify a problem or idea one question at a time; produce a well-structured GitH
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this rough bug report into a clean GitHub issue
+- Ask me one clarifying question at a time until you can write it
+- Check the repo for related issues and existing terminology
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

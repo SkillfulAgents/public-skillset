@@ -43,6 +43,12 @@ Answer quarter and pipeline questions from Salesforce in Slack; surface the deal
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- How is the quarter tracking and what are we short?
+- Which three deals move the number this month?
+- Where does the pipeline data look wrong or stale?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

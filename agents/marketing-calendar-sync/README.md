@@ -43,6 +43,12 @@ Mirror the global Notion webinar database into a local calendar; add, update, or
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Sync the global webinar database to my calendar
+- Which regions and event types should be mine?
+- Run one sync while I compare both calendars
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

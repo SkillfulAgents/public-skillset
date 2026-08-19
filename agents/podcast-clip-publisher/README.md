@@ -41,6 +41,12 @@ Transcribe podcast episodes and identify selected moments; draft clips and X pub
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Transcribe this episode and find the best moments
+- Draft three short clips with captions and links
+- Show me every clip and caption before anything posts
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

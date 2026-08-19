@@ -43,6 +43,12 @@ Clarify the audience and goal for a draft or idea; improve structure and wording
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here is a rough draft, who is it for and what is the goal?
+- Tighten the structure but keep my voice
+- Explain the meaningful changes you made
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

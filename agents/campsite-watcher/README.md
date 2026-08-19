@@ -39,6 +39,12 @@ Watch selected campsite inventory for preferred sites and dates; alert you in Sl
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Watch recreation.gov for my parks and date windows
+- Message me the details when a matching campsite opens
+- Book the campsite I just confirmed in the thread
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

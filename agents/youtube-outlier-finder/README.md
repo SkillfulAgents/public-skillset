@@ -39,6 +39,12 @@ Find videos that outperform their channel baseline in chosen niches; return the 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find outlier videos in my niche this week
+- How far above the channel baseline did each perform?
+- What did those videos do differently?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

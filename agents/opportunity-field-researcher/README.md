@@ -37,6 +37,12 @@ Evaluate a Trends.vc opportunity against live competitors, pricing, launches, co
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Help me pick an opportunity from Trends.vc
+- Research the live market, competitors, and pricing
+- Give me the case for, against, and a seven-day test
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

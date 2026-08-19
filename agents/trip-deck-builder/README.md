@@ -43,6 +43,12 @@ Find Airbnbs that match budget and taste; build a comparison deck and draft the 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find Airbnbs in Lisbon that fit our budget and taste
+- Build a comparison deck with photos and pros and cons
+- Draft the email to my partner for the final vote
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

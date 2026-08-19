@@ -41,6 +41,12 @@ Break a cross-repository request into coherent cloud-agent tasks; coordinate dep
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Add this API endpoint and update all the related SDKs
+- Which repositories does this change actually touch?
+- Run the tests and summarize the changes before merge
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

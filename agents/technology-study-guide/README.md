@@ -41,6 +41,12 @@ Turn a technology topic or source into a structured learning plan; explain conce
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build me a study plan for learning Rust
+- Explain this concept from beginner to advanced
+- Give me practice questions and a project to build
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

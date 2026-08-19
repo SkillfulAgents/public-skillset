@@ -39,6 +39,12 @@ Search Slack for every customer mention of a requested feature; return one linke
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Who asked for SSO, from which customer, and in what words?
+- Search every channel for mentions of this feature
+- Give me one list with links to the original messages
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

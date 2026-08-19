@@ -41,6 +41,12 @@ Find the strongest moments in source videos; create vertical shorts with hooks, 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find the strongest moments in this source video
+- Cut three vertical shorts with hooks and captions
+- Show me every finished cut before publishing
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

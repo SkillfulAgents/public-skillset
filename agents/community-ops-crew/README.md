@@ -45,6 +45,12 @@ Sync community events into Notion and summarize them in Slack; chase follow-ups 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Sync this week's events into the Notion member database
+- Post the weekly community summary to Slack
+- Chase the follow-ups nobody remembers and tell me what slipped
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

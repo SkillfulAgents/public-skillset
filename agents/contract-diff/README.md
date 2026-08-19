@@ -39,6 +39,12 @@ Compare old and new versions of a contract or policy; summarize changed money, d
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Compare these two lease versions and tell me what changed
+- Show me every change to money, dates, and obligations
+- Flag anything quietly added or removed, with page references
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

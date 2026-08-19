@@ -47,6 +47,12 @@ Maintain TEAM_ALIGNMENT as the shared source of truth; collect commitments and c
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Update the shared alignment file with this week's commitments
+- Where do priorities or ownership conflict right now?
+- Prepare the handoff summaries for each owner
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

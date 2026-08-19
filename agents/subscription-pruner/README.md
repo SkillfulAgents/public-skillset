@@ -39,6 +39,12 @@ Build a priced subscription inventory from Gmail receipts; recommend cancellatio
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- List every subscription I pay for with its price
+- Which ones have I not actually used in months?
+- Cancel the ones I approved and unsubscribe the rest
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

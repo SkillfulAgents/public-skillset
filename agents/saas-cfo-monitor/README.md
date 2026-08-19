@@ -51,6 +51,12 @@ Scan SaaS spending for missed or unusual charges and audit COGS; produce weekly 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Scan this week's spending for unusual charges
+- Run the cost-of-goods-sold audit for last month
+- Build the monthly CFO report with revenue and costs
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

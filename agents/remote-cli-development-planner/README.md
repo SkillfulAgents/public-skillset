@@ -41,6 +41,12 @@ Plan repository work and delegate isolated implementation tasks to Codex CLI or 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Plan the work for this issue before any code is written
+- Delegate these tasks to isolated worktrees
+- Reconcile the results and show me the diffs
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

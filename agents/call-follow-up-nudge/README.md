@@ -43,6 +43,12 @@ Check completed calendar calls for promised follow-ups; send a timely Slack nudg
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What did I commit to on today's calls?
+- Nudge me in Slack thirty minutes after each call ends
+- Shadow one day of calls before you start posting
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

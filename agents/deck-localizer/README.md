@@ -39,6 +39,12 @@ Translate Google Slides copy naturally while preserving layout; leave product na
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Translate this deck into German and keep the layout
+- Which product names should stay untranslated?
+- Produce one sample slide for a native speaker to check
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

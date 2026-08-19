@@ -45,6 +45,12 @@ Learn your voice from approved past posts; draft weekday X and LinkedIn content 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Learn my voice from the twenty posts I picked
+- Draft this week's posts into Notion for review
+- Match my rhythm, not just my topics
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

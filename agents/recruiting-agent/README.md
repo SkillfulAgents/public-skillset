@@ -28,6 +28,12 @@ A ready-to-run recruiting agent: sourcing → filtering → outbound → nurture
 
 Say hello (or "set up"). The agent runs its **`agent-onboarding`** skill: a guided interview that configures your ATS (or a no-ATS pipeline store), imports your roles, sets up per-role screening criteria, outreach voice and templates, the daily search schedule, and the dashboard. ~20 minutes.
 
+## Example prompts
+
+- Set up my roles and screening criteria
+- Source candidates for the backend engineer role
+- Advance these three and tell the filter why
+
 ## What's inside
 
 - `.claude/skills/` — the agent's toolkit (onboarding, ATS access, LinkedIn sourcing, excellence pools, calibration feedback, YC directory)

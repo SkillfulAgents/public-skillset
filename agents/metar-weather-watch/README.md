@@ -37,6 +37,12 @@ Monitor current and recent METAR observations; predict the next three hours of c
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What are the METARs doing at my airports right now?
+- Is the next three hours trending toward a no-go?
+- Show me the observations behind that call
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

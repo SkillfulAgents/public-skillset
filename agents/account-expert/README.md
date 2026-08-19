@@ -49,6 +49,12 @@ Monitor one strategic account across Slack, email, and calls; track feature requ
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Catch me up on the last month for the account you track
+- What feature requests has this customer raised on calls?
+- Ping me in Slack when we ship something relevant to them
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

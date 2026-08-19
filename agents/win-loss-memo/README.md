@@ -41,6 +41,12 @@ Turn the week’s Gong calls into a one-page win/loss memo; quote decisive phras
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this week's calls into a win/loss memo
+- Quote the objections that killed the lost deals
+- Link every claim to a call timestamp
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

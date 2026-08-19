@@ -51,6 +51,12 @@ Inspect Slack, Notion, GitHub, and Linear for repetitive work; propose concrete 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Inspect my history and find the repetitive work I do
+- Propose two automations with triggers and time saved
+- Write up the automation I picked as your first real task
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

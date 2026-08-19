@@ -51,6 +51,12 @@ Build a live, deduplicated prospecting sheet from CRM, research, and usage signa
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build tonight's prospecting sheet for my accounts
+- Draft an email and LinkedIn pair for each prospect
+- Learn my voice from my last thirty sent emails
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

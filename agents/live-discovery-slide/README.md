@@ -43,6 +43,12 @@ Turn discovery-call notes into an accurate What We’ve Heard slide; preserve th
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Fill the What we've heard slide from this call
+- Pull three concrete themes on their pain and priorities
+- Keep the layout and fix the stale logos and names
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -39,6 +39,12 @@ Audit QuickBooks records and supporting check images; reconcile card transaction
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Audit last quarter's books and list every discrepancy
+- Reconcile the credit-card transactions against the receipts
+- Flag transactions that may be deductible business expenses
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

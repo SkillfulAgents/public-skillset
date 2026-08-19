@@ -43,6 +43,12 @@ Resolve people from names or email addresses and place them in an account chart;
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build the org chart for this account from these names
+- Mark who influences the deal versus who just attends
+- Refresh the charts for my top ten accounts weekly
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

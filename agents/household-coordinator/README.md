@@ -41,6 +41,12 @@ Combine family calendars, school schedules, grades, and messages; identify follo
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What does the family have on this week?
+- Which teachers and volunteers do I owe a follow-up?
+- Draft the texts but hold them until I approve
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

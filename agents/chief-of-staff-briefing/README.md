@@ -51,6 +51,12 @@ Combine important messages, meetings, commitments, and open work; deliver an ear
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Give me this morning's briefing across mail and calendar
+- What are today's fires that need putting out?
+- Run the briefing at 5am daily and flag anything urgent
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

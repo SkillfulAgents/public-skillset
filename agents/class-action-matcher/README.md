@@ -39,6 +39,12 @@ Compare your receipts and purchase history with current settlements; identify li
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Search my receipts for settlements I might qualify for
+- Show me deadlines, claim value, and the evidence needed
+- Draft the applications but do not submit anything
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

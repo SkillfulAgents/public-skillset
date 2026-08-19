@@ -47,6 +47,12 @@ Receive work through one front door and route it to specialist bots; maintain a 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What is in flight right now and what is blocked?
+- Route this piece of work to the right specialist bot
+- Post the daily check-in on what needs a human decision
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

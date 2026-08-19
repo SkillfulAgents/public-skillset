@@ -43,6 +43,12 @@ Review prior one-on-one notes and commitments before each meeting; surface statu
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Prep my next one-on-one with my manager
+- Where do the tasks from our last sync stand?
+- Give me a short agenda of what to raise this week
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

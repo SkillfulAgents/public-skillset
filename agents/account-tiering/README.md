@@ -43,6 +43,12 @@ Score every account on fit multiplied by warmth; write clear account tiers into 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Score my accounts on fit times warmth and show me tier one
+- Write the current account tiers into the Notion database
+- Re-tier every account weekly and enrich the top tier
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

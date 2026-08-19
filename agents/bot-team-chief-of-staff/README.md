@@ -37,6 +37,12 @@ Inspect the purpose and setup of every bot in your team; propose a clear structu
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Inspect every bot I run and what each one is actually for
+- Propose a team structure with clear ownership and routing
+- Which bots should I combine, rename, or retire?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

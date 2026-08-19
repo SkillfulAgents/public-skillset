@@ -47,6 +47,12 @@ Combine Salesforce usage, Zendesk tickets, and open opportunities; produce an ed
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build this quarter's QBR pack for my top account
+- What changed since last quarter and what do we ask for?
+- Use last quarter's pack as the template
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

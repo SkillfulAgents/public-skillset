@@ -43,6 +43,12 @@ Find flight options for a route and dates; prioritize aircraft and airlines with
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find flights for this route with Starlink onboard
+- Compare schedules, price, layovers, and baggage rules
+- Show me the full itinerary and hold the booking
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

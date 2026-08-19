@@ -39,6 +39,12 @@ Check Gmail for messages genuinely awaiting your reply; exclude newsletters, rec
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Show me only the emails genuinely waiting on my reply
+- What is each person actually asking me for?
+- Run this read-only every thirty minutes
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -39,6 +39,12 @@ Separate actionable, relevant Slack messages from routine noise; send urgent pin
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Only ping me for things that are actually actionable
+- Batch everything else into a daily digest
+- Run alongside my normal notifications for two days
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

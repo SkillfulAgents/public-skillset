@@ -39,6 +39,12 @@ Inspect Salesforce in read-only mode and verify snapshots; preview every propose
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Inventory the users, permissions, and flows in my org
+- Run this SOQL query and export the results
+- Preview the change and wait for my typed confirmation
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -39,6 +39,12 @@ Compare a local business’s current and desired market position; maintain a Web
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Plan next week's local search topics and keywords
+- Review this draft for accuracy, SEO, and formatting
+- Show me the planner with dates, titles, and live URLs
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

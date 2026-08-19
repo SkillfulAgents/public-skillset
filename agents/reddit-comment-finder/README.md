@@ -37,6 +37,12 @@ Find recent Reddit discussions where you can add real value; return qualified li
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find Reddit threads where I could add real value
+- Explain the angle I should take on each post
+- Filter out the low-quality and off-topic threads
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

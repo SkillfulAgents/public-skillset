@@ -39,6 +39,12 @@ Answer study questions with relevant Bible passages; separate direct teaching fr
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What do the Gospels actually say about the Sabbath?
+- Compare how three translations render this passage
+- Separate direct teaching from later interpretation here
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -39,6 +39,12 @@ Turn instructions and email context into clear drafts; apply the dedicated Gmail
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Draft a reply to the last email from this customer
+- Apply the draft label and leave it unsent
+- Rewrite this draft in a warmer tone with my sign-off
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

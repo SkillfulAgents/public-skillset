@@ -36,6 +36,12 @@ Then ask the agent to run onboarding. It interviews you and writes `config/outbo
 
 Nothing else runs until that file exists. That is deliberate.
 
+## Example prompts
+
+- Run onboarding and write my outbound config
+- Qualify this account list against my ICP
+- Draft today's capped batch and show me the lint results
+
 ## What you get
 
 | | |

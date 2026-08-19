@@ -41,6 +41,12 @@ Retrieve or create podcast transcripts; summarize claims, decisions, and actiona
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Summarize this episode in the context of my work
+- What claims and decisions are worth acting on?
+- Include the transcript and source links so I can verify
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

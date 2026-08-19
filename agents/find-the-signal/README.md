@@ -43,6 +43,12 @@ Look across recent Granola meetings and Slack messages; surface cross-conversati
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What pattern am I missing across my last two weeks?
+- Which concern keeps coming up from different people?
+- Show me where the signal appears and what it might mean
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

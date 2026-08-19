@@ -47,6 +47,12 @@ Compare a live LinkedIn profile with your current work and voice; rewrite its he
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Audit my LinkedIn profile against what I do now
+- Rewrite my headline and about section in my voice
+- Show the draft side by side with the current version
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

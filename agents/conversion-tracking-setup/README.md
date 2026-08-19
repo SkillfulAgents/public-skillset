@@ -37,6 +37,12 @@ Build a Converly conversion flow for a website and ad platforms; provide the sni
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Set up conversion tracking for my website in Converly
+- Give me the tracking snippet and install instructions
+- Publish the flow and verify it with a test conversion
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

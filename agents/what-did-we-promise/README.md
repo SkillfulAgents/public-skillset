@@ -47,6 +47,12 @@ Compare a customer contract, Slack channel, and Salesforce record; summarize com
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What did we actually promise this account?
+- Where does the contract contradict what we said?
+- Give me one page on commitments and implications
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

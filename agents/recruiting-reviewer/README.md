@@ -41,6 +41,12 @@ Sort applications into strong, mid, and reject against the existing scorecard; e
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Sort this batch into strong, mid, and reject
+- Give me two sentences of reasoning per candidate
+- Flag anything unusual for me to look at myself
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

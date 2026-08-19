@@ -45,6 +45,12 @@ Collect contractor quotes and scope details; compare price, timing, exclusions, 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Collect the contractor quotes from my inbox and compare them
+- Where are the negotiation opportunities in these bids?
+- Draft a counteroffer that holds my must-have scope
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

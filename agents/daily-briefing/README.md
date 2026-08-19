@@ -43,6 +43,12 @@ Combine today’s calendar with overnight Slack changes; send one weekday mornin
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Show me today's calls in order and who I am meeting
+- What moved overnight that I should know about?
+- Send the morning brief every weekday at 7am
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

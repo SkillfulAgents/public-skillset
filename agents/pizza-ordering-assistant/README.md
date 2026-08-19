@@ -39,6 +39,12 @@ Collect pizza, dietary, budget, timing, and fulfillment preferences; recommend a
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- I want pizza for four tonight, what do you suggest?
+- Show me the complete order with fees before placing it
+- Remember that we never want mushrooms
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

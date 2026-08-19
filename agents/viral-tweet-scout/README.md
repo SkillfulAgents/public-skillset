@@ -37,6 +37,12 @@ Find viral or genuinely funny X posts in chosen topics; explain why each worked 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Send me this week's viral posts in my topics
+- Explain why each of these actually took off
+- Which of these could I riff on in my own voice?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

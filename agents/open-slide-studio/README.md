@@ -39,6 +39,12 @@ The stock **Getting Started** deck is included so the studio is useful immediate
 
 No onboarding session is required because this template has no user-specific settings, accounts, databases, or secrets.
 
+## Example prompts
+
+- Build me a six-slide deck on our Q3 roadmap
+- Restyle this deck with a cleaner theme
+- Open the deck library and present the launch deck
+
 ## What's inside
 
 - `CLAUDE.md` — the slide agent's durable role, native dashboard contract, commands, and skill map.

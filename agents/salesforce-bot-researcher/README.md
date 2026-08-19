@@ -41,6 +41,12 @@ Find every Bot Directory listing with a Salesforce connection; summarize use cas
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find every directory bot with a Salesforce integration
+- Summarize what each one does and why it matters
+- Suggest functionality Salesforce could build from this
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

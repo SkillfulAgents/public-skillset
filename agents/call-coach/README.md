@@ -37,6 +37,12 @@ Review Gong calls for missed signals, interruptions, and skipped discovery; retu
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Coach my last call and show me the timestamped feedback
+- Where did I talk over someone or miss a buying signal?
+- Give me two things to practise before my next call
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -37,6 +37,12 @@ Review your X niche and recent posts; plan original posts and genuine engagement
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Review my recent X posts and tell me what actually landed
+- Draft next week's posts and replies for my approval
+- Which larger accounts should I be engaging with genuinely?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -43,6 +43,12 @@ Turn the week’s Zendesk tickets into changelog notes; draft help-center articl
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this week's tickets into changelog notes
+- Which questions kept repeating in the queue?
+- Draft a help-center article for the top two
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

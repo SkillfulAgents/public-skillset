@@ -37,6 +37,12 @@ Provide other bots controlled access to iCloud contacts and reminders; read or u
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Look up this contact in my iCloud address book
+- Add a reminder to my iCloud list for tomorrow
+- Which of my bots are allowed to use this bridge?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

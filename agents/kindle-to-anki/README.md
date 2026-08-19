@@ -39,6 +39,12 @@ Turn recent Kindle highlights into useful Anki cards; preserve the question, sou
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn yesterday's Kindle highlights into Anki cards
+- Convert this book's highlights so I can review them
+- Dedupe the new cards against the ones I already have
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

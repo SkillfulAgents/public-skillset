@@ -43,6 +43,12 @@ Study how recent hires in a role spent their first weeks; draft a first-week pla
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Study how the last few hires spent their first weeks
+- Draft a first-week plan for our new engineer
+- Who should they meet and what should they ship by Friday?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

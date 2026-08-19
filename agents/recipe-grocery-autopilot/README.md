@@ -41,6 +41,12 @@ Extract ingredients and quantities from a recipe photo; prepare a practical Whol
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here is a photo of a recipe, build me the cart
+- Resolve package sizes and sensible substitutions
+- Show me the full cart and total before ordering
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -39,6 +39,12 @@ Perform the recurring accounting tasks you define; organize results into clear N
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Run this month's recurring accounting tasks as a dry run
+- Flag any missing or unusual items in this month's records
+- Summarize the quarter into a clean Notion record for review
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

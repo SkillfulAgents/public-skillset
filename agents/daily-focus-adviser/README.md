@@ -39,6 +39,12 @@ Review today’s commitments, deadlines, and unfinished priorities; recommend th
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What is the most important thing for me to do today?
+- Turn today's commitments into realistic focus blocks
+- Tell me what to defer and why it can wait
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

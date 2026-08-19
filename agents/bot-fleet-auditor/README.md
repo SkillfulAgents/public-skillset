@@ -39,6 +39,12 @@ Review every active bot’s cost and weekly output; make evidence-based keep, ch
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Tally what each bot cost and produced this week
+- Flag the wasteful bots with a keep or kill recommendation
+- Post the fleet ledger to Slack every Friday
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -45,6 +45,12 @@ Analyze PostHog journeys and Fable recordings for reproducible friction; gather 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find reproducible friction in this week's journeys
+- Show me the evidence behind this usability problem
+- Draft a bounded pull request for the fix I approved
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

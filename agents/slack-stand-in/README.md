@@ -39,6 +39,12 @@ Learn your voice and routine answers from one Slack channel; draft replies while
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Learn my voice from this channel's history
+- Draft a reply to the routine questions today
+- Escalate anything new or sensitive to me first
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

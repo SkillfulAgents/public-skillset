@@ -41,6 +41,12 @@ Answer deep customer product questions from GitHub and Glean sources; cite the s
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- How does our rate limiting actually work?
+- Give me an answer I can say out loud on this call
+- Cite the source of truth behind that answer
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

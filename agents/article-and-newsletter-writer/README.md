@@ -45,6 +45,12 @@ Gather source material and research only as needed; draft an article or newslett
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Draft this week's newsletter from my notes in Google Docs
+- Write an article in my voice with a headline and structure
+- Show me the full copy before anything is sent or published
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -40,6 +40,12 @@ A personal nutrition tracker you can message naturally. Describe what you ate (o
 
 You can re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
+## Example prompts
+
+- I had a chicken burrito bowl and a cold brew
+- How am I tracking against my calorie and protein goal?
+- Log my weight and show me the last month's trend
+
 ## What's inside
 
 - `CLAUDE.md` — the agent's instructions (logging style, response format).

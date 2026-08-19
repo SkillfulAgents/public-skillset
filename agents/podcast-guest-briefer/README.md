@@ -43,6 +43,12 @@ Research a specified podcast guest from approved sources; create a concise brief
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Research this week's guest and build me a brief
+- Give me thoughtful questions and topics to avoid
+- Show me the brief before it goes to the host
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

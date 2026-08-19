@@ -45,6 +45,12 @@ Pull support tickets on a schedule and draft answers from approved documentation
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Pull the new tickets and draft answers from our docs
+- Which tickets need a human and why?
+- Hold every response for my approval before sending
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

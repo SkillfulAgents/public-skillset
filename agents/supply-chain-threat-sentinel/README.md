@@ -41,6 +41,12 @@ Inspect dependency files, releases, workflows, and packages for supply-chain thr
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Scan this dependency update for supply-chain risk
+- Explain the evidence and severity behind each finding
+- Give me prioritized remediation steps, no auto-blocking
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
