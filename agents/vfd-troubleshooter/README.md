@@ -37,6 +37,12 @@ Interpret VFD photos, fault codes, and status indicators against manufacturer do
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here is a photo of the drive display, what is faulting?
+- Give me a safe ordered diagnostic checklist
+- Which voltage and control-signal checks come first?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

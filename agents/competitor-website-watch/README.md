@@ -41,6 +41,12 @@ Capture baselines for selected competitor pages; alert only on meaningful pricin
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Capture a baseline for the competitor pages I care about
+- Alert me only when pricing, packaging, or positioning shifts
+- Show me before-and-after screenshots of what changed
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

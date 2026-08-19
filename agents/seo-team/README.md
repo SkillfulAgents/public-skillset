@@ -37,6 +37,12 @@ Coordinate five local-SEO specialist roles on one project brief; draft grounded 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Lock the primary keywords and service-plus-town titles
+- Draft the homepage and service pages with local copy
+- Check the site structure, metadata, and citations
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

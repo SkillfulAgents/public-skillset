@@ -39,6 +39,12 @@ For recurring clutter, it extracts unsubscribe options from message headers and 
 4. Optionally connect Slack for notifications.
 5. Ask it to screen the inbox or unsubscribe you from a mailing list.
 
+## Example prompts
+
+- Screen my inbox and show me what needs a reply today
+- Unsubscribe me from the newsletters I never open
+- Mark everything you screened as read and summarize it
+
 ## What's inside
 
 - `CLAUDE.md` — the agent's durable workspace instructions.

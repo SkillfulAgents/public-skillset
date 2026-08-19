@@ -39,6 +39,12 @@ Normalize a multi-city itinerary into one timeline; flag risky connections, time
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here is my multi-city itinerary, check it for problems
+- Which connections are too tight or cross a time zone?
+- Suggest a corrected alternative for the risky legs
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -37,6 +37,12 @@ Identify ingredients already available at home; plan a week of dinners and an Am
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here is a photo of my fridge, plan the week's dinners
+- Build an Amazon cart for just the missing ingredients
+- Hold the cart until I have approved every item
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

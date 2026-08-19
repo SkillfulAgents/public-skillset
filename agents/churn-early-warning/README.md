@@ -47,6 +47,12 @@ Combine CRM, product-usage, and support-tone signals; warn about likely customer
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Which accounts are drifting before the numbers move?
+- Show me seats going idle and support tone shifting
+- Backtest the signals on three accounts we already lost
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

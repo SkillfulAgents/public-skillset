@@ -55,6 +55,12 @@ Combine calendar, CRM, email, Slack, call notes, and research for each meeting; 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Prep me for tomorrow's meetings in one short brief
+- What do we already know about this new account?
+- Send the brief before my first meeting every day
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

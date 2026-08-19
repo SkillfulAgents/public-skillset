@@ -41,6 +41,12 @@ Add new Gong questions to a Notion FAQ each morning; merge duplicates and flag a
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Add the new questions from yesterday's calls to the FAQ
+- Merge the duplicate questions we already answer
+- Flag any answer that contradicts what we shipped
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

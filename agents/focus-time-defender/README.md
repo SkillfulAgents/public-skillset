@@ -39,6 +39,12 @@ Find at least ninety minutes of weekly focus time; propose meetings to decline a
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find me ninety minutes of real focus time this week
+- Which meetings should I decline, and draft the notes
+- Hold the block but wait for my approval to decline
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

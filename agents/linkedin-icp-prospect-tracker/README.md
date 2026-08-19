@@ -37,6 +37,12 @@ Find public LinkedIn profiles that match a defined ICP; capture qualified prospe
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find LinkedIn profiles that match my ideal customer
+- Add the qualified prospects to my CSV with evidence
+- Show me who moved to the next outreach stage
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

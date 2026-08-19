@@ -39,6 +39,12 @@ Monitor selected competitor pricing pages; send a concise Slack diff and explain
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Check my competitor pricing pages and show me any changes
+- Post a diff to Slack when a competitor changes their pricing
+- What does this pricing change probably mean for us?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -37,6 +37,12 @@ Fetch newly added directory bots every day; recommend matches based on your cate
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Fetch today's new bots and match them to my interests
+- Explain why each of these bots is worth my time
+- Prepare the bots I approved for creation
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

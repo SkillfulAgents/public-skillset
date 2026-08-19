@@ -39,6 +39,12 @@ Find work emails since the last run that plausibly need a reply; send a concise 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Digest the work emails that need a reply since last run
+- Propose a reply in my voice for each one
+- Send nothing at all if nothing needs an answer
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

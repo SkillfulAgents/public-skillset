@@ -52,6 +52,12 @@ Combine call notes, Slack threads, and email after each customer touchpoint; dra
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Update my opportunity notes from this week's touchpoints
+- Show me the proposed Salesforce updates before writing
+- What changed on my in-play deals since the last forecast?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -64,6 +64,12 @@ Importing this template auto-launches a setup session (the `agent-onboarding` sk
 Nothing is published, sent, or merged without an explicit autonomy grant you make
 during onboarding (recorded in `seo/STATE.md`).
 
+## Example prompts
+
+- Show me the SEO dashboard and this week's numbers
+- Publish the next article from the content backlog
+- Run the monthly technical audit and open the PRs
+
 ## Layout
 
 ```

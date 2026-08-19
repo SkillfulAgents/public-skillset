@@ -39,6 +39,12 @@ Research flights and stays that fit a trip; surface cheaper alternatives and pre
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Research flights and stays for this trip
+- Find cheaper dates or airports I would have missed
+- Did any fare drop on what I already booked?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

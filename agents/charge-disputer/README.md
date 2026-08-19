@@ -39,6 +39,12 @@ Match a disputed charge to its receipt and statement line; draft a complete disp
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Pull the receipt and statement line for this wrong charge
+- Draft the dispute letter with the details laid out properly
+- Track the case number and deadlines now that I have sent it
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

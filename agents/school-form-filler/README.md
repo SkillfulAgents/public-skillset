@@ -43,6 +43,12 @@ Reuse last year’s PDFs to prefill current school forms; ask only for changed f
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Prefill this camp form from last year's paperwork
+- What changed since last year that I need to confirm?
+- Never submit anything, just hand it back for signature
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

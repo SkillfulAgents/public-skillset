@@ -47,6 +47,12 @@ Find a customer’s enablement request and relevant calls; build a Drive pack an
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build the enablement pack for this customer request
+- Pull the relevant call recordings and summarize them
+- Draft the reply with the Drive folder link for me to send
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

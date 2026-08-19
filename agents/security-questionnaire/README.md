@@ -43,6 +43,12 @@ Draft security-questionnaire answers from public docs and past responses; cite e
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Draft answers to this security questionnaire
+- Cite the past response or doc behind each answer
+- Flag every question that genuinely needs a human
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

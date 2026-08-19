@@ -43,6 +43,12 @@ Reorganize a Google Drive folder into a maintained Notion wiki; assign owners an
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Rebuild this Drive folder as a Notion wiki by topic
+- Assign an owner to every page and banner what is stale
+- Start with one subfolder so I can check the structure
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

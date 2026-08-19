@@ -37,6 +37,12 @@ Review records and pending changes in a self-hosted finance system; maintain a f
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Review the pending changes in my finance system
+- What discrepancies need my attention this month?
+- Show me the full write set before anything is saved
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

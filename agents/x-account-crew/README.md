@@ -45,6 +45,12 @@ Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DM
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What is about to pop off in my topics this week?
+- Turn that idea into a ready-to-post hook in my voice
+- Show me the content calendar and who is mentioning me
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

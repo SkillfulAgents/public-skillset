@@ -39,6 +39,12 @@ Inspect scanned photos for correct capture dates and locations; repair EXIF date
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Dry run the metadata fix on a small sample of scans
+- Repair the capture dates and GPS on this folder of scans
+- Report which files were changed, uncertain, or skipped
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -41,6 +41,12 @@ Verify customer Trust Center requests and recommend approval in Slack; create ti
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Verify this Trust Center request and the company domain
+- Post an approval recommendation to Slack
+- Create the time-limited grant now that it is approved
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

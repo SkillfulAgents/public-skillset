@@ -41,6 +41,12 @@ A friendly (slightly humorous, lower-caps) office manager agent. It runs a recur
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
+## Example prompts
+
+- Place this week's kitchen stock order
+- Can we get more sparkling water in the fridge?
+- Organize a team lunch order for twelve people
+
 ## What's inside
 
 - `CLAUDE.md` — the agent's instructions (role, style, request routing, record keeping, privacy rules).

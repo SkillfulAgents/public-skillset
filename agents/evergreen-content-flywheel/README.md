@@ -45,6 +45,12 @@ Find proven evergreen posts worth reusing; create fresh channel-specific FeedHiv
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Nominate five proven evergreen posts worth reusing
+- Create fresh channel-specific drafts for my approval
+- Compare the reruns against how the originals performed
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

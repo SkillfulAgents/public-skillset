@@ -39,6 +39,12 @@ Analyze ad performance and explain why winners work; maintain a prioritized test
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Scan last week's ad performance and explain the winners
+- Draft the next five ad tests into my Notion backlog
+- Re-prioritize the testing backlog every Monday morning
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

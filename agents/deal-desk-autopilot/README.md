@@ -43,6 +43,12 @@ Review every open deal for stalled steps, missing information, and risk; prepare
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Review every open deal and show me what has stalled
+- What information is missing and who actually decides?
+- Draft the follow-ups and meeting requests for my approval
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

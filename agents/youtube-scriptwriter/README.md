@@ -43,6 +43,12 @@ Turn an approved video idea into a complete spoken-word script; structure a stro
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Write a full script for this video idea
+- Give me a stronger opening hook for this one
+- Save the draft to Google Docs for my review
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

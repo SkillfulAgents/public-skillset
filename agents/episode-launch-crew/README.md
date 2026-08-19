@@ -49,6 +49,12 @@ Turn approved final audio into a complete Castos episode draft; publish only aft
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Prepare a Castos draft from the final audio in Drive
+- Show me the title, description, and chapters first
+- Publish the approved episode and verify both links
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

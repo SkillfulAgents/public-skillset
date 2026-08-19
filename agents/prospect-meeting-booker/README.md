@@ -45,6 +45,12 @@ Identify the right prospect and meeting context; propose available times and boo
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Book a meeting with this prospect next week
+- Propose times that fit my scheduling boundaries
+- Create the invite with the agenda and right attendees
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

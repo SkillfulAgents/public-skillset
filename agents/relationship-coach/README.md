@@ -37,6 +37,12 @@ Review daily Bee recordings at a private evening check-in; offer candid advice o
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- How could I have been a better partner today?
+- Review today's conversations and be blunt with me
+- Run the check-in every evening at seven
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

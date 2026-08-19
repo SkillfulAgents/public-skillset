@@ -37,6 +37,12 @@ Answer customer questions from the latest Ferndesk articles; cite sources and su
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Answer this customer question from our documentation
+- Which articles are stale or missing coverage?
+- Route anything you are unsure about to a support ticket
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

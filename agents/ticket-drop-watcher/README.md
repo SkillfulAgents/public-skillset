@@ -39,6 +39,12 @@ Watch an AMC listing for matching seats; grab or hold them according to your pre
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Watch this AMC listing for seats to open up
+- Grab the seats matching my preferences and ping me
+- Hold anything above my ceiling for a quick confirm
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

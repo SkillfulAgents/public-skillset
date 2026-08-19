@@ -43,6 +43,12 @@ Plan weekly meals across Amazon and Costco; prepare grocery orders and a cooking
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Plan this week's meals and split the order by store
+- Remember that we never want olives in anything
+- Put what to cook and when on my calendar
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -45,6 +45,12 @@ Find pages losing impressions or ranking on page two; improve metadata and inter
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find pages losing impressions or stuck on page two
+- Rewrite the titles and metadata for those pages
+- Open a pull request I can review before merge
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

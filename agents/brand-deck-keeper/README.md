@@ -39,6 +39,12 @@ Maintain one master brand deck in Figma; create approved customer-specific or lo
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Show me the master brand deck and what changed recently
+- Make a copy of the deck customized for this customer
+- Translate the deck into German inside the brand system
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

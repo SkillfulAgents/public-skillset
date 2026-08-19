@@ -37,6 +37,12 @@ Carry out requested interactive development actions instead of only describing t
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Deploy this branch and send me the result as evidence
+- Capture a screenshot of the staging environment
+- Tell me what blocked you instead of describing the task
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

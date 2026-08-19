@@ -43,6 +43,12 @@ Research prospects and draft daily email and LinkedIn outreach in your learned v
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Research these prospects and draft outbound in my voice
+- Hold the first ten drafts for my approval
+- Report what went out today and why it was sent
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

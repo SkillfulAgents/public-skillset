@@ -54,6 +54,12 @@ Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orch
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Prep me for my next enterprise call
+- Draft the post-call follow-ups in my own writing style
+- Review my bots and tell me what to automate or clean up
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

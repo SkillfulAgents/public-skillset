@@ -37,6 +37,12 @@ Analyze X interactions and nearby accounts; recommend relationships, content pat
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Who around me on X is worth paying more attention to?
+- Which content themes actually fit my background?
+- Send me a memo on turning interactions into relationships
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

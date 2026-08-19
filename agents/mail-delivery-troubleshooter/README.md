@@ -44,6 +44,12 @@ Correlate delivery failures with SPF, DKIM, DMARC, SMTP, and MailOps evidence; i
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Why did this message fail to deliver?
+- Correlate the SPF, DKIM, and DMARC evidence for me
+- Draft the remediation steps for the technician
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -43,6 +43,12 @@ Review the Zendesk queue hourly and draft confident replies; alert in Slack only
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Do a pass on the support queue and draft what you can
+- Which tickets did you hold back and why?
+- Ping me in Slack only when a human is really needed
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

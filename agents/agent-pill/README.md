@@ -63,6 +63,12 @@ Rather than returning a generic list of ideas, it ranks a few specific candidate
 
 Agent Pill steps aside after the handoff. Your newly created agent owns the workflow from then on.
 
+## Example prompts
+
+- Help me find the first agent worth building
+- Look at my connected tools and spot the recurring work
+- Build the agent we agreed on and hand me the prompt
+
 ## What's inside
 
 - `CLAUDE.md` — the agent's durable role, voice, privacy rules, and handoff behavior.

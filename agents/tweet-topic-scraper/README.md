@@ -37,6 +37,12 @@ Collect recent X posts about a topic into a requested CSV schema; verify the out
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Scrape recent posts about this topic into a CSV
+- Use these exact columns: author, followers, link, claim
+- Check the file opens cleanly in a spreadsheet
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

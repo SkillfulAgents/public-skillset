@@ -43,6 +43,12 @@ Read and score applications against the hiring profile; batch strong fits and pr
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Score this week's applications against our hiring profile
+- Show me the clear fits with a one-line reason for each
+- Draft the Gmail follow-ups for everyone I just advanced
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

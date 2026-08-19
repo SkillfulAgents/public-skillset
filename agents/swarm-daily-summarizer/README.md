@@ -37,6 +37,12 @@ Group the previous day’s bot activity by project; summarize completed work, de
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Summarize what my bots accomplished yesterday
+- Group the work by project and show me the blockers
+- Link each conclusion back to its bot conversation
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

@@ -37,6 +37,12 @@ Find high-signal X posts in chosen topics; draft a starting reply in your voice 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find high-signal posts worth replying to today
+- Draft a first take in my voice for each one
+- Never post anything, I send every reply myself
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

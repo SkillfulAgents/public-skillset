@@ -41,6 +41,12 @@ Turn a brief into page structures, wireframes, visual directions, and responsive
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this brief into page structures and wireframes
+- Show me two visual directions for the homepage
+- Prepare responsive layouts and implementation notes
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

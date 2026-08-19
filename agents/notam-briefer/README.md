@@ -37,6 +37,12 @@ Track new or changed NOTAMs for selected airports and routes; deliver full twice
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Give me the full NOTAM brief for my airports
+- What has changed since the last briefing?
+- Send a short interim update every few hours
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

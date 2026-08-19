@@ -37,6 +37,12 @@ Compare what is resonating on X with your chosen themes; send a daily shortlist 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Send me today's shortlist of article ideas from my timeline
+- Which of my recent posts is worth expanding into an essay?
+- Run the idea briefing every morning and keep it short
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

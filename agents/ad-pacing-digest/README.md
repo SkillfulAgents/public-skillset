@@ -41,6 +41,12 @@ Compare Apple Search Ads spend with plan in Slack; recommend bid changes and app
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Post today's Apple Search Ads spend against plan
+- What is over-delivering and what should I cut right now?
+- Apply the bid change I just approved and confirm what moved
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

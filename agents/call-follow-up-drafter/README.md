@@ -45,6 +45,12 @@ Find newly completed external calls and their context; draft accurate follow-up 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Draft the follow-up email from my last external call
+- Find every external call that ended since the last run
+- Show me the To, Subject and body before I send anything
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

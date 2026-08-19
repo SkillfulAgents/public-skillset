@@ -39,6 +39,12 @@ Review Gmail and sort messages by urgency; return a concise briefing of what nee
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Give me this morning's inbox briefing by urgency
+- Draft replies to the threads that need an answer
+- Keep everything as a Gmail draft and never send
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

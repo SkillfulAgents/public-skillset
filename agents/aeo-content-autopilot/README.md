@@ -48,6 +48,12 @@ Combine video performance with search and traffic signals; turn the strongest op
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Which of my videos and topics are performing best right now?
+- Turn my top-performing topics into optimized article drafts
+- Run the weekly opportunity scan and show me the drafts
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

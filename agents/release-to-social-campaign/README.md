@@ -45,6 +45,12 @@ Turn verified GitHub release changes into platform-specific Postiz drafts; route
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this release into platform-specific drafts
+- Show me the drafts and schedule in Slack for approval
+- Summarize how the posts performed after 72 hours
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

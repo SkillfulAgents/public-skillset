@@ -43,6 +43,12 @@ Track wedding vendor threads, timeline, and budget in Notion; chase unanswered i
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- What decisions do I owe someone this week?
+- Update the master timeline and budget in Notion
+- Chase the vendors who have not replied yet
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

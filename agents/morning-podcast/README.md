@@ -39,6 +39,12 @@ Turn important Slack threads and today’s priorities into a short audio briefin
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Make me a three-minute audio briefing for tomorrow
+- Which Slack threads from yesterday actually mattered?
+- Drop the episode in my folder before I wake up
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

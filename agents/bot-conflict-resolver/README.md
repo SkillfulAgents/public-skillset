@@ -37,6 +37,12 @@ Detect conflicting bot claims, plans, or recommendations; compare their evidence
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Compare the evidence behind these two conflicting answers
+- Resolve the disagreement and explain which position wins
+- Escalate anything you cannot reconcile, with your reasoning
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

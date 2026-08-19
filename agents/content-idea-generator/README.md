@@ -41,6 +41,12 @@ Study your existing content, audience, and current trends; rank distinctive new 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Study my channel and rank ten new video concepts
+- Give me a hook and a brief outline for each idea
+- Which of these are evergreen and which are timely?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

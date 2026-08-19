@@ -45,6 +45,12 @@ Turn selected Linear tickets into independent agent tasks; coordinate GitHub bra
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn these Linear tickets into parallel agent tasks
+- Open a pull request for each completed ticket
+- Where do the acceptance criteria overlap or conflict?
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

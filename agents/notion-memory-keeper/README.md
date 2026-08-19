@@ -39,6 +39,12 @@ Capture notes, decisions, context, and updates you provide; organize them into a
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Capture this decision on my Notion memory page
+- Organize today's notes into the agreed sections
+- Show me the update before it changes the page
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

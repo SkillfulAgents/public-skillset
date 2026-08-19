@@ -43,6 +43,12 @@ Classify Gmail and Outlook messages by priority; propose safe unsubscribe and fi
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Do a dry run cleanout across my Gmail and Outlook
+- Which recurring senders do I never actually read?
+- Show me every unsubscribe before you touch anything
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

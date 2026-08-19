@@ -43,6 +43,12 @@ Check Datadog logs, metrics, and backfill status at each migration step; post gr
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Check the metrics before I advance to the next ramp step
+- Walk the backfill and post the status to Slack
+- Stop and ping me the moment something looks off
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

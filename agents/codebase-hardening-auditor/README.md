@@ -39,6 +39,12 @@ Audit a GitHub repository against a fixed 20-point hardening checklist; report e
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Run the 20-point hardening audit on my main repository
+- Show me the committed secrets and dead code first
+- Open a PR for the fixes I approved, one concern per commit
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

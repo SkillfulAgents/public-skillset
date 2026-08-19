@@ -43,6 +43,12 @@ Cut Zoom recordings into tagged product-demo clips; maintain a searchable Drive 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Cut yesterday's demo recording into tagged clips
+- Find the clip where we answered the pricing question
+- Rebuild the index page for the whole clip library
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

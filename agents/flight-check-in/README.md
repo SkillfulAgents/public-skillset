@@ -39,6 +39,12 @@ Track flight check-in windows from Gmail; check in at opening with your seat pre
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Track the check-in window for my upcoming flights
+- Check me in the moment it opens with my usual seat
+- Ping me only if you hit a 2FA prompt or captcha
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

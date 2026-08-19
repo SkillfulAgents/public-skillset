@@ -37,6 +37,12 @@ Fetch the BotDirectory API once each day; save results and report what changed s
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Fetch the BotDirectory data now and save the results
+- Show me what changed since the previous fetch
+- Run the fetch every morning and report the diff
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

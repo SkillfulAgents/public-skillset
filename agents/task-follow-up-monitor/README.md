@@ -45,6 +45,12 @@ Track a task through its current step across calendar, Slack, and email; alert o
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Track this task and tell me when it stalls
+- Where is this piece of work right now?
+- Check in every ten minutes until it is done or blocked
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

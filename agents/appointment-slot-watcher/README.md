@@ -39,6 +39,12 @@ Watch selected appointment-booking pages for openings; alert you in Slack when a
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Watch the DMV booking page for openings in my date range
+- Ping me in Slack the moment a passport slot opens nearby
+- Book the slot I just confirmed in the thread
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

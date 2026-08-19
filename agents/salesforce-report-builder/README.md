@@ -39,6 +39,12 @@ Turn a recurring Salesforce opportunity question into a named report and dashboa
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Turn this pipeline question into a saved report
+- Build a dashboard that answers it permanently
+- Verify the fields and results before you save it
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

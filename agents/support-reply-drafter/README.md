@@ -39,6 +39,12 @@ Identify issue and urgency from incoming Gmail support threads; draft an on-voic
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Draft replies to this morning's support threads
+- What is the issue and urgency on this one?
+- Flag anything that needs a decision or escalation
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

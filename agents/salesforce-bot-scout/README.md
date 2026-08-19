@@ -41,6 +41,12 @@ Search the Bot Directory for Salesforce-enabled bots; summarize what each bot do
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Search the directory for Salesforce-enabled bots
+- Summarize each bot and why it might be useful
+- Turn the patterns into new product ideas
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

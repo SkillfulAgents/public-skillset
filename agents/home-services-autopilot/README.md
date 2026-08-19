@@ -47,6 +47,12 @@ Assess a home-service problem from photos and a description; source providers, c
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Here are photos of the leak, what job is this?
+- Find vetted local pros and compare their quotes
+- Book the appointment and draft the confirmation email
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

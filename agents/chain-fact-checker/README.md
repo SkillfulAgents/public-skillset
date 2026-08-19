@@ -37,6 +37,12 @@ Check each claim in a chain against cited or reliable evidence; flag unsupported
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Check every claim in this chain against its cited evidence
+- Flag the unsupported statements and contradictions
+- Stop the chain and tell me exactly what needs correcting
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

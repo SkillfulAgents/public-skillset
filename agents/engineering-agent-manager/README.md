@@ -43,6 +43,12 @@ Maintain a focused team of developer bots across Linear and GitHub; divide work,
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Show me which developer bots are available right now
+- Split this Linear epic into non-overlapping assignments
+- Report blockers, tests, and open pull requests back to me
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

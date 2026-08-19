@@ -45,6 +45,12 @@ Build an on-demand sales play from Snowflake audience through Salesforce and Gma
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Build the audience for this play in Snowflake
+- Reproduce the play I run manually so I can diff it
+- Draft the emails and leave the sending to me
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

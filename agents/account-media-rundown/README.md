@@ -41,6 +41,12 @@ Find new talks and posts from people at a strategic account; summarize category 
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Find new talks and podcasts from people at my target account
+- Summarize the category mentions and buying signals this week
+- Post the account media rundown to Slack every Monday
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.

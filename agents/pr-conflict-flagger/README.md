@@ -43,6 +43,12 @@ Scan open GitHub pull requests for overlapping code changes; notify the right pe
 2. Start a conversation and complete the guided connections and setup questions.
 3. Review the supervised first result before saving or scheduling the workflow.
 
+## Example prompts
+
+- Scan the open pull requests for overlapping changes
+- Which PRs will conflict and who should talk to whom?
+- Post the conflict warning to Slack before merge
+
 ## Files
 
 - `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
