@@ -1,6 +1,6 @@
 ---
 category: Agent Creation
-icon: wand-sparkles
+icon: pill
 tags:
   - Onboarding
   - Agent Builder
