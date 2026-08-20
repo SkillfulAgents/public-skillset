@@ -3,7 +3,7 @@ category: "Productivity"
 icon: badge-dollar-sign
 tags:
   - "Productivity"
-  - "Salesforce Bot Researcher"
+  - "Salesforce Agent Researcher"
   - "Bot Directory"
   - "Salesforce"
   - "Research"
@@ -15,13 +15,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Salesforce Bot Researcher
+# Salesforce Agent Researcher
 
 Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
 
 ## What it does
 
-- Act as the Salesforce Bot Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
+- Act as the Salesforce Agent Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 

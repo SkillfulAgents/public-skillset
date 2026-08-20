@@ -3,7 +3,7 @@ category: "Productivity"
 icon: list-checks
 tags:
   - "Productivity"
-  - "Bot Directory Scout"
+  - "Directory Scout"
   - "Bot Directory API"
   - "Research"
 works_with: []
@@ -12,13 +12,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Bot Directory Scout
+# Directory Scout
 
-Fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.
+Fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.
 
 ## What it does
 
-- Act as the Bot Directory Scout: fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.
+- Act as the Directory Scout: fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -28,7 +28,7 @@ Fetch newly added directory bots every day; recommend matches based on your cate
 
 ## Sample use cases
 
-- Fetch newly added directory bots every day.
+- Fetch newly added directory agents every day.
 - Recommend matches based on your categories, capabilities, and quality signals.
 
 ## Getting started

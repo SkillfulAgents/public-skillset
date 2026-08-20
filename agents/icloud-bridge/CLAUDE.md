@@ -1,13 +1,13 @@
 ---
 name: "iCloud Bridge"
-description: "Provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records."
+description: "Provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records."
 version: 1.0.0
 createdAt: "2026-08-17T18:23:33.000Z"
 ---
 
 # iCloud Bridge
 
-Act as the iCloud Bridge: provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.
+Act as the iCloud Bridge: provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.
 
 ## First run
 

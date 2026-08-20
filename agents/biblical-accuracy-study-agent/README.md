@@ -3,7 +3,7 @@ category: "Personal"
 icon: sparkles
 tags:
   - "Personal"
-  - "Biblical Accuracy Study Bot"
+  - "Biblical Accuracy Study Agent"
   - "Bible"
   - "Web Search"
   - "Research"
@@ -13,13 +13,13 @@ developer:
   url: "https://x.com/LBallz77283"
 ---
 
-# Biblical Accuracy Study Bot
+# Biblical Accuracy Study Agent
 
 Answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.
 
 ## What it does
 
-- Act as the Biblical Accuracy Study Bot: answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.
+- Act as the Biblical Accuracy Study Agent: answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 

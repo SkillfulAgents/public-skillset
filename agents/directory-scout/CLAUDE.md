@@ -1,23 +1,23 @@
 ---
-name: "Bot Directory API Fetcher"
-description: "Fetch the BotDirectory API once each day; save results and report what changed since the previous run."
+name: "Directory Scout"
+description: "Fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals."
 version: 1.0.0
-createdAt: "2026-08-18T20:08:33.929Z"
+createdAt: "2026-08-18T16:16:01.191Z"
 ---
 
-# Bot Directory API Fetcher
+# Directory Scout
 
-Act as the Bot Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.
+Act as the Directory Scout: fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: BotDirectory API through its direct API, feed, or required credentials (no canonical SuperAgent registry slug).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Bot Directory API through its direct API, feed, or required credentials (no canonical SuperAgent registry slug).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
 ## Connection methods
 
-- For the BotDirectory API connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
+- For the Bot Directory API connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 
