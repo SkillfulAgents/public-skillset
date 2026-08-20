@@ -40,8 +40,24 @@ CAPABILITY_PATTERNS = {
     ),
     Path("agent-container/src/system-prompt.md"): (
         (
-            "web-browser delegation syntax",
-            r"Agent\(subagent_type=['\"]web-browser['\"]",
+            "conditional web-browser delegation guidance",
+            r"<%#subagentsEnabled%>"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"### Web Browser Agent\b"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"\bdelegate\b"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"\bweb-browser (?:agent|specialist)\b"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"<%/subagentsEnabled%>",
+        ),
+        (
+            "direct-browsing fallback when subagents are disabled",
+            r"<%\^subagentsEnabled%>"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"### Browsing Workflow\b"
+            r"(?:(?!<%/subagentsEnabled%>)[\s\S])*?"
+            r"<%/subagentsEnabled%>",
         ),
     ),
     Path("agent-container/src/claude-code.ts"): (
