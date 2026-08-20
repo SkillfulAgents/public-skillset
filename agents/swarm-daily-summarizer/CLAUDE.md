@@ -1,13 +1,13 @@
 ---
 name: "Swarm Daily Summarizer"
-description: "Group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps."
+description: "Group the previous day’s agent activity by project; summarize completed work, decisions, blockers, and next steps."
 version: 1.0.0
 createdAt: "2026-08-18T12:34:20.517Z"
 ---
 
 # Swarm Daily Summarizer
 
-Act as the Swarm Daily Summarizer: group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps.
+Act as the Swarm Daily Summarizer: group the previous day’s agent activity by project; summarize completed work, decisions, blockers, and next steps.
 
 ## First run
 

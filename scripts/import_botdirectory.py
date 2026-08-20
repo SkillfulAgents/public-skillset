@@ -50,6 +50,29 @@ DIRECT_API_KINDS = {"external", "raw_api"}
 BUILTIN_SEARCH_LABELS = {"Google Search", "Web Search"}
 SLUG_RE = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 TEMPLATE_SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+BOT_WORD_RE = re.compile(r"\bbots?\b", re.IGNORECASE)
+BOT_DIRECTORY_RE = re.compile(r"\bBot Directory\b", re.IGNORECASE)
+TEMPLATE_IDENTITY_OVERRIDES = {
+    "accountingbot": ("accounting-agent", "Accounting Agent"),
+    "biblical-accuracy-study-bot": (
+        "biblical-accuracy-study-agent",
+        "Biblical Accuracy Study Agent",
+    ),
+    "bot-advisor": ("agent-advisor", "Agent Advisor"),
+    "bot-conflict-resolver": ("agent-conflict-resolver", "Agent Conflict Resolver"),
+    "bot-directory-api-fetcher": ("directory-api-fetcher", "Directory API Fetcher"),
+    "bot-directory-scout": ("directory-scout", "Directory Scout"),
+    "bot-fleet-auditor": ("agent-fleet-auditor", "Agent Fleet Auditor"),
+    "bot-team-chief-of-staff": (
+        "agent-team-chief-of-staff",
+        "Agent Team Chief of Staff",
+    ),
+    "salesforce-bot-researcher": (
+        "salesforce-agent-researcher",
+        "Salesforce Agent Researcher",
+    ),
+    "salesforce-bot-scout": ("salesforce-agent-scout", "Salesforce Agent Scout"),
+}
 
 
 def load_json(path: Path) -> Any:
@@ -78,7 +101,65 @@ def normalize_category(category: str) -> str:
     return "Customer Success" if category == "Success" else category
 
 
+def canonicalize_agent_terminology(value: str) -> str:
+    """Use agent terminology while preserving the upstream directory's proper name."""
+    protected_names: list[str] = []
+
+    def protect_directory(match: re.Match[str]) -> str:
+        protected_names.append(match.group(0))
+        return f"\0{len(protected_names) - 1}\0"
+
+    protected = BOT_DIRECTORY_RE.sub(protect_directory, value)
+
+    def replace_bot(match: re.Match[str]) -> str:
+        source = match.group(0)
+        replacement = "agents" if source.casefold() == "bots" else "agent"
+        if source.isupper():
+            return replacement.upper()
+        if source[0].isupper():
+            return replacement.capitalize()
+        return replacement
+
+    canonical = BOT_WORD_RE.sub(replace_bot, protected)
+    for index, proper_name in enumerate(protected_names):
+        canonical = canonical.replace(f"\0{index}\0", proper_name)
+    return canonical
+
+
+def canonicalize_template(template: dict[str, Any]) -> dict[str, Any]:
+    """Separate canonical marketplace identity from the pinned upstream identity."""
+    source_slug = template["slug"]
+    source_name = template["name"]
+    slug, name = TEMPLATE_IDENTITY_OVERRIDES.get(
+        source_slug,
+        (source_slug, canonicalize_agent_terminology(source_name)),
+    )
+    canonical = dict(template)
+    canonical.update(
+        {
+            "slug": slug,
+            "name": name,
+            "sourceSlug": source_slug,
+            "sourceName": source_name,
+            "description": canonicalize_agent_terminology(template["description"]),
+            "sampleUseCases": [
+                canonicalize_agent_terminology(item)
+                for item in template["sampleUseCases"]
+            ],
+        }
+    )
+    canonical["roleSentence"] = canonicalize_agent_terminology(
+        template["roleSentence"].replace(source_name, name, 1)
+    )
+    canonical["tags"] = [
+        name if tag == source_name else canonicalize_agent_terminology(tag)
+        for tag in template["tags"]
+    ]
+    return canonical
+
+
 def mapping_sentence(label: str, mapping: dict[str, str]) -> str:
+    label = canonicalize_agent_terminology(label)
     kind = mapping["kind"]
     if kind == "api_account":
         return (
@@ -113,6 +194,7 @@ def mapping_sentence(label: str, mapping: dict[str, str]) -> str:
 
 
 def readme_mapping_line(label: str, mapping: dict[str, str]) -> str:
+    label = canonicalize_agent_terminology(label)
     kind = mapping["kind"]
     if kind == "api_account":
         return f"- **{label}** — SuperAgent API account `{mapping['slug']}`."
@@ -147,7 +229,9 @@ def connection_method_lines(
     lines: list[str] = []
 
     if browser_labels:
-        display_labels = ", ".join(f"`{label}`" for label in browser_labels)
+        display_labels = ", ".join(
+            f"`{canonicalize_agent_terminology(label)}`" for label in browser_labels
+        )
         lines.append(
             f"- For browser-based connections ({display_labels}), use SuperAgent's dedicated "
             "`mcp__browser__browser_*` tools, starting with "
@@ -166,15 +250,18 @@ def connection_method_lines(
         )
 
     if search_labels:
-        display_labels = ", ".join(f"`{label}`" for label in search_labels)
+        display_labels = ", ".join(
+            f"`{canonicalize_agent_terminology(label)}`" for label in search_labels
+        )
         lines.append(
             f"- For built-in search ({display_labels}), use `mcp__web__web_search` when "
             "configured, otherwise native `WebSearch`; do not request an API key."
         )
 
     for label in direct_api_labels:
+        display_label = canonicalize_agent_terminology(label)
         lines.append(
-            f"- For the {label} connection, ask the user for an API key with "
+            f"- For the {display_label} connection, ask the user for an API key with "
             "`mcp__user-input__request_secret` and use direct API calls."
         )
 
@@ -397,34 +484,53 @@ def import_templates(
         raise ValueError(
             "inventory sourceCommit does not match the requested --source-commit"
         )
-    templates = inventory.get("templates")
+    source_templates = inventory.get("templates")
     mapping_list = crosswalk.get("labels")
-    if not isinstance(templates, list) or not isinstance(mapping_list, list):
+    if not isinstance(source_templates, list) or not isinstance(mapping_list, list):
         raise ValueError("inventory.templates and crosswalk.labels must be arrays")
     mappings = {entry["name"]: {key: value for key, value in entry.items() if key != "name"} for entry in mapping_list}
     if len(mappings) != len(mapping_list):
         raise ValueError("duplicate names in connector crosswalk")
+    validate_inputs(source_templates, mappings)
+    templates = [canonicalize_template(template) for template in source_templates]
     validate_inputs(templates, mappings)
 
     manifest_entries: list[dict[str, Any]] = []
     source_root = root / "sources" / "botdirectory"
     previous_catalog_path = source_root / "catalog.json"
-    previous_slugs: set[str] = set()
+    previous_by_source_slug: dict[str, str] = {}
     if previous_catalog_path.is_file():
         previous_catalog = load_json(previous_catalog_path)
-        previous_slugs = {
-            entry["slug"] for entry in previous_catalog.get("templates", [])
+        previous_by_source_slug = {
+            entry.get("sourceSlug", entry["slug"]): entry["slug"]
+            for entry in previous_catalog.get("templates", [])
         }
     agents_root = root / "agents"
     resolved_agents_root = agents_root.resolve()
     sorted_templates = sorted(templates, key=lambda item: item["slug"])
-    incoming_slugs = {template["slug"] for template in sorted_templates}
-    stale_slugs = sorted(previous_slugs - incoming_slugs)
-    if stale_slugs:
+    incoming_source_slugs = {template["sourceSlug"] for template in sorted_templates}
+    stale_source_slugs = sorted(set(previous_by_source_slug) - incoming_source_slugs)
+    if stale_source_slugs:
         raise ValueError(
             "inventory omits previously imported templates; remove them explicitly first: "
-            + ", ".join(stale_slugs)
+            + ", ".join(stale_source_slugs)
         )
+
+    for template in sorted_templates:
+        slug = template["slug"]
+        source_slug = template["sourceSlug"]
+        previous_slug = previous_by_source_slug.get(source_slug)
+        if previous_slug is None or previous_slug == slug:
+            continue
+        previous_target = agents_root / previous_slug
+        target = agents_root / slug
+        if previous_target.is_symlink() or target.is_symlink():
+            raise ValueError(f"refusing to migrate a symlinked agent directory: {source_slug}")
+        if target.exists():
+            raise ValueError(f"refusing to replace an existing agent during rename: {target}")
+        if not previous_target.is_dir():
+            raise ValueError(f"missing previously imported agent directory: {previous_target}")
+        previous_target.rename(target)
 
     targets: list[tuple[dict[str, Any], Path]] = []
     for template in sorted_templates:
@@ -437,7 +543,7 @@ def import_templates(
         if target.exists():
             if not overwrite:
                 raise ValueError(f"refusing to overwrite existing directory: {target}")
-            if slug not in previous_slugs:
+            if template["sourceSlug"] not in previous_by_source_slug:
                 raise ValueError(f"refusing to overwrite a non-imported agent: {target}")
         for filename in ("CLAUDE.md", "PROMPT.md", "README.md"):
             if (target / filename).is_symlink():
@@ -470,7 +576,17 @@ def import_templates(
         manifest_entries.append(
             {
                 "slug": slug,
+                **(
+                    {"sourceSlug": template["sourceSlug"]}
+                    if template["sourceSlug"] != slug
+                    else {}
+                ),
                 "name": template["name"],
+                **(
+                    {"sourceName": template["sourceName"]}
+                    if template["sourceName"] != template["name"]
+                    else {}
+                ),
                 "description": template["description"],
                 "category": normalize_category(template["sourceCategory"]),
                 "sourceCategory": template["sourceCategory"],
@@ -484,7 +600,7 @@ def import_templates(
                 "icon": icon,
                 "tags": template["tags"],
                 "detailUrl": template["detailUrl"],
-                "sourceFile": f"bots/{slug}.md",
+                "sourceFile": f"bots/{template['sourceSlug']}.md",
                 "promptSha256": hashlib.sha256(prompt.encode("utf-8")).hexdigest(),
             }
         )

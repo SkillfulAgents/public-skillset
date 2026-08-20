@@ -92,6 +92,21 @@ class BotDirectoryTemplateTests(unittest.TestCase):
         }
         self.assertEqual(discovered, expected)
 
+    def test_canonical_template_identity_uses_agent_terminology(self) -> None:
+        for template in self.templates:
+            with self.subTest(slug=template["slug"]):
+                self.assertNotRegex(template["slug"], re.compile("bot", re.IGNORECASE))
+                self.assertNotRegex(template["name"], re.compile("bot", re.IGNORECASE))
+                self.assertNotRegex(
+                    template["description"].replace("Bot Directory", ""),
+                    re.compile(r"\bbots?\b", re.IGNORECASE),
+                )
+                for tag in template["tags"]:
+                    if "Bot Directory" not in tag and "BotDirectory" not in tag:
+                        self.assertNotRegex(
+                            tag, re.compile(r"\bbots?\b", re.IGNORECASE)
+                        )
+
     def test_every_template_is_complete_and_consistent(self) -> None:
         for template in self.templates:
             slug = template["slug"]
@@ -166,8 +181,12 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                 self.assertTrue(first_run)
                 self.assertTrue(connect_first)
                 for label in template["connectFirst"]:
-                    self.assertIn(label, first_run)
-                    self.assertIn(label, connect_first)
+                    display_label = {
+                        "Grok Bot": "Grok Agent",
+                        "Grok Bots": "Grok Agents",
+                    }.get(label, label)
+                    self.assertIn(display_label, first_run)
+                    self.assertIn(display_label, connect_first)
                     mapping = self.mappings[label]
                     if mapping["kind"] in MAPPED_KINDS:
                         token = f"`{mapping['kind']}:{mapping['slug']}`"
@@ -220,7 +239,7 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                         direct_api_lines = [
                             line
                             for line in method_lines
-                            if line.startswith(f"- For the {label} connection,")
+                            if line.startswith(f"- For the {display_label} connection,")
                         ]
                         self.assertEqual(len(direct_api_lines), 1)
                         self.assertIn("API key", direct_api_lines[0])

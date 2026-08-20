@@ -14,11 +14,11 @@ developer:
 
 # iCloud Bridge
 
-Provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.
+Provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.
 
 ## What it does
 
-- Act as the iCloud Bridge: provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.
+- Act as the iCloud Bridge: provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -28,7 +28,7 @@ Provide other bots controlled access to iCloud contacts and reminders; read or u
 
 ## Sample use cases
 
-- Provide other bots controlled access to iCloud contacts and reminders.
+- Provide other agents controlled access to iCloud contacts and reminders.
 - Read or update only the requested records.
 
 ## Getting started

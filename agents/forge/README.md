@@ -4,7 +4,7 @@ icon: workflow
 tags:
   - "Ops"
   - "Forge"
-  - "Grok Bot"
+  - "Grok Agent"
   - "Workflow Automation"
 works_with: []
 developer:
@@ -24,7 +24,7 @@ Carry out requested interactive development actions instead of only describing t
 
 ## Connect first
 
-- **Grok Bot** — external connection; no canonical registry slug.
+- **Grok Agent** — external connection; no canonical registry slug.
 
 ## Sample use cases
 

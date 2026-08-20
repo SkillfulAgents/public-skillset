@@ -51,7 +51,8 @@ def validate(source_root: Path) -> None:
     errors: list[str] = []
     for template in templates:
         slug = template["slug"]
-        expected_source_file = f"bots/{slug}.md"
+        source_slug = template.get("sourceSlug", slug)
+        expected_source_file = f"bots/{source_slug}.md"
         if template.get("sourceFile") != expected_source_file:
             errors.append(
                 f"{slug}: sourceFile={template.get('sourceFile')!r}, "
@@ -68,13 +69,18 @@ def validate(source_root: Path) -> None:
             "url": metadata.get("contributor_url")
             or f"https://github.com/{contributor}",
         }
+        source_name = template.get("sourceName", template["name"])
+        if source_name != metadata.get("name"):
+            errors.append(
+                f"{slug}: catalog source name={source_name!r}, "
+                f"source expects {metadata.get('name')!r}"
+            )
         expected = {
-            "name": metadata.get("name"),
             "sourceCategory": metadata.get("category"),
             "addedAt": metadata.get("added_at"),
             "connectFirst": metadata.get("integrations", []),
             "creator": expected_creator,
-            "detailUrl": f"https://botdirectory.ai/bots/{slug}/",
+            "detailUrl": f"https://botdirectory.ai/bots/{source_slug}/",
         }
         for key, value in expected.items():
             if template.get(key) != value:

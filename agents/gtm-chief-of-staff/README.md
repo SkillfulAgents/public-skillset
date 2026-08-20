@@ -27,11 +27,11 @@ developer:
 
 # GTM Chief Of Staff
 
-Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.
+Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.
 
 ## What it does
 
-- Act as the GTM Chief Of Staff: coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.
+- Act as the GTM Chief Of Staff: coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -46,7 +46,7 @@ Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orch
 ## Sample use cases
 
 - Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts.
-- Orchestrate specialist bots without sending or editing CRM records unapproved.
+- Orchestrate specialist agents without sending or editing CRM records unapproved.
 
 ## Getting started
 

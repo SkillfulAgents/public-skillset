@@ -22,11 +22,11 @@ developer:
 
 # Chief Of Staff
 
-Receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.
+Receive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.
 
 ## What it does
 
-- Act as the Chief Of Staff: receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.
+- Act as the Chief Of Staff: receive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -38,7 +38,7 @@ Receive work through one front door and route it to specialist bots; maintain a 
 
 ## Sample use cases
 
-- Receive work through one front door and route it to specialist bots.
+- Receive work through one front door and route it to specialist agents.
 - Maintain a current view of active work and blockers.
 
 ## Getting started

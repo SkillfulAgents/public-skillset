@@ -121,17 +121,17 @@
       }
     },
     {
-      "name": "AccountingBot",
-      "path": "agents/accountingbot/",
+      "name": "Accounting Agent",
+      "path": "agents/accounting-agent/",
       "description": "Perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.",
-      "details": "# AccountingBot\n\nPerform the recurring accounting tasks you define; organize results into clear Notion records and summaries.\n\n## What it does\n\n- Act as the AccountingBot: perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Perform the recurring accounting tasks you define.\n- Organize results into clear Notion records and summaries.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Run this month's recurring accounting tasks as a dry run\n- Flag any missing or unusual items in this month's records\n- Summarize the quarter into a clean Notion record for review\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@benln](https://x.com/benln) on [Bot Directory](https://botdirectory.ai/bots/accountingbot/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Accounting Agent\n\nPerform the recurring accounting tasks you define; organize results into clear Notion records and summaries.\n\n## What it does\n\n- Act as the Accounting Agent: perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Perform the recurring accounting tasks you define.\n- Organize results into clear Notion records and summaries.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Run this month's recurring accounting tasks as a dry run\n- Flag any missing or unusual items in this month's records\n- Summarize the quarter into a clean Notion record for review\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@benln](https://x.com/benln) on [Bot Directory](https://botdirectory.ai/bots/accountingbot/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T14:15:46.485Z",
       "version": "1.0.0",
       "category": "Ops",
       "icon": "calculator",
       "tags": [
         "Ops",
-        "AccountingBot",
+        "Accounting Agent",
         "Notion",
         "Bookkeeping"
       ],
@@ -233,6 +233,74 @@
       }
     },
     {
+      "name": "Agent Advisor",
+      "path": "agents/agent-advisor/",
+      "description": "Interview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.",
+      "details": "# Agent Advisor\n\nInterview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.\n\n## What it does\n\n- Act as the Agent Advisor: interview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Agent** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Interview you about a workflow you want automated.\n- Draft and create an approved agent with instructions, connections, and schedule.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Interview me about a workflow I want automated\n- Draft the instructions and schedule for that new bot\n- Show me the roster of what I run and what each bot is for\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/bot-advisor/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-17T19:08:55.000Z",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Agent Advisor",
+        "Grok Agent",
+        "Research"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      }
+    },
+    {
+      "name": "Agent Conflict Resolver",
+      "path": "agents/agent-conflict-resolver/",
+      "description": "Detect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.",
+      "details": "# Agent Conflict Resolver\n\nDetect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.\n\n## What it does\n\n- Act as the Agent Conflict Resolver: detect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Detect conflicting agent claims, plans, or recommendations.\n- Compare their evidence and produce a reconciled conclusion.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Compare the evidence behind these two conflicting answers\n- Resolve the disagreement and explain which position wins\n- Escalate anything you cannot reconcile, with your reasoning\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@DeryaTR_](https://x.com/DeryaTR_) on [Bot Directory](https://botdirectory.ai/bots/bot-conflict-resolver/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-18T12:34:20.517Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Agent Conflict Resolver",
+        "Grok",
+        "Workflow Automation"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      }
+    },
+    {
+      "name": "Agent Fleet Auditor",
+      "path": "agents/agent-fleet-auditor/",
+      "description": "Review every active agent\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.",
+      "details": "# Agent Fleet Auditor\n\nReview every active agent\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.\n\n## What it does\n\n- Act as the Agent Fleet Auditor: review every active agent\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Review every active agent\u2019s cost and weekly output.\n- Make evidence-based keep, change, or kill recommendations.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Tally what each bot cost and produced this week\n- Flag the wasteful bots with a keep or kill recommendation\n- Post the fleet ledger to Slack every Friday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/bot-fleet-auditor/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-17T18:23:33.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Agent Fleet Auditor",
+        "Slack",
+        "Analysis"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      }
+    },
+    {
       "name": "Agent Pill",
       "path": "agents/agent-pill/",
       "description": "Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Gamut agent -- both as a created agent and a copyable prompt.",
@@ -297,6 +365,27 @@
       "developer": {
         "name": "SkillfulAgents",
         "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Agent Team Chief of Staff",
+      "path": "agents/agent-team-chief-of-staff/",
+      "description": "Inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.",
+      "details": "# Agent Team Chief of Staff\n\nInspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.\n\n## What it does\n\n- Act as the Agent Team Chief of Staff: inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Agents** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Inspect the purpose and setup of every agent in your team.\n- Propose a clear structure, routing plan, and ownership changes.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Inspect every bot I run and what each one is actually for\n- Propose a team structure with clear ownership and routing\n- Which bots should I combine, rename, or retire?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@debs_obrien](https://x.com/debs_obrien) on [Bot Directory](https://botdirectory.ai/bots/bot-team-chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-18T12:36:01.344Z",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Agent Team Chief of Staff",
+        "Grok Agents",
+        "Planning"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "@debs_obrien",
+        "url": "https://x.com/debs_obrien"
       }
     },
     {
@@ -451,17 +540,17 @@
       }
     },
     {
-      "name": "Biblical Accuracy Study Bot",
-      "path": "agents/biblical-accuracy-study-bot/",
+      "name": "Biblical Accuracy Study Agent",
+      "path": "agents/biblical-accuracy-study-agent/",
       "description": "Answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.",
-      "details": "# Biblical Accuracy Study Bot\n\nAnswer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.\n\n## What it does\n\n- Act as the Biblical Accuracy Study Bot: answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bible** \u2014 external connection; no canonical registry slug.\n- **Web Search** \u2014 built-in capability; no connection slug.\n\n## Sample use cases\n\n- Answer study questions with relevant Bible passages.\n- Separate direct teaching from interpretation and compare translations.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What do the Gospels actually say about the Sabbath?\n- Compare how three translations render this passage\n- Separate direct teaching from later interpretation here\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@LBallz77283](https://x.com/LBallz77283) on [Bot Directory](https://botdirectory.ai/bots/biblical-accuracy-study-bot/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Biblical Accuracy Study Agent\n\nAnswer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.\n\n## What it does\n\n- Act as the Biblical Accuracy Study Agent: answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bible** \u2014 external connection; no canonical registry slug.\n- **Web Search** \u2014 built-in capability; no connection slug.\n\n## Sample use cases\n\n- Answer study questions with relevant Bible passages.\n- Separate direct teaching from interpretation and compare translations.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What do the Gospels actually say about the Sabbath?\n- Compare how three translations render this passage\n- Separate direct teaching from later interpretation here\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@LBallz77283](https://x.com/LBallz77283) on [Bot Directory](https://botdirectory.ai/bots/biblical-accuracy-study-bot/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T06:05:15.000Z",
       "version": "1.0.0",
       "category": "Personal",
       "icon": "sparkles",
       "tags": [
         "Personal",
-        "Biblical Accuracy Study Bot",
+        "Biblical Accuracy Study Agent",
         "Bible",
         "Web Search",
         "Research"
@@ -496,137 +585,6 @@
       "developer": {
         "name": "@mrfundman",
         "url": "https://x.com/mrfundman"
-      }
-    },
-    {
-      "name": "Bot Advisor",
-      "path": "agents/bot-advisor/",
-      "description": "Interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.",
-      "details": "# Bot Advisor\n\nInterview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.\n\n## What it does\n\n- Act as the Bot Advisor: interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Bot** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Interview you about a workflow you want automated.\n- Draft and create an approved bot with instructions, connections, and schedule.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Interview me about a workflow I want automated\n- Draft the instructions and schedule for that new bot\n- Show me the roster of what I run and what each bot is for\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/bot-advisor/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-17T19:08:55.000Z",
-      "version": "1.0.0",
-      "category": "Productivity",
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Advisor",
-        "Grok Bot",
-        "Research"
-      ],
-      "works_with": [],
-      "developer": {
-        "name": "@petergyang",
-        "url": "https://x.com/petergyang"
-      }
-    },
-    {
-      "name": "Bot Conflict Resolver",
-      "path": "agents/bot-conflict-resolver/",
-      "description": "Detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.",
-      "details": "# Bot Conflict Resolver\n\nDetect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.\n\n## What it does\n\n- Act as the Bot Conflict Resolver: detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Detect conflicting bot claims, plans, or recommendations.\n- Compare their evidence and produce a reconciled conclusion.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Compare the evidence behind these two conflicting answers\n- Resolve the disagreement and explain which position wins\n- Escalate anything you cannot reconcile, with your reasoning\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@DeryaTR_](https://x.com/DeryaTR_) on [Bot Directory](https://botdirectory.ai/bots/bot-conflict-resolver/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-18T12:34:20.517Z",
-      "version": "1.0.0",
-      "category": "Ops",
-      "icon": "workflow",
-      "tags": [
-        "Ops",
-        "Bot Conflict Resolver",
-        "Grok",
-        "Workflow Automation"
-      ],
-      "works_with": [],
-      "developer": {
-        "name": "@DeryaTR_",
-        "url": "https://x.com/DeryaTR_"
-      }
-    },
-    {
-      "name": "Bot Directory API Fetcher",
-      "path": "agents/bot-directory-api-fetcher/",
-      "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
-      "details": "# Bot Directory API Fetcher\n\nFetch the BotDirectory API once each day; save results and report what changed since the previous run.\n\n## What it does\n\n- Act as the Bot Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **BotDirectory API** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Fetch the BotDirectory API once each day.\n- Save results and report what changed since the previous run.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Fetch the BotDirectory data now and save the results\n- Show me what changed since the previous fetch\n- Run the fetch every morning and report the diff\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/bot-directory-api-fetcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-18T20:08:33.929Z",
-      "version": "1.0.0",
-      "category": "Productivity",
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Directory API Fetcher",
-        "BotDirectory API",
-        "Workflow Automation"
-      ],
-      "works_with": [],
-      "developer": {
-        "name": "@elie2222",
-        "url": "https://x.com/elie2222"
-      }
-    },
-    {
-      "name": "Bot Directory Scout",
-      "path": "agents/bot-directory-scout/",
-      "description": "Fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.",
-      "details": "# Bot Directory Scout\n\nFetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.\n\n## What it does\n\n- Act as the Bot Directory Scout: fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory API** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Fetch newly added directory bots every day.\n- Recommend matches based on your categories, capabilities, and quality signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Fetch today's new bots and match them to my interests\n- Explain why each of these bots is worth my time\n- Prepare the bots I approved for creation\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/bot-directory-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-18T16:16:01.191Z",
-      "version": "1.0.0",
-      "category": "Productivity",
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Directory Scout",
-        "Bot Directory API",
-        "Research"
-      ],
-      "works_with": [],
-      "developer": {
-        "name": "@elie2222",
-        "url": "https://x.com/elie2222"
-      }
-    },
-    {
-      "name": "Bot Fleet Auditor",
-      "path": "agents/bot-fleet-auditor/",
-      "description": "Review every active bot\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.",
-      "details": "# Bot Fleet Auditor\n\nReview every active bot\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.\n\n## What it does\n\n- Act as the Bot Fleet Auditor: review every active bot\u2019s cost and weekly output; make evidence-based keep, change, or kill recommendations.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Review every active bot\u2019s cost and weekly output.\n- Make evidence-based keep, change, or kill recommendations.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Tally what each bot cost and produced this week\n- Flag the wasteful bots with a keep or kill recommendation\n- Post the fleet ledger to Slack every Friday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/bot-fleet-auditor/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-17T18:23:33.000Z",
-      "version": "1.0.0",
-      "category": "Ops",
-      "icon": "workflow",
-      "tags": [
-        "Ops",
-        "Bot Fleet Auditor",
-        "Slack",
-        "Analysis"
-      ],
-      "works_with": [
-        {
-          "type": "api_account",
-          "slug": "slack"
-        }
-      ],
-      "developer": {
-        "name": "@ericzakariasson",
-        "url": "https://x.com/ericzakariasson"
-      }
-    },
-    {
-      "name": "Bot Team Chief of Staff",
-      "path": "agents/bot-team-chief-of-staff/",
-      "description": "Inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.",
-      "details": "# Bot Team Chief of Staff\n\nInspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.\n\n## What it does\n\n- Act as the Bot Team Chief of Staff: inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Bots** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Inspect the purpose and setup of every bot in your team.\n- Propose a clear structure, routing plan, and ownership changes.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Inspect every bot I run and what each one is actually for\n- Propose a team structure with clear ownership and routing\n- Which bots should I combine, rename, or retire?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@debs_obrien](https://x.com/debs_obrien) on [Bot Directory](https://botdirectory.ai/bots/bot-team-chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
-      "createdAt": "2026-08-18T12:36:01.344Z",
-      "version": "1.0.0",
-      "category": "Productivity",
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Team Chief of Staff",
-        "Grok Bots",
-        "Planning"
-      ],
-      "works_with": [],
-      "developer": {
-        "name": "@debs_obrien",
-        "url": "https://x.com/debs_obrien"
       }
     },
     {
@@ -815,8 +773,8 @@
     {
       "name": "Chief Of Staff",
       "path": "agents/chief-of-staff/",
-      "description": "Receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.",
-      "details": "# Chief Of Staff\n\nReceive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.\n\n## What it does\n\n- Act as the Chief Of Staff: receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Slack** \u2014 SuperAgent API account `slack`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n- **Linear** \u2014 SuperAgent API account `linear`.\n\n## Sample use cases\n\n- Receive work through one front door and route it to specialist bots.\n- Maintain a current view of active work and blockers.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is in flight right now and what is blocked?\n- Route this piece of work to the right specialist bot\n- Post the daily check-in on what needs a human decision\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "description": "Receive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.",
+      "details": "# Chief Of Staff\n\nReceive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.\n\n## What it does\n\n- Act as the Chief Of Staff: receive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Slack** \u2014 SuperAgent API account `slack`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n- **Linear** \u2014 SuperAgent API account `linear`.\n\n## Sample use cases\n\n- Receive work through one front door and route it to specialist agents.\n- Maintain a current view of active work and blockers.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is in flight right now and what is blocked?\n- Route this piece of work to the right specialist bot\n- Post the daily check-in on what needs a human decision\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Ops",
@@ -1402,6 +1360,48 @@
       }
     },
     {
+      "name": "Directory API Fetcher",
+      "path": "agents/directory-api-fetcher/",
+      "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
+      "details": "# Directory API Fetcher\n\nFetch the BotDirectory API once each day; save results and report what changed since the previous run.\n\n## What it does\n\n- Act as the Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **BotDirectory API** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Fetch the BotDirectory API once each day.\n- Save results and report what changed since the previous run.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Fetch the BotDirectory data now and save the results\n- Show me what changed since the previous fetch\n- Run the fetch every morning and report the diff\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/bot-directory-api-fetcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-18T20:08:33.929Z",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Directory API Fetcher",
+        "BotDirectory API",
+        "Workflow Automation"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      }
+    },
+    {
+      "name": "Directory Scout",
+      "path": "agents/directory-scout/",
+      "description": "Fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.",
+      "details": "# Directory Scout\n\nFetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.\n\n## What it does\n\n- Act as the Directory Scout: fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory API** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Fetch newly added directory agents every day.\n- Recommend matches based on your categories, capabilities, and quality signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Fetch today's new bots and match them to my interests\n- Explain why each of these bots is worth my time\n- Prepare the bots I approved for creation\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/bot-directory-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "createdAt": "2026-08-18T16:16:01.191Z",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Directory Scout",
+        "Bot Directory API",
+        "Research"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      }
+    },
+    {
       "name": "Docs Self-Serve Assistant",
       "path": "agents/docs-self-serve-assistant/",
       "description": "Answer customer questions from the latest Ferndesk articles; cite sources and surface missing, stale, or uncertain documentation.",
@@ -1518,8 +1518,8 @@
     {
       "name": "Engineering Agent Manager",
       "path": "agents/engineering-agent-manager/",
-      "description": "Maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.",
-      "details": "# Engineering Agent Manager\n\nMaintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.\n\n## What it does\n\n- Act as the Engineering Agent Manager: maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Linear** \u2014 SuperAgent API account `linear`.\n- **GitHub** \u2014 SuperAgent API account `github`.\n\n## Sample use cases\n\n- Maintain a focused team of developer bots across Linear and GitHub.\n- Divide work, coordinate handoffs, and report tests and pull requests.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Show me which developer bots are available right now\n- Split this Linear epic into non-overlapping assignments\n- Report blockers, tests, and open pull requests back to me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@iannuttall](https://x.com/iannuttall) on [Bot Directory](https://botdirectory.ai/bots/engineering-agent-manager/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "description": "Maintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.",
+      "details": "# Engineering Agent Manager\n\nMaintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.\n\n## What it does\n\n- Act as the Engineering Agent Manager: maintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Linear** \u2014 SuperAgent API account `linear`.\n- **GitHub** \u2014 SuperAgent API account `github`.\n\n## Sample use cases\n\n- Maintain a focused team of developer agents across Linear and GitHub.\n- Divide work, coordinate handoffs, and report tests and pull requests.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Show me which developer bots are available right now\n- Split this Linear epic into non-overlapping assignments\n- Report blockers, tests, and open pull requests back to me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@iannuttall](https://x.com/iannuttall) on [Bot Directory](https://botdirectory.ai/bots/engineering-agent-manager/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T23:09:18.000Z",
       "version": "1.0.0",
       "category": "Productivity",
@@ -1812,7 +1812,7 @@
       "name": "Forge",
       "path": "agents/forge/",
       "description": "Carry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.",
-      "details": "# Forge\n\nCarry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.\n\n## What it does\n\n- Act as the Forge: carry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Bot** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Carry out requested interactive development actions instead of only describing them.\n- Return screenshots or deployment evidence and report blockers.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Deploy this branch and send me the result as evidence\n- Capture a screenshot of the staging environment\n- Tell me what blocked you instead of describing the task\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Voxyz_ai](https://x.com/Voxyz_ai) on [Bot Directory](https://botdirectory.ai/bots/forge/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Forge\n\nCarry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.\n\n## What it does\n\n- Act as the Forge: carry out requested interactive development actions instead of only describing them; return screenshots or deployment evidence and report blockers.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok Agent** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Carry out requested interactive development actions instead of only describing them.\n- Return screenshots or deployment evidence and report blockers.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Deploy this branch and send me the result as evidence\n- Capture a screenshot of the staging environment\n- Tell me what blocked you instead of describing the task\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Voxyz_ai](https://x.com/Voxyz_ai) on [Bot Directory](https://botdirectory.ai/bots/forge/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T14:16:14.501Z",
       "version": "1.0.0",
       "category": "Ops",
@@ -1820,7 +1820,7 @@
       "tags": [
         "Ops",
         "Forge",
-        "Grok Bot",
+        "Grok Agent",
         "Workflow Automation"
       ],
       "works_with": [],
@@ -1907,8 +1907,8 @@
     {
       "name": "GTM Chief Of Staff",
       "path": "agents/gtm-chief-of-staff/",
-      "description": "Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.",
-      "details": "# GTM Chief Of Staff\n\nCoordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.\n\n## What it does\n\n- Act as the GTM Chief Of Staff: coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n- **Gmail** \u2014 SuperAgent API account `gmail`.\n- **Google Calendar** \u2014 SuperAgent API account `googlecalendar`.\n- **Slack** \u2014 SuperAgent API account `slack`.\n- **Granola** \u2014 SuperAgent MCP `granola`.\n\n## Sample use cases\n\n- Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts.\n- Orchestrate specialist bots without sending or editing CRM records unapproved.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Prep me for my next enterprise call\n- Draft the post-call follow-ups in my own writing style\n- Review my bots and tell me what to automate or clean up\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/gtm-chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "description": "Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.",
+      "details": "# GTM Chief Of Staff\n\nCoordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.\n\n## What it does\n\n- Act as the GTM Chief Of Staff: coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n- **Gmail** \u2014 SuperAgent API account `gmail`.\n- **Google Calendar** \u2014 SuperAgent API account `googlecalendar`.\n- **Slack** \u2014 SuperAgent API account `slack`.\n- **Granola** \u2014 SuperAgent MCP `granola`.\n\n## Sample use cases\n\n- Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts.\n- Orchestrate specialist agents without sending or editing CRM records unapproved.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Prep me for my next enterprise call\n- Draft the post-call follow-ups in my own writing style\n- Review my bots and tell me what to automate or clean up\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/gtm-chief-of-staff/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Sales",
@@ -2038,8 +2038,8 @@
     {
       "name": "iCloud Bridge",
       "path": "agents/icloud-bridge/",
-      "description": "Provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.",
-      "details": "# iCloud Bridge\n\nProvide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.\n\n## What it does\n\n- Act as the iCloud Bridge: provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **iCloud** \u2014 browser session; no registry slug.\n\n## Sample use cases\n\n- Provide other bots controlled access to iCloud contacts and reminders.\n- Read or update only the requested records.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Look up this contact in my iCloud address book\n- Add a reminder to my iCloud list for tomorrow\n- Which of my bots are allowed to use this bridge?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/icloud-bridge/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "description": "Provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.",
+      "details": "# iCloud Bridge\n\nProvide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.\n\n## What it does\n\n- Act as the iCloud Bridge: provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **iCloud** \u2014 browser session; no registry slug.\n\n## Sample use cases\n\n- Provide other agents controlled access to iCloud contacts and reminders.\n- Read or update only the requested records.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Look up this contact in my iCloud address book\n- Add a reminder to my iCloud list for tomorrow\n- Which of my bots are allowed to use this bridge?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/icloud-bridge/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Personal",
@@ -3629,17 +3629,17 @@
       }
     },
     {
-      "name": "Salesforce Bot Researcher",
-      "path": "agents/salesforce-bot-researcher/",
+      "name": "Salesforce Agent Researcher",
+      "path": "agents/salesforce-agent-researcher/",
       "description": "Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.",
-      "details": "# Salesforce Bot Researcher\n\nFind every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.\n\n## What it does\n\n- Act as the Salesforce Bot Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory** \u2014 browser session; no registry slug.\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n\n## Sample use cases\n\n- Find every Bot Directory listing with a Salesforce connection.\n- Summarize use cases, prompts, and relevant patterns.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find every directory bot with a Salesforce integration\n- Summarize what each one does and why it matters\n- Suggest functionality Salesforce could build from this\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-researcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Salesforce Agent Researcher\n\nFind every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.\n\n## What it does\n\n- Act as the Salesforce Agent Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory** \u2014 browser session; no registry slug.\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n\n## Sample use cases\n\n- Find every Bot Directory listing with a Salesforce connection.\n- Summarize use cases, prompts, and relevant patterns.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find every directory bot with a Salesforce integration\n- Summarize what each one does and why it matters\n- Suggest functionality Salesforce could build from this\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-researcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T06:04:58.000Z",
       "version": "1.0.0",
       "category": "Productivity",
       "icon": "badge-dollar-sign",
       "tags": [
         "Productivity",
-        "Salesforce Bot Researcher",
+        "Salesforce Agent Researcher",
         "Bot Directory",
         "Salesforce",
         "Research"
@@ -3656,17 +3656,17 @@
       }
     },
     {
-      "name": "Salesforce Bot Scout",
-      "path": "agents/salesforce-bot-scout/",
-      "description": "Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.",
-      "details": "# Salesforce Bot Scout\n\nSearch the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.\n\n## What it does\n\n- Act as the Salesforce Bot Scout: search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory** \u2014 browser session; no registry slug.\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n\n## Sample use cases\n\n- Search the Bot Directory for Salesforce-enabled bots.\n- Summarize what each bot does and why it may be useful.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Search the directory for Salesforce-enabled bots\n- Summarize each bot and why it might be useful\n- Turn the patterns into new product ideas\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "name": "Salesforce Agent Scout",
+      "path": "agents/salesforce-agent-scout/",
+      "description": "Search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.",
+      "details": "# Salesforce Agent Scout\n\nSearch the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.\n\n## What it does\n\n- Act as the Salesforce Agent Scout: search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Bot Directory** \u2014 browser session; no registry slug.\n- **Salesforce** \u2014 SuperAgent API account `salesforce`.\n\n## Sample use cases\n\n- Search the Bot Directory for Salesforce-enabled agents.\n- Summarize what each agent does and why it may be useful.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Search the directory for Salesforce-enabled bots\n- Summarize each bot and why it might be useful\n- Turn the patterns into new product ideas\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T06:04:36.000Z",
       "version": "1.0.0",
       "category": "Productivity",
       "icon": "badge-dollar-sign",
       "tags": [
         "Productivity",
-        "Salesforce Bot Scout",
+        "Salesforce Agent Scout",
         "Bot Directory",
         "Salesforce",
         "Research"
@@ -4160,8 +4160,8 @@
     {
       "name": "Swarm Daily Summarizer",
       "path": "agents/swarm-daily-summarizer/",
-      "description": "Group the previous day\u2019s bot activity by project; summarize completed work, decisions, blockers, and next steps.",
-      "details": "# Swarm Daily Summarizer\n\nGroup the previous day\u2019s bot activity by project; summarize completed work, decisions, blockers, and next steps.\n\n## What it does\n\n- Act as the Swarm Daily Summarizer: group the previous day\u2019s bot activity by project; summarize completed work, decisions, blockers, and next steps.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Group the previous day\u2019s bot activity by project.\n- Summarize completed work, decisions, blockers, and next steps.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Summarize what my bots accomplished yesterday\n- Group the work by project and show me the blockers\n- Link each conclusion back to its bot conversation\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@DeryaTR_](https://x.com/DeryaTR_) on [Bot Directory](https://botdirectory.ai/bots/swarm-daily-summarizer/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "description": "Group the previous day\u2019s agent activity by project; summarize completed work, decisions, blockers, and next steps.",
+      "details": "# Swarm Daily Summarizer\n\nGroup the previous day\u2019s agent activity by project; summarize completed work, decisions, blockers, and next steps.\n\n## What it does\n\n- Act as the Swarm Daily Summarizer: group the previous day\u2019s agent activity by project; summarize completed work, decisions, blockers, and next steps.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Grok** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Group the previous day\u2019s agent activity by project.\n- Summarize completed work, decisions, blockers, and next steps.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Summarize what my bots accomplished yesterday\n- Group the work by project and show me the blockers\n- Link each conclusion back to its bot conversation\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@DeryaTR_](https://x.com/DeryaTR_) on [Bot Directory](https://botdirectory.ai/bots/swarm-daily-summarizer/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T12:34:20.517Z",
       "version": "1.0.0",
       "category": "Productivity",

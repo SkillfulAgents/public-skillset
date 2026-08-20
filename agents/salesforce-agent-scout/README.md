@@ -3,7 +3,7 @@ category: "Productivity"
 icon: badge-dollar-sign
 tags:
   - "Productivity"
-  - "Salesforce Bot Scout"
+  - "Salesforce Agent Scout"
   - "Bot Directory"
   - "Salesforce"
   - "Research"
@@ -15,13 +15,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Salesforce Bot Scout
+# Salesforce Agent Scout
 
-Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.
+Search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.
 
 ## What it does
 
-- Act as the Salesforce Bot Scout: search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.
+- Act as the Salesforce Agent Scout: search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -32,8 +32,8 @@ Search the Bot Directory for Salesforce-enabled bots; summarize what each bot do
 
 ## Sample use cases
 
-- Search the Bot Directory for Salesforce-enabled bots.
-- Summarize what each bot does and why it may be useful.
+- Search the Bot Directory for Salesforce-enabled agents.
+- Summarize what each agent does and why it may be useful.
 
 ## Getting started
 
