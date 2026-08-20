@@ -3,7 +3,7 @@ category: "Productivity"
 icon: badge-dollar-sign
 tags:
   - "Productivity"
-  - "Salesforce Bot Scout"
+  - "Salesforce Agent Researcher"
   - "Bot Directory"
   - "Salesforce"
   - "Research"
@@ -15,13 +15,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Salesforce Bot Scout
+# Salesforce Agent Researcher
 
-Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.
+Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
 
 ## What it does
 
-- Act as the Salesforce Bot Scout: search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.
+- Act as the Salesforce Agent Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -32,8 +32,8 @@ Search the Bot Directory for Salesforce-enabled bots; summarize what each bot do
 
 ## Sample use cases
 
-- Search the Bot Directory for Salesforce-enabled bots.
-- Summarize what each bot does and why it may be useful.
+- Find every Bot Directory listing with a Salesforce connection.
+- Summarize use cases, prompts, and relevant patterns.
 
 ## Getting started
 
@@ -49,4 +49,4 @@ Search the Bot Directory for Salesforce-enabled bots; summarize what each bot do
 
 ## Credits
 
-Original prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).
+Original prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-researcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).

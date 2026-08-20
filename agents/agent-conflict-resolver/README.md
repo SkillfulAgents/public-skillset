@@ -3,7 +3,7 @@ category: "Ops"
 icon: workflow
 tags:
   - "Ops"
-  - "Bot Conflict Resolver"
+  - "Agent Conflict Resolver"
   - "Grok"
   - "Workflow Automation"
 works_with: []
@@ -12,13 +12,13 @@ developer:
   url: "https://x.com/DeryaTR_"
 ---
 
-# Bot Conflict Resolver
+# Agent Conflict Resolver
 
-Detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.
+Detect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.
 
 ## What it does
 
-- Act as the Bot Conflict Resolver: detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.
+- Act as the Agent Conflict Resolver: detect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -28,7 +28,7 @@ Detect conflicting bot claims, plans, or recommendations; compare their evidence
 
 ## Sample use cases
 
-- Detect conflicting bot claims, plans, or recommendations.
+- Detect conflicting agent claims, plans, or recommendations.
 - Compare their evidence and produce a reconciled conclusion.
 
 ## Getting started

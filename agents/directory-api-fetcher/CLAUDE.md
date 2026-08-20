@@ -1,23 +1,23 @@
 ---
-name: "Bot Team Chief of Staff"
-description: "Inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes."
+name: "Directory API Fetcher"
+description: "Fetch the BotDirectory API once each day; save results and report what changed since the previous run."
 version: 1.0.0
-createdAt: "2026-08-18T12:36:01.344Z"
+createdAt: "2026-08-18T20:08:33.929Z"
 ---
 
-# Bot Team Chief of Staff
+# Directory API Fetcher
 
-Act as the Bot Team Chief of Staff: inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.
+Act as the Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Grok Bots through the connection method available to the user (no canonical SuperAgent registry slug).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: BotDirectory API through its direct API, feed, or required credentials (no canonical SuperAgent registry slug).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
 ## Connection methods
 
-- For the Grok Bots connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
+- For the BotDirectory API connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 

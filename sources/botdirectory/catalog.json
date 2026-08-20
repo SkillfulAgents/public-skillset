@@ -150,8 +150,10 @@
       "promptSha256": "eb322a2c45ddf5b7ea40dd15c472f624b0e1c3b0404a7f81bfcd19ac2d4a948e"
     },
     {
-      "slug": "accountingbot",
-      "name": "AccountingBot",
+      "slug": "accounting-agent",
+      "sourceSlug": "accountingbot",
+      "name": "Accounting Agent",
+      "sourceName": "AccountingBot",
       "description": "Perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.",
       "category": "Ops",
       "sourceCategory": "Ops",
@@ -172,7 +174,7 @@
       "icon": "calculator",
       "tags": [
         "Ops",
-        "AccountingBot",
+        "Accounting Agent",
         "Notion",
         "Bookkeeping"
       ],
@@ -285,6 +287,123 @@
       "detailUrl": "https://botdirectory.ai/bots/aeo-content-autopilot/",
       "sourceFile": "bots/aeo-content-autopilot.md",
       "promptSha256": "1b4f8dc3a8e6e61f8b9a5e67d65abf1e35efb27dd7d211ed9c5d3a07bffcc578"
+    },
+    {
+      "slug": "agent-advisor",
+      "sourceSlug": "bot-advisor",
+      "name": "Agent Advisor",
+      "sourceName": "Bot Advisor",
+      "description": "Interview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-17T19:08:55.000Z",
+      "creator": {
+        "name": "@petergyang",
+        "url": "https://x.com/petergyang"
+      },
+      "connectFirst": [
+        "Grok Bot"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Agent Advisor",
+        "Grok Agent",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-advisor/",
+      "sourceFile": "bots/bot-advisor.md",
+      "promptSha256": "ddeba7dfd6ba99f0e9f80ac9659880b7352360a1c2cf2a6e2c479e1abf8b506b"
+    },
+    {
+      "slug": "agent-conflict-resolver",
+      "sourceSlug": "bot-conflict-resolver",
+      "name": "Agent Conflict Resolver",
+      "sourceName": "Bot Conflict Resolver",
+      "description": "Detect conflicting agent claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-18T12:34:20.517Z",
+      "creator": {
+        "name": "@DeryaTR_",
+        "url": "https://x.com/DeryaTR_"
+      },
+      "connectFirst": [
+        "Grok"
+      ],
+      "worksWith": [],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Agent Conflict Resolver",
+        "Grok",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-conflict-resolver/",
+      "sourceFile": "bots/bot-conflict-resolver.md",
+      "promptSha256": "918fef8faef0f7ac395dc35026ba013e8e9ba54ac7411a8f9f3484068174073d"
+    },
+    {
+      "slug": "agent-fleet-auditor",
+      "sourceSlug": "bot-fleet-auditor",
+      "name": "Agent Fleet Auditor",
+      "sourceName": "Bot Fleet Auditor",
+      "description": "Review every active agent’s cost and weekly output; make evidence-based keep, change, or kill recommendations.",
+      "category": "Ops",
+      "sourceCategory": "Ops",
+      "addedAt": "2026-08-17T18:23:33.000Z",
+      "creator": {
+        "name": "@ericzakariasson",
+        "url": "https://x.com/ericzakariasson"
+      },
+      "connectFirst": [
+        "Slack"
+      ],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "icon": "workflow",
+      "tags": [
+        "Ops",
+        "Agent Fleet Auditor",
+        "Slack",
+        "Analysis"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-fleet-auditor/",
+      "sourceFile": "bots/bot-fleet-auditor.md",
+      "promptSha256": "183d4e3c5844db1b626082920f3f2468e7d5e1b3700970a38547f8801026d6f9"
+    },
+    {
+      "slug": "agent-team-chief-of-staff",
+      "sourceSlug": "bot-team-chief-of-staff",
+      "name": "Agent Team Chief of Staff",
+      "sourceName": "Bot Team Chief of Staff",
+      "description": "Inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T12:36:01.344Z",
+      "creator": {
+        "name": "@debs_obrien",
+        "url": "https://x.com/debs_obrien"
+      },
+      "connectFirst": [
+        "Grok Bots"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Agent Team Chief of Staff",
+        "Grok Agents",
+        "Planning"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-team-chief-of-staff/",
+      "sourceFile": "bots/bot-team-chief-of-staff.md",
+      "promptSha256": "f18684140bed34e88bbb0ae3a922a42d40d338af5af49c9eb0c4f9ab31ffa59f"
     },
     {
       "slug": "applicant-screener",
@@ -469,8 +588,10 @@
       "promptSha256": "e5c564fb30380c12062bb28936b08a1e72c8636fef91146f49ca0bfff6efa7d9"
     },
     {
-      "slug": "biblical-accuracy-study-bot",
-      "name": "Biblical Accuracy Study Bot",
+      "slug": "biblical-accuracy-study-agent",
+      "sourceSlug": "biblical-accuracy-study-bot",
+      "name": "Biblical Accuracy Study Agent",
+      "sourceName": "Biblical Accuracy Study Bot",
       "description": "Answer study questions with relevant Bible passages; separate direct teaching from interpretation and compare translations.",
       "category": "Personal",
       "sourceCategory": "Personal",
@@ -487,7 +608,7 @@
       "icon": "sparkles",
       "tags": [
         "Personal",
-        "Biblical Accuracy Study Bot",
+        "Biblical Accuracy Study Agent",
         "Bible",
         "Web Search",
         "Research"
@@ -526,167 +647,6 @@
       "detailUrl": "https://botdirectory.ai/bots/bookkeeping-auditor/",
       "sourceFile": "bots/bookkeeping-auditor.md",
       "promptSha256": "383e1c65bcbd895a156f499a2c23039df00f3f3f41d369050f2fb8422d6f2c5f"
-    },
-    {
-      "slug": "bot-advisor",
-      "name": "Bot Advisor",
-      "description": "Interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.",
-      "category": "Productivity",
-      "sourceCategory": "Productivity",
-      "addedAt": "2026-08-17T19:08:55.000Z",
-      "creator": {
-        "name": "@petergyang",
-        "url": "https://x.com/petergyang"
-      },
-      "connectFirst": [
-        "Grok Bot"
-      ],
-      "worksWith": [],
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Advisor",
-        "Grok Bot",
-        "Research"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-advisor/",
-      "sourceFile": "bots/bot-advisor.md",
-      "promptSha256": "ddeba7dfd6ba99f0e9f80ac9659880b7352360a1c2cf2a6e2c479e1abf8b506b"
-    },
-    {
-      "slug": "bot-conflict-resolver",
-      "name": "Bot Conflict Resolver",
-      "description": "Detect conflicting bot claims, plans, or recommendations; compare their evidence and produce a reconciled conclusion.",
-      "category": "Ops",
-      "sourceCategory": "Ops",
-      "addedAt": "2026-08-18T12:34:20.517Z",
-      "creator": {
-        "name": "@DeryaTR_",
-        "url": "https://x.com/DeryaTR_"
-      },
-      "connectFirst": [
-        "Grok"
-      ],
-      "worksWith": [],
-      "icon": "workflow",
-      "tags": [
-        "Ops",
-        "Bot Conflict Resolver",
-        "Grok",
-        "Workflow Automation"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-conflict-resolver/",
-      "sourceFile": "bots/bot-conflict-resolver.md",
-      "promptSha256": "918fef8faef0f7ac395dc35026ba013e8e9ba54ac7411a8f9f3484068174073d"
-    },
-    {
-      "slug": "bot-directory-api-fetcher",
-      "name": "Bot Directory API Fetcher",
-      "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
-      "category": "Productivity",
-      "sourceCategory": "Productivity",
-      "addedAt": "2026-08-18T20:08:33.929Z",
-      "creator": {
-        "name": "@elie2222",
-        "url": "https://x.com/elie2222"
-      },
-      "connectFirst": [
-        "BotDirectory API"
-      ],
-      "worksWith": [],
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Directory API Fetcher",
-        "BotDirectory API",
-        "Workflow Automation"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-directory-api-fetcher/",
-      "sourceFile": "bots/bot-directory-api-fetcher.md",
-      "promptSha256": "c8e3a51f84d796dbdfb92b93f93710691fed80ab4dc3006174b3eadeefe63195"
-    },
-    {
-      "slug": "bot-directory-scout",
-      "name": "Bot Directory Scout",
-      "description": "Fetch newly added directory bots every day; recommend matches based on your categories, capabilities, and quality signals.",
-      "category": "Productivity",
-      "sourceCategory": "Productivity",
-      "addedAt": "2026-08-18T16:16:01.191Z",
-      "creator": {
-        "name": "@elie2222",
-        "url": "https://x.com/elie2222"
-      },
-      "connectFirst": [
-        "Bot Directory API"
-      ],
-      "worksWith": [],
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Directory Scout",
-        "Bot Directory API",
-        "Research"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-directory-scout/",
-      "sourceFile": "bots/bot-directory-scout.md",
-      "promptSha256": "2c0e04bbd7a992e04fff147f086b0775a0b649e29ba1117627ef09012ef10b8e"
-    },
-    {
-      "slug": "bot-fleet-auditor",
-      "name": "Bot Fleet Auditor",
-      "description": "Review every active bot’s cost and weekly output; make evidence-based keep, change, or kill recommendations.",
-      "category": "Ops",
-      "sourceCategory": "Ops",
-      "addedAt": "2026-08-17T18:23:33.000Z",
-      "creator": {
-        "name": "@ericzakariasson",
-        "url": "https://x.com/ericzakariasson"
-      },
-      "connectFirst": [
-        "Slack"
-      ],
-      "worksWith": [
-        {
-          "type": "api_account",
-          "slug": "slack"
-        }
-      ],
-      "icon": "workflow",
-      "tags": [
-        "Ops",
-        "Bot Fleet Auditor",
-        "Slack",
-        "Analysis"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-fleet-auditor/",
-      "sourceFile": "bots/bot-fleet-auditor.md",
-      "promptSha256": "183d4e3c5844db1b626082920f3f2468e7d5e1b3700970a38547f8801026d6f9"
-    },
-    {
-      "slug": "bot-team-chief-of-staff",
-      "name": "Bot Team Chief of Staff",
-      "description": "Inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.",
-      "category": "Productivity",
-      "sourceCategory": "Productivity",
-      "addedAt": "2026-08-18T12:36:01.344Z",
-      "creator": {
-        "name": "@debs_obrien",
-        "url": "https://x.com/debs_obrien"
-      },
-      "connectFirst": [
-        "Grok Bots"
-      ],
-      "worksWith": [],
-      "icon": "list-checks",
-      "tags": [
-        "Productivity",
-        "Bot Team Chief of Staff",
-        "Grok Bots",
-        "Planning"
-      ],
-      "detailUrl": "https://botdirectory.ai/bots/bot-team-chief-of-staff/",
-      "sourceFile": "bots/bot-team-chief-of-staff.md",
-      "promptSha256": "f18684140bed34e88bbb0ae3a922a42d40d338af5af49c9eb0c4f9ab31ffa59f"
     },
     {
       "slug": "brand-deck-keeper",
@@ -912,7 +872,7 @@
     {
       "slug": "chief-of-staff",
       "name": "Chief Of Staff",
-      "description": "Receive work through one front door and route it to specialist bots; maintain a current view of active work and blockers.",
+      "description": "Receive work through one front door and route it to specialist agents; maintain a current view of active work and blockers.",
       "category": "Ops",
       "sourceCategory": "Ops",
       "addedAt": "2026-08-17T18:23:33.000Z",
@@ -1617,6 +1577,62 @@
       "promptSha256": "d41282b00351764ab69d3b8bb605de9640c9affa1aec3975fe6f85a39a5a2acd"
     },
     {
+      "slug": "directory-api-fetcher",
+      "sourceSlug": "bot-directory-api-fetcher",
+      "name": "Directory API Fetcher",
+      "sourceName": "Bot Directory API Fetcher",
+      "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T20:08:33.929Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "BotDirectory API"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Directory API Fetcher",
+        "BotDirectory API",
+        "Workflow Automation"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-directory-api-fetcher/",
+      "sourceFile": "bots/bot-directory-api-fetcher.md",
+      "promptSha256": "c8e3a51f84d796dbdfb92b93f93710691fed80ab4dc3006174b3eadeefe63195"
+    },
+    {
+      "slug": "directory-scout",
+      "sourceSlug": "bot-directory-scout",
+      "name": "Directory Scout",
+      "sourceName": "Bot Directory Scout",
+      "description": "Fetch newly added directory agents every day; recommend matches based on your categories, capabilities, and quality signals.",
+      "category": "Productivity",
+      "sourceCategory": "Productivity",
+      "addedAt": "2026-08-18T16:16:01.191Z",
+      "creator": {
+        "name": "@elie2222",
+        "url": "https://x.com/elie2222"
+      },
+      "connectFirst": [
+        "Bot Directory API"
+      ],
+      "worksWith": [],
+      "icon": "list-checks",
+      "tags": [
+        "Productivity",
+        "Directory Scout",
+        "Bot Directory API",
+        "Research"
+      ],
+      "detailUrl": "https://botdirectory.ai/bots/bot-directory-scout/",
+      "sourceFile": "bots/bot-directory-scout.md",
+      "promptSha256": "2c0e04bbd7a992e04fff147f086b0775a0b649e29ba1117627ef09012ef10b8e"
+    },
+    {
       "slug": "docs-self-serve-assistant",
       "name": "Docs Self-Serve Assistant",
       "description": "Answer customer questions from the latest Ferndesk articles; cite sources and surface missing, stale, or uncertain documentation.",
@@ -1756,7 +1772,7 @@
     {
       "slug": "engineering-agent-manager",
       "name": "Engineering Agent Manager",
-      "description": "Maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.",
+      "description": "Maintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.",
       "category": "Productivity",
       "sourceCategory": "Productivity",
       "addedAt": "2026-08-17T23:09:18.000Z",
@@ -2127,7 +2143,7 @@
       "tags": [
         "Ops",
         "Forge",
-        "Grok Bot",
+        "Grok Agent",
         "Workflow Automation"
       ],
       "detailUrl": "https://botdirectory.ai/bots/forge/",
@@ -2229,7 +2245,7 @@
     {
       "slug": "gtm-chief-of-staff",
       "name": "GTM Chief Of Staff",
-      "description": "Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist bots without sending or editing CRM records unapproved.",
+      "description": "Coordinate enterprise-sales meeting prep, inbox work, and post-call drafts; orchestrate specialist agents without sending or editing CRM records unapproved.",
       "category": "Sales",
       "sourceCategory": "Sales",
       "addedAt": "2026-08-17T19:08:55.000Z",
@@ -2388,7 +2404,7 @@
     {
       "slug": "icloud-bridge",
       "name": "iCloud Bridge",
-      "description": "Provide other bots controlled access to iCloud contacts and reminders; read or update only the requested records.",
+      "description": "Provide other agents controlled access to iCloud contacts and reminders; read or update only the requested records.",
       "category": "Personal",
       "sourceCategory": "Personal",
       "addedAt": "2026-08-17T18:23:33.000Z",
@@ -4128,8 +4144,10 @@
       "promptSha256": "b6f9e49d414dfd674976e08e6885c7c19f2efe75e85e10d1492b36a13f427ce0"
     },
     {
-      "slug": "salesforce-bot-researcher",
-      "name": "Salesforce Bot Researcher",
+      "slug": "salesforce-agent-researcher",
+      "sourceSlug": "salesforce-bot-researcher",
+      "name": "Salesforce Agent Researcher",
+      "sourceName": "Salesforce Bot Researcher",
       "description": "Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.",
       "category": "Productivity",
       "sourceCategory": "Productivity",
@@ -4151,7 +4169,7 @@
       "icon": "badge-dollar-sign",
       "tags": [
         "Productivity",
-        "Salesforce Bot Researcher",
+        "Salesforce Agent Researcher",
         "Bot Directory",
         "Salesforce",
         "Research"
@@ -4161,9 +4179,11 @@
       "promptSha256": "20a8d1a910e7668645033252177b06e44aacc85144866414198863ead9fedb0b"
     },
     {
-      "slug": "salesforce-bot-scout",
-      "name": "Salesforce Bot Scout",
-      "description": "Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.",
+      "slug": "salesforce-agent-scout",
+      "sourceSlug": "salesforce-bot-scout",
+      "name": "Salesforce Agent Scout",
+      "sourceName": "Salesforce Bot Scout",
+      "description": "Search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.",
       "category": "Productivity",
       "sourceCategory": "Productivity",
       "addedAt": "2026-08-18T06:04:36.000Z",
@@ -4184,7 +4204,7 @@
       "icon": "badge-dollar-sign",
       "tags": [
         "Productivity",
-        "Salesforce Bot Scout",
+        "Salesforce Agent Scout",
         "Bot Directory",
         "Salesforce",
         "Research"
@@ -4736,7 +4756,7 @@
     {
       "slug": "swarm-daily-summarizer",
       "name": "Swarm Daily Summarizer",
-      "description": "Group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps.",
+      "description": "Group the previous day’s agent activity by project; summarize completed work, decisions, blockers, and next steps.",
       "category": "Productivity",
       "sourceCategory": "Productivity",
       "addedAt": "2026-08-18T12:34:20.517Z",

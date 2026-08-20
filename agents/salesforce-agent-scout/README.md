@@ -3,7 +3,7 @@ category: "Productivity"
 icon: badge-dollar-sign
 tags:
   - "Productivity"
-  - "Salesforce Bot Researcher"
+  - "Salesforce Agent Scout"
   - "Bot Directory"
   - "Salesforce"
   - "Research"
@@ -15,13 +15,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Salesforce Bot Researcher
+# Salesforce Agent Scout
 
-Find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
+Search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.
 
 ## What it does
 
-- Act as the Salesforce Bot Researcher: find every Bot Directory listing with a Salesforce connection; summarize use cases, prompts, and relevant patterns.
+- Act as the Salesforce Agent Scout: search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -32,8 +32,8 @@ Find every Bot Directory listing with a Salesforce connection; summarize use cas
 
 ## Sample use cases
 
-- Find every Bot Directory listing with a Salesforce connection.
-- Summarize use cases, prompts, and relevant patterns.
+- Search the Bot Directory for Salesforce-enabled agents.
+- Summarize what each agent does and why it may be useful.
 
 ## Getting started
 
@@ -49,4 +49,4 @@ Find every Bot Directory listing with a Salesforce connection; summarize use cas
 
 ## Credits
 
-Original prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-researcher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).
+Original prompt credited to [@elie2222](https://x.com/elie2222) on [Bot Directory](https://botdirectory.ai/bots/salesforce-bot-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).

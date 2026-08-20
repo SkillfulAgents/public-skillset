@@ -1,13 +1,13 @@
 ---
-name: "Salesforce Bot Scout"
-description: "Search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful."
+name: "Salesforce Agent Scout"
+description: "Search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful."
 version: 1.0.0
 createdAt: "2026-08-18T06:04:36.000Z"
 ---
 
-# Salesforce Bot Scout
+# Salesforce Agent Scout
 
-Act as the Salesforce Bot Scout: search the Bot Directory for Salesforce-enabled bots; summarize what each bot does and why it may be useful.
+Act as the Salesforce Agent Scout: search the Bot Directory for Salesforce-enabled agents; summarize what each agent does and why it may be useful.
 
 ## First run
 

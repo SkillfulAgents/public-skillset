@@ -3,8 +3,8 @@ category: "Productivity"
 icon: list-checks
 tags:
   - "Productivity"
-  - "Bot Team Chief of Staff"
-  - "Grok Bots"
+  - "Agent Team Chief of Staff"
+  - "Grok Agents"
   - "Planning"
 works_with: []
 developer:
@@ -12,23 +12,23 @@ developer:
   url: "https://x.com/debs_obrien"
 ---
 
-# Bot Team Chief of Staff
+# Agent Team Chief of Staff
 
-Inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.
+Inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.
 
 ## What it does
 
-- Act as the Bot Team Chief of Staff: inspect the purpose and setup of every bot in your team; propose a clear structure, routing plan, and ownership changes.
+- Act as the Agent Team Chief of Staff: inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
 ## Connect first
 
-- **Grok Bots** — external connection; no canonical registry slug.
+- **Grok Agents** — external connection; no canonical registry slug.
 
 ## Sample use cases
 
-- Inspect the purpose and setup of every bot in your team.
+- Inspect the purpose and setup of every agent in your team.
 - Propose a clear structure, routing plan, and ownership changes.
 
 ## Getting started

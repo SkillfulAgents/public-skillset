@@ -19,11 +19,11 @@ developer:
 
 # Engineering Agent Manager
 
-Maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.
+Maintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.
 
 ## What it does
 
-- Act as the Engineering Agent Manager: maintain a focused team of developer bots across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.
+- Act as the Engineering Agent Manager: maintain a focused team of developer agents across Linear and GitHub; divide work, coordinate handoffs, and report tests and pull requests.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -34,7 +34,7 @@ Maintain a focused team of developer bots across Linear and GitHub; divide work,
 
 ## Sample use cases
 
-- Maintain a focused team of developer bots across Linear and GitHub.
+- Maintain a focused team of developer agents across Linear and GitHub.
 - Divide work, coordinate handoffs, and report tests and pull requests.
 
 ## Getting started

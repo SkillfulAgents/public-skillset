@@ -14,11 +14,11 @@ developer:
 
 # Swarm Daily Summarizer
 
-Group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps.
+Group the previous day’s agent activity by project; summarize completed work, decisions, blockers, and next steps.
 
 ## What it does
 
-- Act as the Swarm Daily Summarizer: group the previous day’s bot activity by project; summarize completed work, decisions, blockers, and next steps.
+- Act as the Swarm Daily Summarizer: group the previous day’s agent activity by project; summarize completed work, decisions, blockers, and next steps.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -28,7 +28,7 @@ Group the previous day’s bot activity by project; summarize completed work, de
 
 ## Sample use cases
 
-- Group the previous day’s bot activity by project.
+- Group the previous day’s agent activity by project.
 - Summarize completed work, decisions, blockers, and next steps.
 
 ## Getting started

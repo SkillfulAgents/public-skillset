@@ -3,7 +3,7 @@ category: "Ops"
 icon: calculator
 tags:
   - "Ops"
-  - "AccountingBot"
+  - "Accounting Agent"
   - "Notion"
   - "Bookkeeping"
 works_with:
@@ -14,13 +14,13 @@ developer:
   url: "https://x.com/benln"
 ---
 
-# AccountingBot
+# Accounting Agent
 
 Perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.
 
 ## What it does
 
-- Act as the AccountingBot: perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.
+- Act as the Accounting Agent: perform the recurring accounting tasks you define; organize results into clear Notion records and summaries.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 

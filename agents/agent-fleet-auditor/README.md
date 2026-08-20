@@ -3,7 +3,7 @@ category: "Ops"
 icon: workflow
 tags:
   - "Ops"
-  - "Bot Fleet Auditor"
+  - "Agent Fleet Auditor"
   - "Slack"
   - "Analysis"
 works_with:
@@ -14,13 +14,13 @@ developer:
   url: "https://x.com/ericzakariasson"
 ---
 
-# Bot Fleet Auditor
+# Agent Fleet Auditor
 
-Review every active bot’s cost and weekly output; make evidence-based keep, change, or kill recommendations.
+Review every active agent’s cost and weekly output; make evidence-based keep, change, or kill recommendations.
 
 ## What it does
 
-- Act as the Bot Fleet Auditor: review every active bot’s cost and weekly output; make evidence-based keep, change, or kill recommendations.
+- Act as the Agent Fleet Auditor: review every active agent’s cost and weekly output; make evidence-based keep, change, or kill recommendations.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
@@ -30,7 +30,7 @@ Review every active bot’s cost and weekly output; make evidence-based keep, ch
 
 ## Sample use cases
 
-- Review every active bot’s cost and weekly output.
+- Review every active agent’s cost and weekly output.
 - Make evidence-based keep, change, or kill recommendations.
 
 ## Getting started

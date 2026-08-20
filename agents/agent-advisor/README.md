@@ -3,8 +3,8 @@ category: "Productivity"
 icon: list-checks
 tags:
   - "Productivity"
-  - "Bot Advisor"
-  - "Grok Bot"
+  - "Agent Advisor"
+  - "Grok Agent"
   - "Research"
 works_with: []
 developer:
@@ -12,24 +12,24 @@ developer:
   url: "https://x.com/petergyang"
 ---
 
-# Bot Advisor
+# Agent Advisor
 
-Interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.
+Interview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.
 
 ## What it does
 
-- Act as the Bot Advisor: interview you about a workflow you want automated; draft and create an approved bot with instructions, connections, and schedule.
+- Act as the Agent Advisor: interview you about a workflow you want automated; draft and create an approved agent with instructions, connections, and schedule.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
 ## Connect first
 
-- **Grok Bot** — external connection; no canonical registry slug.
+- **Grok Agent** — external connection; no canonical registry slug.
 
 ## Sample use cases
 
 - Interview you about a workflow you want automated.
-- Draft and create an approved bot with instructions, connections, and schedule.
+- Draft and create an approved agent with instructions, connections, and schedule.
 
 ## Getting started
 

@@ -3,7 +3,7 @@ category: "Productivity"
 icon: list-checks
 tags:
   - "Productivity"
-  - "Bot Directory API Fetcher"
+  - "Directory API Fetcher"
   - "BotDirectory API"
   - "Workflow Automation"
 works_with: []
@@ -12,13 +12,13 @@ developer:
   url: "https://x.com/elie2222"
 ---
 
-# Bot Directory API Fetcher
+# Directory API Fetcher
 
 Fetch the BotDirectory API once each day; save results and report what changed since the previous run.
 
 ## What it does
 
-- Act as the Bot Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.
+- Act as the Directory API Fetcher: fetch the BotDirectory API once each day; save results and report what changed since the previous run.
 - Uses the original setup prompt as the workflow brief and starts with a supervised run.
 - Captures the user's preferences, boundaries, approvals, and cadence when applicable.
 
