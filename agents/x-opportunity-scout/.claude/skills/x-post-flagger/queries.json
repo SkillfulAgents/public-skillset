@@ -1,0 +1,13 @@
+{
+  "_note": "PLACEHOLDER query bank — the agent-onboarding skill replaces this with queries built around the user's product. Exclusions are per provider: 'builtin' uses official X API v2 operators, 'twitterapi' uses twitterapi.io advanced-search operators.",
+  "common_exclusions": {
+    "builtin": "-is:retweet -is:reply lang:en",
+    "twitterapi": "-filter:retweets lang:en"
+  },
+  "queries": [
+    {"category": "competitor-alt", "q": "(\"<competitor A>\" OR \"<competitor B>\") (alternative OR alternatives OR frustrated OR \"sick of\" OR \"too expensive\" OR switch OR \"instead of\" OR \"is there\")"},
+    {"category": "platform-ask", "q": "(\"best tool\" OR \"what is everyone using\" OR recommend) (\"<product category>\" OR \"<product category synonym>\")"},
+    {"category": "specific-need", "q": "(\"is there a\" OR \"looking for\" OR \"i need a\" OR \"i wish\") (\"<thing the product does>\")"},
+    {"category": "gripe", "q": "(\"<problem the product solves>\") (frustrating OR annoying OR \"i hate\" OR \"why can't\" OR wish)"}
+  ]
+}

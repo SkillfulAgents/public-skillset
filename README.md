@@ -36,6 +36,10 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+### X Opportunity Scout
+
+Watches X for high-intent posts where your product is the answer — competitor-alternative asks, tool recommendations, gripes your product solves — scores them against a rubric calibrated to your product during onboarding, and delivers the best few with ready-to-paste reply drafts on your schedule. You reply personally; it never posts on its own. Uses the built-in X API with an optional BYOK fallback for cheaper reads.
+
 ### Bot Directory light templates
 
 The repository also includes 160 lightweight templates imported from
