@@ -4,10 +4,6 @@ A public collection of agent templates and skills for the Gamut app.
 
 ## Agent Templates
 
-### Agent Pill
-
-Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
-
 ### Inbox Manager
 
 Email management agent that helps users organize their Gmail inbox, screen and categorize emails, and unsubscribe from unwanted mailing lists.
@@ -35,6 +31,10 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 ### SEO Agent
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
+
+### Welcome Agent
+
+Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
 
 ### X Opportunity Scout
 
@@ -160,7 +160,7 @@ uv run tests/test_generate_index.py
 ```
 .
 ├── agents/
-│   ├── agent-pill/
+│   ├── welcome-agent/
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...

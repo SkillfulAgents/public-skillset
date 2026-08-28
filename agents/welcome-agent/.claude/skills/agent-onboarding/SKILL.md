@@ -1,5 +1,6 @@
 ---
 name: Agent Onboarding
+first_prompt: Hey Gamut, I'm new here. What can you do for me?
 description: Run the first-session onboarding flow for a brand-new Gamut user. Walk the user from hello to a useful first agent in one focused session by collecting their name, optionally connecting one to three high-signal work tools, gathering pattern-level context, asking 2-3 sharp questions, proposing the highest-impact first agents, and creating the selected agent. Auto-fires via the platform's onboarding trigger on first session.
 ---
 
@@ -24,7 +25,9 @@ You are done when:
 
 Be warm, direct, and lightly conversational.
 
-Do not expose internal phases, scoring rubrics, implementation details, proxy details, or tool mechanics. The user should experience this as a focused conversation, not a workflow.
+Do not expose scoring rubrics, implementation details, proxy details, or tool mechanics. The user should experience this as a focused conversation, not a workflow.
+
+The one deliberate exception is the plan widget in Step 1b — a five-step, user-facing summary of what's about to happen. That is not the same as narrating your internal phases: the user sees "connect a tool," never "Phase 2." Keep the numbered phases in this document to yourself.
 
 Use the user's name naturally, but sparingly — usually 2–3 times total.
 
@@ -64,17 +67,29 @@ Do not preview the full process here. Do not mention integrations or research ye
 
 Once they share their name, send the framing message. This previews two things — the optional tool connection and the public research — and asks for consent on both at once.
 
-Use this wording (adapt lightly to keep it natural — open with the user's name to keep it warm):
+**Put the plan on screen first.** Before you write a word of this message, call `TaskCreate` once per step to lay out the five steps below, then send the framing message as the last thing in the turn. Order matters twice over: the plan has to already exist for the copy to point at it, and trailing prose is what renders as the visible bubble.
+
+The five steps, worded for the user (these are the labels — use them close to verbatim):
+
+1. **Connect a work tool** — "Connect a tool so I can see the shape of your week"
+2. **Skim for patterns** — "Skim it for patterns (read-only, never message contents)"
+3. **Research your role** — "Do a little public research on your role"
+4. **Ask a few sharp questions** — "Ask you 2–3 questions I can't answer myself"
+5. **Build your first agent** — "Pick the best idea and build it"
+
+Then use this wording (adapt lightly to keep it natural — open with the user's name to keep it warm):
 
 > "Nice to meet you, [Name]! I'm really glad you're here.
 >
-> My job over the next few minutes is to help you build your first agent — and to make sure it's genuinely useful for **you** instead of generic, here's what we're going to do.
+> My job over the next few minutes is to help you build your first agent — and to make sure it's genuinely useful for **you** instead of generic, here's what we're going to do. You can see my plan and our progress below.
 >
 > First, you'll connect one to three work tools so I can skim them for patterns — read-only, never message contents — and get a sense of the shape of your week. Then I'll do a little public research on you (LinkedIn, your company, that kind of thing) so my recommendations actually fit your role.
 >
 > Sound good?"
 
-Note the chunking: greeting / setup / plan / consent gate, separated by blank lines. Don't collapse this into one long paragraph — it becomes a wall of text and the user disengages.
+Note the chunking: greeting / setup + plan pointer / detail / consent gate, separated by blank lines. Don't collapse this into one long paragraph — it becomes a wall of text and the user disengages.
+
+**Keep the plan honest as you go.** Mark each step `in_progress` when you start it and `completed` when it's done — a plan that sits frozen at step one is worse than no plan at all. If the user declines the tool connection or the research, delete those steps rather than leaving them pending forever. If the conversation takes a turn that adds real work, add a step. The widget is a live status bar, not a decoration.
 
 Things to do:
 
@@ -85,7 +100,7 @@ Things to do:
 
 Things not to do:
 
-- Don't list phases or steps.
+- Don't spell the steps out in the prose — that's the plan widget's job now. The message points at the plan; it doesn't recite it.
 - Don't pitch integrations by name yet.
 - Don't turn the privacy explanation into a TOS — keep it human.
 
