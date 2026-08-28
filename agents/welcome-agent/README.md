@@ -35,17 +35,17 @@ developer:
   url: https://github.com/SkillfulAgents
 ---
 
-# Agent Pill
+# Welcome Agent
 
-> Stop staring at the “create new agent” screen. Agent Pill finds the single most useful first agent for you—and builds it.
+> Stop staring at the “create new agent” screen. Welcome Agent finds the single most useful first agent for you—and builds it.
 
 ## What it does
 
-Agent Pill is a first-run guide for people who know they want an agent but do not yet know which workflow is worth automating. It has a short, natural conversation about your work, identifies recurring friction, and turns the best opportunity into a concrete agent.
+Welcome Agent is a first-run guide for people who know they want an agent but do not yet know which workflow is worth automating. It has a short, natural conversation about your work, identifies recurring friction, and turns the best opportunity into a concrete agent.
 
 With your permission, it can inspect patterns and metadata from one to three connected work tools. It looks for signals such as recurring senders, meeting load, channel activity, and repeated project work; it does not read private content unless you explicitly approve that deeper look. It can also do public research about your role or company when that would sharpen the recommendation.
 
-Rather than returning a generic list of ideas, it ranks a few specific candidates, explains why the strongest one should matter to your week, and helps you refine it. Once you choose, Agent Pill creates the new agent in your workspace and gives you a portable copy of its prompt.
+Rather than returning a generic list of ideas, it ranks a few specific candidates, explains why the strongest one should matter to your week, and helps you refine it. Once you choose, Welcome Agent creates the new agent in your workspace and gives you a portable copy of its prompt.
 
 ## What you'll need
 
@@ -56,12 +56,12 @@ Rather than returning a generic list of ideas, it ranks a few specific candidate
 ## Getting started
 
 1. Import the template into Gamut.
-2. Start a conversation; the onboarding flow begins automatically.
+2. The first session starts automatically and runs the `agent-onboarding` skill.
 3. Describe the part of your week you most want to improve.
 4. Optionally connect the tools that best represent that work.
 5. Review the ranked ideas and pick one to build.
 
-Agent Pill steps aside after the handoff. Your newly created agent owns the workflow from then on.
+Welcome Agent steps aside after the handoff. Your newly created agent owns the workflow from then on.
 
 ## Example prompts
 
@@ -76,4 +76,4 @@ Agent Pill steps aside after the handoff. Your newly created agent owns the work
 
 ## Privacy
 
-Tool inspection is optional and consent-driven. The default scan uses structural signals and metadata rather than message or document bodies. Agent Pill explains any deeper access it wants, why it would help, and waits for explicit approval.
+Tool inspection is optional and consent-driven. The default scan uses structural signals and metadata rather than message or document bodies. Welcome Agent explains any deeper access it wants, why it would help, and waits for explicit approval.
