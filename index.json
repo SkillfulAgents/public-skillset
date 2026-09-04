@@ -4333,6 +4333,38 @@
       }
     },
     {
+      "name": "UGC Ad Creator",
+      "path": "agents/ugc-ad-creator/",
+      "description": "Produces UGC-style vertical video ads with AI presenters \u2014 hyper-real talking heads, product visuals, word-pop captions, sound design \u2014 for rapid messaging experiments and scalable custom campaigns.",
+      "details": "# UGC Ad Creator\n\n> Test twenty ad angles for the price of one coffee, then scale the ones that convert into a campaign of custom variants.\n\n## What it does\n\nUGC Ad Creator turns a message you want to test into a finished 8\u201315s vertical ad: a hyper-real AI presenter talking to camera (a recurring character from a 14-archetype library or one made for you), your product on screen (your screenshots and recordings, or small animations it builds), word-aligned pop captions, UGC sound design and a mastered mix \u2014 delivered as no-music and music variants.\n\nOnboarding reads your website to write the company brief, ICP and positioning arguments, lets you pick presenters from the library, sets up product visuals, and produces your first ad with you. From then on every ad is an experiment: filed under one argument, one hook code, one presenter and one flow, logged in a ledger, and iterated from the time-coded comments you leave on the video. Winners become batches of variants at roughly $1\u20132 of generation cost each.\n\nOptionally it uploads final masters to Google Drive or Dropbox and maintains a Google Sheets tracker (Family \u2192 Argument \u2192 Video, with hook / presenter / music slices) \u2014 but only when you explicitly say \"push\".\n\n## What you'll need\n\n- **Google Drive + Google Sheets:** Optional, for the masters folder and the performance tracker. Dropbox can replace Drive for storage (connected during onboarding; that path is less exercised than Drive).\n- **API keys:** None. Portraits, talking heads and audio run on the platform's built-in media generation (gpt-image-2, grok-imagine-video-1.5, stable-audio / lyria). Optional `ELEVEN_LABS_API_KEY` for ElevenLabs sound generation.\n- **Other:** A public website the agent can read. Node 18+ and FFmpeg (standard in the container). Generation costs are quoted and confirmed before every run.\n\n## Getting started\n\n1. Import the template into Gamut; `agent-onboarding` starts automatically.\n2. Give it your website \u2014 confirm the brief, ICP and 4\u20138 positioning arguments it derives.\n3. Pick presenters from the contact sheet of 14 archetypes, or describe your own.\n4. Upload product screenshots / recordings, or let it build animations as it goes.\n5. Choose the first angle, pick one of its hook scripts, and iterate the resulting video with timeline comments.\n6. Optionally connect Drive/Dropbox and Sheets for the tracker.\n\n## Example prompts\n\n- Read our website and draft the positioning arguments we should test\n- Make four hook variants of the invoice-chasing ad with a new presenter\n- Push the two winning ads to the tracker and plan next week's batch\n\n## What's inside\n\n- `CLAUDE.md` \u2014 operating instructions: workflow, locked house style, cost and push rules.\n- `.claude/skills/agent-onboarding/` \u2014 six-step first-run setup.\n- `.claude/skills/ideate-ads/` \u2014 argument \u2192 hooks \u00d7 flows \u00d7 presenters matrix with production-ready scripts.\n- `.claude/skills/produce-ad-video/` \u2014 end-to-end production pipeline and the whisper caption aligner.\n- `.claude/skills/generate-talking-head/` \u2014 gpt-image-2 portraits, grok-imagine talking heads, QC, library generator.\n- `.claude/skills/build-product-visual/` \u2014 asset-library mode or self-contained HTML animation clips.\n- `.claude/skills/sound-design/` \u2014 UGC SFX/music planning, generation fallbacks, -14 LUFS mastering.\n- `.claude/skills/create-ad-thumbnail/` \u2014 1080\u00d71920 cover stills.\n- `.claude/skills/ads-tracker-sheet/` \u2014 Google Sheets tracker build/push with Drive or Dropbox upload.\n- `ads/studio/` \u2014 Remotion project (ClassicF1 and QuickHit flows, captions, overlays, sound, `brand.json`, sample clip).\n- `ads/sounds/` \u2014 UGC sound library with measured sync offsets.\n- `ads/assets/presenter-library/` \u2014 14 ready-made presenter portraits, contact sheet and voice directions.\n- `ads/hooks/` \u2014 hook database and script frameworks. `ads/docs/` \u2014 character realism guide, VO house rules, audio references.\n- `ads/refs/` \u2014 the benchmark persona portrait and prompt. `ads/company.md`, `ads/arguments.json`, `ads/ADS.md`, `ads/tracker.json.example` \u2014 templates onboarding fills.\n- `.env.example` \u2014 the one optional key.\n\n## Notes\n\nThe agent spends money on generation (\u2248 $0.13 per portrait, $0.08 per second of talking head) and always quotes the cost first. It never pushes to the tracker or uploads masters without an explicit instruction. AI presenters are meant for paid social creative and must not be framed as real customer testimonials; the hook database carries the guardrails.",
+      "createdAt": "2026-09-03T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Marketing",
+      "icon": "clapperboard",
+      "tags": [
+        "Video Ads",
+        "UGC",
+        "TikTok",
+        "Instagram Reels",
+        "Creative Testing",
+        "AI Video"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlesheets"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "VFD Troubleshooter",
       "path": "agents/vfd-troubleshooter/",
       "description": "Interpret VFD photos, fault codes, and status indicators against manufacturer documentation; provide a safe ordered diagnostic checklist.",

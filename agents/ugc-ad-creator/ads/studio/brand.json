@@ -1,0 +1,8 @@
+{
+  "_comment": "Written by agent-onboarding. Brand-level overlay settings shared by every ad. Logo paths are relative to public/. Leave logoWhite/logoDark null to skip the lockup.",
+  "companyName": "Your Company",
+  "ctaText": "Try for free\nwww.example.com",
+  "logoWhite": null,
+  "logoDark": null,
+  "logoWidth": 240
+}

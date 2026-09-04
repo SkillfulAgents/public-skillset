@@ -32,6 +32,10 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+### UGC Ad Creator
+
+Produces UGC-style vertical video ads (8–15s, TikTok/Reels) with hyper-real AI presenters: reads your website to build the brief and positioning arguments, ships a 14-archetype presenter library plus custom persona generation, composites talking heads with your product visuals, word-aligned captions and UGC sound design in Remotion, and iterates from time-coded comments. Optional Drive/Dropbox + Google Sheets tracker turns every ad into a logged experiment (argument × hook × presenter × flow).
+
 ### Welcome Agent
 
 Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.

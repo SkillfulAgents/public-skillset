@@ -1,0 +1,10 @@
+{
+  "spreadsheet_id": "<google sheet id>",
+  "sheets_account": "<googlesheets connected-account id from CONNECTED_ACCOUNTS>",
+  "storage": "drive",
+  "drive_account": "<googledrive connected-account id>",
+  "drive_root_id": "<Drive folder id of '<Company> Ads'>",
+  "drive_root_name": "<Company> Ads",
+  "dropbox_account": "<dropbox connected-account id, if storage = dropbox>",
+  "dropbox_root": "/<Company> Ads"
+}

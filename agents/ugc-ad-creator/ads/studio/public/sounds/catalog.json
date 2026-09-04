@@ -1,0 +1,313 @@
+{
+ "version": 1,
+ "note": "Shared sound library. gain_db values follow the style guide \u00a78.3 (relative to VO).",
+ "sounds": {
+  "whoosh-short": {
+   "file": "sfx/whoosh-short.mp3",
+   "gain_db": -14,
+   "description": "Soft airy whoosh \u2014 text/headline entrances"
+  },
+  "whoosh-raw": {
+   "file": "sfx/whoosh-raw.mp3",
+   "gain_db": -14,
+   "description": "Raw whoosh take"
+  },
+  "whoosh-deep": {
+   "file": "sfx/whoosh-deep.mp3",
+   "gain_db": -14,
+   "description": "Deeper whoosh \u2014 bigger entrances"
+  },
+  "marker-swipe": {
+   "file": "sfx/marker-swipe.mp3",
+   "gain_db": -12,
+   "description": "Marker swipe \u2014 highlight/underline sweeps"
+  },
+  "paper-slap": {
+   "file": "sfx/paper-slap.mp3",
+   "gain_db": -10,
+   "description": "Paper slap \u2014 photo cutout pop (on overshoot frame)"
+  },
+  "paper-slide": {
+   "file": "sfx/paper-slide.mp3",
+   "gain_db": -12,
+   "description": "Paper slide/shuffle \u2014 paper slide transition"
+  },
+  "pop-soft": {
+   "file": "sfx/pop-soft.mp3",
+   "gain_db": -10,
+   "description": "Soft pop \u2014 element entrances"
+  },
+  "click-soft": {
+   "file": "sfx/click-soft.mp3",
+   "gain_db": -14,
+   "description": "Soft click \u2014 small UI-ish accents"
+  },
+  "tick-count": {
+   "file": "sfx/tick-count.mp3",
+   "gain_db": -14,
+   "description": "Tick \u2014 count-up stat"
+  },
+  "chart-ticks": {
+   "file": "sfx/chart-ticks.mp3",
+   "gain_db": -16,
+   "description": "Rising tick-run \u2014 chart draw-on"
+  },
+  "shutter": {
+   "file": "sfx/shutter.mp3",
+   "gain_db": -14,
+   "description": "Camera shutter \u2014 photo reveals"
+  },
+  "thud-soft": {
+   "file": "sfx/thud-soft.mp3",
+   "gain_db": -10,
+   "description": "Soft thud \u2014 The Turn / arrivals"
+  },
+  "turn-impact": {
+   "file": "sfx/turn-impact.mp3",
+   "gain_db": -10,
+   "description": "Bass drop-out + soft impact \u2014 The Turn"
+  },
+  "riser-subtle": {
+   "file": "sfx/riser-subtle.mp3",
+   "gain_db": -16,
+   "description": "Subtle riser (<1s) \u2014 pre-turn tension"
+  },
+  "typewriter": {
+   "file": "sfx/typewriter.mp3",
+   "gain_db": -14,
+   "description": "Typewriter \u2014 eyebrow/label reveals"
+  },
+  "page-turn": {
+   "file": "sfx/page-turn.mp3",
+   "gain_db": -14,
+   "description": "Page turn \u2014 kicker"
+  },
+  "crackle-vinyl": {
+   "file": "sfx/crackle-vinyl.mp3",
+   "gain_db": -20,
+   "description": "Vinyl crackle \u2014 archival texture"
+  },
+  "map-whoosh": {
+   "file": "sfx/map-whoosh.mp3",
+   "gain_db": -14,
+   "description": "Low airy whoosh \u2014 map zoom"
+  },
+  "whip-whoosh": {
+   "file": "sfx/whip-whoosh.mp3",
+   "gain_db": -8,
+   "description": "Sharp whoosh \u2014 whip pan"
+  },
+  "kicker-note": {
+   "file": "sfx/kicker-note.mp3",
+   "gain_db": -14,
+   "description": "Gentle low note \u2014 kicker line"
+  },
+  "low-rumble": {
+   "file": "sfx/low-rumble.mp3",
+   "gain_db": -16,
+   "dur_s": 1.41,
+   "description": "Soft subtle low rumble \u2014 ominous/danger underscore texture under a phrase (dry, no boom)",
+   "use": "Low-frequency tension bed under a single serious line (e.g. chain-reaction, disaster archival)",
+   "pairs_with": [
+    "archival",
+    "generated_image danger beats"
+   ]
+  },
+  "button-click": {
+   "file": "sfx/button-click.mp3",
+   "gain_db": -14,
+   "dur_s": 0.52,
+   "description": "Chunky mechanical button click, dry \u2014 v07 term 'MECHANICAL BUTTON CLICK'",
+   "use": "Text/word pop-in (tactile mapping default for per-word title builds)",
+   "pairs_with": [
+    "BigType word pops",
+    "caption pill swaps"
+   ]
+  },
+  "sticky-peel": {
+   "file": "sfx/sticky-peel.mp3",
+   "gain_db": -10,
+   "dur_s": 0.63,
+   "description": "Soft sticky-note adhesive peel \u2014 v07 term 'STICKY NOTE PEEL'",
+   "use": "Sticker/logo chip slap-in and label chips (on the overshoot frame, like paper-slap)",
+   "pairs_with": [
+    "sticker chips",
+    "badge pops"
+   ]
+  },
+  "page-flick": {
+   "file": "sfx/page-flick.mp3",
+   "gain_db": -12,
+   "dur_s": 0.52,
+   "description": "Quick single page flick, snappy paper flip \u2014 v07 term 'QUICK PAGE FLICK'",
+   "use": "Fast card/wipe transitions (diagonal paper wipe); snappier than page-turn",
+   "pairs_with": [
+    "paperSlide",
+    "diagonal wipes"
+   ]
+  },
+  "circuit-breaker": {
+   "file": "sfx/circuit-breaker.mp3",
+   "gain_db": -12,
+   "dur_s": 0.84,
+   "description": "Heavy circuit-breaker switch clack \u2014 v07 term 'CIRCUIT BREAKER ON'",
+   "use": "Big 'switch on' reveals: dark\u2192light card flips, spotlight on, hard state changes",
+   "pairs_with": [
+    "inverted card beats",
+    "spotlight grid steps"
+   ]
+  },
+  "polaroid-eject": {
+   "file": "sfx/polaroid-eject.mp3",
+   "gain_db": -14,
+   "dur_s": 0.91,
+   "description": "Polaroid motor whir + eject pop \u2014 v07 term 'POLAROID EJECT POP'",
+   "use": "Photo/receipt slide-out reveals (longer than shutter \u2014 use when the photo travels in)",
+   "pairs_with": [
+    "CutoutPhoto slide-in",
+    "shutter"
+   ]
+  },
+  "cassette-click": {
+   "file": "sfx/cassette-click.mp3",
+   "gain_db": -12,
+   "dur_s": 0.63,
+   "description": "Cassette snapped into a deck, plastic clunk \u2014 v07 term 'VHS CASSETTE SNAP-IN'",
+   "use": "Element locking into place: grid cells, list rows, panel docks",
+   "pairs_with": [
+    "media grids",
+    "numbered-list badges"
+   ]
+  },
+  "pencil-scratch": {
+   "file": "sfx/pencil-scratch.mp3",
+   "gain_db": -16,
+   "dur_s": 0.91,
+   "description": "Pencil scratching a short line on paper \u2014 v07 term 'PENCIL SCRATCH'",
+   "use": "Hand-drawn annotation draw-on (arrows, boxes, chart lines) \u2014 \u00a78.3 chart-draw level",
+   "pairs_with": [
+    "hand-drawn annotation kit",
+    "chart-ticks",
+    "marker-swipe"
+   ]
+  },
+  "wood-tap": {
+   "file": "sfx/wood-tap.mp3",
+   "gain_db": -12,
+   "dur_s": 0.52,
+   "description": "Single dry wood-block tap \u2014 v07 term 'WOOD BLOCK TAP'",
+   "use": "List-item lands, count-up final thock, small solid arrivals",
+   "pairs_with": [
+    "tick-count",
+    "numbered lists"
+   ]
+  },
+  "ugc-whoosh-punch": {
+   "file": "sfx/ugc-whoosh-punch.mp3",
+   "gain_db": -9,
+   "sync_s": 0.1,
+   "dur_s": 0.68,
+   "description": "UGC: tight whoosh into punchy impact \u2014 hook title slam, hard cuts",
+   "use": "title slams, scene cuts",
+   "pairs_with": [
+    "ugc-bass-hit"
+   ]
+  },
+  "ugc-bass-hit": {
+   "file": "sfx/ugc-bass-hit.mp3",
+   "gain_db": -9,
+   "sync_s": 0.0,
+   "dur_s": 0.6,
+   "description": "UGC: 808 bass drop impact \u2014 beat drops, CTA lands, layered under whoosh",
+   "use": "cuts, CTA, drops",
+   "pairs_with": [
+    "ugc-riser",
+    "ugc-whoosh-punch"
+   ]
+  },
+  "ugc-riser": {
+   "file": "sfx/ugc-riser.mp3",
+   "gain_db": -15,
+   "sync_s": 0.591,
+   "dur_s": 1.0,
+   "description": "UGC: short synth riser into a cut \u2014 place so it peaks ON the cut (sync_s=peak)",
+   "use": "build into scene change",
+   "pairs_with": [
+    "ugc-bass-hit"
+   ]
+  },
+  "ugc-swish": {
+   "file": "sfx/ugc-swish.mp3",
+   "gain_db": -12,
+   "sync_s": 0.018,
+   "dur_s": 0.48,
+   "description": "UGC: airy app-swipe swish \u2014 panels sliding in, UI transitions",
+   "use": "panel/card slide",
+   "pairs_with": []
+  },
+  "ugc-pop": {
+   "file": "sfx/ugc-pop.mp3",
+   "gain_db": -13,
+   "sync_s": 0.016,
+   "dur_s": 0.48,
+   "description": "UGC: snappy bubble pop \u2014 emphasis word pops, badge stagger runs",
+   "use": "word pops, badges, chips",
+   "pairs_with": []
+  },
+  "ugc-click": {
+   "file": "sfx/ugc-click.mp3",
+   "gain_db": -15,
+   "sync_s": 0.216,
+   "dur_s": 0.48,
+   "description": "UGC: crisp phone tap click \u2014 subtle UI accents",
+   "use": "UI taps",
+   "pairs_with": []
+  },
+  "ugc-ding": {
+   "file": "sfx/ugc-ding.mp3",
+   "gain_db": -13,
+   "sync_s": 0.001,
+   "dur_s": 0.6,
+   "description": "UGC: bright success chime \u2014 CTA, positive reveal",
+   "use": "CTA, success moment",
+   "pairs_with": [
+    "ugc-bass-hit"
+   ]
+  },
+  "ugc-zoom": {
+   "file": "sfx/ugc-zoom.mp3",
+   "gain_db": -10,
+   "sync_s": 0.003,
+   "dur_s": 0.6,
+   "description": "UGC: zoom whoosh with punch \u2014 punch-ins, cut-backs",
+   "use": "punch zooms, cuts",
+   "pairs_with": []
+  }
+ },
+ "music": {
+  "bed-curious": {
+   "file": "music/bed-curious.mp3",
+   "description": "Curious ticking bed (default)"
+  },
+  "bed-warm": {
+   "file": "music/bed-warm.mp3",
+   "description": "Warm bed"
+  },
+  "bed-tense": {
+   "file": "music/bed-tense.mp3",
+   "description": "Tense bed \u2014 post-turn"
+  },
+  "ugc-bed-hype": {
+   "file": "music/ugc-bed-hype.mp3",
+   "gain_db": -10,
+   "dur_s": 20.0,
+   "description": "UGC: 130BPM hype trap, 808s + hats \u2014 energetic influencer ads (ElevenLabs)"
+  },
+  "ugc-bed-house": {
+   "file": "music/ugc-bed-house.mp3",
+   "gain_db": -10,
+   "dur_s": 29.1,
+   "description": "UGC: tech house groove \u2014 upbeat product ads (lyria-3 fallback)"
+  }
+ }
+}

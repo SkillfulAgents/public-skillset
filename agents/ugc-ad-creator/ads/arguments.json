@@ -1,0 +1,14 @@
+{
+  "_comment": "Positioning taxonomy. Written by agent-onboarding (step 2) from the company brief; extend as ideate-ads finds new angles. Key = <family>-<argument>. Delete this comment and the example entries when filling in.",
+  "families": {
+    "outcome": "Outcomes",
+    "feature": "Features",
+    "audience": "Audiences",
+    "usecase": "Use Cases"
+  },
+  "arguments": [
+    {"key": "outcome-example", "name": "Example outcome", "one_liner": "What the customer gets — e.g. 'Invoices chased automatically, paid 2x faster'"},
+    {"key": "feature-example", "name": "Example feature", "one_liner": "A concrete capability that proves the outcome"},
+    {"key": "usecase-example", "name": "Example use case", "one_liner": "A specific workflow / moment where the product wins"}
+  ]
+}
