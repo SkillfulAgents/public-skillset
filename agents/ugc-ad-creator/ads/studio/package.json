@@ -1,0 +1,20 @@
+{
+  "name": "ugc-ad-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion studio for 1080x1920@30fps UGC-style ads (talking head + product visual + word-pop captions + UGC sound design).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.0"
+  }
+}
