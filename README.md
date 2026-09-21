@@ -36,6 +36,10 @@ Autonomous SEO specialist that owns one website's organic growth end to end: a d
 
 Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
 
+### Quick Start
+
+Onboarding variant run alongside Welcome Agent for A/B testing. Instead of interviewing the user and creating an agent, it asks for their company website, reads it, infers their role, invents four company-specific starter tasks, and does the one they pick in the first session. Wraps the work as an always-on agent only afterwards, and only if it is recurring.
+
 ### X Opportunity Scout
 
 Watches X for high-intent posts where your product is the answer — competitor-alternative asks, tool recommendations, gripes your product solves — scores them against a rubric calibrated to your product during onboarding, and delivers the best few with ready-to-paste reply drafts on your schedule. You reply personally; it never posts on its own. Uses the built-in X API with an optional BYOK fallback for cheaper reads.
@@ -161,6 +165,10 @@ uv run tests/test_generate_index.py
 .
 ├── agents/
 │   ├── welcome-agent/
+│   │   ├── CLAUDE.md
+│   │   ├── README.md
+│   │   └── .claude/skills/...
+│   ├── quick-start/
 │   │   ├── CLAUDE.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...
