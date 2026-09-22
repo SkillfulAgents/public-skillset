@@ -9,6 +9,8 @@ tags:
   - "Revenue Operations"
 works_with:
   - type: api_account
+    slug: twitter
+  - type: api_account
     slug: slack
 developer:
   name: "@kristaletz"
@@ -27,7 +29,7 @@ Find new talks and posts from people at a strategic account; summarize category 
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 - **Slack** — SuperAgent API account `slack`.
 
 ## Sample use cases

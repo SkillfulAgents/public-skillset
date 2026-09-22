@@ -10,6 +10,8 @@ tags:
   - "Content Creation"
 works_with:
   - type: api_account
+    slug: twitter
+  - type: api_account
     slug: linkedin
   - type: api_account
     slug: notion
@@ -30,7 +32,7 @@ Learn your voice from approved past posts; draft weekday X and LinkedIn content 
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 - **LinkedIn** — SuperAgent API account `linkedin`.
 - **Notion** — SuperAgent API account `notion`.
 

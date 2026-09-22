@@ -45,7 +45,7 @@
       "name": "Account Growth Coach",
       "path": "agents/account-growth-coach/",
       "description": "Review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.",
-      "details": "# Account Growth Coach\n\nReview your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n\n## What it does\n\n- Act as the Account Growth Coach: review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Review your X niche and recent posts.\n- Plan original posts and genuine engagement, then track what performs.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Review my recent X posts and tell me what actually landed\n- Draft next week's posts and replies for my approval\n- Which larger accounts should I be engaging with genuinely?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elonmusk](https://x.com/elonmusk) on [Bot Directory](https://botdirectory.ai/bots/account-growth-coach/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Account Growth Coach\n\nReview your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n\n## What it does\n\n- Act as the Account Growth Coach: review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Review your X niche and recent posts.\n- Plan original posts and genuine engagement, then track what performs.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Review my recent X posts and tell me what actually landed\n- Draft next week's posts and replies for my approval\n- Which larger accounts should I be engaging with genuinely?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elonmusk](https://x.com/elonmusk) on [Bot Directory](https://botdirectory.ai/bots/account-growth-coach/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T14:45:24.817Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -56,7 +56,12 @@
         "X",
         "Analysis"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@elonmusk",
         "url": "https://x.com/elonmusk"
@@ -66,7 +71,7 @@
       "name": "Account Media Rundown",
       "path": "agents/account-media-rundown/",
       "description": "Find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.",
-      "details": "# Account Media Rundown\n\nFind new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n\n## What it does\n\n- Act as the Account Media Rundown: find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Find new talks and posts from people at a strategic account.\n- Summarize category mentions, notable quotes, and buying signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find new talks and podcasts from people at my target account\n- Summarize the category mentions and buying signals this week\n- Post the account media rundown to Slack every Monday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/account-media-rundown/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Account Media Rundown\n\nFind new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n\n## What it does\n\n- Act as the Account Media Rundown: find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Find new talks and posts from people at a strategic account.\n- Summarize category mentions, notable quotes, and buying signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find new talks and podcasts from people at my target account\n- Summarize the category mentions and buying signals this week\n- Post the account media rundown to Slack every Monday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/account-media-rundown/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Sales",
@@ -79,6 +84,10 @@
         "Revenue Operations"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "slack"
@@ -414,7 +423,7 @@
       "name": "Article Idea Briefing",
       "path": "agents/article-idea-briefing/",
       "description": "Compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.",
-      "details": "# Article Idea Briefing\n\nCompare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n\n## What it does\n\n- Act as the Article Idea Briefing: compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Compare what is resonating on X with your chosen themes.\n- Send a daily shortlist of longer-form article ideas.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me today's shortlist of article ideas from my timeline\n- Which of my recent posts is worth expanding into an essay?\n- Run the idea briefing every morning and keep it short\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/article-idea-briefing/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Article Idea Briefing\n\nCompare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n\n## What it does\n\n- Act as the Article Idea Briefing: compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Compare what is resonating on X with your chosen themes.\n- Send a daily shortlist of longer-form article ideas.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me today's shortlist of article ideas from my timeline\n- Which of my recent posts is worth expanding into an essay?\n- Run the idea briefing every morning and keep it short\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/article-idea-briefing/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -425,7 +434,12 @@
         "X",
         "Research"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"
@@ -2956,7 +2970,7 @@
       "name": "Podcast Clip Publisher",
       "path": "agents/podcast-clip-publisher/",
       "description": "Transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.",
-      "details": "# Podcast Clip Publisher\n\nTranscribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n\n## What it does\n\n- Act as the Podcast Clip Publisher: transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Podcast RSS feeds** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n- **Podcast transcription MCP** \u2014 external connection; no canonical registry slug.\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Transcribe podcast episodes and identify selected moments.\n- Draft clips and X publishing details without posting unapproved content.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Transcribe this episode and find the best moments\n- Draft three short clips with captions and links\n- Show me every clip and caption before anything posts\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@GavinSBaker](https://x.com/GavinSBaker) on [Bot Directory](https://botdirectory.ai/bots/podcast-clip-publisher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Podcast Clip Publisher\n\nTranscribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n\n## What it does\n\n- Act as the Podcast Clip Publisher: transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Podcast RSS feeds** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n- **Podcast transcription MCP** \u2014 external connection; no canonical registry slug.\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Transcribe podcast episodes and identify selected moments.\n- Draft clips and X publishing details without posting unapproved content.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Transcribe this episode and find the best moments\n- Draft three short clips with captions and links\n- Show me every clip and caption before anything posts\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@GavinSBaker](https://x.com/GavinSBaker) on [Bot Directory](https://botdirectory.ai/bots/podcast-clip-publisher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T21:26:11.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -2969,7 +2983,12 @@
         "X",
         "Content Creation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@GavinSBaker",
         "url": "https://x.com/GavinSBaker"
@@ -3413,7 +3432,7 @@
       "name": "Reply Drafter",
       "path": "agents/reply-drafter/",
       "description": "Find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.",
-      "details": "# Reply Drafter\n\nFind high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n\n## What it does\n\n- Act as the Reply Drafter: find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Find high-signal X posts in chosen topics.\n- Draft a starting reply in your voice without publishing it.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find high-signal posts worth replying to today\n- Draft a first take in my voice for each one\n- Never post anything, I send every reply myself\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/reply-drafter/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Reply Drafter\n\nFind high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n\n## What it does\n\n- Act as the Reply Drafter: find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Find high-signal X posts in chosen topics.\n- Draft a starting reply in your voice without publishing it.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find high-signal posts worth replying to today\n- Draft a first take in my voice for each one\n- Never post anything, I send every reply myself\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/reply-drafter/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -3424,7 +3443,12 @@
         "X",
         "Content Creation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"
@@ -4315,7 +4339,7 @@
       "name": "Tweet Topic Scraper",
       "path": "agents/tweet-topic-scraper/",
       "description": "Collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.",
-      "details": "# Tweet Topic Scraper\n\nCollect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n\n## What it does\n\n- Act as the Tweet Topic Scraper: collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Collect recent X posts about a topic into a requested CSV schema.\n- Verify the output opens cleanly in a spreadsheet.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Scrape recent posts about this topic into a CSV\n- Use these exact columns: author, followers, link, claim\n- Check the file opens cleanly in a spreadsheet\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/tweet-topic-scraper/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Tweet Topic Scraper\n\nCollect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n\n## What it does\n\n- Act as the Tweet Topic Scraper: collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Collect recent X posts about a topic into a requested CSV schema.\n- Verify the output opens cleanly in a spreadsheet.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Scrape recent posts about this topic into a CSV\n- Use these exact columns: author, followers, link, claim\n- Check the file opens cleanly in a spreadsheet\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/tweet-topic-scraper/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4326,7 +4350,12 @@
         "X",
         "Workflow Automation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@ericzakariasson",
         "url": "https://x.com/ericzakariasson"
@@ -4357,7 +4386,7 @@
       "name": "Viral Tweet Scout",
       "path": "agents/viral-tweet-scout/",
       "description": "Find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.",
-      "details": "# Viral Tweet Scout\n\nFind viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n\n## What it does\n\n- Act as the Viral Tweet Scout: find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Find viral or genuinely funny X posts in chosen topics.\n- Explain why each worked and suggest angles without posting.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me this week's viral posts in my topics\n- Explain why each of these actually took off\n- Which of these could I riff on in my own voice?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/viral-tweet-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Viral Tweet Scout\n\nFind viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n\n## What it does\n\n- Act as the Viral Tweet Scout: find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Find viral or genuinely funny X posts in chosen topics.\n- Explain why each worked and suggest angles without posting.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me this week's viral posts in my topics\n- Explain why each of these actually took off\n- Which of these could I riff on in my own voice?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/viral-tweet-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4368,7 +4397,12 @@
         "X",
         "Research"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@petergyang",
         "url": "https://x.com/petergyang"
@@ -4378,7 +4412,7 @@
       "name": "Voice-Matched Drafts",
       "path": "agents/voice-matched-drafts/",
       "description": "Learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.",
-      "details": "# Voice-Matched Drafts\n\nLearn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n\n## What it does\n\n- Act as the Voice-Matched Drafts: learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **LinkedIn** \u2014 SuperAgent API account `linkedin`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Learn your voice from approved past posts.\n- Draft weekday X and LinkedIn content into Notion without publishing.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Learn my voice from the twenty posts I picked\n- Draft this week's posts into Notion for review\n- Match my rhythm, not just my topics\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/voice-matched-drafts/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Voice-Matched Drafts\n\nLearn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n\n## What it does\n\n- Act as the Voice-Matched Drafts: learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **LinkedIn** \u2014 SuperAgent API account `linkedin`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Learn your voice from approved past posts.\n- Draft weekday X and LinkedIn content into Notion without publishing.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Learn my voice from the twenty posts I picked\n- Draft this week's posts into Notion for review\n- Match my rhythm, not just my topics\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/voice-matched-drafts/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4392,6 +4426,10 @@
         "Content Creation"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "linkedin"
@@ -4629,7 +4667,7 @@
       "name": "X Account Crew",
       "path": "agents/x-account-crew/",
       "description": "Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.",
-      "details": "# X Account Crew\n\nCoordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n\n## What it does\n\n- Act as the X Account Crew: coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **Hacker News** \u2014 built-in capability; no connection slug.\n- **GitHub** \u2014 SuperAgent API account `github`.\n- **Reddit** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs.\n- Keep all outputs as drafts and reports.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is about to pop off in my topics this week?\n- Turn that idea into a ready-to-post hook in my voice\n- Show me the content calendar and who is mentioning me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Axel_bitblaze69](https://x.com/Axel_bitblaze69) on [Bot Directory](https://botdirectory.ai/bots/x-account-crew/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# X Account Crew\n\nCoordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n\n## What it does\n\n- Act as the X Account Crew: coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **Hacker News** \u2014 built-in capability; no connection slug.\n- **GitHub** \u2014 SuperAgent API account `github`.\n- **Reddit** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs.\n- Keep all outputs as drafts and reports.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is about to pop off in my topics this week?\n- Turn that idea into a ready-to-post hook in my voice\n- Show me the content calendar and who is mentioning me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Axel_bitblaze69](https://x.com/Axel_bitblaze69) on [Bot Directory](https://botdirectory.ai/bots/x-account-crew/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4644,6 +4682,10 @@
         "Social Media"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "github"
@@ -4680,7 +4722,7 @@
       "name": "X Strategist",
       "path": "agents/x-strategist/",
       "description": "Analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.",
-      "details": "# X Strategist\n\nAnalyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n\n## What it does\n\n- Act as the X Strategist: analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Analyze X interactions and nearby accounts.\n- Recommend relationships, content patterns, and focused engagement opportunities.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Who around me on X is worth paying more attention to?\n- Which content themes actually fit my background?\n- Send me a memo on turning interactions into relationships\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/x-strategist/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# X Strategist\n\nAnalyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n\n## What it does\n\n- Act as the X Strategist: analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Analyze X interactions and nearby accounts.\n- Recommend relationships, content patterns, and focused engagement opportunities.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Who around me on X is worth paying more attention to?\n- Which content themes actually fit my background?\n- Send me a memo on turning interactions into relationships\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/x-strategist/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4691,7 +4733,12 @@
         "X",
         "Workflow Automation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"
