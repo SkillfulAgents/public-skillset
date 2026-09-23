@@ -6,7 +6,9 @@ tags:
   - "Reply Drafter"
   - "X"
   - "Content Creation"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@kevinace"
   url: "https://x.com/kevinace"
@@ -24,7 +26,7 @@ Find high-signal X posts in chosen topics; draft a starting reply in your voice 
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

@@ -6,7 +6,9 @@ tags:
   - "X Strategist"
   - "X"
   - "Workflow Automation"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@kevinace"
   url: "https://x.com/kevinace"
@@ -24,7 +26,7 @@ Analyze X interactions and nearby accounts; recommend relationships, content pat
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

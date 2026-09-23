@@ -67,7 +67,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "megaphone",
       "tags": [
         "Marketing",
@@ -95,6 +100,10 @@
         "Slack"
       ],
       "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "slack"
@@ -526,7 +535,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "pen-line",
       "tags": [
         "Marketing",
@@ -3459,7 +3473,12 @@
         "Podcast transcription MCP",
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "video",
       "tags": [
         "Marketing",
@@ -3973,7 +3992,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "megaphone",
       "tags": [
         "Marketing",
@@ -5034,7 +5058,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "messages-square",
       "tags": [
         "Marketing",
@@ -5086,7 +5115,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "messages-square",
       "tags": [
         "Marketing",
@@ -5115,6 +5149,10 @@
         "Notion"
       ],
       "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "linkedin"
@@ -5340,6 +5378,10 @@
       "worksWith": [
         {
           "type": "api_account",
+          "slug": "twitter"
+        },
+        {
+          "type": "api_account",
           "slug": "github"
         }
       ],
@@ -5371,7 +5413,12 @@
       "connectFirst": [
         "X"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "icon": "megaphone",
       "tags": [
         "Marketing",

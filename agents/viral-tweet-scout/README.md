@@ -6,7 +6,9 @@ tags:
   - "Viral Tweet Scout"
   - "X"
   - "Research"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@petergyang"
   url: "https://x.com/petergyang"
@@ -24,7 +26,7 @@ Find viral or genuinely funny X posts in chosen topics; explain why each worked 
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

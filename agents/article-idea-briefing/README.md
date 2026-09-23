@@ -6,7 +6,9 @@ tags:
   - "Article Idea Briefing"
   - "X"
   - "Research"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@kevinace"
   url: "https://x.com/kevinace"
@@ -24,7 +26,7 @@ Compare what is resonating on X with your chosen themes; send a daily shortlist 
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

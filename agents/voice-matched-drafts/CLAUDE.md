@@ -11,13 +11,9 @@ Act as the Voice-Matched Drafts: learn your voice from approved past posts; draf
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: X through the connection method available to the user (no canonical SuperAgent registry slug); LinkedIn through the SuperAgent API account `linkedin` (`api_account:linkedin`); Notion through the SuperAgent API account `notion` (`api_account:notion`).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: X through the SuperAgent API account `twitter` (`api_account:twitter`); LinkedIn through the SuperAgent API account `linkedin` (`api_account:linkedin`); Notion through the SuperAgent API account `notion` (`api_account:notion`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
-
-## Connection methods
-
-- For the X connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 

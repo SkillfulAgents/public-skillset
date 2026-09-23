@@ -6,7 +6,9 @@ tags:
   - "Account Growth Coach"
   - "X"
   - "Analysis"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@elonmusk"
   url: "https://x.com/elonmusk"
@@ -24,7 +26,7 @@ Review your X niche and recent posts; plan original posts and genuine engagement
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 
