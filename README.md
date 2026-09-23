@@ -4,9 +4,61 @@ A public collection of agent templates and skills for the Gamut app.
 
 ## Agent Templates
 
+### Ad Anomaly Watch
+
+Owns spend and CPA spikes on live campaigns. Pause or rec. Does not launch a new campaign. Built for 2-200 person founder-led agencies that need live spend watched, not another campaign brief.
+
+### Asset Wrangler
+
+Owns creative and copy in, status out, and late work flagged before the client pings. Built for 2-200 person founder-led agencies tired of clients asking where the files are.
+
+### Billing Chaser
+
+Owns unbilled time, overdue invoices, and retainers running low. The renewal draft lives in this job, not a separate agent. Built for 2-200 person founder-led agencies with time sitting unbilled and retainers that expire quietly.
+
+### Call Closer
+
+Owns after-call recap, tasks, CRM, and the next meeting on the calendar. Not meeting notes only. Built for 2-200 person founder-led professional firms whose follow-up dies in the notes doc.
+
+### Desk Deputy
+
+Owns the front desk as one agent: inbox drafts, calendar book/reschedule/remind, and missed call or voicemail to a text. Not three agents. Built for 1-15 person micro-owners and founder-led SMBs still running the desk themselves.
+
+### Dispatch Desk
+
+Owns tomorrow's board: crew, parts, and the customer window. Texts the customer the real window. Not a routing engine. Built for 2-200 person founder-led home services shops that need tomorrow's board and the customer text owned.
+
+### Handshake Closer
+
+Owns verbal yes through a sent estimate, one nudge, then flag silence. No seven-touch sequence. Built for 1-15 person micro-owners who get a verbal yes and never send the estimate.
+
 ### Inbox Manager
 
 Email management agent that helps users organize their Gmail inbox, screen and categorize emails, and unsubscribe from unwanted mailing lists.
+
+### Inquiry Desk
+
+Owns inbound through a qualified call on the calendar. Not a polite we-will-be-in-touch. Built for 2-200 person founder-led professional firms with inbound sitting in the inbox.
+
+### Invoice Ask
+
+Owns customers who owe you. Opposite of Vendor Nudge. Ask on cadence until paid or escalated. Built for 1-15 person micro-owners who know who owes them and still have not asked.
+
+### Invoice Hunter
+
+Owns overdue invoices until they are paid or the founder escalates. Reminder, promise-to-pay, human handoff. Not a static AR list. Built for 2-200 person founder-led home services shops with overdue invoices sitting.
+
+### Job Status Scout
+
+Owns 'when are you coming?' with the real window from the board. Escalates late, missing, and angry. Does not guess soon. Built for 2-200 person founder-led home services shops buried in when-are-you-coming texts.
+
+### Lead Lightning
+
+Owns web, phone, and form inbound through a booked slot the same day. Qualifies, checks the board, holds the window, and queues the confirm for founder one-tap send. Built for 2-200 person founder-led home services shops that need inbound on a same-day booked slot, not a lead alert.
+
+### Ledger Hawk
+
+Owns invoices out the door and overdue chased until paid or escalated. Built for 2-200 person founder-led professional firms with completed work unbilled and overdue sitting.
 
 ### Nutrition Agent
 
@@ -16,6 +68,10 @@ Personal nutrition tracker you can message naturally: describe a meal (or send a
 
 Keeps the team fed: runs the recurring weekly grocery/kitchen stock order, handles one-off Slack requests, and organizes daily lunch/dinner orders. Places real orders through the built-in browser on your logged-in shopping accounts, with careful records of everything bought.
 
+### Onboarding Desk
+
+Owns a newly signed client into the folder, the tracker, kickoff on the calendar, and the first report date. Built for 2-200 person founder-led agencies that lose the first 10 days after a client signs.
+
 ### OpenSlide Studio
 
 Slide-deck agent built on the open-slide framework — slides are React components on a fixed 1920×1080 canvas, and the dashboard *is* the OpenSlide app: a searchable deck library, editing and presentation views, live HMR previews, reusable themes, and inspector-comment-driven edits. Ships with a stock Getting Started deck; no accounts or API keys needed.
@@ -24,13 +80,53 @@ Slide-deck agent built on the open-slide framework — slides are React componen
 
 Vendor-neutral outbound sales motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Swappable adapters for CRM, sender, enrichment, and calendar; nothing sends until onboarding writes your config.
 
+### Proposal Pilot
+
+Owns the proposal from the call notes through one-tap send. Price from the rate card, not a guess. Built for 2-200 person founder-led professional firms that still rebuild every proposal from a blank page.
+
+### Quote Chaser
+
+Owns sitting estimates until they are won, lost, or handed to a human. Follows up in the shop voice and one-tap sends the nudge. Built for 2-200 person founder-led home services shops with estimates sitting quiet.
+
+### Quote in a Box
+
+Owns a boxed quote from the last conversation: price, scope, and a yes/no ask. One tap to send. Built for 1-15 person micro-owners who quote from memory and then forget to send it.
+
+### Receipt Ranger
+
+Owns forwarded receipts and flags monthly holes before the bookkeeper asks. Built for 1-15 person micro-owners who forward receipt photos and still miss month-end holes.
+
 ### Recruiting Agent
 
 Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory, excellence pools), filtering with a self-improving screening prompt calibrated by your Advance/Don't-advance feedback, outreach, nurture, and interview scheduling, backed by Ashby or a no-ATS pipeline store.
 
+### Referral Scout
+
+Owns who to ask, the draft ask, and the intro log so intros do not die in the inbox. Built for 2-200 person founder-led professional firms that know they should ask for intros and never do.
+
+### Renewal Clerk
+
+Owns contract end dates, usage, and the renewal draft. Nothing auto-renews. Built for 2-200 person founder-led professional firms whose terms die because nobody drafted the renewal.
+
+### Report Runner
+
+Owns the monthly client recap from ads, analytics, and the sheet. Flags what moved. Founder one-tap sends. Built for 2-200 person founder-led marketing, creative, and web shops that still assemble monthly recaps by hand.
+
+### Review Wrangler
+
+Owns the after-job review ask and Google/Yelp replies in the shop's voice. Parks 1-star and spicy for the founder. Built for 2-200 person founder-led home services shops that want reviews asked and answered in their voice.
+
+### Scope Sentinel
+
+Owns out-of-scope asks: maps them to the SOW and drafts the change order before the extra work starts. Built for 2-200 person founder-led agencies that leak hours on quick extra asks.
+
 ### SEO Agent
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
+
+### Vendor Nudge
+
+Owns late suppliers and bills you owe. Drafts the nudge and the pay list. Never pays. Opposite of Invoice Ask. Built for 1-15 person micro-owners juggling late POs and bills due this week.
 
 ### Welcome Agent
 
