@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
-  "superagentCommit": "ca9cd112ac4edf38d0d09febe7f8d87e9b0349c7",
+  "superagentCommit": "8fba031e07ee0f7c7b51977ad7ced53532124367",
   "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
   "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",
   "labels": [
@@ -553,8 +553,9 @@
     },
     {
       "name": "X",
-      "kind": "external",
-      "reason": "X is absent from both catalogs; browser sessions and the X API are unsupported distinct transports."
+      "kind": "api_account",
+      "slug": "twitter",
+      "reason": "Exact X Provider display-name match; canonical API-account slug is twitter."
     },
     {
       "name": "Xero",

@@ -6,7 +6,9 @@ tags:
   - "Tweet Topic Scraper"
   - "X"
   - "Workflow Automation"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@ericzakariasson"
   url: "https://x.com/ericzakariasson"
@@ -24,7 +26,7 @@ Collect recent X posts about a topic into a requested CSV schema; verify the out
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

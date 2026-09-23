@@ -45,7 +45,7 @@
       "name": "Account Growth Coach",
       "path": "agents/account-growth-coach/",
       "description": "Review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.",
-      "details": "# Account Growth Coach\n\nReview your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n\n## What it does\n\n- Act as the Account Growth Coach: review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Review your X niche and recent posts.\n- Plan original posts and genuine engagement, then track what performs.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Review my recent X posts and tell me what actually landed\n- Draft next week's posts and replies for my approval\n- Which larger accounts should I be engaging with genuinely?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elonmusk](https://x.com/elonmusk) on [Bot Directory](https://botdirectory.ai/bots/account-growth-coach/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Account Growth Coach\n\nReview your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n\n## What it does\n\n- Act as the Account Growth Coach: review your X niche and recent posts; plan original posts and genuine engagement, then track what performs.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Review your X niche and recent posts.\n- Plan original posts and genuine engagement, then track what performs.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Review my recent X posts and tell me what actually landed\n- Draft next week's posts and replies for my approval\n- Which larger accounts should I be engaging with genuinely?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@elonmusk](https://x.com/elonmusk) on [Bot Directory](https://botdirectory.ai/bots/account-growth-coach/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-18T14:45:24.817Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -56,7 +56,12 @@
         "X",
         "Analysis"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@elonmusk",
         "url": "https://x.com/elonmusk"
@@ -66,7 +71,7 @@
       "name": "Account Media Rundown",
       "path": "agents/account-media-rundown/",
       "description": "Find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.",
-      "details": "# Account Media Rundown\n\nFind new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n\n## What it does\n\n- Act as the Account Media Rundown: find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Find new talks and posts from people at a strategic account.\n- Summarize category mentions, notable quotes, and buying signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find new talks and podcasts from people at my target account\n- Summarize the category mentions and buying signals this week\n- Post the account media rundown to Slack every Monday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/account-media-rundown/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Account Media Rundown\n\nFind new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n\n## What it does\n\n- Act as the Account Media Rundown: find new talks and posts from people at a strategic account; summarize category mentions, notable quotes, and buying signals.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **Slack** \u2014 SuperAgent API account `slack`.\n\n## Sample use cases\n\n- Find new talks and posts from people at a strategic account.\n- Summarize category mentions, notable quotes, and buying signals.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find new talks and podcasts from people at my target account\n- Summarize the category mentions and buying signals this week\n- Post the account media rundown to Slack every Monday\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/account-media-rundown/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Sales",
@@ -79,6 +84,10 @@
         "Revenue Operations"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "slack"
@@ -144,6 +153,37 @@
       "developer": {
         "name": "@benln",
         "url": "https://x.com/benln"
+      }
+    },
+    {
+      "name": "Ad Anomaly Watch",
+      "path": "agents/ad-anomaly-watch/",
+      "description": "Owns spend and CPA spikes on live campaigns. Pause or rec. Does not launch a new campaign.",
+      "details": "# Ad Anomaly Watch\n\n> Catch the spend and CPA spike on a live campaign before the client sees it on the invoice.\n\n## What it does\n\nAd Anomaly Watch is a spend-and-CPA anomaly owner for founder-led marketing, creative, and web shops. On the cadence you set it pulls spend, clicks, conversions, and CPA or ROAS for every live campaign in Google Ads and Meta Ads, then flags pacing that will blow the cap, CPA above your threshold, conversion tracking sitting at zero while spend runs, and broken landing pages when a URL check is configured.\n\nIt never stops at an alert. Every anomaly comes with exactly one recommendation: pause this ad set or campaign, cut budget to a named number, or wait and watch with a reason. The default is to Slack you the rec and wait. Live spend only gets paused when you have configured that exact kill switch, and this agent never launches a campaign, ad, or keyword.\n\n## What you'll need\n\n- **Meta Ads** \u2014 required for Meta campaign pulls, through the Meta Ads MCP.\n- **Google Ads** \u2014 required for Google campaign pulls. Connected during onboarding; no registry connector, so the agent uses the account access you grant.\n- **Slack** \u2014 required. Every rec, tracking break, and kill-switch fire lands in your founder channel.\n- **Client tracker** \u2014 optional. A sheet or tracker that maps accounts to clients and caps.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your ad accounts, CPA and cap targets per client, what counts as a spike, whether a kill switch exists, and which Slack channel gets the recs, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Check live campaigns for spend and CPA spikes and draft pause-or-rec notes without pausing anything.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Check every live campaign for spend and CPA spikes right now\n- Which ad sets should we pause or cut today, and why\n- Every two hours during business hours, watch live spend and Slack me any spike\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led agencies that need live spend watched, not another campaign brief.\n- The agent never launches a campaign, rewrites the media plan, or hides a tracking break while spend continues.\n- No pause or budget change happens without founder approval unless a kill switch you configured has fired.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Marketing",
+      "icon": "activity",
+      "tags": [
+        "Paid Ads",
+        "Meta Ads",
+        "Google Ads",
+        "Spend Monitoring",
+        "Agency Ops"
+      ],
+      "works_with": [
+        {
+          "type": "mcp",
+          "slug": "meta-ads"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -414,7 +454,7 @@
       "name": "Article Idea Briefing",
       "path": "agents/article-idea-briefing/",
       "description": "Compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.",
-      "details": "# Article Idea Briefing\n\nCompare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n\n## What it does\n\n- Act as the Article Idea Briefing: compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Compare what is resonating on X with your chosen themes.\n- Send a daily shortlist of longer-form article ideas.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me today's shortlist of article ideas from my timeline\n- Which of my recent posts is worth expanding into an essay?\n- Run the idea briefing every morning and keep it short\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/article-idea-briefing/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Article Idea Briefing\n\nCompare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n\n## What it does\n\n- Act as the Article Idea Briefing: compare what is resonating on X with your chosen themes; send a daily shortlist of longer-form article ideas.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Compare what is resonating on X with your chosen themes.\n- Send a daily shortlist of longer-form article ideas.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me today's shortlist of article ideas from my timeline\n- Which of my recent posts is worth expanding into an essay?\n- Run the idea briefing every morning and keep it short\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/article-idea-briefing/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -425,10 +465,50 @@
         "X",
         "Research"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"
+      }
+    },
+    {
+      "name": "Asset Wrangler",
+      "path": "agents/asset-wrangler/",
+      "description": "Owns creative and copy in, status out, and late work flagged before the client pings.",
+      "details": "# Asset Wrangler\n\n> Know where every creative and copy file stands before the client has to ask.\n\n## What it does\n\nAsset Wrangler owns the creative-and-copy pipeline for founder-led marketing, creative, and web shops. It watches the intake channel, the Drive drop, and email for new creative and copy, then keeps a status board you can paste anywhere: in, in progress, internal review, client review, late, done.\n\nIt compares due dates to today and warns the owner and the founder before the client pings. When work clears internal approval it packages the files plus copy and Slacks you a client-ready pack for send or portal upload. Nothing unfinished or unapproved goes to the client, and the agent never invents a due date or a brief.\n\n## What you'll need\n\n- **Google Drive** \u2014 required. Where creative and copy land and where client packs get assembled.\n- **Slack** \u2014 required for the intake channel, late warnings, and client-pack handoffs.\n- **Gmail** \u2014 required to catch files and copy that arrive by email.\n- **Status board** \u2014 optional. A tracker or sheet the agent keeps current; it can run from Slack alone.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for where intake lands, which status board to keep, how many days count as late, and who approves client packs, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Rebuild the asset board from Drive and Slack, flag anything late, and draft status notes without sending to clients.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Rebuild the asset board from Drive and Slack and show me what is late\n- Package the approved Acme banner set with its copy for client review\n- Every morning at 8, post the status board and flag anything due in two days\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led agencies tired of clients asking where the files are.\n- Client packs stay in draft until the founder sends. The agent never approves creative on the client's behalf.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "list-checks",
+      "tags": [
+        "Creative Ops",
+        "Asset Tracking",
+        "Client Delivery",
+        "Google Drive",
+        "Agency Ops"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -495,6 +575,41 @@
       }
     },
     {
+      "name": "Billing Chaser",
+      "path": "agents/billing-chaser/",
+      "description": "Owns unbilled time, overdue invoices, and retainers running low. The renewal draft lives in this job, not a separate agent.",
+      "details": "# Billing Chaser\n\n> Get unbilled hours out the door, overdue invoices chased, and the retainer renewal drafted before it quietly expires.\n\n## What it does\n\nBilling Chaser owns agency money in for founder-led marketing, creative, and web shops. It pulls unbilled hours from Harvest, Toggl, or your time sheet against each retainer or project, drafts the invoice, and chases overdue agency invoices on cadence in your voice.\n\nIt watches hours or dollars left on every retainer and warns at the remaining percent you set (default 20%). When a retainer end date lands inside the renewal window, it drafts the renewal inside this same job instead of spinning up a separate agent. Invoices, chases, and renewals all stay in draft until you approve the exact text.\n\n## What you'll need\n\n- **QuickBooks** \u2014 required for open invoices, aging, and invoice drafts.\n- **Gmail** \u2014 required for chase and renewal drafts.\n- **Slack** \u2014 required. Low-retainer warnings and renewal drafts land in your founder channel.\n- **Harvest or Toggl** \u2014 one is needed for unbilled time. No registry connector; connect the account or point the agent at your time sheet during onboarding.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your time system, the low-retainer percent, the renewal window, your chase voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Pull unbilled time, overdue invoices, and retainers running low, and draft any renewals due without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Pull unbilled time and overdue invoices and draft what should go out today\n- Which retainers are under 20% left, and draft the renewals for any ending soon\n- Every Monday, chase overdue invoices on cadence and Slack me the drafts\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led agencies with time sitting unbilled and retainers that expire quietly.\n- The agent never writes off hours, discounts a retainer, or sends legal collections language.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Agency Billing",
+        "Unbilled Time",
+        "Retainers",
+        "Accounts Receivable",
+        "QuickBooks"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Bookkeeping Auditor",
       "path": "agents/bookkeeping-auditor/",
       "description": "Audit QuickBooks records and supporting check images; reconcile card transactions and flag discrepancies.",
@@ -544,6 +659,53 @@
       "developer": {
         "name": "@kristaletz",
         "url": "https://x.com/kristaletz"
+      }
+    },
+    {
+      "name": "Call Closer",
+      "path": "agents/call-closer/",
+      "description": "Owns after-call recap, tasks, CRM, and the next meeting on the calendar. Not meeting notes only.",
+      "details": "# Call Closer\n\n> Turn every client call into a sent recap, assigned tasks, a clean CRM record, and the next meeting on the calendar.\n\n## What it does\n\nCall Closer owns the after-call close-out for founder-led consulting, accounting, insurance, and staffing firms. From the transcript or notes it drafts a client-facing recap of what you heard, what you promised, and the next step. It lists internal tasks with owners and due dates and creates them in your tracker or Asana when connected.\n\nIt updates the CRM with stage, notes, amount if discussed, next step, and date, without overwriting a newer note. If a next meeting was agreed, it books it against real calendar availability and drafts the invite. Recaps and invites stay in draft until you approve, and the agent never invents a promise that was not on the call.\n\n## What you'll need\n\n- **Granola** \u2014 recommended for call transcripts and notes, through the Granola MCP. Pasted notes work too.\n- **Google Calendar** \u2014 required to book the next meeting against real availability.\n- **HubSpot** \u2014 the supported CRM connector. Another CRM can be configured during onboarding.\n- **Asana** \u2014 optional, for creating the internal tasks.\n- **Gmail** \u2014 required for recap and invite drafts.\n- **Slack** \u2014 required for the founder close-out summary.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your notes source, your CRM, the recap voice, who owns default tasks, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Close out the last call: recap, tasks, CRM, and next meeting, all in draft.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Close out my last call: recap, tasks, CRM update, and next meeting\n- Draft the client recap for today's Harper call and list who owes what\n- After every Granola call, run the full close-out and Slack me the drafts\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms whose follow-up dies in the notes doc.\n- This is not a meeting-notes agent. A run is not done until recap, tasks, CRM, and next meeting are all handled.\n- The agent never books a time the calendar does not allow.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "phone-call",
+      "tags": [
+        "Call Follow-Up",
+        "Meeting Recaps",
+        "CRM Hygiene",
+        "Google Calendar",
+        "Professional Services"
+      ],
+      "works_with": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "asana"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -1293,6 +1455,41 @@
       }
     },
     {
+      "name": "Desk Deputy",
+      "path": "agents/desk-deputy/",
+      "description": "Owns the front desk as one agent: inbox drafts, calendar book/reschedule/remind, and missed call or voicemail to a text. Not three agents.",
+      "details": "# Desk Deputy\n\n> One agent runs the whole front desk: inbox drafts, calendar moves, and a text back for every missed call.\n\n## What it does\n\nDesk Deputy is the one front-desk owner for micro-owners and founder-led SMBs that still run the desk themselves. It watches your inbox for customer, vendor, and is-this-spam mail and drafts replies in your voice. It books, reschedules, and reminds against your real calendar, offering only times that are actually free.\n\nWhen a missed call or voicemail lands on the business line, it drafts a text back: we saw it, here is the next step. Inbox, calendar, and phone stay one job with one context instead of three workflows. Sends stay in draft until you approve, unless you pre-authorize a routine path during onboarding.\n\n## What you'll need\n\n- **Gmail** \u2014 required for the inbox and reply drafts.\n- **Google Calendar** \u2014 required for booking, rescheduling, and reminders.\n- **Slack** \u2014 required. Spicy exceptions and the daily desk summary land here.\n- **OpenPhone** \u2014 optional, for missed calls and voicemail. No registry connector; connect the line during onboarding or forward voicemails to the inbox.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your inbox, calendar, phone line, voice samples, and which sends may go out automatically, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Work today's inbox, calendar, and missed calls as one desk, drafting replies, invites, and texts without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Work today's inbox, calendar, and missed calls and show me the drafts\n- Draft a text back to every voicemail from this morning with the next step\n- Every weekday at 5pm, summarize the desk and what still needs my reply\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners and founder-led SMBs still running the desk themselves.\n- The agent never answers legal, HR, or payment disputes on its own and never asks for passwords or 2FA codes in chat.\n- It will not invent availability or hide a calendar conflict.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "inbox",
+      "tags": [
+        "Front Desk",
+        "Inbox Drafts",
+        "Scheduling",
+        "Missed Calls",
+        "Small Business"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Directory API Fetcher",
       "path": "agents/directory-api-fetcher/",
       "description": "Fetch the BotDirectory API once each day; save results and report what changed since the previous run.",
@@ -1332,6 +1529,33 @@
       "developer": {
         "name": "@elie2222",
         "url": "https://x.com/elie2222"
+      }
+    },
+    {
+      "name": "Dispatch Desk",
+      "path": "agents/dispatch-desk/",
+      "description": "Owns tomorrow's board: crew, parts, and the customer window. Texts the customer the real window. Not a routing engine.",
+      "details": "# Dispatch Desk\n\n> Tomorrow's board built, crew and parts checked, and every customer texted a real arrival window.\n\n## What it does\n\nDispatch Desk owns tomorrow's board and the customer window for founder-led home services shops. It pulls tomorrow's jobs from Jobber, Housecall Pro, ServiceTitan, or the dispatch calendar, checks that the named crew is actually on the schedule and not already out of area, and flags jobs whose parts notes say nothing about what is on the truck.\n\nThen it drafts the window text for each customer in your voice: who is coming, the real window, and how to prep. Each text is queued for founder or dispatcher one-tap send unless you pre-authorize on-time window texts after a clean trial. This is not a routing engine and it never reassigns crews.\n\n## What you'll need\n\n- **Slack** \u2014 required. The board, parts flags, and text drafts land in your dispatch channel.\n- **Jobber, Housecall Pro, or ServiceTitan** \u2014 one is needed for the dispatch board. No registry connector; connect during onboarding or point the agent at your dispatch calendar.\n- **SMS line** \u2014 required to send the customer window texts. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your dispatch board, where parts notes live, your window-text voice, and who approves customer texts, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Build tomorrow's board with crew, parts, and windows, and draft the customer texts without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Build tomorrow's board with crew, parts, and windows and draft the texts\n- Which of tomorrow's jobs have a crew conflict or missing parts notes\n- Every day at 4pm, build the next day's board and queue the window texts\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops that need tomorrow's board and the customer text owned.\n- The agent never invents a customer window the board does not show or assumes parts are on the truck when the job does not say so.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "truck",
+      "tags": [
+        "Dispatch",
+        "Home Services",
+        "Customer Texts",
+        "Field Service",
+        "Scheduling"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -1909,6 +2133,37 @@
       }
     },
     {
+      "name": "Handshake Closer",
+      "path": "agents/handshake-closer/",
+      "description": "Owns verbal yes through a sent estimate, one nudge, then flag silence. No seven-touch sequence.",
+      "details": "# Handshake Closer\n\n> Every verbal yes becomes a sent estimate, one nudge, and a clear flag when they go quiet.\n\n## What it does\n\nHandshake Closer owns the gap between a verbal yes and a sent estimate for micro-owners and founder-led SMBs. It watches notes, SMS, voicemail, and the inbox for a yes, a handshake, or a send-it-over, then drafts the estimate from your rate card or the number they already heard, plus a one-line scope.\n\nIf they go quiet after send, it drafts exactly one nudge after the wait you configure (default 3 days). If they are still silent after that, it Slacks you the file and stops. No seven-touch sequence, no fuzzy maybe treated as a yes, and no job marked won without a real yes on the sent estimate.\n\n## What you'll need\n\n- **Gmail** \u2014 required for catching yeses and drafting the estimate and nudge.\n- **Slack** \u2014 required. Silence flags and exceptions land in your founder channel.\n- **SMS line and estimate system** \u2014 optional. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for where yeses land, your rate card, the silence wait, and your one-nudge voice, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Find verbal yeses that still have no sent estimate, draft the estimates, and flag any silence after one nudge.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Find every verbal yes that still has no sent estimate and draft them\n- Draft the estimate for the Ramirez fence job from Tuesday's call notes\n- Each morning, check for silence after a nudge and Slack me the files to call\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners who get a verbal yes and never send the estimate.\n- Estimates and the one nudge stay in draft until the founder sends. The agent never nudges more than once.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "handshake",
+      "tags": [
+        "Estimates",
+        "Verbal Yes",
+        "Follow-Up",
+        "Small Business",
+        "Gmail"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Home Services Autopilot",
       "path": "agents/home-services-autopilot/",
       "description": "Assess a home-service problem from photos and a description; source providers, coordinate appointments, and keep consequential actions approved.",
@@ -2095,6 +2350,115 @@
       }
     },
     {
+      "name": "Inquiry Desk",
+      "path": "agents/inquiry-desk/",
+      "description": "Owns inbound through a qualified call on the calendar. Not a polite we-will-be-in-touch.",
+      "details": "# Inquiry Desk\n\n> Take every inbound inquiry all the way to a qualified call on your calendar, not a polite we-will-be-in-touch.\n\n## What it does\n\nInquiry Desk owns inbound for founder-led consulting, accounting, insurance, and staffing firms. It watches the web form, email, chat, and referral intros for new inquiries and scores each one against your fit rules: company size, problem, budget signal if they gave one, geography, and conflicts.\n\nFor a fit, it reads the founder's calendar and offers two or three real windows, then queues the invite and confirmation for one-tap send. Poor fits get a polite, honest reply instead of a ghost. Invites stay in draft unless you pre-authorize qualified bookings after a trial, and the agent never quotes fees unless a published rate is in config.\n\n## What you'll need\n\n- **Gmail** \u2014 required for inquiry intake and reply drafts.\n- **Google Calendar** \u2014 required to offer real windows and book the call.\n- **HubSpot** \u2014 the supported CRM connector for logging inquiries. Another CRM can be configured during onboarding.\n- **Slack** \u2014 required. New qualified leads and edge cases land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your inquiry sources, fit rules, who takes the call, which calendar to book against, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Work today's inbound inquiries through a qualified call on the calendar, drafting invites for approval.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Work today's inbound inquiries and draft invites for the qualified ones\n- Score this week's web form leads against our fit rules and show who to call\n- Every hour during business hours, triage new inquiries and Slack me the fits\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms with inbound sitting in the inbox.\n- The agent never books a time the calendar does not show and never stops at a qualified-lead list without offering a call.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "calendar-check",
+      "tags": [
+        "Inbound Leads",
+        "Lead Qualification",
+        "Call Booking",
+        "HubSpot",
+        "Professional Services"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Invoice Ask",
+      "path": "agents/invoice-ask/",
+      "description": "Owns customers who owe you. Opposite of Vendor Nudge. Ask on cadence until paid or escalated.",
+      "details": "# Invoice Ask\n\n> Ask the customers who owe you, on cadence and in your voice, until they pay or you step in.\n\n## What it does\n\nInvoice Ask owns customers who owe you for micro-owners and founder-led SMBs. It pulls open customer invoices from QuickBooks or your invoice sheet and writes a short founder-voice ask that names the invoice and the due date. Every ask is queued for one-tap send on the cadence you set.\n\nAfter the last unanswered ask it Slacks you to escalate, with no legal or collections language anywhere. Vendor bills stay out of this queue entirely; that is Vendor Nudge's job. The agent never writes off a balance and never stops at an AR list without drafting the ask.\n\n## What you'll need\n\n- **QuickBooks** \u2014 required for open customer invoices and payment status.\n- **Gmail** \u2014 required for the ask drafts.\n- **Slack** \u2014 required. Escalations after the last ask land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your invoice source, the ask cadence, your ask voice, and any do-not-ask customers, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: List customers who owe you, draft the next asks, and keep vendor bills out of the queue, all without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- List who owes us and draft the next ask for each open invoice\n- Draft a second ask for the Bell Plumbing invoice that is 20 days late\n- Every Tuesday, send me the ask queue and flag anyone past the last ask\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners who know who owes them and still have not asked.\n- Asks stay in draft until the founder sends. This agent is the opposite of Vendor Nudge and never chases vendors or pays bills.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Accounts Receivable",
+        "Invoice Reminders",
+        "QuickBooks",
+        "Cash Flow",
+        "Small Business"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Invoice Hunter",
+      "path": "agents/invoice-hunter/",
+      "description": "Owns overdue invoices until they are paid or the founder escalates. Reminder, promise-to-pay, human handoff. Not a static AR list.",
+      "details": "# Invoice Hunter\n\n> Chase every overdue invoice through reminder, promise-to-pay, and human handoff instead of watching an aging report grow.\n\n## What it does\n\nInvoice Hunter owns overdue invoices for founder-led home services shops. It pulls open invoices from QuickBooks or your billing system, ages them 1-30, 31-60, 61-90, and 90+, and drafts the next reminder in the shop voice: polite and specific first, then naming the job and the due date.\n\nWhen a customer replies with a date or a partial, it logs the promise and watches that date rather than dunning through it. At the escalation age you set, or after the last unanswered reminder, it Slacks you the file with a recommended next step: call, pause work, or a collections talk. Reminders stay in draft until you approve.\n\n## What you'll need\n\n- **QuickBooks** \u2014 required for open invoices and aging.\n- **Gmail** \u2014 required for reminder drafts.\n- **Slack** \u2014 required. Escalations and promise-to-pay dates land in your founder channel.\n- **Jobber and an SMS line** \u2014 optional, for job context and text reminders. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your billing system, the aging cadence, your reminder voice, the escalation age, and any do-not-chase customers, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Pull overdue invoices, draft the next chase on cadence, and flag anything that needs you, without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Pull overdue invoices and draft the next reminder for each one\n- Log that the Nguyen job promised to pay Friday and pause their reminders\n- Every Monday, chase everything past due and Slack me what hit 60 days\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops with overdue invoices sitting.\n- The agent never sends legal, collections, or lien language and never writes off a balance or pauses work without approval.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Overdue Invoices",
+        "Accounts Receivable",
+        "Home Services",
+        "QuickBooks",
+        "Promise to Pay"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Itinerary Sanity Checker",
       "path": "agents/itinerary-sanity-checker/",
       "description": "Normalize a multi-city itinerary into one timeline; flag risky connections, time-zone errors, airport changes, and opening-hour conflicts.",
@@ -2114,6 +2478,37 @@
       "developer": {
         "name": "@APompliano",
         "url": "https://x.com/APompliano"
+      }
+    },
+    {
+      "name": "Job Status Scout",
+      "path": "agents/job-status-scout/",
+      "description": "Owns 'when are you coming?' with the real window from the board. Escalates late, missing, and angry. Does not guess soon.",
+      "details": "# Job Status Scout\n\n> Answer every when-are-you-coming with the real window from the board, and escalate the late, missing, and angry ones.\n\n## What it does\n\nJob Status Scout owns the when-are-you-coming question for founder-led home services shops. It watches SMS, voicemail, Gmail, and the field-service inbox for where-is-the-tech and are-you-still-coming messages, then reads the promised window, live ETA, and assigned tech from Jobber, Housecall Pro, or ServiceTitan.\n\nIt drafts a short reply in the shop voice with the real window and who is coming. If the job is late, the window is gone, or the customer is angry, it Slacks you the facts and a recommended make-good draft instead of auto-sending. It never guesses soon when the board has a time and never promises a tighter ETA than the board shows.\n\n## What you'll need\n\n- **Gmail** \u2014 required for catching status asks by email and drafting replies.\n- **Slack** \u2014 required. Late, missing, and angry jobs land in your founder channel with a make-good draft.\n- **Jobber, Housecall Pro, or ServiceTitan** \u2014 one is needed for the real window. No registry connector; connected during onboarding.\n- **SMS line** \u2014 optional, for text asks and replies. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your status inbox, which board holds the real window, whether on-time replies may auto-send, and the Slack channel for spicy jobs, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Answer today's when-are-you-coming messages with the real window from the board, drafting replies and holding the spicy ones.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Answer today's when-are-you-coming messages with the real window\n- Which of today's jobs are late or have no window, and draft the make-goods\n- Every 30 minutes, check the status inbox and reply with the board window\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops buried in when-are-you-coming texts.\n- Replies stay in draft until approved, except on-time replies the founder later pre-authorizes. The agent never reroutes a tech.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Customer Success",
+      "icon": "map-pin",
+      "tags": [
+        "Home Services",
+        "Customer Updates",
+        "Arrival Windows",
+        "Field Service",
+        "Escalations"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -2171,6 +2566,41 @@
       }
     },
     {
+      "name": "Lead Lightning",
+      "path": "agents/lead-lightning/",
+      "description": "Owns web, phone, and form inbound through a booked slot the same day. Qualifies, checks the board, holds the window, and queues the confirm for founder one-tap send.",
+      "details": "# Lead Lightning\n\n> Turn today's web, phone, and form leads into booked same-day slots while the customer is still deciding.\n\n## What it does\n\nLead Lightning owns inbound through a booked slot the same day for founder-led home services shops. During business hours it watches your web form, phone or voicemail, marketplace, and chat sources, then checks service area, job type, and whether the request is a same-day fit under your rules.\n\nFor a fit, it reads today's remaining windows on the connected board or calendar, holds the slot, and drafts the confirmation with the window, address, and what to expect. Confirms are queued for one-tap send unless you pre-authorize same-day confirms after a clean trial. It never guarantees a window the board does not show or books work outside the service area.\n\n## What you'll need\n\n- **Google Calendar** \u2014 required when the calendar is the booking source for today's windows.\n- **Gmail** \u2014 required for form and email leads and confirm drafts.\n- **Slack** \u2014 required. Booked slots, misses, and edge cases land in your founder channel.\n- **Jobber, Housecall Pro, or ServiceTitan** \u2014 optional, as the booking board instead of the calendar. No registry connector; connected during onboarding.\n- **SMS line or OpenPhone** \u2014 optional, for phone leads and text confirms. No registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your service area, the same-day cutoff, which board or calendar to book against, the confirm channel, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Handle today's new web, phone, and form leads through a booked same-day slot where the board allows, drafting confirms for approval.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Handle today's new leads and draft same-day confirms where the board allows\n- Qualify this morning's form leads and hold slots for the ones in our area\n- During business hours, watch every lead source and Slack me each booked slot\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops that need inbound on a same-day booked slot, not a lead alert.\n- The agent never quotes a final price unless pricing rules are in config.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "zap",
+      "tags": [
+        "Inbound Leads",
+        "Same-Day Booking",
+        "Home Services",
+        "Lead Response",
+        "Google Calendar"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Ledger",
       "path": "agents/ledger/",
       "description": "Review records and pending changes in a self-hosted finance system; maintain a finance task list and stage write-backs for approval.",
@@ -2189,6 +2619,45 @@
       "developer": {
         "name": "@Voxyz_ai",
         "url": "https://x.com/Voxyz_ai"
+      }
+    },
+    {
+      "name": "Ledger Hawk",
+      "path": "agents/ledger-hawk/",
+      "description": "Owns invoices out the door and overdue chased until paid or escalated.",
+      "details": "# Ledger Hawk\n\n> Completed work gets invoiced and overdue invoices get chased, in your voice, until they are paid or you step in.\n\n## What it does\n\nLedger Hawk owns invoices out and overdue chased for founder-led consulting, accounting, insurance, and staffing firms. It pulls completed work, time, or retainers with no invoice yet from QuickBooks, the CRM, or your sheet, and queues each new invoice for one-tap send by email or through QuickBooks.\n\nIt ages open invoices and drafts the next chase in the firm voice, then Slacks you the file at the escalation age you set. No legal language, no write-offs without approval, and no run that stops after creating invoices and skips the overdue chase.\n\n## What you'll need\n\n- **QuickBooks** \u2014 required for unbilled work, open invoices, and invoice drafts.\n- **HubSpot** \u2014 the supported CRM connector for completed-work signals. Another CRM or a sheet can be configured during onboarding.\n- **Gmail** \u2014 required for invoice and chase drafts.\n- **Slack** \u2014 required. Escalations land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your billing system, payment terms, aging buckets, chase voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Draft invoices for completed unbilled work and the next overdue chases, without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Draft invoices for completed unbilled work and the next overdue chases\n- Show me everything over 45 days and draft a firmer chase for each\n- Every Friday, invoice the week's completed work and Slack me the drafts\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms with completed work unbilled and overdue sitting.\n- Invoices and chases stay in draft until the founder sends.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "calculator",
+      "tags": [
+        "Invoicing",
+        "Overdue Chase",
+        "Accounts Receivable",
+        "QuickBooks",
+        "Professional Services"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -2760,6 +3229,49 @@
       }
     },
     {
+      "name": "Onboarding Desk",
+      "path": "agents/onboarding-desk/",
+      "description": "Owns a newly signed client into the folder, the tracker, kickoff on the calendar, and the first report date.",
+      "details": "# Onboarding Desk\n\n> A newly signed client lands in the folder, the tracker, a kickoff on the calendar, and a first report date within the hour.\n\n## What it does\n\nOnboarding Desk owns the first ten days after a client signs for founder-led marketing, creative, and web shops. It watches for a signed SOW, a paid first invoice, or a founder this-one-is-in note, then creates the client folder in Drive or Dropbox from your template structure and adds the client to the tracker.\n\nIt drafts the kickoff agenda and the client-facing kickoff note, books the kickoff against real calendar availability, and sets the first report date from the SOW cadence (default 30 days) on both the tracker and the calendar. Client emails stay in draft until you send, and the agent never starts billable work the SOW does not include.\n\n## What you'll need\n\n- **Google Drive or Dropbox** \u2014 one is required for the client folder.\n- **Google Calendar** \u2014 required to book the kickoff and the first report date.\n- **Gmail** \u2014 required for the kickoff note draft.\n- **Slack** \u2014 required. New-client notices and drafts land in your founder channel.\n- **Client tracker** \u2014 optional. A sheet or tracker the agent adds each client to.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your folder template, what counts as signed, kickoff attendees, the first report cadence, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Onboard the newest signed client into the folder, the tracker, a kickoff on the calendar, and a first report date, with the client note in draft.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Onboard the newest signed client: folder, tracker, kickoff, first report date\n- Draft the kickoff agenda and client note for Northwind from their SOW\n- Whenever a first invoice is paid, run onboarding and Slack me the kickoff draft\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led agencies that lose the first 10 days after a client signs.\n- The agent never asks for passwords, cookies, or 2FA codes in chat and never invents a folder structure when the agency has a template.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Customer Success",
+      "icon": "list-checks",
+      "tags": [
+        "Client Onboarding",
+        "Kickoff",
+        "Agency Ops",
+        "Google Drive",
+        "Google Calendar"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "dropbox"
+        },
+        {
+          "type": "api_account",
+          "slug": "googlecalendar"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "One-On-One Prep",
       "path": "agents/one-on-one-prep/",
       "description": "Review prior one-on-one notes and commitments before each meeting; surface status, reminders, and a focused agenda.",
@@ -2956,7 +3468,7 @@
       "name": "Podcast Clip Publisher",
       "path": "agents/podcast-clip-publisher/",
       "description": "Transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.",
-      "details": "# Podcast Clip Publisher\n\nTranscribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n\n## What it does\n\n- Act as the Podcast Clip Publisher: transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Podcast RSS feeds** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n- **Podcast transcription MCP** \u2014 external connection; no canonical registry slug.\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Transcribe podcast episodes and identify selected moments.\n- Draft clips and X publishing details without posting unapproved content.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Transcribe this episode and find the best moments\n- Draft three short clips with captions and links\n- Show me every clip and caption before anything posts\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@GavinSBaker](https://x.com/GavinSBaker) on [Bot Directory](https://botdirectory.ai/bots/podcast-clip-publisher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Podcast Clip Publisher\n\nTranscribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n\n## What it does\n\n- Act as the Podcast Clip Publisher: transcribe podcast episodes and identify selected moments; draft clips and X publishing details without posting unapproved content.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **Podcast RSS feeds** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n- **Podcast transcription MCP** \u2014 external connection; no canonical registry slug.\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Transcribe podcast episodes and identify selected moments.\n- Draft clips and X publishing details without posting unapproved content.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Transcribe this episode and find the best moments\n- Draft three short clips with captions and links\n- Show me every clip and caption before anything posts\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@GavinSBaker](https://x.com/GavinSBaker) on [Bot Directory](https://botdirectory.ai/bots/podcast-clip-publisher/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T21:26:11.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -2969,7 +3481,12 @@
         "X",
         "Content Creation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@GavinSBaker",
         "url": "https://x.com/GavinSBaker"
@@ -3115,6 +3632,49 @@
       "developer": {
         "name": "@kristaletz",
         "url": "https://x.com/kristaletz"
+      }
+    },
+    {
+      "name": "Proposal Pilot",
+      "path": "agents/proposal-pilot/",
+      "description": "Owns the proposal from the call notes through one-tap send. Price from the rate card, not a guess.",
+      "details": "# Proposal Pilot\n\n> Go from call notes to a sendable proposal, priced from the rate card, without starting from a blank page.\n\n## What it does\n\nProposal Pilot owns the proposal for founder-led consulting, accounting, insurance, and staffing firms. It starts from Granola, the CRM notes, or a pasted call summary and writes the proposal in your template: situation, scope, approach, timeline, price, and next step. Every price comes from the rate card, never a guess.\n\nIt Slacks you the draft with gaps called out, such as a missing price, fuzzy scope, or legal language, then places the approved proposal in Gmail or as a Doc link email for one-tap send. It never reuses another client's confidential work and never changes the price after approval without asking again.\n\n## What you'll need\n\n- **Granola** \u2014 recommended for call notes, through the Granola MCP. Pasted notes work too.\n- **Google Drive** \u2014 required for the proposal template and the finished Doc.\n- **HubSpot** \u2014 the supported CRM connector for deal notes and logging. Another CRM can be configured during onboarding.\n- **Gmail** \u2014 required for the send draft.\n- **Slack** \u2014 required. Drafts with gaps land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your proposal template, rate card, call notes source, and who approves price, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Turn the latest call notes into a sendable proposal, in draft.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Turn my latest call notes into a sendable proposal from our template\n- Draft the Meridian proposal and call out any gaps in scope or price\n- After each discovery call in Granola, draft the proposal and Slack me the gaps\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms that still rebuild every proposal from a blank page.\n- Proposals stay in draft until the founder one-tap sends.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "file-text",
+      "tags": [
+        "Proposals",
+        "Rate Card Pricing",
+        "Call Notes",
+        "Professional Services",
+        "Granola"
+      ],
+      "works_with": [
+        {
+          "type": "mcp",
+          "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -3294,6 +3854,107 @@
       }
     },
     {
+      "name": "Quote Chaser",
+      "path": "agents/quote-chaser/",
+      "description": "Owns sitting estimates until they are won, lost, or handed to a human. Follows up in the shop voice and one-tap sends the nudge.",
+      "details": "# Quote Chaser\n\n> Sitting estimates get a follow-up in the shop voice until they are won, lost, or handed to you.\n\n## What it does\n\nQuote Chaser owns sitting estimates for founder-led home services shops. On your cadence it pulls open estimates from Jobber, Housecall Pro, ServiceTitan, or the quote sheet, then flags the ones past the follow-up window, expiring this week, or high-value and quiet.\n\nFor each one it drafts a short founder-voice nudge that names the job, the date, and a clear next step: approve, pick a start window, or say no. The exact draft is queued in Gmail, SMS, or the field-service message for one-tap send. It never changes a quote amount, promises a discount, or marks a quote won or lost without evidence.\n\n## What you'll need\n\n- **Gmail** \u2014 required for follow-up drafts and replies.\n- **Slack** \u2014 required. Cold estimates and handoffs land in your founder channel.\n- **Jobber, Housecall Pro, or ServiceTitan** \u2014 one is needed for open estimates. No registry connector; connected during onboarding, or use a quote sheet.\n- **SMS line** \u2014 optional, for text follow-ups. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your estimate system, the quiet-day window, when the last nudge goes out, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Review sitting estimates, draft follow-ups for the ones going cold, and queue one-tap sends without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Review sitting estimates and draft follow-ups for the ones going cold\n- Draft a last nudge for every estimate that expires this week\n- Every Wednesday, chase quiet estimates and Slack me the drafts to approve\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops with estimates sitting quiet.\n- Follow-ups stay in draft until the founder one-tap sends. The agent never nudges more often than the configured cadence.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "badge-dollar-sign",
+      "tags": [
+        "Estimate Follow-Up",
+        "Quotes",
+        "Home Services",
+        "Field Service",
+        "Gmail"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Quote in a Box",
+      "path": "agents/quote-in-a-box/",
+      "description": "Owns a boxed quote from the last conversation: price, scope, and a yes/no ask. One tap to send.",
+      "details": "# Quote in a Box\n\n> The last conversation becomes a one-page quote with price, scope, and a yes/no ask, ready to send with one tap.\n\n## What it does\n\nQuote in a Box owns the boxed quote for micro-owners and founder-led SMBs who quote from memory and then forget to send it. It starts from the last email, text, call note, or walk-in note, builds a plain-language scope, and prices it from your rate card or menu.\n\nEvery quote ends with a single yes/no ask, or a pick-a-start-window ask, on one page or in one email. It is queued for your approval and only that exact draft gets sent. The agent never invents a price list or a job the conversation did not describe, and never writes a long proposal when a boxed quote will do.\n\n## What you'll need\n\n- **Gmail** \u2014 required for conversation source and the quote draft.\n- **Slack** \u2014 required. Quotes awaiting approval land in your founder channel.\n- **Rate card** \u2014 required. A sheet, doc, or pasted menu captured during onboarding.\n- **SMS line** \u2014 optional, for text conversations and quotes. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your rate card, where conversations happen, your quote voice, and when to box versus go custom, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Turn the last conversation into a boxed quote with price, scope, and a yes/no ask, in draft.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Turn my last conversation into a boxed quote with price, scope, and a yes/no\n- Quote the deck staining job from yesterday's text thread using our rate card\n- Each evening, draft a boxed quote for every conversation that ended without one\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners who quote from memory and then forget to send it.\n- Quotes stay in draft until the founder one-tap sends. The agent never changes the price after approval without asking again.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "package",
+      "tags": [
+        "Quotes",
+        "Rate Card Pricing",
+        "One-Tap Send",
+        "Small Business",
+        "Gmail"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Receipt Ranger",
+      "path": "agents/receipt-ranger/",
+      "description": "Owns forwarded receipts and flags monthly holes before the bookkeeper asks.",
+      "details": "# Receipt Ranger\n\n> Forwarded receipts get filed and month-end holes get flagged before the bookkeeper asks.\n\n## What it does\n\nReceipt Ranger owns forwarded receipts and monthly holes for micro-owners and founder-led SMBs. It watches the receipt inbox or a forwarded Gmail label for photos, PDFs, and card alerts, codes each one, and files it into the monthly Drive folder or the QuickBooks receipt inbox.\n\nNear month end it compares card and bank lines to filed receipts and builds the hole list. You get the list and the month pack in Slack or email for one-tap send to the bookkeeper. It never invents a missing receipt, never codes personal spend as business without asking, and never takes bank credentials in chat.\n\n## What you'll need\n\n- **Gmail** \u2014 required for the receipt inbox or forwarded label.\n- **Google Drive** \u2014 required when receipts file to monthly folders.\n- **QuickBooks** \u2014 required for the card and bank lines used in the hole check, and optional as the filing target.\n- **Slack** \u2014 required. The hole list and month pack land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your receipt inbox, file location, expense categories, whether a bookkeeper pack goes out, and any personal merchants to skip, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: File this week's forwarded receipts and show any holes against the card feed, without emailing the bookkeeper.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- File this week's forwarded receipts and show any holes against the card feed\n- Build the August month pack and list every card line with no receipt\n- Every Friday, file the week's receipts and Slack me what is still missing\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners who forward receipt photos and still miss month-end holes.\n- Bookkeeper packs stay in draft until the founder approves.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "receipt",
+      "tags": [
+        "Receipts",
+        "Bookkeeping",
+        "Month-End Close",
+        "QuickBooks",
+        "Google Drive"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Recipe Grocery Autopilot",
       "path": "agents/recipe-grocery-autopilot/",
       "description": "Extract ingredients and quantities from a recipe photo; prepare a practical Whole Foods order with package sizes and substitutions.",
@@ -3401,6 +4062,41 @@
       }
     },
     {
+      "name": "Referral Scout",
+      "path": "agents/referral-scout/",
+      "description": "Owns who to ask, the draft ask, and the intro log so intros do not die in the inbox.",
+      "details": "# Referral Scout\n\n> Know who to ask for an intro this week, have the ask drafted, and never lose track of who named whom.\n\n## What it does\n\nReferral Scout owns the referral ask for founder-led consulting, accounting, insurance, and staffing firms. From the CRM, recent wins, and completed jobs it lists people who are happy, recent, and not already asked inside the quiet window, then drafts a short founder-voice ask that names the kind of intro you want and makes it easy to say no.\n\nWhen you send, it logs the date, who was asked, and who they named. If an intro goes quiet it drafts one follow-up to the introducer or the new person, never both on the same day. It never spams the whole book on one cadence and stops asking after a no.\n\n## What you'll need\n\n- **HubSpot** \u2014 the supported CRM connector for wins, contacts, and the intro log. Another CRM can be configured during onboarding.\n- **Gmail** \u2014 required for ask and follow-up drafts.\n- **Slack** \u2014 required. The weekly who-to-ask list lands in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for who is askable, the kind of intro you want, the quiet window, your ask voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: List who to ask for an intro this week, draft the asks, and show the open intro log, without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- List who to ask for an intro this week and draft the asks\n- Show the open intro log and draft a follow-up for anything quiet\n- Every Monday, pick three people to ask and Slack me the drafts\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms that know they should ask for intros and never do.\n- Asks stay in draft until the founder sends. Every intro gets logged.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Sales",
+      "icon": "user-search",
+      "tags": [
+        "Referrals",
+        "Warm Intros",
+        "Professional Services",
+        "HubSpot",
+        "Gmail"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Relationship Coach",
       "path": "agents/relationship-coach/",
       "description": "Review daily Bee recordings at a private evening check-in; offer candid advice on being a better partner, colleague, or friend.",
@@ -3477,10 +4173,49 @@
       }
     },
     {
+      "name": "Renewal Clerk",
+      "path": "agents/renewal-clerk/",
+      "description": "Owns contract end dates, usage, and the renewal draft. Nothing auto-renews.",
+      "details": "# Renewal Clerk\n\n> Every contract end date is tracked and every renewal is drafted before the term quietly dies.\n\n## What it does\n\nRenewal Clerk owns contract renewals for founder-led consulting, accounting, insurance, and staffing firms. It maintains end dates from the contract folder, the CRM, or a sheet and checks them daily. When usage or retained-hours systems are connected it pulls the usage picture and cites the source.\n\nInside the lead time you set, it drafts the renewal note and the next-term order form from your template and current price, then queues them for one-tap send and logs sent, replied, renewed, and churn risk. Nothing auto-renews, no usage or savings are invented, and no discount or term change happens without approval.\n\n## What you'll need\n\n- **HubSpot** \u2014 the supported CRM connector for contract records and renewal logging. Another CRM can be configured during onboarding.\n- **Google Drive** \u2014 required for the contract folder and the order form template.\n- **Gmail** \u2014 required for renewal drafts.\n- **Slack** \u2014 required. Upcoming renewals and churn risks land in your founder channel.\n- **Billing or usage system** \u2014 optional, for the usage picture. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your contract folder, renewal lead times, usage source, renewal voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: List contracts inside the renewal window, attach usage if available, and draft renewals without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- List contracts inside the renewal window and draft the renewals\n- Draft the Beacon renewal with their usage this term and the current price\n- Every morning, check end dates and Slack me anything within 60 days\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led professional firms whose terms die because nobody drafted the renewal.\n- Renewals stay in draft until the founder sends. The agent flags a missing end date rather than ignoring it.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Customer Success",
+      "icon": "refresh-cw",
+      "tags": [
+        "Contract Renewals",
+        "End Dates",
+        "Professional Services",
+        "HubSpot",
+        "Google Drive"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "hubspot"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Reply Drafter",
       "path": "agents/reply-drafter/",
       "description": "Find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.",
-      "details": "# Reply Drafter\n\nFind high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n\n## What it does\n\n- Act as the Reply Drafter: find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Find high-signal X posts in chosen topics.\n- Draft a starting reply in your voice without publishing it.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find high-signal posts worth replying to today\n- Draft a first take in my voice for each one\n- Never post anything, I send every reply myself\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/reply-drafter/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Reply Drafter\n\nFind high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n\n## What it does\n\n- Act as the Reply Drafter: find high-signal X posts in chosen topics; draft a starting reply in your voice without publishing it.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Find high-signal X posts in chosen topics.\n- Draft a starting reply in your voice without publishing it.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Find high-signal posts worth replying to today\n- Draft a first take in my voice for each one\n- Never post anything, I send every reply myself\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/reply-drafter/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -3491,10 +4226,81 @@
         "X",
         "Content Creation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"
+      }
+    },
+    {
+      "name": "Report Runner",
+      "path": "agents/report-runner/",
+      "description": "Owns the monthly client recap from ads, analytics, and the sheet. Flags what moved. Founder one-tap sends.",
+      "details": "# Report Runner\n\n> Every client's monthly recap written from ads, analytics, and the sheet, with what moved flagged, ready for one-tap send.\n\n## What it does\n\nReport Runner owns the monthly client recap for founder-led marketing, creative, and web shops. For each client on the roster it pulls the reporting month from Google Ads, Meta Ads, GA4, and the client tracker sheet, then drafts a short founder-voice recap: what we spent, what it did, what changed versus last month, and the one thing to do next.\n\nIt calls out spend or CPA spikes, tracking breaks, and campaigns that died mid-month instead of hiding them. Each recap lands in a Google Doc or an email draft, and you get the pack in Slack for one-tap send. The agent never invents metrics or changes bids, budgets, or campaigns.\n\n## What you'll need\n\n- **Meta Ads** \u2014 required for Meta campaign data, through the Meta Ads MCP.\n- **Google Drive** \u2014 required for the recap Docs.\n- **Gmail** \u2014 required for recap email drafts.\n- **Slack** \u2014 required. The monthly pack lands in your founder channel.\n- **Google Ads and GA4** \u2014 required for Google campaign and analytics data. Connected during onboarding; no registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your client roster, ad accounts, the reporting month, your recap voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Build this month's client recaps from ads, analytics, and the sheet, as drafts only.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Build this month's client recaps from ads, analytics, and the sheet\n- Draft the Lumen recap and flag anything that spiked or broke in August\n- On the 2nd of every month, build all recaps and Slack me the pack to send\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led marketing, creative, and web shops that still assemble monthly recaps by hand.\n- Recaps stay in draft until the founder sends.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Marketing",
+      "icon": "presentation",
+      "tags": [
+        "Client Reporting",
+        "Monthly Recaps",
+        "Meta Ads",
+        "Google Ads",
+        "Agency Ops"
+      ],
+      "works_with": [
+        {
+          "type": "mcp",
+          "slug": "meta-ads"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
+      "name": "Review Wrangler",
+      "path": "agents/review-wrangler/",
+      "description": "Owns the after-job review ask and Google/Yelp replies in the shop's voice. Parks 1-star and spicy for the founder.",
+      "details": "# Review Wrangler\n\n> Ask for the review after every job and answer Google and Yelp in the shop's voice, with the one-star ones parked for you.\n\n## What it does\n\nReview Wrangler owns the after-job review ask and public replies for founder-led home services shops. It watches completed jobs on the board and, once the cooling window passes, drafts the review ask. On your cadence it checks Google Business Profile and Yelp for new reviews and drafts each public reply from your voice samples: specific thanks, never a helpdesk tone.\n\nOne-star and two-star reviews, legal or safety mentions, named employees, and anything that looks like it will spread go to a spicy queue: you get a private-resolution draft in Slack, unsent. Five-star replies can auto-post only if you pre-authorize that. The agent never asks for a review on a job with an open complaint and never offers refunds, deletes, or hides reviews.\n\n## What you'll need\n\n- **Slack** \u2014 required. Review asks, reply drafts, and the spicy queue land in your founder channel.\n- **Google Business Profile and Yelp** \u2014 required for reading reviews and posting approved replies. Connected during onboarding; no registry connector.\n- **Jobber** \u2014 optional, for completed-job signals. No registry connector; connected during onboarding or use your board.\n- **SMS line** \u2014 optional, for sending the review ask by text. No registry connector.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your listings, the hours to wait after a job, voice samples, whether 5-star replies may auto-post, and the Slack channel for spicy reviews, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Draft after-job review asks for yesterday's completed jobs and draft Google and Yelp replies without posting.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Draft review asks for yesterday's completed jobs and replies to new reviews\n- Draft a reply to the new three-star Yelp review in our voice\n- Every morning, check Google and Yelp and Slack me any review under four stars\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led home services shops that want reviews asked and answered in their voice.\n- Public replies stay in draft until the founder approves, unless 5-star auto-post is pre-authorized.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Marketing",
+      "icon": "star",
+      "tags": [
+        "Reviews",
+        "Reputation",
+        "Home Services",
+        "Google Business Profile",
+        "Yelp"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -3737,6 +4543,41 @@
       "developer": {
         "name": "@ericzakariasson",
         "url": "https://x.com/ericzakariasson"
+      }
+    },
+    {
+      "name": "Scope Sentinel",
+      "path": "agents/scope-sentinel/",
+      "description": "Owns out-of-scope asks: maps them to the SOW and drafts the change order before the extra work starts.",
+      "details": "# Scope Sentinel\n\n> Catch the quick extra ask, map it to the SOW, and have the change order drafted before anyone starts the work.\n\n## What it does\n\nScope Sentinel owns out-of-scope asks for founder-led marketing, creative, and web shops. After kickoff it watches client email, Slack, and the project channel for new asks and classifies each one as in-scope, out-of-scope, or unclear against the SOW in your Drive folder. Unclear goes to you with the question rather than a guess.\n\nFor out-of-scope work it drafts a short change order: the extra work, an estimate or T&M from the rate card, the timeline bump, and a yes/no ask, then queues it for one-tap send. It never tells the team to just do it, never invents rates or timelines, and never guesses scope when the SOW file is missing.\n\n## What you'll need\n\n- **Gmail** \u2014 required for watching client asks and drafting the change order.\n- **Slack** \u2014 required for the project channels and the founder review of each CO.\n- **Google Drive** \u2014 required for the SOW folder and the rate card.\n- **Client tracker** \u2014 optional. A sheet or tracker where the agent logs each change order.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for your SOW folder, rate card, which channels asks arrive in, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: Scan this week's client asks against the SOW, flag out-of-scope, and draft change orders without sending.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- Scan this week's client asks against the SOW and draft change orders\n- Is the new landing page ask from Orbit in scope, and draft the CO if not\n- Every day at noon, check the project channels for new asks and flag scope creep\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 2-200 person founder-led agencies that leak hours on quick extra asks.\n- Change orders stay in draft until the founder one-tap sends.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "shield-check",
+      "tags": [
+        "Scope Creep",
+        "Change Orders",
+        "Agency Ops",
+        "Statements of Work",
+        "Gmail"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        },
+        {
+          "type": "api_account",
+          "slug": "googledrive"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -4382,7 +5223,7 @@
       "name": "Tweet Topic Scraper",
       "path": "agents/tweet-topic-scraper/",
       "description": "Collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.",
-      "details": "# Tweet Topic Scraper\n\nCollect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n\n## What it does\n\n- Act as the Tweet Topic Scraper: collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Collect recent X posts about a topic into a requested CSV schema.\n- Verify the output opens cleanly in a spreadsheet.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Scrape recent posts about this topic into a CSV\n- Use these exact columns: author, followers, link, claim\n- Check the file opens cleanly in a spreadsheet\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/tweet-topic-scraper/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Tweet Topic Scraper\n\nCollect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n\n## What it does\n\n- Act as the Tweet Topic Scraper: collect recent X posts about a topic into a requested CSV schema; verify the output opens cleanly in a spreadsheet.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Collect recent X posts about a topic into a requested CSV schema.\n- Verify the output opens cleanly in a spreadsheet.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Scrape recent posts about this topic into a CSV\n- Use these exact columns: author, followers, link, claim\n- Check the file opens cleanly in a spreadsheet\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/tweet-topic-scraper/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4393,10 +5234,50 @@
         "X",
         "Workflow Automation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@ericzakariasson",
         "url": "https://x.com/ericzakariasson"
+      }
+    },
+    {
+      "name": "Vendor Nudge",
+      "path": "agents/vendor-nudge/",
+      "description": "Owns late suppliers and bills you owe. Drafts the nudge and the pay list. Never pays. Opposite of Invoice Ask.",
+      "details": "# Vendor Nudge\n\n> Late suppliers get a nudge and this week's bills get a pay list, without the agent ever touching your money.\n\n## What it does\n\nVendor Nudge owns late suppliers and bills you owe for micro-owners and founder-led SMBs. It watches open POs and promised dates from email, your sheet, or QuickBooks and, when a delivery is late, drafts a short supplier nudge in your voice instead of stopping at a late list.\n\nIt pulls unpaid bills and upcoming due dates, groups what is due this week versus what can wait, and flags late fees and shutoff risk. For each item it recommends pay, nudge, or dispute with the amount and due date, and queues nudges for one-tap send. It never pays a bill or moves money, and customer AR stays with Invoice Ask.\n\n## What you'll need\n\n- **QuickBooks** \u2014 required for bills, due dates, and open POs.\n- **Gmail** \u2014 required for supplier threads and nudge drafts.\n- **Slack** \u2014 required. The pay list and vendor disputes land in your founder channel.\n- **API keys:** none.\n\n## Getting started\n\n1. Import the template into Gamut.\n2. The `agent-onboarding` skill runs before first use. It asks for where POs and bills live, your regular suppliers, which Slack channel gets the pay list, and any never-nudge vendors, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.\n3. Ask for the first run: List late suppliers and bills due this week, draft nudges, and build a pay list, without sending or paying.\n\nRe-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.\n\n## Example prompts\n\n- List late suppliers and bills due this week and draft the nudges\n- Build the pay list for this week and flag anything with a late fee\n- Every Monday morning, Slack me the pay list and the late POs\n\n## What's inside\n\n- `CLAUDE.md` \u2014 the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.\n- `.claude/skills/agent-onboarding/` \u2014 the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.\n\n## Notes\n\n- Built for 1-15 person micro-owners juggling late POs and bills due this week.\n- Vendor nudges stay in draft until the founder sends. This agent is the opposite of Invoice Ask and never chases customers.",
+      "createdAt": "2026-09-15T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "wallet",
+      "tags": [
+        "Accounts Payable",
+        "Vendor Follow-Up",
+        "Bills Due",
+        "QuickBooks",
+        "Small Business"
+      ],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "quickbooks"
+        },
+        {
+          "type": "api_account",
+          "slug": "gmail"
+        },
+        {
+          "type": "api_account",
+          "slug": "slack"
+        }
+      ],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
       }
     },
     {
@@ -4424,7 +5305,7 @@
       "name": "Viral Tweet Scout",
       "path": "agents/viral-tweet-scout/",
       "description": "Find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.",
-      "details": "# Viral Tweet Scout\n\nFind viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n\n## What it does\n\n- Act as the Viral Tweet Scout: find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Find viral or genuinely funny X posts in chosen topics.\n- Explain why each worked and suggest angles without posting.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me this week's viral posts in my topics\n- Explain why each of these actually took off\n- Which of these could I riff on in my own voice?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/viral-tweet-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Viral Tweet Scout\n\nFind viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n\n## What it does\n\n- Act as the Viral Tweet Scout: find viral or genuinely funny X posts in chosen topics; explain why each worked and suggest angles without posting.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Find viral or genuinely funny X posts in chosen topics.\n- Explain why each worked and suggest angles without posting.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Send me this week's viral posts in my topics\n- Explain why each of these actually took off\n- Which of these could I riff on in my own voice?\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@petergyang](https://x.com/petergyang) on [Bot Directory](https://botdirectory.ai/bots/viral-tweet-scout/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4435,7 +5316,12 @@
         "X",
         "Research"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@petergyang",
         "url": "https://x.com/petergyang"
@@ -4445,7 +5331,7 @@
       "name": "Voice-Matched Drafts",
       "path": "agents/voice-matched-drafts/",
       "description": "Learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.",
-      "details": "# Voice-Matched Drafts\n\nLearn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n\n## What it does\n\n- Act as the Voice-Matched Drafts: learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **LinkedIn** \u2014 SuperAgent API account `linkedin`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Learn your voice from approved past posts.\n- Draft weekday X and LinkedIn content into Notion without publishing.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Learn my voice from the twenty posts I picked\n- Draft this week's posts into Notion for review\n- Match my rhythm, not just my topics\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/voice-matched-drafts/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# Voice-Matched Drafts\n\nLearn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n\n## What it does\n\n- Act as the Voice-Matched Drafts: learn your voice from approved past posts; draft weekday X and LinkedIn content into Notion without publishing.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **LinkedIn** \u2014 SuperAgent API account `linkedin`.\n- **Notion** \u2014 SuperAgent API account `notion`.\n\n## Sample use cases\n\n- Learn your voice from approved past posts.\n- Draft weekday X and LinkedIn content into Notion without publishing.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Learn my voice from the twenty posts I picked\n- Draft this week's posts into Notion for review\n- Match my rhythm, not just my topics\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@ericzakariasson](https://x.com/ericzakariasson) on [Bot Directory](https://botdirectory.ai/bots/voice-matched-drafts/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T18:23:33.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4459,6 +5345,10 @@
         "Content Creation"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "linkedin"
@@ -4696,7 +5586,7 @@
       "name": "X Account Crew",
       "path": "agents/x-account-crew/",
       "description": "Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.",
-      "details": "# X Account Crew\n\nCoordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n\n## What it does\n\n- Act as the X Account Crew: coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n- **Hacker News** \u2014 built-in capability; no connection slug.\n- **GitHub** \u2014 SuperAgent API account `github`.\n- **Reddit** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs.\n- Keep all outputs as drafts and reports.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is about to pop off in my topics this week?\n- Turn that idea into a ready-to-post hook in my voice\n- Show me the content calendar and who is mentioning me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Axel_bitblaze69](https://x.com/Axel_bitblaze69) on [Bot Directory](https://botdirectory.ai/bots/x-account-crew/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# X Account Crew\n\nCoordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n\n## What it does\n\n- Act as the X Account Crew: coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs; keep all outputs as drafts and reports.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n- **Hacker News** \u2014 built-in capability; no connection slug.\n- **GitHub** \u2014 SuperAgent API account `github`.\n- **Reddit** \u2014 direct API, feed, or required credentials; no canonical registry slug.\n\n## Sample use cases\n\n- Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DMs.\n- Keep all outputs as drafts and reports.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- What is about to pop off in my topics this week?\n- Turn that idea into a ready-to-post hook in my voice\n- Show me the content calendar and who is mentioning me\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@Axel_bitblaze69](https://x.com/Axel_bitblaze69) on [Bot Directory](https://botdirectory.ai/bots/x-account-crew/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4711,6 +5601,10 @@
         "Social Media"
       ],
       "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        },
         {
           "type": "api_account",
           "slug": "github"
@@ -4747,7 +5641,7 @@
       "name": "X Strategist",
       "path": "agents/x-strategist/",
       "description": "Analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.",
-      "details": "# X Strategist\n\nAnalyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n\n## What it does\n\n- Act as the X Strategist: analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 external connection; no canonical registry slug.\n\n## Sample use cases\n\n- Analyze X interactions and nearby accounts.\n- Recommend relationships, content patterns, and focused engagement opportunities.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Who around me on X is worth paying more attention to?\n- Which content themes actually fit my background?\n- Send me a memo on turning interactions into relationships\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/x-strategist/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
+      "details": "# X Strategist\n\nAnalyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n\n## What it does\n\n- Act as the X Strategist: analyze X interactions and nearby accounts; recommend relationships, content patterns, and focused engagement opportunities.\n- Uses the original setup prompt as the workflow brief and starts with a supervised run.\n- Captures the user's preferences, boundaries, approvals, and cadence when applicable.\n\n## Connect first\n\n- **X** \u2014 SuperAgent API account `twitter`.\n\n## Sample use cases\n\n- Analyze X interactions and nearby accounts.\n- Recommend relationships, content patterns, and focused engagement opportunities.\n\n## Getting started\n\n1. Import this directory as an agent template.\n2. Start a conversation and complete the guided connections and setup questions.\n3. Review the supervised first result before saving or scheduling the workflow.\n\n## Example prompts\n\n- Who around me on X is worth paying more attention to?\n- Which content themes actually fit my background?\n- Send me a memo on turning interactions into relationships\n\n## Files\n\n- `CLAUDE.md` \u2014 lightweight operating instructions and first-run connection guidance.\n- `PROMPT.md` \u2014 the original Bot Directory prompt, preserved verbatim.\n- `README.md` \u2014 marketplace metadata, examples, connection mapping, and credits.\n\n## Credits\n\nOriginal prompt credited to [@kevinace](https://x.com/kevinace) on [Bot Directory](https://botdirectory.ai/bots/x-strategist/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).",
       "createdAt": "2026-08-17T19:08:55.000Z",
       "version": "1.0.0",
       "category": "Marketing",
@@ -4758,7 +5652,12 @@
         "X",
         "Workflow Automation"
       ],
-      "works_with": [],
+      "works_with": [
+        {
+          "type": "api_account",
+          "slug": "twitter"
+        }
+      ],
       "developer": {
         "name": "@kevinace",
         "url": "https://x.com/kevinace"

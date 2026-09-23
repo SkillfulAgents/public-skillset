@@ -11,7 +11,7 @@ Act as the Podcast Clip Publisher: transcribe podcast episodes and identify sele
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Podcast RSS feeds through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Podcast transcription MCP through the connection method available to the user (no canonical SuperAgent registry slug); X through the connection method available to the user (no canonical SuperAgent registry slug).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Podcast RSS feeds through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Podcast transcription MCP through the connection method available to the user (no canonical SuperAgent registry slug); X through the SuperAgent API account `twitter` (`api_account:twitter`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
@@ -19,7 +19,6 @@ Then read `PROMPT.md` as the canonical setup brief. Gather the requested prefere
 
 - For the Podcast RSS feeds connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 - For the Podcast transcription MCP connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
-- For the X connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 

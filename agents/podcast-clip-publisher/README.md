@@ -8,7 +8,9 @@ tags:
   - "Podcast transcription MCP"
   - "X"
   - "Content Creation"
-works_with: []
+works_with:
+  - type: api_account
+    slug: twitter
 developer:
   name: "@GavinSBaker"
   url: "https://x.com/GavinSBaker"
@@ -28,7 +30,7 @@ Transcribe podcast episodes and identify selected moments; draft clips and X pub
 
 - **Podcast RSS feeds** — direct API, feed, or required credentials; no canonical registry slug.
 - **Podcast transcription MCP** — external connection; no canonical registry slug.
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 
 ## Sample use cases
 

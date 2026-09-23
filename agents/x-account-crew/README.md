@@ -11,6 +11,8 @@ tags:
   - "Social Media"
 works_with:
   - type: api_account
+    slug: twitter
+  - type: api_account
     slug: github
 developer:
   name: "@Axel_bitblaze69"
@@ -29,7 +31,7 @@ Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DM
 
 ## Connect first
 
-- **X** — external connection; no canonical registry slug.
+- **X** — SuperAgent API account `twitter`.
 - **Hacker News** — built-in capability; no connection slug.
 - **GitHub** — SuperAgent API account `github`.
 - **Reddit** — direct API, feed, or required credentials; no canonical registry slug.
