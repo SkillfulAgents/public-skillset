@@ -3,9 +3,9 @@ category: Agent Creation
 icon: pill
 tags:
   - Onboarding
-  - Agent Builder
-  - Workflow Discovery
-  - Tool Discovery
+  - Starter Tasks
+  - Company Research
+  - First Win
   - Personalization
 works_with:
   - type: api_account
@@ -37,43 +37,46 @@ developer:
 
 # Quick Start
 
-> Stop staring at the “create new agent” screen. Quick Start finds the single most useful first agent for you—and builds it.
+> Give it your company's website and walk away from your first session with a real piece of work done, not a tour.
 
 ## What it does
 
-Quick Start is a first-run guide for people who know they want an agent but do not yet know which workflow is worth automating. It has a short, natural conversation about your work, identifies recurring friction, and turns the best opportunity into a concrete agent.
+Quick Start is a first-session guide for people who are new to Gamut and want to see it do something useful right away. It opens with one question: what is your company's website? It reads the homepage, works out what the company does and who it serves, and asks which role best describes your work there.
 
-With your permission, it can inspect patterns and metadata from one to three connected work tools. It looks for signals such as recurring senders, meeting load, channel activity, and repeated project work; it does not read private content unless you explicitly approve that deeper look. It can also do public research about your role or company when that would sharpen the recommendation.
+From that, it invents four starter tasks that could only exist for your company and your job, each sized to finish in a single session. Some run entirely in the browser with nothing connected; others use a work tool you choose at hand-off. Pick one and Quick Start does it while you watch, showing drafts and asking before anything is sent, posted, or changed.
 
-Rather than returning a generic list of ideas, it ranks a few specific candidates, explains why the strongest one should matter to your week, and helps you refine it. Once you choose, Quick Start creates the new agent in your workspace and gives you a portable copy of its prompt.
+If you already know what you want, skip the website question and just say it. Quick Start drops the onboarding and gets to work. When a task turns out to be something you would want every day or week, it offers once to set it up as an always-on agent and hands you the prompt.
 
 ## What you'll need
 
-- **Accounts:** None are required. Connecting one or more work tools makes its recommendations more specific.
+- **Accounts:** None are required. Browser-based tasks need nothing connected. If the task you pick uses email, calendar, chat, CRM, docs, or a project tracker, Quick Start asks which product you use and requests that one account.
 - **API keys:** None.
-- **Time:** A few minutes for the interview and optional tool scan.
+- **Time:** A minute to give the website and pick a task, then a few minutes of watching it work.
 
 ## Getting started
 
 1. Import the template into Gamut.
-2. The first session starts automatically and runs the `agent-onboarding` skill.
-3. Describe the part of your week you most want to improve.
-4. Optionally connect the tools that best represent that work.
-5. Review the ranked ideas and pick one to build.
+2. The first session starts automatically and runs the `agent-onboarding` skill, which asks for your company's website.
+3. Answer the role question, pick one of the four starter tasks, and approve any account connection the task needs.
 
-Quick Start steps aside after the handoff. Your newly created agent owns the workflow from then on.
+Later sessions behave like a normal assistant. Ask for the next starter task whenever you want another one.
 
 ## Example prompts
 
-- Help me find the first agent worth building
-- Look at my connected tools and spot the recurring work
-- Build the agent we agreed on and hand me the prompt
+- Hey Gamut, I'm new here. What can you do for me?
+- Read our website and suggest four tasks you could do for me today
+- That worked, set it up to run for me every Monday morning
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's durable role, voice, privacy rules, and handoff behavior.
-- `.claude/skills/agent-onboarding/` — the interview, opt-in tool scan, research, recommendation, and agent-creation workflow.
+- `CLAUDE.md` — the agent's durable role, voice, the fixed welcome opener, and style rules.
+- `.claude/skills/agent-onboarding/` — the website read, role and task pickers, hand-off, and the format used when a task becomes an always-on agent.
 
 ## Privacy
 
-Tool inspection is optional and consent-driven. The default scan uses structural signals and metadata rather than message or document bodies. Quick Start explains any deeper access it wants, why it would help, and waits for explicit approval.
+Quick Start reads only your company's public homepage. It connects a work account only when the task you chose needs one, one account at a time, after asking. It never sends, posts, submits, or edits anything in a connected app without showing you first.
+
+## Notes
+
+- On a phone, Quick Start offers only tasks that run through connected apps, since browser work is easier to follow on a laptop.
+- If the website is unreachable or too generic to learn from, it makes one gentle retry and then continues with default roles rather than blocking.

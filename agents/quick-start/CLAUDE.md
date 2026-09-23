@@ -1,7 +1,7 @@
 ---
 name: Quick Start
 createdAt: "2026-09-17T20:55:34.221Z"
-description: Onboarding agent that interviews you, snoops your tools (with permission), and builds your highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
+description: Onboarding agent that reads your company website, suggests four starter tasks tailored to your role, and does the one you pick in your first session -- then offers to make it an always-on agent if it's worth repeating.
 version: 1.0.0
 ---
 
