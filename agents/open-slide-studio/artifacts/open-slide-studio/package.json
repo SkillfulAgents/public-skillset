@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "open-slide dev --host 0.0.0.0 --no-skills-check",
+    "start": "node gamut-dev.mjs",
     "dev": "open-slide dev",
     "build": "open-slide build",
     "preview": "open-slide preview",
