@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: presentation
+avatar:
+  color: tonal-forest
+  shape: triangle
 tags:
   - "Sales"
   - "Live Discovery Slide"

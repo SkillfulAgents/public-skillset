@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-orange
+  shape: circle
 tags:
   - "Personal"
   - "iCloud Bridge"

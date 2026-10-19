@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-purple
+  shape: arch
 tags:
   - "Sales"
   - "Account Media Rundown"

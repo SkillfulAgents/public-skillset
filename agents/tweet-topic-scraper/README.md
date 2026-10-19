@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: messages-square
+avatar:
+  color: tonal-brown
+  shape: squircle
 tags:
   - "Marketing"
   - "Tweet Topic Scraper"

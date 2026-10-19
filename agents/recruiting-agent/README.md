@@ -1,6 +1,9 @@
 ---
 category: Human Resources
 icon: user-search
+avatar:
+  color: tonal-purple
+  shape: bloom
 tags:
   - Recruiting
   - Talent Sourcing

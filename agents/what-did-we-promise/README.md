@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-blue
+  shape: squircle
 tags:
   - "Customer Success"
   - "What Did We Promise"

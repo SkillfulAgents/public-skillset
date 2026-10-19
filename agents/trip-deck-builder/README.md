@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: plane
+avatar:
+  color: tonal-green
+  shape: pill
 tags:
   - "Personal"
   - "Trip Deck Builder"

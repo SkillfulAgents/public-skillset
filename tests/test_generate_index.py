@@ -13,6 +13,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
+from avatars import default_avatar  # noqa: E402
 from generate_index import build_agent_entry, build_index, parse_document  # noqa: E402
 
 
@@ -110,6 +111,9 @@ description: README description
 version: 1.0.0
 category: Productivity
 icon: inbox
+avatar:
+  color: tonal-teal
+  shape: pill
 tags:
   - readme-tag
 works_with:
@@ -151,6 +155,7 @@ developer:
         self.assertEqual(entry["version"], "2.0.0")
         self.assertEqual(entry["category"], "Productivity")
         self.assertEqual(entry["icon"], "presentation")
+        self.assertEqual(entry["avatar"], {"color": "tonal-teal", "shape": "pill"})
         self.assertEqual(entry["tags"], [])
         self.assertEqual(entry["works_with"], [{"type": "api_account", "slug": "gmail"}])
         self.assertEqual(entry["developer"], {"name": "CLAUDE Developer"})
@@ -192,6 +197,10 @@ developer:
             "icon: Sparkles": "icon",
             'icon: "inbox "': "icon",
             "icon:\n  - inbox": "icon",
+            "avatar: tonal-teal": "avatar",
+            "avatar:\n  color: tonal-teal": "avatar",
+            "avatar:\n  color: teal\n  shape: pill": "avatar.color",
+            "avatar:\n  color: tonal-teal\n  shape: star": "avatar.shape",
             "developer:\n  url: https://example.com": "developer.name",
             "developer:\n  name: Example\n  url: 'javascript:alert(1)'": "developer.url",
         }
@@ -304,8 +313,15 @@ metadata:
                 self.assertTrue(agent["version"])
                 self.assertTrue(agent["category"])
                 self.assertTrue(agent["icon"])
+                self.assertIn("avatar", agent)
                 self.assertTrue(agent["tags"])
                 self.assertTrue(agent["developer"].get("name"))
+
+
+    def test_default_avatar_matches_superagent_fallback(self) -> None:
+        # SuperAgent drew this template as a blue pill before it had an avatar;
+        # the defaults must reproduce its hash so cards don't change on adoption.
+        self.assertEqual(default_avatar("E2E Onboarding Template"), {"color": "tonal-blue", "shape": "pill"})
 
 
 if __name__ == "__main__":

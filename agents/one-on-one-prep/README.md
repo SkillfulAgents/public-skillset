@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-black
+  shape: diamond
 tags:
   - "Productivity"
   - "One-On-One Prep"

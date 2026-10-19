@@ -1,6 +1,9 @@
 ---
 category: "{{CATEGORY}}"
 icon: {{LUCIDE_ICON}}
+avatar:
+  color: {{AVATAR_COLOR}}
+  shape: {{AVATAR_SHAPE}}
 tags:
   - "{{CATEGORY}}"
   - "{{AGENT_NAME}}"

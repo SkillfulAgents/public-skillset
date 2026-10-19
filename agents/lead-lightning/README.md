@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: zap
+avatar:
+  color: tonal-blush
+  shape: pill
 tags:
   - Inbound Leads
   - Same-Day Booking

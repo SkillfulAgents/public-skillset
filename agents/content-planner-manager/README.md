@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-amber
+  shape: diamond
 tags:
   - "Marketing"
   - "Content Planner Manager"

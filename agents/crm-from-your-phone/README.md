@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-chocolate
+  shape: bloom
 tags:
   - "Sales"
   - "CRM From Your Phone"

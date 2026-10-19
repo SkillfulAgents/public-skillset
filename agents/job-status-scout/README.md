@@ -1,6 +1,9 @@
 ---
 category: Customer Success
 icon: map-pin
+avatar:
+  color: tonal-white
+  shape: triangle
 tags:
   - Home Services
   - Customer Updates

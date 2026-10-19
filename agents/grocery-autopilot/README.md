@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: house
+avatar:
+  color: tonal-brown
+  shape: triangle
 tags:
   - "Personal"
   - "Grocery Autopilot"

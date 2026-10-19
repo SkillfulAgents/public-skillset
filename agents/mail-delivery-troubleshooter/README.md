@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: mail
+avatar:
+  color: tonal-amber
+  shape: triangle
 tags:
   - "Ops"
   - "Mail Delivery Troubleshooter"

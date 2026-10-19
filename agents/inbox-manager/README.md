@@ -1,6 +1,9 @@
 ---
 category: Email & Communication
 icon: inbox
+avatar:
+  color: tonal-black
+  shape: arch
 tags:
   - Email Management
   - Inbox Zero

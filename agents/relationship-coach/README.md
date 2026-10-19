@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-cobalt
+  shape: arch
 tags:
   - "Personal"
   - "Relationship Coach"
