@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-teal
+  shape: arch
 tags:
   - "Marketing"
   - "Episode Launch Crew"

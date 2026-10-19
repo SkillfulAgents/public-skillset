@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: calculator
+avatar:
+  color: tonal-grey
+  shape: triangle
 tags:
   - "Ops"
   - "Accounting Agent"

@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: mail
+avatar:
+  color: tonal-red
+  shape: arch
 tags:
   - "Productivity"
   - "Important Email Triage"

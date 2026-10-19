@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-blush
+  shape: hexagon
 tags:
   - "Sales"
   - "Call Coach"

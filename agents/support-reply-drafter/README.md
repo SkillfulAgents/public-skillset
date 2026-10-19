@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-chocolate
+  shape: circle
 tags:
   - "Customer Success"
   - "Support Reply Drafter"

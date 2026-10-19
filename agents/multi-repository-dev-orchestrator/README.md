@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: code-2
+avatar:
+  color: tonal-amber
+  shape: triangle
 tags:
   - "Productivity"
   - "Multi-Repository Dev Orchestrator"

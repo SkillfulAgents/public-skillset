@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: search
+avatar:
+  color: tonal-red
+  shape: diamond
 tags:
   - "Personal"
   - "Find the Signal"

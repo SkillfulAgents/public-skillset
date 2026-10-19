@@ -1,6 +1,9 @@
 ---
 category: {{CATEGORY}}
 icon: {{LUCIDE_ICON}}
+avatar:
+  color: {{AVATAR_COLOR}}
+  shape: {{AVATAR_SHAPE}}
 tags:
   - {{TAG_1}}
   - {{TAG_2}}

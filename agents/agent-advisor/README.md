@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-orange
+  shape: bloom
 tags:
   - "Productivity"
   - "Agent Advisor"

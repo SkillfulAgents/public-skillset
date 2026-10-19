@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: calendar-check
+avatar:
+  color: tonal-red
+  shape: diamond
 tags:
   - Inbound Leads
   - Lead Qualification

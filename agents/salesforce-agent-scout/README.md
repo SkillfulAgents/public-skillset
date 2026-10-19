@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-green
+  shape: triangle
 tags:
   - "Productivity"
   - "Salesforce Agent Scout"

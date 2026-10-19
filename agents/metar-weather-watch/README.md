@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-blush
+  shape: circle
 tags:
   - "Productivity"
   - "METAR Weather Watch"

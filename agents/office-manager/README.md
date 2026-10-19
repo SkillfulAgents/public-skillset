@@ -1,6 +1,9 @@
 ---
 category: Operations
 icon: shopping-cart
+avatar:
+  color: tonal-black
+  shape: triangle
 tags:
   - Office Management
   - Workplace Operations

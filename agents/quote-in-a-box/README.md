@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: package
+avatar:
+  color: tonal-white
+  shape: squircle
 tags:
   - Quotes
   - Rate Card Pricing
