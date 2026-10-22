@@ -124,6 +124,10 @@ Owns out-of-scope asks: maps them to the SOW and drafts the change order before 
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+### Team Brain
+
+Builds and keeps your team's shared brain, a folder of pages people and agents read to understand the team, with you in a collaborative research loop, then maintains it daily and improves itself.
+
 ### Vendor Nudge
 
 Owns late suppliers and bills you owe. Drafts the nudge and the pay list. Never pays. Opposite of Invoice Ask. Built for 1-15 person micro-owners juggling late POs and bills due this week.
