@@ -12,8 +12,13 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from avatars import default_avatar  # noqa: E402
 
 
 CATEGORY_ICONS = {
@@ -95,6 +100,19 @@ def choose_icon(name: str, category: str) -> str:
         if any(needle in lowered for needle in needles):
             return icon
     return CATEGORY_ICONS[category]
+
+
+README_AVATAR_RE = re.compile(r"^avatar:\n  color: (\S+)\n  shape: (\S+)$", re.MULTILINE)
+
+
+def choose_avatar(readme: Path, name: str) -> dict[str, str]:
+    """Keep the avatar a previous import (or a person) left in the README;
+    otherwise start from the name-hashed default."""
+    if readme.is_file():
+        match = README_AVATAR_RE.search(readme.read_text(encoding="utf-8"))
+        if match:
+            return {"color": match.group(1), "shape": match.group(2)}
+    return default_avatar(name)
 
 
 def normalize_category(category: str) -> str:
@@ -332,6 +350,7 @@ def render_readme(
     mappings: dict[str, dict[str, str]],
     works_with: list[dict[str, str]],
     icon: str,
+    avatar: dict[str, str],
 ) -> str:
     category = normalize_category(template["sourceCategory"])
     creator_name = template["creatorCredit"]
@@ -341,6 +360,9 @@ def render_readme(
         "---",
         f"category: {yaml_string(category)}",
         f"icon: {icon}",
+        "avatar:",
+        f"  color: {avatar['color']}",
+        f"  shape: {avatar['shape']}",
         *yaml_string_list("tags", template["tags"]),
     ]
     if works_with:
@@ -566,11 +588,12 @@ def import_templates(
             works_with.append({"type": connection[0], "slug": connection[1]})
 
         icon = choose_icon(template["name"], normalize_category(template["sourceCategory"]))
+        avatar = choose_avatar(target / "README.md", template["name"])
         prompt = template["prompt"]
         (target / "CLAUDE.md").write_text(render_claude(template, mappings), encoding="utf-8")
         (target / "PROMPT.md").write_text(prompt + "\n", encoding="utf-8")
         (target / "README.md").write_text(
-            render_readme(template, mappings, works_with, icon), encoding="utf-8"
+            render_readme(template, mappings, works_with, icon, avatar), encoding="utf-8"
         )
 
         manifest_entries.append(
@@ -598,6 +621,7 @@ def import_templates(
                 "connectFirst": template["connectFirst"],
                 "worksWith": works_with,
                 "icon": icon,
+                "avatar": avatar,
                 "tags": template["tags"],
                 "detailUrl": template["detailUrl"],
                 "sourceFile": f"bots/{template['sourceSlug']}.md",

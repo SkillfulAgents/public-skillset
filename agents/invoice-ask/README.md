@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: badge-dollar-sign
+avatar:
+  color: tonal-orange
+  shape: pill
 tags:
   - Accounts Receivable
   - Invoice Reminders

@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-cobalt
+  shape: pill
 tags:
   - "Productivity"
   - "Agent Team Chief of Staff"

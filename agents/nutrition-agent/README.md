@@ -1,6 +1,9 @@
 ---
 category: Health & Fitness
 icon: apple
+avatar:
+  color: tonal-orange
+  shape: arch
 tags:
   - Nutrition
   - Meal Logging

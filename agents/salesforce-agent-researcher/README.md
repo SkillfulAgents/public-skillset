@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-grey
+  shape: diamond
 tags:
   - "Productivity"
   - "Salesforce Agent Researcher"

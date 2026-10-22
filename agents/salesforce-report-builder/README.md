@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-red
+  shape: hexagon
 tags:
   - "Sales"
   - "Salesforce Report Builder"

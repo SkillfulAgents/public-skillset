@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-blue
+  shape: hexagon
 tags:
   - "Personal"
   - "Campsite Watcher"

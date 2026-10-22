@@ -1,6 +1,9 @@
 ---
 category: Marketing
 icon: presentation
+avatar:
+  color: tonal-red
+  shape: triangle
 tags:
   - Client Reporting
   - Monthly Recaps

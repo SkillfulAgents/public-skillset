@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: video
+avatar:
+  color: tonal-green
+  shape: pill
 tags:
   - "Sales"
   - "Demo Clip Library"

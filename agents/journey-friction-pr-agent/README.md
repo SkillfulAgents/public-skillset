@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-green
+  shape: diamond
 tags:
   - "Ops"
   - "Journey Friction PR Agent"

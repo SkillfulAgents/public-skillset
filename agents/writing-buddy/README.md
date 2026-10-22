@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: pen-line
+avatar:
+  color: tonal-red
+  shape: squircle
 tags:
   - "Productivity"
   - "Writing Buddy"

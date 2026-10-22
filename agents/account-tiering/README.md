@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-green
+  shape: pill
 tags:
   - "Sales"
   - "Account Tiering"

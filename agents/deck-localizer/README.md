@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: presentation
+avatar:
+  color: tonal-white
+  shape: triangle
 tags:
   - "Sales"
   - "Deck Localizer"

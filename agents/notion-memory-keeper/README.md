@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: book-open
+avatar:
+  color: tonal-black
+  shape: diamond
 tags:
   - "Productivity"
   - "Notion Memory Keeper"

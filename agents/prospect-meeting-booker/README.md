@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: calendar-check
+avatar:
+  color: tonal-forest
+  shape: circle
 tags:
   - "Sales"
   - "Prospect Meeting Booker"

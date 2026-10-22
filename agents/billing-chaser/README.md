@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: badge-dollar-sign
+avatar:
+  color: tonal-blue
+  shape: hexagon
 tags:
   - Agency Billing
   - Unbilled Time

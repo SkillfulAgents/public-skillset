@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 
 from generate_index import (  # noqa: E402
+    _avatar_field,
     _developer_field,
     _icon_field,
     _tags_field,
@@ -30,7 +31,7 @@ from generate_index import (  # noqa: E402
     read_document,
 )
 
-README_KEYS = ["category", "icon", "tags", "works_with", "developer"]
+README_KEYS = ["category", "icon", "avatar", "tags", "works_with", "developer"]
 CLAUDE_ONLY_KEYS = {"name", "description", "createdAt", "version"}
 GENERATED_KEYS = {"path", "details"}
 
@@ -177,6 +178,12 @@ def check_frontmatter(metadata: dict, report: Report) -> None:
         icon = _icon_field(metadata, source)
         if not icon:
             report.error("'icon' is required and must be a Lucide catalog name")
+    except ValueError as exc:
+        report.error(str(exc))
+
+    try:
+        if not _avatar_field(metadata, source):
+            report.error("'avatar' is required: a 'color' and a 'shape' from SuperAgent's avatar palette")
     except ValueError as exc:
         report.error(str(exc))
 

@@ -139,10 +139,11 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                 readme_metadata, readme_body = read_document(readme_path)
                 self.assertEqual(
                     set(readme_metadata),
-                    {"category", "icon", "tags", "works_with", "developer"},
+                    {"category", "icon", "avatar", "tags", "works_with", "developer"},
                 )
                 self.assertEqual(readme_metadata.get("category"), template["category"])
                 self.assertEqual(readme_metadata.get("icon"), template["icon"])
+                self.assertEqual(readme_metadata.get("avatar"), template["avatar"])
                 self.assertEqual(readme_metadata.get("tags"), template["tags"])
                 self.assertGreaterEqual(len(readme_metadata["tags"]), 4)
                 self.assertLessEqual(len(readme_metadata["tags"]), 7)
@@ -170,6 +171,7 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                 self.assertEqual(effective["version"], "1.0.0")
                 self.assertEqual(effective["category"], template["category"])
                 self.assertEqual(effective["icon"], template["icon"])
+                self.assertEqual(effective["avatar"], template["avatar"])
                 self.assertEqual(effective["tags"], template["tags"])
                 self.assertEqual(effective["works_with"], expected_connections)
                 self.assertEqual(effective["developer"], template["creator"])

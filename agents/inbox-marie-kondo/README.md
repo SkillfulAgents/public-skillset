@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: mail
+avatar:
+  color: tonal-cobalt
+  shape: arch
 tags:
   - "Personal"
   - "Inbox Marie Kondo"

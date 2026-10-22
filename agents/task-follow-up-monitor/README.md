@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-forest
+  shape: arch
 tags:
   - "Productivity"
   - "Task Follow-Up Monitor"

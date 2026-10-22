@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-chocolate
+  shape: hexagon
 tags:
   - "Marketing"
   - "Competitor Website Watch"

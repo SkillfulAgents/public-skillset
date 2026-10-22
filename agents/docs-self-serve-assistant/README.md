@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: book-open
+avatar:
+  color: tonal-amber
+  shape: circle
 tags:
   - "Customer Success"
   - "Docs Self-Serve Assistant"

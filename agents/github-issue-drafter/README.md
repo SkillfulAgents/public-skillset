@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: code-2
+avatar:
+  color: tonal-black
+  shape: squircle
 tags:
   - "Productivity"
   - "GitHub Issue Drafter"

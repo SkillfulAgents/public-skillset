@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-green
+  shape: circle
 tags:
   - "Productivity"
   - "Technology Study Guide"

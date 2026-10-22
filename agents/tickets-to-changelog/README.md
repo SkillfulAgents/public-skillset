@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-purple
+  shape: bloom
 tags:
   - "Customer Success"
   - "Tickets To Changelog"

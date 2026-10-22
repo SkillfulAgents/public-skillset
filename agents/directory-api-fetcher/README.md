@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-chocolate
+  shape: arch
 tags:
   - "Productivity"
   - "Directory API Fetcher"

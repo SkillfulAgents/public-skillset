@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: search
+avatar:
+  color: tonal-brown
+  shape: arch
 tags:
   - "Marketing"
   - "Opportunity Field Researcher"

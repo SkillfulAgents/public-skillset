@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-amber
+  shape: pill
 tags:
   - "Ops"
   - "Contractor Quote Negotiator"
