@@ -135,7 +135,8 @@ When you judge it ready, say so, show the final structure and what's still open,
 2. Move the unresolved leads and questions to your memory, marked for maintenance. Make sure `_brain/sources.md` lists every source with how deeply it was read and when.
 3. Make sure maintenance will have everything it depends on, written down rather than only in this conversation: which accounts map to which sources, the reporting channel, and the in-scope list.
 4. Mark the build done in your memory, even if the session drifted into other topics. A build left half-closed will re-ask settled questions next time.
-5. Ask the user whether to announce the brain to the team, and through which channel. If they say yes, keep it to a few lines: what's in the brain, how to contribute (message you), and that nothing is ever deleted, only archived.
+5. Write the first sync summary, the way the `maintain-brain` skill's Summarize step describes, with what the build added.
+6. Ask the user whether to announce the brain to the team, and through which channel. If they say yes, keep it to a few lines: what's in the brain, how to contribute (message you), and that nothing is ever deleted, only archived.
 
 ## Adding a source later
 
