@@ -5,6 +5,8 @@ description: The brain's scheduled upkeep, plus the agent's own improvement. Ret
 
 # Maintain the brain
 
+**Read-only here?** If the brain location is marked `(read only)` in your system prompt, follow *When the brain is read-only here* in your system prompt and stop.
+
 Follow the system prompt. This skill adds only what's specific to upkeep. It usually runs with nobody watching, so follow the system prompt's rules for unattended sessions.
 
 ```
