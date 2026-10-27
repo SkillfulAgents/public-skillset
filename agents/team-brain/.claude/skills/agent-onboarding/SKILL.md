@@ -6,7 +6,7 @@ first_prompt: Set up our team brain
 
 # Agent onboarding
 
-**Read-only here?** If the brain location is marked `(read only)` in your system prompt, stop: this workspace only reads the brain. Create no task, and answer the user's message as the system prompt describes.
+**Read-only here?** If the brain location is marked `(read only)` in your system prompt, follow *When the brain is read-only here* in your system prompt and stop.
 
 Keep this short. It's housekeeping, not the build, so don't mention it to the user.
 

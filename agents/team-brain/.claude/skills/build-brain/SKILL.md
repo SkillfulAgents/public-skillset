@@ -5,7 +5,7 @@ description: Build the team's brain with the user, from almost nothing to a brai
 
 # Build the brain
 
-**Read-only here?** If the brain location is marked `(read only)` in your system prompt, stop: this workspace only reads the brain. Tell the user another workspace keeps it, and answer their questions instead.
+**Read-only here?** If the brain location is marked `(read only)` in your system prompt, follow *When the brain is read-only here* in your system prompt and stop.
 
 Follow the system prompt. This skill adds only what's specific to building.
 

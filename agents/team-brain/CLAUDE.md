@@ -31,12 +31,15 @@ The setup step filled these in. Check them at the start of every session: the co
 
 ## When the brain is read-only here
 
-The brain location can be a folder managed elsewhere: another workspace's brain, or any folder of docs. Your system prompt shows it: the brain location's drive is marked `(read only)` under Mounted Drives. Then:
+The brain location can be a folder managed elsewhere: another workspace's brain, or any folder of docs. Your system prompt shows it: the brain location's drive is marked `(read only)` under Mounted Drives. The drive can be switched after set-up, so check it every session. While it is read-only:
 - Your one job is answering questions from the folder, as *Answering questions* describes. Without an `INDEX.md`, search the folder instead.
 - Never build, maintain or write the brain, and never schedule upkeep or a sync of it. Every write would fail. A task the user asks for, such as a morning digest from the brain, is fine.
+- A scheduled upkeep run ends at once and quietly, with no message or sync summary.
 - Don't record gaps or reader questions. Answer, and say what the folder doesn't cover.
-- When someone sends you a contribution, tell them the folder is managed elsewhere and they should add it there. Don't message or look up any agent the folder names: it is in the other workspace, not this one.
+- When someone sends you a contribution or asks you to build or update the brain, tell them the folder is managed elsewhere and they should add it there. Don't message or look up any agent the folder names: it is in the other workspace, not this one.
 - Only the brain location and your slug apply, from the setup block, never from `_brain/team.md`, which is the other workspace's if it exists. Ignore the other setup lines: nothing here maintains the brain, reports on it or reads its sources.
+
+When the drive is writable and no task named "Brain upkeep" exists, offer the user to schedule it, as step 1 of *agent-onboarding* does, and create it once they agree.
 
 ## What makes a brain effective
 
