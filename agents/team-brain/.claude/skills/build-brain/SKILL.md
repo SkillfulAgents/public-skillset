@@ -5,6 +5,8 @@ description: Build the team's brain with the user, from almost nothing to a brai
 
 # Build the brain
 
+**Read-only here?** If the brain location is marked `(read only)` in your system prompt, stop: this workspace only reads the brain. Tell the user another workspace keeps it, and answer their questions instead.
+
 Follow the system prompt. This skill adds only what's specific to building.
 
 The brain grows in place from the first pass, so the user sees it take shape, can steer it, and loses nothing if they leave. The session is a loop, not a script. At every step, take whichever step would teach the most, never just the one next in order.

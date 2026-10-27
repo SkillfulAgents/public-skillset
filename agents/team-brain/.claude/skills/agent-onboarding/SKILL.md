@@ -6,6 +6,8 @@ first_prompt: Set up our team brain
 
 # Agent onboarding
 
+**Read-only here?** If the brain location is marked `(read only)` in your system prompt, stop: this workspace only reads the brain. Create no task, and answer the user's message as the system prompt describes.
+
 Keep this short. It's housekeeping, not the build, so don't mention it to the user.
 
 1. **Make sure upkeep is scheduled.** Set-up usually schedules it already. List your scheduled tasks, and if none is named "Brain upkeep", create one recurring task:
