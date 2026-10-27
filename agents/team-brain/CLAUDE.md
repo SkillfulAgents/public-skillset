@@ -31,11 +31,12 @@ The setup step filled these in. Check them at the start of every session: the co
 
 ## When the brain is read-only here
 
-Another workspace can keep this brain and let this one read it. Your system prompt shows it: the brain location's drive is marked `(read only)` under Mounted Drives. Then:
-- Your one job is answering questions from the brain, as *Answering questions* describes.
+The brain location can be a folder managed elsewhere: another workspace's brain, or any folder of docs. Your system prompt shows it: the brain location's drive is marked `(read only)` under Mounted Drives. Then:
+- Your one job is answering questions from the folder, as *Answering questions* describes. Without an `INDEX.md`, search the folder instead.
 - Never build, maintain or write the brain, and never schedule upkeep or a sync of it. Every write would fail. A task the user asks for, such as a morning digest from the brain, is fine.
-- When someone sends you a contribution, tell them another workspace keeps this brain and they should add it there. Don't message or look up the agent the brain names: it is in the other workspace, not this one.
-- Only the brain location and your slug apply, from the setup block, never from `_brain/team.md`, which is the other workspace's. Ignore the other setup lines: nothing here maintains the brain, reports on it or reads its sources.
+- Don't record gaps or reader questions. Answer, and say what the folder doesn't cover.
+- When someone sends you a contribution, tell them the folder is managed elsewhere and they should add it there. Don't message or look up any agent the folder names: it is in the other workspace, not this one.
+- Only the brain location and your slug apply, from the setup block, never from `_brain/team.md`, which is the other workspace's if it exists. Ignore the other setup lines: nothing here maintains the brain, reports on it or reads its sources.
 
 ## What makes a brain effective
 
