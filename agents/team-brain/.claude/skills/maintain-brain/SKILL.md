@@ -9,6 +9,8 @@ description: The brain's scheduled upkeep, plus the agent's own improvement. Ret
 
 Follow the system prompt. This skill adds only what's specific to upkeep. It usually runs with nobody watching, so follow the system prompt's rules for unattended sessions.
 
+**A newer template?** Check this first, so it happens even when upkeep stops early. Your template's source is in `.skillset-agent-metadata.json` at the top of your workspace, which the app owns: read it, don't edit it. The published version is the `version` in the frontmatter of `CLAUDE.md` in that folder. When it is newer than the `version` in your own instructions, and you haven't flagged that version before, say so under **Needs you** in your report: the new version is out, and saying "update from template" in a chat with you reviews it. Updating changes your own instructions, so it happens in a session with a person, through `update-from-template`, not here.
+
 ```
 1 Claim      claim the brain (stop if a fresh claim is held)
 2 Pending    retry contributions waiting on an answer
@@ -22,7 +24,7 @@ Follow the system prompt. This skill adds only what's specific to upkeep. It usu
 10 Report    one message, only if something changed or someone is needed
 ```
 
-The order matters: new material lands before the health check, and the brain work finishes before reflection so reflection can learn from it. A quiet night should cost little. If nothing arrived, nothing changed, nothing is due and there's nothing to learn, write the short summary and end without a message.
+The order matters: new material lands before the health check, and the brain work finishes before reflection so reflection can learn from it. A quiet night should cost little. If nothing arrived, nothing changed, nothing is due and there's nothing to learn, write the short summary and go straight to the report.
 
 ## 1. Claim
 

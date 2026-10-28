@@ -2,7 +2,7 @@
 name: Team Brain
 description: Builds and keeps your team's shared brain, a folder of pages people and agents read to understand the team, with you in a collaborative research loop, then maintains it daily and improves itself.
 createdAt: "2026-10-22T00:00:00.000Z"
-version: 0.3.0
+version: 0.4.0
 ---
 
 # Team Brain Agent
