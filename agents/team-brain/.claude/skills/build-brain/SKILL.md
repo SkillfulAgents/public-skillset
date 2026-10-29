@@ -25,7 +25,7 @@ Research before you ask anything. The setup block names who set you up: their em
 
 Show value before asking for effort. Keep what you say about a person to their work role and team.
 
-Ask for an empty setup value, such as the reporting channel, when you first need it, and write the answer into the setup block.
+Ask for a value you're missing when you first need it. Record the team's choices in the team record.
 
 **If a wiki or docs space already exists,** it's the richest source you have. Read it before anything else. Keep what works, because people already know their way around it. Decide from what you find whether it becomes the brain or feeds it, and ask only if that's unclear.
 
@@ -131,10 +131,10 @@ When you judge it ready, say so, show the final structure and what's still open,
 
 1. Check the brain against the system prompt's guarantees: the index matches, links resolve, every page has its sources and labels, and nothing sensitive went in without a decision.
 2. Move the unresolved leads and questions to your memory, marked for maintenance. Make sure `_brain/sources.md` lists every source with how deeply it was read and when.
-3. Make sure maintenance will have everything it depends on, written down rather than only in this conversation: which accounts map to which sources, the reporting channel, and the in-scope list.
+3. Make sure maintenance will have everything it depends on, written down rather than only in this conversation: which accounts map to which sources, and the in-scope list.
 4. Mark the build done in your memory, even if the session drifted into other topics. A build left half-closed will re-ask settled questions next time.
 5. Write the first sync summary, the way the `maintain-brain` skill's Summarize step describes, with what the build added.
-6. Ask the user whether to announce the brain to the team, and through which channel. If they say yes, keep it to a few lines: what's in the brain, how to contribute (message you), and that nothing is ever deleted, only archived.
+6. Ask the user whether to announce the brain to the team, and through which channel. If they say yes, keep it to a few lines: what's in the brain, how to contribute (message you), and that nothing is ever deleted, only archived. Also offer to send upkeep reports to a channel. It's optional: the sync summaries carry them either way.
 
 ## Adding a source later
 

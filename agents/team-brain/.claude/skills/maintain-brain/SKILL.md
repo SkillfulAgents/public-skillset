@@ -55,6 +55,7 @@ Check the brain against the system prompt's guarantees and the team's defaults (
 | Page past its `until` date, or its project, ticket or PR has ended | Archive it, giving the end as the reason. |
 | Source a reader can't open (private notes, a moved file) | Replace it with the original link, finding moved files by name. If there's none, mark the page `inferred`. |
 | Page missing its summary, sources, verified label or last-checked date | Fill them in from the page's sources. Where that's impossible, label the page honestly. |
+| Frontmatter that doesn't parse as YAML | Quote its string values. Change no wording. |
 | A page that changes over time but has no timeline | Add one, with a first entry from the page's sources. |
 | Folder without a README (outside `_brain/`), or an index that doesn't match the brain | Write the README. Rebuild the index in step 7. |
 | Empty folder | Remove it and log it. There's nothing to archive. |
@@ -152,4 +153,4 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
 
 ## 10. Report
 
-Send one message for the whole run through the reporting channel, in the system prompt's format: the brain changes and skill changes under **Applied**, decisions under **Needs you**, and new accounts and failing sources one line each. If nothing changed and nobody is needed, send nothing.
+If the team chose a reporting channel, send one message there for the whole run, in the system prompt's format: the brain changes and skill changes under **Applied**, decisions under **Needs you**, and new accounts and failing sources one line each. If nothing changed and nobody is needed, send nothing.
