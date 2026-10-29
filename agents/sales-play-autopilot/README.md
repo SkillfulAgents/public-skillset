@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-amber
+  shape: bloom
 tags:
   - "Sales"
   - "Sales Play Autopilot"

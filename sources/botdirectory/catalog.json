@@ -40,6 +40,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "bloom"
+      },
       "tags": [
         "Customer Success",
         "Account Expert",
@@ -74,6 +78,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "diamond"
+      },
       "tags": [
         "Marketing",
         "Account Growth Coach",
@@ -110,6 +118,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "arch"
+      },
       "tags": [
         "Sales",
         "Account Media Rundown",
@@ -147,6 +159,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "pill"
+      },
       "tags": [
         "Sales",
         "Account Tiering",
@@ -181,6 +197,10 @@
         }
       ],
       "icon": "calculator",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "triangle"
+      },
       "tags": [
         "Ops",
         "Accounting Agent",
@@ -213,6 +233,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "triangle"
+      },
       "tags": [
         "Marketing",
         "Ad Pacing Digest",
@@ -245,6 +269,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "arch"
+      },
       "tags": [
         "Marketing",
         "Ad Test Backlog",
@@ -284,6 +312,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "pill"
+      },
       "tags": [
         "Marketing",
         "AEO Content Autopilot",
@@ -315,6 +347,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "bloom"
+      },
       "tags": [
         "Productivity",
         "Agent Advisor",
@@ -343,6 +379,10 @@
       ],
       "worksWith": [],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "circle"
+      },
       "tags": [
         "Ops",
         "Agent Conflict Resolver",
@@ -376,6 +416,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "diamond"
+      },
       "tags": [
         "Ops",
         "Agent Fleet Auditor",
@@ -404,6 +448,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "pill"
+      },
       "tags": [
         "Productivity",
         "Agent Team Chief of Staff",
@@ -440,6 +488,10 @@
         }
       ],
       "icon": "user-search",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Applicant Screener",
@@ -472,6 +524,10 @@
         }
       ],
       "icon": "calendar-check",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "triangle"
+      },
       "tags": [
         "Personal",
         "Appointment Slot Watcher",
@@ -509,6 +565,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "circle"
+      },
       "tags": [
         "Marketing",
         "Article and Newsletter Writer",
@@ -542,6 +602,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "diamond"
+      },
       "tags": [
         "Marketing",
         "Article Idea Briefing",
@@ -588,6 +652,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "Automation Scout",
@@ -620,6 +688,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Biblical Accuracy Study Agent",
@@ -652,6 +724,10 @@
         }
       ],
       "icon": "calculator",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "triangle"
+      },
       "tags": [
         "Ops",
         "Bookkeeping Auditor",
@@ -683,6 +759,10 @@
         }
       ],
       "icon": "presentation",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "squircle"
+      },
       "tags": [
         "Sales",
         "Brand Deck Keeper",
@@ -709,6 +789,10 @@
       ],
       "worksWith": [],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Call Coach",
@@ -746,6 +830,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Call Follow-Up Drafter",
@@ -784,6 +872,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Call Follow-Up Nudge",
@@ -816,6 +908,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "hexagon"
+      },
       "tags": [
         "Personal",
         "Campsite Watcher",
@@ -842,6 +938,10 @@
       ],
       "worksWith": [],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "pill"
+      },
       "tags": [
         "Ops",
         "Chain Fact Checker",
@@ -873,6 +973,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "squircle"
+      },
       "tags": [
         "Personal",
         "Charge Disputer",
@@ -914,6 +1018,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "triangle"
+      },
       "tags": [
         "Ops",
         "Chief Of Staff",
@@ -962,6 +1070,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "diamond"
+      },
       "tags": [
         "Ops",
         "Chief of Staff Briefing",
@@ -1006,6 +1118,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "hexagon"
+      },
       "tags": [
         "Customer Success",
         "Churn Early Warning",
@@ -1039,6 +1155,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "pill"
+      },
       "tags": [
         "Personal",
         "Class Action Matcher",
@@ -1070,6 +1190,10 @@
         }
       ],
       "icon": "code-2",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "arch"
+      },
       "tags": [
         "Ops",
         "Codebase Hardening Auditor",
@@ -1107,6 +1231,10 @@
         }
       ],
       "icon": "messages-square",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "diamond"
+      },
       "tags": [
         "Ops",
         "Community Ops Crew",
@@ -1140,6 +1268,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "squircle"
+      },
       "tags": [
         "Marketing",
         "Competitor Pricing Watch",
@@ -1172,6 +1304,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "hexagon"
+      },
       "tags": [
         "Marketing",
         "Competitor Website Watch",
@@ -1205,6 +1341,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "squircle"
+      },
       "tags": [
         "Marketing",
         "Content Idea Generator",
@@ -1237,6 +1377,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "diamond"
+      },
       "tags": [
         "Marketing",
         "Content Planner Manager",
@@ -1268,6 +1412,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "circle"
+      },
       "tags": [
         "Personal",
         "Contract Diff",
@@ -1305,6 +1453,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "pill"
+      },
       "tags": [
         "Ops",
         "Contractor Quote Negotiator",
@@ -1333,6 +1485,10 @@
       ],
       "worksWith": [],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "Conversion Tracking Setup",
@@ -1369,6 +1525,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "bloom"
+      },
       "tags": [
         "Sales",
         "CRM From Your Phone",
@@ -1406,6 +1566,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "bloom"
+      },
       "tags": [
         "Productivity",
         "Daily Briefing",
@@ -1438,6 +1602,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "arch"
+      },
       "tags": [
         "Productivity",
         "Daily Focus Adviser",
@@ -1474,6 +1642,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Deal Desk Autopilot",
@@ -1506,6 +1678,10 @@
         }
       ],
       "icon": "presentation",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "triangle"
+      },
       "tags": [
         "Sales",
         "Deck Localizer",
@@ -1542,6 +1718,10 @@
         }
       ],
       "icon": "presentation",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "squircle"
+      },
       "tags": [
         "Sales",
         "Deck Updater",
@@ -1579,6 +1759,10 @@
         }
       ],
       "icon": "video",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "pill"
+      },
       "tags": [
         "Sales",
         "Demo Clip Library",
@@ -1608,6 +1792,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "arch"
+      },
       "tags": [
         "Productivity",
         "Directory API Fetcher",
@@ -1636,6 +1824,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "bloom"
+      },
       "tags": [
         "Productivity",
         "Directory Scout",
@@ -1662,6 +1854,10 @@
       ],
       "worksWith": [],
       "icon": "book-open",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "circle"
+      },
       "tags": [
         "Customer Success",
         "Docs Self-Serve Assistant",
@@ -1698,6 +1894,10 @@
         }
       ],
       "icon": "book-open",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "hexagon"
+      },
       "tags": [
         "Ops",
         "Drive Wiki Rebuilder",
@@ -1730,6 +1930,10 @@
         }
       ],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Email Briefing Assistant",
@@ -1771,6 +1975,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "hexagon"
+      },
       "tags": [
         "Customer Success",
         "Enablement Pack Builder",
@@ -1809,6 +2017,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-pink",
+        "shape": "pill"
+      },
       "tags": [
         "Productivity",
         "Engineering Agent Manager",
@@ -1852,6 +2064,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "arch"
+      },
       "tags": [
         "Marketing",
         "Episode Launch Crew",
@@ -1892,6 +2108,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "pill"
+      },
       "tags": [
         "Marketing",
         "Evergreen Content Flywheel",
@@ -1925,6 +2145,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "diamond"
+      },
       "tags": [
         "Ops",
         "Feature Ask Finder",
@@ -1952,6 +2176,10 @@
       ],
       "worksWith": [],
       "icon": "video",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "squircle"
+      },
       "tags": [
         "Personal",
         "Film Scan Metadata Fixer",
@@ -1979,6 +2207,10 @@
       ],
       "worksWith": [],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "triangle"
+      },
       "tags": [
         "Ops",
         "Final Output Grader",
@@ -2015,6 +2247,10 @@
         }
       ],
       "icon": "search",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "diamond"
+      },
       "tags": [
         "Personal",
         "Find the Signal",
@@ -2047,6 +2283,10 @@
         }
       ],
       "icon": "plane",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "bloom"
+      },
       "tags": [
         "Personal",
         "Flight Check-In",
@@ -2078,6 +2318,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Focus Time Defender",
@@ -2125,6 +2369,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "diamond"
+      },
       "tags": [
         "Sales",
         "Forecast Notes Updater",
@@ -2154,6 +2402,10 @@
       ],
       "worksWith": [],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Forge",
@@ -2180,6 +2432,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "circle"
+      },
       "tags": [
         "Personal",
         "Fridge To Dinner Plan",
@@ -2211,6 +2467,10 @@
         }
       ],
       "icon": "code-2",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "squircle"
+      },
       "tags": [
         "Productivity",
         "GitHub Issue Drafter",
@@ -2244,6 +2504,10 @@
         }
       ],
       "icon": "house",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "triangle"
+      },
       "tags": [
         "Personal",
         "Grocery Autopilot",
@@ -2297,6 +2561,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "pill"
+      },
       "tags": [
         "Sales",
         "GTM Chief Of Staff",
@@ -2331,6 +2599,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "hexagon"
+      },
       "tags": [
         "Productivity",
         "Guide",
@@ -2369,6 +2641,10 @@
         }
       ],
       "icon": "house",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "bloom"
+      },
       "tags": [
         "Personal",
         "Home Services Autopilot",
@@ -2404,6 +2680,10 @@
         }
       ],
       "icon": "house",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "diamond"
+      },
       "tags": [
         "Personal",
         "Household Coordinator",
@@ -2431,6 +2711,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "circle"
+      },
       "tags": [
         "Personal",
         "iCloud Bridge",
@@ -2462,6 +2746,10 @@
         }
       ],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "arch"
+      },
       "tags": [
         "Productivity",
         "Important Email Triage",
@@ -2493,6 +2781,10 @@
         }
       ],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Inbox Marie Kondo",
@@ -2524,6 +2816,10 @@
         }
       ],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "triangle"
+      },
       "tags": [
         "Sales",
         "Inbox Reply Digest",
@@ -2551,6 +2847,10 @@
       ],
       "worksWith": [],
       "icon": "plane",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "hexagon"
+      },
       "tags": [
         "Personal",
         "Itinerary Sanity Checker",
@@ -2589,6 +2889,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "diamond"
+      },
       "tags": [
         "Ops",
         "Journey Friction PR Agent",
@@ -2618,6 +2922,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Kindle To Anki",
@@ -2645,6 +2953,10 @@
       ],
       "worksWith": [],
       "icon": "calculator",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Ledger",
@@ -2682,6 +2994,10 @@
         }
       ],
       "icon": "code-2",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "Linear Development Orchestrator",
@@ -2710,6 +3026,10 @@
       ],
       "worksWith": [],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "arch"
+      },
       "tags": [
         "Sales",
         "LinkedIn ICP Prospect Tracker",
@@ -2751,6 +3071,10 @@
         }
       ],
       "icon": "messages-square",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "pill"
+      },
       "tags": [
         "Marketing",
         "LinkedIn Profile Audit",
@@ -2785,6 +3109,10 @@
         }
       ],
       "icon": "search",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "LinkedIn Signal Watch",
@@ -2822,6 +3150,10 @@
         }
       ],
       "icon": "presentation",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "triangle"
+      },
       "tags": [
         "Sales",
         "Live Discovery Slide",
@@ -2855,6 +3187,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "hexagon"
+      },
       "tags": [
         "Marketing",
         "Living FAQ",
@@ -2892,6 +3228,10 @@
         }
       ],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "circle"
+      },
       "tags": [
         "Personal",
         "Mail Cleanup Assistant",
@@ -2923,6 +3263,10 @@
       ],
       "worksWith": [],
       "icon": "mail",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "triangle"
+      },
       "tags": [
         "Ops",
         "Mail Delivery Troubleshooter",
@@ -2962,6 +3306,10 @@
         }
       ],
       "icon": "calendar-check",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "Marketing Calendar Sync",
@@ -3015,6 +3363,10 @@
         }
       ],
       "icon": "calendar-check",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "pill"
+      },
       "tags": [
         "Sales",
         "Meeting Prep Brief",
@@ -3044,6 +3396,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "METAR Weather Watch",
@@ -3080,6 +3436,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Migration Ramp Watcher",
@@ -3112,6 +3472,10 @@
         }
       ],
       "icon": "mic",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "Morning Podcast",
@@ -3144,6 +3508,10 @@
         }
       ],
       "icon": "code-2",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "Multi-Repository Dev Orchestrator",
@@ -3181,6 +3549,10 @@
         }
       ],
       "icon": "user-search",
+      "avatar": {
+        "color": "tonal-pink",
+        "shape": "circle"
+      },
       "tags": [
         "Ops",
         "New Hire Ramp Plan",
@@ -3223,6 +3595,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "pill"
+      },
       "tags": [
         "Productivity",
         "Nexus Coordinator",
@@ -3251,6 +3627,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "NOTAM Briefer",
@@ -3282,6 +3662,10 @@
         }
       ],
       "icon": "book-open",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "diamond"
+      },
       "tags": [
         "Productivity",
         "Notion Memory Keeper",
@@ -3318,6 +3702,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "diamond"
+      },
       "tags": [
         "Productivity",
         "One-On-One Prep",
@@ -3345,6 +3733,10 @@
       ],
       "worksWith": [],
       "icon": "search",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "arch"
+      },
       "tags": [
         "Marketing",
         "Opportunity Field Researcher",
@@ -3381,6 +3773,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "arch"
+      },
       "tags": [
         "Sales",
         "Org Chart Keeper",
@@ -3418,6 +3814,10 @@
         }
       ],
       "icon": "mic",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Outbound In Your Voice",
@@ -3446,6 +3846,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Pizza Ordering Assistant",
@@ -3480,6 +3884,10 @@
         }
       ],
       "icon": "video",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "triangle"
+      },
       "tags": [
         "Marketing",
         "Podcast Clip Publisher",
@@ -3518,6 +3926,10 @@
         }
       ],
       "icon": "mic",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "Podcast Guest Briefer",
@@ -3551,6 +3963,10 @@
         }
       ],
       "icon": "mic",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Podcast Summarizer",
@@ -3583,6 +3999,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "triangle"
+      },
       "tags": [
         "Personal",
         "Pool Slot Grabber",
@@ -3619,6 +4039,10 @@
         }
       ],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "pill"
+      },
       "tags": [
         "Ops",
         "PR Conflict Flagger",
@@ -3652,6 +4076,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "arch"
+      },
       "tags": [
         "Sales",
         "Product Expert",
@@ -3690,6 +4118,10 @@
         }
       ],
       "icon": "calendar-check",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "circle"
+      },
       "tags": [
         "Sales",
         "Prospect Meeting Booker",
@@ -3738,6 +4170,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-pink",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Prospecting Sheet Builder",
@@ -3782,6 +4218,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "circle"
+      },
       "tags": [
         "Customer Success",
         "QBR Pack Builder",
@@ -3812,6 +4252,10 @@
       ],
       "worksWith": [],
       "icon": "house",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Recipe Grocery Autopilot",
@@ -3846,6 +4290,10 @@
         }
       ],
       "icon": "user-search",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Recruiting Reviewer",
@@ -3873,6 +4321,10 @@
       ],
       "worksWith": [],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-white",
+        "shape": "diamond"
+      },
       "tags": [
         "Marketing",
         "Reddit Comment Finder",
@@ -3899,6 +4351,10 @@
       ],
       "worksWith": [],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Relationship Coach",
@@ -3936,6 +4392,10 @@
         }
       ],
       "icon": "messages-square",
+      "avatar": {
+        "color": "tonal-teal",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "Release To Social Campaign",
@@ -3966,6 +4426,10 @@
       ],
       "worksWith": [],
       "icon": "code-2",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Remote CLI Development Planner",
@@ -3999,6 +4463,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "arch"
+      },
       "tags": [
         "Marketing",
         "Reply Drafter",
@@ -4045,6 +4513,10 @@
         }
       ],
       "icon": "calculator",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "hexagon"
+      },
       "tags": [
         "Ops",
         "SaaS CFO Monitor",
@@ -4085,6 +4557,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "triangle"
+      },
       "tags": [
         "Marketing",
         "SaaS Marketing Reviewer",
@@ -4124,6 +4600,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "bloom"
+      },
       "tags": [
         "Sales",
         "Sales Play Autopilot",
@@ -4157,6 +4637,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "arch"
+      },
       "tags": [
         "Ops",
         "Salesforce Administrator",
@@ -4191,6 +4675,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "diamond"
+      },
       "tags": [
         "Productivity",
         "Salesforce Agent Researcher",
@@ -4226,6 +4714,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "triangle"
+      },
       "tags": [
         "Productivity",
         "Salesforce Agent Scout",
@@ -4258,6 +4750,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "hexagon"
+      },
       "tags": [
         "Sales",
         "Salesforce Report Builder",
@@ -4294,6 +4790,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "pill"
+      },
       "tags": [
         "Personal",
         "School Form Filler",
@@ -4331,6 +4831,10 @@
         }
       ],
       "icon": "shield-check",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "squircle"
+      },
       "tags": [
         "Ops",
         "Security Questionnaire",
@@ -4369,6 +4873,10 @@
         }
       ],
       "icon": "search",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "circle"
+      },
       "tags": [
         "Marketing",
         "SEO Improver",
@@ -4397,6 +4905,10 @@
       ],
       "worksWith": [],
       "icon": "search",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "SEO Team",
@@ -4429,6 +4941,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "pill"
+      },
       "tags": [
         "Marketing",
         "Short-Form Content Creator",
@@ -4461,6 +4977,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "squircle"
+      },
       "tags": [
         "Productivity",
         "Slack Noise Filter",
@@ -4492,6 +5012,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "bloom"
+      },
       "tags": [
         "Productivity",
         "Slack Stand-In",
@@ -4524,6 +5048,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "hexagon"
+      },
       "tags": [
         "Marketing",
         "Social Content Operator",
@@ -4558,6 +5086,10 @@
         }
       ],
       "icon": "plane",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "hexagon"
+      },
       "tags": [
         "Personal",
         "Starlink Flight Finder",
@@ -4591,6 +5123,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Subscription Pruner",
@@ -4623,6 +5159,10 @@
         }
       ],
       "icon": "shield-check",
+      "avatar": {
+        "color": "tonal-pink",
+        "shape": "bloom"
+      },
       "tags": [
         "Ops",
         "Supply Chain Threat Sentinel",
@@ -4658,6 +5198,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-pink",
+        "shape": "squircle"
+      },
       "tags": [
         "Customer Success",
         "Support Autopilot",
@@ -4697,6 +5241,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "squircle"
+      },
       "tags": [
         "Customer Success",
         "Support Queue Pass",
@@ -4729,6 +5277,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-chocolate",
+        "shape": "circle"
+      },
       "tags": [
         "Customer Success",
         "Support Reply Drafter",
@@ -4764,6 +5316,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "diamond"
+      },
       "tags": [
         "Customer Success",
         "Support Ticket Fixer",
@@ -4793,6 +5349,10 @@
       ],
       "worksWith": [],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "diamond"
+      },
       "tags": [
         "Productivity",
         "Swarm Daily Summarizer",
@@ -4830,6 +5390,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-forest",
+        "shape": "arch"
+      },
       "tags": [
         "Productivity",
         "Task Follow-Up Monitor",
@@ -4864,6 +5428,10 @@
         }
       ],
       "icon": "list-checks",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "circle"
+      },
       "tags": [
         "Productivity",
         "Technology Study Guide",
@@ -4896,6 +5464,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "arch"
+      },
       "tags": [
         "Personal",
         "Ticket Drop Watcher",
@@ -4932,6 +5504,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "bloom"
+      },
       "tags": [
         "Customer Success",
         "Tickets To Changelog",
@@ -4964,6 +5540,10 @@
         }
       ],
       "icon": "plane",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "hexagon"
+      },
       "tags": [
         "Personal",
         "Trip Concierge",
@@ -5000,6 +5580,10 @@
         }
       ],
       "icon": "plane",
+      "avatar": {
+        "color": "tonal-green",
+        "shape": "pill"
+      },
       "tags": [
         "Personal",
         "Trip Deck Builder",
@@ -5033,6 +5617,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "diamond"
+      },
       "tags": [
         "Sales",
         "Trust Center Deal Desk",
@@ -5065,6 +5653,10 @@
         }
       ],
       "icon": "messages-square",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "squircle"
+      },
       "tags": [
         "Marketing",
         "Tweet Topic Scraper",
@@ -5091,6 +5683,10 @@
       ],
       "worksWith": [],
       "icon": "workflow",
+      "avatar": {
+        "color": "tonal-brown",
+        "shape": "hexagon"
+      },
       "tags": [
         "Ops",
         "VFD Troubleshooter",
@@ -5122,6 +5718,10 @@
         }
       ],
       "icon": "messages-square",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "circle"
+      },
       "tags": [
         "Marketing",
         "Viral Tweet Scout",
@@ -5163,6 +5763,10 @@
         }
       ],
       "icon": "mic",
+      "avatar": {
+        "color": "tonal-purple",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "Voice-Matched Drafts",
@@ -5197,6 +5801,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "diamond"
+      },
       "tags": [
         "Marketing",
         "Web Design Assistant",
@@ -5234,6 +5842,10 @@
         }
       ],
       "icon": "sparkles",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "hexagon"
+      },
       "tags": [
         "Personal",
         "Wedding Planner",
@@ -5276,6 +5888,10 @@
         }
       ],
       "icon": "life-buoy",
+      "avatar": {
+        "color": "tonal-blue",
+        "shape": "squircle"
+      },
       "tags": [
         "Customer Success",
         "What Did We Promise",
@@ -5310,6 +5926,10 @@
         }
       ],
       "icon": "badge-dollar-sign",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "bloom"
+      },
       "tags": [
         "Sales",
         "Win/Loss Memo",
@@ -5347,6 +5967,10 @@
         }
       ],
       "icon": "pen-line",
+      "avatar": {
+        "color": "tonal-red",
+        "shape": "squircle"
+      },
       "tags": [
         "Productivity",
         "Writing Buddy",
@@ -5386,6 +6010,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-grey",
+        "shape": "circle"
+      },
       "tags": [
         "Marketing",
         "X Account Crew",
@@ -5420,6 +6048,10 @@
         }
       ],
       "icon": "megaphone",
+      "avatar": {
+        "color": "tonal-black",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "X Strategist",
@@ -5451,6 +6083,10 @@
         }
       ],
       "icon": "video",
+      "avatar": {
+        "color": "tonal-orange",
+        "shape": "bloom"
+      },
       "tags": [
         "Marketing",
         "YouTube Outlier Finder",
@@ -5487,6 +6123,10 @@
         }
       ],
       "icon": "video",
+      "avatar": {
+        "color": "tonal-blush",
+        "shape": "circle"
+      },
       "tags": [
         "Marketing",
         "YouTube Scriptwriter",

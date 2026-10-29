@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-cobalt
+  shape: circle
 tags:
   - "Productivity"
   - "Call Follow-Up Nudge"

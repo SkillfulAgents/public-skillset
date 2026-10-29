@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: inbox
+avatar:
+  color: tonal-purple
+  shape: hexagon
 tags:
   - Front Desk
   - Inbox Drafts

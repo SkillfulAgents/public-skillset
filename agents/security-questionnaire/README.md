@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: shield-check
+avatar:
+  color: tonal-orange
+  shape: squircle
 tags:
   - "Ops"
   - "Security Questionnaire"

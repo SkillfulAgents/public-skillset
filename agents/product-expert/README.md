@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-teal
+  shape: arch
 tags:
   - "Sales"
   - "Product Expert"

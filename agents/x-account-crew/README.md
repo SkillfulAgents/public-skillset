@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-grey
+  shape: circle
 tags:
   - "Marketing"
   - "X Account Crew"

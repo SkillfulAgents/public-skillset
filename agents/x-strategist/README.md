@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-black
+  shape: bloom
 tags:
   - "Marketing"
   - "X Strategist"

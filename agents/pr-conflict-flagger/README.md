@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-orange
+  shape: pill
 tags:
   - "Ops"
   - "PR Conflict Flagger"

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: mail
+avatar:
+  color: tonal-amber
+  shape: circle
 tags:
   - "Personal"
   - "Mail Cleanup Assistant"

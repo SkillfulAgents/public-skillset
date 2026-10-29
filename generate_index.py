@@ -15,6 +15,8 @@ import yaml
 from yaml.constructor import ConstructorError
 from yaml.nodes import MappingNode
 
+from avatars import AVATAR_COLORS, AVATAR_SHAPES
+
 FRONTMATTER_START_RE = re.compile(r"\A---[ \t]*(?:\r?\n)")
 FRONTMATTER_RE = re.compile(
     r"\A---[ \t]*\r?\n(?P<frontmatter>.*?)^---[ \t]*(?:\r?\n|\Z)",
@@ -136,6 +138,19 @@ def _icon_field(metadata: dict[str, Any], source: str) -> str:
     return value
 
 
+def _avatar_field(metadata: dict[str, Any], source: str) -> dict[str, str] | None:
+    value = metadata.get("avatar")
+    if value is None:
+        return None
+    if not isinstance(value, dict) or set(value) != {"color", "shape"}:
+        raise ValueError(f"{source}: 'avatar' must contain exactly 'color' and 'shape'")
+    if value["color"] not in AVATAR_COLORS:
+        raise ValueError(f"{source}: 'avatar.color' must be one of: {', '.join(AVATAR_COLORS)}")
+    if value["shape"] not in AVATAR_SHAPES:
+        raise ValueError(f"{source}: 'avatar.shape' must be one of: {', '.join(AVATAR_SHAPES)}")
+    return {"color": value["color"], "shape": value["shape"]}
+
+
 def _works_with_field(metadata: dict[str, Any], source: str) -> list[dict[str, str]]:
     value = metadata.get("works_with", [])
     if not isinstance(value, list):
@@ -207,6 +222,7 @@ def build_agent_entry(root: Path, agent_file: Path) -> dict[str, Any]:
     metadata = {**readme_metadata, **claude_metadata}
     source = f"merged metadata for {agent_file.parent}"
 
+    avatar = _avatar_field(metadata, source)
     return {
         "name": _string_field(metadata, "name", agent_file.parent.name, source),
         "path": agent_file.parent.relative_to(root).as_posix() + "/",
@@ -216,6 +232,9 @@ def build_agent_entry(root: Path, agent_file: Path) -> dict[str, Any]:
         "version": _string_field(metadata, "version", "1.0.0", source),
         "category": _string_field(metadata, "category", "", source),
         "icon": _icon_field(metadata, source),
+        # Omitted rather than null when unset: SuperAgent's index schema takes
+        # an absent avatar as "pick one", but rejects a null.
+        **({"avatar": avatar} if avatar else {}),
         "tags": _tags_field(metadata, source),
         "works_with": _works_with_field(metadata, source),
         "developer": _developer_field(metadata, source),

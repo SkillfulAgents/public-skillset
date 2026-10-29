@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: video
+avatar:
+  color: tonal-black
+  shape: triangle
 tags:
   - "Marketing"
   - "Podcast Clip Publisher"

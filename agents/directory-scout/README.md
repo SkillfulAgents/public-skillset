@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-teal
+  shape: bloom
 tags:
   - "Productivity"
   - "Directory Scout"

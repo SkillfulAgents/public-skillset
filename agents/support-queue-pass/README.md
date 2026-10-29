@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-blush
+  shape: squircle
 tags:
   - "Customer Success"
   - "Support Queue Pass"

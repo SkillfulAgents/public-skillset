@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: phone-call
+avatar:
+  color: tonal-forest
+  shape: circle
 tags:
   - Call Follow-Up
   - Meeting Recaps

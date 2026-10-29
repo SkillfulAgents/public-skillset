@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: calculator
+avatar:
+  color: tonal-brown
+  shape: circle
 tags:
   - Invoicing
   - Overdue Chase

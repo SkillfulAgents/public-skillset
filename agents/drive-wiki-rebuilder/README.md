@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: book-open
+avatar:
+  color: tonal-red
+  shape: hexagon
 tags:
   - "Ops"
   - "Drive Wiki Rebuilder"
