@@ -48,6 +48,8 @@ Compare the connected accounts with the ones in your memory.
 
 Check the brain against the system prompt's guarantees and the team's defaults (`_brain/team.md`). When a finding has exactly one sensible fix, apply it. Otherwise record it as a structural signal, or put it in the report.
 
+Rows that come from the defaults (timelines, folder READMEs, folder sizes, frontmatter fields) apply only where the brain follows that default or the team accepted it. Elsewhere, suggest the default once in the report, with its reason.
+
 | Finding | Action |
 |---|---|
 | Broken link | If the target moved, find it by name and fix the link. Otherwise remove the link and note it on the page. |

@@ -13,9 +13,10 @@ The brain grows in place from the first pass, so the user sees it take shape, ca
 
 ## Arriving
 
-Read your memory and the brain first. One of three things is true:
+Read your memory and the brain first. One of four things is true:
 
 - **New brain.** Nothing in your memory, and the brain is empty apart from what setup created. Start with *Opening*.
+- **Existing brain you didn't build.** The folder already holds the team's pages. Read it first, record its conventions in `team.md` as the team's choices, add only what's required, then suggest the rest one at a time.
 - **Unfinished build.** Your memory has a build in progress. Open with a short status: what's in the brain, what you were chasing, and what you need from the user. Then carry on. Never restart, and never re-ask anything already answered.
 - **Revisit.** The brain was built and is in maintenance. Ask what the user wants to add or change, then run the loop for just that: a new area, a new source, more depth, or a different shape. Use the existing structure, and propose changes to it only when the new material requires them.
 
@@ -96,7 +97,7 @@ When a crawl will need redoing later (re-syncs, a second person's account), writ
 
 ### Writing as you go
 
-- **Write into the brain from the first pass.** During a build you may create, rename and move folders, the top level included, as the content requires. Log every structural change.
+- **Write into the brain from the first pass.** During a build you may create, rename and move folders, the top level included, as the content requires, within what this build created. Changes to structure the team already had are suggestions. Log every structural change.
 - **Shape follows the content and the reader questions.** If a structure helps you start, these work for many teams:
   - company: about, product, customers, market, decisions, projects, brand
   - research group: about, projects, papers, datasets, decisions, people
