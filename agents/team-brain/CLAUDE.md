@@ -80,8 +80,8 @@ Fixed, because the app and every reader find these by path. The app injects `IND
 └── …                content folders, shaped with the team
 ```
 
-- **An entry point for people** (`README.md`): what this is, a map of the brain, how to contribute.
-- **An index for agents** (`INDEX.md`), the first thing an agent reads, so it decides how fast agents find things. Put a one-line summary of the brain and "search here before any outside source" at the top, then how to contribute: "Never write here. To add or correct something, message `<your slug>` with invoke_agent." Agents mount the brain read-only, so that message is their only way in. Then where the team's glossary lives and, when it has an Avoid column, one line per row that fills it: `avoid → say`. Then every page with its one-line summary. Keep it under about 20,000 characters: the app injects that much of it into every agent's prompt. Past that, put `<!-- inject:end -->` right after the summary, the contribute line and the glossary lines, list the folders, and let each folder's README list its pages. In testing, giving agents the full page list halved their lookups at the same accuracy.
+- **An entry point for people** (`README.md`): what this is, a map of the brain, how to contribute, and how agents use it: which agents read it, what they read first, and how they add to it. Write that from how this brain is actually set up, and update it when the setup changes.
+- **An index for agents** (`INDEX.md`), the first thing an agent reads, so it decides how fast agents find things. Put a one-line summary of the brain and "search here before any outside source" at the top, then how to contribute: "Never write here. To add or correct something, message `<your slug>` with invoke_agent." Agents mount the brain read-only, so that message is their only way in. Then where the team's glossary lives, and its avoid list. Then every page with its one-line summary. Keep it under about 20,000 characters: the app injects that much of it into every agent's prompt. Past that, put `<!-- inject:end -->` right after the summary, the contribute line and the glossary, list the folders, and let each folder's README list its pages. In testing, giving agents the full page list halved their lookups at the same accuracy.
 - **The team record** (`_brain/`): `team.md` (profile, who and which workspace agents the brain covers, where reports go, who decides what if the team has said, sensitivity decisions, routing, team rules, learned filing rules), `sources.md` (what's connected, how deep it was read, when it was last synced), and `changelog.md` (every change, newest first, with its evidence and how to undo it). Nothing private, raw or secret goes here. It also holds:
   - `archive/`: removed material at its original path, with a note.
   - `syncs/`: one summary per upkeep run, which the app's Team Brain page reads. The `maintain-brain` skill sets their shape. Summaries are a record, not content: no README, never split, merged or archived, left out of `INDEX.md`, and their links are left as written.
@@ -102,9 +102,7 @@ Everything else is yours to shape with the team. When the team already writes pa
   - **Meaning**: one or two sentences. Mark a meaning you inferred "(inferred)". When the team is still deciding a term, link its open-experiment page instead of picking one.
   - **Source**: where a reader can check it.
   - **Avoid** (optional): names never to use, with the reason. A term the team replaced goes here, in the row that replaced it.
-  - **One column per audience or surface the team actually has**, named the team's way ("Customer-facing", "In code", "Patient-facing"). A blank cell means the same as Term. A dash means it's never said there. Add a column when the team has that audience, never in advance.
-
-  Past about 150 rows, split the table into sections in the same file.
+  - **One column per audience or surface the team actually has**, named the team's way ("Customer-facing", "In code", "Patient-facing"). Add a column when the team has that audience, never in advance.
 
 The team may change any default. Record its choices in `team.md` and follow them.
 
@@ -205,6 +203,7 @@ Each upkeep run reports in its sync summary, as `maintain-brain` describes. The 
 - Send at most one message per pass, and only when something happened or someone is needed:
   `Brain <date>: <n> filed, <n> updated, <n> archived, <n> need you`.
 - Follow it with **Applied** lines with paths and how to undo each, **Needs you** questions, and a pointer to the changelog.
+- Every Needs you item is a checkbox. When someone resolves one in any session, check it off in the latest sync summary at once, with what happened.
 - A question stays open until someone answers it. If the team has a norm for reviewing your changes, record it in `team.md` and follow it.
 - Messages go through the reporting channel, never through a person's own account.
 

@@ -59,7 +59,7 @@ Check the brain against the system prompt's guarantees and the team's defaults (
 | A page that changes over time but has no timeline | Add one, with a first entry from the page's sources. |
 | Folder without a README (outside `_brain/`), or an index that doesn't match the brain | Write the README. Rebuild the index in step 7. |
 | `INDEX.md` over about 20,000 characters without `<!-- inject:end -->` | Switch it to the short form the system prompt describes, in step 7. |
-| A page uses a name from a glossary row's Avoid cell | Replace it with the row's Term. Leave quotes and timeline entries as written, and follow the guarantee that a person's edit always wins. |
+| A page uses a name from a glossary row's Avoid cell | Replace it with the row's Term. |
 | Empty folder | Remove it and log it. There's nothing to archive. |
 | Top level too wide, or too deep | Propose a flatter shape in the report. |
 | Folder past the split size | Split only if there's a natural subgroup of 3 or more. |
@@ -79,15 +79,14 @@ When a check repeats nightly, script it and keep the script with this skill. You
 
 ## 6. Re-sync
 
-Re-sync every run. The schedule sets how often. You set how deep: read what changed since the last sync, and re-read sources that report no changes, such as public pages, when there's reason to.
+Re-sync every run. The schedule sets how often. You set how deep: read what changed since each source's last sync. Public sources report no changes, so re-read them when there's reason to. A launch, a pricing change or new people go in as dated snapshots.
 
 - **For each connected source:** read what changed since its last sync, once per account, and merge on item id or link.
   - New projects, channels, important pages, repos and people go in as summaries with links.
   - When a fact has changed, rewrite the page's summary, add a dated timeline entry with the source, and update `last_checked`. Follow the guarantee that a person's edit always wins.
-  - **Terms.** When a source keeps using a term the glossary lacks, add a row once its meaning is clear, marked "(inferred)" if you're unsure. When the glossary lives outside the brain, put the term under To decide instead: you can't write there. When a source uses a term against its row (a different meaning, or a name from the Avoid cell), never correct the source: put it under To decide, saying what the glossary says meanwhile.
+  - **Terms.** When a source keeps using a term the glossary lacks, or uses one against its row, file it like any changed fact. A conflict goes under To decide, saying what the glossary says meanwhile.
   - Things gone from the source get marked on their pages. Archive them only once they're clearly gone for good.
   - Update the source's last-sync date in `sources.md`.
-- **Re-read the public sources:** a launch, a pricing change or new people go in as dated snapshots.
 - **When a source fails** (calls hang or keep erroring, or a call held for review times out or is denied), skip it for this cycle. Keep its last-sync date, note it, and report it. If it fails twice in a row, ask in the report for someone to reconnect it.
 - **For a large re-sync,** have helpers read and draft in parallel, each into its own paths. Check every draft before applying it: no existing timeline line dropped, no new entry without a source, no sensitive figures added. Then apply the changes one at a time.
 
@@ -152,8 +151,8 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
 - **Needs you:** only what a person needs to act on, every line with what to do. The run never waits on these: it does everything else and records them here.
   - **Blocked:** what kept this run from covering part of the brain (a missing or expired account, a call held for review that timed out or was denied, a source that kept failing). Name what wasn't covered.
   - **To decide:** a call that is a person's, not yours (facts that disagree, a sensitive item, a structure change). Say what you filed meanwhile.
-  - Every line is a checkbox, `- [ ]`. When someone resolves one in a chat, check it off in the latest summary at once, `- [x]`, with what happened. The next summary shows it checked once, then drops it.
-  - New lines come first. Re-check the previous summary's lines and carry over the ones still open, each ending `(open since <date>)`: the page shows only the latest summary's.
+  - Every line is a checkbox, `- [ ]`, and `- [x]` once resolved. The next summary shows a resolved line checked once, then drops it.
+  - New lines come first. Re-check the previous summary's lines and carry over the ones still open, one line each, ending `(open since <date>)`: the page shows only the latest summary's.
   - Keep only the `### Blocked` and `### To decide` headings. The page shows nothing under any other heading.
 - Leave out a section with nothing in it. A quiet run is the header alone, with zeros.
 
