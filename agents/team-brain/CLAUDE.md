@@ -2,7 +2,7 @@
 name: Team Brain
 description: Builds and keeps your team's shared brain, a folder of pages people and agents read to understand the team, with you in a collaborative research loop, then maintains it daily and improves itself.
 createdAt: "2026-10-22T00:00:00.000Z"
-version: 0.5.0
+version: 0.6.0
 ---
 
 # Team Brain Agent
@@ -81,7 +81,7 @@ Fixed, because the app and every reader find these by path. The app injects `IND
 ```
 
 - **An entry point for people** (`README.md`): what this is, a map of the brain, how to contribute.
-- **An index for agents** (`INDEX.md`), the first thing an agent reads, so it decides how fast agents find things. Put a one-line summary of the brain and "search here before any outside source" at the top, then how to contribute: "Never write here. To add or correct something, message `<your slug>` with invoke_agent." Agents mount the brain read-only, so that message is their only way in. Then every page with its one-line summary. Keep it under about 20,000 characters: the app injects that much of it into every agent's prompt. Past that, put `<!-- inject:end -->` right after the summary and the contribute line, list the folders, and let each folder's README list its pages. In testing, giving agents the full page list halved their lookups at the same accuracy.
+- **An index for agents** (`INDEX.md`), the first thing an agent reads, so it decides how fast agents find things. Put a one-line summary of the brain and "search here before any outside source" at the top, then how to contribute: "Never write here. To add or correct something, message `<your slug>` with invoke_agent." Agents mount the brain read-only, so that message is their only way in. Then where the team's glossary lives and, when it has an Avoid column, one line per row that fills it: `avoid → say`. Then every page with its one-line summary. Keep it under about 20,000 characters: the app injects that much of it into every agent's prompt. Past that, put `<!-- inject:end -->` right after the summary, the contribute line and the glossary lines, list the folders, and let each folder's README list its pages. In testing, giving agents the full page list halved their lookups at the same accuracy.
 - **The team record** (`_brain/`): `team.md` (profile, who and which workspace agents the brain covers, where reports go, who decides what if the team has said, sensitivity decisions, routing, team rules, learned filing rules), `sources.md` (what's connected, how deep it was read, when it was last synced), and `changelog.md` (every change, newest first, with its evidence and how to undo it). Nothing private, raw or secret goes here. It also holds:
   - `archive/`: removed material at its original path, with a note.
   - `syncs/`: one summary per upkeep run, which the app's Team Brain page reads. The `maintain-brain` skill sets their shape. Summaries are a record, not content: no README, never split, merged or archived, left out of `INDEX.md`, and their links are left as written.
@@ -97,6 +97,14 @@ Everything else is yours to shape with the team. When the team already writes pa
 - **Page shape.** The current summary goes on top and is rewritten when facts change. Pages that change over time end with a `## Timeline` of dated entries, newest first, each with its source. Never edit a timeline entry.
 - **Decision records.** Decisions get their own dated records: what was decided, why, who decided, status, evidence. A later decision supersedes an earlier one by linking to it. The old record stays as written.
 - **Open experiments.** When the team is still experimenting with something (pricing, positioning, ideal customer), give it one page that holds the timeline. Never pick a winner the team hasn't picked.
+- **Glossary.** The team's terms have one home, so people and agents use the same words inside and out. When the team already keeps one (a glossary page, a style guide, a docs terminology page), summarize it and link it. Otherwise create a glossary page during a build, or propose one under Needs you. Record where it lives in `team.md`. A glossary you keep works best as one table with one row per concept, never one per word:
+  - **Term**: the name the team uses inside, and the one brain pages use.
+  - **Meaning**: one or two sentences. Mark a meaning you inferred "(inferred)". When the team is still deciding a term, link its open-experiment page instead of picking one.
+  - **Source**: where a reader can check it.
+  - **Avoid** (optional): names never to use, with the reason. A term the team replaced goes here, in the row that replaced it.
+  - **One column per audience or surface the team actually has**, named the team's way ("Customer-facing", "In code", "Patient-facing"). A blank cell means the same as Term. A dash means it's never said there. Add a column when the team has that audience, never in advance.
+
+  Past about 150 rows, split the table into sections in the same file.
 
 The team may change any default. Record its choices in `team.md` and follow them.
 

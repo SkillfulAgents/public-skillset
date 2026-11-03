@@ -1,6 +1,6 @@
 ---
 name: maintain-brain
-description: The brain's scheduled upkeep, plus the agent's own improvement. Retries pending contributions, picks up new or removed connected accounts, checks the brain's health (links, staleness, end dates, index, structure), learns from people's edits and moves, re-syncs sources when due, then reflects on recent sessions and improves its own skills. Sends one report, only if something changed or someone is needed. Use when the scheduled task fires, or for "run upkeep", "check the brain's health", "re-sync", or "reflect on recent sessions".
+description: The brain's scheduled upkeep, plus the agent's own improvement. Retries pending contributions, picks up new or removed connected accounts, checks the brain's health (links, staleness, end dates, index, structure), learns from people's edits and moves, re-syncs sources, then reflects on recent sessions and improves its own skills. Sends one report, only if something changed or someone is needed. Use when the scheduled task fires, or for "run upkeep", "check the brain's health", "re-sync", or "reflect on recent sessions".
 ---
 
 # Maintain the brain
@@ -17,14 +17,14 @@ Follow the system prompt. This skill adds only what's specific to upkeep. It usu
 3 Accounts   new or removed connected accounts
 4 Health     check the brain against its guarantees and defaults
 5 Learn      people's edits and moves, structural signals
-6 Re-sync    when due: refresh sources and public research
+6 Re-sync    refresh sources and public research
 7 Release    update the index, release the claim
 8 Reflect    learn from recent sessions, improve the skills
 9 Summarize  write this run's summary to _brain/syncs/, every run
 10 Report    one message, only if something changed or someone is needed
 ```
 
-The order matters: new material lands before the health check, and the brain work finishes before reflection so reflection can learn from it. A quiet night should cost little. If nothing arrived, nothing changed, nothing is due and there's nothing to learn, write the short summary and go straight to the report.
+The order matters: new material lands before the health check, and the brain work finishes before reflection so reflection can learn from it. A quiet night should cost little. If nothing arrived, nothing changed and there's nothing to learn, write the short summary and go straight to the report.
 
 ## 1. Claim
 
@@ -58,6 +58,8 @@ Check the brain against the system prompt's guarantees and the team's defaults (
 | Frontmatter that doesn't parse as YAML | Quote its string values. Change no wording. |
 | A page that changes over time but has no timeline | Add one, with a first entry from the page's sources. |
 | Folder without a README (outside `_brain/`), or an index that doesn't match the brain | Write the README. Rebuild the index in step 7. |
+| `INDEX.md` over about 20,000 characters without `<!-- inject:end -->` | Switch it to the short form the system prompt describes, in step 7. |
+| A page uses a name from a glossary row's Avoid cell | Replace it with the row's Term. Leave quotes and timeline entries as written, and follow the guarantee that a person's edit always wins. |
 | Empty folder | Remove it and log it. There's nothing to archive. |
 | Top level too wide, or too deep | Propose a flatter shape in the report. |
 | Folder past the split size | Split only if there's a natural subgroup of 3 or more. |
@@ -75,13 +77,14 @@ When a check repeats nightly, script it and keep the script with this skill. You
 - **Structural signals** you've noted: things that don't fit, folders that are too big or too small, failed lookups, misfiles. Act on each once its evidence meets the threshold in the defaults, within your authority. Otherwise put it in the report.
 - **Reader questions.** Fold in any new ones from recent sessions. Note which ones the brain can't answer yet, and fill a gap now if a connected source has the answer.
 
-## 6. Re-sync (when due)
+## 6. Re-sync
 
-Re-sync on the cadence in `team.md`, weekly by default.
+Re-sync every run. The schedule sets how often. You set how deep: read what changed since the last sync, and re-read sources that report no changes, such as public pages, when there's reason to.
 
 - **For each connected source:** read what changed since its last sync, once per account, and merge on item id or link.
   - New projects, channels, important pages, repos and people go in as summaries with links.
   - When a fact has changed, rewrite the page's summary, add a dated timeline entry with the source, and update `last_checked`. Follow the guarantee that a person's edit always wins.
+  - **Terms.** When a source keeps using a term the glossary lacks, add a row once its meaning is clear, marked "(inferred)" if you're unsure. When the glossary lives outside the brain, put the term under To decide instead: you can't write there. When a source uses a term against its row (a different meaning, or a name from the Avoid cell), never correct the source: put it under To decide, saying what the glossary says meanwhile.
   - Things gone from the source get marked on their pages. Archive them only once they're clearly gone for good.
   - Update the source's last-sync date in `sources.md`.
 - **Re-read the public sources:** a launch, a pricing change or new people go in as dated snapshots.
@@ -133,9 +136,10 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
 
 ## Needs you
 ### Blocked
-- Reconnect Slack. #sales and #eng weren't read this run.
+- [ ] Reconnect Slack. #sales and #eng weren't read this run.
 ### To decide
-- Is Acme's renewal Q1 or Q2? Two threads disagree. Filed as Q1 on [Acme](../../customers/acme.md).
+- [ ] Is Acme's renewal Q1 or Q2? Two threads disagree. Filed as Q1 on [Acme](../../customers/acme.md).
+- [ ] Is a "seat" a person or a login? Sales and billing differ. The glossary says person meanwhile. (open since 2026-10-20)
 ```
 
 - **`type`:** always `team-brain-sync`. The page reads only files with it, so other files in the folder are ignored.
@@ -148,7 +152,9 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
 - **Needs you:** only what a person needs to act on, every line with what to do. The run never waits on these: it does everything else and records them here.
   - **Blocked:** what kept this run from covering part of the brain (a missing or expired account, a call held for review that timed out or was denied, a source that kept failing). Name what wasn't covered.
   - **To decide:** a call that is a person's, not yours (facts that disagree, a sensitive item, a structure change). Say what you filed meanwhile.
-  - Re-check the previous summary's lines and carry over the ones still open: the page shows only the latest summary's.
+  - Every line is a checkbox, `- [ ]`. When someone resolves one in a chat, check it off in the latest summary at once, `- [x]`, with what happened. The next summary shows it checked once, then drops it.
+  - New lines come first. Re-check the previous summary's lines and carry over the ones still open, each ending "(open since <date>)": the page shows only the latest summary's.
+  - Keep only the `### Blocked` and `### To decide` headings. The page shows nothing under any other heading.
 - Leave out a section with nothing in it. A quiet run is the header alone, with zeros.
 
 ## 10. Report
