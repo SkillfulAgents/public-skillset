@@ -153,7 +153,7 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
   - **Blocked:** what kept this run from covering part of the brain (a missing or expired account, a call held for review that timed out or was denied, a source that kept failing). Name what wasn't covered.
   - **To decide:** a call that is a person's, not yours (facts that disagree, a sensitive item, a structure change). Say what you filed meanwhile.
   - Every line is a checkbox, `- [ ]`. When someone resolves one in a chat, check it off in the latest summary at once, `- [x]`, with what happened. The next summary shows it checked once, then drops it.
-  - New lines come first. Re-check the previous summary's lines and carry over the ones still open, each ending "(open since <date>)": the page shows only the latest summary's.
+  - New lines come first. Re-check the previous summary's lines and carry over the ones still open, each ending `(open since <date>)`: the page shows only the latest summary's.
   - Keep only the `### Blocked` and `### To decide` headings. The page shows nothing under any other heading.
 - Leave out a section with nothing in it. A quiet run is the header alone, with zeros.
 
