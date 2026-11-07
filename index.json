@@ -2,7 +2,14 @@
   "skillset_name": "Gamut Public Skillset",
   "description": "A public collection of agent templates for the Gamut app.",
   "version": "1.0.0",
-  "skills": [],
+  "skills": [
+    {
+      "name": "dream",
+      "path": "skills/dream/SKILL.md",
+      "description": "Scheduled self-review (\"dream\") for any agent. Re-reads the agent's own recent sessions, learns from corrections, friction and what worked, then updates its memory and improves its skills, with every change cited and reversible. Proposes, never applies, changes to standing instructions. Use when the user says \"/dream\", \"dream\", \"set up dreaming\", \"reflect on recent sessions\" or \"consolidate your memory\", or when a scheduled task asks to run the dream skill.",
+      "version": "0.1.0"
+    }
+  ],
   "agents": [
     {
       "name": "Account Expert",
