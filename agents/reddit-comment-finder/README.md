@@ -6,7 +6,9 @@ tags:
   - "Reddit Comment Finder"
   - "Reddit"
   - "Research"
-works_with: []
+works_with:
+  - type: api_account
+    slug: reddit
 developer:
   name: "@kr0der"
   url: "https://x.com/kr0der"
@@ -24,7 +26,7 @@ Find recent Reddit discussions where you can add real value; return qualified li
 
 ## Connect first
 
-- **Reddit** — direct API, feed, or required credentials; no canonical registry slug.
+- **Reddit** — SuperAgent API account `reddit`.
 
 ## Sample use cases
 

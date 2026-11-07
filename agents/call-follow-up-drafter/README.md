@@ -12,6 +12,8 @@ works_with:
   - type: mcp
     slug: granola
   - type: api_account
+    slug: gong
+  - type: api_account
     slug: googlecalendar
 developer:
   name: "@kristaletz"
@@ -31,7 +33,7 @@ Find newly completed external calls and their context; draft accurate follow-up 
 ## Connect first
 
 - **Granola** — SuperAgent MCP `granola`.
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Google Calendar** — SuperAgent API account `googlecalendar`.
 
 ## Sample use cases

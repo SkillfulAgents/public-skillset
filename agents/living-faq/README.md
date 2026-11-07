@@ -9,6 +9,8 @@ tags:
   - "Content Creation"
 works_with:
   - type: api_account
+    slug: gong
+  - type: api_account
     slug: notion
 developer:
   name: "@ericzakariasson"
@@ -27,7 +29,7 @@ Add new Gong questions to a Notion FAQ each morning; merge duplicates and flag a
 
 ## Connect first
 
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Notion** — SuperAgent API account `notion`.
 
 ## Sample use cases

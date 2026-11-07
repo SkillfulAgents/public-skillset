@@ -14,6 +14,8 @@ works_with:
     slug: slack
   - type: api_account
     slug: gmail
+  - type: api_account
+    slug: gong
   - type: mcp
     slug: granola
 developer:
@@ -35,7 +37,7 @@ Monitor one strategic account across Slack, email, and calls; track feature requ
 
 - **Slack** — SuperAgent API account `slack`.
 - **Gmail** — SuperAgent API account `gmail`.
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Granola** — SuperAgent MCP `granola`.
 
 ## Sample use cases

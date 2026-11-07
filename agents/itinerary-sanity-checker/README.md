@@ -7,7 +7,9 @@ tags:
   - "Google Flights"
   - "Google Maps"
   - "Analysis"
-works_with: []
+works_with:
+  - type: api_account
+    slug: google_maps
 developer:
   name: "@APompliano"
   url: "https://x.com/APompliano"
@@ -26,7 +28,7 @@ Normalize a multi-city itinerary into one timeline; flag risky connections, time
 ## Connect first
 
 - **Google Flights** — browser session; no registry slug.
-- **Google Maps** — browser session; no registry slug.
+- **Google Maps** — SuperAgent API account `google_maps`.
 
 ## Sample use cases
 

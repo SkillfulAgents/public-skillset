@@ -10,6 +10,8 @@ tags:
   - "Intercom"
   - "Customer Operations"
 works_with:
+  - type: mcp
+    slug: help-scout
   - type: api_account
     slug: intercom
 developer:
@@ -31,7 +33,7 @@ Pull support tickets on a schedule and draft answers from approved documentation
 
 - **Bento Chat** — external connection; no canonical registry slug.
 - **HelpSpot** — direct API, feed, or required credentials; no canonical registry slug.
-- **Help Scout** — direct API, feed, or required credentials; no canonical registry slug.
+- **Help Scout** — SuperAgent MCP `help-scout`.
 - **Intercom** — SuperAgent API account `intercom`.
 
 ## Sample use cases

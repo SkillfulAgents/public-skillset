@@ -19,6 +19,8 @@ works_with:
   - type: mcp
     slug: granola
   - type: api_account
+    slug: gong
+  - type: api_account
     slug: googlecalendar
 developer:
   name: "@kristaletz"
@@ -41,7 +43,7 @@ Combine calendar, CRM, email, Slack, call notes, and research for each meeting; 
 - **Gmail** — SuperAgent API account `gmail`.
 - **Slack** — SuperAgent API account `slack`.
 - **Granola** — SuperAgent MCP `granola`.
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Google Calendar** — SuperAgent API account `googlecalendar`.
 
 ## Sample use cases

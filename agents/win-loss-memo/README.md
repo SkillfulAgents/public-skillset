@@ -9,6 +9,8 @@ tags:
   - "Content Creation"
 works_with:
   - type: api_account
+    slug: gong
+  - type: api_account
     slug: notion
 developer:
   name: "@ericzakariasson"
@@ -27,7 +29,7 @@ Turn the week’s Gong calls into a one-page win/loss memo; quote decisive phras
 
 ## Connect first
 
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Notion** — SuperAgent API account `notion`.
 
 ## Sample use cases
