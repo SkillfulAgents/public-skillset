@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-brown
+  shape: triangle
 tags:
   - "Personal"
   - "Pool Slot Grabber"

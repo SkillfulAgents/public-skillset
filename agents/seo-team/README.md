@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: search
+avatar:
+  color: tonal-forest
+  shape: bloom
 tags:
   - "Marketing"
   - "SEO Team"

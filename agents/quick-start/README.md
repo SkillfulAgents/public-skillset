@@ -1,6 +1,9 @@
 ---
 category: Agent Creation
 icon: pill
+avatar:
+  color: tonal-red
+  shape: bloom
 tags:
   - Onboarding
   - Starter Tasks

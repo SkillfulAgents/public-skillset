@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-blush
+  shape: circle
 tags:
   - "Customer Success"
   - "QBR Pack Builder"

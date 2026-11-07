@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: video
+avatar:
+  color: tonal-blush
+  shape: circle
 tags:
   - "Marketing"
   - "YouTube Scriptwriter"

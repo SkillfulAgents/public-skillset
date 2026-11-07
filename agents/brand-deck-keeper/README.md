@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: presentation
+avatar:
+  color: tonal-white
+  shape: squircle
 tags:
   - "Sales"
   - "Brand Deck Keeper"

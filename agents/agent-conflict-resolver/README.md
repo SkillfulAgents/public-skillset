@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-blue
+  shape: circle
 tags:
   - "Ops"
   - "Agent Conflict Resolver"

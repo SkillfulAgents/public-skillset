@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: shield-check
+avatar:
+  color: tonal-blush
+  shape: circle
 tags:
   - Scope Creep
   - Change Orders

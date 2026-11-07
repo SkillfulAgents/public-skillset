@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: mic
+avatar:
+  color: tonal-white
+  shape: bloom
 tags:
   - "Marketing"
   - "Podcast Guest Briefer"

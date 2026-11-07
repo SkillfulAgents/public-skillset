@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: receipt
+avatar:
+  color: tonal-purple
+  shape: squircle
 tags:
   - Receipts
   - Bookkeeping

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-black
+  shape: hexagon
 tags:
   - "Personal"
   - "Wedding Planner"

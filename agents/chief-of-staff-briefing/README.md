@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-amber
+  shape: diamond
 tags:
   - "Ops"
   - "Chief of Staff Briefing"

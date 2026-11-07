@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: user-search
+avatar:
+  color: tonal-amber
+  shape: squircle
 tags:
   - "Ops"
   - "Applicant Screener"

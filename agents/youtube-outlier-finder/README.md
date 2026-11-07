@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: video
+avatar:
+  color: tonal-orange
+  shape: bloom
 tags:
   - "Marketing"
   - "YouTube Outlier Finder"

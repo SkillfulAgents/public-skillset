@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: truck
+avatar:
+  color: tonal-brown
+  shape: pill
 tags:
   - Dispatch
   - Home Services

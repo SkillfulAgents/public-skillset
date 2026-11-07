@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: messages-square
+avatar:
+  color: tonal-blush
+  shape: diamond
 tags:
   - "Ops"
   - "Community Ops Crew"

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-black
+  shape: arch
 tags:
   - "Personal"
   - "Kindle To Anki"

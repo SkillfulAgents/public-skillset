@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: wallet
+avatar:
+  color: tonal-blush
+  shape: circle
 tags:
   - Accounts Payable
   - Vendor Follow-Up

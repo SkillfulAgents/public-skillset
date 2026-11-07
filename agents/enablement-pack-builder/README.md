@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-amber
+  shape: hexagon
 tags:
   - "Customer Success"
   - "Enablement Pack Builder"

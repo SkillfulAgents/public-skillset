@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-chocolate
+  shape: bloom
 tags:
   - "Productivity"
   - "Slack Stand-In"

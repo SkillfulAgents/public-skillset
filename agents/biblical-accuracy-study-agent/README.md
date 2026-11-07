@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-chocolate
+  shape: arch
 tags:
   - "Personal"
   - "Biblical Accuracy Study Agent"

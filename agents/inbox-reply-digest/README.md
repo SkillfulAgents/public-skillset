@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: mail
+avatar:
+  color: tonal-brown
+  shape: triangle
 tags:
   - "Sales"
   - "Inbox Reply Digest"

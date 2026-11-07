@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-pink
+  shape: hexagon
 tags:
   - "Sales"
   - "Prospecting Sheet Builder"

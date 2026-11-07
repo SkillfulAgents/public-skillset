@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-blue
+  shape: squircle
 tags:
   - "Marketing"
   - "Content Idea Generator"

@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: mail
+avatar:
+  color: tonal-green
+  shape: circle
 tags:
   - "Productivity"
   - "Email Briefing Assistant"

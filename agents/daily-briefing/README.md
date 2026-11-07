@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-amber
+  shape: bloom
 tags:
   - "Productivity"
   - "Daily Briefing"

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: plane
+avatar:
+  color: tonal-orange
+  shape: hexagon
 tags:
   - "Personal"
   - "Trip Concierge"

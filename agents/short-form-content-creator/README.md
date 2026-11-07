@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-grey
+  shape: pill
 tags:
   - "Marketing"
   - "Short-Form Content Creator"

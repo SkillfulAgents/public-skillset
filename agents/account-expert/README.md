@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-brown
+  shape: bloom
 tags:
   - "Customer Success"
   - "Account Expert"

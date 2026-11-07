@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: file-text
+avatar:
+  color: tonal-blue
+  shape: circle
 tags:
   - Proposals
   - Rate Card Pricing
