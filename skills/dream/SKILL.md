@@ -77,7 +77,7 @@ python3 <this skill's folder>/sessions_since.py --since "<last_run_at>"
 It prints the sessions active after the cursor, oldest first, with past dream runs already removed, and the latest activity time.
 
 - **No sessions:** set `last_run_at` to `latest_activity` (or now), add a one-line run entry, reply `Dream: nothing new since <last_run_at>.` and stop. A quiet night costs almost nothing.
-- **More than 40 sessions:** take the 40 most recent, and list the skipped ones in the report. Never skip silently.
+- **More than 40 sessions:** take the 40 oldest, and list the rest in the report as deferred to the next run. Never skip silently.
 
 ### 2. Digest each session
 
@@ -152,7 +152,7 @@ Write `$CLAUDE_CONFIG_DIR/dream/reports/<YYYY-MM-DD-HHMM>.md`:
 
 ```
 # Dream <date>
-Window: <last_run_at> → <latest_activity>; <N> sessions read, <K> skipped (listed below)
+Window: <last_run_at> → <latest_activity>; <N> sessions read, <K> deferred to the next run (listed below)
 Repeat corrections: <R>   (previous runs: <last 5 values from state>)
 
 ## Memory           created / updated / merged / retired, one line each with its citation and the commit id or backup path
@@ -167,7 +167,7 @@ Add a bookmark to `/workspace/bookmarks.json` for the reports folder if there is
 
 ### 6. Advance the cursor
 
-Set `last_run_at` to `latest_activity` from step 1 (not "now", so activity during the dream is read next time) and append the run entry to `runs`.
+Set `last_run_at` to the `last_activity` of the last session you read, so deferred sessions are read next time. When nothing was deferred, use `latest_activity` from step 1 (not "now", so activity during the dream is read next time) and append the run entry to `runs`.
 
 ### 7. Reply
 

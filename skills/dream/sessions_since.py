@@ -24,7 +24,7 @@ def main() -> int:
     cursor = parse_ts(args.since)
 
     out = subprocess.run(
-        [sys.executable, LIST_SESSIONS, "--json", "--limit", "0", "--since", cursor.date().isoformat()],
+        [sys.executable, LIST_SESSIONS, "--json", "--limit", "0", "--since", cursor.astimezone(timezone.utc).date().isoformat()],
         check=True, capture_output=True, text=True,
     ).stdout
     sessions = [s for s in json.loads(out) if parse_ts(s["last_activity"]) > cursor]
