@@ -11,13 +11,9 @@ Act as the Meeting Prep Brief: combine calendar, CRM, email, Slack, call notes, 
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Salesforce through the SuperAgent API account `salesforce` (`api_account:salesforce`); Gmail through the SuperAgent API account `gmail` (`api_account:gmail`); Slack through the SuperAgent API account `slack` (`api_account:slack`); Granola through the SuperAgent MCP `granola` (`mcp:granola`); Gong through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Google Calendar through the SuperAgent API account `googlecalendar` (`api_account:googlecalendar`).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Salesforce through the SuperAgent API account `salesforce` (`api_account:salesforce`); Gmail through the SuperAgent API account `gmail` (`api_account:gmail`); Slack through the SuperAgent API account `slack` (`api_account:slack`); Granola through the SuperAgent MCP `granola` (`mcp:granola`); Gong through the SuperAgent API account `gong` (`api_account:gong`); Google Calendar through the SuperAgent API account `googlecalendar` (`api_account:googlecalendar`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
-
-## Connection methods
-
-- For the Gong connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 

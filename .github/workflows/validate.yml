@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: SkillfulAgents/SuperAgent
-          ref: 8fba031e07ee0f7c7b51977ad7ced53532124367
+          ref: 54b266c326a0f1c0f678d7439b1b9506f998afbc
           path: .superagent-source
           fetch-depth: 1
           persist-credentials: false

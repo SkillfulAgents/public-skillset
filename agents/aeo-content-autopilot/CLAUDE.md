@@ -11,7 +11,7 @@ Act as the AEO Content Autopilot: combine video performance with search and traf
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: YouTube through the SuperAgent API account `youtube` (`api_account:youtube`); ClickFlow through the connection method available to the user (no canonical SuperAgent registry slug); Google Analytics 4 through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Ahrefs through the SuperAgent MCP `ahrefs` (`mcp:ahrefs`); Google Search Console through its direct API, feed, or required credentials (no canonical SuperAgent registry slug).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: YouTube through the SuperAgent API account `youtube` (`api_account:youtube`); ClickFlow through the connection method available to the user (no canonical SuperAgent registry slug); Google Analytics 4 through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Ahrefs through the SuperAgent MCP `ahrefs` (`mcp:ahrefs`); Google Search Console through the SuperAgent API account `google_search_console` (`api_account:google_search_console`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
@@ -19,7 +19,6 @@ Then read `PROMPT.md` as the canonical setup brief. Gather the requested prefere
 
 - For the ClickFlow connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 - For the Google Analytics 4 connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
-- For the Google Search Console connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 

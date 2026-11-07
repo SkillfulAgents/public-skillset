@@ -14,6 +14,8 @@ works_with:
     slug: youtube
   - type: mcp
     slug: ahrefs
+  - type: api_account
+    slug: google_search_console
 developer:
   name: "@ericosiu"
   url: "https://x.com/ericosiu"
@@ -35,7 +37,7 @@ Combine video performance with search and traffic signals; turn the strongest op
 - **ClickFlow** — external connection; no canonical registry slug.
 - **Google Analytics 4** — direct API, feed, or required credentials; no canonical registry slug.
 - **Ahrefs** — SuperAgent MCP `ahrefs`.
-- **Google Search Console** — direct API, feed, or required credentials; no canonical registry slug.
+- **Google Search Console** — SuperAgent API account `google_search_console`.
 
 ## Sample use cases
 

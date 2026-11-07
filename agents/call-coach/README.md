@@ -6,7 +6,9 @@ tags:
   - "Call Coach"
   - "Gong"
   - "Analysis"
-works_with: []
+works_with:
+  - type: api_account
+    slug: gong
 developer:
   name: "@ericzakariasson"
   url: "https://x.com/ericzakariasson"
@@ -24,7 +26,7 @@ Review Gong calls for missed signals, interruptions, and skipped discovery; retu
 
 ## Connect first
 
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 
 ## Sample use cases
 

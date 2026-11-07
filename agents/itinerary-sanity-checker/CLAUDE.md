@@ -11,13 +11,13 @@ Act as the Itinerary Sanity Checker: normalize a multi-city itinerary into one t
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Google Flights through a browser session (no SuperAgent registry slug); Google Maps through a browser session (no SuperAgent registry slug).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Google Flights through a browser session (no SuperAgent registry slug); Google Maps through the SuperAgent API account `google_maps` (`api_account:google_maps`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
 ## Connection methods
 
-- For browser-based connections (`Google Flights`, `Google Maps`), use SuperAgent's dedicated `mcp__browser__browser_*` tools, starting with `mcp__browser__browser_open`. For multi-step browsing, delegate with `Agent(subagent_type="web-browser", prompt="<task>")`.
+- For browser-based connections (`Google Flights`), use SuperAgent's dedicated `mcp__browser__browser_*` tools, starting with `mcp__browser__browser_open`. For multi-step browsing, delegate with `Agent(subagent_type="web-browser", prompt="<task>")`.
 
 ## Operating rules
 

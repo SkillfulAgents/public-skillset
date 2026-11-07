@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
-  "superagentCommit": "8fba031e07ee0f7c7b51977ad7ced53532124367",
+  "superagentCommit": "54b266c326a0f1c0f678d7439b1b9506f998afbc",
   "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
   "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",
   "labels": [
@@ -54,8 +54,9 @@
     },
     {
       "name": "Axiom",
-      "kind": "raw_api",
-      "reason": "Axiom observability access would use its vendor API; no catalog entry exists."
+      "kind": "mcp",
+      "slug": "axiom",
+      "reason": "Exact Axiom MCP display-name and slug match."
     },
     {
       "name": "Bee",
@@ -251,8 +252,9 @@
     },
     {
       "name": "Gong",
-      "kind": "raw_api",
-      "reason": "Gong call data would require Gong's vendor API; no registry entry exists."
+      "kind": "api_account",
+      "slug": "gong",
+      "reason": "Exact Gong Provider display-name and canonical slug match."
     },
     {
       "name": "Google Analytics 4",
@@ -284,8 +286,9 @@
     },
     {
       "name": "Google Maps",
-      "kind": "browser",
-      "reason": "The source points to maps.google.com for travel-time and place checks; no canonical registry connector exists."
+      "kind": "api_account",
+      "slug": "google_maps",
+      "reason": "Exact Google Maps Provider display-name and canonical slug match."
     },
     {
       "name": "Google Search",
@@ -294,8 +297,9 @@
     },
     {
       "name": "Google Search Console",
-      "kind": "raw_api",
-      "reason": "Search Console requires its Google API; no canonical registry entry exists."
+      "kind": "api_account",
+      "slug": "google_search_console",
+      "reason": "Exact Google Search Console Provider display-name and canonical slug match."
     },
     {
       "name": "Google Sheets",
@@ -342,8 +346,9 @@
     },
     {
       "name": "Help Scout",
-      "kind": "raw_api",
-      "reason": "Help Scout ticket access requires its vendor API; no registry entry exists."
+      "kind": "mcp",
+      "slug": "help-scout",
+      "reason": "Exact Help Scout MCP display-name and slug match."
     },
     {
       "name": "HelpSpot",
@@ -454,8 +459,9 @@
     },
     {
       "name": "Reddit",
-      "kind": "raw_api",
-      "reason": "Reddit has no catalog entry; reading can use public web/API access, while account actions require unsupported OAuth."
+      "kind": "api_account",
+      "slug": "reddit",
+      "reason": "Exact Reddit Provider display-name and canonical slug match."
     },
     {
       "name": "Remote VM",

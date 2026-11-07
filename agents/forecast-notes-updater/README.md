@@ -15,6 +15,8 @@ works_with:
   - type: mcp
     slug: granola
   - type: api_account
+    slug: gong
+  - type: api_account
     slug: slack
   - type: api_account
     slug: gmail
@@ -37,7 +39,7 @@ Combine call notes, Slack threads, and email after each customer touchpoint; dra
 
 - **Salesforce** — SuperAgent API account `salesforce`.
 - **Granola** — SuperAgent MCP `granola`.
-- **Gong** — direct API, feed, or required credentials; no canonical registry slug.
+- **Gong** — SuperAgent API account `gong`.
 - **Slack** — SuperAgent API account `slack`.
 - **Gmail** — SuperAgent API account `gmail`.
 

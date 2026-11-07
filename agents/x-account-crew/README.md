@@ -14,6 +14,8 @@ works_with:
     slug: twitter
   - type: api_account
     slug: github
+  - type: api_account
+    slug: reddit
 developer:
   name: "@Axel_bitblaze69"
   url: "https://x.com/Axel_bitblaze69"
@@ -34,7 +36,7 @@ Coordinate five specialist roles for X ideas, hooks, planning, analytics, and DM
 - **X** — SuperAgent API account `twitter`.
 - **Hacker News** — built-in capability; no connection slug.
 - **GitHub** — SuperAgent API account `github`.
-- **Reddit** — direct API, feed, or required credentials; no canonical registry slug.
+- **Reddit** — SuperAgent API account `reddit`.
 
 ## Sample use cases
 

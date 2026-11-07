@@ -10,6 +10,8 @@ tags:
   - "Infisical"
   - "Customer Operations"
 works_with:
+  - type: mcp
+    slug: axiom
   - type: api_account
     slug: github
 developer:
@@ -30,7 +32,7 @@ Keep each support-ticket run bounded to its conversation; inspect docs, code, an
 ## Connect first
 
 - **Ferndesk** — external connection; no canonical registry slug.
-- **Axiom** — direct API, feed, or required credentials; no canonical registry slug.
+- **Axiom** — SuperAgent MCP `axiom`.
 - **GitHub** — SuperAgent API account `github`.
 - **Infisical** — direct API, feed, or required credentials; no canonical registry slug.
 - **Codex** — local tool or resource; no connection slug.

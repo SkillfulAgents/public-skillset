@@ -35,6 +35,10 @@
           "slug": "gmail"
         },
         {
+          "type": "api_account",
+          "slug": "gong"
+        },
+        {
           "type": "mcp",
           "slug": "granola"
         }
@@ -281,6 +285,10 @@
         {
           "type": "mcp",
           "slug": "ahrefs"
+        },
+        {
+          "type": "api_account",
+          "slug": "google_search_console"
         }
       ],
       "icon": "pen-line",
@@ -707,7 +715,12 @@
       "connectFirst": [
         "Gong"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "gong"
+        }
+      ],
       "icon": "badge-dollar-sign",
       "tags": [
         "Sales",
@@ -739,6 +752,10 @@
         {
           "type": "mcp",
           "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "gong"
         },
         {
           "type": "api_account",
@@ -2117,6 +2134,10 @@
         },
         {
           "type": "api_account",
+          "slug": "gong"
+        },
+        {
+          "type": "api_account",
           "slug": "slack"
         },
         {
@@ -2549,7 +2570,12 @@
         "Google Flights",
         "Google Maps"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "google_maps"
+        }
+      ],
       "icon": "plane",
       "tags": [
         "Personal",
@@ -2851,6 +2877,10 @@
       "worksWith": [
         {
           "type": "api_account",
+          "slug": "gong"
+        },
+        {
+          "type": "api_account",
           "slug": "notion"
         }
       ],
@@ -3008,6 +3038,10 @@
         {
           "type": "mcp",
           "slug": "granola"
+        },
+        {
+          "type": "api_account",
+          "slug": "gong"
         },
         {
           "type": "api_account",
@@ -3871,7 +3905,12 @@
       "connectFirst": [
         "Reddit"
       ],
-      "worksWith": [],
+      "worksWith": [
+        {
+          "type": "api_account",
+          "slug": "reddit"
+        }
+      ],
       "icon": "megaphone",
       "tags": [
         "Marketing",
@@ -4653,6 +4692,10 @@
       ],
       "worksWith": [
         {
+          "type": "mcp",
+          "slug": "help-scout"
+        },
+        {
           "type": "api_account",
           "slug": "intercom"
         }
@@ -4758,6 +4801,10 @@
         "Codex"
       ],
       "worksWith": [
+        {
+          "type": "mcp",
+          "slug": "axiom"
+        },
         {
           "type": "api_account",
           "slug": "github"
@@ -5306,6 +5353,10 @@
       "worksWith": [
         {
           "type": "api_account",
+          "slug": "gong"
+        },
+        {
+          "type": "api_account",
           "slug": "notion"
         }
       ],
@@ -5383,6 +5434,10 @@
         {
           "type": "api_account",
           "slug": "github"
+        },
+        {
+          "type": "api_account",
+          "slug": "reddit"
         }
       ],
       "icon": "megaphone",

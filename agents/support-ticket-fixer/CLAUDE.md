@@ -11,14 +11,13 @@ Act as the Support Ticket Fixer: keep each support-ticket run bounded to its con
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Ferndesk through the connection method available to the user (no canonical SuperAgent registry slug); Axiom through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); GitHub through the SuperAgent API account `github` (`api_account:github`); Infisical through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Codex as a local tool or resource (no connection slug required).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Ferndesk through the connection method available to the user (no canonical SuperAgent registry slug); Axiom through the SuperAgent MCP `axiom` (`mcp:axiom`); GitHub through the SuperAgent API account `github` (`api_account:github`); Infisical through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Codex as a local tool or resource (no connection slug required).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
 
 ## Connection methods
 
 - For the Ferndesk connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
-- For the Axiom connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 - For the Infisical connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules

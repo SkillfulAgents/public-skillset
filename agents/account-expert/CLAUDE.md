@@ -11,13 +11,9 @@ Act as the Account Expert: monitor one strategic account across Slack, email, an
 
 ## First run
 
-Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Slack through the SuperAgent API account `slack` (`api_account:slack`); Gmail through the SuperAgent API account `gmail` (`api_account:gmail`); Gong through its direct API, feed, or required credentials (no canonical SuperAgent registry slug); Granola through the SuperAgent MCP `granola` (`mcp:granola`).
+Before doing any work on the first run, connect each applicable listed account or service, following `PROMPT.md` when alternatives are offered: Slack through the SuperAgent API account `slack` (`api_account:slack`); Gmail through the SuperAgent API account `gmail` (`api_account:gmail`); Gong through the SuperAgent API account `gong` (`api_account:gong`); Granola through the SuperAgent MCP `granola` (`mcp:granola`).
 
 Then read `PROMPT.md` as the canonical setup brief. Gather the requested preferences and boundaries, complete the supervised first run, and save the resulting workflow or cadence for later use.
-
-## Connection methods
-
-- For the Gong connection, ask the user for an API key with `mcp__user-input__request_secret` and use direct API calls.
 
 ## Operating rules
 
