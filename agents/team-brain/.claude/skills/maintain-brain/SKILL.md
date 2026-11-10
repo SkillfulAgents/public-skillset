@@ -11,6 +11,8 @@ Follow the system prompt. This skill adds only what's specific to upkeep. It usu
 
 **A newer template?** Check this first, so it happens even when upkeep stops early. Your template's source is in `.skillset-agent-metadata.json` at the top of your workspace, which the app owns: read it, don't edit it. The published version is the `version` in the frontmatter of `CLAUDE.md` in that folder. When it is newer than the `version` in your own instructions, and you haven't flagged that version before, say so under **Needs you** in your report: the new version is out, and saying "update from template" in a chat with you reviews it. Updating changes your own instructions, so it happens in a session with a person, through `update-from-template`, not here.
 
+**A missed run?** Check this first too. When the latest summary in `_brain/syncs/` is older than the schedule allows, a run didn't happen. Re-sync already covers the gap from each source's last-sync date. Say which runs were missed under Blocked, so someone checks the upkeep task.
+
 ```
 1 Claim      claim the brain (stop if a fresh claim is held)
 2 Pending    retry contributions waiting on an answer
@@ -54,6 +56,7 @@ Rows that come from the defaults (timelines, folder READMEs, folder sizes, front
 |---|---|
 | Broken link | If the target moved, find it by name and fix the link. Otherwise remove the link and note it on the page. |
 | Page past its review interval | Re-check it against its sources. Update it and its `last_checked`, or mark it stale if the source can't be reached. |
+| A line about a date that has passed (a due date, a deadline, an upcoming event) | Re-check it against its sources. With no recorded outcome, say "outcome unknown". |
 | Page past its `until` date, or its project, ticket or PR has ended | Archive it, giving the end as the reason. |
 | Source a reader can't open (private notes, a moved file) | Replace it with the original link, finding moved files by name. If there's none, mark the page `inferred`. |
 | Page missing its summary, sources, verified label or last-checked date | Fill them in from the page's sources. Where that's impossible, label the page honestly. |
@@ -68,7 +71,7 @@ Rows that come from the defaults (timelines, folder READMEs, folder sizes, front
 | Folder under the minimum size past its grace period | Merge its pages into the closest folder. |
 | A brain page that differs from what you last wrote | Step 5. |
 
-**On large brains,** don't re-read every file every night. Tell which files changed by size and modified time, then read only those. A full read of a large synced drive can take most of an hour.
+**On large brains,** don't re-read every file every night. Tell which files changed by size and modified time, then read only those, plus any page holding a date that has since passed. A text search finds those. A full read of a large synced drive can take most of an hour.
 
 When a check repeats nightly, script it and keep the script with this skill. Your own script is fine. What matters is that it reliably catches the problems in the table.
 
@@ -155,6 +158,7 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
   - **To decide:** a call that is a person's, not yours (facts that disagree, a sensitive item, a structure change). Say what you filed meanwhile.
   - Every line is a checkbox, `- [ ]`, and `- [x]` once resolved. The next summary shows a resolved line checked once, then drops it.
   - New lines come first. Re-check the previous summary's lines and carry over the ones still open, one line each, ending `(open since <date>)`: the page shows only the latest summary's.
+  - A question unanswered for a week times out, because a list that only grows buries the new asks. What you did meanwhile becomes the answer: mark it unconfirmed where it's recorded, with the date you asked, and log it. Check the line off with what happened, so it shows once and then drops. Raise it again only when something new would change the answer.
   - Keep only the `### Blocked` and `### To decide` headings. The page shows nothing under any other heading.
 - Leave out a section with nothing in it. A quiet run is the header alone, with zeros.
 
