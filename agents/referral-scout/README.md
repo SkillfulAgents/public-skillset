@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: user-search
+avatar:
+  color: tonal-teal
+  shape: arch
 tags:
   - Referrals
   - Warm Intros

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: video
+avatar:
+  color: tonal-grey
+  shape: squircle
 tags:
   - "Personal"
   - "Film Scan Metadata Fixer"

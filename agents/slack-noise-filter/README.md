@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-purple
+  shape: squircle
 tags:
   - "Productivity"
   - "Slack Noise Filter"

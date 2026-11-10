@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-white
+  shape: pill
 tags:
   - "Personal"
   - "Class Action Matcher"

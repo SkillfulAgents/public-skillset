@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: code-2
+avatar:
+  color: tonal-purple
+  shape: arch
 tags:
   - "Ops"
   - "Codebase Hardening Auditor"

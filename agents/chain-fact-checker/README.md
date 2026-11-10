@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-grey
+  shape: pill
 tags:
   - "Ops"
   - "Chain Fact Checker"

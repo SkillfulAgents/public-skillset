@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: house
+avatar:
+  color: tonal-grey
+  shape: arch
 tags:
   - "Personal"
   - "Recipe Grocery Autopilot"

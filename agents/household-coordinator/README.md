@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: house
+avatar:
+  color: tonal-amber
+  shape: diamond
 tags:
   - "Personal"
   - "Household Coordinator"

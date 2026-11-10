@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-forest
+  shape: arch
 tags:
   - "Personal"
   - "Subscription Pruner"

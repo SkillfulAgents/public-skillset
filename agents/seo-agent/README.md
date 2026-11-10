@@ -1,6 +1,9 @@
 ---
 category: Marketing
 icon: search-check
+avatar:
+  color: tonal-green
+  shape: pill
 tags:
   - SEO
   - Content Marketing

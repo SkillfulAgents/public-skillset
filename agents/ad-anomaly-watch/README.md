@@ -1,6 +1,9 @@
 ---
 category: Marketing
 icon: activity
+avatar:
+  color: tonal-blush
+  shape: diamond
 tags:
   - Paid Ads
   - Meta Ads

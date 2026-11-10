@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-forest
+  shape: circle
 tags:
   - "Personal"
   - "Fridge To Dinner Plan"

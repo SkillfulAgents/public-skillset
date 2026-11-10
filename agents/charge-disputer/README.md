@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-blue
+  shape: squircle
 tags:
   - "Personal"
   - "Charge Disputer"

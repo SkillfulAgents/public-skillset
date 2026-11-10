@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-chocolate
+  shape: hexagon
 tags:
   - "Customer Success"
   - "Churn Early Warning"

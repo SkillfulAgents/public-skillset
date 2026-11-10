@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: calendar-check
+avatar:
+  color: tonal-orange
+  shape: pill
 tags:
   - "Sales"
   - "Meeting Prep Brief"

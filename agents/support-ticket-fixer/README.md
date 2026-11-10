@@ -1,6 +1,9 @@
 ---
 category: "Customer Success"
 icon: life-buoy
+avatar:
+  color: tonal-forest
+  shape: diamond
 tags:
   - "Customer Success"
   - "Support Ticket Fixer"

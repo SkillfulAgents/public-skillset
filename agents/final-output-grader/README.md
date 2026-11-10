@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-white
+  shape: triangle
 tags:
   - "Ops"
   - "Final Output Grader"

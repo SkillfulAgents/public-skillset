@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-purple
+  shape: arch
 tags:
   - "Personal"
   - "Pizza Ordering Assistant"

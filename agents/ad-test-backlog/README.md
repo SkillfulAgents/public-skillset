@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-green
+  shape: arch
 tags:
   - "Marketing"
   - "Ad Test Backlog"

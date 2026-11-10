@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: messages-square
+avatar:
+  color: tonal-cobalt
+  shape: circle
 tags:
   - "Marketing"
   - "Viral Tweet Scout"

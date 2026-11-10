@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: code-2
+avatar:
+  color: tonal-orange
+  shape: triangle
 tags:
   - "Productivity"
   - "Linear Development Orchestrator"

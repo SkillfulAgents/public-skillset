@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-purple
+  shape: hexagon
 tags:
   - "Marketing"
   - "Social Content Operator"

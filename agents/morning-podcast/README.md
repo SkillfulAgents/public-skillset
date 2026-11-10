@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: mic
+avatar:
+  color: tonal-orange
+  shape: triangle
 tags:
   - "Productivity"
   - "Morning Podcast"

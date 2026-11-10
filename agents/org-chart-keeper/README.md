@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-blue
+  shape: arch
 tags:
   - "Sales"
   - "Org Chart Keeper"

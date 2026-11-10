@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-chocolate
+  shape: triangle
 tags:
   - "Marketing"
   - "SaaS Marketing Reviewer"

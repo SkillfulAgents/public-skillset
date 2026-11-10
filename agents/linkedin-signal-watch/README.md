@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: search
+avatar:
+  color: tonal-chocolate
+  shape: hexagon
 tags:
   - "Sales"
   - "LinkedIn Signal Watch"

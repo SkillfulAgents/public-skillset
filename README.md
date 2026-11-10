@@ -184,7 +184,8 @@ Both files may have YAML frontmatter. The index generator shallow-merges the two
 | `createdAt` | ISO-8601 string | Original creation time; defaults to an empty string. |
 | `version` | string | Agent template version; defaults to `1.0.0`. |
 | `category` | string | Primary marketplace category; defaults to an empty string. |
-| `icon` | string | Lowercase kebab-case Lucide icon name; defaults to an empty string. |
+| `icon` | string | Lowercase kebab-case Lucide icon name; defaults to an empty string. Kept for app versions that predate avatars. |
+| `avatar` | object | The agent's orb: exactly `color` and `shape` from SuperAgent's avatar palette. Omitted from the index when unset. |
 | `tags` | string array | Display-ready search and marketing labels; defaults to `[]`. |
 | `works_with` | object array | Compatible API Accounts and MCPs, identified by canonical registry slug; defaults to `[]`. |
 | `developer` | object | Credit with required `name` and optional `url`; defaults to `{}`. |
@@ -208,6 +209,9 @@ And the marketing fields in `README.md`:
 ---
 category: Productivity
 icon: calendar-check
+avatar:
+  color: tonal-teal
+  shape: pill
 tags:
   - Planning
   - Automation
@@ -227,6 +231,8 @@ Long-form marketplace copy starts here.
 ```
 
 `icon` must be the lowercase kebab-case name of an icon from the [Lucide icon catalog](https://lucide.dev/icons/), such as `inbox`, `presentation`, or `calendar-check`. Store the catalog name rather than the React component export name (`CalendarCheck`). The generator validates the name's syntax but does not embed a particular Lucide release's catalog, so consumers should fall back gracefully when a newer icon is unknown to their installed version.
+
+`avatar` is the orb the Gamut library draws for the template, and the avatar an agent installed from it starts with. `color` is one of `tonal-red`, `tonal-orange`, `tonal-amber`, `tonal-green`, `tonal-forest`, `tonal-teal`, `tonal-blue`, `tonal-cobalt`, `tonal-purple`, `tonal-blush`, `tonal-pink`, `tonal-brown`, `tonal-chocolate`, `tonal-white`, `tonal-grey`, `tonal-black`, or a two-tone `duo-red-amber`, `duo-green-amber`, `duo-forest-teal`, `duo-teal-blush`, `duo-blue-amber`, `duo-cobalt-teal`, `duo-pink-blue`, `duo-brown-amber`. `shape` is one of `circle`, `squircle`, `triangle`, `diamond`, `hexagon`, `pill`, `arch`, `bloom`. Both lists live in `avatars.py` and mirror SuperAgent's `src/shared/lib/types/agent-avatar.ts`. New templates start from `avatars.default_avatar(name)`, the same pick the app makes for a template without one, and can be changed freely.
 
 `tags` are display strings, not identifiers. Preserve human-friendly spacing, capitalization, acronyms, and product names (for example `Email Management`, `SEO`, and `OpenSlide`). Consumers may normalize tags internally for search or filtering, but the index should keep the presentation-ready labels.
 

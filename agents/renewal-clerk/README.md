@@ -1,6 +1,9 @@
 ---
 category: Customer Success
 icon: refresh-cw
+avatar:
+  color: tonal-pink
+  shape: squircle
 tags:
   - Contract Renewals
   - End Dates

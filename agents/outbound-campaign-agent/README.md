@@ -2,6 +2,9 @@
 version: 1.13.0
 category: Sales
 icon: target
+avatar:
+  color: tonal-purple
+  shape: triangle
 tags:
   - Sales Outreach
   - Lead Generation

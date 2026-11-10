@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: mic
+avatar:
+  color: tonal-grey
+  shape: circle
 tags:
   - "Productivity"
   - "Podcast Summarizer"

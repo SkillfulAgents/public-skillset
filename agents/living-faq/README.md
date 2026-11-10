@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-amber
+  shape: hexagon
 tags:
   - "Marketing"
   - "Living FAQ"

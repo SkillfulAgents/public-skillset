@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-red
+  shape: diamond
 tags:
   - "Productivity"
   - "Swarm Daily Summarizer"

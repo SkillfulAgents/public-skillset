@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: presentation
+avatar:
+  color: tonal-black
+  shape: squircle
 tags:
   - "Sales"
   - "Deck Updater"

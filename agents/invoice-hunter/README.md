@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: badge-dollar-sign
+avatar:
+  color: tonal-cobalt
+  shape: circle
 tags:
   - Overdue Invoices
   - Accounts Receivable

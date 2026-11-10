@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-orange
+  shape: arch
 tags:
   - "Marketing"
   - "Reply Drafter"

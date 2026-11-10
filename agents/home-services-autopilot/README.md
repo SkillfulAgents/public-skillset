@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: house
+avatar:
+  color: tonal-red
+  shape: bloom
 tags:
   - "Personal"
   - "Home Services Autopilot"

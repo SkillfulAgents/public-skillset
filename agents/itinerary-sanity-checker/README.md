@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: plane
+avatar:
+  color: tonal-brown
+  shape: hexagon
 tags:
   - "Personal"
   - "Itinerary Sanity Checker"

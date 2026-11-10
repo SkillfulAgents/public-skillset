@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-orange
+  shape: pill
 tags:
   - "Productivity"
   - "Nexus Coordinator"

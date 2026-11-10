@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-chocolate
+  shape: squircle
 tags:
   - "Marketing"
   - "Competitor Pricing Watch"
