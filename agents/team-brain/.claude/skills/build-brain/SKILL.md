@@ -22,7 +22,7 @@ Read your memory and the brain first. One of four things is true:
 
 ## Opening
 
-Research before you ask anything. The setup block names who set you up: their email and name usually lead to the organization and their place in it, and each checks the other. Come back with what you found, how sure you are, and your best guess at what the brain should cover. Write that into the brain as an `inferred` overview first, so they see it start while they read. If nothing usable turns up, ask for the team's name and website, then research from that.
+Research before you ask anything. The setup block names who set you up: their email and name usually lead to the organization and their place in it, and each checks the other. Be sure which team this is before writing anything, because a wrong guess stays in the brain's history. When the person who set you up is your only clue, confirm it in one line: accounts outlive renames and reorganizations. Come back with what you found, how sure you are, and your best guess at what the brain should cover. Write that into the brain as an `inferred` overview first, so they see it start while they read. If nothing usable turns up, ask for the team's name and website, then research from that.
 
 Show value before asking for effort. Keep what you say about a person to their work role and team.
 
@@ -105,6 +105,9 @@ When a crawl will need redoing later (re-syncs, a second person's account), writ
 
   Adapt them freely or ignore them. The user's way of thinking wins ("we think in customers, not markets"). Restructure as soon as you hear it, while it's cheap.
 - **Pages most teams need early:** an overview, a people page (roles, who to ask about what), a glossary (see the system prompt's default), how the team works, and a decision record for each decision you find.
+- **How-to and now layers.** Offer each when the evidence fits, as the system prompt's defaults describe.
+  - How-to: ask each shared agent in scope about itself, once, in one read-only set of questions that covers what the pages need. An agent knows its own instructions and limits better than its sessions show.
+  - Now: first find where the team actually sets focus (a meeting deck, a tracker, an OKR doc) and how it divides its work.
 - **No empty or placeholder folders.** A folder appears when its first page does.
 - **Parallel writers need separate paths.** When several helpers draft at once, give each its own set of paths before they start, decision records included. A helper that needs a path it doesn't own hands back a note instead of writing there.
 - **Keep the team record current as you go:** `_brain/team.md` with the profile, sensitivity decisions as they're made, and routing; `_brain/sources.md`; and the changelog.
