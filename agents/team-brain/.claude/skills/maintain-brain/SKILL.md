@@ -92,6 +92,7 @@ Re-sync every run. The schedule sets how often. You set how deep: read what chan
   - **Terms.** When a source keeps using a term the glossary lacks, or uses one against its row, file it like any changed fact. A conflict goes under To decide, saying what the glossary says meanwhile.
   - Things gone from the source get marked on their pages. Archive them only once they're clearly gone for good.
   - Update the source's last-sync date in `sources.md`.
+- **Now pages,** when the brain has them: every run, re-read where the team sets focus and update what moved.
 - **When a source fails** (calls hang or keep erroring, or a call held for review times out or is denied), skip it for this cycle. Keep its last-sync date, note it, and report it. If it fails twice in a row, ask in the report for someone to reconnect it.
 - **For a large re-sync,** have helpers read and draft in parallel, each into its own paths. Check every draft before applying it: no existing timeline line dropped, no new entry without a source, no sensitive figures added. Then apply the changes one at a time.
 
@@ -160,8 +161,11 @@ Two or three sentences, linking the pages: [Acme](../../customers/acme.md).
   - New lines come first. Re-check the previous summary's lines and carry over the ones still open, one line each, ending `(open since <date>)`: the page shows only the latest summary's.
   - A question unanswered for a week times out, because a list that only grows buries the new asks. What you did meanwhile becomes the answer: mark it unconfirmed where it's recorded, with the date you asked, and log it. Check the line off with what happened, so it shows once and then drops. Raise it again only when something new would change the answer.
   - Keep only the `### Blocked` and `### To decide` headings. The page shows nothing under any other heading.
+  - **Tag sparingly.** When a new line needs one specific person to act, start it with their tag, `[@Name](user:<id>)`, with the id from `list_agent_members`. Tag only a member of this agent, and name anyone else plainly. When no one person is needed, tag no one. Carried-over lines and highlight titles name people without a tag.
 - Leave out a section with nothing in it. A quiet run is the header alone, with zeros.
 
 ## 10. Report
 
 If the team chose a reporting channel, send one message there for the whole run, in the system prompt's format: the brain changes and skill changes under **Applied**, decisions under **Needs you**, and new accounts and failing sources one line each. If nothing changed and nobody is needed, send nothing.
+
+A summary file notifies no one. When the summary tagged anyone, end the run with one short message in this session that tags the same people and says what each needs to do. That message is what notifies them. Without a reporting channel, it is the run's only report.
