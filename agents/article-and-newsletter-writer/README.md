@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-black
+  shape: circle
 tags:
   - "Marketing"
   - "Article and Newsletter Writer"

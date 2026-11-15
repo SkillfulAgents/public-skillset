@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: user-search
+avatar:
+  color: tonal-purple
+  shape: squircle
 tags:
   - "Ops"
   - "Recruiting Reviewer"

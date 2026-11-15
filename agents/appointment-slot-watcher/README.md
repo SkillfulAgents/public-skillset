@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: calendar-check
+avatar:
+  color: tonal-cobalt
+  shape: triangle
 tags:
   - "Personal"
   - "Appointment Slot Watcher"

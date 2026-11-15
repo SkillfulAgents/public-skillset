@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: mic
+avatar:
+  color: tonal-purple
+  shape: bloom
 tags:
   - "Marketing"
   - "Voice-Matched Drafts"

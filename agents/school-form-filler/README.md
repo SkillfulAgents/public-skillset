@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: sparkles
+avatar:
+  color: tonal-blush
+  shape: pill
 tags:
   - "Personal"
   - "School Form Filler"

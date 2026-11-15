@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: badge-dollar-sign
+avatar:
+  color: tonal-forest
+  shape: arch
 tags:
   - Estimate Follow-Up
   - Quotes

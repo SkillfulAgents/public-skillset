@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-blue
+  shape: diamond
 tags:
   - "Marketing"
   - "Account Growth Coach"

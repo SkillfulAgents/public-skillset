@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: calculator
+avatar:
+  color: tonal-black
+  shape: hexagon
 tags:
   - "Ops"
   - "SaaS CFO Monitor"

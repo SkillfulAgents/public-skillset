@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: messages-square
+avatar:
+  color: tonal-teal
+  shape: bloom
 tags:
   - "Marketing"
   - "Release To Social Campaign"

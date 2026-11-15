@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: plane
+avatar:
+  color: tonal-purple
+  shape: hexagon
 tags:
   - "Personal"
   - "Starlink Flight Finder"

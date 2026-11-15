@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-green
+  shape: triangle
 tags:
   - "Productivity"
   - "Automation Scout"

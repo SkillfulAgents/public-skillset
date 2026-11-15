@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: mic
+avatar:
+  color: tonal-cobalt
+  shape: hexagon
 tags:
   - "Sales"
   - "Outbound In Your Voice"

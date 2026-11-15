@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: shield-check
+avatar:
+  color: tonal-pink
+  shape: bloom
 tags:
   - "Ops"
   - "Supply Chain Threat Sentinel"

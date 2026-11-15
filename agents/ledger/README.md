@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: calculator
+avatar:
+  color: tonal-cobalt
+  shape: squircle
 tags:
   - "Ops"
   - "Ledger"

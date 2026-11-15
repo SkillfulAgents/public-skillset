@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-forest
+  shape: pill
 tags:
   - "Marketing"
   - "Evergreen Content Flywheel"

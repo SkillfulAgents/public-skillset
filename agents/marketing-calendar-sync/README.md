@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: calendar-check
+avatar:
+  color: tonal-brown
+  shape: bloom
 tags:
   - "Marketing"
   - "Marketing Calendar Sync"

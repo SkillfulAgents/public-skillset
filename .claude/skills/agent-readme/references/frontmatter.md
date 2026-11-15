@@ -5,12 +5,13 @@ Everything here is enforced by `generate_index.py` (shape), by
 `tests/test_superagent_slugs.py` in CI (slugs, against the live
 `SkillfulAgents/SuperAgent` registries).
 
-The five keys, in this order, in every agent README:
+The six keys, in this order, in every agent README:
 
 ```yaml
 ---
 category: <string>
 icon: <lucide-kebab-name>
+avatar: {color, shape}
 tags: [<4-7 display strings>]
 works_with: [<{type, slug} objects, or []>]
 developer: {name, url}
@@ -23,7 +24,7 @@ Keys that must **not** appear in README frontmatter:
 |---|---|
 | `name`, `description`, `createdAt`, `version` | Owned by `CLAUDE.md`; it wins the shallow merge, so a README copy is dead weight that silently rots. |
 | `path`, `details` | Generated. Setting them is meaningless and misleading. |
-| anything else | The light-import suite asserts the key set is exactly the five above. |
+| anything else | The light-import suite asserts the key set is exactly the six above. |
 
 ---
 
@@ -82,6 +83,42 @@ Rough mapping: generic productivity → `list-checks`; sales/revenue →
 `badge-dollar-sign`; marketing → `megaphone`; multi-step automation →
 `workflow`; support → `life-buoy`; writing → `pen-line`; email → `mail` or
 `inbox`; research → `search` or `user-search`.
+
+## `avatar`
+
+The orb the Gamut library draws on the template's card and details page, and
+the avatar an agent installed from the template starts with. It replaces
+`icon` in the app; keep `icon` anyway, because older app versions still draw it.
+
+```yaml
+avatar:
+  color: tonal-teal
+  shape: pill
+```
+
+Exactly `color` and `shape`, from the lists in `avatars.py` (mirrored from
+SuperAgent's `src/shared/lib/types/agent-avatar.ts`):
+
+- `color`: a tonal `tonal-red` · `tonal-orange` · `tonal-amber` ·
+  `tonal-green` · `tonal-forest` · `tonal-teal` · `tonal-blue` · `tonal-cobalt`
+  · `tonal-purple` · `tonal-blush` · `tonal-pink` · `tonal-brown` ·
+  `tonal-chocolate` · `tonal-white` · `tonal-grey` · `tonal-black`, or a
+  two-tone `duo-red-amber` · `duo-green-amber` · `duo-forest-teal` ·
+  `duo-teal-blush` · `duo-blue-amber` · `duo-cobalt-teal` · `duo-pink-blue` ·
+  `duo-brown-amber`
+- `shape`: `circle` · `squircle` · `triangle` · `diamond` · `hexagon` · `pill`
+  · `arch` · `bloom`
+
+Start from the default, then change it if the template deserves a deliberate
+look:
+
+```bash
+python3 -c "from avatars import default_avatar; print(default_avatar('Agent Name'))"
+```
+
+The default is the same pick the app makes for a template without an avatar,
+so adding one never changes how an existing card looks. Light imports get it
+automatically and keep whatever a README already has on re-import.
 
 ## `tags`
 

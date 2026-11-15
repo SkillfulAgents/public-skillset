@@ -7,7 +7,7 @@ description: Write or fix the README.md for an agent template in agents/<slug>/,
 
 `agents/<slug>/README.md` is not documentation — it is the marketplace record.
 `generate_index.py` lifts its frontmatter into `index.json` as the agent's
-`category`, `icon`, `tags`, `works_with`, and `developer`, and lifts its entire
+`category`, `icon`, `avatar`, `tags`, `works_with`, and `developer`, and lifts its entire
 Markdown body (frontmatter stripped) into `details`. The storefront renders
 those fields directly, so drift in one README shows up as a broken card.
 
@@ -56,12 +56,15 @@ fixed.
 
 ## Step 3 — Write the frontmatter
 
-Exactly these five keys, in this order, in every agent README:
+Exactly these six keys, in this order, in every agent README:
 
 ```yaml
 ---
 category: Productivity
 icon: calendar-check
+avatar:
+  color: tonal-teal
+  shape: pill
 tags:
   - Planning
   - Automation
@@ -86,7 +89,7 @@ developer:
 - Quote strings only where YAML requires it. Match the quoting style already
   used in the sibling files you are editing alongside.
 
-Field rules, the allowed `category` and `icon` vocabularies, and the strict
+Field rules, the allowed `category`, `icon` and `avatar` vocabularies, and the strict
 `works_with` slug rules are in **`references/frontmatter.md`**. Read it before
 choosing a category, an icon, or any slug. Getting a slug wrong fails CI
 against the live SuperAgent registry; inventing one is never acceptable.
@@ -175,8 +178,9 @@ H3 heading and a one-paragraph summary, and states the light-import count in the
 
 - [ ] Read `CLAUDE.md`, `PROMPT.md`, and every skill/artifact directory
 - [ ] Flavor chosen from `PROMPT.md` presence
-- [ ] Frontmatter has exactly `category`, `icon`, `tags`, `works_with`, `developer`, in order
+- [ ] Frontmatter has exactly `category`, `icon`, `avatar`, `tags`, `works_with`, `developer`, in order
 - [ ] `icon` is a real lowercase kebab-case Lucide name
+- [ ] `avatar` has a palette `color` and `shape` (start from `avatars.default_avatar(name)`)
 - [ ] 4–7 unique, presentation-ready `tags`
 - [ ] Every `works_with` slug verified against the registry; every listed connector is one the agent actually calls
 - [ ] `developer` credits the original author, with an absolute http(s) `url`

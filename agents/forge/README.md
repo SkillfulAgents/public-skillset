@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-brown
+  shape: squircle
 tags:
   - "Ops"
   - "Forge"

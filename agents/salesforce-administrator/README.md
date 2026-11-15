@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-green
+  shape: arch
 tags:
   - "Ops"
   - "Salesforce Administrator"

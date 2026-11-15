@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: user-search
+avatar:
+  color: tonal-pink
+  shape: circle
 tags:
   - "Ops"
   - "New Hire Ramp Plan"

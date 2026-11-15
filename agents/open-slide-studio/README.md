@@ -1,6 +1,9 @@
 ---
 category: Design & Creative
 icon: presentation
+avatar:
+  color: tonal-white
+  shape: arch
 tags:
   - Presentations
   - Slide Decks

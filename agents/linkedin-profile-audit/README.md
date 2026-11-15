@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: messages-square
+avatar:
+  color: tonal-red
+  shape: pill
 tags:
   - "Marketing"
   - "LinkedIn Profile Audit"

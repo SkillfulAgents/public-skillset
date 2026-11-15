@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: calculator
+avatar:
+  color: tonal-forest
+  shape: triangle
 tags:
   - "Ops"
   - "Bookkeeping Auditor"

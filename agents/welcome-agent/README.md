@@ -1,6 +1,9 @@
 ---
 category: Agent Creation
 icon: pill
+avatar:
+  color: tonal-amber
+  shape: pill
 tags:
   - Onboarding
   - Agent Builder

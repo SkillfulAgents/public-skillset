@@ -1,6 +1,9 @@
 ---
 category: Marketing
 icon: star
+avatar:
+  color: tonal-blue
+  shape: diamond
 tags:
   - Reviews
   - Reputation

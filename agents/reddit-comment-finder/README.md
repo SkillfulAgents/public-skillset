@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-white
+  shape: diamond
 tags:
   - "Marketing"
   - "Reddit Comment Finder"

@@ -1,6 +1,9 @@
 ---
 category: Sales
 icon: handshake
+avatar:
+  color: tonal-blush
+  shape: arch
 tags:
   - Estimates
   - Verbal Yes

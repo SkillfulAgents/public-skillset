@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: life-buoy
+avatar:
+  color: tonal-brown
+  shape: arch
 tags:
   - "Personal"
   - "Ticket Drop Watcher"
