@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
+  "superagentRepository": "https://github.com/SkillfulAgents/Gamut",
   "superagentCommit": "54b266c326a0f1c0f678d7439b1b9506f998afbc",
   "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
   "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",

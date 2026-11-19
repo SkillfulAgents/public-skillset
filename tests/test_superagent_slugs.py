@@ -535,7 +535,7 @@ def main() -> None:
         "--superagent-root",
         type=Path,
         required=True,
-        help="Checkout containing the canonical SkillfulAgents/SuperAgent registries",
+        help="Checkout containing the canonical SkillfulAgents/Gamut registries",
     )
     parser.add_argument(
         "--require-recorded-commit",

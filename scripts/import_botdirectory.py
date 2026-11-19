@@ -625,7 +625,7 @@ def import_templates(
     )
     canonical_crosswalk = {
         "schemaVersion": 1,
-        "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
+        "superagentRepository": "https://github.com/SkillfulAgents/Gamut",
         "superagentCommit": crosswalk["superagentCommit"],
         "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
         "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",
