@@ -3,7 +3,7 @@
 Everything here is enforced by `generate_index.py` (shape), by
 `tests/test_generate_index.py` (non-empty for every agent), and by
 `tests/test_superagent_slugs.py` in CI (slugs, against the live
-`SkillfulAgents/SuperAgent` registries).
+`SkillfulAgents/Gamut` registries).
 
 The five keys, in this order, in every agent README:
 

@@ -238,7 +238,7 @@ Each `works_with` item must contain exactly `type` and `slug`:
 Only list a connector transport the agent actually requests or consumes. Browser sessions, built-in chat integrations, public APIs, and services accessed only with a raw API key do not belong in `works_with`. The type is required because some slugs exist in both registries. Slugs are lowercase, exact, and case-sensitive. The generator validates the metadata shape and slug syntax but deliberately does not copy the app registries into this repository, so those registries remain the source of truth.
 
 GitHub Actions checks every `works_with` entry type-by-type against both the
-recorded and current canonical registries in `SkillfulAgents/SuperAgent`. It
+recorded and current canonical registries in `SkillfulAgents/Gamut`. It
 also checks for newly available exact matches among labels that currently lack
 a registry connector. The Bot Directory tests verify three-file completeness,
 effective merged metadata, category normalization (`Success` → `Customer
