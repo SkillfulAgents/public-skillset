@@ -3,17 +3,19 @@ category: Customer Success
 icon: refresh-cw
 tags:
   - Contract Renewals
-  - End Dates
+  - Notice Deadlines
+  - Vendor Contracts
   - Professional Services
-  - HubSpot
   - Google Drive
 works_with:
-  - type: api_account
-    slug: hubspot
   - type: api_account
     slug: googledrive
   - type: api_account
     slug: gmail
+  - type: api_account
+    slug: googlesheets
+  - type: api_account
+    slug: hubspot
   - type: api_account
     slug: slack
 developer:
@@ -27,39 +29,45 @@ developer:
 
 ## What it does
 
-Renewal Clerk owns contract renewals for founder-led consulting, accounting, insurance, and staffing firms. It maintains end dates from the contract folder, the CRM, or a sheet and checks them daily. When usage or retained-hours systems are connected it pulls the usage picture and cites the source.
+Renewal Clerk owns contract renewals for founder-led consulting, accounting, insurance, staffing and law firms, on both sides: the contracts clients pay you for and the contracts you pay vendors for. It keeps a living tracker with counterparty, annual value, renewal date, an auto-renew yes/no flag, and the notice-period deadline, which is the real date you have to act by and often falls 30 to 90 days before the renewal date.
 
-Inside the lead time you set, it drafts the renewal note and the next-term order form from your template and current price, then queues them for one-tap send and logs sent, replied, renewed, and churn risk. Nothing auto-renews, no usage or savings are invented, and no discount or term change happens without approval.
+When a new contract, order form or renewal notice lands in your inbox, it reads the attachment itself, not just the email, and adds or updates the tracker. A contract whose terms it could not read is flagged as a data hole, never guessed.
+
+It alerts you ahead of every notice deadline with enough lead time to decide, with big-ticket and auto-renewing contracts first. For clients it pulls the usage picture where one is connected and drafts the renewal note and next-term order form from your template and current price. For vendors it shows a decision card and drafts the non-renewal or renegotiation email you ask for. Nothing auto-renews, nothing is cancelled, and no email goes out without your approval.
 
 ## What you'll need
 
-- **HubSpot** — the supported CRM connector for contract records and renewal logging. Another CRM can be configured during onboarding.
-- **Google Drive** — required for the contract folder and the order form template.
-- **Gmail** — required for renewal drafts.
-- **Slack** — required. Upcoming renewals and churn risks land in your founder channel.
-- **Billing or usage system** — optional, for the usage picture. Connected during onboarding; no registry connector.
-- **API keys:** none.
+- **Google Drive** — required for the contract folder and the order form template. Dropbox, Box or OneDrive work too.
+- **Gmail or Outlook** — required. New contracts and renewal notices are read from your inbox and drafts land there.
+- **Google Sheets** — recommended, if you want the tracker as a sheet you can see.
+- **HubSpot** — optional, for customer contract records and renewal logging. Salesforce or Attio work too.
+- **Slack** — the agent posts alerts from its own Slack app, set up during onboarding. Your own Slack account is only needed if it should read a channel.
+- **Google Calendar** — optional, for a hold on each act-by date.
+- **Usage or billing system** — optional, for the client usage picture. Connected during onboarding; no registry connector.
+- **API keys:** none required.
 
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your contract folder, renewal lead times, usage source, renewal voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
-3. Ask for the first run: List contracts inside the renewal window, attach usage if available, and draft renewals without sending.
+2. The `agent-onboarding` skill runs before first use. It connects your contract folder and mailbox, asks which sides to track, your alert lead times, big-ticket threshold, usage source and renewal voice, parses a first batch of contracts with you, and schedules the sweeps, alerts and the new-contract watch.
+3. Ask for the first run: build the tracker, list notice deadlines in the next 120 days, and draft customer renewals that are due, without sending.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
 ## Example prompts
 
-- List contracts inside the renewal window and draft the renewals
+- List every notice deadline in the next 90 days, auto-renewing ones first
 - Draft the Beacon renewal with their usage this term and the current price
-- Every morning, check end dates and Slack me anything within 60 days
+- Which vendor contracts auto-renew this quarter and what does each cost?
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
-- `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
+- `CLAUDE.md` — the routines (contract tracker, new contract or notice, notice-deadline alerts, customer renewals, vendor decisions, weekly view), the Gamut mechanics, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `.claude/skills/agent-onboarding/` — the first-run setup: connections, questions, supervised first parse, schedules and triggers, and `config.json`.
+- `.claude/skills/contract-terms/` — what to read in a contract, how to compute the notice deadline and set the auto-renew flag, parse status, the tracker row, and alert order.
 
 ## Notes
 
-- Built for 2-200 person founder-led professional firms whose terms die because nobody drafted the renewal.
-- Renewals stay in draft until the founder sends. The agent flags a missing end date rather than ignoring it.
+- Built for 2-200 person founder-led professional firms whose terms die, or auto-renew, because nobody watched the notice window.
+- Software subscriptions found in card spend belong to SaaS Spend Auditor; if both are installed, this agent tracks only signed contracts.
+- Renewals and notices stay in draft until the founder sends. The agent flags a missing or unreadable date rather than guessing.

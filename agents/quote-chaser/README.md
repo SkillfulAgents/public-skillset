@@ -4,6 +4,7 @@ icon: badge-dollar-sign
 tags:
   - Estimate Follow-Up
   - Quotes
+  - Follow-Up Cadence
   - Home Services
   - Field Service
   - Gmail
@@ -23,23 +24,25 @@ developer:
 
 ## What it does
 
-Quote Chaser owns sitting estimates for founder-led home services shops. On your cadence it pulls open estimates from Jobber, Housecall Pro, ServiceTitan, or the quote sheet, then flags the ones past the follow-up window, expiring this week, or high-value and quiet.
+Quote Chaser owns sitting estimates for founder-led home services shops. Every weekday morning it pulls open estimates from Jobber, Housecall Pro, ServiceTitan, or the quote sheet, and works out where each one stands: estimate sent, customer replied, paperwork out, won. Then it runs a fixed, configurable cadence instead of vague check-ins. By default that means nudges on days 2, 5, and 10 after the estimate goes out and days 3 and 7 after approval paperwork, then a founder call.
 
-For each one it drafts a short founder-voice nudge that names the job, the date, and a clear next step: approve, pick a start window, or say no. The exact draft is queued in Gmail, SMS, or the field-service message for one-tap send. It never changes a quote amount, promises a discount, or marks a quote won or lost without evidence.
+Each nudge is a short draft in the founder's voice that names the job, the date, and a clear next step: approve, pick a start window, or say no. It is queued in Gmail, the field-service tool, or the approval message for one-tap send. A reply pauses the cadence. The agent flags site visits with no estimate yet, estimates expiring this week, and anything slipping past its window. It never changes a quote amount, promises a discount, or marks a quote won or lost on its own.
+
+Quote Chaser chases estimates your shop already sent. It does not write them. Its sibling, Proposal Pilot, writes and follows up professional-services proposals.
 
 ## What you'll need
 
-- **Gmail** — required for follow-up drafts and replies.
-- **Slack** — required. Cold estimates and handoffs land in your founder channel.
-- **Jobber, Housecall Pro, or ServiceTitan** — one is needed for open estimates. No registry connector; connected during onboarding, or use a quote sheet.
-- **SMS line** — optional, for text follow-ups. Connected during onboarding; no registry connector.
-- **API keys:** none.
+- **Gmail** — required for follow-up drafts and to see replies. Outlook works too.
+- **Slack** — for the daily digest of drafts to approve, sent from the agent's own Slack app. Email or in-app also work.
+- **Jobber, Housecall Pro, or ServiceTitan** — one is needed for open estimates. No registry connector; connected during onboarding by API key or browser sign-in, or use a quote sheet.
+- **SMS line** — optional, for text follow-ups through your field-service tool. No registry connector.
+- **API keys:** only if your field-service tool needs one.
 
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your estimate system, the quiet-day window, when the last nudge goes out, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
-3. Ask for the first run: Review sitting estimates, draft follow-ups for the ones going cold, and queue one-tap sends without sending.
+2. The `agent-onboarding` skill runs before first use. It asks for your estimate system, the follow-up cadence, how soon estimates should go out after a visit, quiet hours for texts, and where the digest goes, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+3. Ask for the first run: Review sitting estimates, draft follow-ups for the ones going cold, and queue one-tap sends without sending. After you approve, it schedules the daily chase.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
@@ -47,12 +50,12 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 - Review sitting estimates and draft follow-ups for the ones going cold
 - Draft a last nudge for every estimate that expires this week
-- Every Wednesday, chase quiet estimates and Slack me the drafts to approve
+- Every weekday at 7am, chase quiet estimates and Slack me the drafts to approve
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
-- `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
+- `CLAUDE.md` — the daily chase and weekly scoreboard routines, the estimate stages and cadence, the Gamut setup, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules, runs a supervised chase, and schedules it.
 
 ## Notes
 

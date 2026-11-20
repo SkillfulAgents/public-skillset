@@ -38,6 +38,11 @@ def validate(source_root: Path) -> None:
         )
 
     templates = catalog["templates"]
+    graduated_path = ROOT / "sources" / "botdirectory" / "graduated.json"
+    graduated = {
+        entry["slug"]
+        for entry in json.loads(graduated_path.read_text(encoding="utf-8"))["templates"]
+    }
     expected_source_files = {template["sourceFile"] for template in templates}
     actual_source_files = {
         path.relative_to(source_root).as_posix()
@@ -87,7 +92,7 @@ def validate(source_root: Path) -> None:
                 errors.append(
                     f"{slug}: catalog {key}={template.get(key)!r}, source expects {value!r}"
                 )
-        if imported_prompt != prompt:
+        if slug not in graduated and imported_prompt != prompt:
             errors.append(f"{slug}: PROMPT.md is not byte-identical to the source body")
         source_hash = hashlib.sha256(source_prompt.encode("utf-8")).hexdigest()
         if template.get("promptSha256") != source_hash:
@@ -103,8 +108,8 @@ def validate(source_root: Path) -> None:
     if errors:
         raise ValueError("\n".join(errors))
     print(
-        f"Validated {len(templates)} templates byte-for-byte against "
-        f"Bot Directory {actual_commit}."
+        f"Validated {len(templates)} catalog entries against Bot Directory {actual_commit} "
+        f"({len(templates) - len(graduated)} prompts byte-for-byte; {len(graduated)} graduated)."
     )
 
 
