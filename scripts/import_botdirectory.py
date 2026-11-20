@@ -550,6 +550,12 @@ def import_templates(
                 raise ValueError(f"refusing to write through a symlink: {target / filename}")
         targets.append((template, target))
 
+    graduated_path = source_root / "graduated.json"
+    graduated = (
+        {entry["slug"] for entry in load_json(graduated_path)["templates"]}
+        if graduated_path.is_file()
+        else set()
+    )
     for template, target in targets:
         slug = template["slug"]
         target.mkdir(parents=True, exist_ok=True)
@@ -567,11 +573,12 @@ def import_templates(
 
         icon = choose_icon(template["name"], normalize_category(template["sourceCategory"]))
         prompt = template["prompt"]
-        (target / "CLAUDE.md").write_text(render_claude(template, mappings), encoding="utf-8")
-        (target / "PROMPT.md").write_text(prompt + "\n", encoding="utf-8")
-        (target / "README.md").write_text(
-            render_readme(template, mappings, works_with, icon), encoding="utf-8"
-        )
+        if slug not in graduated:
+            (target / "CLAUDE.md").write_text(render_claude(template, mappings), encoding="utf-8")
+            (target / "PROMPT.md").write_text(prompt + "\n", encoding="utf-8")
+            (target / "README.md").write_text(
+                render_readme(template, mappings, works_with, icon), encoding="utf-8"
+            )
 
         manifest_entries.append(
             {
