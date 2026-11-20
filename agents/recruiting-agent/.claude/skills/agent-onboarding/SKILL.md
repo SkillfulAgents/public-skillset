@@ -1,13 +1,13 @@
 ---
 name: Agent Onboarding
-description: First-run onboarding interview for a NEW company adopting this recruiting-agent template. Shows a live setup checklist, walks the customer through everything that must be configured — ATS (or not) + system of record, where sourced candidates are saved, role import, which roles get a daily search cron, per-role hiring criteria (agent proposes in plain language, then interviews the user on what THEY actually look for + seed companies), sourcing pre-filter tools (Juicebox/Metaview), outreach voice/templates/authorization, booking link, recurring triggers, dashboard, chat integration — and ends with a go-live check: LinkedIn login verified in-browser and a real first sourcing run. Run when a new customer says "set up", "onboard", "get started", or when the workspace has no configured roles/CLAUDE.md pipeline config.
+description: First-run onboarding interview for a NEW company adopting this recruiting-agent template. Shows a live setup checklist, walks the customer through everything that must be configured — ATS (or not) + system of record, where sourced candidates are saved, role import, which roles get a daily search cron, per-role hiring criteria (agent proposes in plain language, then interviews the user on what THEY actually look for + seed companies), sourcing pre-filter tools (Juicebox/Metaview), outreach voice/templates/authorization, booking link, recurring triggers, dashboard, chat integration — and ends with a go-live check: LinkedIn login verified in-browser and a real first sourcing run. Run when a new customer says "set up", "onboard", "get started", or when the workspace has no configured roles/AGENTS.md pipeline config.
 metadata:
   version: "2.1.0"
 ---
 
 # Agent Onboarding — turn the template into THEIR recruiting agent
 
-This skill runs the guided setup for a company adopting this recruiting agent. It is an **interview + scaffolding procedure**: ask, then immediately build. At the end the agent is live — roles configured, screening prompts written, triggers scheduled, CLAUDE.md rewritten for the customer.
+This skill runs the guided setup for a company adopting this recruiting agent. It is an **interview + scaffolding procedure**: ask, then immediately build. At the end the agent is live — roles configured, screening prompts written, triggers scheduled, AGENTS.md rewritten for the customer.
 
 **HOW TO RUN THE INTERVIEW (read this first — it's where fresh agents fail):**
 - **Your first reply IS the interview.** Two sentences of welcome max, then the Phase 1 questions in that same turn. Do NOT summarize the onboarding process, list the phases, offer a menu, or ask permission to start. The user's first message — whatever it says — is the start signal.
@@ -37,7 +37,7 @@ This skill runs the guided setup for a company adopting this recruiting agent. I
 
 1. Read `/workspace/pipeline/onboarding-state.json` (resume if mid-onboarding).
 2. **Create the setup checklist** with `TaskCreate` — one task per phase, in order: `1. Company & hiring lead` · `2. ATS & where candidates live` · `3. Roles` · `4. Daily searches & sourcing tools` · `5. What you're looking for (per role)` · `6. Outreach setup` · `7. Dashboard & recurring sessions` · `8. Finalize config` · `9. Go-live check (LinkedIn + first sourcing run)`. On resume: run `TaskList` first — if the checklist is missing (new session) or stale, recreate/reconcile it from the state file so it matches reality, then continue from the first incomplete phase. The checklist must exist and be accurate before the first question of the session.
-3. Detect leftover template-owner data: `grep -l "Gamut\|Datawizz\|Tim" /workspace/CLAUDE.md /workspace/pipeline/roles.json` and check for populated `longlist-*.jsonl` / memory role files. If present AND this is a new customer instance, tell the user you'll archive the example data to `/workspace/pipeline/_template-example/` (move, never delete) and start clean. Ask before archiving.
+3. Detect leftover template-owner data: `grep -l "Gamut\|Datawizz\|Tim" /workspace/AGENTS.md /workspace/pipeline/roles.json` and check for populated `longlist-*.jsonl` / memory role files. If present AND this is a new customer instance, tell the user you'll archive the example data to `/workspace/pipeline/_template-example/` (move, never delete) and start clean. Ask before archiving.
 4. Scaffold empty dirs if missing: `/workspace/pipeline/{screening,outreach,shortlists,reports}`.
 
 ## Phase 1 — Company & hiring lead
@@ -75,7 +75,7 @@ Clickbox Q1 — header "ATS": **"Do you use an ATS (applicant tracking system)?"
    - "Google Sheet" — one spreadsheet, one tab per role; needs a Google connection (`request_connected_account`, toolkit `googlesheets`).
    - "Excel file" — `/workspace/pipeline/pipeline.xlsx`, delivered via `deliver_file` on every update.
    Recommend the agent database: same columns as an ATS export whenever they want out, no sync lag, no API quota.
-3. **Agent database layout** (if chosen): `/workspace/pipeline/atsless/candidates.jsonl` — the schema is documented in `/workspace/artifacts/recruiting-pipeline/ATSLESS.md` (the dashboard reads this store natively; follow that file exactly, including the outreach `channel`/`type` enums and optional `stage_history`). Every rule in CLAUDE.md that says "Ashby" applies to this store instead: it is the single source of truth, every outreach/stage change is logged there in the same session, and the dashboard renders ONLY it.
+3. **Agent database layout** (if chosen): `/workspace/pipeline/atsless/candidates.jsonl` — the schema is documented in `/workspace/artifacts/recruiting-pipeline/ATSLESS.md` (the dashboard reads this store natively; follow that file exactly, including the outreach `channel`/`type` enums and optional `stage_history`). Every rule in AGENTS.md that says "Ashby" applies to this store instead: it is the single source of truth, every outreach/stage change is logged there in the same session, and the dashboard renders ONLY it.
 4. → Phase 3B.
 
 ### Both branches — where do SOURCED candidates live?
@@ -85,7 +85,7 @@ Sourced candidates (the longlist/shortlist pool, pre-outreach) never sit in the 
 - **"Google Sheet"** — a shared registry spreadsheet (`events` + `candidates` tabs) via the `sheets-registry` skill. Pick this to browse/edit the pool in Sheets, or if MORE THAN ONE person will run an install of this agent on the same pipeline (ownership + cross-install contact suppression). Setup: `request_connected_account` (toolkit `googlesheets`) → write `GSHEETS_ACCOUNT_ID` + derived `OWNER` to `.env` → `registry.py init` (creates the Sheet, writes `pipeline/registry.json`). Longlist files remain the local working cache: `registry.py reconcile` at session start, `push` at session end.
 - **"Excel file"** — `/workspace/pipeline/sourced.xlsx`, regenerated from the longlists and delivered via `deliver_file` after each search session (browse-only convenience; workspace files stay authoritative).
 
-Record the choice in onboarding-state; it flows into CLAUDE.md at Phase 8. (No-ATS + "Agent database" from the Records question above covers the pipeline of record; this question is about the pre-Advance pool and can differ.)
+Record the choice in onboarding-state; it flows into AGENTS.md at Phase 8. (No-ATS + "Agent database" from the Records question above covers the pipeline of record; this question is about the pre-Advance pool and can differ.)
 
 ## Phase 3 — Roles
 
@@ -111,11 +111,11 @@ Not every visible role needs active sourcing — some are inbound-only, paused, 
 
 1. Clickbox (multiSelect, chunked like 3A.3) — header "Daily search": **"Which of these roles should get a daily sourcing search?"** Every imported role is an option; preselect nothing; description per option = 1-line role summary.
 2. For selected roles: set `"sourcing": "active"` in roles.json; unselected → `"inbound-only"` (ATS) or `"passive"` (no ATS).
-3. Schedule triggers (`schedule_task`, cron, weekdays, user's timezone): **one search session per active role**, ~45 min each, staggered (9:00, 9:45, 10:30, …) so each owns the browser/LinkedIn exclusively. Prompt per trigger: run the full search workflow for `<slug>` per CLAUDE.md.
+3. Schedule triggers (`schedule_task`, cron, weekdays, user's timezone): **one search session per active role**, ~45 min each, staggered (9:00, 9:45, 10:30, …) so each owns the browser/LinkedIn exclusively. Prompt per trigger: run the full search workflow for `<slug>` per AGENTS.md.
 4. Tell the user each search costs roughly a 45-minute agent session per weekday per role — pick accordingly; roles can be flipped on/off any time by asking.
 5. **Sourcing pre-filter tools** — clickbox (multiSelect), header "Tools": **"Do you already use any AI sourcing tools the agent should plug in?"** Options: "Juicebox (PeopleGPT)", "Metaview", "None". ("Other" auto-provided — ask what it is and whether it's browser- or API-based.)
    - For each selected tool: open it in the browser now and have the user log in (`request_browser_input`: "Complete the {tool} login so the agent can use it as a sourcing pre-filter."). Verify the session sticks (reload → still logged in).
-   - Record in CLAUDE.md's platform table + each active role file's Pools section: tool output is a PRE-FILTER, never a final answer — everything it surfaces is re-screened against the role's criteria before it touches a shortlist.
+   - Record in AGENTS.md's platform table + each active role file's Pools section: tool output is a PRE-FILTER, never a final answer — everything it surfaces is re-screened against the role's criteria before it touches a shortlist.
    - If the user picks None, note it and move on — never push tools they don't have.
 
 ## Phase 5 — What you're looking for (per role — the most important phase)
@@ -149,7 +149,7 @@ After the last role: explain the calibration loop in one short paragraph — eve
 
 ## Phase 7 — Recurring machinery & surfaces
 
-Schedule (all weekday, user's timezone, `schedule_task` cron) and record each task id in CLAUDE.md:
+Schedule (all weekday, user's timezone, `schedule_task` cron) and record each task id in AGENTS.md:
 - **Role-sync** (ATS branch only, ~8:45): diff open ATS jobs vs roles.json; new job → scaffold role + ask user about search activation; closed job → cancel trigger, mark closed.
 - **Inbound screening** (ATS branch only, ~8:15): rate every new applicant with the role's screening prompt; pull the resume before scoring; surface on dashboard; NEVER auto-reject (unless Phase 1 autonomy = fully autonomous AND the user explicitly opts in to auto-archive).
 - **Per-role searches** — already scheduled in Phase 4.
@@ -167,8 +167,8 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
 
 ## Phase 8 — Finalize
 
-1. **Rewrite `/workspace/CLAUDE.md`** for this customer: keep the template's operating rules (pipeline stages, write discipline, recall-over-precision calibration loop, honesty, scope-ends-at-booked-interview) but substitute their company, hiring lead, ATS/system of record, sourced-pool storage choice, autonomy model, channels, booking link, timezone, trigger table, and role list. Strip every Gamut/Datawizz-specific fact.
-2. **Fill placeholders:** sweep `/workspace/CLAUDE.md` and `/workspace/.claude/skills/` for `{{...}}` tokens shipped by the template bundle (`{{COMPANY}}`, `{{BOOKING_LINK}}`, `{{AGENT_SOURCED_TAG_ID}}`, `{{FOUNDER}}`, trigger times, etc.) and replace them with onboarding answers. `{{AGENT_SOURCED_TAG_ID}}`: on the Ashby branch, create (or find) an `agent-sourced` candidate tag and substitute its id.
+1. **Rewrite `/workspace/AGENTS.md`** for this customer: keep the template's operating rules (pipeline stages, write discipline, recall-over-precision calibration loop, honesty, scope-ends-at-booked-interview) but substitute their company, hiring lead, ATS/system of record, sourced-pool storage choice, autonomy model, channels, booking link, timezone, trigger table, and role list. Strip every Gamut/Datawizz-specific fact.
+2. **Fill placeholders:** sweep `/workspace/AGENTS.md` and `/workspace/.claude/skills/` for `{{...}}` tokens shipped by the template bundle (`{{COMPANY}}`, `{{BOOKING_LINK}}`, `{{AGENT_SOURCED_TAG_ID}}`, `{{FOUNDER}}`, trigger times, etc.) and replace them with onboarding answers. `{{AGENT_SOURCED_TAG_ID}}`: on the Ashby branch, create (or find) an `agent-sourced` candidate tag and substitute its id.
 3. Seed memory: `user-<name>.md` (hiring lead profile), `project-<company>-context.md`, `reference-<ats>-conventions.md`, per-role files already exist. Index everything in MEMORY.md.
 4. **Bookmarks — few and high-value only.** Write `/workspace/bookmarks.json` with AT MOST: the booking link, the ATS web app (e.g. `https://app.ashbyhq.com`), the dashboard, and the registry Sheet URL (only if the Sheet option was chosen). NOTHING else — never bookmark working folders (shortlists, reports, pipeline dirs) or internal files; the dashboard is the window into those. This rule holds after onboarding too.
 5. → Phase 9 immediately, same session. The wrap-up summary comes AFTER the go-live check, not here.
@@ -177,8 +177,8 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
 
 Setup isn't done until it's been seen working. Two steps, in order:
 
-1. **Verify LinkedIn login in the browser, now** (if LinkedIn was chosen in Phase 6). `browser_open("https://www.linkedin.com/feed/")` → check the state: logged into the RIGHT account (the seat from Phase 6)? If not, `request_browser_input`: "Complete the LinkedIn login so the agent can source and message candidates." Confirm the session survives a reload, note the actual seat tier you can see (Sales Navigator / Recruiter / basic) in the role files and CLAUDE.md if it differs from what the user said. If the user doesn't respond, record it as the one pending item — do not silently skip.
-2. **Run the first sourcing pass, live, end-to-end** — a compact version of the daily search (~15 minutes, one role: the active role the user cares most about — ask if unclear). Follow CLAUDE.md's search workflow with small caps (≈1–2 search recipes, ~10–20 longlisted, score against the Phase 5 criteria, shortlist the top few). Then VERIFY the plumbing on real data: longlist file written (and registry synced, if Sheet mode) → shortlist artifact saved + delivered → dashboard renders the candidates (open it and look) → Advance buttons present. Fix anything broken before wrapping up.
+1. **Verify LinkedIn login in the browser, now** (if LinkedIn was chosen in Phase 6). `browser_open("https://www.linkedin.com/feed/")` → check the state: logged into the RIGHT account (the seat from Phase 6)? If not, `request_browser_input`: "Complete the LinkedIn login so the agent can source and message candidates." Confirm the session survives a reload, note the actual seat tier you can see (Sales Navigator / Recruiter / basic) in the role files and AGENTS.md if it differs from what the user said. If the user doesn't respond, record it as the one pending item — do not silently skip.
+2. **Run the first sourcing pass, live, end-to-end** — a compact version of the daily search (~15 minutes, one role: the active role the user cares most about — ask if unclear). Follow AGENTS.md's search workflow with small caps (≈1–2 search recipes, ~10–20 longlisted, score against the Phase 5 criteria, shortlist the top few). Then VERIFY the plumbing on real data: longlist file written (and registry synced, if Sheet mode) → shortlist artifact saved + delivered → dashboard renders the candidates (open it and look) → Advance buttons present. Fix anything broken before wrapping up.
 3. **Wrap-up summary** (this is the onboarding's last message): the first shortlist ("here are your first N candidates — click Advance on anyone you'd talk to"), a table of roles (visible / searching daily / outreach status), the trigger schedule and what happens tomorrow morning, plus anything pending (deferred phases, LinkedIn not logged in). Then delete `/workspace/pipeline/onboarding-state.json` and mark the last checklist task completed.
 
 ---
@@ -202,6 +202,6 @@ Setup isn't done until it's been seen working. Two steps, in order:
 | Voice / claims bank | `/workspace/pipeline/outreach/_<company>-voice.md` |
 | No-ATS pipeline store | `/workspace/pipeline/atsless/candidates.jsonl` |
 | Non-Ashby ATS adapter | `/workspace/.claude/skills/<ats>-ats/` |
-| Rewritten agent manual | `/workspace/CLAUDE.md` |
+| Rewritten agent manual | `/workspace/AGENTS.md` |
 | Bookmarks (booking link, ATS, dashboard, Sheet only) | `/workspace/bookmarks.json` |
 | First shortlist (go-live check) | `/workspace/pipeline/shortlists/<slug>-<date>.md` |

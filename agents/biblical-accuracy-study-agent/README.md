@@ -47,7 +47,7 @@ Answer study questions with relevant Bible passages; separate direct teaching fr
 
 ## Files
 
-- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
+- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
 - `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
 - `README.md` — marketplace metadata, examples, connection mapping, and credits.
 

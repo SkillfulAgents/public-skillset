@@ -191,7 +191,7 @@ def _developer_field(metadata: dict[str, Any], source: str) -> dict[str, str]:
 
 
 def build_agent_entry(root: Path, agent_file: Path) -> dict[str, Any]:
-    """Build one index entry, merging README metadata beneath CLAUDE metadata."""
+    """Build one index entry, merging README metadata beneath AGENTS.md metadata."""
     root = root.resolve()
     agent_file = _resolve_repo_file(root, agent_file)
     claude_metadata, _ = read_document(agent_file)
@@ -202,7 +202,7 @@ def build_agent_entry(root: Path, agent_file: Path) -> dict[str, Any]:
     else:
         readme_metadata, details = {}, ""
 
-    # This is deliberately shallow: the complete CLAUDE value wins whenever a
+    # This is deliberately shallow: the complete AGENTS.md value wins whenever a
     # top-level key occurs in both documents, including falsey values.
     metadata = {**readme_metadata, **claude_metadata}
     source = f"merged metadata for {agent_file.parent}"
@@ -248,7 +248,7 @@ def build_index(root: Path, name: str, description: str, version: str) -> dict[s
     agents = []
     agents_dir = root / "agents"
     if agents_dir.exists():
-        for agent_file in sorted(agents_dir.glob("*/CLAUDE.md")):
+        for agent_file in sorted(agents_dir.glob("*/AGENTS.md")):
             agents.append(build_agent_entry(root, agent_file))
 
     return {

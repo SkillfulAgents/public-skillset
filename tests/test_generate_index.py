@@ -124,17 +124,17 @@ developer:
 """,
                 encoding="utf-8",
             )
-            claude_file = agent_dir / "CLAUDE.md"
+            claude_file = agent_dir / "AGENTS.md"
             claude_file.write_text(
                 """---
-name: CLAUDE Name
+name: AGENTS Name
 description: ""
 createdAt: "2026-08-18T00:00:00.000Z"
 version: 2.0.0
 icon: presentation
 tags: []
 developer:
-  name: CLAUDE Developer
+  name: AGENTS Developer
 ---
 
 # Operating instructions
@@ -144,7 +144,7 @@ developer:
 
             entry = build_agent_entry(root.resolve(), claude_file)
 
-        self.assertEqual(entry["name"], "CLAUDE Name")
+        self.assertEqual(entry["name"], "AGENTS Name")
         self.assertEqual(entry["description"], "")
         self.assertEqual(entry["details"], "# Marketplace details")
         self.assertEqual(entry["createdAt"], "2026-08-18T00:00:00.000Z")
@@ -153,14 +153,14 @@ developer:
         self.assertEqual(entry["icon"], "presentation")
         self.assertEqual(entry["tags"], [])
         self.assertEqual(entry["works_with"], [{"type": "api_account", "slug": "gmail"}])
-        self.assertEqual(entry["developer"], {"name": "CLAUDE Developer"})
+        self.assertEqual(entry["developer"], {"name": "AGENTS Developer"})
         self.assertEqual(entry["path"], "agents/example/")
 
     def test_missing_readme_and_metadata_use_backward_compatible_defaults(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             agent_dir = self._agent_dir(root, "legacy-agent")
-            claude_file = agent_dir / "CLAUDE.md"
+            claude_file = agent_dir / "AGENTS.md"
             claude_file.write_text("# Instructions\n", encoding="utf-8")
 
             entry = build_agent_entry(root.resolve(), claude_file)
@@ -199,7 +199,7 @@ developer:
             with self.subTest(fragment=fragment), tempfile.TemporaryDirectory() as temp_dir:
                 root = Path(temp_dir)
                 agent_dir = self._agent_dir(root)
-                claude_file = agent_dir / "CLAUDE.md"
+                claude_file = agent_dir / "AGENTS.md"
                 claude_file.write_text(f"---\n{fragment}\n---\n# Instructions\n", encoding="utf-8")
                 with self.assertRaisesRegex(ValueError, f"example.*{error_pattern}"):
                     build_agent_entry(root.resolve(), claude_file)
@@ -209,7 +209,7 @@ developer:
             base = Path(temp_dir)
             root = base / "repo"
             agent_dir = self._agent_dir(root)
-            claude_file = agent_dir / "CLAUDE.md"
+            claude_file = agent_dir / "AGENTS.md"
             claude_file.write_text("# Instructions\n", encoding="utf-8")
             secret = base / "outside.md"
             secret.write_text("private contents\n", encoding="utf-8")
@@ -225,10 +225,10 @@ developer:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             real_dir = self._agent_dir(root, "real")
-            real_file = real_dir / "CLAUDE.md"
+            real_file = real_dir / "AGENTS.md"
             real_file.write_text("---\nname: Real\n---\n", encoding="utf-8")
             alias_dir = self._agent_dir(root, "alias")
-            alias_file = alias_dir / "CLAUDE.md"
+            alias_file = alias_dir / "AGENTS.md"
             try:
                 alias_file.symlink_to(real_file)
             except OSError as exc:
@@ -245,7 +245,7 @@ class IndexTests(unittest.TestCase):
             for slug in ("zeta", "alpha"):
                 agent_dir = root / "agents" / slug
                 agent_dir.mkdir(parents=True)
-                (agent_dir / "CLAUDE.md").write_text(f"---\nname: {slug}\n---\n", encoding="utf-8")
+                (agent_dir / "AGENTS.md").write_text(f"---\nname: {slug}\n---\n", encoding="utf-8")
             skill_dir = root / "skills" / "example-skill"
             skill_dir.mkdir(parents=True)
             (skill_dir / "SKILL.md").write_text(
@@ -306,6 +306,10 @@ metadata:
                 self.assertTrue(agent["icon"])
                 self.assertTrue(agent["tags"])
                 self.assertTrue(agent["developer"].get("name"))
+
+    def test_agents_use_agents_md_not_claude_md(self) -> None:
+        legacy = sorted(path.parent.name for path in (REPO_ROOT / "agents").glob("*/CLAUDE.md"))
+        self.assertEqual(legacy, [], "rename CLAUDE.md to AGENTS.md; the index only reads AGENTS.md")
 
 
 if __name__ == "__main__":

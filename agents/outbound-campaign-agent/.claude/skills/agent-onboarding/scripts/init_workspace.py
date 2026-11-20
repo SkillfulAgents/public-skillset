@@ -7,7 +7,7 @@ Answers are a partial config: any subset of the schema in
 config/outbound.example.yaml. They are deep-merged OVER the example, so a field
 the operator did not mention keeps its documented default instead of vanishing.
 
-Writes: config/outbound.yaml, CLAUDE.md, data/, positioning stubs, the database.
+Writes: config/outbound.yaml, AGENTS.md, data/, positioning stubs, the database.
 Never touches an existing config without --force.
 """
 from __future__ import annotations
@@ -29,19 +29,19 @@ from lib import db  # noqa: E402
 
 EXAMPLE = ROOT / "config" / "outbound.example.yaml"
 TARGET = ROOT / "config" / "outbound.yaml"
-CLAUDE_MD = ROOT / "CLAUDE.md"
+AGENTS_MD = ROOT / "AGENTS.md"
 DEMO = ROOT / "demo"
 
 
 def _existing_created_at() -> str | None:
     """Preserve the original creation stamp across regenerations.
 
-    Regenerating CLAUDE.md happens on every config change, and a createdAt that
+    Regenerating AGENTS.md happens on every config change, and a createdAt that
     moves each time would make the workspace look newly built every edit.
     """
-    if not CLAUDE_MD.exists():
+    if not AGENTS_MD.exists():
         return None
-    m = re.search(r'^createdAt:\s*"([^"]+)"', CLAUDE_MD.read_text(), re.M)
+    m = re.search(r'^createdAt:\s*"([^"]+)"', AGENTS_MD.read_text(), re.M)
     return m.group(1) if m else None
 
 # demo file -> live destination. The demo ships outside the live paths so an
@@ -515,7 +515,7 @@ def main() -> int:
                     help="overwrite an existing config/outbound.yaml")
     ap.add_argument("--skip-claude-md", action="store_true")
     ap.add_argument("--regen-claude-md", action="store_true",
-                    help="rewrite CLAUDE.md from the existing config and exit; "
+                    help="rewrite AGENTS.md from the existing config and exit; "
                          "touches no config, no database, no positioning files")
     ap.add_argument("--demo", action="store_true",
                     help="load the worked Northwind Logistics example so the whole "
@@ -549,22 +549,22 @@ def main() -> int:
                 return 1
             db_path.unlink()
         db.init(db_path)
-        CLAUDE_MD.write_text(render_claude_md(yaml.safe_load(TARGET.read_text())))
+        AGENTS_MD.write_text(render_claude_md(yaml.safe_load(TARGET.read_text())))
         print("Loaded the Northwind Logistics demo. Sender is 'dryrun'.\n"
               "  uv run --with pyyaml .claude/skills/outbound-campaign/scripts/pipeline.py\n"
               "Run onboarding with --force when you want your own config.")
         return 0
 
-    # CLAUDE.md is derived, so it goes stale every time the config is edited by
+    # AGENTS.md is derived, so it goes stale every time the config is edited by
     # hand. Without this it could only be refreshed by re-running onboarding.
     if args.regen_claude_md:
         if not TARGET.exists():
             print(f"no {TARGET.relative_to(ROOT)} to render from; run onboarding first",
                   file=sys.stderr)
             return 1
-        (ROOT / "CLAUDE.md").write_text(
+        (ROOT / "AGENTS.md").write_text(
             render_claude_md(yaml.safe_load(TARGET.read_text())))
-        print(f"regenerated CLAUDE.md from {TARGET.relative_to(ROOT)}")
+        print(f"regenerated AGENTS.md from {TARGET.relative_to(ROOT)}")
         return 0
 
     if TARGET.exists() and not args.force:
@@ -645,8 +645,8 @@ def main() -> int:
                      f"{_rel(voice_target)} by hand before the first draft")
 
     if not args.skip_claude_md:
-        CLAUDE_MD.write_text(render_claude_md(cfg))
-        written.append(CLAUDE_MD)
+        AGENTS_MD.write_text(render_claude_md(cfg))
+        written.append(AGENTS_MD)
 
     print(f"Configured workspace for {company}\n")
     for p in written:

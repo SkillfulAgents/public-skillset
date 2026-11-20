@@ -36,7 +36,7 @@ One-star and two-star reviews, legal or safety mentions, named employees, and an
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your listings, the hours to wait after a job, voice samples, whether 5-star replies may auto-post, and the Slack channel for spicy reviews, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your listings, the hours to wait after a job, voice samples, whether 5-star replies may auto-post, and the Slack channel for spicy reviews, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Draft after-job review asks for yesterday's completed jobs and draft Google and Yelp replies without posting.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -49,7 +49,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes

@@ -43,7 +43,7 @@ You reply personally — the agent never posts on its own. It learns from your f
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's instructions: how it scouts, scores, delivers, and the strict never-auto-post rules.
+- `AGENTS.md` — the agent's instructions: how it scouts, scores, delivers, and the strict never-auto-post rules.
 - `.claude/skills/agent-onboarding/` — the first-run setup interview (product brief, query building, calibration, scheduling).
 - `.claude/skills/x-post-flagger/` — discovery and scoring: `search.py` (dual-provider X search), `queries.json` (your query bank), `scoring_rubric.md` (your calibrated rubric), `seen_ids.json` (dedupe history), `surfaced_log.jsonl` (append-only history of everything surfaced), `post_reply.py` (optional mention-reply posting).
 - `product/` — your product brief, written during onboarding.

@@ -488,7 +488,7 @@ def validate(superagent_root: Path, require_recorded_commit: bool) -> None:
 
     checked = 0
     errors: list[str] = []
-    for claude_file in sorted((ROOT / "agents").glob("*/CLAUDE.md")):
+    for claude_file in sorted((ROOT / "agents").glob("*/AGENTS.md")):
         entry = build_agent_entry(ROOT, claude_file)
         for connection in entry["works_with"]:
             checked += 1

@@ -73,7 +73,7 @@ access, and you know which domain you operate on.
 ## Step 2 — Website, competitors, keywords
 
 **Outcome**: you understand the site, industry, and competitors; a formalized starter
-keyword list. Record learnings in `CLAUDE.md` (the "Site-specific learnings" section +
+keyword list. Record learnings in `AGENTS.md` (the "Site-specific learnings" section +
 Mission in `seo/STATE.md`) and memory as you go.
 
 1. Launch **two subagents in parallel** (single message, two Agent calls):
@@ -129,7 +129,7 @@ from Step 2's findings; the usual skeleton:
    week, one unit per day; scale to their appetite). Build the prioritized backlog from
    the Step 2 keyword list. Agree the **publishing path**: CMS API / git PR / hosted
    builder / hand-off-to-human — get credentials if needed (`request_secret` or
-   connected account), document the path in CLAUDE.md's "Publishing path" section and
+   connected account), document the path in AGENTS.md's "Publishing path" section and
    config `cms`, and agree whether **auto-publish** is granted (record in STATE.md).
 4. **More** — propose 1–2 creative, business-specific ideas and gauge appetite.
    Examples that have worked elsewhere: a badge/backlink campaign for marketplace
@@ -189,7 +189,7 @@ PR merges? Default to NOT granted unless the user clearly says yes.
 - `seo/config.json` fully populated (no empty required fields: site, gsc_property,
   brand terms, company, report block if reporting enabled).
 - `.env` has the keys; both APIs answered a live call.
-- CLAUDE.md "Publishing path" + STATE.md (Mission, Cadence, Autonomy, Baseline,
+- AGENTS.md "Publishing path" + STATE.md (Mission, Cadence, Autonomy, Baseline,
   targets) filled in.
 - Backlogs seeded (≥10 article items, ≥5 link items), scheduled tasks listed back.
 - Dashboard renders with real data.
