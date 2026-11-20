@@ -37,7 +37,7 @@ Say hello (or "set up"). The agent runs its **`agent-onboarding`** skill: a guid
 ## What's inside
 
 - `.claude/skills/` — the agent's toolkit (onboarding, ATS access, LinkedIn sourcing, excellence pools, calibration feedback, YC directory)
-- `CLAUDE.md` — the operating manual; onboarding fills in the `{{PLACEHOLDER}}` tokens for your company
+- `AGENTS.md` — the operating manual; onboarding fills in the `{{PLACEHOLDER}}` tokens for your company
 - `pipeline/` — empty workbench scaffold; your data accumulates here
 
 This bundle contains **no data**: no candidates, no API keys, no memory. Everything is created fresh during onboarding.

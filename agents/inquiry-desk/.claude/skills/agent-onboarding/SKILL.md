@@ -5,7 +5,7 @@ description: Configures the Inquiry Desk template for the user's company, system
 
 # Agent Onboarding
 
-Welcome. This onboarding configures your Inquiry Desk workspace so the agent can run against your own tools and process. Ask the questions below one at a time, wait for each answer, then write the final configuration into `CLAUDE.md` under `## Your context` and create `.claude/skills/agent-onboarding/config.json`.
+Welcome. This onboarding configures your Inquiry Desk workspace so the agent can run against your own tools and process. Ask the questions below one at a time, wait for each answer, then write the final configuration into `AGENTS.md` under `## Your context` and create `.claude/skills/agent-onboarding/config.json`.
 
 ## Questions to ask
 

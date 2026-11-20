@@ -146,7 +146,7 @@ def check_frontmatter(metadata: dict, report: Report) -> None:
     stray = CLAUDE_ONLY_KEYS.intersection(keys)
     if stray:
         report.error(
-            f"README frontmatter must not define {sorted(stray)} — those belong to CLAUDE.md, which wins the merge"
+            f"README frontmatter must not define {sorted(stray)} — those belong to AGENTS.md, which wins the merge"
         )
     generated = GENERATED_KEYS.intersection(keys)
     if generated:
@@ -223,14 +223,14 @@ def check_body(body: str, name: str, description: str, is_light: bool, slug: str
     else:
         h1 = lines[0][2:].strip()
         if h1 != name and slug not in LEGACY_H1_DRIFT:
-            report.error(f"H1 {h1!r} does not match CLAUDE.md name {name!r}")
+            report.error(f"H1 {h1!r} does not match AGENTS.md name {name!r}")
 
     summary = lines[1] if len(lines) > 1 else ""
     if summary.startswith("## "):
         report.error("a one-line summary must follow the H1 before the first section")
     elif is_light:
         if summary.strip() != description.strip():
-            report.error("light imports must repeat the CLAUDE.md description verbatim under the H1")
+            report.error("light imports must repeat the AGENTS.md description verbatim under the H1")
     elif not summary.startswith(">") and slug not in LEGACY_NO_HOOK:
         report.warn("full templates open with a '>' blockquote hook under the H1")
 
@@ -340,10 +340,10 @@ def check_agent(directory: Path) -> Report:
     slug = directory.name
     report = Report(slug)
 
-    claude_path = directory / "CLAUDE.md"
+    claude_path = directory / "AGENTS.md"
     readme_path = directory / "README.md"
     if not claude_path.is_file():
-        report.error("missing CLAUDE.md")
+        report.error("missing AGENTS.md")
         return report
     if not readme_path.is_file():
         report.error("missing README.md — every public agent needs one")
@@ -353,7 +353,7 @@ def check_agent(directory: Path) -> Report:
     for key in sorted(CLAUDE_ONLY_KEYS):
         value = claude_metadata.get(key)
         if not isinstance(value, str) or not value.strip():
-            report.error(f"CLAUDE.md frontmatter '{key}' must be a non-empty string")
+            report.error(f"AGENTS.md frontmatter '{key}' must be a non-empty string")
 
     raw = readme_path.read_text(encoding="utf-8")
     if not raw.endswith("\n"):
@@ -393,7 +393,7 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.all:
-        directories = sorted(path.parent for path in (ROOT / "agents").glob("*/CLAUDE.md"))
+        directories = sorted(path.parent for path in (ROOT / "agents").glob("*/AGENTS.md"))
     elif args.paths:
         directories = [path if path.is_absolute() else (Path.cwd() / path) for path in args.paths]
     else:

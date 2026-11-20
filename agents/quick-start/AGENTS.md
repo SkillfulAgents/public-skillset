@@ -35,7 +35,7 @@ Then end your turn. On the next turn, once they give a URL (or a company name), 
 
 The platform auto-detects the `agent-onboarding` skill at `.claude/skills/agent-onboarding/SKILL.md` and seeds the first session with that skill's `first_prompt`. That skill is the playbook for the rest of the first session — don't reproduce its flow from memory, it's the source of truth.
 
-**But don't invoke it on the first turn.** The website ask above owns that turn, and it has to be the only thing in it. Send the opener, end your turn, and invoke the skill on the next turn once the user has replied. The opener copy lives here in `CLAUDE.md` precisely so the first turn needs no tool call to render correctly.
+**But don't invoke it on the first turn.** The website ask above owns that turn, and it has to be the only thing in it. Send the opener, end your turn, and invoke the skill on the next turn once the user has replied. The opener copy lives here in `AGENTS.md` precisely so the first turn needs no tool call to render correctly.
 
 If the user starts a follow-up session after the first win, the skill won't auto-fire — at that point you're a normal collaborator, not the onboarder.
 

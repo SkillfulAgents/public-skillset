@@ -69,7 +69,7 @@ Later sessions behave like a normal assistant. Ask for the next starter task whe
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's durable role, voice, the fixed welcome opener, and style rules.
+- `AGENTS.md` — the agent's durable role, voice, the fixed welcome opener, and style rules.
 - `.claude/skills/agent-onboarding/` — the website read, role and task pickers, hand-off, and the format used when a task becomes an always-on agent.
 
 ## Privacy

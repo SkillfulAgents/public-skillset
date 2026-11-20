@@ -148,7 +148,7 @@ Watches X for high-intent posts where your product is the answer — competitor-
 
 The repository also includes 160 lightweight templates imported from
 [Bot Directory](https://botdirectory.ai/). Each lives directly under `agents/`
-and contains a concise operating prompt in `CLAUDE.md`, the original source
+and contains a concise operating prompt in `AGENTS.md`, the original source
 prompt preserved verbatim in `PROMPT.md`, and marketplace metadata plus creator
 credit in `README.md`.
 
@@ -169,11 +169,11 @@ license and attribution are preserved in
 Each agent has two core Markdown documents with distinct jobs, and lightweight
 prompt imports add a third:
 
-- `CLAUDE.md` contains the agent's operating instructions and core identity.
+- `AGENTS.md` contains the agent's operating instructions and core identity.
 - `README.md` contains marketplace-facing details and, by convention, the marketing metadata.
 - `PROMPT.md`, when present, contains the original getting-started prompt without frontmatter or editorial changes.
 
-Both files may have YAML frontmatter. The index generator shallow-merges the two mappings; when the same top-level key exists in both files, `CLAUDE.md` wins. Nested objects are replaced as a whole rather than deep-merged. The Markdown body of `README.md` becomes the agent's long-form `details` value in `index.json`; frontmatter is removed from that body. A README is optional to the generator for backward compatibility, although every public agent in this repository should include one.
+Both files may have YAML frontmatter. The index generator shallow-merges the two mappings; when the same top-level key exists in both files, `AGENTS.md` wins. Nested objects are replaced as a whole rather than deep-merged. The Markdown body of `README.md` becomes the agent's long-form `details` value in `index.json`; frontmatter is removed from that body. A README is optional to the generator for backward compatibility, although every public agent in this repository should include one.
 
 ### Fields
 
@@ -191,7 +191,7 @@ Both files may have YAML frontmatter. The index generator shallow-merges the two
 | `path` | string | Generated repository path. Do not set this in frontmatter. |
 | `details` | Markdown string | Generated from the README body. Do not set this in frontmatter. |
 
-A typical split keeps the operational fields in `CLAUDE.md`:
+A typical split keeps the operational fields in `AGENTS.md`:
 
 ```yaml
 ---
@@ -265,50 +265,50 @@ uv run tests/test_generate_index.py
 .
 ├── agents/
 │   ├── welcome-agent/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...
 │   ├── quick-start/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...
 │   ├── inbox-manager/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   └── .claude/skills/...
 │   ├── <bot-directory-template>/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── PROMPT.md
 │   │   └── README.md
 │   ├── nutrition-agent/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   ├── nutrition/     (state: SQLite db, goal, scripts)
 │   │   ├── artifacts/     (nutrition dashboard app)
 │   │   └── .claude/skills/...
 │   ├── office-manager/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   ├── grocery-baseline.md
 │   │   └── .claude/skills/...
 │   ├── open-slide-studio/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   ├── artifacts/     (the OpenSlide app = the dashboard)
 │   │   └── .claude/skills/...
 │   ├── outbound-campaign-agent/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   ├── adapters/      (crm, sender, enrichment, calendar, ...)
 │   │   ├── lib/           (gates, caps, linter, suppression)
 │   │   └── .claude/skills/...
 │   ├── recruiting-agent/
-│   │   ├── CLAUDE.md
+│   │   ├── AGENTS.md
 │   │   ├── README.md
 │   │   ├── pipeline/      (state: roles, shortlists, outreach)
 │   │   └── .claude/skills/...
 │   └── seo-agent/
-│       ├── CLAUDE.md
+│       ├── AGENTS.md
 │       ├── README.md
 │       ├── seo/           (state: config, backlogs, CRM, log)
 │       ├── artifacts/     (SEO master dashboard app)

@@ -40,7 +40,7 @@ When a missed call or voicemail lands on the business line, it drafts a text bac
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your inbox, calendar, phone line, voice samples, and which sends may go out automatically, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your inbox, calendar, phone line, voice samples, and which sends may go out automatically, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Work today's inbox, calendar, and missed calls as one desk, drafting replies, invites, and texts without sending.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -53,7 +53,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes

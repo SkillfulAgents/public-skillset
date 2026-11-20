@@ -52,7 +52,7 @@ Rank findings by (indexing impact, traffic at risk, effort). Three buckets:
 
 ## Phase 3 — ACT (the point of the skill)
 
-Per the publishing path + autonomy grants in STATE.md/CLAUDE.md:
+Per the publishing path + autonomy grants in STATE.md/AGENTS.md:
 - **Site in a repo you can access** → open PRs (small, one concern each, with the
   finding + evidence in the description). Merge only if the autonomy grant covers it;
   otherwise request review.

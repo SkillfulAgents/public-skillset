@@ -396,7 +396,7 @@ def render_readme(
         "",
         "## Files",
         "",
-        "- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.",
+        "- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.",
         "- `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.",
         "- `README.md` — marketplace metadata, examples, connection mapping, and credits.",
         "",
@@ -545,7 +545,7 @@ def import_templates(
                 raise ValueError(f"refusing to overwrite existing directory: {target}")
             if template["sourceSlug"] not in previous_by_source_slug:
                 raise ValueError(f"refusing to overwrite a non-imported agent: {target}")
-        for filename in ("CLAUDE.md", "PROMPT.md", "README.md"):
+        for filename in ("AGENTS.md", "PROMPT.md", "README.md"):
             if (target / filename).is_symlink():
                 raise ValueError(f"refusing to write through a symlink: {target / filename}")
         targets.append((template, target))
@@ -567,7 +567,7 @@ def import_templates(
 
         icon = choose_icon(template["name"], normalize_category(template["sourceCategory"]))
         prompt = template["prompt"]
-        (target / "CLAUDE.md").write_text(render_claude(template, mappings), encoding="utf-8")
+        (target / "AGENTS.md").write_text(render_claude(template, mappings), encoding="utf-8")
         (target / "PROMPT.md").write_text(prompt + "\n", encoding="utf-8")
         (target / "README.md").write_text(
             render_readme(template, mappings, works_with, icon), encoding="utf-8"

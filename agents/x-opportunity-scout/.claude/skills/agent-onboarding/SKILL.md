@@ -12,7 +12,7 @@ Files you will write:
 - `/workspace/product/product-brief.md` — product, offering, targets
 - `.claude/skills/x-post-flagger/queries.json` — the query bank
 - `.claude/skills/x-post-flagger/scoring_rubric.md` — fill the product sections (`## Who we are`, `## What counts as a GOOD post`, product-specific disqualifiers)
-- `/workspace/CLAUDE.md` — append the user's context (name, X handle, product one-liner, delivery preferences) under `## Your context`
+- `/workspace/AGENTS.md` — append the user's context (name, X handle, product one-liner, delivery preferences) under `## Your context`
 - Scheduled task(s) for the recurring sweep
 
 ## Step 1 — Explain what this agent does
@@ -76,9 +76,9 @@ Score all candidates against the rubric, distill the best few (aim 3-6), and pre
 2. **Where:** "Where should the results go — Telegram, Slack, iMessage, or just here in chat?" For an external channel, set up the chat integration (read `/opt/gamut/docs/chat-integrations.md`) and send a test message. Delivery format for copy-paste channels: two messages per candidate — context first (link, author, score, why, angle, ending "Draft below:"), then the bare reply draft alone so it can be copied in one tap.
 3. **Cron:** read `/opt/gamut/docs/scheduling-and-resuming.md`, then create the scheduled task(s). Each run's prompt must be self-contained: run search.py with a lookback matching the gap since the previous run (+1h overlap), score with `scoring_rubric.md`, dedupe against `seen_ids.json`, deliver top 1-3 (score ≥55) to the chosen channel, then append each surfaced tweet's ID to `seen_ids.json` and its full record to `surfaced_log.jsonl` (format in the x-post-flagger SKILL.md). Drafts ≤280 weighted chars (URLs/domains count as 23), and **never post to X from a scheduled run**.
 
-Also ask for their **X handle** (to exclude their own/company posts from sweeps and to record in CLAUDE.md for the posting rules).
+Also ask for their **X handle** (to exclude their own/company posts from sweeps and to record in AGENTS.md for the posting rules).
 
-**Exit gate:** schedule created, channel connected and test message confirmed received, CLAUDE.md `## Your context` updated.
+**Exit gate:** schedule created, channel connected and test message confirmed received, AGENTS.md `## Your context` updated.
 
 ## Step 6 — First live run
 

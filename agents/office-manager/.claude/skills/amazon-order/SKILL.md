@@ -10,7 +10,7 @@ Standard operating procedure for ordering items from Amazon using browser MCP to
 
 ## Preferences
 
-- **Office Address**: see the "Office setup" section of `CLAUDE.md` (filled in during onboarding)
+- **Office Address**: see the "Office setup" section of `AGENTS.md` (filled in during onboarding)
 - **Default shipping**: Ship to the OFFICE address unless the user specifies otherwise
 - **Avoid**: Amazon Fresh listings unless the team explicitly configured Amazon Fresh (prefer regular Amazon fulfillment)
 - Prefer Prime / Fast Delivery
@@ -62,7 +62,7 @@ Steps:
 2. Click "Change" link next to the address
 3. In address selection:
    - Click "Show more addresses" if needed
-   - Find the office address (from CLAUDE.md "Office setup")
+   - Find the office address (from AGENTS.md "Office setup")
    - Use: `browser_run("find text \"<office street>\" click")` to select it
 4. Click "Deliver to this address" button
 

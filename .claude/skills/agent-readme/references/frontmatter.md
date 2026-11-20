@@ -21,7 +21,7 @@ Keys that must **not** appear in README frontmatter:
 
 | Key | Why |
 |---|---|
-| `name`, `description`, `createdAt`, `version` | Owned by `CLAUDE.md`; it wins the shallow merge, so a README copy is dead weight that silently rots. |
+| `name`, `description`, `createdAt`, `version` | Owned by `AGENTS.md`; it wins the shallow merge, so a README copy is dead weight that silently rots. |
 | `path`, `details` | Generated. Setting them is meaningless and misleading. |
 | anything else | The light-import suite asserts the key set is exactly the five above. |
 

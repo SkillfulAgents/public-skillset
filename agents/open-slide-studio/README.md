@@ -47,7 +47,7 @@ No onboarding session is required because this template has no user-specific set
 
 ## What's inside
 
-- `CLAUDE.md` — the slide agent's durable role, native dashboard contract, commands, and skill map.
+- `AGENTS.md` — the slide agent's durable role, native dashboard contract, commands, and skill map.
 - `artifacts/open-slide-studio/` — the complete OpenSlide application and dashboard artifact.
 - `artifacts/open-slide-studio/package.json` — real dependencies, scripts, and `gamut.upstreamPath: mounted`.
 - `artifacts/open-slide-studio/bun.lock` — dependency lockfile used by Gamut's automatic installer.

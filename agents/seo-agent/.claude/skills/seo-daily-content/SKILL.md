@@ -28,7 +28,7 @@ Ships exactly **one content unit per run** from `/workspace/seo/content-backlog.
    configured CMS path).
 3. Internal links: at least 3 internal links to relevant existing pages, and edit 1–2
    older relevant posts to link TO the new article.
-4. **Publish** only if the auto-publish grant in CLAUDE.md is active; otherwise stop at
+4. **Publish** only if the auto-publish grant in AGENTS.md is active; otherwise stop at
    a ready-to-publish draft and flag it for human review. Verify the page renders live
    (curl the URL, check title/meta/JSON-LD) and record it in
    `seo/content-inventory.json` (blog-pipeline step 7).
@@ -40,7 +40,7 @@ Execute the unit as described in the backlog entry — typical surface units:
 - CMS content changes (titles, metas, body patches, freshness dates) via the configured
   CMS path.
 - Site code changes (llms.txt, robots.txt, sitemap fixes, structured data, components) →
-  repo PR if the site is in git and the CLAUDE.md autonomy rules allow merging; otherwise
+  repo PR if the site is in git and the AGENTS.md autonomy rules allow merging; otherwise
   prepare the change and hand off.
 - Set/update a "last updated" date on any meaningfully edited page (freshness signal).
 

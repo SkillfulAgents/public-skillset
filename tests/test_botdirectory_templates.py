@@ -112,7 +112,7 @@ class BotDirectoryTemplateTests(unittest.TestCase):
             slug = template["slug"]
             with self.subTest(slug=slug):
                 directory = ROOT / "agents" / slug
-                claude_path = directory / "CLAUDE.md"
+                claude_path = directory / "AGENTS.md"
                 prompt_path = directory / "PROMPT.md"
                 readme_path = directory / "README.md"
                 for path in (claude_path, prompt_path, readme_path):

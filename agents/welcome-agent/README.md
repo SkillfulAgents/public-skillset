@@ -71,7 +71,7 @@ Welcome Agent steps aside after the handoff. Your newly created agent owns the w
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's durable role, voice, privacy rules, and handoff behavior.
+- `AGENTS.md` — the agent's durable role, voice, privacy rules, and handoff behavior.
 - `.claude/skills/agent-onboarding/` — the interview, opt-in tool scan, research, recommendation, and agent-creation workflow.
 
 ## Privacy

@@ -38,7 +38,7 @@ It drafts a short reply in the shop voice with the real window and who is coming
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your status inbox, which board holds the real window, whether on-time replies may auto-send, and the Slack channel for spicy jobs, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your status inbox, which board holds the real window, whether on-time replies may auto-send, and the Slack channel for spicy jobs, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Answer today's when-are-you-coming messages with the real window from the board, drafting replies and holding the spicy ones.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -51,7 +51,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes
