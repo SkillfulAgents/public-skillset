@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: search
+avatar:
+  color: tonal-black
+  shape: circle
 tags:
   - "Marketing"
   - "SEO Improver"

@@ -1,6 +1,9 @@
 ---
 category: "Personal"
 icon: plane
+avatar:
+  color: tonal-teal
+  shape: bloom
 tags:
   - "Personal"
   - "Flight Check-In"

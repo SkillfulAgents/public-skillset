@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-brown
+  shape: pill
 tags:
   - "Sales"
   - "GTM Chief Of Staff"

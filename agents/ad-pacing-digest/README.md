@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: megaphone
+avatar:
+  color: tonal-white
+  shape: triangle
 tags:
   - "Marketing"
   - "Ad Pacing Digest"

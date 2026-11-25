@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-pink
+  shape: pill
 tags:
   - "Productivity"
   - "Engineering Agent Manager"

@@ -9,6 +9,9 @@ tags:
 developer:
   name: SkillfulAgents
   url: https://github.com/SkillfulAgents
+avatar:
+  color: tonal-blush
+  shape: brain
 ---
 # Team Brain
 

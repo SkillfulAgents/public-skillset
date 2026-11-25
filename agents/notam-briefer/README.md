@@ -1,6 +1,9 @@
 ---
 category: "Productivity"
 icon: list-checks
+avatar:
+  color: tonal-orange
+  shape: triangle
 tags:
   - "Productivity"
   - "NOTAM Briefer"

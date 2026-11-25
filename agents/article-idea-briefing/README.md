@@ -1,6 +1,9 @@
 ---
 category: "Marketing"
 icon: pen-line
+avatar:
+  color: tonal-forest
+  shape: diamond
 tags:
   - "Marketing"
   - "Article Idea Briefing"

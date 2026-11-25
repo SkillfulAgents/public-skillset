@@ -1,6 +1,9 @@
 ---
 category: Customer Success
 icon: list-checks
+avatar:
+  color: tonal-teal
+  shape: diamond
 tags:
   - Client Onboarding
   - Kickoff

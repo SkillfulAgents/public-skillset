@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-purple
+  shape: diamond
 tags:
   - "Ops"
   - "Feature Ask Finder"

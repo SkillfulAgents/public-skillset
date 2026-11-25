@@ -1,6 +1,9 @@
 ---
 category: "Sales"
 icon: badge-dollar-sign
+avatar:
+  color: tonal-red
+  shape: bloom
 tags:
   - "Sales"
   - "Win/Loss Memo"

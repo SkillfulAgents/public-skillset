@@ -1,6 +1,9 @@
 ---
 category: "Ops"
 icon: workflow
+avatar:
+  color: tonal-green
+  shape: triangle
 tags:
   - "Ops"
   - "Chief Of Staff"

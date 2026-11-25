@@ -1,6 +1,9 @@
 ---
 category: Marketing
 icon: search-check
+avatar:
+  color: tonal-brown
+  shape: triangle
 tags:
   - Social Listening
   - X (Twitter)

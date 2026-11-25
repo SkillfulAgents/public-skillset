@@ -1,6 +1,9 @@
 ---
 category: Ops
 icon: list-checks
+avatar:
+  color: tonal-green
+  shape: circle
 tags:
   - Creative Ops
   - Asset Tracking
