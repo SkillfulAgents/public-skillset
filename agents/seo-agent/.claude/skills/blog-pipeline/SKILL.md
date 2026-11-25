@@ -57,14 +57,14 @@ photo's `download` endpoint per their API guidelines — see the media skill.)
 
 ## Step 6 — Publish via the configured CMS path
 The publish mechanics depend on `seo/config.json` → `cms` (set at onboarding, documented
-in CLAUDE.md under "Publishing path"). Common shapes:
+in AGENTS.md under "Publishing path"). Common shapes:
 - **Headless CMS with an API** (Sanity, Contentful, Strapi, WordPress REST, Ghost Admin):
   convert markdown to the CMS's content format, set SEO fields (metaTitle ≤60,
   metaDescription ≤160), upload images with alt text, create the post via API. If the
   site's schema/conventions are non-obvious, read a recently published post via the API
   first and mirror its shape.
 - **Git-based** (markdown/MDX in a repo — Next.js, Astro, Hugo, Jekyll): add the file +
-  frontmatter + images on a branch, open a PR, merge per the autonomy rules in CLAUDE.md.
+  frontmatter + images on a branch, open a PR, merge per the autonomy rules in AGENTS.md.
 - **Hosted builders** (Webflow, Framer, Wix, Squarespace, Shopify blog): use the platform
   API where one exists, else drive the editor via the browser (web-browser subagent).
 - **No access / human publishes**: write the final markdown + meta + images to

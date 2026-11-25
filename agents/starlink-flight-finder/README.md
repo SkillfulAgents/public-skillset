@@ -51,7 +51,7 @@ Find flight options for a route and dates; prioritize aircraft and airlines with
 
 ## Files
 
-- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
+- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
 - `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
 - `README.md` — marketplace metadata, examples, connection mapping, and credits.
 

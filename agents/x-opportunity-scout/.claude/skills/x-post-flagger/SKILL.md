@@ -58,7 +58,7 @@ Posts a reply via the official X API as the user, using their own X developer ap
 
 **⚠️ X policy (since 2026-02-23):** the API rejects replies to posts unless the author mentioned/quoted the authenticated account (403). So this only works for replying to mentions. **Cold replies to discovered posts must be posted manually by the user** (copy-paste) or via their logged-in browser session.
 
-**STRICT RULE (see CLAUDE.md): only run on the user's explicit instruction for a specific tweet. Never from scheduled runs.**
+**STRICT RULE (see AGENTS.md): only run on the user's explicit instruction for a specific tweet. Never from scheduled runs.**
 
 ```bash
 # verify credentials (posts nothing):

@@ -47,7 +47,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's durable instructions.
+- `AGENTS.md` — the agent's durable instructions.
 - `.claude/skills/agent-onboarding/` — first-run setup.
 - `.claude/skills/{{SKILL}}/` — {{one line}}
 - `{{state-dir}}/` — {{one line}}

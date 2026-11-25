@@ -48,7 +48,7 @@ You can re-run onboarding anytime by asking the agent to run the `agent-onboardi
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's instructions (logging style, response format).
+- `AGENTS.md` — the agent's instructions (logging style, response format).
 - `.claude/skills/agent-onboarding/` — first-run setup: TDEE interview, goal setting, Telegram connection.
 - `.claude/skills/log-meal/` — log food from description or photo.
 - `.claude/skills/log-weight/` — record daily body weight.

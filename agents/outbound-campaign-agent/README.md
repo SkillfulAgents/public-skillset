@@ -46,7 +46,7 @@ Nothing else runs until that file exists. That is deliberate.
 
 | | |
 |---|---|
-| **Onboarding skill** | A structured interview that writes your config, generates your `CLAUDE.md`, seeds positioning files, initializes the database, and self-tests the wiring. |
+| **Onboarding skill** | A structured interview that writes your config, generates your `AGENTS.md`, seeds positioning files, initializes the database, and self-tests the wiring. |
 | **Campaign skill** | Intake, drafting briefs, the send gate, the cadence tick, a capped manual LinkedIn queue, calendar-sourced meeting tracking, reporting. |
 | **Adapter layer** | Seven capability slots. Swap a vendor without touching the motion. |
 | **Enforcement** | A copy linter, a send-cap governor, a fail-closed suppression chain, and a do-not-touch gate, all of which run before a message can leave. |
@@ -54,7 +54,7 @@ Nothing else runs until that file exists. That is deliberate.
 
 ## The design decision worth knowing about
 
-**Configuration is the single source of truth, and `CLAUDE.md` is generated from it.**
+**Configuration is the single source of truth, and `AGENTS.md` is generated from it.**
 
 The usual failure of an agent template is drift: the instructions say one thing, the code does another, and nobody notices for a month. Here the standing instructions are rendered from `config/outbound.yaml`, so a cap change or an ICP change updates both at once. If the two ever disagree, the config wins and you regenerate.
 

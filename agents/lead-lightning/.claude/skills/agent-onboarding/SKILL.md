@@ -5,7 +5,7 @@ description: Configures the Lead Lightning template for the user's company, syst
 
 # Agent Onboarding
 
-Welcome. This onboarding configures your Lead Lightning workspace so the agent can run against your own tools and process. Ask the questions below one at a time, wait for each answer, then write the final configuration into `CLAUDE.md` under `## Your context` and create `.claude/skills/agent-onboarding/config.json`.
+Welcome. This onboarding configures your Lead Lightning workspace so the agent can run against your own tools and process. Ask the questions below one at a time, wait for each answer, then write the final configuration into `AGENTS.md` under `## Your context` and create `.claude/skills/agent-onboarding/config.json`.
 
 ## Questions to ask
 

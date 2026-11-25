@@ -45,7 +45,7 @@ It Slacks you the draft with gaps called out, such as a missing price, fuzzy sco
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your proposal template, rate card, call notes source, and who approves price, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your proposal template, rate card, call notes source, and who approves price, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Turn the latest call notes into a sendable proposal, in draft.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -58,7 +58,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes

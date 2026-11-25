@@ -17,7 +17,7 @@ Fixed skeleton, fixed order, fixed sentence stems. Deviating breaks
 ```markdown
 # <Name>
 
-<CLAUDE.md description, verbatim>
+<AGENTS.md description, verbatim>
 
 ## What it does
 
@@ -48,7 +48,7 @@ Fixed skeleton, fixed order, fixed sentence stems. Deviating breaks
 
 ## Files
 
-- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
+- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
 - `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
 - `README.md` — marketplace metadata, examples, connection mapping, and credits.
 
@@ -59,7 +59,7 @@ Original prompt credited to [<handle>](<url>) on [Bot Directory](https://botdire
 
 Notes:
 
-- The summary line under the H1 is the `CLAUDE.md` `description` **verbatim**,
+- The summary line under the H1 is the `AGENTS.md` `description` **verbatim**,
   including its typographic punctuation. Do not paraphrase or re-wrap it.
 - Bullets two and three of `What it does` are constant across all 160 agents.
 - `Sample use cases` splits the description on its `;` or `,` clause boundary
@@ -68,7 +68,7 @@ Notes:
 - The three `Getting started` steps and the three `Files` lines are constant.
 - `Example prompts` is the one section of a light import that must be written
   fresh. Derive it from `PROMPT.md`, not from the description.
-- `Connect first` and the `First run` section of `CLAUDE.md` must name the same
+- `Connect first` and the `First run` section of `AGENTS.md` must name the same
   labels, and every mapped connector must appear in both with its slug.
 
 ### `Connect first` suffix vocabulary
@@ -126,7 +126,7 @@ is yours.
 
 ## What's inside
 
-- `CLAUDE.md` — <one line>
+- `AGENTS.md` — <one line>
 - `.claude/skills/<name>/` — <one line each>
 - `<dir>/` — <one line each>
 
@@ -221,7 +221,7 @@ That fallback is what this section exists to replace. **Never ship it.**
 
 ## Rules that apply to both flavors
 
-- **H1 = `CLAUDE.md` `name`.** Four legacy READMEs drift (`OpenSlide Studio
+- **H1 = `AGENTS.md` `name`.** Four legacy READMEs drift (`OpenSlide Studio
   Agent`, `Outbound Agent Template`, `Recruiting Agent Template`,
   `SEO Agent — template`). Do not add a fifth.
 - **No `##` heading before the summary line.** The H1 and its one-line summary

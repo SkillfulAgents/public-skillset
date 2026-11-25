@@ -49,7 +49,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's instructions (role, style, request routing, record keeping, privacy rules).
+- `AGENTS.md` — the agent's instructions (role, style, request routing, record keeping, privacy rules).
 - `.claude/skills/agent-onboarding/` — the first-run setup interview.
 - `.claude/skills/amazon-order/` — a battle-tested browser SOP for placing Amazon orders.
 - `grocery-baseline.md` — the standing weekly list (filled in during onboarding).
