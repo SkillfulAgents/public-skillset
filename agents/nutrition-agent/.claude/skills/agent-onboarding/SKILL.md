@@ -99,9 +99,9 @@ cd /workspace/nutrition/scripts && uv run set_goal.py \
 uv run /workspace/.claude/skills/log-weight/log_weight.py <weight_lbs>
 ```
 
-### 3d. Update CLAUDE.md
+### 3d. Update AGENTS.md
 
-Append the user's context to the `## Preferences` and `## Project Notes` sections of `/workspace/CLAUDE.md`. Do NOT overwrite the existing instructions — only append below the comments.
+Append the user's context to the `## Preferences` and `## Project Notes` sections of `/workspace/AGENTS.md`. Do NOT overwrite the existing instructions — only append below the comments.
 
 Under `## Preferences`, add things like:
 - Coffee default (e.g. "When user logs coffee, include 2 tbsp half-and-half unless specified otherwise")

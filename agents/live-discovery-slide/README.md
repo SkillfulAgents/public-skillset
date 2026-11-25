@@ -51,7 +51,7 @@ Turn discovery-call notes into an accurate What We’ve Heard slide; preserve th
 
 ## Files
 
-- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
+- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
 - `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
 - `README.md` — marketplace metadata, examples, connection mapping, and credits.
 

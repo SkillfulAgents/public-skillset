@@ -40,7 +40,7 @@ It watches hours or dollars left on every retainer and warns at the remaining pe
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your time system, the low-retainer percent, the renewal window, your chase voice, and the founder Slack channel, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your time system, the low-retainer percent, the renewal window, your chase voice, and the founder Slack channel, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Pull unbilled time, overdue invoices, and retainers running low, and draft any renewals due without sending.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -53,7 +53,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes

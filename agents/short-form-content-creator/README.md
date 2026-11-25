@@ -49,7 +49,7 @@ Find the strongest moments in source videos; create vertical shorts with hooks, 
 
 ## Files
 
-- `CLAUDE.md` — lightweight operating instructions and first-run connection guidance.
+- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
 - `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
 - `README.md` — marketplace metadata, examples, connection mapping, and credits.
 

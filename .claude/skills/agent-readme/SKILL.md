@@ -19,7 +19,7 @@ order, same section names, same sentence shapes as the 168 templates already in
 
 Never write the README from the user's description alone. Read, in order:
 
-1. `agents/<slug>/CLAUDE.md` — frontmatter gives you `name` and `description`
+1. `agents/<slug>/AGENTS.md` — frontmatter gives you `name` and `description`
    (which the README must echo, not restate); the body gives you the real
    capabilities, the first-run connections, and the operating rules.
 2. `agents/<slug>/PROMPT.md` if present — its presence means this is a
@@ -29,9 +29,9 @@ Never write the README from the user's description alone. Read, in order:
    state directories, `.env.example`. Each one becomes a line in
    `## What's inside`, and `.env.example` tells you which API keys to list.
 
-If `CLAUDE.md` is missing `name`, `description`, `createdAt`, or `version`, stop
+If `AGENTS.md` is missing `name`, `description`, `createdAt`, or `version`, stop
 and fix that first — `tests/test_generate_index.py` requires all four to be
-non-empty for every agent, and the README cannot supply them (`CLAUDE.md` wins
+non-empty for every agent, and the README cannot supply them (`AGENTS.md` wins
 the merge on every shared key).
 
 ## Step 2 — Pick the flavor
@@ -79,7 +79,7 @@ developer:
 ```
 
 - **Never** put `name`, `description`, `createdAt`, or `version` here — they
-  belong to `CLAUDE.md`, which wins the shallow merge anyway.
+  belong to `AGENTS.md`, which wins the shallow merge anyway.
 - **Never** set `path` or `details`; the generator owns both.
 - `works_with: []` when the agent needs no registry connector. The key still
   appears — do not omit it.
@@ -102,12 +102,12 @@ Both flavors open the same way:
 # <Name>
 ```
 
-The H1 must match `CLAUDE.md`'s `name` exactly. Four legacy READMEs drift from
+The H1 must match `AGENTS.md`'s `name` exactly. Four legacy READMEs drift from
 this; do not add a fifth.
 
 The line under the H1 differs by flavor:
 
-- **Light import** — repeat `CLAUDE.md`'s `description` verbatim, as a plain
+- **Light import** — repeat `AGENTS.md`'s `description` verbatim, as a plain
   paragraph. This is deliberate redundancy: the card shows the description, the
   detail page shows the body, and they must agree.
 - **Full template** — a `>` blockquote hook of one sentence that sells the
@@ -156,7 +156,7 @@ uv run tests/test_botdirectory_templates.py
 templates (`outbound-campaign-agent`, `recruiting-agent`, `seo-agent`) whose
 section names predate this vocabulary, and `outbound-campaign-agent`
 additionally carries `version` in its README frontmatter instead of
-`CLAUDE.md`. Those are known and pre-existing — do not copy their shape, and do
+`AGENTS.md`. Those are known and pre-existing — do not copy their shape, and do
 not silence the checker to hide them.
 
 `index.json` is generated — never hand-edit it, and always commit the
@@ -173,14 +173,14 @@ H3 heading and a one-paragraph summary, and states the light-import count in the
 
 ## Checklist
 
-- [ ] Read `CLAUDE.md`, `PROMPT.md`, and every skill/artifact directory
+- [ ] Read `AGENTS.md`, `PROMPT.md`, and every skill/artifact directory
 - [ ] Flavor chosen from `PROMPT.md` presence
 - [ ] Frontmatter has exactly `category`, `icon`, `tags`, `works_with`, `developer`, in order
 - [ ] `icon` is a real lowercase kebab-case Lucide name
 - [ ] 4–7 unique, presentation-ready `tags`
 - [ ] Every `works_with` slug verified against the registry; every listed connector is one the agent actually calls
 - [ ] `developer` credits the original author, with an absolute http(s) `url`
-- [ ] H1 matches `CLAUDE.md` `name`
+- [ ] H1 matches `AGENTS.md` `name`
 - [ ] Summary line matches the flavor (verbatim description / blockquote hook)
 - [ ] Section names drawn from the approved vocabulary, in the approved order
 - [ ] `Example prompts` has exactly three concrete, agent-specific chips — none of the generic fallbacks

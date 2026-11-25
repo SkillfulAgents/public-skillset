@@ -73,11 +73,11 @@ during onboarding (recorded in `seo/STATE.md`).
 ## Layout
 
 ```
-CLAUDE.md                  agent instructions (generic; onboarding personalizes)
+AGENTS.md                  agent instructions (generic; onboarding personalizes)
 .env.example               required/optional secrets
 seo/                       program state: config.json, STATE.md, backlogs, CRM, log
 artifacts/seo-master/      the SEO dashboard (React + Bun; collector-fed)
-.claude/skills/            11 skills (see CLAUDE.md for the table)
+.claude/skills/            11 skills (see AGENTS.md for the table)
 ```
 
 ## Import

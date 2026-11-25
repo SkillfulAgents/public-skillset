@@ -1,6 +1,6 @@
 ---
 name: agent-onboarding
-description: Configure this workspace to run personalized outbound for YOUR team. Use on first run, or whenever the ICP, positioning, senders, caps, cadence, or vendor tools change. Interviews the operator, writes config/outbound.yaml, generates CLAUDE.md standing instructions, seeds positioning files, initializes the database, and runs a dry-run self-test. Run this BEFORE any sourcing, drafting, or sending.
+description: Configure this workspace to run personalized outbound for YOUR team. Use on first run, or whenever the ICP, positioning, senders, caps, cadence, or vendor tools change. Interviews the operator, writes config/outbound.yaml, generates AGENTS.md standing instructions, seeds positioning files, initializes the database, and runs a dry-run self-test. Run this BEFORE any sourcing, drafting, or sending.
 metadata:
   version: "1.9.0"
 ---
@@ -133,7 +133,7 @@ The calendar question is part of this section because meetings booked is the out
 
 ```bash
 uv run --with pyyaml .claude/skills/agent-onboarding/scripts/init_workspace.py \
-  --answers /tmp/answers.json                 # writes config/, CLAUDE.md, data/, positioning stubs
+  --answers /tmp/answers.json                 # writes config/, AGENTS.md, data/, positioning stubs
 uv run --with pyyaml .claude/skills/agent-onboarding/scripts/validate_config.py config/outbound.yaml
 ```
 

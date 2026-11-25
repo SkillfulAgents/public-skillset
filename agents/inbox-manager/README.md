@@ -47,7 +47,7 @@ For recurring clutter, it extracts unsubscribe options from message headers and 
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's durable workspace instructions.
+- `AGENTS.md` — the agent's durable workspace instructions.
 - `.claude/skills/agent-onboarding/` — account connection, preferences, and schedule setup.
 - `.claude/skills/gmail-inbox-screener/` — Gmail retrieval, categorization, mark-read, and reply actions.
 - `.claude/skills/gmail-unsubscribe/` — unsubscribe-link extraction and guided cleanup.

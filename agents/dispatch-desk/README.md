@@ -35,7 +35,7 @@ Then it drafts the window text for each customer in your voice: who is coming, t
 ## Getting started
 
 1. Import the template into Gamut.
-2. The `agent-onboarding` skill runs before first use. It asks for your dispatch board, where parts notes live, your window-text voice, and who approves customer texts, then saves the answers into `CLAUDE.md` and `.claude/skills/agent-onboarding/config.json`.
+2. The `agent-onboarding` skill runs before first use. It asks for your dispatch board, where parts notes live, your window-text voice, and who approves customer texts, then saves the answers into `AGENTS.md` and `.claude/skills/agent-onboarding/config.json`.
 3. Ask for the first run: Build tomorrow's board with crew, parts, and windows, and draft the customer texts without sending.
 
 Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
@@ -48,7 +48,7 @@ Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skil
 
 ## What's inside
 
-- `CLAUDE.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
+- `AGENTS.md` — the agent's operating instructions, safe operating rules, and the `## Your context` block that onboarding fills in.
 - `.claude/skills/agent-onboarding/` — the first-run interview that captures your systems, cadence, voice, and approval rules and writes `config.json`.
 
 ## Notes
