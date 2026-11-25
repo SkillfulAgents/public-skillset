@@ -111,17 +111,19 @@ CAPABILITY_PATTERNS = {
             r"\bname\s*:\s*['\"]web['\"]",
         ),
     ),
-    Path("agent-container/src/tools/chat/add-chat-integration.ts"): (
+    Path("agent-container/src/tools/chat/add-agent-integration.ts"): (
         (
-            "add_chat_integration tool declaration",
-            r"\btool\s*\(\s*['\"]add_chat_integration['\"]",
+            "add_agent_integration tool declaration",
+            r"\btool\s*\(\s*['\"]add_agent_integration['\"]",
         ),
-        ("iMessage provider", r"z\.enum\s*\([^)]*['\"]imessage['\"]"),
     ),
-    Path("agent-container/src/tools/chat/list-available-chat-providers.ts"): (
+    Path("src/shared/lib/chat-integrations/config-schema.ts"): (
+        ("iMessage provider config", r"\bimessage\s*:"),
+    ),
+    Path("agent-container/src/tools/chat/list-available-integration-providers.ts"): (
         (
-            "list_available_chat_providers tool declaration",
-            r"\btool\s*\(\s*['\"]list_available_chat_providers['\"]",
+            "list_available_integration_providers tool declaration",
+            r"\btool\s*\(\s*['\"]list_available_integration_providers['\"]",
         ),
     ),
     Path("agent-container/src/tools/request-secret.ts"): (

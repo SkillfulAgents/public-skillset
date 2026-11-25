@@ -117,7 +117,7 @@ Use the chat integration tools:
 
 1. First check available providers:
    ```
-   mcp__chat__list_available_chat_providers
+   mcp__chat__list_available_integration_providers
    ```
 
 2. Tell the user to create a Telegram bot:
@@ -129,7 +129,7 @@ Use the chat integration tools:
 
 3. Once they provide the token, connect it:
    ```
-   mcp__chat__add_chat_integration with toolkit: "telegram" and the token
+   mcp__chat__add_agent_integration with toolkit: "telegram" and the token
    ```
 
 4. Tell them to open their new bot in Telegram and send `/start`, then try logging a meal.

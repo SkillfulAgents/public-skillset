@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "superagentRepository": "https://github.com/SkillfulAgents/SuperAgent",
-  "superagentCommit": "54b266c326a0f1c0f678d7439b1b9506f998afbc",
+  "superagentCommit": "63d9b0c54d60427333217c883a947d0732733724",
   "providerRegistry": "src/shared/lib/account-providers/service-catalog.ts",
   "mcpRegistry": "src/shared/lib/mcp/common-servers.ts",
   "labels": [
