@@ -15,6 +15,8 @@ AVATAR_COLORS = (
     "duo-blue-amber", "duo-cobalt-teal", "duo-pink-blue", "duo-brown-amber",
 )
 AVATAR_SHAPES = ("circle", "squircle", "triangle", "diamond", "hexagon", "pill", "arch", "bloom")
+# Stored like any shape but never a default: Team Brain's own look.
+STORED_SHAPES = (*AVATAR_SHAPES, "brain")
 
 
 def _name_hash(value: str) -> int:

@@ -13,7 +13,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-from avatars import default_avatar  # noqa: E402
+from avatars import AVATAR_SHAPES, STORED_SHAPES, default_avatar  # noqa: E402
 from generate_index import build_agent_entry, build_index, parse_document  # noqa: E402
 
 
@@ -326,6 +326,10 @@ metadata:
         # SuperAgent drew this template as a blue pill before it had an avatar;
         # the defaults must reproduce its hash so cards don't change on adoption.
         self.assertEqual(default_avatar("E2E Onboarding Template"), {"color": "tonal-blue", "shape": "pill"})
+
+    def test_brain_is_stored_but_never_a_default(self) -> None:
+        self.assertNotIn("brain", AVATAR_SHAPES)
+        self.assertIn("brain", STORED_SHAPES)
 
 
 if __name__ == "__main__":

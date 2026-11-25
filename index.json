@@ -5802,6 +5802,10 @@
       "version": "0.8.0",
       "category": "Ops",
       "icon": "brain",
+      "avatar": {
+        "color": "tonal-cobalt",
+        "shape": "arch"
+      },
       "tags": [
         "Team Brain",
         "Knowledge Base",

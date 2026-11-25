@@ -107,7 +107,8 @@ SuperAgent's `src/shared/lib/types/agent-avatar.ts`):
   `duo-teal-blush` · `duo-blue-amber` · `duo-cobalt-teal` · `duo-pink-blue` ·
   `duo-brown-amber`
 - `shape`: `circle` · `squircle` · `triangle` · `diamond` · `hexagon` · `pill`
-  · `arch` · `bloom`
+  · `arch` · `bloom`, or `brain`, which is Team Brain's alone and never a
+  default
 
 Start from the default, then change it if the template deserves a deliberate
 look:

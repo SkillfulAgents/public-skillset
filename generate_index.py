@@ -15,7 +15,7 @@ import yaml
 from yaml.constructor import ConstructorError
 from yaml.nodes import MappingNode
 
-from avatars import AVATAR_COLORS, AVATAR_SHAPES
+from avatars import AVATAR_COLORS, STORED_SHAPES
 
 FRONTMATTER_START_RE = re.compile(r"\A---[ \t]*(?:\r?\n)")
 FRONTMATTER_RE = re.compile(
@@ -146,8 +146,8 @@ def _avatar_field(metadata: dict[str, Any], source: str) -> dict[str, str] | Non
         raise ValueError(f"{source}: 'avatar' must contain exactly 'color' and 'shape'")
     if value["color"] not in AVATAR_COLORS:
         raise ValueError(f"{source}: 'avatar.color' must be one of: {', '.join(AVATAR_COLORS)}")
-    if value["shape"] not in AVATAR_SHAPES:
-        raise ValueError(f"{source}: 'avatar.shape' must be one of: {', '.join(AVATAR_SHAPES)}")
+    if value["shape"] not in STORED_SHAPES:
+        raise ValueError(f"{source}: 'avatar.shape' must be one of: {', '.join(STORED_SHAPES)}")
     return {"color": value["color"], "shape": value["shape"]}
 
 
