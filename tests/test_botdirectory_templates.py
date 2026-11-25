@@ -213,11 +213,11 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                         self.assertEqual(len(apple_lines), 1)
                         self.assertIn("iMessage chat integration", apple_lines[0])
                         self.assertIn(
-                            "`mcp__chat__list_available_chat_providers`",
+                            "`mcp__chat__list_available_integration_providers`",
                             apple_lines[0],
                         )
                         self.assertIn(
-                            "`mcp__chat__add_chat_integration`", apple_lines[0]
+                            "`mcp__chat__add_agent_integration`", apple_lines[0]
                         )
                         self.assertIn("provider `imessage`", apple_lines[0])
 

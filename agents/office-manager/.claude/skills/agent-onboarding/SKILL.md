@@ -49,7 +49,7 @@ Write all of this into the **"## Office setup"** section of `CLAUDE.md`. Do not 
 Strongly suggest adding the agent to the team's Slack so it can respond to requests and post updates — this is how most of the value gets delivered.
 
 1. Call `mcp__chat__list_chat_integrations` — Slack may already be connected.
-2. If not, call `mcp__chat__list_available_chat_providers` to see what Slack needs, walk the user through it, then `mcp__chat__add_chat_integration`. As that tool instructs, **offer to drive the setup with browser use** if the user prefers you do the clicking.
+2. If not, call `mcp__chat__list_available_integration_providers` to see what Slack needs, walk the user through it, then `mcp__chat__add_agent_integration`. As that tool instructs, **offer to drive the setup with browser use** if the user prefers you do the clicking.
 3. Once connected, ask which **channel** to use for announcements/orders (e.g. `#office`) and confirm the agent can be DM'd for requests. Use `mcp__chat__list_chat_channels` to find the channel ID.
 4. Send a short test message to the channel (with the user's OK): e.g. "hi, i'm the new office manager 👋 — dm me if you need anything for the office"
 5. Record the integration ID, channel name + ID in `CLAUDE.md` → "Office setup".

@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: SkillfulAgents/SuperAgent
-          ref: 54b266c326a0f1c0f678d7439b1b9506f998afbc
+          ref: 63d9b0c54d60427333217c883a947d0732733724
           path: .superagent-source
           fetch-depth: 1
           persist-credentials: false
@@ -33,11 +33,12 @@ jobs:
             agent-container/src/mcp-server.ts
             agent-container/src/system-prompt.md
             agent-container/src/tools/browser.ts
-            agent-container/src/tools/chat/add-chat-integration.ts
-            agent-container/src/tools/chat/list-available-chat-providers.ts
+            agent-container/src/tools/chat/add-agent-integration.ts
+            agent-container/src/tools/chat/list-available-integration-providers.ts
             agent-container/src/tools/request-secret.ts
             agent-container/src/tools/web/web-search.ts
             src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/chat-integrations/config-schema.ts
             src/shared/lib/llm-provider/model-prompt-hints.ts
             src/shared/lib/mcp/common-servers.ts
           sparse-checkout-cone-mode: false
@@ -55,11 +56,12 @@ jobs:
             agent-container/src/mcp-server.ts
             agent-container/src/system-prompt.md
             agent-container/src/tools/browser.ts
-            agent-container/src/tools/chat/add-chat-integration.ts
-            agent-container/src/tools/chat/list-available-chat-providers.ts
+            agent-container/src/tools/chat/add-agent-integration.ts
+            agent-container/src/tools/chat/list-available-integration-providers.ts
             agent-container/src/tools/request-secret.ts
             agent-container/src/tools/web/web-search.ts
             src/shared/lib/account-providers/service-catalog.ts
+            src/shared/lib/chat-integrations/config-schema.ts
             src/shared/lib/llm-provider/model-prompt-hints.ts
             src/shared/lib/mcp/common-servers.ts
           sparse-checkout-cone-mode: false

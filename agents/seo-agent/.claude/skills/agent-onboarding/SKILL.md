@@ -154,7 +154,7 @@ PR merges? Default to NOT granted unless the user clearly says yes.
    - Email → use the outreach inbox if one was connected; otherwise
      `mcp__user-input__request_connected_account` for gmail. Fill config `report`
      (`to`, `from_email`, `gmail_account_id`, `brand`).
-   - Slack → prefer a **chat integration** (`mcp__chat__add_chat_integration`) over a
+   - Slack → prefer a **chat integration** (`mcp__chat__add_agent_integration`) over a
      connected account, so updates come from an "SEO Agent" bot identity rather than
      the user's. Set config `report.channel` to `slack`.
 2. **Other access** per the plan: GitHub connected account (if PRs), CMS credentials

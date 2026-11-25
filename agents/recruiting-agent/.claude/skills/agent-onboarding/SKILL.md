@@ -163,7 +163,7 @@ Schedule (all weekday, user's timezone, `schedule_task` cron) and record each ta
   - Replace the hardcoded `America/Los_Angeles` timezone strings in `index.js`/`public/index.html` with the customer's timezone (Phase 1).
   - Create the feedback webhook (`create_webhook_endpoint`, prompt = run the `calibration-feedback` skill) and write `pipeline/.feedback-webhook.json` with the URL + HMAC secret — the Advance/Don't-advance buttons ping it.
   - `start_dashboard`, click through every tab in the container browser, and verify the feedback buttons append to `pipeline/feedback-queue.jsonl`.
-- **Chat integration** — clickbox: Slack / Telegram / iMessage / none. If chosen, set up via `mcp__chat__add_chat_integration`; used for time-sensitive flags (candidate wants to talk, platform logged out) and the weekly report link.
+- **Chat integration** — clickbox: Slack / Telegram / iMessage / none. If chosen, set up via `mcp__chat__add_agent_integration`; used for time-sensitive flags (candidate wants to talk, platform logged out) and the weekly report link.
 
 ## Phase 8 — Finalize
 

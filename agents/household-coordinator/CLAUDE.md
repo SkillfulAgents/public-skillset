@@ -17,7 +17,7 @@ Then read `PROMPT.md` as the canonical setup brief. Gather the requested prefere
 
 ## Connection methods
 
-- For Apple Messages, use the iMessage chat integration: call `mcp__chat__list_available_chat_providers`, collect the required setup details, then call `mcp__chat__add_chat_integration` with provider `imessage`.
+- For Apple Messages, use the iMessage chat integration: call `mcp__chat__list_available_integration_providers`, collect the required setup details, then call `mcp__chat__add_agent_integration` with provider `imessage`.
 
 ## Operating rules
 
