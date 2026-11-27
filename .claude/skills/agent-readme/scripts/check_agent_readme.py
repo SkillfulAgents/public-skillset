@@ -31,6 +31,16 @@ from generate_index import (  # noqa: E402
     read_document,
 )
 
+def graduated_slugs() -> set[str]:
+    """Bot Directory imports rewritten as first-party templates; checked as full templates."""
+    import json
+
+    path = ROOT / "sources" / "botdirectory" / "graduated.json"
+    if not path.is_file():
+        return set()
+    return {entry["slug"] for entry in json.loads(path.read_text(encoding="utf-8"))["templates"]}
+
+
 README_KEYS = ["category", "icon", "avatar", "tags", "works_with", "developer"]
 CLAUDE_ONLY_KEYS = {"name", "description", "createdAt", "version"}
 GENERATED_KEYS = {"path", "details"}
@@ -378,7 +388,7 @@ def check_agent(directory: Path) -> Report:
         report.error("README.md has no YAML frontmatter")
         return report
 
-    is_light = (directory / "PROMPT.md").is_file()
+    is_light = (directory / "PROMPT.md").is_file() and slug not in graduated_slugs()
     check_frontmatter(metadata, report)
     check_body(
         body,

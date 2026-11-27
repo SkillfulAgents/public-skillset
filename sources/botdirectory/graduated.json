@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "description": "Bot Directory imports that were rewritten as first-party Gamut templates. Their catalog entries stay so the pinned source set remains complete, but their PROMPT.md, AGENTS.md and README.md are no longer byte-for-byte imports. The importer skips them, and the light-import checks are replaced by a provenance check: the README must still credit the original author and detail page.",
+  "templates": [
+    {
+      "slug": "call-follow-up-drafter",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "call-follow-up-nudge",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "chief-of-staff-briefing",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "daily-briefing",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "deck-updater",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "forecast-notes-updater",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "important-email-triage",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "inbox-reply-digest",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "meeting-prep-brief",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "one-on-one-prep",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "release-to-social-campaign",
+      "graduatedAt": "2026-11-20"
+    },
+    {
+      "slug": "reply-drafter",
+      "graduatedAt": "2026-11-20"
+    }
+  ]
+}

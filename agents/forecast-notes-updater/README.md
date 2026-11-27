@@ -5,70 +5,82 @@ avatar:
   color: tonal-blush
   shape: diamond
 tags:
-  - "Sales"
-  - "Forecast Notes Updater"
+  - "CRM Hygiene"
+  - "Forecasting"
+  - "Call Notes"
   - "Salesforce"
-  - "Granola"
-  - "Gong"
-  - "Slack"
+  - "MEDDICC"
   - "Revenue Operations"
 works_with:
   - type: api_account
     slug: salesforce
+  - type: api_account
+    slug: hubspot
+  - type: api_account
+    slug: gmail
+  - type: api_account
+    slug: googlecalendar
   - type: mcp
     slug: granola
   - type: api_account
     slug: gong
-  - type: api_account
-    slug: slack
-  - type: api_account
-    slug: gmail
 developer:
-  name: "@kristaletz"
-  url: "https://x.com/kristaletz"
+  name: SkillfulAgents
+  url: https://github.com/SkillfulAgents
 ---
 
 # Forecast Notes Updater
 
-Combine call notes, Slack threads, and email after each customer touchpoint; draft updated Salesforce forecast fields for approval.
+> Walk into your forecast call with every opportunity already updated from what was actually said.
 
 ## What it does
 
-- Act as the Forecast Notes Updater: combine call notes, Slack threads, and email after each customer touchpoint; draft updated Salesforce forecast fields for approval.
-- Uses the original setup prompt as the workflow brief and starts with a supervised run.
-- Captures the user's preferences, boundaries, approvals, and cadence when applicable.
+After each customer call, demo or meaningful email exchange, Forecast Notes Updater reads the transcript, the thread and any Slack discussion about the deal, finds the right contact and opportunity, and drafts the note in your exact format and qualification framework. Gaps in your framework are called out, not filled in, and numbers and dates are quoted exactly as they were said.
 
-## Connect first
+It runs in the modes you choose:
 
-- **Salesforce** — SuperAgent API account `salesforce`.
-- **Granola** — SuperAgent MCP `granola`.
-- **Gong** — SuperAgent API account `gong`.
-- **Slack** — SuperAgent API account `slack`.
-- **Gmail** — SuperAgent API account `gmail`.
+- **Per-call updates** — as soon as a transcript is ready, a proposed note, next step and framework update for that deal. Each meeting is processed once.
+- **End-of-day batch** — at 5pm, the day's calls, meetings and buyer emails drafted into one batch to approve, with duplicates of what is already logged removed.
+- **Forecast-call digest** — optional: what changed on your in-play deals since last week, and what never got logged.
 
-## Sample use cases
+Stage and forecast changes are only suggested, each with the line from the call that supports it. The agent never moves a deal to closed lost or pass, never touches amounts or close dates on its own, and never overwrites a note a teammate edited later. For the first week it writes nothing without your approval; after that you can let it log plain notes on its own.
 
-- Combine call notes, Slack threads, and email after each customer touchpoint.
-- Draft updated Salesforce forecast fields for approval.
+## What you'll need
+
+- **Salesforce** — the primary CRM. HubSpot or Attio also work, and a Google Sheet if you have no CRM. Required, one of them.
+- **Meeting notes** — Granola or Gong recommended. Fathom, Fireflies, Otter, Zoom recordings, or inviting the agent to listen in on calls also work.
+- **Gmail or Outlook** — recommended, to read threads with buyers.
+- **Google Calendar** — recommended, to know which meetings happened and who attended.
+- **Slack** — optional, to read deal channels you allow.
+- **A delivery channel** — the agent's own Slack app, its own email inbox, Telegram, or in-app only, for approval batches.
+- **API keys:** none.
 
 ## Getting started
 
-1. Import this directory as an agent template.
-2. Start a conversation and complete the guided connections and setup questions.
-3. Review the supervised first result before saving or scheduling the workflow.
+1. Import the template into Gamut and send the setup message that is already in the message box.
+2. The `agent-onboarding` skill connects your CRM, notes, mail and calendar, asks for your note format, framework, stage rules and in-play deals, and picks the modes and delivery channel.
+3. It runs on your last few calls and shows the proposed updates before writing anything.
+
+Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
 ## Example prompts
 
-- Update my opportunity notes from this week's touchpoints
-- Show me the proposed Salesforce updates before writing
-- What changed on my in-play deals since the last forecast?
+- Draft the Salesforce update from my call with Example Co this morning
+- Show me today's proposed CRM updates and write the ones I approve
+- Every Monday before forecast, tell me what changed on my in-play deals
 
-## Files
+## What's inside
 
-- `AGENTS.md` — lightweight operating instructions and first-run connection guidance.
-- `PROMPT.md` — the original Bot Directory prompt, preserved verbatim.
-- `README.md` — marketplace metadata, examples, connection mapping, and credits.
+- `PROMPT.md` — the setup request placed in your message box after import.
+- `AGENTS.md` — the three routines, matching and guardrail rules, Gamut mechanics, and safe operating rules.
+- `.claude/skills/agent-onboarding/` — first-run setup that connects tools, runs a supervised week, sets schedules, and writes `config.json`.
+- `.claude/skills/crm-note-format/` — note structure, framework mapping, matching and dedupe rules, and how to write to Salesforce, HubSpot, Attio or a Sheet.
+
+## Notes
+
+- Run state (processed meetings, pending batches, a log of every write) lives under `state/forecast-notes-updater/` in the agent's workspace and holds IDs and field values, not transcripts.
+- If Pipeline Doctor is also installed, onboarding asks which agent owns the end-of-day CRM batch so the work is not duplicated.
 
 ## Credits
 
-Original prompt credited to [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/forecast-notes-updater/). Imported from the MIT-licensed Bot Directory catalog; see the [attribution and license](../../sources/botdirectory/NOTICE.md).
+Adapted from the original prompt by [@kristaletz](https://x.com/kristaletz) on [Bot Directory](https://botdirectory.ai/bots/forecast-notes-updater/), used under the MIT license; see the [attribution and license](../../sources/botdirectory/NOTICE.md).

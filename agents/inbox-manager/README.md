@@ -8,6 +8,7 @@ tags:
   - Email Management
   - Inbox Zero
   - Email Triage
+  - Reply Drafts
   - Unsubscribe
   - Automation
 works_with:
@@ -24,37 +25,43 @@ developer:
 
 ## What it does
 
-Inbox Manager screens recent Gmail messages and separates important conversations from marketing and low-value mail. It can summarize what needs attention, mark processed messages as read, and prepare or send replies through the connected Gmail account.
+Inbox Manager sorts your mail in the background as it arrives. It learns your categories from your real mail and labels in your own words instead of a generic folder scheme, archives the noise you confirmed against a skip list, and leaves anything ambiguous exactly where it is. Each thread gets at most one label, and it never overrides a label you set yourself.
 
-For recurring clutter, it extracts unsubscribe options from message headers and bodies so unwanted lists can be removed safely. Its onboarding flow learns which senders and message patterns matter to you, how often it should screen the inbox, and whether useful notifications should also go to Slack.
+For threads that clearly need an answer from you, it writes a reply in your voice, learned from your sent mail, and leaves it in your Gmail drafts. It never sends. Once a week it tells you what you might not notice: senders you always ignore, threads you keep leaving hanging, and rules that keep misfiring. It proposes unsubscribes, and acts on one only after you approve that sender.
+
+An optional investor preset swaps learned categories for four fixed buckets (Today's Focus, Action Required, Scheduling, Delegated), keeps LP and fund-admin mail out of deal flow, and sends a morning digest with a one-line reason for each urgent item.
 
 ## What you'll need
 
-- **Gmail:** Required for the shipped screening, action, and unsubscribe tools.
-- **Slack:** Optional, for inbox notifications configured during onboarding.
+- **Gmail:** Required. Labels, archiving, drafts, and the bundled screening and unsubscribe tools all run through your connected Gmail account.
+- **Outlook:** Optional alternative. The same work runs through Microsoft Graph, without the bundled Gmail scripts, so the first week runs in preview mode.
+- **Google Calendar:** Optional, so scheduling drafts can offer real free times.
+- **Slack, email, Telegram, or iMessage:** Optional, for summaries and the weekly report, sent from the agent's own account. In-app works too.
 - **API keys:** None.
 
 ## Getting started
 
 1. Import the template into Gamut.
-2. Run the onboarding conversation and connect the Gmail inbox you want it to manage.
-3. Describe what “important” means for you and choose a screening schedule.
-4. Optionally connect Slack for notifications.
-5. Ask it to screen the inbox or unsubscribe you from a mailing list.
+2. The `agent-onboarding` skill runs before first use. It connects your mailbox, reads your recent mail to propose categories in your words, agrees the skip list and never-touch list with you, learns your voice from sent mail, and asks how much to do on its own.
+3. Review the dry run on the last 48 hours of mail, nothing changed until you approve. Then it switches on sorting for new mail and the weekly patterns report.
+
+Re-run onboarding anytime by asking the agent to run the `agent-onboarding` skill.
 
 ## Example prompts
 
-- Screen my inbox and show me what needs a reply today
-- Unsubscribe me from the newsletters I never open
-- Mark everything you screened as read and summarize it
+- Sort today's unread and show me what you labeled, archived, and left alone
+- Which senders do I always ignore, and which threads am I leaving hanging?
+- Draft replies for the threads that need me today and leave them in Gmail
 
 ## What's inside
 
-- `AGENTS.md` — the agent's durable workspace instructions.
-- `.claude/skills/agent-onboarding/` — account connection, preferences, and schedule setup.
-- `.claude/skills/gmail-inbox-screener/` — Gmail retrieval, categorization, mark-read, and reply actions.
-- `.claude/skills/gmail-unsubscribe/` — unsubscribe-link extraction and guided cleanup.
+- `AGENTS.md` — the sorting, drafting, and patterns routines, the investor preset, Gamut setup, and safe operating rules.
+- `.claude/skills/agent-onboarding/` — mailbox connection, category and voice learning, dry run, and trigger and schedule setup.
+- `.claude/skills/gmail-inbox-screener/` — Gmail retrieval, first-pass marketing screening, and mark-read actions.
+- `.claude/skills/gmail-unsubscribe/` — unsubscribe-link extraction for approved senders.
 
 ## Notes
 
-The current implementation is Gmail-specific. Onboarding may discuss other mail providers, but the included screening and unsubscribe scripts require a connected Gmail account.
+- Default autonomy: it labels and archives on its own within your confirmed rules and writes drafts. It never sends, deletes, or marks mail as spam, and unsubscribes need your yes per sender.
+- It runs on each new email through a new-mail trigger when your account offers one, otherwise as a sweep every 15 minutes during your waking hours.
+- Gmail-first: the bundled scripts are Gmail-specific.
