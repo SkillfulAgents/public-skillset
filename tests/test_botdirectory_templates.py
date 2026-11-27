@@ -22,6 +22,7 @@ from generate_index import build_agent_entry, read_document  # noqa: E402
 SOURCE_ROOT = ROOT / "sources" / "botdirectory"
 CATALOG_PATH = SOURCE_ROOT / "catalog.json"
 CROSSWALK_PATH = SOURCE_ROOT / "connect-first.json"
+GRADUATED_PATH = SOURCE_ROOT / "graduated.json"
 MAPPED_KINDS = {"api_account", "mcp"}
 UNMAPPED_KINDS = {"browser", "builtin", "external", "local", "raw_api"}
 DIRECT_API_KINDS = {"external", "raw_api"}
@@ -52,6 +53,8 @@ class BotDirectoryTemplateTests(unittest.TestCase):
         cls.templates = cls.catalog["templates"]
         cls.mapping_list = cls.crosswalk["labels"]
         cls.mappings = {entry["name"]: entry for entry in cls.mapping_list}
+        graduated = read_json(GRADUATED_PATH)
+        cls.graduated = {entry["slug"] for entry in graduated["templates"]}
 
     def test_snapshot_and_crosswalk_are_well_formed(self) -> None:
         self.assertEqual(self.catalog["schemaVersion"], 1)
@@ -107,9 +110,28 @@ class BotDirectoryTemplateTests(unittest.TestCase):
                             tag, re.compile(r"\bbots?\b", re.IGNORECASE)
                         )
 
+    def test_graduated_templates_keep_provenance(self) -> None:
+        catalog_slugs = {template["slug"] for template in self.templates}
+        self.assertTrue(self.graduated <= catalog_slugs, "graduated slug missing from catalog")
+        for template in self.templates:
+            if template["slug"] not in self.graduated:
+                continue
+            with self.subTest(slug=template["slug"]):
+                directory = ROOT / "agents" / template["slug"]
+                for filename in ("AGENTS.md", "PROMPT.md", "README.md"):
+                    self.assertTrue((directory / filename).is_file(), f"missing {filename}")
+                _, readme_body = read_document(directory / "README.md")
+                credits = section(readme_body, "Credits")
+                self.assertTrue(credits, "graduated README needs a Credits section")
+                self.assertIn(template["detailUrl"], credits)
+                self.assertIn(template["creator"]["url"], credits)
+                self.assertIn("NOTICE.md", credits)
+
     def test_every_template_is_complete_and_consistent(self) -> None:
         for template in self.templates:
             slug = template["slug"]
+            if slug in self.graduated:
+                continue
             with self.subTest(slug=slug):
                 directory = ROOT / "agents" / slug
                 claude_path = directory / "AGENTS.md"

@@ -12,13 +12,41 @@ Owns spend and CPA spikes on live campaigns. Pause or rec. Does not launch a new
 
 Owns creative and copy in, status out, and late work flagged before the client pings. Built for 2-200 person founder-led agencies tired of clients asking where the files are.
 
+### Bill Splitter
+
+Finds each shared bill from named senders at month end, works out everyone's share, and hands you one-tap Venmo request links. It never moves money.
+
 ### Billing Chaser
 
 Owns unbilled time, overdue invoices, and retainers running low. The renewal draft lives in this job, not a separate agent. Built for 2-200 person founder-led agencies with time sitting unbilled and retainers that expire quietly.
 
+### Calendar Guardian
+
+Watches one executive calendar for conflicts, slips and landmines, drafts reschedule emails, and keeps open-time blocks honest without moving real meetings.
+
 ### Call Closer
 
 Owns after-call recap, tasks, CRM, and the next meeting on the calendar. Not meeting notes only. Built for 2-200 person founder-led professional firms whose follow-up dies in the notes doc.
+
+### Call Follow-Up Drafter
+
+Drafts the client follow-up email after every external call, in your voice and in the right thread, with a debrief to you. Never sends. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Call Follow-Up Nudge
+
+After each call, lists what you personally committed to, drafts the follow-ups you promised, and sends you one post-call message so nothing slips. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Chief of Staff Briefing
+
+Founder briefing across Gmail, Calendar, Slack, Discord and project tools: fires first, then decisions, meetings, commitments and open work. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Daily Briefing
+
+Sends one two-minute workday brief: what needs you from email, Slack and open loops, plus today's calendar, ranked by consequence. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Deck Updater
+
+Turns each demo or discovery call into a tailored copy of your master deck, plus a covering email in your drafts, ready before the next meeting. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
 
 ### Desk Deputy
 
@@ -28,17 +56,53 @@ Owns the front desk as one agent: inbox drafts, calendar book/reschedule/remind,
 
 Owns tomorrow's board: crew, parts, and the customer window. Texts the customer the real window. Not a routing engine. Built for 2-200 person founder-led home services shops that need tomorrow's board and the customer text owned.
 
+### Event Runner
+
+Runs a webinar or in-person event from run-up to follow-up: tracks readiness, drafts promo and reminders, then segments attendees and drafts follow-ups within a day.
+
+### Family Calendar Keeper
+
+Turns school, team and club mail into one shared family doc per kid, keeps the family calendar in sync, and warns early about pickup clashes.
+
+### Finance Reporting Desk
+
+Drafts the weekly cash update, runs the month-end close tracker, writes variance commentary and assembles the monthly board pack from your real numbers.
+
+### Forecast Notes Updater
+
+Turns each customer call, email thread and Slack discussion into CRM notes and forecast updates in your exact format, proposed for approval before anything is written. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Goals and Week Ahead
+
+Tracks company goals against target each week, explains every slip from real activity, drafts owner nudges for approval, and writes your week-ahead plan.
+
+### Growth Readout
+
+Owns the weekly growth readout: a leadership update draft, what the website converts, and what is shifting in signups and pipeline.
+
 ### Handshake Closer
 
 Owns verbal yes through a sent estimate, one nudge, then flag silence. No seven-touch sequence. Built for 1-15 person micro-owners who get a verbal yes and never send the estimate.
+
+### Important Email Triage
+
+Labels the mail genuinely waiting on your reply as it arrives, in your own categories, leaves ambiguous mail alone, and never sends, drafts or archives. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
 
 ### Inbox Manager
 
 Email management agent that helps users organize their Gmail inbox, screen and categorize emails, and unsubscribe from unwanted mailing lists.
 
+### Inbox Reply Digest
+
+Once a day, lists only the email and Slack threads you owe a reply to, oldest-waiting first, with replies drafted in your voice. Silent when empty. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
 ### Inquiry Desk
 
 Owns inbound through a qualified call on the calendar. Not a polite we-will-be-in-touch. Built for 2-200 person founder-led professional firms with inbound sitting in the inbox.
+
+### Investor Update Drafter
+
+Drafts the recurring investor, LP or partner update from what actually happened, picking up where the last one left off. Never sends.
 
 ### Invoice Ask
 
@@ -60,6 +124,14 @@ Owns web, phone, and form inbound through a booked slot the same day. Qualifies,
 
 Owns invoices out the door and overdue chased until paid or escalated. Built for 2-200 person founder-led professional firms with completed work unbilled and overdue sitting.
 
+### Meeting Actions
+
+Turns internal, leadership, and client meetings into decisions, owned and dated tasks in your tracker, routed hand-offs, and a running decisions log.
+
+### Meeting Prep Brief
+
+Briefs each external, first-time or high-stakes meeting: the one thing to raise, who is in the room, past promises, and what changed since you last spoke. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
 ### Nutrition Agent
 
 Personal nutrition tracker you can message naturally: describe a meal (or send a photo) and it estimates macros and logs it, tracks calories/protein/fat/carbs against your goal, logs body weight, and renders a trends dashboard. No accounts or API keys required.
@@ -72,6 +144,14 @@ Keeps the team fed: runs the recurring weekly grocery/kitchen stock order, handl
 
 Owns a newly signed client into the folder, the tracker, kickoff on the calendar, and the first report date. Built for 2-200 person founder-led agencies that lose the first 10 days after a client signs.
 
+### One-On-One Prep
+
+Keeps a private running prep doc for each recurring 1:1: open items carried forward, their recent asks, decisions they await, and your agenda. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
+### Open Loops
+
+Tracks what you promised and what you handed off, closes each loop only on evidence, and drafts the nudges for your approval.
+
 ### OpenSlide Studio
 
 Slide-deck agent built on the open-slide framework — slides are React components on a fixed 1920×1080 canvas, and the dashboard *is* the OpenSlide app: a searchable deck library, editing and presentation views, live HMR previews, reusable themes, and inspector-comment-driven edits. Ships with a stock Getting Started deck; no accounts or API keys needed.
@@ -80,9 +160,17 @@ Slide-deck agent built on the open-slide framework — slides are React componen
 
 Vendor-neutral outbound sales motion: ICP qualification, sourcing, enrichment, fail-closed suppression, linted drafting, capped sending, cadence, reply detection, and calendar-sourced meeting reporting. Swappable adapters for CRM, sender, enrichment, and calendar; nothing sends until onboarding writes your config.
 
+### Pipeline Doctor
+
+Keeps your CRM pipeline honest: flags stale deals, drafts nudges for stalled ones, revives closed-lost deals with a real trigger, and drafts the day's CRM updates.
+
 ### Proposal Pilot
 
 Owns the proposal from the call notes through one-tap send. Price from the rate card, not a guess. Built for 2-200 person founder-led professional firms that still rebuild every proposal from a blank page.
+
+### Quick Start
+
+Onboarding variant run alongside Welcome Agent for A/B testing. Instead of interviewing the user and creating an agent, it asks for their company website, reads it, infers their role, invents four company-specific starter tasks, and does the one they pick in the first session. Wraps the work as an always-on agent only afterwards, and only if it is recurring.
 
 ### Quote Chaser
 
@@ -96,6 +184,10 @@ Owns a boxed quote from the last conversation: price, scope, and a yes/no ask. O
 
 Owns forwarded receipts and flags monthly holes before the bookkeeper asks. Built for 1-15 person micro-owners who forward receipt photos and still miss month-end holes.
 
+### Recruiter Desk
+
+Runs a recruiter's routine desk work: sourcing sheets, reply reads, post-interview drafts and scorecards, hiring-manager updates, and stalled-candidate nudges.
+
 ### Recruiting Agent
 
 Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory, excellence pools), filtering with a self-improving screening prompt calibrated by your Advance/Don't-advance feedback, outreach, nurture, and interview scheduling, backed by Ashby or a no-ATS pipeline store.
@@ -104,9 +196,17 @@ Owns the hiring pipeline end to end — sourcing (LinkedIn, arXiv, YC directory,
 
 Owns who to ask, the draft ask, and the intro log so intros do not die in the inbox. Built for 2-200 person founder-led professional firms that know they should ask for intros and never do.
 
+### Release To Social Campaign
+
+Turns what engineering shipped into verified, platform-specific social and changelog drafts, routes them for approval in Slack, and reports performance after 72 hours. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
+
 ### Renewal Clerk
 
 Owns contract end dates, usage, and the renewal draft. Nothing auto-renews. Built for 2-200 person founder-led professional firms whose terms die because nobody drafted the renewal.
+
+### Reply Drafter
+
+Each weekday morning, shortlists the 3-5 X posts worth your reply, from mentions, a watch list and topics, with drafts in your voice. Never posts. Adapted from a Bot Directory prompt and rebuilt as a first-party Gamut template.
 
 ### Report Runner
 
@@ -116,6 +216,10 @@ Owns the monthly client recap from ads, analytics, and the sheet. Flags what mov
 
 Owns the after-job review ask and Google/Yelp replies in the shop's voice. Parks 1-star and spicy for the founder. Built for 2-200 person founder-led home services shops that want reviews asked and answered in their voice.
 
+### SaaS Spend Auditor
+
+Audits company software subscriptions monthly against real usage, ranks savings, and tracks renewal notice dates. Never cancels or downgrades.
+
 ### Scope Sentinel
 
 Owns out-of-scope asks: maps them to the SOW and drafts the change order before the extra work starts. Built for 2-200 person founder-led agencies that leak hours on quick extra asks.
@@ -124,21 +228,49 @@ Owns out-of-scope asks: maps them to the SOW and drafts the change order before 
 
 Autonomous SEO specialist that owns one website's organic growth end to end: a daily content engine, link building and outreach with a local CRM, monthly technical audits, and weekly strategy/reporting with a live Ahrefs + Search Console dashboard.
 
+### Side Project Monitor
+
+Owns daily monitoring for a side project: picks the metrics worth watching, catches cost spikes, drop-offs and regressions early, and suggests what to build next.
+
+### Target Account Radar
+
+Watches target accounts, contacts, competitors and topics for real buying signals; sends a cited digest and high-bar X alerts, each with an outreach angle.
+
 ### Team Brain
 
 Builds and keeps your team's shared brain, a folder of pages people and agents read to understand the team, with you in a collaborative research loop, then maintains it daily and improves itself.
+
+### Team Progress Digest
+
+Daily read-only digest of what your human team shipped, has in progress, and is stuck on, from GitHub and Linear or Jira, with every item linked.
+
+### Time and Mileage Log
+
+Rebuilds your monthly business mileage at the current IRS rate and your weekly billable hours by client from calendar, email and docs, with evidence.
+
+### VC Associate
+
+Triages an investor's inbox, logs deal flow, keeps portfolio and board prep current, preps LP meetings, and drafts the relationship follow-ups.
 
 ### Vendor Nudge
 
 Owns late suppliers and bills you owe. Drafts the nudge and the pay list. Never pays. Opposite of Invoice Ask. Built for 1-15 person micro-owners juggling late POs and bills due this week.
 
+### Voice of Customer
+
+Owns a living messaging doc per segment built from customer calls, with verbatim quotes, plus a weekly list of content ideas grounded in that signal.
+
+### Warm Intro Tracker
+
+Watches the intros you make, drafts a gentle nudge in the original thread when one goes quiet, and keeps a reply-rate scoreboard by intro type.
+
 ### Welcome Agent
 
 Onboarding agent that interviews a new user, inspects their connected tools (with permission), and builds their highest-impact first Gamut agent -- both as a created agent and a copyable prompt.
 
-### Quick Start
+### X Bookmark Sweep
 
-Onboarding variant run alongside Welcome Agent for A/B testing. Instead of interviewing the user and creating an agent, it asks for their company website, reads it, infers their role, invents four company-specific starter tasks, and does the one they pick in the first session. Wraps the work as an always-on agent only afterwards, and only if it is recurring.
+Owns your X bookmarks and likes: reads each thread and linked article, keeps topic notes, adds the implied tasks to your list, and keeps a reading queue.
 
 ### X Opportunity Scout
 
@@ -146,7 +278,7 @@ Watches X for high-intent posts where your product is the answer — competitor-
 
 ### Bot Directory light templates
 
-The repository also includes 160 lightweight templates imported from
+The repository also includes 148 lightweight templates imported from
 [Bot Directory](https://botdirectory.ai/). Each lives directly under `agents/`
 and contains a concise operating prompt in `AGENTS.md`, the original source
 prompt preserved verbatim in `PROMPT.md`, and marketplace metadata plus creator
@@ -163,6 +295,13 @@ built-in, local, raw-API, and unsupported services remain explicit in the setup
 instructions without fabricated registry identifiers. Bot Directory's MIT
 license and attribution are preserved in
 [`sources/botdirectory/NOTICE.md`](sources/botdirectory/NOTICE.md).
+
+Twelve former imports have graduated to first-party templates (listed above)
+and are recorded in
+[`sources/botdirectory/graduated.json`](sources/botdirectory/graduated.json).
+Their catalog entries stay so the pinned source set remains complete, but their
+files are no longer byte-for-byte imports: the importer skips them, and their
+READMEs keep a Credits line to the original author and Bot Directory page.
 
 ## Agent metadata
 
