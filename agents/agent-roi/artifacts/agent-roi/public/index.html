@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent ROI</title>
+<style>
+@font-face{font-family:"Inter";src:url(fonts/Inter-Variable.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Geist Mono";src:url(fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#fff;--fg:#0c0b0a;--mut:#78716c;--faint:#a8a29e;--line:#e7e5e4;--hair:#f0efed;--soft:#fafaf9;--hover:#f5f5f4;
+  --ink:#0c0b0a;--warn:#b75000;--pos:#007956;--neg:#b42318;--tip:#0c0b0a;--tipfg:#fafaf9;
+  --c-ai:#155dfc;--c-tools:#8ec5ff;--c-people:#fcbb00;--c-cash:#009767;--c-time:#5ee9b5;--c-none:#f0efed;--c-good:#009767;--c-pending:#fcbb00;--c-unknown:#a8a29e;
+  --sans:"Inter",ui-sans-serif,system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0b0a;--fg:#f5f5f4;--mut:#a8a29e;--faint:#78716c;--line:#292524;--hair:#1c1917;--soft:#151413;--hover:#1c1917;
+  --ink:#f5f5f4;--warn:#f99c00;--pos:#00bb7f;--neg:#f2766b;--tip:#f5f5f4;--tipfg:#0c0b0a;
+  --c-ai:#54a2ff;--c-tools:#1c398e;--c-people:#f99c00;--c-cash:#00d294;--c-time:#007956;--c-none:#292524;--c-good:#00d294;--c-pending:#f99c00;--c-unknown:#78716c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--sans);font-feature-settings:"kern" 1,"liga" 1,"cv11" 1;-webkit-font-smoothing:antialiased;letter-spacing:-.0075em}
+main{max-width:1120px;margin:0 auto;padding:32px 32px 80px}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}a:hover{text-decoration-color:var(--fg)}
+.mono,.k,th,tr.band td,aside h4,.chip,.legend,.sub.mono{font-family:var(--mono);letter-spacing:0}
+
+header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line)}
+h1{font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 8px 0 0}
+select,button.btn,.dl summary{height:32px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:0 11px;font:inherit;font-size:13px;cursor:pointer}
+select:hover,button.btn:hover{background:var(--hover)}
+.dl summary{background:var(--ink);color:var(--bg);border-color:var(--ink)}.dl summary:hover{opacity:.88}
+.chip{display:inline-flex;align-items:center;height:24px;border-radius:6px;padding:0 8px;font-size:11px;color:var(--mut);background:var(--hover)}
+.fresh{margin-left:8px;padding-left:8px;border-left:1px solid var(--line)}.fresh.stale{color:var(--neg);font-weight:600}
+.push{margin-left:auto}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 8px;border-bottom:1px solid var(--line)}@media(max-width:760px){.tiles{grid-template-columns:1fr}}
+.tile{background:none;border:none;border-left:1px solid var(--line);padding:22px 24px 22px;text-align:left;color:inherit;font:inherit;cursor:pointer;display:flex;flex-direction:column}
+.tile:first-child{border-left:none;padding-left:0}.tile:hover .v{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--line)}
+.tile .k{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.tile .v{font-size:36px;font-weight:550;letter-spacing:-.035em;margin:6px 0 4px;font-variant-numeric:tabular-nums;line-height:1.1}
+.tile .s{color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
+
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:14px 12px 14px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+th{color:var(--mut);font-weight:400;font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:18px 12px 10px 0;border-bottom:1px solid var(--line)}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}td.n{font-family:var(--mono);font-size:13px;letter-spacing:0}
+th:first-child{width:30%}
+tr.row{cursor:pointer}tr.row:hover td{background:var(--hover)}tr.row td:first-child,th:first-child,tr.band td,tr.idle td{padding-left:10px}tr.row td:last-child,th:last-child{padding-right:10px}
+.who{display:flex;gap:12px;align-items:flex-start}.who img.av,.who .av{width:30px;height:30px;flex:none;margin-top:-2px}.who b{font-weight:550}
+.av.none{border-radius:50%;background:var(--hover);display:flex;align-items:center;justify-content:center;font:500 10px var(--mono);color:var(--mut)}
+img.stack{height:18px;margin-top:5px;display:block}
+tr.band td{padding-top:28px;padding-bottom:10px;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line)}
+tr.idle td{color:var(--mut);border-bottom:none;padding-top:16px}tr.fold{cursor:pointer}tr.fold:hover td{color:var(--fg)}
+.wbar{height:3px;border-radius:2px;overflow:hidden;background:var(--c-none);margin:8px 0 0 auto;width:64px}.wbar span{display:block;height:100%;background:var(--c-cash)}
+.ret.low{color:var(--warn)}.ret.zero{color:var(--faint)}
+.sub{color:var(--mut);font-size:12px}.muted{color:var(--mut)}.inl{display:inline}.nw{white-space:nowrap}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+
+.tip{cursor:help;position:relative;text-decoration:underline dotted transparent;text-underline-offset:3px}.tip:hover,.tip:focus{text-decoration-color:var(--faint)}
+.tip:hover::after,.tip:focus::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 6px);z-index:20;width:max-content;max-width:300px;background:var(--tip);color:var(--tipfg);padding:8px 10px;border-radius:6px;font:400 12px/1.45 var(--sans);letter-spacing:-.005em;text-transform:none;white-space:normal}
+th .tip:hover::after,th .tip:focus::after,td.n .tip:hover::after{left:auto;right:0}
+
+aside{position:fixed;top:0;right:0;height:100%;width:min(540px,100%);background:var(--bg);border-left:1px solid var(--line);padding:26px 30px 44px;overflow:auto;transform:translateX(100%);transition:transform .18s ease,visibility .18s;visibility:hidden;z-index:30}
+aside.open{transform:none;visibility:visible;box-shadow:-24px 0 48px rgba(12,11,10,.08)}
+aside h3{margin:0 0 6px;font-size:19px;font-weight:600;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}aside h3 img.av,aside h3 .av{width:36px;height:36px}aside h3+img.stack{margin:-2px 0 8px 46px}
+aside .close{float:right;width:30px;height:30px;border-radius:7px;background:none;border:none;color:var(--mut);font-size:20px;cursor:pointer}aside .close:hover{background:var(--hover);color:var(--fg)}
+aside h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:28px 0 8px;font-weight:400;padding-bottom:8px;border-bottom:1px solid var(--line)}
+aside h4 .hint{text-transform:none;letter-spacing:0;margin-left:6px}
+.big{font-size:38px;font-weight:550;letter-spacing:-.035em;margin:10px 0 16px;font-variant-numeric:tabular-nums}
+.stack{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--c-none);gap:2px}.stack span{display:block;height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--mut);margin:10px 0 4px}.legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:0}
+.ai,.legend i.ai,.stack span.ai,.cost span{background:var(--c-ai)}.tools,.legend i.tools,.stack span.tools{background:var(--c-tools)}
+.people,.legend i.people,.stack span.people{background:var(--c-people)}.cash,.legend i.cash,.stack span.cash{background:var(--c-cash)}
+.time,.legend i.time,.stack span.time{background:var(--c-time)}.legend i.worth{background:var(--c-cash)}.stack span.none,.legend i.none{background:var(--c-none)}.good,.stack span.good,.legend i.good{background:var(--c-good)}.pending,.stack span.pending,.legend i.pending{background:var(--c-pending)}.unknown,.stack span.unknown,.legend i.unknown{background:var(--c-unknown)}
+.bline{display:grid;grid-template-columns:1fr 30% minmax(104px,auto);gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--hair)}
+.bline[data-agent]{cursor:pointer}.bline[data-agent]:hover{background:var(--hover)}
+.bline .ba{white-space:nowrap;text-align:right;font:13px var(--mono);font-variant-numeric:tabular-nums}.bline.out{color:var(--mut)}.bline.full{grid-template-columns:1fr}
+.ba.neg{color:var(--neg);font-weight:600}.dir{margin:14px 0 0;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.bar{height:4px;border-radius:2px;overflow:hidden}.bar span{display:block;height:100%;background:var(--c-ai)}.bar.out span{background:var(--c-none)}.bar.worth span{background:var(--c-cash)}.bar.cost span{background:var(--c-ai)}
+.pair .bar+.bar{margin-top:3px}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.mini>div{padding:12px 14px;border-left:1px solid var(--line)}.mini>div:first-child{border-left:none;padding-left:0}
+.mini .k{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}.mini .v{font-size:20px;font-weight:550;letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+.recs{font-size:13px}.rec{display:grid;grid-template-columns:16px 52px minmax(0,1fr) minmax(0,1.3fr);gap:8px;padding:7px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.rec .rl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--mut);font:12px var(--mono)}.rec .rd{color:var(--mut);font:12px var(--mono)}.mark{color:var(--faint)}.mark.ok{color:var(--fg);font-weight:700}
+.toggle{display:flex;gap:8px;align-items:center;margin:18px 0 4px;font-size:13px;cursor:pointer}.toggle input{accent-color:var(--ink)}.softnote{margin-bottom:6px;line-height:1.45}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:13px}.kv>div:nth-child(odd){color:var(--mut)}
+.more{background:none;border:none;color:var(--fg);font:inherit;font-size:13px;cursor:pointer;padding:8px 0;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.empty{color:var(--mut);padding:40px 0}
+
+.dl{position:relative}.dl summary{list-style:none;display:flex;align-items:center}.dl summary::-webkit-details-marker{display:none}
+.dl .menu{position:absolute;right:0;top:calc(100% + 6px);background:var(--bg);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(12,11,10,.1);min-width:230px;z-index:25;padding:5px}
+.dl .menu a{display:block;padding:9px 11px;border-radius:6px;color:var(--fg);cursor:pointer;font-size:13px;text-decoration:none}.dl .menu a:hover{background:var(--hover)}.dl .menu a span{display:block;font:11px var(--mono);color:var(--mut);margin-top:1px}
+
+@media print{header select,header button,.dl,aside,.more{display:none!important}main{padding:0}tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+  <header><h1>Agent ROI</h1><select id="period" aria-label="Period"></select><span class="chip" id="status"></span>
+    <button class="btn push" onclick="openAbout()">About these numbers</button><details class="dl"><summary class="btn">Download ▾</summary><div class="menu">
+      <a data-format="pdf">PDF report<span>One page to forward</span></a>
+      <a data-format="agents">Agents (CSV)<span>One row per agent</span></a>
+      <a data-format="outcomes">Outcomes (CSV)<span>Every outcome with its receipt</span></a></div></details></header>
+  <div id="app"><p class="empty">Loading…</p></div>
+</main>
+<aside id="panel" aria-live="polite"><button class="close" aria-label="Close">×</button><div id="pbody"></div></aside>
+<script>
+// One home for every definition: tooltips and the printed glossary both read from here.
+const G = {
+  worth: 'What the finished work is worth: the count of each outcome times its price, from the low end of the price to the stated price. The totals at the top include fully counted agents only.',
+  cost: 'Spend on the Gamut usage page: AI usage and paid tools. People\'s time is shown beside it, not included. The totals at the top include fully counted agents only.',
+  multiple: 'Worth divided by cost, at the low end and at the stated price. Shown once an agent is fully counted.',
+  cash: 'Money saved or earned, such as a fee avoided or a meeting booked.',
+  time: 'Hours of work a person would otherwise have done, times an hourly rate. It becomes cash only if it changes hiring or frees someone for paid work.',
+  checked: 'Checked means the review opened the receipt (a link, record or file) and confirmed it. Unchecked means it rests on the agent\'s own session.',
+  delivered: 'Finished work in this range, counted from the agent\'s sessions. Runs, drafts and retries don\'t count. Each line is the count × the price of one, low end to stated.',
+  alone: 'Share of its work sessions with no person in them.',
+  setup: 'Share of people\'s time with this agent spent changing it (instructions, skills, schedules) rather than using it.',
+  anchor: 'Where a price comes from: the agent\'s owner, a market rate, a real cost it avoids, or the review\'s own estimate (the least certain).',
+  rolling: 'The same ranges as the Gamut usage page. Worth counts outcomes delivered in these days; cost is the page\'s spend for the same days.',
+};
+const peopleSoft = () => `Soft estimate: minutes people spent in the agents' sessions, timed from their messages, × the ${usd(D.numbers.inputs.cost_of_an_hour_usd)}/h workspace rate. Off by default. When on, it's in cost and return everywhere, including downloads.`;
+const ANCHOR = {owner: 'Owner', market_rate: 'Market rate', real_cost: 'Real cost', estimate: 'Review estimate'};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tipText = (text, label) => `<span class="tip" tabindex="0" data-tip="${esc(text)}">${label}</span>`;
+const tip = (key, label) => `<span class="tip" tabindex="0" data-tip="${esc(G[key])}">${label}</span>`;
+const k = n => n == null ? 'unknown' : (n < 0 ? '−' : '') + '$' + (Math.abs(n) >= 1000 ? (Math.abs(n) / 1000).toFixed(Math.abs(n) >= 10000 ? 0 : 1) + 'k' : Math.round(Math.abs(n)));
+const usd = n => n == null ? 'unknown' : (n < 0 ? '−' : '') + '$' + Math.abs(n).toLocaleString('en-US', {maximumFractionDigits: Math.abs(n) >= 100 ? 0 : 2});
+const each = (lo, hi) => hi == null ? '' : lo == null || lo === hi ? usd(hi) : `${usd(lo)}–${usd(hi)}`;
+const range = (lo, hi) => lo == null || hi == null ? 'unknown' : Math.round(lo) === Math.round(hi) ? k(hi) : `${k(lo)}–${k(hi)}`;
+const pct = n => n == null ? '–' : Math.round(n * 100) + '%';
+const VIEW_NAMES = {wtd: 'Week to date', mtd: 'Month to date', last7: 'Last 7 days', last14: 'Last 14 days', last30: 'Last 30 days'};
+const ago = h => h < 1 ? 'under an hour ago' : h < 48 ? `${Math.round(h)} hours ago` : `${Math.round(h / 24)} days ago`;
+const times = (lo, hi) => hi == null ? 'unknown' : lo == null || lo.toFixed(1) === hi.toFixed(1) ? hi.toFixed(1) + '×' : `${lo.toFixed(1)}–${hi.toFixed(1)}×`;
+let AV = {};
+fetch('avatars.json').then(r => r.json()).then(j => { AV = j; if (D) render(); }).catch(() => {});
+const avatar = (id, name, cls = 'av') => AV[id] ? `<img class="${cls}" src="${AV[id].avatar}" alt="">` : `<span class="${cls} none">${esc((name || '?').split(/\s+/).map(w => w[0]).join('').slice(0, 2))}</span>`;
+const members = id => AV[id] && AV[id].members ? `<img class="stack" src="${AV[id].members}" alt="" title="People and agents using it">` : '';
+let D, withPeople = false, showIdle = false;
+
+async function load(period) {
+  const res = await fetch('api/review?period=' + (period || 'last30') + (withPeople ? '&people=yes' : ''));
+  D = await res.json();
+  if (D.error) { $('#app').innerHTML = `<p class="empty">${esc(D.error)}</p>`; return; }
+  render();
+}
+
+function render() {
+  const L = D.numbers.leadership, A = D.numbers.agents;
+  $('#status').innerHTML = tip('rolling', esc(D.window.label)) + ' ' + (F => F.as_of ? `<span class="fresh${F.stale ? ' stale' : ''}" title="The older of: sessions last read ${F.sessions_read_until ? esc(new Date(F.sessions_read_until).toLocaleString()) : 'never'}, usage page last read ${F.cost_read_at ? esc(new Date(F.cost_read_at).toLocaleString()) : 'never'}. To refresh, ask Agent ROI in chat.">${F.stale ? 'Stale · ' : ''}Updated ${ago(F.hours_old)}</span>` : '<span class="fresh stale">Not read yet</span>')(L.freshness);
+  $('#app').innerHTML = agentsTab(L, A);
+  document.querySelectorAll('.tile').forEach(t => t.onclick = e => { if (!e.target.closest('.tip')) openTile(t.dataset.tile); });
+  document.querySelectorAll('.row').forEach(r => r.onclick = e => { if (!e.target.closest('.tip') && !e.target.closest('a')) openAgent(r.dataset.agent); });
+}
+
+function agentsTab(L, A) {
+  const isIdle = a => a.idle;
+  const shown = A.filter(a => !isIdle(a)).sort((p, q) => (p.complete === q.complete ? q.total_value - p.total_value : p.complete ? -1 : 1));
+  const idle = A.filter(isIdle);
+  const maxWorth = Math.max(1, ...A.map(a => a.total_value || 0));
+  const full = shown.filter(a => a.complete), partial = shown.filter(a => !a.complete);
+  const band = (name, list, why) => list.length ? `<tr class="band"><td colspan="5">${tipText(why, `${name} (${list.length})`)}</td></tr>${list.map(row).join('')}` : '';
+  const row = a => `<tr class="row" data-agent="${esc(a.agent_id)}"><td><div class="who">${avatar(a.agent_id, a.agent_name)}<div><b>${esc(a.agent_name)}</b>${a.owner ? `<div class="sub">${esc(a.owner)}</div>` : ''}${members(a.agent_id)}</div></div></td>
+        <td>${a.delivered.map(d => `<div>${d.count} ${esc(d.unit)}${d.unit_price != null ? ` <span class="sub inl">× ${each(d.unit_price_low, d.unit_price)} each${d.price_anchor && d.price_anchor !== 'estimate' ? ' · ' + esc(ANCHOR[d.price_anchor].toLowerCase()) : ''}</span>` : ''}</div>`).join('') || '<span class="muted">nothing counted</span>'}</td>
+        <td class="n">${a.total_value ? range(a.value_low, a.total_value) + `<div class="wbar"><span style="width:${Math.max(2, a.total_value / maxWorth * 100)}%"></span></div>` : '<span class="muted">–</span>'}</td><td class="n">${a.cost.total == null ? tipText(whyNoReturn(a), 'unknown') : k(a.cost.total)}</td>
+        <td class="n">${a.return_high != null ? `<span class="ret ${a.return_high === 0 ? 'zero' : a.return_high < 1 ? 'low' : ''}">${times(a.return_low, a.return_high)}</span>` : `<span class="muted">${tipText(whyNoReturn(a), 'pending')}</span>`}</td></tr>`;
+  const cp = L.cost_parts;
+  return `
+
+    <div class="tiles">
+      <button class="tile" data-tile="cost"><div class="k">${tip('cost', 'Cost')}</div><div class="v">${L.total_cost == null ? tipText(L.cost_known ? 'No agent is fully counted yet, so no cost is totalled.' : 'No cost source is connected yet.', 'unknown') : k(L.total_cost)}</div><div class="s">${L.total_cost == null ? '&nbsp;' : (L.people_in_cost ? `AI ${k(cp.ai)} · tools ${k(cp.tools)} · ${tipText(peopleSoft(), 'people\'s time ' + k(cp.people) + ' (estimate)')}` : `AI ${k(cp.ai)} · tools ${k(cp.tools)}`)}</div></button>
+      <button class="tile" data-tile="worth"><div class="k">${tip('worth', 'Worth')}</div><div class="v">${range(L.counted_value_low, L.counted_value)}</div><div class="s">${tip('cash', 'cash')} ${k(L.counted_hard_value)} · ${tip('time', 'time freed')} ${range(L.counted_time_low, L.counted_soft_value)}</div></button>
+      <button class="tile" data-tile="multiple"><div class="k">${tip('multiple', 'Return')}</div><div class="v">${times(L.return_low, L.return_high)}</div><div class="s">${L.net_value != null ? `${tipText('Worth minus cost.', 'net')} ${range(L.net_value_low, L.net_value)}${L.people_in_cost ? ` · ${tipText(peopleSoft(), 'incl. people\'s time (estimate)')}` : ''}` : '&nbsp;'}</div></button>
+    </div>
+
+    <table>
+      <tr><th>Agent</th><th>${tip('delivered', 'Delivered')}</th><th class="n">${tip('worth', 'Worth')}</th><th class="n">${tip('cost', 'Cost')}</th><th class="n">${tip('multiple', 'Return')}</th></tr>
+      ${band('Fully counted', full, 'Every session in this range is read and cost is known. These agents (and any fully counted idle ones) make up the totals at the top.')}
+      ${band('Incomplete', partial, 'Not fully read yet, or cost unknown. Shown with worth so far; not in the totals at the top.')}
+      ${idle.length ? `<tr class="idle fold" onclick="showIdle=!showIdle;render()"><td colspan="5">${showIdle ? '▾' : '▸'} ${tipText('Delivered nothing in this range.', `Idle (${idle.length})`)}${showIdle ? '' : `<span class="sub inl"> · ${idle.map(a => esc(a.agent_name)).join(', ')}</span>`}</td></tr>${showIdle ? idle.map(row).join('') : ''}` : ''}
+    </table>
+
+
+
+
+
+  `;
+}
+
+function whyNoReturn(a) {
+  if (a.flags.includes('no_access')) return 'The review can\'t read this agent.';
+  if (a.flags.includes('cost_unknown')) return 'The usage page shows no spend for this agent, so its cost is unknown. It may run on someone\'s own key or subscription.';
+  if (a.flags.includes('partial_count')) return 'Not every session in this range has been read yet, so its worth so far is incomplete. Return appears once it\'s fully counted.';
+  if (a.flags.includes('not_counted')) return 'Not counted yet.';
+  return 'Nothing to compare yet.';
+}
+
+function openAbout() {
+  const L = D.numbers.leadership, T = L.trust, F = L.freshness || {};
+  const now = Date.now(), hrs = x => x ? (now - new Date(x)) / 36e5 : null;
+  const fresh = (label, at) => { const h = hrs(at); return `<div class="bline"><div class="bl">${label}</div><div></div><div class="ba ${h == null || h > 24 ? 'neg' : ''}">${h == null ? 'never' : ago(h)}</div></div>`; };
+  const seg = parts => { const tot = parts.reduce((n, p) => n + (p[1] || 0), 0) || 1; return `<div class="stack">${parts.map(([n, v, c]) => v ? `<span class="${c}" style="width:${v / tot * 100}%"></span>` : '').join('')}</div><div class="legend">${parts.map(([n, v, c, t]) => `<span><i class="${c}"></i>${t ? tipText(t, n) : n}</span>`).join('')}</div>`; };
+  const n = x => Math.round(x).toLocaleString('en-US');
+  const ag = T.agents;
+  const costUp = [], worthUp = [], design = [];
+  L.left_out.forEach(x => {
+    if (/partial count|not counted/.test(x.label)) return;
+    if (/cost unknown/.test(x.label)) costUp.push([x.label.split(':')[0] + ': cost unknown', 'No spend on the usage page. It may run on someone\'s own key or subscription.']);
+    else if (/tied to no agent/.test(x.label)) costUp.push([`Spend tied to no agent ${x.amount}`, 'Paid tool calls the usage page doesn\'t tie to any agent.']);
+    else (x.effect === 'value_low' ? worthUp : costUp).push([x.label + (x.amount ? ' ' + x.amount : ''), '']);
+  });
+  if (T.partial_agents.length) worthUp.push([`${T.partial_agents.length} agents not fully read`, T.partial_agents.join(', ')]);
+  L.excludes.forEach(x => {
+    if (/subscriptions or API keys/.test(x)) costUp.push(['Use on people\'s own subscriptions or keys', 'The usage page never sees it.']);
+    else if (/outside its sessions/.test(x)) costUp.push(['People\'s time outside sessions', 'Only time spent inside an agent\'s sessions is counted.']);
+    else if (/private|scope/.test(x) && !design.length) design.push(['People\'s private agents', 'Left out by the workspace\'s scope. Their spend is not in any figure.']);
+  });
+  const list = items => items.map(([t, why]) => `<div class="bline full"><div class="bl">${why ? tipText(why, esc(t)) : esc(t)}</div></div>`).join('');
+  openPanel(`<h3>About these numbers</h3>
+    <h4>Fresh</h4>${fresh('Sessions read', F.sessions_read_until)}${fresh('Usage page read', F.cost_read_at)}
+    <h4>Read</h4>${seg([[`${n(T.sessions_read)} sessions read in this range`, T.sessions_read, 'good'], [`${n(T.sessions_unread)} not yet read`, T.sessions_unread, 'none', `Counted for the whole of ${L.window.months.length > 1 ? 'the months this range touches' : 'the month'}: unread sessions can't yet be dated more finely.`]])}
+      <div style="height:10px"></div>${seg([[`${ag.counted} fully counted`, ag.counted, 'good'], [`${ag.partial} not fully read`, ag.partial, 'pending', T.partial_agents.join(', ')], [`${ag.cost_unknown} cost unknown`, ag.cost_unknown, 'unknown'], [`${ag.idle} idle`, ag.idle, 'none']])}
+    <h4>Checked <span class="hint">all worth seen, every agent</span></h4>${seg([[`${k(T.value_checked)} checked`, T.value_checked, 'good', G.checked], [`${k(T.value_unchecked)} unchecked`, T.value_unchecked, 'none']])}
+      <div style="height:10px"></div>${seg(Object.entries(T.value_by_anchor).map(([an, v], i) => [`${k(v)} ${(ANCHOR[an] || an).toLowerCase()}`, v, ({owner: 'good', market_rate: 'cash', real_cost: 'cash', estimate: 'pending'})[an] || 'unknown', G.anchor]))}
+    <h4>Not counted</h4>
+      ${costUp.length ? `<div class="sub dir">Would raise cost</div>${list(costUp)}` : ''}
+      ${worthUp.length ? `<div class="sub dir">Would raise worth</div>${list(worthUp)}` : ''}
+      ${design.length ? `<div class="sub dir">Left out by design</div>${list(design)}` : ''}`);
+}
+
+function openPanel(html) { $('#pbody').innerHTML = html; $('#panel').classList.add('open'); }
+$('#panel .close').onclick = () => $('#panel').classList.remove('open');
+document.addEventListener('keydown', e => e.key === 'Escape' && $('#panel').classList.remove('open'));
+
+function openTile(t) {
+  const L = D.numbers.leadership, A = D.numbers.agents, rate = D.numbers.inputs.cost_of_an_hour_usd;
+  const bar = (v, max, cls = '') => `<div class="bar ${cls}"><span style="width:${max ? Math.max(1, v / max * 100) : 0}%"></span></div>`;
+  const line = (a, label, amount, b, cls = '', why = '') => `<div class="bline ${cls}" ${a ? `data-agent="${esc(a)}"` : ''}><div class="bl">${why ? tipText(why, label) : label}</div>${b}<div class="ba">${amount}</div></div>`;
+  let html = '';
+  if (t === 'cost') {
+    const cp = L.cost_parts, parts = [['AI', cp.ai, 'ai'], ['Tools', cp.tools, 'tools'], ...(L.people_in_cost ? [['People\'s time', cp.people, 'people']] : [])];
+    const withCost = A.filter(a => a.cost.total != null).sort((p, q) => q.cost.total - p.cost.total);
+    const max = Math.max(...withCost.map(a => a.cost.total), L.unattributed_spend || 0);
+    html = `<div class="big">${k(L.total_cost)}</div>
+      ${L.total_cost ? `<div class="stack">${parts.map(([n, v, c]) => v ? `<span class="${c}" style="width:${v / L.total_cost * 100}%"></span>` : '').join('')}</div>
+      <div class="legend">${parts.map(([n, v, c]) => `<span><i class="${c}"></i>${c === 'people' ? tipText(`Minutes people spent in the agents' sessions × ${usd(rate)}/h. Estimated from message times.`, n) : n} ${k(v)}</span>`).join('')}</div>` : ''}
+      <label class="toggle"><input type="checkbox" id="people-toggle" ${L.people_in_cost ? 'checked' : ''}> Include people's time <span class="sub">${cp.people != null ? k(cp.people) : ''}</span></label>
+      <div class="sub softnote">${peopleSoft()}</div>
+      <h4>By agent</h4>
+      ${withCost.map(a => line(a.agent_id, esc(a.agent_name), k(a.cost.total), bar(a.cost.total, max, a.complete ? '' : 'out'), a.complete ? '' : 'out', a.complete ? '' : 'Not in the total: ' + whyNoReturn(a))).join('')}
+      ${L.unattributed_spend ? line('', 'No agent', k(L.unattributed_spend), bar(L.unattributed_spend, max, 'out'), 'out', 'Paid tool calls the usage page doesn\'t tie to any agent. Not in the total.') : ''}
+      ${A.filter(a => a.cost.total == null && !a.flags.includes('inactive')).map(a => line(a.agent_id, esc(a.agent_name), 'unknown', bar(0, 1, 'out'), 'out', whyNoReturn(a))).join('')}`;
+  } else if (t === 'worth') {
+    const worthy = A.filter(a => a.total_value > 0).sort((p, q) => (p.complete === q.complete ? q.total_value - p.total_value : p.complete ? -1 : 1));
+    const max = Math.max(...worthy.map(a => a.total_value));
+    const tot = L.counted_value || 1;
+    html = `<div class="big">${range(L.counted_value_low, L.counted_value)}</div>
+      <div class="stack"><span class="cash" style="width:${L.counted_hard_value / tot * 100}%"></span><span class="time" style="width:${L.counted_soft_value / tot * 100}%"></span></div>
+      <div class="legend"><span><i class="cash"></i>${tip('cash', 'Cash')} ${k(L.counted_hard_value)}</span><span><i class="time"></i>${tip('time', 'Time freed')} ${range(L.counted_time_low, L.counted_soft_value)}</span></div>
+      <h4>By agent</h4>
+      ${worthy.map(a => line(a.agent_id, `${esc(a.agent_name)}${Object.values(a.by_type).filter(r => r.count).map(r => `<div class="sub">${r.count} ${esc(r.count === 1 && r.unit_one ? r.unit_one : r.unit)} <span class="nw">× ${each(r.unit_price_low, r.unit_price)}</span>${r.checked ? ` <span class="nw">· ${r.checked} checked</span>` : ''}</div>`).join('')}`, range(a.value_low, a.total_value), bar(a.total_value, max, a.complete ? 'worth' : 'out'), a.complete ? '' : 'out', a.complete ? '' : 'Not in the total: ' + whyNoReturn(a))).join('')}`;
+  } else {
+    const counted = A.filter(a => a.return_high != null).sort((p, q) => q.total_value - p.total_value);
+    const max = Math.max(...counted.map(a => Math.max(a.total_value, a.cost.total)));
+    const rest = A.filter(a => a.return_high == null && !a.idle);
+    html = `<div class="big">${times(L.return_low, L.return_high)}</div>
+      <div class="legend"><span><i class="worth"></i>Worth</span><span><i class="ai"></i>Cost</span></div>
+      <h4>By agent</h4>
+      ${counted.map(a => line(a.agent_id, esc(a.agent_name), times(a.return_low, a.return_high), `<div class="pair">${bar(a.total_value, max, 'worth')}${bar(a.cost.total, max, 'cost')}</div>`)).join('')}
+      ${rest.length ? line('', tipText(rest.map(a => `${a.agent_name}: ${whyNoReturn(a)}`).join(' '), `Incomplete (${rest.length})`), '–', '<div></div>', 'out') : ''}`;
+  }
+  const title = {cost: 'Cost', worth: 'Worth', multiple: 'Return'}[t];
+  openPanel(`<h3>${tip(t, title)}</h3>${html}`);
+  const pt = $('#people-toggle'); if (pt) pt.onchange = async () => { withPeople = pt.checked; await load($('#period').value); openTile('cost'); };
+  document.querySelectorAll('#pbody .bline[data-agent]').forEach(r => r.onclick = e => { if (!e.target.closest('.tip')) openAgent(r.dataset.agent); });
+}
+
+let showAllReceipts = false, lastAgent = null;
+function openAgent(id) {
+  if (id !== lastAgent) { showAllReceipts = false; lastAgent = id; }
+  const a = D.numbers.agents.find(x => x.agent_id === id), card = (D.cards || []).find(c => c.agent_id === id) || {outcome_types: []};
+  const L = D.numbers.leadership, rate = D.numbers.inputs.cost_of_an_hour_usd;
+  const idle = a.idle;
+  const chip = idle ? tipText('Delivered nothing in this range.', 'Idle') : a.complete ? '' : tipText(`${whyNoReturn(a)} ${a.sessions_read} sessions read${a.sessions_listed != null ? ` of ${a.sessions_listed} in range` : ''}.`, a.flags.includes('cost_unknown') ? 'Cost unknown' : 'Not fully read');
+  const nums = [['Worth', a.total_value ? range(a.value_low, a.total_value) : '–', 'worth'], ['Cost', k(a.cost.total), 'cost'], ['Return', a.return_high != null ? times(a.return_low, a.return_high) : tipText(whyNoReturn(a), '–'), 'multiple']];
+  const types = card.outcome_types.map(t => {
+    const n = a.by_type[t.id] || {count: 0, value: 0, value_low: 0, checked: 0};
+    const unitPrice = t.value_kind === 'time_saved' ? `${t.hours_low != null ? t.hours_low + '–' : ''}${t.hours} h of work × ${usd(t.rate_usd ?? rate)}/h` : '';
+    const why = `${t.price_reason}${unitPrice ? ' (' + unitPrice + ')' : ''}. Source: ${(ANCHOR[t.price_anchor] || 'unknown').toLowerCase()}.`;
+    const counts = `Counts when: ${t.counts_when} Counts on ${t.counts_on === 'use' ? 'use: someone acted on it' : 'delivery'}. Receipt: ${t.receipt}`;
+    return `<div class="bline"><div class="bl">${tipText(counts, `${n.count} ${esc(n.count === 1 && t.unit_one ? t.unit_one : (t.unit || t.name))}`)}${n.checked ? `<div class="sub">${tipText(G.checked, `${n.checked} checked`)}</div>` : ''}</div>
+      <div class="sub">× ${tipText(why, each(n.unit_price_low ?? null, n.unit_price ?? null) || 'price')}</div><div class="ba">${n.count ? range(n.value_low, n.value) : '–'}</div></div>`;
+  }).join('');
+  const cp = [['AI', a.cost.ai, 'ai'], ['Tools', a.cost.tools, 'tools'], ...(L.people_in_cost ? [['People\'s time', a.cost.people, 'people']] : [])];
+  const meter = (label, key, v) => `<div class="bline"><div class="bl">${tip(key, label)}</div><div class="bar"><span style="width:${v == null ? 0 : Math.max(1, v * 100)}%"></span></div><div class="ba">${pct(v)}</div></div>`;
+  const outs = (D.outcomes || []).filter(o => o.agent === id).sort((p, q) => (p.delivered_at < q.delivered_at ? 1 : -1));
+  const shown = showAllReceipts ? outs : outs.slice(0, 8);
+  const typeName = o => { const t = card.outcome_types.find(t => t.id === o.type) || {}; return t.unit_one || t.name || o.type; };
+  const short = r => { const m = /^(https?:\/\/)([^\/\s]+)(\S*)/.exec(r || ''); if (!m) return `<span title="${esc(r)}">${esc(r)}</span>`; const last = m[3].split('/').filter(Boolean).pop() || ''; return `<a href="${esc(m[1] + m[2] + m[3])}" target="_blank" rel="noopener" title="${esc(r)}">${esc(m[2])}${last ? '/…/' + esc(last.length > 18 ? last.slice(0, 8) + '…' + last.slice(-6) : last) : ''}</a>`; };
+  const rec = shown.map(o => `<div class="rec" title="${o.quote ? esc('“' + o.quote + '”') : ''}"><span class="mark ${o.status === 'verified' ? 'ok' : ''}" title="${o.status === 'verified' ? 'Checked: receipt opened and confirmed' : 'Unchecked: as the agent\'s session reports it'}">${o.status === 'verified' ? '✓' : '○'}</span>
+    <span class="rd">${esc(new Date(o.delivered_at).toLocaleDateString('en-US', {month: 'short', day: 'numeric'}))}</span>
+    <span class="rt">${esc(typeName(o))}</span><span class="rl">${short(o.receipt)}</span></div>`).join('');
+  openPanel(`<h3>${avatar(id, a.agent_name)}<span>${esc(a.agent_name || id)}</span>${chip ? `<span class="chip">${chip}</span>` : ''}</h3>${members(id)}
+    <div class="sub" title="Card confirmed by ${esc(card.confirmed_by || '–')} on ${esc(card.confirmed_at || '–')}. To change it, tell the agent.">${a.owner ? esc(a.owner) + ' · ' : ''}${esc(card.purpose || '')}</div>
+    <div class="mini">${nums.map(([l, v, key]) => `<div><div class="k">${tip(key, l)}</div><div class="v">${v}</div></div>`).join('')}</div>
+    <h4>${tip('delivered', 'Delivered')}</h4>${types || '<div class="muted">No outcome types agreed.</div>'}
+    ${a.cost.total != null ? `<h4>${tip('cost', 'Cost')}</h4><div class="stack">${cp.map(([n, v, c]) => v ? `<span class="${c}" style="width:${v / a.cost.total * 100}%"></span>` : '').join('')}</div>
+      <div class="legend">${cp.map(([n, v, c]) => `<span><i class="${c}"></i>${c === 'people' ? tipText(`${Math.round(a.people_minutes)} minutes in its sessions × ${usd(rate)}/h, estimated from message times.`, n) : n} ${k(v)}</span>`).join('')}</div>` : ''}
+    ${a.sessions_read ? `<h4>How it works</h4>${meter('Works alone', 'alone', a.sessions_alone)}${meter('Time on setup', 'setup', a.setup_share_of_people_time)}` : ''}
+    ${outs.length ? `<h4>Receipts <span class="hint">${a.receipts_checked} of ${outs.length} checked</span></h4><div class="recs">${rec}</div>
+      ${outs.length > 8 ? `<button class="more" id="more-rec">${showAllReceipts ? 'Show fewer' : `Show all ${outs.length}`}</button>` : ''}` : ''}`);
+  const more = $('#more-rec'); if (more) more.onclick = () => { showAllReceipts = !showAllReceipts; openAgent(id); };
+}
+
+(async () => {
+  const ps = await (await fetch('api/periods')).json();
+  $('#period').innerHTML = ps.map(p => `<option value="${p}">${VIEW_NAMES[p]}</option>`).join('');
+  $('#period').onchange = e => load(e.target.value);
+  document.querySelectorAll('.dl .menu a').forEach(a => a.onclick = () => { location.href = `api/export?period=${$('#period').value}&format=${a.dataset.format}${withPeople ? '&people=yes' : ''}`; a.closest('details').open = false; });
+  $('#period').value = 'last30';
+  load('last30');
+})();
+</script>
+</body>
+</html>
