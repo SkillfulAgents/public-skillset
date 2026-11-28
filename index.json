@@ -404,6 +404,31 @@
       }
     },
     {
+      "name": "Agent ROI",
+      "path": "agents/agent-roi/",
+      "description": "Shows what each of your workspace's agents delivers, what it costs and its return, with a receipt behind every number.",
+      "details": "# Agent ROI\n\nAn agent that reviews what your workspace's agents deliver and what they cost, with a receipt behind every number.\n\n## What it does\n\nIt reads each agent's sessions, counts the finished work (outcomes) each one delivered, and prices it with prices you confirm.\nIt reads spend from the Gamut Platform usage page.\nThe dashboard shows cost, worth and return for the same ranges as the usage page: week to date, month to date, and the last 7, 14 and 30 days.\n\n- **Cost** is AI usage and paid tools. People's time is an estimate you can turn on in the Cost panel. It is off by default.\n- **Worth** is each outcome times its price, from the low end to the stated price.\n- **Return** is worth divided by cost.\n- Agents sit in three bands: **Fully counted** (every session in the range read, cost known), **Incomplete** and **Idle**. The totals cover fully counted agents only.\n- Every figure opens to its breakdown. Every outcome links to its receipt.\n\n## Setup\n\nSay \"Set up Agent ROI\". Setup takes three answers:\n\n1. **Scope.** Which agents to review. Reply yes to the proposed groups, or move agents between them.\n2. **One form.** What an hour of a person's time is worth, whether your go is enough to read agents' sessions, and whether to sign in to Gamut Platform (owner or admin) for cost or skip it for now.\n3. **One table.** The outcome and price drafted for each agent. Reply yes, or say what to fix.\n\nThe dashboard opens right after, from a sample of each agent's sessions.\nA full read of the last 30 days then runs in the background, about 1 to 2 hours for 15 agents.\nAgents move from Incomplete to Fully counted as it finishes.\n\n## Refresh\n\nNothing runs on a schedule.\nSay \"refresh the dashboard\" in a chat with the agent.\nIt reads new sessions, re-reads the usage page (you may need to sign in), and tells you what changed.\nThe dashboard shows when it was last updated, and marks it stale after 24 hours.\n\n## Downloads\n\nThe Download menu on the dashboard gives the current range as:\n- a one-page PDF to forward\n- an agents CSV, one row per agent\n- an outcomes CSV, every outcome with its receipt\n\n## What's new in 1.0\n\n- Views follow the Gamut Platform usage page's ranges, defaulting to the last 30 days. Monthly close, statements and monthly reports are gone.\n- Refresh is by hand. There is no scheduled run.\n- Cost is spend only. People's time is an optional estimate.\n- No findings and no cut, keep or invest calls. Each agent shows its return instead.\n- Agents are banded Fully counted, Incomplete and Idle.\n- Explanations live in tooltips and the About panel.\n- Real agent avatars and member stacks, captured from the Gamut app.\n- PDF, agents CSV and outcomes CSV downloads.",
+      "createdAt": "2026-11-18T00:00:00.000Z",
+      "version": "1.0.0",
+      "category": "Ops",
+      "icon": "clipboard-check",
+      "avatar": {
+        "color": "tonal-amber",
+        "shape": "arch"
+      },
+      "tags": [
+        "Agent ROI",
+        "ROI",
+        "Agent Fleet",
+        "Cost"
+      ],
+      "works_with": [],
+      "developer": {
+        "name": "SkillfulAgents",
+        "url": "https://github.com/SkillfulAgents"
+      }
+    },
+    {
       "name": "Agent Team Chief of Staff",
       "path": "agents/agent-team-chief-of-staff/",
       "description": "Inspect the purpose and setup of every agent in your team; propose a clear structure, routing plan, and ownership changes.",

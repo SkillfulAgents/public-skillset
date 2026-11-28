@@ -240,6 +240,10 @@ Watches target accounts, contacts, competitors and topics for real buying signal
 
 Builds and keeps your team's shared brain, a folder of pages people and agents read to understand the team, with you in a collaborative research loop, then maintains it daily and improves itself.
 
+### Agent ROI
+
+Shows what each of your workspace's agents delivers, what it costs and its return, with a receipt behind every number.
+
 ### Team Progress Digest
 
 Daily read-only digest of what your human team shipped, has in progress, and is stuck on, from GitHub and Linear or Jira, with every item linked.

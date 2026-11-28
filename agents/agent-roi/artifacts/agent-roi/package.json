@@ -1,0 +1,10 @@
+{
+  "name": "Agent ROI",
+  "description": "What each agent delivered, what it cost and its return, with the proof behind every number.",
+  "scripts": {
+    "start": "bun run index.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.21.0"
+  }
+}
